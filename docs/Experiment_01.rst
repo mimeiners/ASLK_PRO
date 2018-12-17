@@ -1,53 +1,15 @@
-Kurze Theorie und Motivation
-============================
+Operationsverstärker Grundschaltungen
+=====================================
+
+In diesem Experiment sollen drei Grundschaltungen eines Operationsverstärkers untersucht werden.
+Zu diesen gehören ein Impedanzwandler, auch Spannungsfolger genanneter Unity Gain Verstärker, ein invertierender
+und ein nicht-invertierender Verstärker.
+In der Theorie, wie zum Beispiel bei Berechnungen von Schaltungen, werden die Operationsverstärker (Opvs oder auch Opams)
+oft idealisiert angenommen. Das heißt, dass die Opams einen unendlich hohen Verstärkungfaktor sowie Eingangswiderstand aufweisen.
+Dazu kommt ein unendlich große Bandbreite. Ein Ausgangswiderstand existiert nicht. Geht man in die Praxis über, stellt man sehr schnell fest, dass alle gennaten Werte endlich sind und beim Messen unterschiedliche Probleme verursachen können.
+Das Ziel dieses Experiments ist eine messtechnische Untersuchung der Grundschaltungen eines Opams und ein Gewinn an Wissen und Erfahrung beim Umgang mit diesen elektronischen Bauelementen.
 
 
-Studieren Sie die Charaktersistik von rückgekoppelten Verstärkern und
-den Entwurf von Instrumentenverstärkern.
+Unity Gain Verstärker (Spannungsfolger,Impedanzwandler)
+-------------------------------------------------------
 
-
-Unity Gain Verstärker
----------------------
-
-
-.. math::
-   :label: 01_eq_1
-	   
-   f(t) = \sin(\omega t + \theta)
-   
-Der Wert von :math:`\theta` ist gleich 0 in der Funktion, die in
-:numref:`01_fig_01` dargestellt ist. Aufgrund von :math:`sin(0) = 0`
-beginnt die Funktion im Koordinatenursprung bei 0. Dies ist eine
-einfache Sinuswelle ohne Zeitversatz, also ohne Phaseverschiebung.
-Beachte, wenn man :math:`\omega t` in Radianten in einem Bereich von 0
-bis :math:`2 \pi` oder in Gradzahlen von 0 bis :math:`360^{\circ}`
-verwendet, erhält man die in :numref:`01_fig_01` dargestellte
-Sinuswelle.
-
-
-.. figure:: img/Activity_01_Fig_01.png
-   :name: 01_fig_01
-   :align: center
-   
-   2 Zyklen von :math:`\sin(t)`.  
-
-Nicht-invertierender Verstärker
--------------------------------
-
-
-Invertierender Verstärker
--------------------------
-
-Aufbau
-======
-
-
-Messungen
-=========
-
-
-Was dokumentiert werden soll
-============================
-
-Zugehörige IC's
-===============
