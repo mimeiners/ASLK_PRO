@@ -19,3 +19,6 @@ Unity Gain Verstärker (Spannungsfolger,Impedanzwandler)
 
 
 
+
+
+
