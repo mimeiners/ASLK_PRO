@@ -34,9 +34,9 @@ In folgenden Messungen sollen Sie die Operationsverstärkerschaltungen hinsichtl
 
 
 
-   Als Last soll ein :math:`1\k\Ohm` Widerstand angeschlossen werden. Was passiert mit der Ausgangsspannung?
-   Variiren Sie nun die Ausgangslast und messen Sie dabei die Ausgangsspannung. Was stellen Sie fest? Welchen Einsatzgebiet
-   könnte Ihrer Meinung nach diese Schaltung haben. Für welchen Zweck könnte diese Schaltung verwendet werden?
+   Als Last soll ein :math:`1\k\Omega` Widerstand angeschlossen werden. Was passiert mit der Ausgangsspannung?
+   Variiren Sie nun die Ausgangslast und messen Sie dabei die Ausgangsspannung. Was stellen Sie fest? Für welchen
+   Zweck könnte diese Schaltung verwendet werden?
 
 
 
