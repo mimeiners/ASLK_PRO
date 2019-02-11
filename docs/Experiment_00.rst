@@ -1,5 +1,5 @@
-Introduction
-============
+Kurze Einleitung
+================
 
 .. _MikroElektronika: https://www.mikroe.com/
 .. _ASLKPro: https://www.mikroe.com/aslk-pro-kit
@@ -16,9 +16,40 @@ Introduction
 .. _SwitcherPro: http://www.ti.com/tool/SWITCHERPRO?keyMatch=switcher%20pro&tisearch=Search-EN-Everything
 
 
-The master course **AMCD - Analogue Mixed-Signal Circuit Design**
-deals with analog circuit design. TI's ASLK Pro shall support students
-during their lab phases.
+Im Rahmen der Lehrveranstaltung **ANS Analoge Schaltungen - Grundlagen
+analoger CMOS Schaltungstechnik** sollen aus der Theorie gewonnene
+Kenntnisse im Labor praktisch umgesetzt werden. Zu diesem Zweck wird
+das ASLK (Analog System Lab Kit) Pro der Firma MikroElektronika_
+eingesetzt. Das ASLKPro_ wird von MikroElektronika_ für Texas
+Instruments (TI_) vertrieben und soll in ingenieurwissenschaftlichen
+Studiengängen für Versuche analoger Schaltungen eingesetzt werden.
+Dieses kostengünstige Experimentierboard umfasst gängige analoge
+Schaltungsblöcke mit universellen intergrierten
+Schaltkreisen, sogenannten IC's. Dazu gehören u.a. Operationsverstärker,
+ADC's, DAC's und Spannungsregler. 
+
+
+Nachfolgende Auflistung gibt eine Übersicht der
+verwendeten Bauteile an: 
+
+- TL082_ ist ein dualer Operationsverstärker mit JFET's und einer hohen Flankensteilheit,
+
+- MPY634_ ist ein breitbandiger Präzisionsmultiplizierer, 
+
+- DAC7821_ ist ein 12-Bit Digital-Analog-Umsetzer (DAC) mit parallelen
+  Eingängen, 
+
+- TPS40200_ ist eine nicht-synchrone Buck DC/DC-Steuerung für
+  breitbandige Eingangssignal, 
+
+- TPS7250_ ist ein :math:`250\,mA` LDO (Low-Dropout) Spannungsregler
+  für kleine Leistungen.
+
+
+Zur Simulation können Schaltungssimulatoren wie LTSpice_, TINA_ oder PSpice_ verwendet
+werden. Des Weiteren stehen mit FilterPro_ und SwitcherPro_
+übersichtliche und leistungsstarke Instrumente zum Filter- und
+Verstärkerentwurf zur Verfügung.
 
 
 
