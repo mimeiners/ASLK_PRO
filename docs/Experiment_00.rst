@@ -14,6 +14,7 @@ Kurze Einleitung
 .. _PSpice: https://www.pspice.com/
 .. _FilterPro: https://webench.ti.com/webench5/power/webench5.cgi?origin=ti_panel&app=filterarchitect&filterType=Lowpass
 .. _SwitcherPro: http://www.ti.com/tool/SWITCHERPRO?keyMatch=switcher%20pro&tisearch=Search-EN-Everything
+.. _RedPitaya: https://www.redpitaya.com/
 
 
 Im Rahmen der Lehrveranstaltung **ANS Analoge Schaltungen - Grundlagen
@@ -51,6 +52,8 @@ werden. Des Weiteren stehen mit FilterPro_ und SwitcherPro_
 übersichtliche und leistungsstarke Instrumente zum Filter- und
 Verstärkerentwurf zur Verfügung.
 
+Für die praktischen Messungen sollen alle im Labor verfügbaren Gerätschaften eingesetz werden.
+Dies schließt den Einsatz des Messlabors RedPitaya_ mit ein.
 
 
 
