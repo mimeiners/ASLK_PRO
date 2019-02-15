@@ -20,27 +20,8 @@ messtechnische Untersuchung der Grundschaltungen eines Opams und ein
 Gewinn an Wissen und Erfahrung beim Umgang mit diesen elektronischen
 Bauelementen.
 
-Kurze Theorie und Motivation
-----------------------------
 
-
-Spezifikation
--------------
-
-
-Messungen
----------
-
-1. Untersuchung des Frequenzgangs
-
-   - Bestimmen Sie mittels Matlab/Python den theoretischen
-     Frequenzgang für den OP-Amp TL082CP 
-
-   - Untersuchen Sie mit Hilfe des Red Pitaya den Frequenzgang des
-     Einheitsverstärkers. 
-
-   - Vergleichen Sie messtechnische und theoretische Ergebnisse.
-
-2. OpAmp als Impedanzwandler
+UnityGain-Verstärker
+--------------------
 
 
