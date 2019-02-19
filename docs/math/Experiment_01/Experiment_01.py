@@ -10,7 +10,7 @@ import numpy as np
 import scipy.signal as sig
 import matplotlib.pyplot as plt
 
-# Parameter für die Übertragungsfunktion 
+# Parameter für die Übertragungsfunktion
 A0 = 1e5
 f_un = 3e6
 f_3_db = f_un/A0
@@ -19,7 +19,7 @@ wd2 = 2*np.pi*4e6
 GB = A0*wd1
 w0 = np.sqrt(GB*wd2)
 
-# Formel für den Güte Faktor 
+# Formel für den Güte Faktor
 Q = 1/((np.sqrt(wd2/GB)) + ((1/A0)*(np.sqrt(GB/wd2))))
 
 num = 1

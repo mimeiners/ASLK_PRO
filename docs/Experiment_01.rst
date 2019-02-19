@@ -27,7 +27,7 @@ UnityGain - Schaltung
 Eine UnityGain-Schaltung, auch Impedanzwandler oder Spannungsfolger genannt, ist ein von Ausgang auf den
 invertierenden Eingang kurzgeschlosserner Operationsverstärker :numref:`01_fig_02`. 
 
-.. figure:: img/Experement_01_fig_02.png
+.. figure:: img/Experiment_01/Experiment_01_fig_02.png
 	 :name: 01_fig_02
 	 :align: center
 
