@@ -36,6 +36,7 @@ invertierenden Eingang kurzgeschlosserner Operationsverstärker :numref:`01_fig_
 Aufgrund des internen Aufbaus eines Operationsverstärkers, unterliegt dieser technisch-physiklaischen Grenzen.
 Diese sollen hier theoretisch und messtechnisch untersucht werden. Als Grundlage eignet sich die UnityGain-Schaltung.
 Diese Schaltung ist eine *Rückkopplung* des Ausgangs auf den invertierenden Eingang des Opams.
+
 Aus der Theorie wissen wir, dass der Ausgang eines unberschaltetenen Opams gleich dem
 Verstärkungsfaktor :math:`A_0` multipliziert mit der Differenz der beiden Eingänge ist.
 Damit ergibt sich für den unbeschalteten Operationsverstärker:
@@ -45,5 +46,11 @@ Damit ergibt sich für den unbeschalteten Operationsverstärker:
 
    U_{OUT} = A_0 \cdot (U_+ - U_-)
 
-Durch die Beschaltung des UnityGain
 
+Aufgrund der erwähnten *Rückkopplung* kann UnityGain als eine Regelstrecke betrachtet werden. Systemtheoretisch
+ist nun das Verhältnis von Ausgang zu Eingang eine Übertragungsfunktion :eq:`01_eq_02`
+
+.. math::
+   :label: 01_eq_02
+
+   \frac{U_{OUT}}{U_{IN}} = \frac{A_0}{1+A_0}
