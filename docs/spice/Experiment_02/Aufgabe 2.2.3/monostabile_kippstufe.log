@@ -1,0 +1,21 @@
+Circuit: * C:\users\selimcimen\Meine Dokumente\LTspice\Analoge_Schaltungen\Experiment_02\Aufgabe 2.2.3\monostabile_kippstufe.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Feb 20 18:56:30 2019
+Total elapsed time: 0.142 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2720
+traniter = 2700
+tranpoints = 1249
+accept = 1213
+rejected = 36
+matrix size = 30
+fillins = 47
+solver = Normal
+Matrix Compiler1:     208 opcodes  0.8/[0.4]/0.5
+Matrix Compiler2: 3.28 KB object code size  0.3/0.4/[0.3]
+
