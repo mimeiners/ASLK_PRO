@@ -1,0 +1,11 @@
+* C:\users\selimcimen\Meine Dokumente\LTspice\Analoge_Schaltungen\Experiment_02\Aufgabe 2.2.2\triangle_input.asc
+VG Vin 0 PULSE(-10 10 1p 0.5m 0.5m 1p 0 6)
+VDD vdd 0 10
+VSS 0 vss 10
+XU1 N001 0 vdd vss Vout tl082
+R1 Vout N001 10000R
+R2 N001 Vin 500R
+.inc tl082.cir
+.tran 6ms
+.backanno
+.end
