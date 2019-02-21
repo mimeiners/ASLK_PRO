@@ -38,7 +38,7 @@ Diese sollen hier theoretisch und messtechnisch untersucht werden. Als Grundlage
 Diese Schaltung ist eine *Rückkopplung* des Ausgangs auf den invertierenden Eingang des Opams.
 
 Aus der Theorie wissen wir, dass der Ausgang eines unberschaltetenen Opams gleich dem
-Verstärkungsfaktor :math:`A_0` multipliziert mit der Differenz der beiden Eingänge ist.
+Verstärkungsfaktor :math:`A_0` multipliziert mit der Differenz der beiden Eingänge :math:`U_+` und :math:`U_-` ist.
 Damit ergibt sich für den unbeschalteten Operationsverstärker:
 
 .. math::
@@ -48,9 +48,26 @@ Damit ergibt sich für den unbeschalteten Operationsverstärker:
 
 
 Aufgrund der erwähnten *Rückkopplung* kann UnityGain als eine Regelstrecke betrachtet werden. Systemtheoretisch
-ist nun das Verhältnis von Ausgang zu Eingang eine Übertragungsfunktion :eq:`01_eq_02`
+ist nun das Verhältnis von Ausgang zu Eingang eine Übertragungsfunktion :math:`H(s)`  :eq:`01_eq_02`
 
 .. math::
    :label: 01_eq_02
 
    \frac{U_{OUT}}{U_{IN}} = \frac{A_0}{1+A_0}
+
+Aufrund der direkten Rückkopplung (ohne andere Bauteile zwischen) kann angenommen werden, dass :math:`A_0` gegen Unendlich strebt.
+Durch diese Annahme folgt aus der :eq:`01_eq_02` das Übersetzungverhältnis für eine UnityGain-Schaltung:
+
+.. math::
+   :label: 01_eq_03
+
+   \frac{U_{OUT}}{U_{IN}} = 1
+
+Mit diese Erkenntnis kann man nun das Nutzen des UnityGain in Frage stellen. Tatsächlich ist es eine sehr
+nützliche Beschaltung eines Operationsverstärkers. Wie bereits erwähnt, kann diese Beschaltung auch als ein
+Spannungsfolger oder Impedanzwandler genannt werden. Die Namen werden aus der grundlegenden Funktion dieser Schaltung
+abgeleitet. Ein UnityGain liefert am Ausgang die vom Eingang vorgegebene Spannung. Diese ist Lastunabhängig. 
+Durch diese Eigenschaft kann der UnityGain als Spannungsstabilisator oder als Trenner zwischen zwei Teilsystemen eingeetzt werden.
+
+ 
+
