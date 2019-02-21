@@ -1,0 +1,17 @@
+* C:\users\selimcimen\Meine Dokumente\LTspice\Analoge_Schaltungen\Experiment_02\Aufgabe 2.2.3\monostabile_kippstufe.asc
+VDD vdd 0 10
+VSS 0 vss 10
+XU1 N002 Vc vdd vss N001 tl082
+R1 N002 N001 10000R
+R2 0 N002 2000R
+R3 Vc N001 220R
+C1 Vc 0 1µC
+D1 Vc 0 D
+C2 N002 tr 1mC
+V§Trigger tr 0 PWL(0ms 0 0.499ms 0 0.5ms -3 0.6ms -3 0.601ms 0 1.099ms 0 1.1ms 3 1.2ms 3 1.201ms 0 1.699ms 0 1.7ms -3 1.8ms -3 1.801ms 0 2.299ms 0 2.3ms 3 2.4ms 3 2.401ms 0)
+.model D D
+.lib C:\users\selimcimen\Meine Dokumente\LTspiceXVII\lib\cmp\standard.dio
+.inc tl082.cir
+.tran 3ms
+.backanno
+.end
