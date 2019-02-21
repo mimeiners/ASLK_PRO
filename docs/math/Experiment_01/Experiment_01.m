@@ -7,7 +7,7 @@ clc
 % Ja, das stimmt, aber hier geht es um closed-loop.
 A0 = 1e4;
 f_un = 3e6;
-f_3_db = f_un/A0;
+f_3_db = 1.2e6;
 wd1 = 2*pi*f_3_db;
 wd2 = 2*pi*4e6;
 GB = A0*wd1;

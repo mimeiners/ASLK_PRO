@@ -13,7 +13,8 @@ import matplotlib.pyplot as plt
 # Parameter für die Übertragungsfunktion
 A0 = 1e5
 f_un = 3e6
-f_3_db = f_un/A0
+# f_3_db = f_un/A0 
+f_3_db = 1.2e6
 wd1 = 2*np.pi*f_3_db
 wd2 = 2*np.pi*4e6
 GB = A0*wd1
@@ -27,7 +28,7 @@ den = [1/wd1**2, 1/(w0*Q), 1]
 sys = sig.lti(num, den)
 
 # Plot der Ergebnisse
-f = np.logspace(-1, 5)
+f = np.logspace(-1, 9)
 w, mag, phase = sys.bode(2 * np.pi * f)
 
 # Unwrap the phase to make the jumps consistent and shift to 0 at w=0
