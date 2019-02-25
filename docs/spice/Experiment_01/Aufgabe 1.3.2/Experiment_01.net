@@ -1,0 +1,16 @@
+* C:\users\selimcimen\Meine Dokumente\LTspice\Analoge_Schaltungen\Experiment_01\Aufgabe 1.3.2\Experiment_01.asc
+R1 N001 0 1k
+R2 vf2 N001 2.2k
+R3 N002 vg 1k
+R4 vf3 N002 2.2k
+VG vg 0 PULSE(0 1 1u 10n 10n 1u 2u 4) AC 1
+VDD vdd 0 10
+VSS 0 vss 10
+XU1 vg vf1 vdd vss vf1 tl082
+XU2 vg N001 vdd vss vf2 tl082
+XU3 0 N002 vdd vss vf3 tl082
+.inc tl082.cir
+;tran 10u
+.ac dec 10u 1000 10000k
+.backanno
+.end

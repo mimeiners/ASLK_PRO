@@ -1,0 +1,21 @@
+Circuit: * C:\users\selimcimen\Meine Dokumente\LTspice\Analoge_Schaltungen\Experiment_01\Inv.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Feb 19 15:46:20 2019
+Total elapsed time: 0.108 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2112
+traniter = 2094
+tranpoints = 1048
+accept = 1047
+rejected = 1
+matrix size = 29
+fillins = 32
+solver = Normal
+Matrix Compiler1: 2.75 KB object code size  1.0/0.4/[0.3]
+Matrix Compiler2: 2.91 KB object code size  0.4/0.4/[0.3]
+
