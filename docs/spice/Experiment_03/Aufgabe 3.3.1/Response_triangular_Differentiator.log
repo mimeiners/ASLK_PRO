@@ -1,0 +1,21 @@
+Circuit: * C:\users\selimcimen\Meine Dokumente\LTspice\Analoge_Schaltungen\Experiment_03\Aufgabe 3.3.1\Response_triangular_Differentiator.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Feb 26 14:25:19 2019
+Total elapsed time: 0.176 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 19820
+traniter = 19803
+tranpoints = 9899
+accept = 7199
+rejected = 2700
+matrix size = 29
+fillins = 42
+solver = Normal
+Matrix Compiler1: 3.63 KB object code size  0.8/0.4/[0.3]
+Matrix Compiler2: 3.05 KB object code size  0.3/0.5/[0.3]
+
