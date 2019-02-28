@@ -14,10 +14,11 @@ import redpitaya_scpi as scpi
 
 
 # Paramter für die Messung
-Start_V = 1                                           #Start Spannung der Messung 
-Stop_V = -1                                           #Stop Spannung der Messung
+Start_V = 1                                          #Start Spannung der Messung 
+Stop_V = -1                                            #Stop Spannung der Messung
 Messpunkte = 21                                       #Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
+Tastkopf = 10                                         #Tastkopf Verhältnis der Messspitzen
 
 Wave_form = 'square'                                  #Wellenform des Eingangssignals
 Amplituden = np.linspace(Start_V, Stop_V, Messpunkte) #Messpunkte der Amplituden
@@ -52,7 +53,7 @@ for i in Ampl:
             rp_s.tx_txt('SOUR1:VOLT:OFFS '+ str(Start_V))   #Setzen vom Offset darf nicht kleiner/größer +-1V sein
     
         if (i>=Stop_V):
-            rp_s.tx_txt('SOUR1:VOLT '+ str(i-Start_V))           
+            rp_s.tx_txt('SOUR1:VOLT '+ str(i+Start_V))           
             rp_s.tx_txt('SOUR1:VOLT:OFFS '+ str(0))         
 
     if (Start_V>Stop_V):
@@ -66,13 +67,14 @@ for i in Ampl:
             
     rp_s.tx_txt('SOUR1:FREQ:FIX ' + str(0))             #Frequenz setzen
     rp_s.tx_txt('OUTPUT1:STATE ON')                     #Ausgang am Red Pitaya einschalten
+    time.sleep(1)
     
     #Trigger variablen sezten
     rp_s.tx_txt('ACQ:DEC ' + Downsampling)              #Downsampling setzen
     rp_s.tx_txt('ACQ:TRIG:LEV 0')                       #Triggerlevel setzen
     rp_s.tx_txt('ACQ:TRIG:DLY ' + Triggerverzoegerung)  #Verzögerung für Trigger setzen
     rp_s.tx_txt('ACQ:START')                            #Start der Messung
-    time.sleep(1)
+   
     
     rp_s.tx_txt('ACQ:TRIG NOW')                         #Signal Genarator triggern
     time.sleep(1)
@@ -91,10 +93,12 @@ for i in Ampl:
     Buff2 = np.array(list(map(float, Buffstring2)))                         #von String in float Vektor umwandeln
     time.sleep(1)                                                           #Pause  
 
-    
-    
-    Input[Index] = np.max(Buff1)                         #Messdaten vom Eingangssignal
-    Output[Index] = np.max(Buff2)                        #Messdaten vom Ausgangssignal
+
+    Input[Index] = np.sum(Buff1)*(Tastkopf/16384)                #Messdaten vom Eingangssignal
+    Output[Index] = np.sum(Buff2)*(Tastkopf/16384)               #Messdaten vom Ausgangssignal
+
+
+        
     Index+=1                                             #Processvariable um eins erhöhen
     
     v = int(Index/Messpunkte*100)                        #Ermittlung des Fortschritts der Messung
