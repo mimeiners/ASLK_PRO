@@ -10,7 +10,7 @@ data_1 = textscan(a_kipp, '%n %n %n');
 fclose(a_kipp);
 
 %% Anlegen der Matrizen
-time = cell2mat(data_1(1));
+time = flipud(cell2mat(data_1(1)));
 Vo = cell2mat(data_1(2));
 Vc = cell2mat(data_1(3));
 
