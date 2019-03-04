@@ -5,7 +5,7 @@ clc
 %% Parameter für die a- und monostabile Kippstufe
 f = 1500;
 T = 1/f;
-R1 = 2000;
+R1 = 2200;
 R2 = 10000;
 beta = R1/(R1+R2);
 beta_ka = log((1+beta)/(1-beta));

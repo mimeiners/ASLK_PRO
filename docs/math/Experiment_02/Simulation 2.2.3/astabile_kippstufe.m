@@ -3,7 +3,6 @@ close all
 clc
 
 %% Einlesen der Rohdaten
-
 a_kipp = fopen('astabile_kippstufe.txt','r');
 heading_inv_R500 = textscan(a_kipp,'%s %s %s',1);
 fgetl(a_kipp);
@@ -16,13 +15,12 @@ Vo = cell2mat(data_1(2));
 Vc = cell2mat(data_1(3));
 
 %% Plot der Ergebnisse
-
 figure(1)
 hold all
 plot(time, Vo)
 plot(time,Vc)
-title('Astabile Kippstufe')
+title('Astabile Kippstufe Simulation f = 1,5kHz')
 xlabel('t in ms')
 ylabel('Amplitude in V')
-legend('Spannung V_c','Spannung V_o')
+legend('Spannung V_c','Spannung V_0')
 grid;
