@@ -4,40 +4,40 @@ clc
 
 %%Einlesen der Rohdaten
 % Widerstände R1 = 500ohm ; R2 = 10kohm
-R_500_1 = fopen('regfeedback_R_500_1.txt','r');
-heading = textscan(R_500_1,'%s %s',1);
-fgetl(R_500_1);
-data_1 = textscan(R_500_1,'%n %n %n');
-fclose(R_500_1);
-R_500_2 = fopen('regfeedback_R_500_2.txt','r');
-heading = textscan(R_500_2,'%s %s',1);
-fgetl(R_500_2);
-data_2 = textscan(R_500_2,'%n %n');
-fclose(R_500_2);
+R_470_1 = fopen('regfeedback_R_470_1.txt','r');
+heading_R_470_1 = textscan(R_470_1,'%s %s',1);
+fgetl(R_470_1);
+data_1 = textscan(R_470_1,'%n %n %n');
+fclose(R_470_1);
+R_470_2 = fopen('regfeedback_R_470_2.txt','r');
+heading_R_470_2 = textscan(R_470_2,'%s %s',1);
+fgetl(R_470_2);
+data_2 = textscan(R_470_2,'%n %n');
+fclose(R_470_2);
 
 % Widerstände R1 = 1500ohm ; R2 = 10kohm
-R_1500_1 = fopen('regfeedback_R_1500_1.txt','r');
-heading = textscan(R_1500_1,'%s %s',1);
-fgetl(R_1500_1);
-data_3 = textscan(R_1500_1,'%n %n %n');
-fclose(R_1500_1);
-R_1500_2 = fopen('regfeedback_R_1500_2.txt','r');
-heading = textscan(R_1500_2,'%s %s',1);
-fgetl(R_1500_2);
-data_4 = textscan(R_1500_2,'%n %n');
-fclose(R_1500_2); 
+R_1000_1 = fopen('regfeedback_R_1000_1.txt','r');
+heading_R_1000_1 = textscan(R_1000_1,'%s %s',1);
+fgetl(R_1000_1);
+data_3 = textscan(R_1000_1,'%n %n %n');
+fclose(R_1000_1);
+R_1000_2 = fopen('regfeedback_R_1000_2.txt','r');
+heading_R_1000_2 = textscan(R_1000_2,'%s %s',1);
+fgetl(R_1000_2);
+data_4 = textscan(R_1000_2,'%n %n');
+fclose(R_1000_2); 
 
 % Widerstände R1 = 2500ohm ; R2 = 10kohm
-R_2500_1 = fopen('regfeedback_R_2500_1.txt','r');
-heading = textscan(R_2500_1,'%s %s',1);
-fgetl(R_2500_1);
-data_5 = textscan(R_2500_1,'%n %n %n');
-fclose(R_2500_1);
-R_2500_2 = fopen('regfeedback_R_2500_2.txt','r');
-heading = textscan(R_2500_2,'%s %s',1);
-fgetl(R_2500_2);
-data_6 = textscan(R_2500_2,'%n %n');
-fclose(R_2500_2); 
+R_2200_1 = fopen('regfeedback_R_2200_1.txt','r');
+heading_R_2200_1 = textscan(R_2200_1,'%s %s',1);
+fgetl(R_2200_1);
+data_5 = textscan(R_2200_1,'%n %n %n');
+fclose(R_2200_1);
+R_2200_2 = fopen('regfeedback_R_2200_2.txt','r');
+heading_R_2200_2 = textscan(R_2200_2,'%s %s',1);
+fgetl(R_2200_2);
+data_6 = textscan(R_2200_2,'%n %n');
+fclose(R_2200_2); 
 
 %% Anlegen der Vektoren
 in_1 = cell2mat(data_1(1));
@@ -64,7 +64,7 @@ plot(in_1, out_1)
 plot(in_2, out_2)
 legend('DCsweep 2,5V bis -2,5V','DCsweep -2,5V bis 2,5V')
 legend('Location','northwest') 
-title('Non-inverting Schmitt Trigger R1 = 500\Omega')
+title('Non-inverting Schmitt Trigger Simulation R1 = 470\Omega')
 ylabel('Ausgangsspannung')
 xlabel('Eingangsspannung')
 grid;
@@ -74,7 +74,7 @@ plot(in_3, out_3)
 plot(in_4, out_4)
 legend('DCsweep 2,5V bis -2,5V','DCsweep -2,5V bis 2,5V')
 legend('Location','northwest') 
-title('Non-inverting Schmitt Trigger R1 = 1500\Omega')
+title('Non-inverting Schmitt Trigger Simulation R1 = 1000\Omega')
 ylabel('Ausgangsspannung')
 xlabel('Eingangsspannung')
 grid;
@@ -83,8 +83,8 @@ hold all
 plot(in_5, out_5)
 plot(in_6, out_6)
 legend('DCsweep 2,5V bis -2,5V','DCsweep -2,5V bis 2,5V')
-legend('Location','southwest') 
-title('Non-inverting Schmitt Trigger R1 = 2500\Omega')
+legend('Location','northwest') 
+title('Non-inverting Schmitt Trigger Simulation R1 = 2200\Omega')
 ylabel('Ausgangsspannung')
 xlabel('Eingangsspannung')
 grid;
