@@ -67,7 +67,41 @@ Mit diese Erkenntnis kann man nun das Nutzen des UnityGain in Frage stellen. Tat
 nützliche Beschaltung eines Operationsverstärkers. Wie bereits erwähnt, kann diese Beschaltung auch als ein
 Spannungsfolger oder Impedanzwandler genannt werden. Die Namen werden aus der grundlegenden Funktion dieser Schaltung
 abgeleitet. Ein UnityGain liefert am Ausgang die vom Eingang vorgegebene Spannung. Diese ist Lastunabhängig. 
-Durch diese Eigenschaft kann der UnityGain als Spannungsstabilisator oder als Trenner zwischen zwei Teilsystemen eingeetzt werden.
+Durch diese Eigenschaft kann der UnityGain als Spannungsstabilisator oder als Entkoppler zweier Teilsystemen eingeetzt werden.
+Nach :eq:`01_eq_03` ist die Übertragungsfunktion des UnityGain gleich 1. Das heißt, dass das Ausgangssignal gleich dem Eingangssignal ist. Die Simulations- und Messergebnisse sind in der :numref:`01_fig_03` (oben) dargestellt. Daraus ist ersichtlich, dass sich
+die beiden Signale überlagern, was einer Übertragung von 1 entspricht. 
 
- 
+.. figure:: img/Experiment_01/Amplifier_output.png
+	    :name: 01_fig_03
+	    :align: center
 
+	    Simulationen und Messungen der Ein- und Ausgangsspannungen der 3 grundlegenden Beschaltungsarten
+	    eines Oparationsverstärkers
+	    \\UnityGain(oben), Non-Inverter (mitte), Inverter (unten)
+
+
+Nichtinvertierende- und invertierende Operationsverstärkerschaltungen
+---------------------------------------------------------------------
+   
+Zwei weitere grundlegende Schaltungen des Operationsverstärkers sind die sogennante
+nichtinvertierende- und invertierende Beschaltung.
+
+.. figure:: img/Experiment_01/Experiment_01_fig_03.png
+	 :name: 01_fig_04
+	 :align: center
+
+	 Nichtinvertierende (links) und invertierende (rechts) Verstärker
+
+Sowohl bei dem nichtinvertierenden sowie dem invertierenden Verstärker hängt der
+Verstärkungsfaktor :math:`A_0` von dem Verhältnis der beiden Widerstände. Somit ergibt sich für die beiden Beschaltungsarten
+
+.. math::
+   :label: 01_eq_04
+
+   A_0 = \frac{R_2}{R_1}
+
+Dabei ist :math:`R_1` der Widerstand der an dem invertierenden Eingang anliegt und :math:`R_2` der zwischen
+dem Ausgang und dem invertierenden Eingang liegt (:numref:`01_fig_04`).  
+Der Unterschied zwischen den beiden Schlatungsarten ist das Phasenverhältnis. Bei dem nichtinvertierenden
+Verstärker wird das Eingangssignal in Phase um das Widerstandsverhältnis verstärkt. Die Simulation und
+Messung sind in :numref:`01_fig_03` (mitte) graphisch dargestellt.  
