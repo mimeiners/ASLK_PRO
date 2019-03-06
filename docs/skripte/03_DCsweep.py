@@ -14,9 +14,9 @@ import redpitaya_scpi as scpi
 
 
 # Paramter für die Messung
-Start_V = 1                                          #Start Spannung der Messung 
-Stop_V = -1                                            #Stop Spannung der Messung
-Messpunkte = 21                                       #Anzahl der gewünschten Messpunkte
+Start_V = -0.5                                          #Start Spannung der Messung 
+Stop_V = 0.5                                            #Stop Spannung der Messung
+Messpunkte = 41                                       #Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
 Tastkopf = 10                                         #Tastkopf Verhältnis der Messspitzen
 
@@ -84,14 +84,14 @@ for i in Ampl:
     Buffstring1 = rp_s.rx_txt()                                             #Speichern der Messergebnisse
     Buffstring1 = Buffstring1.strip('{}\n\r').replace("  ", "").split(',')  #Zeichen austauschen 
     Buff1 = np.array(list(map(float, Buffstring1)))                         #von String in float Vektor umwandeln
-    time.sleep(1)                                                           #Pause
+    #time.sleep(1)                                                          #Pause
 
     # Datenerfassung fuer Input 2
     rp_s.tx_txt('ACQ:SOUR2:DATA?')                                          #Auslesen des Buffers auf Input 2
     Buffstring2 = rp_s.rx_txt()                                             #Speichern der Messergebnisse
     Buffstring2 = Buffstring2.strip('{}\n\r').replace("  ", "").split(',')  #Zeichen austauschen 
     Buff2 = np.array(list(map(float, Buffstring2)))                         #von String in float Vektor umwandeln
-    time.sleep(1)                                                           #Pause  
+    #time.sleep(1)                                                          #Pause  
 
 
     Input[Index] = np.sum(Buff1)*(Tastkopf/16384)                #Messdaten vom Eingangssignal
