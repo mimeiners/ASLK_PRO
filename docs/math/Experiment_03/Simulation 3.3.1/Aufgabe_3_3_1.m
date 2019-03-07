@@ -3,7 +3,7 @@ close all
 clc
 
 %% Einlesen der Rohdaten
-step_in = fopen('stepresponse_Integrator.txt','r');
+step_in = fopen('Response_step_Integrator.txt','r');
 heading_step_in = textscan(step_in,'%s %s %s',1);
 fgetl(step_in);
 data1 = textscan(step_in,'%n %n %n');
@@ -49,7 +49,7 @@ figure(1)
 hold all
 plot(time_step, in_step)
 plot(time_step, out_step)
-title('Sprungantwort Integrator')
+title('Sprungantwort Integrator Simulation')
 xlabel('t in ms')
 ylabel('Amplitude in V')
 legend('V_{in}', 'V_{out}')
@@ -59,7 +59,7 @@ figure(2)
 hold all
 plot(time_sq_in, in_sq)
 plot(time_sq_in, out_sq)
-title('Rechtecksignal Integrator')
+title('Rechtecksignal Integrator Simulation')
 xlabel('t in ms')
 ylabel('Amplitude in V')
 legend('V_{in}', 'V_{out}')
@@ -69,7 +69,7 @@ figure(3)
 hold all
 p = plot(time_sq_di, in_sq_di)
 plot(time_sq_di, out_sq_di);
-title('Rechtecksignal Differentiator')
+title('Rechtecksignal Differentiator Simulation')
 xlabel('t in ms')
 ylabel('Amplitude in V')
 legend('V_{in}', 'V_{out}')
@@ -80,7 +80,7 @@ figure(4)
 hold all
 p = plot(time_tri_di, in_tri)
 plot(time_tri_di, out_tri)
-title('Dreiecksignal Differentiator')
+title('Dreiecksignal Differentiator Simulation')
 xlabel('t in ms')
 ylabel('Amplitude in V')
 legend('V_{in}', 'V_{out}')
