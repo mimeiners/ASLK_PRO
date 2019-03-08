@@ -151,4 +151,9 @@ wurde an dieser Stelle eine Programm zur Bodeplottdarstellung entwickelt. Gunds√
    :linenos:
    :name: Freqmessung
 
-Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermitteld werden. 
+Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermitteld werden.
+Die Messergebnisse sind in der :numref:`01_fig_05` graphisch dargestellt. 
+
+.. figure:: img/Experiment_01/Bandbreitenmessung.png
+   :name: 01_fig_05
+   :align: center
