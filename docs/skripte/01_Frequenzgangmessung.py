@@ -190,15 +190,3 @@ plt.xlabel('Frequency f/Hz')
 plt.ylabel('Phase phi/deg')
 plt.axis([np.min(Frequenzen), np.max(Frequenzen), -200, 100])
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
