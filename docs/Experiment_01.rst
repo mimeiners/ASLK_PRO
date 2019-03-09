@@ -1,6 +1,10 @@
 Experiment 1: Gegenkopplungsverstärker und Instrumentenverstärker
 =================================================================
 
+.. _Matlab: https://de.mathworks.com/products/matlab.html 
+
+
+
 In diesem Experiment sollen drei Grundschaltungen eines
 Operationsverstärkers untersucht werden. Zu diesen gehören ein
 
@@ -157,3 +161,55 @@ Die Messergebnisse sind in der :numref:`01_fig_05` graphisch dargestellt.
 .. figure:: img/Experiment_01/Bandbreitenmessung.png
    :name: 01_fig_05
    :align: center
+
+Um eine fundierte Aussage über die Messgenauigkeit treffen zu können wurden die Frequenzgänge der entsprechenden Schaltungen
+simuliert. Diese sind in :numref:`01_fig_06` dargestellt.
+
+.. figure:: img/Experiment_01/Frequenzgang_Simulation.png
+   :name: 01_fig_06
+   :align: center
+
+Die Simulationsergebnisse zeigen prinzipiell das gleiche Tiefpassverhalten, wie die Messergebnisse, an.
+Die Bandbreiten weichen allerdings deutlich von einander ab. Dies hat mehrere Ursachen. Aus der
+theoretischen Sicht sind die Bauteile für die Simulationen nicht angepasst worden.
+Messtechnisch können die Ergebnisse durch die kapazitive Eigenschaten der Messspitzen [#]_ bei hohen
+Frequenzen deutlich verfälscht werden.
+
+Mit Hilfe von Matlab_ können die :math:`-3\,dB` - Grenzen der
+jeweiligen gemssenen Schaltungen ermittelt werden.
+
+Es ergeben sich für:
+
+- UnityGain = :math:`3,16 \cdot 10^6\,Hz`
+
+- Nichtinvertierender Verstärker = :math:`1,05 \cdot 10^6\,Hz`
+
+- Invertierender verstärker = :math:`1,05 \cdot 10^6\,Hz`
+
+Diese Information liefert eine wichtige Erkenntniss. Die Bandbreite der Operationsverstärker hängt scheinbar mit dem
+Verstärkungsfaktor :math:`A_0` zusammen. Je größer der Verstärkungsfaktor, desto schmaller ist die Bandbreite des Opams.
+Diese Erkenntniss ist wichtig für die Auslegung hochfrequenter Schaltung mit einer Verstärkung. Auf eine mathematische Herleitung
+der Bandbreite wird an dieser Stelle verzichtet.
+
+Maximale Verstärkung
+____________________
+
+
+
+
+
+
+
+
+
+
+
+.. [#] Datenblätter befinden sich im Labor
+
+
+
+
+
+
+  
+
