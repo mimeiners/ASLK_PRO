@@ -14,8 +14,8 @@ import redpitaya_scpi as scpi
 
 
 # Paramter für die Messung
-Start_V = -0.5                                          #Start Spannung der Messung 
-Stop_V = 0.5                                            #Stop Spannung der Messung
+Start_V = -0.5                                        #Start Spannung der Messung 
+Stop_V = 0.5                                          #Stop Spannung der Messung
 Messpunkte = 41                                       #Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
 Tastkopf = 10                                         #Tastkopf Verhältnis der Messspitzen
