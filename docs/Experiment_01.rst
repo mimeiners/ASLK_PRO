@@ -2,8 +2,8 @@ Experiment 1: Gegenkopplungsverstärker und Instrumentenverstärker
 =================================================================
 
 .. _Matlab: https://de.mathworks.com/products/matlab.html 
-
-
+.. _RedPitaya: https://www.redpitaya.com/
+.. _slew rate: https://en.wikipedia.org/wiki/Slew_rate
 
 In diesem Experiment sollen drei Grundschaltungen eines
 Operationsverstärkers untersucht werden. Zu diesen gehören ein
@@ -150,7 +150,7 @@ Zunächst soll die Bandbreite und ihre Abhängigkeit von der Verstärkung unters
 und der sich darauf befindenden App "Bode-Analyser" durchgeführt werden. Aufgrund von unzureicheder Datenexportmöglichkeiten,
 wurde an dieser Stelle eine Programm zur Bodeplottdarstellung entwickelt. Gundsätzlich wird das Programm zur Messautomatisierung des Redpitayas eingesetzt und ist ohne weiteres nur mit diesem Kompatibel.
 
-.. literalinclude:: skripte/01_Frequenzgangmessung.py
+.. literalinclude:: skripte/01_Amplitudengangmessung.py
    :language: python
    :linenos:
    :name: Freqmessung
@@ -162,6 +162,8 @@ Die Messergebnisse sind in der :numref:`01_fig_05` graphisch dargestellt.
    :name: 01_fig_05
    :align: center
 
+   Messergebnisse der Automatisierten Bandbreitenmessung
+   
 Um eine fundierte Aussage über die Messgenauigkeit treffen zu können wurden die Frequenzgänge der entsprechenden Schaltungen
 simuliert. Diese sind in :numref:`01_fig_06` dargestellt.
 
@@ -169,6 +171,8 @@ simuliert. Diese sind in :numref:`01_fig_06` dargestellt.
    :name: 01_fig_06
    :align: center
 
+   Mit LTSpice simulierte Ergebnisse für die Bandbreite
+   
 Die Simulationsergebnisse zeigen prinzipiell das gleiche Tiefpassverhalten, wie die Messergebnisse, an.
 Die Bandbreiten weichen allerdings deutlich von einander ab. Dies hat mehrere Ursachen. Aus der
 theoretischen Sicht sind die Bauteile für die Simulationen nicht angepasst worden.
@@ -191,21 +195,101 @@ Verstärkungsfaktor :math:`A_0` zusammen. Je größer der Verstärkungsfaktor, d
 Diese Erkenntniss ist wichtig für die Auslegung hochfrequenter Schaltung mit einer Verstärkung. Auf eine mathematische Herleitung
 der Bandbreite wird an dieser Stelle verzichtet.
 
+
 Maximale Verstärkung
 ____________________
 
+Nun soll der verstärkungsfakor :math:`A_0` auf seinen maximalen und minimalen Wert untersucht werden. Abgeleitet aus :eq:`01_eq_05`
+und :eq:`01_eq_06`, besteht die Ahnhängigkeit zwischen dem Verstärkungsfaktor :math:`A_0`, der Eigangsspannungdifferenz
+:math:`U_{IN}` und der Ausgangsspannung :math:`U_{OUT}`.
 
+.. math::
+   :label: 01_eq_08
 
+   U_{OUT} = A_0 \cdot U_{IN}
 
+Da theoretisch die Eigangsspannung und der Verstärkungsfaktor variable sind, wird hier die Ausgangsspannung des
+Opams auf ihre Grenzen überprüft. Dazu wird ein DC - Sweep durchgeführt. Zu diesem Zweck wurde ein weiteres Programm erstellt.
 
+.. literalinclude:: skripte/03_DCsweep.py
+   :language: python
+   :linenos:
+   :name: DCsweep
 
+Es sollen mit Hilfe des nichtinvertierenden Verstärkers ein Gleichspannungsdurchlauf durchgeführt werden. Für die
+Ausgangsspannung ergibt sich ein Spannungsverlauf nach :numref:`01_fig_07`.
 
+.. figure:: img/Experiment_01/DCsweep.png
+   :name: 01_fig_07
+   :align: center
 
+   Grenzmessung der Ausgangsspannung
+   
+Das Ergebniss zeigt, dass die Ausgangsspannung bei ca. :math:`9 \, Volt` ihren Maximum und bei ca. :math:`-9 \, Volt`
+ihren Minimum aufweist. Hier wird der Zusammenhang zwischen der Ausgangsspannung und der Versorgungsspannung des
+Operationsverstärkers deutlich. Die maximalwerte der Ausgangsspannung sind gleich der OPAMS - Versorgungsspannung [#]_.
+Die Flankensteilheit ist abhängig von dem verstärkungsfaktor. 
+
+Fazit und Beispiele
+-------------------
+
+Mit Hilfe der durchgeführten Messungen konnten die grundlegende Funtionen und die reelen Grenzen eines Operationsverstärkers
+aufgezeigt werden. Der Einsatz des RedPitaya_ Messlabors erwies sich für hohen Frequenzbereich eher unzuverlässig. Des Weiteren
+verdrehte der RedPitaya je nach Päriodenauflösung die Phase, sodass der Datenexport oft fehlerhaft war. Trotzdessen ist
+die möglichkeit der Messautomatisierung von großem Vorteil. Daher bietet sich der Eisatz von SCPI-fähigen Geräten bei
+diesen Messungen an.  
+
+Beispiele
+_________
+
+Als erstes wird ein sogenannter "Negativ-Rückgekoppelter-Verstärker" betrachtet. Prinzipiell ist das eine
+Kaskadierung (Hintereinanderschaltung) der drei Grundschaltungen :numref:`01_fig_08`. 
+
+.. figure:: img/Experiment_01/negative_feedback.png
+   :name: 01_fig_08
+   :align: center
+
+   Negativ-Rückgekoppelter-Verstärker
+   
+Hier wird statt einem Sinussignal ein Rechtecksignal eingespeist. Die Ausgänge der Schaltung sind in :numref:`01_fig_09`
+graphisch dargestellt.
+
+.. figure:: img/Experiment_01/Verstaerker_Rueckkopplung_neu.png
+   :name: 01_fig_09
+   :align: center
+
+   Messergebnisse der Ausgangsspannungen des Negativ-Rückgekoppelten-Verstärkers
+   
+Aus der Messung ist zu entnehmen, dass die bei einem Rechteckeingangssignal, die Ausgangssignale bei den Grenzübergängen eine
+Abrundung aufweisen. Dieses Phänomen bezeichnet man als `slew rate`_ und ist auf die kapazitive Eigeschaften des OPAMS
+zurück zu führen.  
+
+Als zweites Beispiel wird ein Instrumentenverstärker betrachtet. Diese kann aus zwei oder drei Operationsverstärkern
+:numref:`01_fig_10` aufgebaut werden und wird oft, aufgrund seiner Eigenschaften, in der Medizintechnik eingesetzt.   
+
+.. figure:: img/Experiment_01/Instrumentenverstaerker.png
+   :name: 01_fig_10
+   :align: center
+
+   Instrumentenverstärker mit drei Opams (links) und zwei Opams (rechts)
+
+Aus der Abbildung wird deutlich, dass die Verstärkung lediglich von dem Widerstand :math:`nR` abhängt. Dies erleichtert
+die Einstellung des Instumentenverstärkers.
+Als Beispiel wurde ein ein Instrumentenverstärker aus zwei Operationsverstärkern aufgebaut und der Ausgang gemessen. Die Messergebnisse sind in der :numref:`01_fig_11` graphisch dargestellt.
+
+.. figure:: img/Experiment_01/Instrumenten.png
+   :name: 01_fig_11
+   :align: center
+
+   Eingangs- und Ausgangssignale eines Instrumentenverstärkers aus 2 Opams
+
+Aufgrund der Darstellung kann festgestellt werden, dass hier die Differenz der Eingangsspannungen verstärkt wird. Dies bezieht
+sich nun auf zwei Eingangssignale gegeneinander und nicht ein Signal gegen die Masse. 
 
 
 
 .. [#] Datenblätter befinden sich im Labor
-
+.. [#] Die Angaben sind aus den jeweiligen Datenblättern zu entnehmen
 
 
 
