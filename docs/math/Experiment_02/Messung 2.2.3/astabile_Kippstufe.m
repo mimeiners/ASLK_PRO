@@ -11,8 +11,8 @@ fclose(a_kipp);
 
 %% Anlegen der Matrizen
 time = flipud(cell2mat(data_1(1)));
-Vo = cell2mat(data_1(2));
-Vc = cell2mat(data_1(3));
+Vc = cell2mat(data_1(2));
+Vo = cell2mat(data_1(3));
 
 fehler = abs(time)>5;
 fehler = fehler.*1e-3;
