@@ -66,7 +66,7 @@ Aus den Darstellung ist ersichlich, dass die Annahme der Abhängigkeit der Schwe
 Messungen Astabile- und Monostabile Kippstiffen
 -----------------------------------------------
 
-Astabile Kippstuffe :numref:`02_fig_05` arbeitet nach dem Prinzipp des Schmitt-Triggers. Diese wechselt periodisch
+Astabile Kippstuffe :numref:`02_fig_05` arbeitet nach dem Prinzipp des Schmitt-Triggers. Sie wechselt periodisch
 zwischen zwei Zuständen. Der zeitbestimmende Wert ist die RC-Konstante :math:`\tau`. Die Astabile Kippstuffe ist
 eine selbsttreibende Schaltung die die Zustände zwischen den Versorgungsspannungen des Opams wechselt.
 
@@ -89,4 +89,30 @@ Die Simulations- und Messergebnisse sind in :numref:`02_fig_06` und :numref:`02_
    :align: center
 
    Astabiler Multivibrator (Kippstuffe) Messung
+
+Eine weiterer Einsatz des Schmitt-Triggers ist die Monostabile Kippstufe(Multivibrator) :numref:`02_fig_08`. Aus dem Namen kann die
+Funktion bereits abgeleitet werden. 
+
+.. figure:: img/Experiment_02/monostab_multi.png
+   :name: 02_fig_08
+   :align: center
+
+Die Monostabile Kippstufe hat einen stabilen Zustand. Die Zustandänderung wird mit Hilfe eines Trigger-Signals
+am Eingang "erzwungen". Aufgrund der Beschaltung ändert sich der Zustand der Monostabilen Kippstufe nur bei negativer
+Flanke in negative Richtung. Die Dauer :math:`\tau` der Zustandsänderung ist definiert durch:
+
+.. math::
+   :label: 02_eq_04
+
+   \tau =  RC \cdot ln(\frac{1}{1 - \beta})
+
+Nach der Erreichen des negativen Peaks kehrt die Kippstufe in ihren sabilen Zustand zurück. Aufgrund der Kapazitäten in der Schaltung
+ist die Rückkehr zum stabilen Zustand mit einem Zeitaufwand verbunden. Das heißt, dass nach einer negativen
+Triggerflanke zum Zeitpunkt :math:`t` die nächste negative Flanke zum Zeitpunkt :math:`t + \tau '` eingeleitet werden darf.
+
+.. math::
+   :label: 02_eq_05
+
+   \tau' = RC \cdot ln(\frac{1 + \beta}{\beta})
+
 
