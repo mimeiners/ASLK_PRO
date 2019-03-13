@@ -12,17 +12,19 @@ import time
 import numpy as np
 import redpitaya_scpi as scpi
 import matplotlib.pyplot as plt
+import scipy as sp
+from scipy import signal
 
 
 # Paramter für die Messung
 Start_f = 1                                           #Start Frequenz der Messung 
-Stop_f = 10000000                                     #Stop Frequenz der Messung
-Messpunkte = 50                                       #Anzahl der gewünschten Messpunkte
+Stop_f = 100000                                       #Stop Frequenz der Messung
+Messpunkte = 35                                       #Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
 
 Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte) #Erzeugung Messpunkte im Frequenzbereich
 Wave_form = 'sine'                                    #Wellenform des Eingangssignals
-Ampl = 0.5                                            #Amplitude des Eingangssignals
+Ampl = 1                                              #Amplitude des Eingangssignals
 Downsampling = "1"                                    #Downsamplingrate (decimation factor)
 Triggerverzoegerung = "0"                             #Verzögerung des Triggers 
 Index = 0                                             #Processvariable
@@ -135,10 +137,10 @@ for k in range(8):
     rp_s.tx_txt('DIG:PIN LED' + str(k) + ',' + str(0))      #LED's ausschalten
     time.sleep(0.1)
 
-
+Data1 = sp.signal.medfilt(Data1, 3)
 #Plot der Messung
 plt.figure(1)
-plt.semilogx(Frequenzen, Data1)
+plt.semilogx(Frequenzen[1:], Data1[1:])
 plt.grid()
 plt.xlabel('Frequency f/Hz')
 plt.ylabel('Magnitude A/dB')

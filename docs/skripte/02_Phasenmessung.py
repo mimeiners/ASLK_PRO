@@ -18,8 +18,8 @@ from scipy import signal
 
 # Paramter für die Messung
 Start_f = 10                                          #Start Frequenz der Messung 
-Stop_f = 6100000                                     #Stop Frequenz der Messung
-Messpunkte = 25                                       #Anzahl der gewünschten Messpunkte
+Stop_f = 100000                                       #Stop Frequenz der Messung
+Messpunkte = 26                                       #Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
 
 Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte) #Erzeugung Messpunkte im Frequenzbereich
@@ -58,6 +58,8 @@ for i in Frequenzen:
         Downsampling = "64"
     if (i<=200):
         Downsampling = "1024"
+    if (i<=10):
+        Downsampling = "8192"
     if(i>250000):
         Downsampling = "1"
 
@@ -72,7 +74,7 @@ for i in Frequenzen:
     rp_s.tx_txt('ACQ:START')                            #Start der Messung
     time.sleep(0.2)
     rp_s.tx_txt('ACQ:TRIG NOW')                         #Signal Genarator triggern
-    time.sleep(0.2)
+    time.sleep(0.4)
     rp_s.tx_txt('OUTPUT1:STATE OFF')                    #Ausgang am Red Pitaya einschalten
     
     # Datenerfassung fuer Input 1
@@ -93,11 +95,16 @@ for i in Frequenzen:
         Buff2 = sp.signal.medfilt(Buff2,251)
         Buff1 = Buff1[151:]
         Buff2 = Buff2[151:]
+    if(i<20):
+        Buff1 = sp.signal.medfilt(Buff1,251)
+        Buff2 = sp.signal.medfilt(Buff2,251)
+        Buff1 = Buff1[2551:]
+        Buff2 = Buff2[2551:]
     
     if (np.max(abs(Buff2))>0.1):
         #Phasengang ermittelen
-        if (Buff1[0] < 0):
-            channel_1 = np.array(Buff1)                             #Nulldurchgänge vom Eingang ermittelen
+        if (Buff1[0] < 0):                                          #Nulldurchgänge vom Eingang ermittelen
+            channel_1 = np.array(Buff1)                             
             channel_1[channel_1 > 0] = 0
             channel_1_1 = np.array(np.where(channel_1 == 0))
             channel_1_1_1 = channel_1[channel_1_1[0,0]:]
@@ -130,13 +137,13 @@ for i in Frequenzen:
             T = channel_1_2[0,0]*2                                  #Periode ermitteln vom Eingang
             time.sleep(0.2)    
         
-            if (Buff2[0]<0):        
-               channel_2 = np.array(Buff2)                         #Nulldurchgänge vom Ausgang ermittelen
+            if (Buff2[0]<0):                                        #Nulldurchgänge vom Ausgang ermittelen
+               channel_2 = np.array(Buff2)                         
                channel_2[channel_2 > 0] = 0
                channel_2_1 = np.array(np.where(channel_2 == 0)) 
                delta_phi = ((channel_1_1[0,0]-(channel_2_1[0,0]+(T/2)))/T)*360
             else:
-               channel_2 = np.array(Buff2)                         #Nulldurchgänge vom Ausgang ermittelen
+               channel_2 = np.array(Buff2)                          #Nulldurchgänge vom Ausgang ermittelen
                channel_2[channel_2 < 0] = 0
                channel_2_1 = np.array(np.where(channel_2 == 0))
                delta_phi = ((channel_1_1[0,0]-channel_2_1[0,0])/T)*360
@@ -170,7 +177,7 @@ for i in Frequenzen:
         rp_s.tx_txt('DIG:PIN LED' + str(8) + ',' + str(1))
 
 
-Werte = np.matrix([Frequenzen,Data1]).transpose()     #Messfrequenzen und Messergebnisse speichern
+Werte = np.matrix([Frequenzen,Data1]).transpose()           #Messfrequenzen und Messergebnisse speichern
 np.savetxt(Dateiname, Werte)                                #Als Datei speichern
 rp_s.tx_txt('OUTPUT1:STATE OFF')                            #Ausgang des Red Pitayas ausschalten
 print("Messung beendet")
