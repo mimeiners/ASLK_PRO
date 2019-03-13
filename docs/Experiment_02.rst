@@ -67,8 +67,7 @@ Messungen Astabile- und Monostabile Kippstiffen
 -----------------------------------------------
 
 Astabile Kippstuffe :numref:`02_fig_05` arbeitet nach dem Prinzipp des Schmitt-Triggers. Sie wechselt periodisch
-zwischen zwei Zuständen. Der zeitbestimmende Wert ist die RC-Konstante :math:`\tau`. Die Astabile Kippstuffe ist
-eine selbsttreibende Schaltung die die Zustände zwischen den Versorgungsspannungen des Opams wechselt.
+zwischen zwei Zuständen.
 
 .. figure:: img/Experiment_02/astab_multi.png
    :name: 02_fig_05
@@ -76,6 +75,14 @@ eine selbsttreibende Schaltung die die Zustände zwischen den Versorgungsspannun
 
    Astabiler Multivibrator (Kippstuffe)
 
+Der Periodendauer der Astabilen Kippstufe ist gegeben durch:
+
+.. math::
+   :label: 02_eq_03
+
+   T = 2 \cdot RC \cdot ln(\frac{1 + \beta}{1 - \beta})
+
+Die Astabile Kippstuffe ist eine selbsttreibende Schaltung die die Zustände zwischen den Versorgungsspannungen des Opams wechselt.
 Die Simulations- und Messergebnisse sind in :numref:`02_fig_06` und :numref:`02_fig_07` entsprechend graphisch dargestellt.
 
 .. figure:: img/Experiment_02/astabile_kippstufe_Simulation.png
@@ -97,6 +104,8 @@ Funktion bereits abgeleitet werden.
    :name: 02_fig_08
    :align: center
 
+   Monostabile Kippstufe (Multivibrator)
+   
 Die Monostabile Kippstufe hat einen stabilen Zustand. Die Zustandänderung wird mit Hilfe eines Trigger-Signals
 am Eingang "erzwungen". Aufgrund der Beschaltung ändert sich der Zustand der Monostabilen Kippstufe nur bei negativer
 Flanke in negative Richtung. Die Dauer :math:`\tau` der Zustandsänderung ist definiert durch:
@@ -116,3 +125,20 @@ Triggerflanke zum Zeitpunkt :math:`t` die nächste negative Flanke zum Zeitpunkt
    \tau' = RC \cdot ln(\frac{1 + \beta}{\beta})
 
 
+Die Simulation der Monostabilen Kippstufe ist in :numref:`02_fig_09` graphisch dargestellt. Das bereits beschrieben Signalverlauf
+ist deutlich zu erkennen. 
+
+.. figure:: img/Experiment_02/monostabile_kippstufe_Simulation.png
+   :name: 02_fig_09
+   :align: center
+
+   Simulation Monostabile Kippstufe mit einem Triggersignal
+   
+Leider konnte das Triggersignal aus der Simulation nicht für die Messung aufbereitet werden. Daher wurde eine Rechteckspannung
+eingesetzt um das Arbeitsprinzip zu verdeutlichen. Die Messung ist in :numref:`02_fig_10` dargestellt.
+
+.. figure:: img/Experiment_02/monostabile_kippstufe_Messung.png
+   :name: 02_fig_10
+   :align: center
+
+   Messung Monostabile Kippstufe mit einem Rechecksignal
