@@ -155,12 +155,8 @@ wurde an dieser Stelle eine Programm zur Bodeplottdarstellung entwickelt. Gunds�
    :linenos:
    :name: Freqmessung
 
-Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermittelt werden.
-Die Messergebnisse sind in der graphisch dargestellt. 
-
-   
-Um eine fundierte Aussage über die Messgenauigkeit treffen zu können wurden die Frequenzgänge der entsprechenden Schaltungen
-simuliert. Diese sind in :numref:`01_fig_06` dargestellt.
+Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermittelt werden. Um eine fundierte Aussage über die Messgenauigkeit treffen zu können wurden die Amplitudengänge der entsprechenden Schaltungen
+simuliert. Diese sind zusammen mit den Messungen in :numref:`01_fig_06` dargestellt.
 
 .. figure:: img/Experiment_01/amplitudengang_messung_simulation.png
    :name: 01_fig_06
