@@ -15,7 +15,7 @@ Untersucht werden die grundlegenden Funktionen dieser Schaltungen. Hauptmerkmal 
 zwischen dem Intergrator und dem Differenzierer und warum der letztere für den analogen Filterentwurf
 so gut wie keine Verwendung hat. 
 	   
-.. figure:: img/Experiment_03/defferenz.png
+.. figure:: img/Experiment_03/differentiator.png
    :name: 03_fig_02
    :align: center
 
