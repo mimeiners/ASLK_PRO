@@ -17,8 +17,8 @@ from scipy import signal
 
 
 # Paramter für die Messung
-Start_f = 1                                           #Start Frequenz der Messung 
-Stop_f = 100000                                       #Stop Frequenz der Messung
+Start_f = 10                                           #Start Frequenz der Messung 
+Stop_f = 7000000                                       #Stop Frequenz der Messung
 Messpunkte = 35                                       #Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
 
@@ -29,7 +29,7 @@ Downsampling = "1"                                    #Downsamplingrate (decimat
 Triggerverzoegerung = "0"                             #Verzögerung des Triggers 
 Index = 0                                             #Processvariable
 Data1 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse
-
+Data2 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse
 
 Name = input("Name der Input Textfile: ") + ".txt"                           #Eingabe des Dateiennamens
 Dateiname = "/Users/selimcimen/Documents/Python/Analoge_Schaltungen/" +Name  #Speicherpfad
@@ -59,7 +59,7 @@ for i in Frequenzen:
         Downsampling = "64"
     if (i<=100):
         Downsampling = "1024"
-    if (i<10):
+    if (i<=20):
         Downsampling = "8192"
     if(i>250000):
         Downsampling = "1"
@@ -103,7 +103,8 @@ for i in Frequenzen:
     V_out = np.amax(Buff2)-np.amin(Buff2)
     
     #Amplitudengang ermittelen
-    Data1[Index] = 20*np.log(V_out/V_in)                    #Verhältnis von Ausgang zu Eingang speichern
+    Data1[Index] = V_out/V_in                               #Verhältnis von Ausgang zu Eingang speichern
+    Data2[Index] = 20*np.log10(V_out/V_in)                  #Verhältnis in dB von Ausgang zu Eingang speichern
     Index+=1                                                #Processvariable um eins erhöhen
     v = int(Index/Messpunkte*100)                           #Ermittlung des Fortschritts der Messung
     print("Fortschritt der Messung: ",v,"%")                #Ausgabe des Fortschritts
@@ -128,7 +129,7 @@ for i in Frequenzen:
         rp_s.tx_txt('DIG:PIN LED' + str(8) + ',' + str(1))
 
 
-Werte = np.matrix([Frequenzen,Data1]).transpose()           #Messfrequenzen und Messergebnisse speichern
+Werte = np.matrix([Frequenzen,Data1,Data2]).transpose()           #Messfrequenzen und Messergebnisse speichern
 np.savetxt(Dateiname, Werte)                                #Als Datei speichern
 rp_s.tx_txt('OUTPUT1:STATE OFF')                            #Ausgang des Red Pitayas ausschalten
 print("Messung beendet")
@@ -137,10 +138,11 @@ for k in range(8):
     rp_s.tx_txt('DIG:PIN LED' + str(k) + ',' + str(0))      #LED's ausschalten
     time.sleep(0.1)
 
-Data1 = sp.signal.medfilt(Data1, 3)
+Data2 = sp.signal.medfilt(Data2, 3)
 #Plot der Messung
 plt.figure(1)
-plt.semilogx(Frequenzen[1:], Data1[1:])
+plt.semilogx(Frequenzen[1:], Data2[1:])
 plt.grid()
 plt.xlabel('Frequency f/Hz')
 plt.ylabel('Magnitude A/dB')
+plt.show()
