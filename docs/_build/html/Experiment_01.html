@@ -14,9 +14,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
@@ -482,17 +481,13 @@ wurde an dieser Stelle eine Programm zur Bodeplottdarstellung entwickelt. Gunds�
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude A/dB&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermitteld werden.
-Die Messergebnisse sind in der <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 4</span></a> graphisch dargestellt.</p>
-<div class="figure align-center" id="fig-05">
-<img alt="_images/Bandbreitenmessung.png" src="_images/Bandbreitenmessung.png" />
-<p class="caption"><span class="caption-number">Abb. 4 </span><span class="caption-text">Messergebnisse der Automatisierten Bandbreitenmessung</span></p>
-</div>
+<p>Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermittelt werden.
+Die Messergebnisse sind in der graphisch dargestellt.</p>
 <p>Um eine fundierte Aussage über die Messgenauigkeit treffen zu können wurden die Frequenzgänge der entsprechenden Schaltungen
-simuliert. Diese sind in <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 5</span></a> dargestellt.</p>
+simuliert. Diese sind in <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 4</span></a> dargestellt.</p>
 <div class="figure align-center" id="fig-06">
-<img alt="_images/Frequenzgang_Simulation.png" src="_images/Frequenzgang_Simulation.png" />
-<p class="caption"><span class="caption-number">Abb. 5 </span><span class="caption-text">Mit LTSpice simulierte Ergebnisse für die Bandbreite</span></p>
+<img alt="_images/amplitudengang_messung_simulation.png" src="_images/amplitudengang_messung_simulation.png" />
+<p class="caption"><span class="caption-number">Abb. 4 </span><span class="caption-text">Mit LTSpice simulierte Ergebnisse für die Bandbreite</span></p>
 </div>
 <p>Die Simulationsergebnisse zeigen prinzipiell das gleiche Tiefpassverhalten, wie die Messergebnisse, an.
 Die Bandbreiten weichen allerdings deutlich von einander ab. Dies hat mehrere Ursachen. Aus der
@@ -745,10 +740,10 @@ Opams auf ihre Grenzen überprüft. Dazu wird ein DC - Sweep durchgeführt. Zu d
 </pre></div>
 </td></tr></table></div>
 <p>Es sollen mit Hilfe des nichtinvertierenden Verstärkers ein Gleichspannungsdurchlauf durchgeführt werden. Für die
-Ausgangsspannung ergibt sich ein Spannungsverlauf nach <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 6</span></a>.</p>
+Ausgangsspannung ergibt sich ein Spannungsverlauf nach <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 5</span></a>.</p>
 <div class="figure align-center" id="fig-07">
 <img alt="_images/DCsweep.png" src="_images/DCsweep.png" />
-<p class="caption"><span class="caption-number">Abb. 6 </span><span class="caption-text">Grenzmessung der Ausgangsspannung</span></p>
+<p class="caption"><span class="caption-number">Abb. 5 </span><span class="caption-text">Grenzmessung der Ausgangsspannung</span></p>
 </div>
 <p>Das Ergebniss zeigt, dass die Ausgangsspannung bei ca. <span class="math notranslate nohighlight">\(9 \, Volt\)</span> ihren Maximum und bei ca. <span class="math notranslate nohighlight">\(-9 \, Volt\)</span>
 ihren Minimum aufweist. Hier wird der Zusammenhang zwischen der Ausgangsspannung und der Versorgungsspannung des
@@ -766,32 +761,32 @@ diesen Messungen an.</p>
 <div class="section" id="beispiele">
 <h3>Beispiele<a class="headerlink" href="#beispiele" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Als erstes wird ein sogenannter „Negativ-Rückgekoppelter-Verstärker“ betrachtet. Prinzipiell ist das eine
-Kaskadierung (Hintereinanderschaltung) der drei Grundschaltungen <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 7</span></a>.</p>
+Kaskadierung (Hintereinanderschaltung) der drei Grundschaltungen <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 6</span></a>.</p>
 <div class="figure align-center" id="fig-08">
 <img alt="_images/negative_feedback.png" src="_images/negative_feedback.png" />
-<p class="caption"><span class="caption-number">Abb. 7 </span><span class="caption-text">Negativ-Rückgekoppelter-Verstärker</span></p>
+<p class="caption"><span class="caption-number">Abb. 6 </span><span class="caption-text">Negativ-Rückgekoppelter-Verstärker</span></p>
 </div>
-<p>Hier wird statt einem Sinussignal ein Rechtecksignal eingespeist. Die Ausgänge der Schaltung sind in <a class="reference internal" href="#fig-09"><span class="std std-numref">Abb. 8</span></a>
+<p>Hier wird statt einem Sinussignal ein Rechtecksignal eingespeist. Die Ausgänge der Schaltung sind in <a class="reference internal" href="#fig-09"><span class="std std-numref">Abb. 7</span></a>
 graphisch dargestellt.</p>
 <div class="figure align-center" id="fig-09">
 <img alt="_images/Verstaerker_Rueckkopplung_neu.png" src="_images/Verstaerker_Rueckkopplung_neu.png" />
-<p class="caption"><span class="caption-number">Abb. 8 </span><span class="caption-text">Messergebnisse der Ausgangsspannungen des Negativ-Rückgekoppelten-Verstärkers</span></p>
+<p class="caption"><span class="caption-number">Abb. 7 </span><span class="caption-text">Messergebnisse der Ausgangsspannungen des Negativ-Rückgekoppelten-Verstärkers</span></p>
 </div>
 <p>Aus der Messung ist zu entnehmen, dass die bei einem Rechteckeingangssignal, die Ausgangssignale bei den Grenzübergängen eine
 Abrundung aufweisen. Dieses Phänomen bezeichnet man als <a class="reference external" href="https://en.wikipedia.org/wiki/Slew_rate">slew rate</a> und ist auf die kapazitive Eigeschaften des OPAMS
 zurück zu führen.</p>
 <p>Als zweites Beispiel wird ein Instrumentenverstärker betrachtet. Diese kann aus zwei oder drei Operationsverstärkern
-<a class="reference internal" href="#fig-10"><span class="std std-numref">Abb. 9</span></a> aufgebaut werden und wird oft, aufgrund seiner Eigenschaften, in der Medizintechnik eingesetzt.</p>
+<a class="reference internal" href="#fig-10"><span class="std std-numref">Abb. 8</span></a> aufgebaut werden und wird oft, aufgrund seiner Eigenschaften, in der Medizintechnik eingesetzt.</p>
 <div class="figure align-center" id="fig-10">
 <img alt="_images/Instrumentenverstaerker.png" src="_images/Instrumentenverstaerker.png" />
-<p class="caption"><span class="caption-number">Abb. 9 </span><span class="caption-text">Instrumentenverstärker mit drei Opams (links) und zwei Opams (rechts)</span></p>
+<p class="caption"><span class="caption-number">Abb. 8 </span><span class="caption-text">Instrumentenverstärker mit drei Opams (links) und zwei Opams (rechts)</span></p>
 </div>
 <p>Aus der Abbildung wird deutlich, dass die Verstärkung lediglich von dem Widerstand <span class="math notranslate nohighlight">\(nR\)</span> abhängt. Dies erleichtert
 die Einstellung des Instumentenverstärkers.
-Als Beispiel wurde ein ein Instrumentenverstärker aus zwei Operationsverstärkern aufgebaut und der Ausgang gemessen. Die Messergebnisse sind in der <a class="reference internal" href="#fig-11"><span class="std std-numref">Abb. 10</span></a> graphisch dargestellt.</p>
+Als Beispiel wurde ein ein Instrumentenverstärker aus zwei Operationsverstärkern aufgebaut und der Ausgang gemessen. Die Messergebnisse sind in der <a class="reference internal" href="#fig-11"><span class="std std-numref">Abb. 9</span></a> graphisch dargestellt.</p>
 <div class="figure align-center" id="fig-11">
 <img alt="_images/Instrumenten.png" src="_images/Instrumenten.png" />
-<p class="caption"><span class="caption-number">Abb. 10 </span><span class="caption-text">Eingangs- und Ausgangssignale eines Instrumentenverstärkers aus 2 Opams</span></p>
+<p class="caption"><span class="caption-number">Abb. 9 </span><span class="caption-text">Eingangs- und Ausgangssignale eines Instrumentenverstärkers aus 2 Opams</span></p>
 </div>
 <p>Aufgrund der Darstellung kann festgestellt werden, dass hier die Differenz der Eingangsspannungen verstärkt wird. Dies bezieht
 sich nun auf zwei Eingangssignale gegeneinander und nicht ein Signal gegen die Masse.</p>
@@ -834,7 +829,7 @@ sich nun auf zwei Eingangssignale gegeneinander und nicht ein Signal gegen die M
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, M. Meiners.
-      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5 erstellt.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 erstellt.
     </div>
   </body>
 </html>
