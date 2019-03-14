@@ -47,30 +47,25 @@ wobei
 
 Das heißst, dass die Schwellspannungen mit Änderung des Wertes für :math:`\beta` eingestellt werden können.
 Zur Untersuchung dieser These wurde der nicht-invertierende Schmitt-Trigger simuliert und gemessen. Die Erbebnisse sind
-in :numref:`02_fig_03` und :numref:`02_fig_04` enstprechend graphisch dargestellt.
+in :numref:`02_fig_03` enstprechend graphisch dargestellt.
 
-.. figure:: img/Experiment_02/Non_inverting_Schmitt_Simulation.png
+.. figure:: img/Experiment_02/non_inverting_schmitt_simulation_messung.png
    :name: 02_fig_03
    :align: center
 
-   Simulation des nicht-invertierenden Schmitt-Triggers für Verschiedene :math:`\beta`
+   Messung und Simulation des nicht-invertierenden Schmitt-Triggers für Verschiedene :math:`\beta`
 
-.. figure:: img/Experiment_02/Non-inverting_Schmitt_Messung.png
-   :name: 02_fig_04
-   :align: center
-
-   Messung des nicht-invertierenden Schmitt-Triggers für Verschiedene :math:`\beta`
 
 Aus den Darstellung ist ersichlich, dass die Annahme der Abhängigkeit der Schwellspannung von dem :math:`\beta` richtig ist.
 
 Messungen Astabile- und Monostabile Kippstiffen
 -----------------------------------------------
 
-Astabile Kippstuffe :numref:`02_fig_05` arbeitet nach dem Prinzipp des Schmitt-Triggers. Sie wechselt periodisch
+Astabile Kippstuffe :numref:`02_fig_04` arbeitet nach dem Prinzipp des Schmitt-Triggers. Sie wechselt periodisch
 zwischen zwei Zuständen.
 
 .. figure:: img/Experiment_02/astab_multi.png
-   :name: 02_fig_05
+   :name: 02_fig_04
    :align: center
 
    Astabiler Multivibrator (Kippstuffe)
@@ -83,25 +78,25 @@ Der Periodendauer der Astabilen Kippstufe ist gegeben durch:
    T = 2 \cdot RC \cdot ln(\frac{1 + \beta}{1 - \beta})
 
 Die Astabile Kippstuffe ist eine selbsttreibende Schaltung die die Zustände zwischen den Versorgungsspannungen des Opams wechselt.
-Die Simulations- und Messergebnisse sind in :numref:`02_fig_06` und :numref:`02_fig_07` entsprechend graphisch dargestellt.
+Die Simulations- und Messergebnisse sind in :numref:`02_fig_05` und :numref:`02_fig_06` entsprechend graphisch dargestellt.
 
 .. figure:: img/Experiment_02/astabile_kippstufe_Simulation.png
-   :name: 02_fig_06
+   :name: 02_fig_05
    :align: center
 
    Astabiler Multivibrator (Kippstuffe) Sumulation
 
 .. figure:: img/Experiment_02/astabile_kippstufe_Messung.png
-   :name: 02_fig_07
+   :name: 02_fig_06
    :align: center
 
    Astabiler Multivibrator (Kippstuffe) Messung
 
-Eine weiterer Einsatz des Schmitt-Triggers ist die Monostabile Kippstufe(Multivibrator) :numref:`02_fig_08`. Aus dem Namen kann die
+Eine weiterer Einsatz des Schmitt-Triggers ist die Monostabile Kippstufe(Multivibrator) :numref:`02_fig_07`. Aus dem Namen kann die
 Funktion bereits abgeleitet werden. 
 
 .. figure:: img/Experiment_02/monostab_multi.png
-   :name: 02_fig_08
+   :name: 02_fig_07
    :align: center
 
    Monostabile Kippstufe (Multivibrator)
@@ -125,20 +120,20 @@ Triggerflanke zum Zeitpunkt :math:`t` die nächste negative Flanke zum Zeitpunkt
    \tau' = RC \cdot ln(\frac{1 + \beta}{\beta})
 
 
-Die Simulation der Monostabilen Kippstufe ist in :numref:`02_fig_09` graphisch dargestellt. Das bereits beschrieben Signalverlauf
+Die Simulation der Monostabilen Kippstufe ist in :numref:`02_fig_08` graphisch dargestellt. Das bereits beschrieben Signalverlauf
 ist deutlich zu erkennen. 
 
 .. figure:: img/Experiment_02/monostabile_kippstufe_Simulation.png
-   :name: 02_fig_09
+   :name: 02_fig_08
    :align: center
 
    Simulation Monostabile Kippstufe mit einem Triggersignal
    
 Leider konnte das Triggersignal aus der Simulation nicht für die Messung aufbereitet werden. Daher wurde eine Rechteckspannung
-eingesetzt um das Arbeitsprinzip zu verdeutlichen. Die Messung ist in :numref:`02_fig_10` dargestellt.
+eingesetzt um das Arbeitsprinzip zu verdeutlichen. Die Messung ist in :numref:`02_fig_9` dargestellt.
 
 .. figure:: img/Experiment_02/monostabile_kippstufe_Messung.png
-   :name: 02_fig_10
+   :name: 02_fig_9
    :align: center
 
    Messung Monostabile Kippstufe mit einem Rechecksignal
