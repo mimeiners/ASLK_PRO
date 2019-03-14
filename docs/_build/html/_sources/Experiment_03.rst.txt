@@ -5,11 +5,11 @@ In diesem Experiement sollen ein Intergrator :numref:`03_fig_01` und ein Differe
 Beide Schaltungen können als Filterblock eingesetzt werden. Filter sind Grundlegende Schaltungen in der Analogen Signalverarbeitung
 und verbessern das Signal-Rausch-Abstand-Verhältnis(Signal to noise ratio). 
 
-.. figure:: img/Experiment_03/intergrator.png
+.. figure:: img/Experiment_03/integrator.png
    :name: 03_fig_01
    :align: center
 
-   Intergrator
+   Integrator
 
 Untersucht werden die grundlegenden Funktionen dieser Schaltungen. Hauptmerkmal der Untersuchung ist der Unterschied
 zwischen dem Intergrator und dem Differenzierer und warum der letztere für den analogen Filterentwurf
