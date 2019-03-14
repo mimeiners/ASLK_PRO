@@ -78,7 +78,7 @@ Der Periodendauer der Astabilen Kippstufe ist gegeben durch:
    T = 2 \cdot RC \cdot ln(\frac{1 + \beta}{1 - \beta}) 
 
 Die Astabile Kippstuffe ist eine selbsttreibende Schaltung die die Zustände zwischen den Versorgungsspannungen des Opams wechselt.
-Die Simulations- und Messergebnisse sind in :numref:`02_fig_05`entsprechend graphisch dargestellt.
+Die Simulations- und Messergebnisse sind in :numref:`02_fig_05` entsprechend graphisch dargestellt.
 
 .. figure:: img/Experiment_02/astabile_kippstufe_mess_sim.png
    :name: 02_fig_05
