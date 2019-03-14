@@ -162,7 +162,7 @@ simuliert. Diese sind zusammen mit den Messungen in :numref:`01_fig_06` dargeste
    :name: 01_fig_06
    :align: center
 
-   Mit LTSpice simulierte Ergebnisse für die Bandbreite
+   Vergleich der Messungen mit den Simulationen
    
 Die Simulationsergebnisse zeigen prinzipiell das gleiche Tiefpassverhalten, wie die Messergebnisse, an.
 Die Bandbreiten weichen allerdings deutlich von einander ab. Dies hat mehrere Ursachen. Aus der
