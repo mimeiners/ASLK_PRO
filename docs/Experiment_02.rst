@@ -5,7 +5,7 @@ Experiment 2: Regenerative Rückgekoppelte Systeme und design Astabiler und mono
 Kurze Theorie und Motivation
 ----------------------------
 
-Als Grundlage regenerativer rückgekoppelter Systeme gilt ein sogenanntes Schmitt-Trigger system. Bei diesen Systemen fallen die
+Als Grundlage regenerativer rückgekoppelter Systeme gilt ein sogenanntes Schmitt-Trigger System. Bei diesen Systemen fallen die
 Ein- und Ausschaltschwellen nicht zusammen, sondern sind um eine Schalthysterese gegeneinander versetzt. Dadurch kann der
 Ausgang :math:`V_{OUT}` nur zwei Zustände annehmen. Durch diese Eigenschaften kann der Schmitt-Trigger zu einer Mixed-Mode Schaltung zugeordnet werden. Der Einsatzgebiet dieser Schaltung ist vielfältig (MOSFET-Treiber als Switch-Controller etc.). 
 
@@ -45,9 +45,8 @@ wobei
 
    \beta = \frac{R_1}{R_1 + R_2}
 
-Das heißst, dass die Schwellspannungen mit Änderung des Wertes für :math:`\beta` eingestellt werden können.
-Zur Untersuchung dieser These wurde der nicht-invertierende Schmitt-Trigger simuliert und gemessen. Die Erbebnisse sind
-in :numref:`02_fig_03` enstprechend graphisch dargestellt.
+Das heißst, dass die Schwellspannungen mit Änderung des Wertes für :math:`\beta` eingestellt werden können. Dieser ist widerum von
+den Widerstandswerten abhängig.  Zur Untersuchung dieser These wurde der nicht-invertierende Schmitt-Trigger simuliert und gemessen. Die Erbebnisse sind in :numref:`02_fig_03` enstprechend graphisch dargestellt.
 
 .. figure:: img/Experiment_02/non_inverting_schmitt_simulation_messung.png
    :name: 02_fig_03
@@ -97,7 +96,7 @@ Funktion bereits abgeleitet werden.
 
    Monostabile Kippstufe (Multivibrator)
    
-Die Monostabile Kippstufe hat einen stabilen Zustand. Die Zustandänderung wird mit Hilfe eines Trigger-Signals
+Die Monostabile Kippstufe hat nur einen stabilen Zustand. Die Zustandänderung wird mit Hilfe eines Trigger-Signals
 am Eingang "erzwungen". Aufgrund der Beschaltung ändert sich der Zustand der Monostabilen Kippstufe nur bei negativer
 Flanke in negative Richtung. Die Dauer :math:`\tau` der Zustandsänderung ist definiert durch:
 

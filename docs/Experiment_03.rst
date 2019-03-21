@@ -13,7 +13,7 @@ und verbessern das Signal-Rausch-Abstand-Verhältnis(Signal to noise ratio).
 
 Untersucht werden die grundlegenden Funktionen dieser Schaltungen. Hauptmerkmal der Untersuchung ist der Unterschied
 zwischen dem Intergrator und dem Differenzierer und warum der letztere für den analogen Filterentwurf
-so gut wie keine Verwendung hat. 
+so gut wie keine Verwendung findet. 
 	   
 .. figure:: img/Experiment_03/differentiator.png
    :name: 03_fig_02
@@ -21,14 +21,18 @@ so gut wie keine Verwendung hat.
 
    Differenzierer
 
-Der Frequenzgang :numref:`03_fig_03` der beiden Schaltungen zeigt eine entgegengesetzte Funktion.
+Zunächst wird der Frequenzgang der beiden Schaltungen untersucht. Zu diesem Zweck wird das Programm aus dem Experiment 1 eingesetzt.
+Die Simulationen und Messungen sind in :eq:`03_fig_03` dargestellt. Diese zeigen ein klares Filterverhalten der beiden Aufbaueten an.Der Intergrator zeigt ein tiefpassähnliches Verhalten, kann aber auch als eine Art Bandsperre interpretiert werden.
+Der Differenzierer hat ein hochpassähnliches Verhalten, kann aber auch als Bandpass interprätiert werden. Beide Schaltungen
+zeigen ein entgegengesetztes Verhalten.    
 
 .. figure:: img/Experiment_03/amplitudengang_messung_simulation.png
    :name: 03_fig_03
    :align: center
 
-Der Differenzierer zeigt einen Frequenzgang eines Bandpasses und der Integrator den einer Bandsperre. Augrund der
-Eingangsspannungsbegrenzung des RedPitayas entspricht die Apmlitudengangmessung nicht exankt der Simulation.
+   Simulation und Messung des Amplitudengangs von Intergrator und Differenzierer
+
+Aufgrund der Eingangsspannungsbegrenzung des RedPitayas entspricht die Apmlitudengangmessung nicht exankt der Simulation.
 
 
 Intergrator
@@ -36,7 +40,7 @@ Intergrator
 
 Die Funktion des Intergrators kann bereits aus dem Namen abgeleitet werden. Matematisch gesehen, integriert die Schaltung
 das Eingangssignal auf. Am Ausgang liegt das Ergebnis diese Intergration an. Da die Eingangsspannung am negierenden Eingangs des
-OPAMS anliegt ist das Aufintegrieren um :math:`\pi` verdreht. Das heißt, dass bei einer negativen Flanke aufintegriert und bei einer positiven Flanke "abintergriert". Der Verlauf ist in :numref:`03_fig_04` graphisch dargestellt.
+OPAMS anliegt, ist das Aufintegrieren um :math:`\pi` verdreht. Das heißt, dass bei einer negativen Flanke aufintegriert und bei einer positiven Flanke "abintergriert" wird. Der Verlauf ist in :numref:`03_fig_04` graphisch dargestellt.
 
 .. figure:: img/Experiment_03/squarewave_integrator.png
    :name: 03_fig_04
@@ -80,10 +84,11 @@ den Differenzierer angelegt. Das Ergebnis ist in :numref:`03_fig_07` graphisch d
    Ausfangsspannung eines Differenziators mit einer Rechteckeingangsspannung
 
 Wie auch bei dem Intergrierer ist die Phase durch die negierten Eingang um :math:`\pi` gedreht. Aufgrund der besseren
-numerischen Auflösung weicht das Ergebnis der Simulation bon der Messung ab. Aus der Messung wird ersichtlich, dass der
-Differenzierer prizipiell negiert der Eingangsspannung folgt, aber eine Einschwingzeit braucht. Das Einschwingen ist
-frequenzabhängig. Die Folgen dieses Verhaltens machen einen Einsatz des Differenzierers in einer Filterstruktur nahezu unmöglich.
-Als weiters Beispiel wird eine Dreieckspannung an den Eingang des Differenzierers angelegt. Wir auch bei Rechtecksignal muss der
+numerischen Auflösung weicht das Ergebnis der Simulation von der Messung ab. Aus der Messung wird ersichtlich, dass der
+Differenzierer prizipiell negiert der Eingangsspannung folgt, aber eine Einschwingzeit braucht. Die Dauer und die Höhe des
+Einschwungs ist frequenzabhängig. Die Folgen dieses Verhaltens machen einen Einsatz des Differenzierers in einer
+Filterstruktur nahezu unmöglich.
+Als weiters Beispiel wird eine Dreieckspannung an den Eingang des Differenzierers angelegt. Wie auch bei Rechtecksignal muss der
 Differenzierer auch bei einem Dreiecksignal einschwingen. Die Simulation und Messung ist in :numref:`03_fig_08` graphisch
 dargestellt.
 
