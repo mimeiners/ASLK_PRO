@@ -22,7 +22,7 @@ so gut wie keine Verwendung findet.
    Differenzierer
 
 Zunächst wird der Frequenzgang der beiden Schaltungen untersucht. Zu diesem Zweck wird das Programm aus dem Experiment 1 eingesetzt.
-Die Simulationen und Messungen sind in :eq:`03_fig_03` dargestellt. Diese zeigen ein klares Filterverhalten der beiden Aufbaueten an.Der Intergrator zeigt ein tiefpassähnliches Verhalten, kann aber auch als eine Art Bandsperre interpretiert werden.
+Die Simulationen und Messungen sind in :numref:`03_fig_03` dargestellt. Diese zeigen ein klares Filterverhalten der beiden Aufbaueten an.Der Intergrator zeigt ein tiefpassähnliches Verhalten, kann aber auch als eine Art Bandsperre interpretiert werden.
 Der Differenzierer hat ein hochpassähnliches Verhalten, kann aber auch als Bandpass interprätiert werden. Beide Schaltungen
 zeigen ein entgegengesetztes Verhalten.    
 

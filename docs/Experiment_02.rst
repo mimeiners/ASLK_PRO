@@ -1,4 +1,4 @@
-Experiment 2: Regenerative Rückgekoppelte Systeme und design Astabiler und monostabiler Kippstuffen
+Experiment 2: Regenerative Rückgekoppelte Systeme und Design Astabiler und monostabiler Kippstuffen
 ===================================================================================================
 
 
