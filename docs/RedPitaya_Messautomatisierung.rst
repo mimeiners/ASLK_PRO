@@ -1,9 +1,9 @@
 Red Pitaya Messautomatisierung
 ==============================
 
-.. _Dokumtation: https://redpitaya.readthedocs.io/en/latest/appsFeatures/remoteControl/remoteControl.html
+.. _Dokumentation: https://redpitaya.readthedocs.io/en/latest/appsFeatures/remoteControl/remoteControl.html
 
-Autor: Selim Cimen
+Author: Selim Cimen
 
 
 Einleitung
@@ -102,7 +102,7 @@ Da das Verhältnis an den Messspitzen nicht größer als 1:10 eingestellt
 werden kann, wird in manchen Fällen das Ende des Messbereichs erreicht.
 In der folgenden Abbildung ist der Amplitudengang eines Differenzierers
 zu sehen. Es wurde ein Frequenzsweep mit einem Sinus :math:`2\,V_{pp}`
-durchgeführt. In der :numref:`01_fig_01` ist zu erkennen, dass die Messung nicht
+durchgeführt. In der :numref:`redpi_fig_01` ist zu erkennen, dass die Messung nicht
 ganz mit der Simulation übereinstimmt. Ursache dafür ist, dass eine
 Verstärkung größer als 20dB nicht gemessen werden kann da das Ende des
 Messbereichs erreicht wird.
@@ -110,8 +110,8 @@ Messbereichs erreicht wird.
 Dieser Fehler könnte durch eine kleinere Amplitude im Eingangssignal
 verringert werden. Das ist jedoch keine optimale Lösung.
 
-.. figure:: /img/Red_Pi_Mess/amplitudengang_messung_simulation.png
-   :name: 01_fig_01
+.. figure:: /img/redpi/amplitudengang_messung_simulation.png
+   :name: redpi_fig_01
    :align: center
 
 Phasengang
@@ -129,7 +129,7 @@ Bestimmung der Periode
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Zur Bestimmung der Periode sind weitere Aufbereitungen an den Messdaten
-notwendig. Die erforderlichen Schritte sind in der :numref:`01_fig_02` graphisch dargestellt.
+notwendig. Die erforderlichen Schritte sind in der :numref:`redpi_fig_02` graphisch dargestellt.
 Im obersten Graphen ist das unbearbeitete Eingangssignal
 dargestellt. Im ersten Schritt ist festzustellen, ob die ersten Samples
 größer oder kleiner null sind. Im unteren Dargestellten Fall sind die
@@ -145,8 +145,8 @@ Periode. Zur Berechnung der Periode werden nun die Samples gezählt bis
 der Eingang größer null ist und das Ergebnis wird mit zwei
 Multipliziert. Dies enspricht der Periodendauer in Samples.
 
-.. figure:: /img/Red_Pi_Mess/T.png
-   :name: 01_fig_02
+.. figure:: /img/redpi/T.png
+   :name: redpi_fig_02
    :align: center
 
 Bestimmung der Phasenverschiebung
@@ -154,7 +154,7 @@ Bestimmung der Phasenverschiebung
 
 Da die Periodendauer im Schritt zuvor bestimmt worden ist, wird nun der
 Zeitpunkt des ersten Nulldurchgangs sowohl vom Eingang als auch vom
-Ausgang detektiert und miteinander verglichen. In der :numref:`01_fig_03`
+Ausgang detektiert und miteinander verglichen. In der :numref:`redpi_fig_03`
 tritt der erste Nulldurchgang vom Eingang bei Sample 191 und vom Ausgang
 bei Sample 382 auf. Die Periodendauer beträgt 764 Sampeles. Mit
 folgenden Formeln lassen sich die Phasenverschiebungen berechnen.
@@ -172,8 +172,8 @@ In unserem Beispiel erhalten wir für die Phasenverschiebung:
 
 :math:`\phi = ((191-382)/764)*360 = -90°`
 
-.. figure:: /img/Red_Pi_Mess/Eingang_Ausgang.png
-   :name: 01_fig_03
+.. figure:: /img/redpi/Eingang_Ausgang.png
+   :name: redpi_fig_03
    :align: center
 
 Probleme 
@@ -183,21 +183,21 @@ Rauschen am Ausgang
 ^^^^^^^^^^^^^^^^^^^
 
 Trotz eines reinen Sinus am Eingang wird das Ausgangssignal sehr
-verrauscht. Wie in :numref:`01_fig_04` zu sehen. Das Rauschen hat zur
+verrauscht. Wie in :numref:`redpi_fig_04` zu sehen. Das Rauschen hat zur
 Folge, dass die Nulldurchgänge nicht zuverlässig detektiert werden
 können.
 
-.. figure:: /img/Red_Pi_Mess/1-10_Verhaeltnis.png
-   :name: 01_fig_04
+.. figure:: /img/redpi/1-10_Verhaeltnis.png
+   :name: redpi_fig_04
    :align: center
 
-Ein Auszug(:numref:`01_fig_05`) aus dem Python Variablenraum zeigt wie im Ausgangssignal
+Ein Auszug(:numref:`redpi_fig_05`) aus dem Python Variablenraum zeigt wie im Ausgangssignal
 innerhalb weniger sample mehrere Nulldurchgänge stattfinden. Dies macht
 eine Detektion und Vergleich der Nullstellen nach dem oben beschrieben
 Schema unmöglich bzw. unzuverlässig.
 
-.. figure:: /img/Red_Pi_Mess/Bildschirmfoto 2019-03-28 um 17.26.13.png
-   :name: 01_fig_05
+.. figure:: /img/redpi/Bildschirmfoto.png
+   :name: redpi_fig_05
    :align: center
 
 Um den Effekt des Rauschens zu beseitigen können die Rohdaten mit Hilfe
@@ -219,8 +219,8 @@ In der folgenden Abbildung ist der Eingang und Ausgang nach Aufbereitung
 der Daten und einem Tastverhältnis von 1:1 zu sehen. Es ist eine
 deutliche Verbesserung zu erkennen.
 
-.. figure:: /img/Red_Pi_Mess/glatt.png
-   :name: 01_fig_06
+.. figure:: /img/redpi/glatt.png
+   :name: redpi_fig_06
    :align: center
 
 Fazit
