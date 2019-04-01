@@ -3,7 +3,7 @@ Red Pitaya Messautomatisierung
 
 .. _Dokumentation: https://redpitaya.readthedocs.io/en/latest/appsFeatures/remoteControl/remoteControl.html
 
-Author: Selim Cimen
+Author: Selim Cimen, Alexander Huber
 
 
 Einleitung
@@ -24,7 +24,7 @@ ist auf der RedPitaya-Webseite zu finden.
 
 Im Rahmen des "Projekts Analog System Lab Kit Pro Texas" wurden drei
 Skripte mittels Python für die Messautomatisierung erstellt und
-benutzt. Auf den folgenden Seiten wird näher auf die
+ benutzt. Auf den folgenden Seiten wird näher auf die
 Funktionsweise, Probleme bei der Entwicklung und auf evtl.
 Verbesserungen der Skripte eingehen.
 
@@ -39,8 +39,8 @@ Für RedPitaya dürfen die Spannungen die Grenenzen von :math:`1\,V` und :math:`
 nicht überschreiten. Hierbei ist eine Eingabe der Messpunkte notwendig. Dadurch wird
 die Schrittweite zwischen Start- und Endwert errechnet.
 
- .. Beispiel:
-    Es wird ein Startwert von -1V und ein Endwert von +1V mit 11 Messpunkten gewählt. In diesem Fall werden folgende
+ .. note::
+    Als Beispiel soll ein Startwert von -1V und ein Endwert von +1V mit 11 Messpunkten gewählt werden. In diesem Fall werden folgende
     Gleichspannungen generiert und durch den 'fast analog Output'
     ausgegeben.
 
@@ -61,7 +61,7 @@ verschiedene Gleichspannungen generieren.
 Jedoch lässt sich nicht ohne Weiters eine negative Spannung erzeugen.
 Hierfür ist das Einstellen eines Offsets notwendig. Angenommen eine
 Gleichspannung von :math:`-0.5\,V` soll erzeugt werden. In diesem Beispiel ist ein
-Offset von :math:`-1.0,V` und eine Amplitude von :math:`0.5\,V` zu wählen.
+Offset von :math:`-1\,V` und eine Amplitude von :math:`0.5\,V` zu wählen.
 
 Größere und kleinere Spannungen als +1V, -1V
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,7 +89,7 @@ Verhalten aufweist. Die Start- und Endfrequenzen sind durch den Benutzer
 zu wählen. Dabei ist, wie beim DCsweep, eine Eingabe der Messpunkte
 notwendig.
 
-.. note: Auch in dieser Messung sind die Messspitzen auf das Verhältnis 1:10
+.. note:: Auch in dieser Messung sind die Messspitzen auf das Verhältnis 1:10
    einzustellen.
 
 Probleme
@@ -122,7 +122,7 @@ Eingangs- und Ausgangssignal messen und aufzeichnen. Duch die Detektion
 der Nulldurchgänge vom Eingangs- und Ausgangssignal wird die
 Phasenverschiebung ermittelt.
 
-.. note: Für die Messung sind die Messspitzen auf das Verhältnis 1:1
+.. note:: Für die Messung sind die Messspitzen auf das Verhältnis 1:1
    einzustellen.
 
 Bestimmung der Periode
@@ -212,7 +212,7 @@ unbrauchbar. Dies stellt jedoch kein Problem dar, denn werden sowohl vom
 Eingang als auch vom Ausgang die erste Werte ausgeschnitten, hat dieser
 Fehler keinen weiteren Einfluss auf die Auswertung.
 
-.. note: Des Weiteren sollten die Messspitzen auf das Tastverhältnis von 1:1
+.. note:: Des Weiteren sollten die Messspitzen auf das Tastverhältnis von 1:1
    eingestellt werden um den oben genannten Effekt weiter zu verringern.
 
 In der folgenden Abbildung ist der Eingang und Ausgang nach Aufbereitung
