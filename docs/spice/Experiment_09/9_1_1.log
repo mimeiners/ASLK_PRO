@@ -1,0 +1,21 @@
+Circuit: * C:\Users\Jan Frost\Desktop\ANS\ASLK_PRO\docs\spice\Experiment_09\9_1_1.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Apr 17 11:24:57 2019
+Total elapsed time: 5.149 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 299714
+traniter = 299687
+tranpoints = 89293
+accept = 66446
+rejected = 22847
+matrix size = 31
+fillins = 44
+solver = Normal
+Matrix Compiler1: 3.32 KB object code size  2.2/1.4/[1.0]
+Matrix Compiler2: 3.24 KB object code size  0.9/1.6/[0.9]
+
