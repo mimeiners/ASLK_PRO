@@ -1,0 +1,181 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Experiment 3: Integrator und Differenzierer &#8212; ASLK_PRO  Dokumentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Experiment 4: Analoge Filter" href="Experiment_04.html" />
+    <link rel="prev" title="Experiment 2: Regenerative Rückgekoppelte Systeme und Design Astabiler und monostabiler Kippstuffen" href="Experiment_02.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="Experiment_04.html" title="Experiment 4: Analoge Filter"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_02.html" title="Experiment 2: Regenerative Rückgekoppelte Systeme und Design Astabiler und monostabiler Kippstuffen"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Experiment 3: Integrator und Differenzierer</a><ul>
+<li><a class="reference internal" href="#intergrator">Intergrator</a></li>
+<li><a class="reference internal" href="#differenzierer">Differenzierer</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="Experiment_02.html"
+                        title="vorheriges Kapitel">Experiment 2: Regenerative Rückgekoppelte Systeme und Design Astabiler und monostabiler Kippstuffen</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="Experiment_04.html"
+                        title="nächstes Kapitel">Experiment 4: Analoge Filter</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Experiment_03.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experiment-3-integrator-und-differenzierer">
+<h1>Experiment 3: Integrator und Differenzierer<a class="headerlink" href="#experiment-3-integrator-und-differenzierer" title="Link zu dieser Überschrift">¶</a></h1>
+<p>In diesem Experiement sollen ein Intergrator <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 17</span></a> und ein Differenzierer <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 18</span></a> untersucht werden.
+Beide Schaltungen können als Filterblock eingesetzt werden. Filter sind Grundlegende Schaltungen in der Analogen Signalverarbeitung
+und verbessern das Signal-Rausch-Abstand-Verhältnis(Signal to noise ratio).</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/integrator.png" src="_images/integrator.png" />
+<p class="caption"><span class="caption-number">Abb. 17 </span><span class="caption-text">Integrator</span></p>
+</div>
+<p>Untersucht werden die grundlegenden Funktionen dieser Schaltungen. Hauptmerkmal der Untersuchung ist der Unterschied
+zwischen dem Intergrator und dem Differenzierer und warum der letztere für den analogen Filterentwurf
+so gut wie keine Verwendung findet.</p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/differentiator.png" src="_images/differentiator.png" />
+<p class="caption"><span class="caption-number">Abb. 18 </span><span class="caption-text">Differenzierer</span></p>
+</div>
+<p>Zunächst wird der Frequenzgang der beiden Schaltungen untersucht. Zu diesem Zweck wird das Programm aus dem Experiment 1 eingesetzt.
+Die Simulationen und Messungen sind in <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 19</span></a> dargestellt. Diese zeigen ein klares Filterverhalten der beiden Aufbaueten an.Der Intergrator zeigt ein tiefpassähnliches Verhalten, kann aber auch als eine Art Bandsperre interpretiert werden.
+Der Differenzierer hat ein hochpassähnliches Verhalten, kann aber auch als Bandpass interprätiert werden. Beide Schaltungen
+zeigen ein entgegengesetztes Verhalten.</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/amplitudengang_messung_simulation1.png" src="_images/amplitudengang_messung_simulation1.png" />
+<p class="caption"><span class="caption-number">Abb. 19 </span><span class="caption-text">Simulation und Messung des Amplitudengangs von Intergrator und Differenzierer</span></p>
+</div>
+<p>Aufgrund der Eingangsspannungsbegrenzung des RedPitayas entspricht die Apmlitudengangmessung nicht exankt der Simulation.</p>
+<div class="section" id="intergrator">
+<h2>Intergrator<a class="headerlink" href="#intergrator" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Funktion des Intergrators kann bereits aus dem Namen abgeleitet werden. Matematisch gesehen, integriert die Schaltung
+das Eingangssignal auf. Am Ausgang liegt das Ergebnis diese Intergration an. Da die Eingangsspannung am negierenden Eingangs des
+OPAMS anliegt, ist das Aufintegrieren um <span class="math notranslate nohighlight">\(\pi\)</span> verdreht. Das heißt, dass bei einer negativen Flanke aufintegriert und bei einer positiven Flanke „abintergriert“ wird. Der Verlauf ist in <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 20</span></a> graphisch dargestellt.</p>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/squarewave_integrator.png" src="_images/squarewave_integrator.png" />
+<p class="caption"><span class="caption-number">Abb. 20 </span><span class="caption-text">Rechecksignal mit eine intergrierten Antwort</span></p>
+</div>
+<p>Prinzipiell kann der Intergrationsverlauf mit Hilfe einer Einheitssprungfunktions verdeutlicht werden. Der Verlauf ist
+in <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 21</span></a> graphisch dargestellt. Systemtheoretisch kann der Verlauf als negative Intergration
+der stetig steigenden Fläche beschrieben werden. Läuft der Einheitssprung ins Unendliche wird dementsprechend bis ins
+unendliche Integriert (idealisiert).</p>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/step_integrator.png" src="_images/step_integrator.png" />
+<p class="caption"><span class="caption-number">Abb. 21 </span><span class="caption-text">Sprungantwort des Intergrators</span></p>
+</div>
+</div>
+<div class="section" id="differenzierer">
+<h2>Differenzierer<a class="headerlink" href="#differenzierer" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wie bei dem Intergrator kann bei dem Differenzierer die Funktionsweise aus dem Namen abgeleitet werden. Die Eingangsspannung wird
+differenziert und liegt als Ausgangsspannung an. Zum Vergleich wird entsprechend der Intergratormessung ein Rechtecksignal an
+den Differenzierer angelegt. Das Ergebnis ist in <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 22</span></a> graphisch dargestellt.</p>
+<div class="figure align-center" id="fig-07">
+<img alt="_images/squarewave_differentiator.png" src="_images/squarewave_differentiator.png" />
+<p class="caption"><span class="caption-number">Abb. 22 </span><span class="caption-text">Ausfangsspannung eines Differenziators mit einer Rechteckeingangsspannung</span></p>
+</div>
+<p>Wie auch bei dem Intergrierer ist die Phase durch die negierten Eingang um <span class="math notranslate nohighlight">\(\pi\)</span> gedreht. Aufgrund der besseren
+numerischen Auflösung weicht das Ergebnis der Simulation von der Messung ab. Aus der Messung wird ersichtlich, dass der
+Differenzierer prizipiell negiert der Eingangsspannung folgt, aber eine Einschwingzeit braucht. Die Dauer und die Höhe des
+Einschwungs ist frequenzabhängig. Die Folgen dieses Verhaltens machen einen Einsatz des Differenzierers in einer
+Filterstruktur nahezu unmöglich.
+Als weiters Beispiel wird eine Dreieckspannung an den Eingang des Differenzierers angelegt. Wie auch bei Rechtecksignal muss der
+Differenzierer auch bei einem Dreiecksignal einschwingen. Die Simulation und Messung ist in <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 23</span></a> graphisch
+dargestellt.</p>
+<div class="figure align-center" id="fig-08">
+<img alt="_images/triangular_differentiator.png" src="_images/triangular_differentiator.png" />
+<p class="caption"><span class="caption-number">Abb. 23 </span><span class="caption-text">Differenzierer mit einem Dreieckeingangssignal</span></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="Experiment_04.html" title="Experiment 4: Analoge Filter"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_02.html" title="Experiment 2: Regenerative Rückgekoppelte Systeme und Design Astabiler und monostabiler Kippstuffen"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, M. Meiners.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 erstellt.
+    </div>
+  </body>
+</html>
