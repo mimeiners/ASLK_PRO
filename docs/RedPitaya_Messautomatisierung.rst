@@ -44,7 +44,7 @@ die Schrittweite zwischen Start- und Endwert errechnet.
     Gleichspannungen generiert und durch den 'fast analog Output'
     ausgegeben.
 
-    math:`V_{OUT}`: -1.0\,V, -0.8\,V, -0.6\,V, -0.4\,V, -0.2\,V, 0\,V, 0.2\,V, 0.4\,V, 0.6\,V, 0.8\,V, 1.0\,V`
+   :math:`V_{OUT}: -1.0\,V, -0.8\,V, -0.6\,V, -0.4\,V, -0.2\,V, 0\,V, 0.2\,V, 0.4\,V, 0.6\,V, 0.8\,V, 1.0\,V`
 
 Probleme
 ~~~~~~~~
