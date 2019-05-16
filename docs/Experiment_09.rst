@@ -13,7 +13,7 @@ Messungen DC-DC Wandler
 
 Für die nachfolgende Bearbeitung wird auf zwei unterschiedliche Schaltungen eingegangen. Begonnen wird hierbei mit einem DC-DC Wandler, welcher mithilfe eines aus einem Funktionsgenerator generierten Signals, eine Ausgangsspannung erzeugen soll, dargestellt in :numref:`01_fig_02`.
 
-.. figure:: img/Experiment_09/DC_DC_Converter.png
+.. figure:: img/Experiment_09/DC-DC_Converter.png
 	 :name: 01_fig_01
 	 :align: center
 
@@ -24,7 +24,7 @@ Die eingespeiste Dreiecksspannung aus dem Funktionsgegenrator :math:`V_{g}`, zus
 .. math::
    :label: 01_eq_01
 
-   \frac{\tau}{T} = \frac{1}{2}(1-:math:`V_{ref}`/:math:`V_{p}`
+   \frac{\tau}{T} = \frac{1}{2}(1-V_{ref}/V_{p}
 
 T gibt hierbei die Periode des aus dem Funktionsgegenrator ausgehenden Dreiecksignals an.Das Tastverhältnis ist hierbei proportional zur Referenzsspannung :math:`V_{ref}`.Die Größe der Ausgangsspannung ist hierbei abhängig von der Betriebsspannung :math:`V_{ss}` des Operationsverstärkers und der Referenzspannung :math:`V_{ref}`. Mithilfe eines LC-Tiefpasses ist es möglich, es stabiles Ausgangssignal :math:`V_{av}` zu erhalten.
 
