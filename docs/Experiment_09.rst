@@ -31,7 +31,7 @@ T gibt hierbei die Periode des aus dem Funktionsgegenrator ausgehenden Dreiecksi
 Simulation DC-DC Wandler
 -------------
 
-MIthilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau zu simulieren. Die Schaltung wird hierbei nach dem Schema aus :numref:`01_fig_01` entworfen.
+MIthilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau zu simulieren. Die Schaltung wird hierbei nach dem Schema aus :numref:`09_fig_01` entworfen.
 
 .. figure:: img/Experiment_09/Spannung_Messung.png
 	 :name:  09_fig_02
