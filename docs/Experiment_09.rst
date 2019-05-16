@@ -36,7 +36,7 @@ MIthilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau zu simul
 .. figure:: img/Experiment_09/Spannungs_Simu_1.png
 	 :name:  09_fig_02
 	 :align: center
-
+	 :scale: 0.5
 	 Simulation der Ein- und Ausgangsspannungen
 
 Die :numref:`09_fig_02` zeigt den Verlauf der Spannungen :math:`V_{ref}`, :math:`V_{g}`, :math:`V_{o}` und :math:`V_{av}`. Der steigende Verlauf der Ausgangsspannung :math:`V_{av}` lässt sich auf die verbaute Spule und den Kondensator zurückführen, welche durch die Lade- und Entladezyklen den Verlauf der Kurve herbeiführen.
