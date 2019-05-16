@@ -13,7 +13,7 @@ Messungen DC-DC Wandler
 
 Für die nachfolgende Bearbeitung wird auf zwei unterschiedliche Schaltungen eingegangen. Begonnen wird hierbei mit einem DC-DC Wandler, welcher mithilfe eines aus einem Funktionsgenerator generierten Signals, eine Ausgangsspannung erzeugen soll, dargestellt in :numref:`01_fig_02`.
 
-.. figure:: img/Experiment_09/DC-DC_Converter.png
+.. figure:: img/Experiment_09/Schaltung_DC_DC.png
 	 :name: 01_fig_01
 	 :align: center
 
