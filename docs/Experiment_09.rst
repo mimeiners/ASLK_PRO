@@ -39,7 +39,7 @@ MIthilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau zu simul
 
 	 Simulation der Ein- und Ausgangsspannungen
 
-Die Abbildung :numref:`09_fig_02` zeigt den Verlauf der Spannungen :math:`V_{ref}`, :math:`V_{g}`, :math:`V_{o}` und :math:`V_{av}`. Der steigende Verlauf der Ausgangsspannung :math:`V_{av}` lässt sich auf die verbaute Spule und den Kondensator zurückführen, welche durch die Lade- und Entladezyklen den Verlauf der Kurve herbeiführen.
+Die :numref:`09_fig_02` zeigt den Verlauf der Spannungen :math:`V_{ref}`, :math:`V_{g}`, :math:`V_{o}` und :math:`V_{av}`. Der steigende Verlauf der Ausgangsspannung :math:`V_{av}` lässt sich auf die verbaute Spule und den Kondensator zurückführen, welche durch die Lade- und Entladezyklen den Verlauf der Kurve herbeiführen.
 
 .. figure:: img/Experiment_09/Spannungs_Simu_2.png
 	 :name:  09_fig_03
@@ -47,5 +47,5 @@ Die Abbildung :numref:`09_fig_02` zeigt den Verlauf der Spannungen :math:`V_{ref
 
 	 Detailansicht der Ein- und Ausgangsspannungen
 
-Nach t = 6ms hat sich die Spannung :math:`V_{av}` auf einen Wert von ungefähr U = 2V eingestellt.
+Nach t = 6ms hat sich die Spannung :math:`V_{av}` auf einen Wert von ungefähr U = 2V eingestellt. Aus der :numref:`09_fig_03` lässt sich erkennen, dass sobald die Referenzspannung :math:`V_{ref}` größer ist als die eingeführte Dreiecksspannung :math:`V_{g}`, so schaltet der Komparator auf die eingestellte Spannung :math:`-V_{ss}` um. Andersherum, sollte :math:`V_{ref}` kleiner werden als :math:`V_{g}`, so schaltet der Komparator auf die Spannung :math:`+V_{ss}` um. Somit vergleicht der Operationsverstärker diese Spannungen miteinander um anschließend einen Anstieg oder Abstieg von :math:`V_{o}` herbeizuführen. Wird die Referenzspannung möglichst nah an dem negativen Maximum der eingespeisten Dreiecksspannung gehalten, so kommt es bei der Ausgabe von :math:`V_{av}` zu einer erhöhten Spannung.
 	 
