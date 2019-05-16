@@ -33,8 +33,11 @@ Simulation DC-DC Wandler
 
 MIthilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau zu simulieren. Die Schaltung wird hierbei nach dem Schema aus :numref:`09_fig_01` entworfen.
 
-.. figure:: img/Experiment_09/Spannung_Messung.png
+.. figure:: img/Experiment_09/Spannungs_Simu_1.png
 	 :name:  09_fig_02
 	 :align: center
 
+	 Simulation der Ein- und Ausgangsspannungen
 
+Die Abbildung :numref:`09_fig_02` zeigt den Verlauf der Spannungen :math:`V_{ref}`,:math:`V_{g}`, :math:`V_{o}` und :math:`V_{av}`. 
+	 
