@@ -1,0 +1,4 @@
+Circuit: * C:\Users\JSR\Documents\Hochschule\ANS\ASLK_PRO\docs\spice\Experiment_06\Versuch6sim.asc
+
+Fatal Error: Unknown subcircuit called in:
+   xu1 n001 0 n003 opamp aol=100k gbw=10meg
