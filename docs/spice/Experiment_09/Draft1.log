@@ -1,0 +1,47 @@
+Circuit: * C:\Users\Jan Frost\Desktop\Neuer Ordner\ASLK_PRO\docs\spice\Experiment_09\Draft1.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 5.5165
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 5.49501
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 5.50104
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Thu May 16 15:09:17 2019
+Total elapsed time: 2.920 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 129344
+traniter = 127632
+tranpoints = 29777
+accept = 22347
+rejected = 7430
+matrix size = 33
+fillins = 55
+solver = Normal
+Matrix Compiler1: 4.08 KB object code size  2.5/1.7/[1.2]
+Matrix Compiler2: 3.51 KB object code size  1.5/2.0/[0.9]
+
