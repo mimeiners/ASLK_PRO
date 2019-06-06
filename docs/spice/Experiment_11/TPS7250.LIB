@@ -1,0 +1,122 @@
+***
+*$
+*  TPS7250 Model
+*****************************************************************************
+*  (C) Copyright 2013 Texas Instruments Incorporated. All rights reserved.
+*****************************************************************************
+** This model is designed as an aid for customers of Texas Instruments.
+** TI and its licensors and suppliers make no warrenties, either expressed
+** or implied, with respect to this model, including the warranties of 
+** merchantability or fitness for a particular purpose.  The model is
+** provided solely on an "as is" basis.  The entire risk as to its quality
+** and performance is with the customer
+*****************************************************************************
+*
+** Released by: WEBENCH(R) Design Center, Texas Instruments Inc.
+* Part: TPS7250
+* Date: 02/13/2013
+* Model Type: TRANSIENT
+* Simulator: PSPICE
+* Simulator Version: 16.2
+* EVM Order Number: 
+* EVM Users Guide: 
+* Datasheet: SLVS102G - MARCH 1995 - REVISED JUNE 2000
+*
+* Model Version: Final 1.00
+*
+*****************************************************************************
+*
+* Updates:
+*
+* Final 1.00
+* Release to Web.
+*
+*****************************************************************************
+*
+* Model Usage Notes:
+* 
+* 1. Input and quiescent current of the part have not been modeled.
+* 2. Temperature effects have not been modeled.
+* 3. Noise has not been modeled.
+* 4. The SENSE pin is internally connected to the OUT pin. No SENSE
+*     functionality is modeled.
+*
+*****************************************************************************
+* source LDO_Create.php - TPS7250
+
+.SUBCKT TPS7250 SENSE PG GND EN IN_0 IN_1 OUT_0 OUT_1
+RIN_0 IN_0 IN 1e-3
+RIN_1 IN_1 IN_0 1e-3
+ROUT_0 OUT_0 OUT 1e-3
+ROUT_1 OUT_1 OUT_0 1e-3
+RSENSE SENSE OUT 1e-6
+X1  OUT GND IN IN ENB_INT FBK_INT  LDO_BASIC 
++ PARAMS: 
++ rinp = 1.000e+7 
++ rout = 1.840e-1 
++ psrr = 3.162e-3 
++ pole = 1.000e+2 
++ zero = 3.000e+4 
++ venb = 1.200e+0 
++ ehys = 5.000e-2 
++ uvlo = 1.900e+0 
++ uhys = 1.000e-1 
++ vref = 1.188e+0 
++ drop = 1.900e-1 
++ ilim = 6.000e-1 
++ ttrn = 9.000e-5
+E1 ENB_INT  0 VALUE { 2.400e+0 - V(EN) } 
+R1  OUT FBK_INT  3.812MEG 
+R2  FBK_INT GND 1.188MEG 
+E7  PGX_INT   0 VALUE { 
++ IF(V(OUT)+5.000e-2*(1-V(PGY_INT))>4.750e+0, 0, 1)}
+R7  PGX_INT PGY_INT  1k  
+C7  PGY_INT   0  1p  
+S7 PG GND PGY_INT   0 PGSWTCH
+RSW GND PGY_INT 1G
+.MODEL PGSWTCH VSWITCH RON=100 ROFF=1E8 VON=1 VOFF=0
+.ENDS TPS7250 
+
+*$
+.SUBCKT ldo_basic out vgnd vin bias enb fbk 
++ PARAMS: 
++ rinp = 1e07 
++ rout = 0.1
++ psrr = 5e-4
++ pole = 100
++ zero = 10e3
++ venb = 1.0
++ ehys = 0.1
++ uvlo = 2.0
++ uhys = 0.1
++ vref = 1.20
++ drop = 0.25
++ ilim = 0.10
++ ttrn = 1e-4
+R00 vin vxx  { rinp } 
+C00 vin vxx  { 1/(6.28*rinp*pole) } 
+EX1 vx1   0 VALUE {IF(V(enb, vgnd) + V(egd)*ehys > venb, 1, 0)}
+RX1 vx1 egd 10
+CX1 egd   0 1n
+EX2 vx2   0 VALUE {IF(V(bias, vgnd) + V(vgd)*uhys > uvlo, 1, 0)}
+RX2 vx2 vgd 10
+CX2 vgd   0 1n
+E01 v01 vgnd VALUE { 
++ IF(V(egd)>0.51&V(vgd)>0.51, { vref }, 0) }
+R01 v01 ref {3.333e5*SQRT(ttrn)}
+C01 ref vgnd {1e-6*SQRT(ttrn)}
+E02 v02   0  VALUE {
++ V(ref)*(ABS(V(out)) + 1E-6)/(ABS(V(fbk)) + 1E-6) }
+R02 v02 des 10
+C02 des   0 1n
+E03 drv   0 VALUE {
++ MIN(V(des), MAX(V(vin)-drop, 0))}
+R03 drv vxx { psrr*rinp } 
+C03 drv vxx { 1/(6.28*psrr*rinp*zero) } 
+E04 vyy   0  VALUE { 
++ MIN(V(vxx), V(vzz) + ilim*rout) }
+R04 vyy vzz { rout }
+F04 vin vyy V04 1
+V04 vzz out 0V
+.ENDS ldo_basic
+
