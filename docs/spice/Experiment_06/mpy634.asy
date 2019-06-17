@@ -3,9 +3,9 @@ SymbolType BLOCK
 RECTANGLE Normal -48 -88 64 88
 WINDOW 0 8 -88 Bottom 2
 WINDOW 3 8 88 Top 2
-SYMATTR Prefix X
 SYMATTR Value MPY634
-SYMATTR ModelFile Z:\Users\mimeiners\Documents\courses\ans\lab\ASLK_PRO\docs\spice\Experiment_06\mpy634.cir
+SYMATTR Prefix X
+SYMATTR ModelFile mpy634.cir
 PIN -48 -64 LEFT 8
 PINATTR PinName X1
 PINATTR SpiceOrder 1

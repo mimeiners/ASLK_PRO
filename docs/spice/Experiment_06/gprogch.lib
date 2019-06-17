@@ -1,6 +1,0 @@
-*
-* multiply with constant
-.SUBCKT MULTIPLYCONST input output k=1
-B1 output 0 V=V(input)*k
-.ENDS
-*
