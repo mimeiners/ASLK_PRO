@@ -1,4 +1,4 @@
-# Experiment 6
+# SPICE Modelle Experiment 6
 
 Die Datensätze befinden sich im Unterordner **data**.
 
