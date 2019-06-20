@@ -1,0 +1,4 @@
+Circuit: * C:\Users\Jan Frost\Desktop\ANS\ASLK_PRO\docs\spice\Experiment_12\12_1_1.asc
+
+Fatal Error: Unknown subcircuit called in:
+   xu2 n004 n006 n010 n011 0 n007 n002 n001 tps40200p

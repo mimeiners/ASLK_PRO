@@ -1,0 +1,97 @@
+Circuit: * C:\Users\Jan Frost\Desktop\ANS\ASLK_PRO\docs\spice\Experiment_10\exp_10_1.asc
+
+V1: Missing value, assumed 0V @ DC
+Direct Newton iteration for .op point succeeded.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Gmin = 100
+vernier = 0.5
+vernier = 0.25
+Gmin = 34.2672
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 33.0995
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+Gmin = 32.9705
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Gmin = 100
+vernier = 0.5
+vernier = 0.25
+Gmin = 34.2672
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 33.0995
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+Gmin = 32.9705
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+vernier = 0.25
+Source Step = 92.3414%
+Source Step = 92.4124%
+Source Step = 92.442%
+Source Step = 92.4716%
+Source Step = 92.5012%
+Source Step = 92.5308%
+Source Step = 92.5604%
+Source Step = 92.59%
+Source Step = 92.6196%
+Source Step = 92.6491%
+Source Step = 92.6787%
+Source Step = 92.7083%
+Source Step = 92.7379%
+Source Step = 92.7675%
+Source Step = 92.7971%
+Source Step = 92.8267%
+Source Step = 92.8563%
+Source Step = 92.8859%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+Source Step = 25.7576%
+Source Step = 27.5568%
+vernier = 0.00390625
+Source stepping failed
+
+Pseudo Transient failed in finding the operating point at 3.12472 ms.
+
+Date: Thu Jun 20 12:26:24 2019
+Total elapsed time: 43.767 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 2767241
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 80063
+matrix size = 28
+fillins = 71
+solver = Normal
+Matrix Compiler1: 4.02 KB object code size  2.4/1.7/[1.1]
+Matrix Compiler2: 3.60 KB object code size  0.9/1.4/[0.7]
+

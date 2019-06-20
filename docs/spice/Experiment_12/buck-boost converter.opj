@@ -1,0 +1,73 @@
+(ExpressProject "Buck-boost converter"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "..\buck-boost\library\tps40200p.olb"
+        (Type "Schematic Library"))
+      (File "..\buck-boost\library\tps40200app.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\buck-boost converter.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "1")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "TRUE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (PSPICE_DoNot_Show_WarningDlg "TRUE")
+    (RootChangedForceReNetlist "x")
+    (Board_sim_option "VHDL_flow"))
+  (Folder "Outputs"
+    (File ".\buck-boost converter-pspicefiles\start up\start up.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\buck-boost converter-pspicefiles\start up\start-up.sim"
+        (DisplayName "Start Up-Start-Up")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\buck-boost converter-pspicefiles\start up\start-up.sim"))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\tps40200app.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\tps40200app.lib"))
+      (File ".\tps40200p.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\tps40200p.lib"))
+      (File ".\nom.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\nom.lib"))))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (BZX84C12
+      (FullPartName "BZX84C12.Normal")
+      (MPSSessionName "a0214535")
+      (FileView
+        (MPSSessionName "a0866714"))))
+  (MPSSessionName "a0866714")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\buck-boost converter.dsn")
+      (Path "Design Resources" ".\buck-boost converter.dsn" "Start Up")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 718 -1 608"))
+      (Tab 0))))
