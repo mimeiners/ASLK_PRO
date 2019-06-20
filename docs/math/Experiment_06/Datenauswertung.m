@@ -1,6 +1,26 @@
+%% Datenauswertung Experiment 06
+
+%% init
 clc;
 clear all;
 close all;
+
+%% Einlesen der CSV-Dateien
+datapath = '../../spice/Experiment_06/data';
+cd(datapath)
+flist = dir('*.CSV');
+fsort = sort({flist.name});
+
+%% Daten in mat-struct sammeln
+Data = struct();
+for i=1:length(fsort)
+    tabstr = strcat('tab', num2str(i))
+    Data.(tabstr) = csvread(fsort{i}, 1, 0); 
+end
+save('Messdaten.mat', '-struct', 'Data') 
+
+
+%% Datenbearbeitung
 tabelle1 = csvread('Messung1_1.CSV',1,0);
 tabelle1(:,1)=tabelle1(:,1)+10^(-3);
 tabelle2 = csvread('Messung1_2.CSV',1,0);
@@ -75,12 +95,14 @@ tabelle17(:,1)=tabelle17(:,1)*10^3;
 tabelle18(:,1)=tabelle18(:,1)*10^3;
 tabelle19(:,1)=tabelle19(:,1)*10^3;
 tabelle20(:,1)=tabelle20(:,1)*10^3;
+
 simtabelle1(:,1)=simtabelle1(:,1)*10^3;
 simtabelle2(:,1)=simtabelle2(:,1)*10^3;
 simtabelle3(:,1)=simtabelle3(:,1)*10^3;
 simtabelle4(:,1)=simtabelle4(:,1)*10^3;
 simtabelle5(:,1)=simtabelle5(:,1)*10^3;
 
+%% Erstellen der Graphen
 figure(1);
 p1=plot(tabelle9(:,1), tabelle9(:,2), simtabelle1(:,1), simtabelle1(:,2), tabelle10(:,1), tabelle10(:,2), tabelle7(:,1), tabelle7(:,2), simtabelle2(:,1), simtabelle2(:,2), tabelle8(:,1), tabelle8(:,2));
 ax = ancestor(p1(1), 'axes');
@@ -91,6 +113,7 @@ ylabel('Spannung / V','Fontsize',20)
 title('Voltage - Controlled Oscillator Nr.1','Color','k','FontSize',20)
 legend('Ausgang Messung 9,78 V','Ausgang Simulation 9,78 V', 'Eingang Messung 9,78 V','Ausgang Messung 8 V','Ausgang Simulation 8 V', 'Eingang Messung 8 V','Location', 'east')
 grid on
+print('Auswertung1.png', -dpng)
 
 figure(2);
 p1=plot(tabelle1(:,1),tabelle1(:,2), simtabelle3(:,1), simtabelle3(:,2), tabelle2(:,1),tabelle2(:,2),tabelle3(:,1),tabelle3(:,2), simtabelle4(:,1), simtabelle4(:,2), tabelle4(:,1),tabelle4(:,2));
@@ -136,6 +159,7 @@ title('Voltage - Controlled Oscillator Nr.5','Color','k','FontSize',20)
 legend('Ausgang Messung 1,2 V', 'Eingang Messung 1,2 V','Ausgang Messung 1 V', 'Eingang Messung 1 V','Location', 'east')
 grid on
 
+%% Funktion zur Anpassung der Datensätze
 function simtabellerueckgabe = anpassung(simtabelle, tabelle)
 time=0;
 time2=0;
