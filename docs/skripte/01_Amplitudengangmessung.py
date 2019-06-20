@@ -6,7 +6,7 @@ Created on Tue Feb 12 13:16:39 2019
 @author: Selim Cimen
 """
 
-#Bitte beachten Sie die Messspitzen des Red Pitaya auf das Verhältnis 1:10 einzustellen 
+# Bitte beachten Sie die Messspitzen des Red Pitaya auf das Verhältnis 1:10 einzustellen 
 
 import time 
 import numpy as np
@@ -16,11 +16,11 @@ import scipy as sp
 from scipy import signal
 
 
-# Paramter für die Messung
-Start_f = 10                                           #Start Frequenz der Messung 
-Stop_f = 7000000                                       #Stop Frequenz der Messung
-Messpunkte = 35                                       #Anzahl der gewünschten Messpunkte
-IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya
+# Parameter für die Messung
+Start_f = 10             # Start Frequenz der Messung 
+Stop_f = 7000000         # Stop Frequenz der Messung
+Messpunkte = 35          # Anzahl der gewünschten Messpunkte
+IP = "192.168.111.184"   # IP-Adresse vom Red-Pitaya
 
 Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte) #Erzeugung Messpunkte im Frequenzbereich
 Wave_form = 'sine'                                    #Wellenform des Eingangssignals
@@ -42,7 +42,7 @@ rp_s.tx_txt('ACQ:RST')                                #Input reset
 
 for i in Frequenzen:
     
-    #Signal Generieren
+    # Signal Generieren
     rp_s.tx_txt('SOUR1:FUNC '+ str(Wave_form).upper())  #Wellenform sezten
     time.sleep(0.3)
     rp_s.tx_txt('SOUR1:VOLT '+ str(Ampl))               #Amplitude setzen
@@ -52,7 +52,8 @@ for i in Frequenzen:
     rp_s.tx_txt('OUTPUT1:STATE ON')                     #Ausgang am Red Pitaya einschalten
     time.sleep(0.3)
     
-    #Trigger variablen sezten    
+
+    # Trigger variablen sezten    
     if (i<=25000):                                      #Downsampling in Abhänigkeit der Frequenz des 
         Downsampling = "8"                              #Eingangssiganls
     if (i<1000):
@@ -102,14 +103,14 @@ for i in Frequenzen:
     V_in = np.amax(Buff1)-np.amin(Buff1)
     V_out = np.amax(Buff2)-np.amin(Buff2)
     
-    #Amplitudengang ermittelen
-    Data1[Index] = V_out/V_in                               #Verhältnis von Ausgang zu Eingang speichern
-    Data2[Index] = 20*np.log10(V_out/V_in)                  #Verhältnis in dB von Ausgang zu Eingang speichern
-    Index+=1                                                #Processvariable um eins erhöhen
-    v = int(Index/Messpunkte*100)                           #Ermittlung des Fortschritts der Messung
-    print("Fortschritt der Messung: ",v,"%")                #Ausgabe des Fortschritts
+    # Amplitudengang ermitteln
+    Data1[Index] = V_out/V_in                               # Verhältnis von Ausgang zu Eingang speichern
+    Data2[Index] = 20*np.log10(V_out/V_in)                  # Verhältnis in dB von Ausgang zu Eingang speichern
+    Index+=1                                                # Processvariable um eins erhöhen
+    v = int(Index/Messpunkte*100)                           # Ermittlung des Fortschritts der Messung
+    print("Fortschritt der Messung: ",v,"%")                # Ausgabe des Fortschritts
     
-    if (v < 11):                                            #LED's auf dem Red Pitaya ansteuern: Statusanzeige
+    if (v < 11):                                            # LED's auf dem Red Pitaya ansteuern: Statusanzeige
         rp_s.tx_txt('DIG:PIN LED' + str(0) + ',' + str(1))
     if (v > 22):                                          
         rp_s.tx_txt('DIG:PIN LED' + str(1) + ',' + str(1))
@@ -129,17 +130,19 @@ for i in Frequenzen:
         rp_s.tx_txt('DIG:PIN LED' + str(8) + ',' + str(1))
 
 
-Werte = np.matrix([Frequenzen,Data1,Data2]).transpose()           #Messfrequenzen und Messergebnisse speichern
-np.savetxt(Dateiname, Werte)                                #Als Datei speichern
-rp_s.tx_txt('OUTPUT1:STATE OFF')                            #Ausgang des Red Pitayas ausschalten
+Werte = np.matrix([Frequenzen,Data1,Data2]).transpose()     # Messfrequenzen und Messergebnisse speichern
+np.savetxt(Dateiname, Werte)                                # Als Datei speichern
+rp_s.tx_txt('OUTPUT1:STATE OFF')                            # Ausgang des Red Pitayas ausschalten
 print("Messung beendet")
 
 for k in range(8):
-    rp_s.tx_txt('DIG:PIN LED' + str(k) + ',' + str(0))      #LED's ausschalten
+    rp_s.tx_txt('DIG:PIN LED' + str(k) + ',' + str(0))      # LED's ausschalten
     time.sleep(0.1)
 
 Data2 = sp.signal.medfilt(Data2, 3)
-#Plot der Messung
+
+
+#  Plot der Messung
 plt.figure(1)
 plt.semilogx(Frequenzen[1:], Data2[1:])
 plt.grid()
