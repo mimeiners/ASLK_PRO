@@ -95,9 +95,9 @@ dessen Datenbattes ein Makro-Eignenbau finden und Inplementieren.
 Es folgen hierbei die implementierten Multiplizierer (MPY634) folgender Gleichung:
 
 .. math::
-   :label: 08_eq_01
+   	:label: 08_eq_01
 
-  V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2)
+  	V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2)
 
 
 Tina Schaltbilder Comperator und Integrator AGC
