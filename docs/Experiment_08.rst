@@ -96,7 +96,6 @@ Es folgen hierbei die implementierten Multiplizierer (MPY634) folgender Gleichun
 
 .. math::
    	:label: 08_eq_01
-
   	V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2)
 
 
