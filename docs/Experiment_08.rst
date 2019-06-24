@@ -2,8 +2,8 @@ Experiment 8: Automatic Gain/Volume Control (AGC/AVC)
 =====================================================
 
 
-Kurze Theorie und Motivation
-----------------------------
+Theorie und Motivation
+----------------------
 AGC´s sind Automatische Verstärkungsreglungen die in elektronischen Geräten dazu verwendet werden, 
 das ein Ausgangssignal bzw. ein Ausgangspegel unabhängig vom Eingangssignal unterhalb eines gesetzten 
 Schwellpegels limitiert oder geregelt wird. Somit werden also über diese Schaltungen eingangsseitige 
@@ -54,7 +54,7 @@ regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am ersten Mult
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
 	    :align: center
-	    :scale: 40%
+	    :scale: 30%
 
 	    Comparator Blockschaltbild
 		
@@ -78,7 +78,7 @@ die Regelgröße in den eingestellten Zielbereich regelt.
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
 	    :align: center
-	    :scale: 40%
+	    :scale: 30%
 
 	    Integrator Blockschaltbild
 		
@@ -123,7 +123,25 @@ designten Comperator und Integrator AGC´s erstellen.
 		
 Kennlinien aus Simulation
 -------------------------
+		
+.. figure:: img/Experiment_08/Comparator_Out.png
+	    :name:  08_fig_02
+	    :align: center
+	    :scale: 30%
 
+	    Messkurven des Comparator AGC´s 
+		
+.. figure:: img/Experiment_08/Integrator_Out.png
+	    :name:  08_fig_02
+	    :align: center
+	    :scale: 30%
+
+	    Messkurven des Integrator AGC´s 
+
+Es zeigt sich nun aus den Messungen der beiden AGC Schaltungen, dass im Falle des Comparators 
+Die Ausgangsspannung auf den eingestellten Bereich limitiert wird, wogegen die Ausgangsspannung
+des Integrators nicht limitiert sondern runter skaliert wird. Es bleibt also im Falle des 
+Integrator AGC der Sinus erhalten.
 
 
 Messungen
