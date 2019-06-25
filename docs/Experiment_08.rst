@@ -54,7 +54,7 @@ regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am ersten Mult
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
 	    :align: center
-	    :scale: 30%
+	    :scale: 20%
 
 	    Comparator Blockschaltbild
 		
@@ -78,7 +78,7 @@ die Regelgröße in den eingestellten Zielbereich regelt.
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
 	    :align: center
-	    :scale: 30%
+	    :scale: 20%
 
 	    Integrator Blockschaltbild
 		
@@ -121,8 +121,9 @@ designten Comperator und Integrator AGC´s erstellen.
 	    Integrator AGC Schaltbild Tina
 		
 		
-Kennlinien aus Simulation
--------------------------
+Messkurven und Kennlinien aus Simulation
+----------------------------------------
+
 		
 .. figure:: img/Experiment_08/Comparator_Out.png
 	    :name:  08_fig_02
@@ -139,10 +140,74 @@ Kennlinien aus Simulation
 	    Messkurven des Integrator AGC´s 
 
 Es zeigt sich nun aus den Messungen der beiden AGC Schaltungen, dass im Falle des Comparators 
-Die Ausgangsspannung auf den eingestellten Bereich limitiert wird, wogegen die Ausgangsspannung
-des Integrators nicht limitiert sondern runter skaliert wird. Es bleibt also im Falle des 
+die Ausgangsspannung auf den eingestellten Bereich limitiert wird, wohingegen die Ausgangsspannung
+des Integrators nicht limitiert sondern stück für stück herabgesetzt wird. Es bleibt somit im Falle des 
 Integrator AGC der Sinus erhalten.
+
+
+.. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
+	    :name:  08_fig_02
+	    :align: center
+	    :scale: 30%
+
+	    Kennlinie des Comparator AGC´s 
+		
+		
+.. figure:: img/Experiment_08/Integrator_IN_zu_Out.png
+	    :name:  08_fig_02
+	    :align: center
+	    :scale: 30%
+
+	    Kennlinie des Integrator AGC´s 		
+
+
+Aus der Kennlinie des Comparator AGC`s ist nun das Typische Eingangs- zu Ausgasgangsverhalten eines AGC´s
+zu erkennbar. Diese zeigt, dass mit steigender Eingangsspannung die entworfene Regelschleife ab 2,50 V 
+die Ausgangsspannung konstant bei 2,00 V limitiert. 
+Die Kennlinie des Integrator AGC´s zeigt nun typisches Verhalten einer Regelstrecke. Beispiesweise ist zu 
+erkennen das der Ausgang ebenso wie zuvor zunächst dem Eingang bis zu einem Schwellwert (hier 2.00 V) folgt, 
+jedoch dann übergeht in ein Reglertypischen überschwinger mit folgender Ausreglung auf einen eingestellten 
+Ausgangszielwert. (hier 1,45 V)
 
 
 Messungen
 ---------
+
+Zuletzt sollten die gewonnenen Erkenntnisse aus der Simulation mit Messwerten des Integrator AGC´s 
+verglichen, und die Funktion dieser Schaltung verifiziert werden.
+Hierfür wurde die Schaltung entsprechend der Schematik des Simulationsprogramms Tina aufgebaut, ein 
+Referenzzielwert der Ausgangsspannung von 3,00 V eingestellt, und folgend hierauf die Schaltung für 
+Eingangsspannungen mit unterschiedlichen Amplituden betrachtet. 
+
+.. figure:: img/Experiment_08/animiertes_gif_1.gif
+	    :name:  08_fig_02
+	    :align: center
+	    :scale: 30%
+
+	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
+		
+Es zeigt die Darstellung das trotz der sich ändernden Amplitude der Eingangsspannung (blau) sich 
+die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält.
+
+.. figure:: img/Experiment_08/animiertes_gif_2.gif
+	    :name:  08_fig_02
+	    :align: center
+	    :scale: 30%
+
+	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
+		
+
+Desweiteren ließen sich auch Referenzwerte für weitere Zielamplituden einstellen, welche ebenso das
+erwartete Regelverhalten und somit eine konstante Ausgangsamplitude im eingestellten Zielbereich aufgewiesen 
+haben.
+
+
+Fazit
+-----
+
+Es lässt sich somit zeigen, das sich Comparator oder Integrator AGC´s hervorragend für eine Ausreglung des 
+Eingangsignals in einem gewünschten Zielbereich eignen. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
+abgewogen werden, ob der Wert in einer hohe Regelzeit-Performance oder aber in einem Erhalt der eingegebenen 
+Sinusamplitude liegt.
+
+
