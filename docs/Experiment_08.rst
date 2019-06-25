@@ -54,7 +54,7 @@ regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am ersten Mult
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
 	    :align: center
-	    :scale: 20%
+	    :scale: 10%
 
 	    Comparator Blockschaltbild
 		
@@ -78,7 +78,7 @@ die Regelgröße in den eingestellten Zielbereich regelt.
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
 	    :align: center
-	    :scale: 20%
+	    :scale: 10%
 
 	    Integrator Blockschaltbild
 		
