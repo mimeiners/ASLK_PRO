@@ -1,4 +1,5 @@
-Experiment 8: Automatic Gain/Volume Control (AGC/AVC)
+Experiment 8: 
+Automatic Gain/Volume Control (AGC/AVC)
 =====================================================
 
 
@@ -126,14 +127,14 @@ Messkurven und Kennlinien aus Simulation
 
 		
 .. figure:: img/Experiment_08/Comparator_Out.png
-	    :name:  08_fig_02
+	    :name:  08_fig_05
 	    :align: center
 	    :scale: 30%
 
 	    Messkurven des Comparator AGC´s 
 		
 .. figure:: img/Experiment_08/Integrator_Out.png
-	    :name:  08_fig_02
+	    :name:  08_fig_06
 	    :align: center
 	    :scale: 30%
 
@@ -146,7 +147,7 @@ Integrator AGC der Sinus erhalten.
 
 
 .. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
-	    :name:  08_fig_02
+	    :name:  08_fig_07
 	    :align: center
 	    :scale: 30%
 
@@ -154,7 +155,7 @@ Integrator AGC der Sinus erhalten.
 		
 		
 .. figure:: img/Experiment_08/Integrator_IN_zu_Out.png
-	    :name:  08_fig_02
+	    :name:  08_fig_08
 	    :align: center
 	    :scale: 30%
 
@@ -180,7 +181,7 @@ Referenzzielwert der Ausgangsspannung von 3,00 V eingestellt, und folgend hierau
 Eingangsspannungen mit unterschiedlichen Amplituden betrachtet. 
 
 .. figure:: img/Experiment_08/animiertes_gif_1.gif
-	    :name:  08_fig_02
+	    :name:  08_fig_09
 	    :align: center
 	    :scale: 30%
 
@@ -190,7 +191,7 @@ Es zeigt die Darstellung das trotz der sich ändernden Amplitude der Eingangsspa
 die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält.
 
 .. figure:: img/Experiment_08/animiertes_gif_2.gif
-	    :name:  08_fig_02
+	    :name:  08_fig_10
 	    :align: center
 	    :scale: 30%
 
