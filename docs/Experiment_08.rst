@@ -223,8 +223,8 @@ Ausgangsspannung von 2,00 V übergeht und damit ausgeregelt ist.
 Fazit
 -----
 
-Es lässt sich zeigen, das sich der Comparator oder Integrator AGC gleichermaßen für eine Ausreglung des 
-Eingangsignals in einem gewünschten Zielbereich eignet. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
+Es lässt sich zeigen, das sich der Comparator oder Integrator AGC gleichermaßen gut für eine Reglung eines 
+Eingangsignals in einen gewünschten Zielbereich eignet. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
 abgewogen werden, ob der Wert in einer hohe Regelzeit-Performance oder aber in einem Erhalt der eingegebenen 
 Sinusamplitude liegt.
 
