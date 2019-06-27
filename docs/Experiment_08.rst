@@ -53,7 +53,7 @@ Sodass hierdurch das Eingangssignal am eingestellten Referenzwert regelt bzw. li
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
 	    :align: center
-	    :scale: 60%
+	    :scale: 70%
 
 	    Comparator Blockschaltbild
 		
@@ -76,7 +76,7 @@ Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung in der Rü
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
 	    :align: center
-	    :scale: 60%
+	    :scale: 70%
 
 	    Integrator Blockschaltbild
 		
@@ -104,7 +104,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild1_Tina.png
 	    :name:  08_fig_03
 	    :align: center
-	    :scale: 25%
+	    :scale: 18%
 
 	    Comparator AGC Schaltbild Tina
 		
@@ -112,7 +112,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild2_Tina.png
 	    :name:  08_fig_04
 	    :align: center
-	    :scale: 25%
+	    :scale: 18%
 
 	    Integrator AGC Schaltbild Tina
 		
