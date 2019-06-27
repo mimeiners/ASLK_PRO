@@ -104,7 +104,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild1_Tina.png
 	    :name:  08_fig_03
 	    :align: center
-	    :scale: 16%
+	    :scale: 18%
 
 	    Comparator AGC Schaltbild Tina
 		
@@ -112,7 +112,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild2_Tina.png
 	    :name:  08_fig_04
 	    :align: center
-	    :scale: 16%
+	    :scale: 18%
 
 	    Integrator AGC Schaltbild Tina
 		
@@ -144,7 +144,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
 	    :name:  08_fig_07
 	    :align: center
-	    :scale: 50%
+	    :scale: 60%
 
 	    Kennlinie des Comparator AGC´s 
 		
@@ -152,7 +152,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Integrator_IN_zu_Out.png
 	    :name:  08_fig_08
 	    :align: center
-	    :scale: 50%
+	    :scale: 60%
 
 	    Kennlinie des Integrator AGC´s 		
 
@@ -179,7 +179,7 @@ unterschiedliche Eingangsamplituden betrachtet.
 .. figure:: img/Experiment_08/animiertes_gif_1.gif
 	    :name:  08_fig_09
 	    :align: center
-	    :scale: 50%
+	    :scale: 55%
 
 	    Messung des Integrator AGC' mit unterschiedlichen Eingangsamplituden 
 		
@@ -191,7 +191,7 @@ Integrator AGC´s im vollen Umfang gegeben ist.
 .. figure:: img/Experiment_08/animiertes_gif_2.gif
 	    :name:  08_fig_10
 	    :align: center
-	    :scale: 50%
+	    :scale: 55%
 
 	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
 		
