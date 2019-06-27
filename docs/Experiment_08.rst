@@ -33,8 +33,8 @@ zu bestimmen, sowie die Ergebnisse der Simulation mit den gemessen Werten eines 
 Spezifikation
 -------------
 
-Funktionsaufbau Comparator AGC 
-------------------------------
+Schaltungsaufbau Comparator AGC 
+-------------------------------
 Der Comparator AGC besteht im Grunde aus vier Komponenten. 
 - Multipizierer
 - Quadrierer
@@ -58,8 +58,8 @@ Sodass hierdurch das Eingangssignal am eingestellten Referenzwert regelt bzw. li
 	    Comparator Blockschaltbild
 		
 
-Funktionsaufbau Integrator AGC 
-------------------------------
+Schaltungsaufbau Integrator AGC 
+-------------------------------
 Der Integrator AGC besteht aus fünf Komponenten.
 - Multiplizierer
 - Quadrierer
