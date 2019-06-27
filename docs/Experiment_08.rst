@@ -187,7 +187,7 @@ unterschiedliche Eingangsamplituden betrachtet.
 
 	    Messung des Integrator AGC' mit unterschiedlichen Eingangsamplituden 
 		
-Es zeigt sich hierbei aus den Darstellungen, dass trotz der sich ändernden Amplitude der Eingangsspannung (blau) 
+Dabei zeigt sich aus den Darstellungen, dass trotz der sich ändernden Amplitude der Eingangsspannung (blau) 
 die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält. Wodurch 
 also gezeigt ist, dass eine einstellbare Reglung der Eingangsspannung über die Schaltung des Integrator AGC´s 
 im vollen Umfang gegeben ist. 
