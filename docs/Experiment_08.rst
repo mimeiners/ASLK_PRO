@@ -91,12 +91,10 @@ Makros zur Verfügung stellen. Jedoch ließ sich nach längerem Durchforsten von
 
 Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 
-.. role:: raw-math(raw)
-    :format: latex html
-    
-    :raw-math:`$$V_out\\frac{s}{\sqrt{N}} $$`
+.. math::
 
-
+   V_out = 
+  	
 
 Tina Schaltbilder Comperator und Integrator AGC
 -----------------------------------------------
