@@ -187,7 +187,7 @@ Kennline des Integrator AGC´s gemessen.
 	    Input/Output Kennline des Integrator AGC´s 
 		
 Es zeigt sich ebenfalls wie in der Simulation, nun dass Typische Reglerverhalten des Integriergliedes. 
-Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung ab einem Schwellwert 
+Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung, ab einem Schwellwert 
 von 1,40 V zunächst einen Einbruch erfährt und daraufhin nach einer stückweise Annährung in eine Konstante 
 Ausgangsspannung von 2,00 V übergeht. 
 
