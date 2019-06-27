@@ -203,7 +203,7 @@ Eine Änderung der Referenzspannung zeigt ebenfalls in allen Fällen gleiches Re
 Konstanten Sinus Ausgangs-Zielamplitude.
 
 Betrachtet mann nun auch die Charakteristische Kennlinine des Integrator AGC's so zeichnet sich hieraus 
-zuletzt das typische Reglerverhalten des Integrierers aus Rückführung der Regelschleife heraus.
+zuletzt das typische Reglerverhalten des Integrierers aus der Rückführung der Regelschleife heraus.
 
 
 .. figure:: img/Experiment_08/INOUT_Messung.png
