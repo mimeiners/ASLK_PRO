@@ -216,13 +216,13 @@ ebenfalls das typische Reglerverhalten des Integrierers aus der Rückführung de
 
 Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung ab einem Schwellwert 
 von 1,40 V zunächst einbricht und daraufhin nach einer stückweise Annährung in eine Konstante 
-Ausgangsspannung von 2,00 V übergeht und damit ausgeregelt wird.
+Ausgangsspannung von 2,00 V übergeht und somit ausgeregelt wird.
 
 
 Fazit
 -----
 
-Es lässt sich zeigen, das sich der Comparator oder Integrator AGC gleichermaßen gut für eine Reglung eines 
+Es lässt sich damit zeigen, das sich der Comparator oder Integrator AGC gleichermaßen gut für eine Reglung eines 
 Eingangsignals in einen gewünschten Zielbereich eignet. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
 abgewogen werden, ob der Wert in einer hohe Regelzeit-Performance oder aber in einem Erhalt der eingegebenen 
 Sinusamplitude liegt.
