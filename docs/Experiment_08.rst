@@ -202,7 +202,7 @@ im vollen Umfang gegeben ist.
 Eine Änderung der Referenzspannung zeigt ebenfalls in allen Fällen gleiches Regelverhalten mit einer
 Konstanten Sinus Ausgangs-Zielamplitude.
 
-Betrachtet mann nun auch die charakteristische Kennlinine des Integrator AGC's so zeichnet sich hieraus 
+Betrachtet mann nun auch die charakteristische Kennlinine des Integrator AGC's, so zeichnet sich hieraus 
 ebenfalls das typische Reglerverhalten des Integrierers aus der Rückführung der Regelschleife heraus.
 
 
@@ -216,7 +216,7 @@ ebenfalls das typische Reglerverhalten des Integrierers aus der Rückführung de
 
 Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung ab einem Schwellwert 
 von 1,40 V zunächst einbricht und daraufhin nach einer stückweise Annährung in eine Konstante 
-Ausgangsspannung von 2,00 V übergeht und damit ausgeregelt ist.
+Ausgangsspannung von 2,00 V übergeht und damit ausgeregelt wird.
 
 
 Fazit
