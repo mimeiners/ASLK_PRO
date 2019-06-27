@@ -53,7 +53,7 @@ Sodass hierdurch das Eingangssignal am eingestellten Referenzwert regelt bzw. li
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
 	    :align: center
-	    :scale: 20%
+	    :scale: 40%
 
 	    Comparator Blockschaltbild
 		
@@ -76,7 +76,7 @@ Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung in der Rü
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
 	    :align: center
-	    :scale: 20%
+	    :scale: 40%
 
 	    Integrator Blockschaltbild
 		
@@ -104,7 +104,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild1_Tina.png
 	    :name:  08_fig_03
 	    :align: center
-	    :scale: 40%
+	    :scale: 35%
 
 	    Comparator AGC Schaltbild Tina
 		
@@ -112,7 +112,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild2_Tina.png
 	    :name:  08_fig_04
 	    :align: center
-	    :scale: 40%
+	    :scale: 35%
 
 	    Integrator AGC Schaltbild Tina
 		
@@ -124,14 +124,14 @@ Messkurven und Kennlinien aus Simulation
 .. figure:: img/Experiment_08/Comparator_Out.png
 	    :name:  08_fig_05
 	    :align: center
-	    :scale: 30%
+	    :scale: 35%
 
 	    Messkurven des Comparator AGC´s 
 		
 .. figure:: img/Experiment_08/Integrator_Out.png
 	    :name:  08_fig_06
 	    :align: center
-	    :scale: 30%
+	    :scale: 35%
 
 	    Messkurven des Integrator AGC´s 
 
@@ -144,7 +144,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
 	    :name:  08_fig_07
 	    :align: center
-	    :scale: 30%
+	    :scale: 35%
 
 	    Kennlinie des Comparator AGC´s 
 		
@@ -152,7 +152,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Integrator_IN_zu_Out.png
 	    :name:  08_fig_08
 	    :align: center
-	    :scale: 30%
+	    :scale: 35%
 
 	    Kennlinie des Integrator AGC´s 		
 
@@ -179,7 +179,7 @@ unterschiedliche Eingangsamplituden betrachtet.
 .. figure:: img/Experiment_08/animiertes_gif_1.gif
 	    :name:  08_fig_09
 	    :align: center
-	    :scale: 30%
+	    :scale: 35%
 
 	    Messung des Integrator AGC' mit unterschiedlichen Eingangsamplituden 
 		
@@ -191,7 +191,7 @@ Integrator AGC´s im vollen Umfang gegeben ist.
 .. figure:: img/Experiment_08/animiertes_gif_2.gif
 	    :name:  08_fig_10
 	    :align: center
-	    :scale: 30%
+	    :scale: 35%
 
 	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
 		
