@@ -94,7 +94,7 @@ Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 .. role:: raw-math(raw)
     :format: latex html
 
-:raw-math:`$$ V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
+:raw-math:`$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
    
  
 
