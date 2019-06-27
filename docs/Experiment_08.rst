@@ -91,14 +91,12 @@ Makros zur Verfügung stellen. Jedoch ließ sich nach längerem Durchforsten von
 
 Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 
-.. math::
+.. role:: raw-math(raw)
+    :format: latex html
 
-   V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2)
+:raw-math:`$$ V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
+   
  
-.. figure:: img/Experiment_08/Formel.png
-	    :name:  08_fig_12
-	    :align: center
-	    :scale: 35%
 
 Tina Schaltbilder Comperator und Integrator AGC
 -----------------------------------------------
