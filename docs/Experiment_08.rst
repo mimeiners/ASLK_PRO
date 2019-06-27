@@ -104,7 +104,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild1_Tina.png
 	    :name:  08_fig_03
 	    :align: center
-	    :scale: 25%
+	    :scale: 35%
 
 	    Comparator AGC Schaltbild Tina
 		
@@ -112,7 +112,7 @@ Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, 
 .. figure:: img/Experiment_08/Schaltbild2_Tina.png
 	    :name:  08_fig_04
 	    :align: center
-	    :scale: 25%
+	    :scale: 35%
 
 	    Integrator AGC Schaltbild Tina
 		
