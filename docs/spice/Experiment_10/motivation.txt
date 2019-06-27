@@ -1,0 +1,24 @@
+Motivation and brief
+LDO wird zur Erzeugung einer geregelten Spannung für rauscharme Hochleistungsanwendungen verwendet.
+Eine detaillierte Beschreibung der Spannung finden Sie in den aufgezeichneten Vorlesungen unter [23]
+Regulierungsbehörden. Im Falle eines DC-DC-Wandlers erfolgt die Umschaltung (wie von PWM gezeigt)
+Wellenform) und Schalten ist eine Rauschquelle, aber bei LDO findet kein Schalten statt
+Daher wird es als Spannungsregler in geräuscharmen, hocheffizienten Systemen verwendet. Wie gezeigt
+In der folgenden Schaltung verwendet LDO PMOS zusammen mit OP-Amp, so dass die Verlustleistung in
+OP-Amp ist minimal und die Effizienz hoch. Die geregelte Ausgangsspannung ist gegeben durch
+
+------------------------------------------------------
+
+Ausgangskennlinien - Messen Sie die Lastregelung des Systems. Ladungsregulierung
+ist gegeben durch ...
+
+wenn Io vom minimalen zum maximalen Wert variiert.
+Übertragungsmerkmale - Messen Sie die Leitungsregelung des Systems. Zeilenregulierung
+ist gegeben durch ...
+
+variiert vom minimalen zum maximalen Wert.
+Messen Sie die Welligkeitsunterdrückung, indem Sie die Welligkeitseingangsspannung anlegen und messen
+die Ausgangswelligkeitsspannung.
+Messen Sie die Ausgangsimpedanz des LDO, die durch ...
+. Wir haben gezeigt
+die beispielhafte Ausgabe der Lastregelung und der Leitungsregelung in Abbildung 10.2.
