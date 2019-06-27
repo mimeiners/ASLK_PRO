@@ -176,24 +176,9 @@ Messung
 Folgend sollten die gewonnenen Erkenntnisse aus der Simulation mit Messwerten des Integrator AGC´s 
 verglichen, und die Funktion dieser Schaltung verifiziert werden.
 Hierfür wurde die Schaltung entsprechend der Schematik des Simulationsprogramms Tina aufgebaut, ein 
-Referenzzielwert der Ausgangsspannung von 2,00 V eingestellt, und folgend hierauf die Charakteristische 
-Kennline des Integrator AGC´s gemessen.
+Referenzzielwert der Ausgangsspannung von 3,00 V eingestellt, und folgend hierauf die Schaltung für 
+unterschiedliche Eingangsamplituden betrachtet. 
 
-.. figure:: img/Experiment_08/INOUT_Messung.png
-	    :name:  08_fig_09
-	    :align: center
-	    :scale: 30%
-
-	    Input/Output Kennline des Integrator AGC´s 
-		
-Es zeigt sich ebenfalls wie in der Simulation, nun dass Typische Reglerverhalten des Integriergliedes. 
-Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung, ab einem Schwellwert 
-von 1,40 V zunächst einen Einbruch erfährt und daraufhin nach einer stückweise Annährung in eine Konstante 
-Ausgangsspannung von 2,00 V übergeht. 
-
-Um nun auch das Regelverhalten des Integrator AGC´s im Bezug auf unterschiedliche Sinus Eingangsamplituden 
-zu betrachten, wurden noch weitere Messkurven über die Zeit aufgenommen und diese für unterschiedliche 
-Zielamplitude analysiert. 
 
 .. figure:: img/Experiment_08/animiertes_gif_1.gif
 	    :name:  08_fig_09
@@ -203,7 +188,9 @@ Zielamplitude analysiert.
 	    Messung des Integrator AGC' mit unterschiedlichen Eingangsamplituden 
 		
 Es zeigt sich hierbei aus den Darstellungen, dass trotz der sich ändernden Amplitude der Eingangsspannung (blau) 
-die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält.
+die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält. Wodurch 
+also gezeigt ist, dass eine einstellbare Reglung der Eingangsspannung über die Schaltung des Integrator AGC´s 
+im vollen Umfang gegeben ist. 
 
 .. figure:: img/Experiment_08/animiertes_gif_2.gif
 	    :name:  08_fig_10
@@ -212,17 +199,32 @@ die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitu
 
 	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
 		
+Selbiges Verhalten ist für weitere Referenzwert Zielamplituden erkennbar.
 
-Selbiges Verhalten ist ebenfalls für unterschiedliche Referenzwerte Zielamplituden erkennbar.
-Wodurch also gezeigt ist, dass eine einstellbare Reglung der Eingangsspannung über die Schaltung des Integrator AGC´s 
-im vollen Umfang gegeben ist. 
+
+Es zeigt sich ebenfalls wie in der Simulation, nun dass Typische Reglerverhalten des Integriergliedes. 
+Betrachtet mann nun auch die Charakteristische Kennlinine des Integrator AGC's so zeichnet sich hieraus 
+zuletzt das typische Reglerverhalten des Integrierers aus Rückführung der Regelschleife heraus.
+
+
+.. figure:: img/Experiment_08/INOUT_Messung.png
+	    :name:  08_fig_09
+	    :align: center
+	    :scale: 30%
+
+	    Input/Output Kennline des Integrator AGC´s 
+		
+
+Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung ab einem Schwellwert 
+von 1,40 V zunächst einbricht und daraufhin nach einer stückweise Annährung in eine Konstante 
+Ausgangsspannung von 2,00 V übergeht und damit ausgeregelt ist.
 
 
 Fazit
 -----
 
-Es lässt sich somit zeigen, das sich Comparator oder Integrator AGC´s hervorragend für eine Ausreglung des 
-Eingangsignals in einem gewünschten Zielbereich eignen. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
+Es lässt sich zeigen, das sich der Comparator oder Integrator AGC gleichermaßen für eine Ausreglung des 
+Eingangsignals in einem gewünschten Zielbereich eignet. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
 abgewogen werden, ob der Wert in einer hohe Regelzeit-Performance oder aber in einem Erhalt der eingegebenen 
 Sinusamplitude liegt.
 
