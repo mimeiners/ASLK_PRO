@@ -93,8 +93,12 @@ Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 
 .. math::
 
-   V_out = 
-  	
+   V_out = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2)
+ 
+.. figure:: img/Experiment_08/Formel.png
+	    :name:  08_fig_12
+	    :align: center
+	    :scale: 35%
 
 Tina Schaltbilder Comperator und Integrator AGC
 -----------------------------------------------
@@ -203,7 +207,7 @@ ebenfalls das typische Reglerverhalten des Integrierers aus der Rückführung de
 
 
 .. figure:: img/Experiment_08/INOUT_Messung.png
-	    :name:  08_fig_09
+	    :name:  08_fig_11
 	    :align: center
 	    :scale: 40%
 
