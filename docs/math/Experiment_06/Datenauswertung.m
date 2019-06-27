@@ -19,10 +19,17 @@ for i=1:length(fsort)
 end
 save('Messdaten.mat', '-struct', 'Data')
 
+%% Plotbeschriftung
+plotbeschriftung=fileread('plotbeschriftung.txt');
+plotbeschriftung=splitlines(plotbeschriftung);
+plotbeschriftung=erase(plotbeschriftung,"	");
+plotbeschriftung=split(plotbeschriftung,";");
+
 %% Datenbearbeitung
 for i=26:33
     Data.(strcat('tab', num2str(i)))(:,1)=(Data.(strcat('tab', num2str(i)))(:,1)-Data.(strcat('tab', num2str(i)))(1,1))*10^3;
 end
+
 for i=30:32
     Data.(strcat('tab', num2str(i)))=anpassung(Data.(strcat('tab', num2str(i))),Data.(strcat('tab', num2str(i-4))));
     i=i+1;
@@ -50,6 +57,16 @@ while i<=25
     i=i+2;
 end
 
+freq=zeros(10,1);
+periodendauer=zeros(10,1);
+r2=1;
+for r=19:-2:1
+    [periode,frequenz]=frequenzbestimmung((Data.(strcat('tab', num2str(r)))));
+    freq(r2,1)=frequenz;
+    periodendauer(r2,1)=periode;
+    r2=r2+1;
+end
+
 %% Erstellen der Graphen
 for i=1:5
     figure(i);
@@ -65,100 +82,64 @@ for i=1:5
             hold on
         end
     end
-    title('Voltage - Controlled Oscillator Nr.1','Color','k','FontSize',20)
-    xlabel('Zeit / ms','Fontsize',20)
-    ylabel('Spannung / V','Fontsize',20)
+    title(plotbeschriftung(i,1),'Color','k','FontSize',20)
+    xlabel(plotbeschriftung(i,2),'Fontsize',20);ylabel(plotbeschriftung(i,3),'Fontsize',20);
     grid on
-    ax = ancestor(p1(1), 'axes');
-    ax.FontSize = 20;
-    legend('Ausgang Messung 9,78 V','Ausgang Simulation 9,78 V', 'Eingang Messung 9,78 V','Ausgang Messung 8 V','Ausgang Simulation 8 V', 'Eingang Messung 8 V','Location', 'east')
+    ax = ancestor(p1(1), 'axes');ax.FontSize = 20;
+    legend(plotbeschriftung(i,4:9),'Location', 'east')
 end
 
-figure(6);
-p1=plot(Data.(strcat('tab', num2str(26)))(:,1),Data.(strcat('tab', num2str(26)))(:,2), Data.(strcat('tab', num2str(27)))(:,1),Data.(strcat('tab', num2str(27)))(:,2));
-hold on
-p1(1).LineWidth = 4;p1(2).LineWidth = 4;
-p1=plot(Data.(strcat('tab', num2str(30)))(:,1),Data.(strcat('tab', num2str(30)))(:,2));
-ax = ancestor(p1(1), 'axes');
-p1(1).LineWidth = 4;
-ax.FontSize = 20;
-xlabel('Zeit / ms','Fontsize',20)
-ylabel('Spannung / V','Fontsize',20)
-title('Schmitt-Trigger mit R2 = 9,5 k\Omega','Color','k','FontSize',20)
-legend('Ausgang Messung','Eingang Messung', 'Ausgang Simulation','Location', 'southeast')
-grid on
+for v = 26:2:28
+    i=i+1;
+    figure(i);
+    p1=plot(Data.(strcat('tab', num2str(v)))(:,1),Data.(strcat('tab', num2str(v)))(:,2), Data.(strcat('tab', num2str(v+1)))(:,1),Data.(strcat('tab', num2str(v+1)))(:,2));
+    hold on
+    p1(1).LineWidth = 4;    p1(2).LineWidth = 4;
+    p1=plot(Data.(strcat('tab', num2str(v+4)))(:,1),Data.(strcat('tab', num2str(v+4)))(:,2));
+    ax = ancestor(p1(1), 'axes');   ax.FontSize = 20;
+    p1(1).LineWidth = 4;
+    xlabel(plotbeschriftung(i,2),'Fontsize',20);ylabel(plotbeschriftung(i,3),'Fontsize',20);
+    title(plotbeschriftung(i,1),'Color','k','FontSize',20)
+    legend(plotbeschriftung(i,4:6),'Location', 'southeast')
+    grid on
+end
 
-figure(7);
-p1=plot(Data.(strcat('tab', num2str(28)))(:,1),Data.(strcat('tab', num2str(28)))(:,2), Data.(strcat('tab', num2str(29)))(:,1),Data.(strcat('tab', num2str(29)))(:,2));
-p1(1).LineWidth = 4;p1(2).LineWidth = 4;
-hold on
-p1=plot(Data.(strcat('tab', num2str(32)))(:,1),Data.(strcat('tab', num2str(32)))(:,2));
+i=i+1;
+figure(i);
+p1=plot((Data.(strcat('tab', num2str(34)))(:,1)),(Data.(strcat('tab', num2str(34)))(:,2)),'ro');
+p1(1).LineWidth = 10; hold on
+interpolx=min((Data.(strcat('tab', num2str(34)))(:,1))):10^-3:max((Data.(strcat('tab', num2str(34)))(:,1)));
+interpoly = interp1((Data.(strcat('tab', num2str(34)))(:,1)),(Data.(strcat('tab', num2str(34)))(:,2)),interpolx);
+p1=plot(interpolx,interpoly,'r');
+p1(1).LineWidth = 4; hold on
+p1=plot((Data.(strcat('tab', num2str(34)))(:,1)),(Data.(strcat('tab', num2str(34)))(:,3)),'bo');
+p1(1).LineWidth = 10; hold on
+interpoly = interp1((Data.(strcat('tab', num2str(34)))(:,1)),(Data.(strcat('tab', num2str(34)))(:,3)),interpolx);
+p1=plot(interpolx,interpoly,'b');
 p1(1).LineWidth = 4;
-ax = ancestor(p1(1), 'axes');
-ax.FontSize = 20;
-xlabel('Zeit / ms','Fontsize',20)
-ylabel('Spannung / V','Fontsize',20)
-title('Schmitt-Trigger mit R2 = 2,46 k\Omega','Color','k','FontSize',20)
-legend('Ausgang Messung','Eingang Messung', 'Ausgang Simulation','Location', 'southeast')
-grid on
+title(plotbeschriftung(i,1),'Color','k','FontSize',20)
+xlabel(plotbeschriftung(i,2),'Fontsize',20);ylabel(plotbeschriftung(i,3),'Fontsize',20);
+ax = ancestor(p1(1), 'axes');ax.FontSize = 20;grid on
+legend(plotbeschriftung(i,4:7),'Fontsize',20)
 
-% %% Erstellen der Graphen beschriftung
-% figure(1);
-% p1=plot(tabelle9(:,1), tabelle9(:,2), simtabelle1(:,1), simtabelle1(:,2), tabelle10(:,1), tabelle10(:,2), tabelle7(:,1), tabelle7(:,2), simtabelle2(:,1), simtabelle2(:,2), tabelle8(:,1), tabelle8(:,2));
-% ax = ancestor(p1(1), 'axes');
-% p1(1).LineWidth = 4;p1(2).LineWidth = 4;p1(3).LineWidth = 4;p1(4).LineWidth = 4;p1(5).LineWidth = 4;p1(6).LineWidth = 4;
-% ax.FontSize = 20;
-% xlabel('Zeit / ms','Fontsize',20)
-% ylabel('Spannung / V','Fontsize',20)
-% title('Voltage - Controlled Oscillator Nr.1','Color','k','FontSize',20)
-% legend('Ausgang Messung 9,78 V','Ausgang Simulation 9,78 V', 'Eingang Messung 9,78 V','Ausgang Messung 8 V','Ausgang Simulation 8 V', 'Eingang Messung 8 V','Location', 'east')
-% grid on
-% print('Auswertung1.png', -dpng)
-%
-% figure(2);
-% p1=plot(tabelle1(:,1),tabelle1(:,2), simtabelle3(:,1), simtabelle3(:,2), tabelle2(:,1),tabelle2(:,2),tabelle3(:,1),tabelle3(:,2), simtabelle4(:,1), simtabelle4(:,2), tabelle4(:,1),tabelle4(:,2));
-% ax = ancestor(p1(1), 'axes');
-% p1(1).LineWidth = 4;p1(2).LineWidth = 4;p1(3).LineWidth = 4;p1(4).LineWidth = 4;p1(5).LineWidth = 4;p1(6).LineWidth = 4;
-% ax.FontSize = 20;
-% xlabel('Zeit / ms','Fontsize',20)
-% ylabel('Spannung / V','Fontsize',20)
-% title('Voltage - Controlled Oscillator Nr.2','Color','k','FontSize',20)
-% legend('Ausgang Messung 6 V','Ausgang Simulation 6 V', 'Eingang Messung 6 V','Ausgang Messung 4 V','Ausgang Simulation 4 V', 'Eingang Messung 4 V','Location', 'east')
-% grid on
-%
-% figure(3);
-% p1=plot(tabelle5(:,1),tabelle5(:,2), simtabelle5(:,1), simtabelle5(:,2), tabelle6(:,1),tabelle6(:,2),tabelle11(:,1),tabelle11(:,2),tabelle12(:,1),tabelle12(:,2));
-% ax = ancestor(p1(1), 'axes');
-% p1(1).LineWidth = 4;p1(2).LineWidth = 4;p1(3).LineWidth = 4;p1(4).LineWidth = 4;p1(5).LineWidth = 4;
-% ax.FontSize = 20;
-% xlabel('Zeit / ms','Fontsize',20)
-% ylabel('Spannung / V','Fontsize',20)
-% title('Voltage - Controlled Oscillator Nr.3','Color','k','FontSize',20)
-% legend('Ausgang Messung 2 V','Ausgang Simulation 2 V', 'Eingang Messung 2 V','Ausgang Messung 1,8 V', 'Eingang Messung 1,8 V','Location', 'east')
-% grid on
-%
-% figure(4);
-% p1=plot(tabelle13(:,1),tabelle13(:,2),tabelle14(:,1),tabelle14(:,2),tabelle15(:,1),tabelle15(:,2),tabelle16(:,1),tabelle16(:,2));
-% ax = ancestor(p1(1), 'axes');
-% p1(1).LineWidth = 4;p1(2).LineWidth = 4;p1(3).LineWidth = 4;p1(4).LineWidth = 4;
-% ax.FontSize = 20;
-% xlabel('Zeit / ms','Fontsize',20)
-% ylabel('Spannung / V','Fontsize',20)
-% title('Voltage - Controlled Oscillator Nr.4','Color','k','FontSize',20)
-% legend('Ausgang Messung 1,6 V', 'Eingang Messung 1,6 V','Ausgang Messung 1,4 V', 'Eingang Messung 1,4 V','Location', 'east')
-% grid on
-%
-% figure(5);
-% p1=plot(tabelle17(:,1),tabelle17(:,2),tabelle18(:,1),tabelle18(:,2),tabelle19(:,1),tabelle19(:,2),tabelle20(:,1),tabelle20(:,2));
-% ax = ancestor(p1(1), 'axes');
-% p1(1).LineWidth = 4;p1(2).LineWidth = 4;p1(3).LineWidth = 4;p1(4).LineWidth = 4;
-% ax.FontSize = 20;
-% xlabel('Zeit / ms','Fontsize',20)
-% ylabel('Spannung / V','Fontsize',20)
-% title('Voltage - Controlled Oscillator Nr.5','Color','k','FontSize',20)
-% legend('Ausgang Messung 1,2 V', 'Eingang Messung 1,2 V','Ausgang Messung 1 V', 'Eingang Messung 1 V','Location', 'east')
-% grid on
-%
+i=i+1;
+figure(i);
+p1=plot(freq,(Data.(strcat('tab', num2str(34)))(:,2)),'ro');
+p1(1).LineWidth = 10;hold on
+interpolx=min(freq):1:max(freq);
+interpoly = interp1(freq,(Data.(strcat('tab', num2str(34)))(:,2)),interpolx);
+p1=plot(interpolx,interpoly,'r');
+p1(1).LineWidth = 4; hold on
+p1=plot(freq,(Data.(strcat('tab', num2str(34)))(:,3)),'bo');
+p1(1).LineWidth = 10;
+interpoly = interp1(freq,(Data.(strcat('tab', num2str(34)))(:,3)),interpolx);
+p1=plot(interpolx,interpoly,'b');
+p1(1).LineWidth = 4; hold on
+title(plotbeschriftung(i,1),'Color','k','FontSize',20)
+xlabel(plotbeschriftung(i,2),'Fontsize',20);ylabel(plotbeschriftung(i,3),'Fontsize',20);
+ax = ancestor(p1(1), 'axes');ax.FontSize = 20;grid on
+legend(plotbeschriftung(i,4:7),'Fontsize',20,'Location', 'northeast')
+
 %% Funktion zur Anpassung der Datensätze
 function simtabellerueckgabe = anpassung(simtabelle, tabelle)
 time=0;
@@ -235,4 +216,21 @@ while simtabelle(i,1) <= (time2-time+max(tabelle(:,1)))
     i=i+1;
 end
 simtabellerueckgabe(:,1)=simtabellerueckgabe(:,1)-time2+time;
+end
+
+%% Funktion zur Auswertung
+function [periodendauer, frequenz] = frequenzbestimmung(tabelle)
+    frequenz=0;periodendauer=0;k=1;diff=[0; 0];
+    for m=1:2
+        while (1)
+            if(tabelle(k,2) >= 0 && tabelle(k+1,2) < 0)
+                break
+            end
+            k=k+1;
+        end
+        diff(m)=tabelle(k,1);
+        k=k+10;
+    end
+    periodendauer=(diff(2,1)-diff(1,1));
+    frequenz=1/((diff(2,1)-diff(1,1))*10^-3);
 end
