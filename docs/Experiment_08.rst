@@ -4,27 +4,27 @@ Experiment 8: Automatic Gain/Volume Control (AGC/AVC)
 
 Theorie und Motivation
 ----------------------
-AGC´s sind Automatische Verstärkungsreglungen die in elektronischen Geräten dazu verwendet werden, 
-das ein Ausgangssignal bzw. ein Ausgangspegel unabhängig vom Eingangssignal unterhalb eines gesetzten 
+AGC´s sind automatische Verstärkungsreglungen die in elektronischen Geräten dazu verwendet werden, 
+dass ein Ausgangssignal bzw. ein Ausgangspegel unabhängig vom Eingangssignal unterhalb eines gesetzten 
 Schwellpegels limitiert oder geregelt wird. Somit werden also über diese Schaltungen eingangsseitige 
 Übersteuerungen oder aber starke Variationen der Eingangsamplitude mittels regelschleifen am Ausgang 
-in Form einer Konstanten Amplitude mit gleicher frequenz ausgeben. Für die Umsetzung solcher regelschleifen 
+in Form einer Konstanten Amplitude mit gleicher Frequenz ausgeben. Für die Umsetzung solcher Regelschleifen 
 sind unterschiedliche Herangehensweisen möglich. Beispielsweise lassen sich diese entweder über komplizierte 
-Operations Verstärkerschaltungen oder aber wie in diesem Experiment behandelt, mittels eines Comperator 
-Soll- / Istwert vergleiches oder eines Integriergliedes in Verbindung mit Multiplikatoren realisieren.
+Operations-Verstärkerschaltungen oder aber wie in diesem Experiment behandelt, mittels eines Comperator 
+Soll- / Istwert-Vergleiches oder eines Integriergliedes in Verbindung mit Multiplikatoren realisieren.
 
 Im ersten Teil des Experiments ist zunächst die allgemeine Regelschleife eines Comparators in Verbindung mit 
 Multiplikatoren zu betrachten. Diese sollte zunächst analysiert und folgend hierauf ein Design mit Hilfe
-des Simulations Programmes (LTspice oder Tina) entworfen werden, in dem eine Sinusspannung beliebiger 
+des Simulations Programms (LTspice oder Tina) entworfen werden, in dem eine Sinusspannung beliebiger 
 Amplitude auf eine Ausgangsamplitude von 2V geregelt wird. 
 
-Nachdem dies erfolgt ist, soll nun das Systemverhalten (In- zu Output) im Bezug auf die Eingangsspannung 
+Nachdem dies erfolgt ist, soll das Systemverhalten (In- zu Output) im Bezug auf die Eingangsspannung 
 dargestellt, die Eingangsspannung an der die Zielamplitude erreicht wird bestimmt und zuletzt die Ergebnisse 
 der Simulation mit gemessenen Werten eines Schaltungsaufbaus verglichen werden.
 
-Im zweiten Teil des Experiments ist nun eine Regelschleife eines Integriergliedes zu betrachten. Hierbei ist 
-ebenso zunächst die Schaltung zu analysieren und folgend hierauf ein Design zu entwerfen, welches eine beliebige 
-Eingangsamplitude in eine Ausgangsamplitude von 2V gleicher Frequenz regelt. 
+Im zweiten Teil des Experiments soll nun eine Regelschleife mit Integrierglied betrachtet werden. Hierbei ist 
+ebenso wie zuvor die Schaltung zunächst zu analysieren und folgend hierauf ein Design zu entwerfen, 
+welches eine beliebige Eingangsamplitude in eine Ausgangsamplitude von 2V gleicher Frequenz regelt. 
 
 Ist dies ebenfalls erfolgt, so sind auch hierfür das Systemverhalten und die Schwellspannung der Zielamplitude 
 zu bestimmen, sowie die Ergebnisse der Simulation mit den gemessen Werten eines Schaltungsaufbaus zu vergleichen.
@@ -44,12 +44,11 @@ Der Comparator AGC besteht im Grunde aus vier Komponenten.
 Diese sind so mit einander verknüpft, dass das Eingangssignal zunächst in den Multiplizierer mit einer Rückführung 
 des Comparators eingegeben wird. Dieses Ergebnis wird daraufhin an den Quadrierer übergeben, welcher das Sinussignal
 in Betrag setzt und somit zwei positive Halbwellen erzeugt. Folgend auf den Quadrierer wird das Signal noch in den 
-Tiefpass Filter eingegeben, in welchem es nochmal geglättet und somit in ein DC Signal überführt wird.
+Tiefpass-Filter eingegeben, in welchem es nochmal geglättet und somit in ein DC Signal überführt wird.
 Dieses DC Signal wird nun in den invertierenden Eingang des Comparators eingegeben und mit einer Referenzgleichspannung, 
 welche am nicht invertierenden Eingang des Comparators eingegeben ist, verglichen. Das Ergebnis dieses Vergleiches zwischen 
 Soll- und Ist-Wert sorgt nun durch seine Rückführung an den Multiplizierer für eine Skalierung des Eingangssignals.
-Somit passt sich also die Schaltung stetig an wodurch also das Eingangssignal am eingestellten Referenzwert 
-regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am ersten Multiplizierer abzugreifen.
+Sodass hierdurch das Eingangssignal am eingestellten Referenzwert regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am ersten Multiplizierer anzunehmen.
 
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
@@ -68,12 +67,11 @@ Der Integrator AGC besteht aus fünf Komponenten.
 - Integrierer
 - Rückführungs- Vorspannung
 
-Das Prinzip des Integrators ist ähnlich dem des Comperators. Jedoch wird hier der Vergleich des referenzsollwertes
-mit der zu Regelnden Größe nicht mehr über einen Operationsverstärker sondern mittels eines Schwellstrom vergleichs umgesetzt. 
-Realisiert wird dies über eine negativ vorgespannten Spannungsquelle am Knotenpunkt des invertierenden Eingangs des Operationsverstärkers. Des weiteren fällt hier der Tiefpassfilter weg, da dieser durch den Integrierer implementiert ist. 
+Das Prinzip des Integrators ist ähnlich dem des Comperators. Jedoch wird hier der Vergleich des Referenz-Sollwertes
+mit der zu regelnden Größe nicht mehr über einen Operationsverstärker, sondern mittels eines Schwellstroms realisiert. Die Umsetzung erfolgt hier über eine negativ vorgespannten Spannungsquelle am Knotenpunkt des invertierenden Eingangs des Operationsverstärkers. Diese bewirkt nun, dass wenn der Schwellstrom überschritten wurde, dass der Kondensator des Integrierers geladen und somit ein herabsetzen (Reglung) über die Rückführung des Integrierers hervorgerufen wird.
+Außerdem fällt hier der Tiefpassfilter weg, da dieser im Integrierer implementiert ist. 
 Zuletzt erweitert sich die Schaltung noch um eine positiv Vorgespannte Spannungsquelle an der Rückführtung des Integrators. 
-Diese bewirkt in Summe mit der negative aufintegrierten Übersteuerung in der Rückführung, dass der Skalierfaktor SF des Multiplizierers das Eingangssignal mit jeder periode herabsetzt, bis zuletzt im ausgeregelten Zustand eine konstante Rückführung 
-die Regelgröße in den eingestellten Zielbereich regelt. 
+Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung in der Rückführung, dass der Skalierfaktor SF des Multiplizierers das Eingangssignal mit jeder Periode herabsetzt, bis zuletzt im ausgeregelten Zustand eine konstante Rückführung die Regelgröße in den eingestellten Zielbereich regelt. 
 
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
@@ -86,13 +84,12 @@ die Regelgröße in den eingestellten Zielbereich regelt.
 Simulation des AGC 
 ------------------
 
-Zur Implementierung der zu verwendenden Komponenten in die Simulation mussten zunächst für eine realitätsnahe Abbildung im Simulationsprogramm Tina die passenden Makro Modelle für den Multiplizierer MPY634 und den Operationsverstärker TL082 
-eingebunden werden. Für den TL082 ließ sich das relativ schnell finden, für den Multiplizier jedoch nicht. 
+Zur Implementierung der zu verwendenden Komponenten in die Simulation, mussten zunächst für eine realitätsnahe Abbildung im Simulationsprogramm Tina die passenden Makro Modelle für den Multiplizierer MPY634 und den Operationsverstärker TL082 
+eingebunden werden. Für den TL082 ließen sich diese relativ schnell finden, für den Multiplizier jedoch nicht. 
 Nach einigen Recherchen zeigte sich, das weder TI.com noch andre Hersteller dieses Bauteil in Form einer Libary oder eines 
-Makros zur Verfügung stellen. Jedoch ließ sich nach längerem durchforsten einiger Foren für den MPY634 auf Basis 
-dessen Datenbattes ein Makro-Eignenbau finden und Inplementieren.
+Makros zur Verfügung stellen. Jedoch ließ sich nach längerem Durchforsten von Foren für den MPY634 ein Makro-Eignenbau auf Basis dessen Datenbattes finden und implementieren.
 
-Es folgen hierbei die implementierten Multiplizierer (MPY634) folgender Gleichung:
+Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 
 .. math::
    	:label: 08_eq_01
@@ -102,8 +99,7 @@ Es folgen hierbei die implementierten Multiplizierer (MPY634) folgender Gleichun
 Tina Schaltbilder Comperator und Integrator AGC
 -----------------------------------------------
 
-Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, ließ sich folgendes Schaltbild des mit Tina 
-designten Comperator und Integrator AGC´s erstellen.
+Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, ließ sich folgende Schaltbilder für den Comperator und Integrator AGC erstellen.
 
 .. figure:: img/Experiment_08/Schaltbild1_Tina.png
 	    :name:  08_fig_03
@@ -141,8 +137,8 @@ Messkurven und Kennlinien aus Simulation
 
 Es zeigt sich nun aus den Messungen der beiden AGC Schaltungen, dass im Falle des Comparators 
 die Ausgangsspannung auf den eingestellten Bereich limitiert wird, wohingegen die Ausgangsspannung
-des Integrators nicht limitiert sondern stück für stück herabgesetzt wird. Es bleibt somit im Falle des 
-Integrator AGC der Sinus erhalten.
+des Integrators nicht limitiert sondern Stück für Stück herabgesetzt wird. Es bleibt somit im Falle des 
+Integrator AGC's die Sinuswelle erhalten.
 
 
 .. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
@@ -161,12 +157,12 @@ Integrator AGC der Sinus erhalten.
 	    Kennlinie des Integrator AGC´s 		
 
 
-Aus der Kennlinie des Comparator AGC`s ist nun das typische Ein- zu Ausgangsverhalten eines AGC´s
+Aus der Kennlinie des Comparator AGC`s ist nun das erwartete Ein- zu Ausgangsverhalten eines AGC´s
 zu erkennbar. Diese zeigt, dass mit steigender Eingangsspannung die entworfene Regelschleife ab 2,50 V 
 die Ausgangsspannung konstant bei 2,00 V limitiert. 
-Die Kennlinie des Integrator AGC´s zeigt nun typisches Verhalten einer Regelstrecke. Beispiesweise ist zu 
-erkennen das der Ausgang ebenso wie zuvor zunächst dem Eingang bis zu einem Schwellwert (hier 2.00 V) folgt, 
-jedoch dann übergeht in ein Reglertypischen überschwinger mit folgender Ausreglung auf einen eingestellten 
+Die Kennlinie des Integrator AGC´s zeigt nun zusätzlich typisches Verhalten einer Regelstrecke. Beispielsweise 
+ist zu erkennen das der Ausgang ebenso wie zuvor zunächst dem Eingang bis zu einem Schwellwert (hier 2.00 V) folgt, 
+jedoch dann übergeht in ein Reglertypischen Überschwinger mit folgender Ausreglung auf einen eingestellten 
 Ausgangszielwert. (hier 1,45 V)
 
 
@@ -188,9 +184,9 @@ unterschiedliche Eingangsamplituden betrachtet.
 	    Messung des Integrator AGC' mit unterschiedlichen Eingangsamplituden 
 		
 Dabei zeigt sich aus den Darstellungen, dass trotz der sich ändernden Amplitude der Eingangsspannung (blau) 
-die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält. Wodurch 
-also gezeigt ist, dass eine einstellbare Reglung der Eingangsspannung über die Schaltung des Integrator AGC´s 
-im vollen Umfang gegeben ist. 
+sich die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält. 
+Wodurch also gezeigt ist, dass eine einstellbare Reglung der Eingangsspannung über die Schaltung des 
+Integrator AGC´s im vollen Umfang gegeben ist. 
 
 .. figure:: img/Experiment_08/animiertes_gif_2.gif
 	    :name:  08_fig_10
@@ -200,7 +196,7 @@ im vollen Umfang gegeben ist.
 	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
 		
 Eine Änderung der Referenzspannung zeigt ebenfalls in allen Fällen gleiches Regelverhalten mit einer
-Konstanten Sinus Ausgangs-Zielamplitude.
+konstanten Sinus Ausgangs-Zielamplitude.
 
 Betrachtet mann nun auch die charakteristische Kennlinine des Integrator AGC's, so zeichnet sich hieraus 
 ebenfalls das typische Reglerverhalten des Integrierers aus der Rückführung der Regelschleife heraus.
