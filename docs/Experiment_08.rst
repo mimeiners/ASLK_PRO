@@ -161,7 +161,7 @@ Integrator AGC der Sinus erhalten.
 	    Kennlinie des Integrator AGC´s 		
 
 
-Aus der Kennlinie des Comparator AGC`s ist nun das Typische Eingangs- zu Ausgasgangsverhalten eines AGC´s
+Aus der Kennlinie des Comparator AGC`s ist nun das typische Ein- zu Ausgangsverhalten eines AGC´s
 zu erkennbar. Diese zeigt, dass mit steigender Eingangsspannung die entworfene Regelschleife ab 2,50 V 
 die Ausgangsspannung konstant bei 2,00 V limitiert. 
 Die Kennlinie des Integrator AGC´s zeigt nun typisches Verhalten einer Regelstrecke. Beispiesweise ist zu 
