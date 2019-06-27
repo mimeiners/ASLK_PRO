@@ -199,10 +199,9 @@ im vollen Umfang gegeben ist.
 
 	    Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden 
 		
-Selbiges Verhalten ist für weitere Referenzwert Zielamplituden erkennbar.
+Eine Änderung der Referenzspannung zeigt ebenfalls in allen Fällen gleiches Regelverhalten mit einer
+Konstanten Sinus Ausgangs-Zielamplitude.
 
-
-Es zeigt sich ebenfalls wie in der Simulation, nun dass Typische Reglerverhalten des Integriergliedes. 
 Betrachtet mann nun auch die Charakteristische Kennlinine des Integrator AGC's so zeichnet sich hieraus 
 zuletzt das typische Reglerverhalten des Integrierers aus Rückführung der Regelschleife heraus.
 
