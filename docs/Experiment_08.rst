@@ -146,7 +146,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
 	    :name:  08_fig_07
 	    :align: center
-	    :scale: 60%
+	    :scale: 40%
 
 	    Kennlinie des Comparator AGC´s 
 		
@@ -154,7 +154,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Integrator_IN_zu_Out.png
 	    :name:  08_fig_08
 	    :align: center
-	    :scale: 60%
+	    :scale: 40%
 
 	    Kennlinie des Integrator AGC´s 		
 
