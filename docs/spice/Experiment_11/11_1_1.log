@@ -1,24 +1,22 @@
 Circuit: * C:\Users\Jan Frost\Desktop\ANS\ASLK_PRO\docs\spice\Experiment_11\11_1_1.asc
 
 WARNING: Less than two connections to node LAST.  This node is used by V2.
-Direct Newton iteration for .op point succeeded.
-Ignoring empty pin current: Ix(u1:en)
 Ignoring empty pin current: Ix(u1:en)
 
-Date: Thu Jun 27 15:40:26 2019
-Total elapsed time: 0.239 seconds.
+Date: Fri Jun 28 10:36:20 2019
+Total elapsed time: 0.125 seconds.
 
 tnom = 27
 temp = 27
-method = modified trap
-totiter = 6227
-traniter = 6220
-tranpoints = 3109
-accept = 3033
-rejected = 76
-matrix size = 34
-fillins = 20
+method = trap
+totiter = 2011
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 35
+fillins = 13
 solver = Normal
-Matrix Compiler1: 1.98 KB object code size  1.7/1.1/[0.9]
-Matrix Compiler2: 2.47 KB object code size  0.8/1.4/[0.7]
+Matrix Compiler1: 1.72 KB object code size  1.5/1.1/[0.8]
+Matrix Compiler2: 2.42 KB object code size  0.7/1.4/[0.5]
 
