@@ -94,7 +94,7 @@ Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 .. role:: raw-math(raw)
     :format: latex html
 
-:raw-math:`$$ V\textsubscript{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
+:raw-math:`$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
    
  
 
@@ -146,7 +146,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Comparator_IN_zu_Out.png
 	    :name:  08_fig_07
 	    :align: center
-	    :scale: 5%
+	    :scale: 18%
 
 	    Kennlinie des Comparator AGC´s 
 		
@@ -154,7 +154,7 @@ Integrator AGC's die Sinuswelle erhalten.
 .. figure:: img/Experiment_08/Integrator_IN_zu_Out.png
 	    :name:  08_fig_08
 	    :align: center
-	    :scale: 5%
+	    :scale: 18%
 
 	    Kennlinie des Integrator AGC´s 		
 
