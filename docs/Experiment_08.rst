@@ -48,7 +48,9 @@ Tiefpass-Filter eingegeben, in welchem es nochmal geglättet und somit in ein DC
 Dieses DC Signal wird nun in den invertierenden Eingang des Comparators eingegeben und mit einer Referenzgleichspannung, 
 welche am nicht invertierenden Eingang des Comparators eingegeben ist, verglichen. Das Ergebnis dieses Vergleiches zwischen 
 Soll- und Ist-Wert sorgt nun durch seine Rückführung an den Multiplizierer für eine Skalierung des Eingangssignals.
-Sodass hierdurch das Eingangssignal am eingestellten Referenzwert regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am ersten Multiplizierer anzunehmen.
+Sodass hierdurch das Eingangssignal am eingestellten Referenzwert
+regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am
+ersten Multiplizierer anzunehmen. 
 
 .. figure:: img/Experiment_08/Comparator.png
 	    :name:  08_fig_01
@@ -68,10 +70,20 @@ Der Integrator AGC besteht aus fünf Komponenten.
 - Rückführungs- Vorspannung
 
 Das Prinzip des Integrators ist ähnlich dem des Comperators. Jedoch wird hier der Vergleich des Referenz-Sollwertes
-mit der zu regelnden Größe nicht mehr über einen Operationsverstärker, sondern mittels eines Schwellstroms realisiert. Die Umsetzung erfolgt hier über eine negativ vorgespannten Spannungsquelle am Knotenpunkt des invertierenden Eingangs des Operationsverstärkers. Diese bewirkt nun, dass wenn der Schwellstrom überschritten wurde, dass der Kondensator des Integrierers geladen und somit ein herabsetzen (Reglung) über die Rückführung des Integrierers hervorgerufen wird.
+mit der zu regelnden Größe nicht mehr über einen Operationsverstärker,
+sondern mittels eines Schwellstroms realisiert. Die Umsetzung erfolgt
+hier über eine negativ vorgespannten Spannungsquelle am Knotenpunkt
+des invertierenden Eingangs des Operationsverstärkers. Diese bewirkt
+nun, dass wenn der Schwellstrom überschritten wurde, dass der
+Kondensator des Integrierers geladen und somit ein herabsetzen
+(Reglung) über die Rückführung des Integrierers hervorgerufen wird. 
 Außerdem fällt hier der Tiefpassfilter weg, da dieser im Integrierer implementiert ist. 
 Zuletzt erweitert sich die Schaltung noch um eine positiv Vorgespannte Spannungsquelle an der Rückführtung des Integrators. 
-Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung in der Rückführung, dass der Skalierfaktor SF des Multiplizierers das Eingangssignal mit jeder Periode herabsetzt, bis zuletzt im ausgeregelten Zustand eine konstante Rückführung die Regelgröße in den eingestellten Zielbereich regelt. 
+Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung
+in der Rückführung, dass der Skalierfaktor SF des Multiplizierers das
+Eingangssignal mit jeder Periode herabsetzt, bis zuletzt im
+ausgeregelten Zustand eine konstante Rückführung die Regelgröße in den
+eingestellten Zielbereich regelt.  
 
 .. figure:: img/Experiment_08/Integrator.png
 	    :name:  08_fig_02
@@ -84,10 +96,15 @@ Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung in der Rü
 Simulation des AGC 
 ------------------
 
-Zur Implementierung der zu verwendenden Komponenten in die Simulation, mussten zunächst für eine realitätsnahe Abbildung im Simulationsprogramm Tina die passenden Makro Modelle für den Multiplizierer MPY634 und den Operationsverstärker TL082 
+Zur Implementierung der zu verwendenden Komponenten in die Simulation,
+mussten zunächst für eine realitätsnahe Abbildung im
+Simulationsprogramm Tina die passenden Makro Modelle für den
+Multiplizierer MPY634 und den Operationsverstärker TL082  
 eingebunden werden. Für den TL082 ließen sich diese relativ schnell finden, für den Multiplizier jedoch nicht. 
 Nach einigen Recherchen zeigte sich, das weder TI.com noch andre Hersteller dieses Bauteil in Form einer Libary oder eines 
-Makros zur Verfügung stellen. Jedoch ließ sich nach längerem Durchforsten von Foren für den MPY634 ein Makro-Eignenbau auf Basis dessen Datenbattes finden und implementieren.
+Makros zur Verfügung stellen. Jedoch ließ sich nach längerem
+Durchforsten von Foren für den MPY634 ein Makro-Eignenbau auf Basis
+dessen Datenbattes finden und implementieren. 
 
 Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 
@@ -101,7 +118,9 @@ Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:
 Tina Schaltbilder Comperator und Integrator AGC
 -----------------------------------------------
 
-Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet wurden, ließ sich folgende Schaltbilder für den Comperator und Integrator AGC erstellen.
+Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet
+wurden, ließ sich folgende Schaltbilder für den Comperator und
+Integrator AGC erstellen. 
 
 .. figure:: img/Experiment_08/Schaltbild1_Tina.png
 	    :name:  08_fig_03
