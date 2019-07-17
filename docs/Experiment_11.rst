@@ -39,19 +39,19 @@ kleiner wird. Dadurch fließt mehr oder weniger Strom zum Regler Ausgang.
 
 Aufbau der Schaltung
 --------------------
-.. figure:: img/Experiment_11/Schematic_diagram_of_on_board_evaluatuion_module.png
+.. figure:: img/Experiment_11/Schematic_diagram_of_on_board_evaluation_module.png
 	    :name:  11_fig_02
 	    :align: center
 	    :scale: 40%
 
 	    on-board Schaltung
 
-•	Eingangsspannung: 5,5-11V
-•	Ausgangsspannung: 5V
-•	Der Kondensator C102 verbessert die Übergangfunktion des Reglers. 
-•	Der Kondensator C101 hilft, die Störungen am Eingang zu reduzieren, wenn die Zuleitungen zu lang sind.
-•	Der Kondensator C103 am Ausgang dient als Speicher und definiert meist auch die Bandbreite bzw. die Reaktionszeit des LDO.
-•	Die Diode zeigt, dass der Chip Funktionsfähig ist
+-Eingangsspannung: 5,5-11V
+-Ausgangsspannung: 5V
+-Der Kondensator C102 verbessert die Übergangfunktion des Reglers. 
+-Der Kondensator C101 hilft, die Störungen am Eingang zu reduzieren, wenn die Zuleitungen zu lang sind.
+-Der Kondensator C103 am Ausgang dient als Speicher und definiert meist auch die Bandbreite bzw. die Reaktionszeit des LDO.
+-Die Diode zeigt, dass der Chip Funktionsfähig ist
 
 
 Aufgabe
