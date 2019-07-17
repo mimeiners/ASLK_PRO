@@ -21,7 +21,7 @@ Funktionsweise
 .. figure:: img/Experiment_11/low_dropout_regulator.png
 	    :name:  11_fig_01
 	    :align: center
-	    :scale: 40%
+	    :scale: 70%
 
 	    LDO Prizip
 
@@ -96,21 +96,32 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 .. figure:: img/Experiment_11/Vergleich_Messung1_&_Simulation1.png
 	    :name:  11_fig_04
 	    :align: center
-	    :scale: 40%
+	    :scale: 70%
 
-	    Vergleich Messung & Simulation
+	    Leitungsregelung: Vergleich Messung & Simulation
 
 Die :numref:`11_fig_04` zeigt das Verhältnis der Spannungen
-:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils für eine große Last, 
+:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils fuer eine große Last, 
 eine kleine Last und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last. 
 
 
 Lastregelung: Schaltungsaufbau - Simulation
 -------------------------------------------
-.. figure:: img/Experiment_11/Vergleich_Messung2_&_Simulation2.png
+.. figure:: img/Experiment_11/Simulation_Teil2.png
 	    :name:  11_fig_05
 	    :align: center
 	    :scale: 40%
 
-	    Vergleich Messung & Simulation
+	    Schaltungsaufbau - Simulation
+
+
+Lastregelung: Vergleich Messung & Simulation
+------------------------------------------------
+
+.. figure:: img/Experiment_11/Vergleich_Messung2_&_Simulation2.png
+	    :name:  11_fig_06
+	    :align: center
+	    :scale: 70%
+
+	    Lastregelung: Vergleich Messung & Simulation
 
