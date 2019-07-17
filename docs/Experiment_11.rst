@@ -18,7 +18,7 @@ Ausgangsspannung liegt bei 0,1 V bis 1 V, statt 1,5 V bis 3 V bei anderen Regler
 Funktionsweise
 --------------
 
-.. figure:: img/Experiment_11/low dropout regulator.png
+.. figure:: img/Experiment_11/low_dropout_regulator.png
 	    :name:  11_fig_01
 	    :align: center
 	    :scale: 40%
@@ -39,7 +39,7 @@ kleiner wird. Dadurch fließt mehr oder weniger Strom zum Regler Ausgang.
 
 Aufbau der Schaltung
 --------------------
-.. figure:: img/Experiment_11/Schematic diagram of on-board evaluatuion module.png
+.. figure:: img/Experiment_11/Schematic_diagram_of_on_board_evaluatuion_module.png
 	    :name:  11_fig_02
 	    :align: center
 	    :scale: 40%
@@ -80,7 +80,7 @@ Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 :numref:`11_fig_02` entworfen. 
 
-.. figure:: img/Experiment_11/Simulation der SchaltungTeil1.png
+.. figure:: img/Experiment_11/Simulation_der_SchaltungTeil1.png
 	    :name:  11_fig_03
 	    :align: center
 	    :scale: 40%
@@ -93,7 +93,7 @@ Nachdem die Simulationen für die Schaltung durhcgeführt sind, werden
 die Messungen am Texas Instruments Board durchgeführt. Hierdurch kann
 ein klarer Vergleich zur Simulation hergestellt werden. 
 
-.. figure:: img/Experiment_11/Vergleich Messung1 & Simulation1.png
+.. figure:: img/Experiment_11/Vergleich_Messung1_&_Simulation1.png
 	    :name:  11_fig_04
 	    :align: center
 	    :scale: 40%
@@ -107,7 +107,7 @@ eine kleine Last und ohne Last druchgeführt. Die Simulation erfolgte auch ohne L
 
 Lastregelung: Schaltungsaufbau - Simulation
 -------------------------------------------
-.. figure:: img/Experiment_11/Vergleich Messung2 & Simulation2 .png
+.. figure:: img/Experiment_11/Vergleich_Messung2_&_Simulation2.png
 	    :name:  11_fig_05
 	    :align: center
 	    :scale: 40%
