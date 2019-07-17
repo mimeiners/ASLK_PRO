@@ -21,7 +21,7 @@ Funktionsweise
 .. figure:: img/Experiment_11/low_dropout_regulator.png
 	    :name:  11_fig_01
 	    :align: center
-	    :scale: 70%
+	   
 
 	    LDO Prizip
 
@@ -96,7 +96,7 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 .. figure:: img/Experiment_11/Vergleich_Messung1_&_Simulation1.png
 	    :name:  11_fig_04
 	    :align: center
-	    :scale: 70%
+	    
 
 	    Leitungsregelung: Vergleich Messung & Simulation
 
@@ -121,7 +121,7 @@ Lastregelung: Vergleich Messung & Simulation
 .. figure:: img/Experiment_11/Vergleich_Messung2_&_Simulation2.png
 	    :name:  11_fig_06
 	    :align: center
-	    :scale: 70%
+	    
 
 	    Lastregelung: Vergleich Messung & Simulation
 
