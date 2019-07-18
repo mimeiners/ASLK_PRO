@@ -41,8 +41,7 @@ Aufbau der Schaltung
 --------------------
 .. figure:: img/Experiment_11/Schematic_diagram_of_on_board_evaluation_module.png
 	    :name:  11_fig_02
-	    :align: center
-	    :scale: 40%
+	    :align: center	 
 
 	    on-board Schaltung
 
@@ -82,8 +81,7 @@ zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 
 .. figure:: img/Experiment_11/Simulation_der_SchaltungTeil1.png
 	    :name:  11_fig_03
-	    :align: center
-	    :scale: 40%
+	    :align: center	   
 
 	    Simulation Leitungsregelung
 
@@ -101,7 +99,7 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 	    Leitungsregelung: Vergleich Messung & Simulation
 
 Die :numref:`11_fig_04` zeigt das Verhältnis der Spannungen
-:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils fuer eine große Last, 
+:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils für eine große Last, 
 eine kleine Last und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last. 
 
 
@@ -109,8 +107,7 @@ Lastregelung: Schaltungsaufbau - Simulation
 -------------------------------------------
 .. figure:: img/Experiment_11/Simulation_Teil2.png
 	    :name:  11_fig_05
-	    :align: center
-	    :scale: 40%
+	    :align: center	    
 
 	    Schaltungsaufbau - Simulation
 
