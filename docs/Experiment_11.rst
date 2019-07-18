@@ -11,8 +11,8 @@ hohe PSRR, schneller LDO-Start mit ausgezeichnetem Einschwingverhalten. Der Vers
 wenn sich die Versorgungsspannung verändert. Die Dropout-Spannung definiert als die Differenz zwischen 
 den Eingangs- und den Ausgangsspannungen zu dem Punkt, zu dem ein weiterer Abfall der Eingangsspannung dazu führt, 
 dass die Regelung der Ausgangsspannung fehlschlägt.
-Unterschied zu anderen Spannungsreglern. Die minimal erforderliche Differenz zwischen Ein- und 
-Ausgangsspannung liegt bei 0,1 V bis 1 V, statt 1,5 V bis 3 V bei anderen Reglern.
+Der Unterschied zu anderen Spannungsreglern ist die minimal erforderliche Differenz zwischen Ein- und 
+Ausgangsspannung. Diese liegt bei dem LDO bei 0,1 V bis 1 V. Bei anderen Reglern liegt diese bei 1,5 V bis 3 V.
 
 
 Funktionsweise
@@ -118,7 +118,7 @@ Lastregelung: Schaltungsaufbau - Simulation
 
 	    Schaltungsaufbau - Simulation
 
-
+Für die Lastregelung wird die LT-Spice schaltung minimal verändert. Um eine Kontinuierliche Last am Ausgang zu erzeugen, wird die Zeitvariable "time" eingefügt. Die Last am Ausgang wird also mit vortlaufender Zeit immer größer. 
 
 Lastregelung: Vergleich Messung & Simulation
 ------------------------------------------------
@@ -129,3 +129,5 @@ Lastregelung: Vergleich Messung & Simulation
 	    
 
 	    Lastregelung: Vergleich Messung & Simulation
+
+Die Kurve der Simulation zeigt, das der Spannungsregler die 5 Volt am Ausgang bis zu einem Strom von 100mA halten kann. Bei einem höheren Strom wird die 5 Volt Ausgangsspannung unterschritten. In der Praxis ist der Regler sogar ein bisschen besser, da er die Ausgangsspannug bis zu einem Ausgangsstrom von 110mA halten kann. 
