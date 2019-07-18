@@ -106,9 +106,9 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 	    Leitungsregelung: Vergleich Messung & Simulation
 
 Die :numref:`11_fig_04` zeigt das Verhältnis der Spannungen
-:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils für eine große Last, 
-eine kleine Last und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last. 
-
+:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils für eine große Last(1kohm), 
+eine kleine Last(20ohm) und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last. 
+Anhand der Kurven erkennt man, dass die Spannungsregelung für die kleine Last nicht im gewünschten Bereich arbeitet, weil die Ausgangsspannung unter 5 Volt liegt, für die anderen Lasten erfüllt der Spannungsregler seine Funktion.
 
 Lastregelung: Schaltungsaufbau - Simulation
 -------------------------------------------
