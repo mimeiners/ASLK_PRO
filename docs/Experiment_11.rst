@@ -90,6 +90,8 @@ zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 
 	    Simulation Leitungsregelung
 
+Das Model für den TPS7250 Baustein wurde von der Texas Instrumens Homepage gedownloadet. Die Eingangsspannung wird von 5,5 Volt bis 11 Volt in 0,5 Volt Schritten gesweept. 
+
 Leitungsregelung: Vergleich Messung & Simulation
 ------------------------------------------------
 Nachdem die Simulationen für die Schaltung durhcgeführt sind, werden
@@ -115,6 +117,7 @@ Lastregelung: Schaltungsaufbau - Simulation
 	    :align: center	    
 
 	    Schaltungsaufbau - Simulation
+
 
 
 Lastregelung: Vergleich Messung & Simulation
