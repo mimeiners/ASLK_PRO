@@ -3,7 +3,7 @@ Experiment 11: Parameterstudie eines LDO's
 
 Kurze Theorie und Motivation
 ----------------------------
-Ziel dieses Experiments ist es, die Parameter des Low Dropout Regulator (LDO) IC TPS7250 zu verstehen. 
+Ziel dieses Experiments ist es, die Parameter des Low Dropout Regulator (LDO) IC TPS7250 zu verstehen.
 Der TPS7250 ist ein Linearregler von Texas Instruments und kann einen Ausgangsstrom von 200 mA bei einer festen 
 Ausgangsspannung von 5 V liefern. Er zeichnet sich aus durch einen niedrigen Ruhestrom, geringes Rauschen, 
 hohe PSRR, schneller LDO-Start mit ausgezeichnetem Einschwingverhalten. Der Versorgungsspannungsdurchgriff,
@@ -12,7 +12,7 @@ wenn sich die Versorgungsspannung verändert. Die Dropout-Spannung definiert als 
 den Eingangs- und den Ausgangsspannungen zu dem Punkt, zu dem ein weiterer Abfall der Eingangsspannung dazu führt, 
 dass die Regelung der Ausgangsspannung fehlschlägt.
 Unterschied zu anderen Spannungsreglern. Die minimal erforderliche Differenz zwischen Ein- und 
-Ausgangsspannung liegt bei 0,1 V bis 1 V, statt 1,5 V bis 3 V bei anderen Reglern.
+Ausgangsspannung liegt bei 0,1 V bis 1 V, statt 1,5 V bis 3 V bei anderen Reglern...
 
 
 Funktionsweise
