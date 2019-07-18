@@ -1,4 +1,4 @@
-Experiment 11: Parameterstudie eines LDO's
+ï»¿Experiment 11: Parameterstudie eines LDO's
 ==========================================
 
 Kurze Theorie und Motivation
@@ -7,12 +7,12 @@ Ziel dieses Experiments ist es, die Parameter des Low Dropout Regulator (LDO) IC
 Der TPS7250 ist ein Linearregler von Texas Instruments und kann einen Ausgangsstrom von 200 mA bei einer festen 
 Ausgangsspannung von 5 V liefern. Er zeichnet sich aus durch einen niedrigen Ruhestrom, geringes Rauschen, 
 hohe PSRR, schneller LDO-Start mit ausgezeichnetem Einschwingverhalten. Der Versorgungsspannungsdurchgriff,
-(Power supply rejection ratio) gibt an, wie stark sich die Ausgangsspannung eines Verstärkers ändert, 
-wenn sich die Versorgungsspannung verändert. Die Dropout-Spannung definiert als die Differenz zwischen 
-den Eingangs- und den Ausgangsspannungen zu dem Punkt, zu dem ein weiterer Abfall der Eingangsspannung dazu führt, 
-dass die Regelung der Ausgangsspannung fehlschlägt.
+(Power supply rejection ratio) gibt an, wie stark sich die Ausgangsspannung eines VerstÃ¤rkers Ã¤ndert, 
+wenn sich die Versorgungsspannung verÃ¤ndert. Die Dropout-Spannung definiert als die Differenz zwischen 
+den Eingangs- und den Ausgangsspannungen zu dem Punkt, zu dem ein weiterer Abfall der Eingangsspannung dazu fÃ¼hrt, 
+dass die Regelung der Ausgangsspannung fehlschlÃ¤gt.
 Unterschied zu anderen Spannungsreglern. Die minimal erforderliche Differenz zwischen Ein- und 
-Ausgangsspannung liegt bei 0,1 V bis 1 V, statt 1,5 V bis 3 V bei anderen Reglern...
+Ausgangsspannung liegt bei 0,1 V bis 1 V, statt 1,5 V bis 3 V bei anderen Reglern..
 
 
 Funktionsweise
@@ -25,17 +25,17 @@ Funktionsweise
 
 	    LDO Prizip
 
-Der LDO besteht im Prinzip aus einer Referenzspannung, einem Operationsverstärker, einem Durchgangselement 
+Der LDO besteht im Prinzip aus einer Referenzspannung, einem OperationsverstÃ¤rker, einem Durchgangselement 
 und einem Widerstand am Ausgang. Eine einfache Referenzspannungsquelle kann mit einem Widerstand, 
-sowie einer Z-Diode erzeugt werden. Als Durchgangselements wurde ein MOSFET gewählt. Er ist dafür da, 
-die Ausgangsspannung durch Änderung des Kanalstromes anzupassen. Er zeichnet sich dadurch aus, dass er 
+sowie einer Z-Diode erzeugt werden. Als Durchgangselements wurde ein MOSFET gewÃ¤hlt. Er ist dafÃ¼r da, 
+die Ausgangsspannung durch Ã„nderung des Kanalstromes anzupassen. Er zeichnet sich dadurch aus, dass er 
 eine kleinere Dropout-Spannung hat. Da es sich bei dem PMOS-Durchlasselement um ein spannungsgesteuertes 
-Gerät handelt, ist der Ruhestrom sehr niedrig (maximal 300 µA) und über den gesamten Bereich des 
-Ausgangslaststroms (0 mA bis 200 mA) stabil. Der Operationsverstärker vergleicht die Spannung, 
+GerÃ¤t handelt, ist der Ruhestrom sehr niedrig (maximal 300 ÂµA) und Ã¼ber den gesamten Bereich des 
+Ausgangslaststroms (0 mA bis 200 mA) stabil. Der OperationsverstÃ¤rker vergleicht die Spannung, 
 welche durch den Spannungsteiler am Ausgang gebildet wird, mit einer Referenzspannung. 
-Je nach Eingangsspannungsdifferenz stellt sich eine höhere oder niedrigere Ausgangsspannung am 
-Operationsverstärker ein, so dass die Spannung zwischen Gate und Source des Transistors anwächst oder 
-kleiner wird. Dadurch fließt mehr oder weniger Strom zum Regler Ausgang.
+Je nach Eingangsspannungsdifferenz stellt sich eine hÃ¶here oder niedrigere Ausgangsspannung am 
+OperationsverstÃ¤rker ein, so dass die Spannung zwischen Gate und Source des Transistors anwÃ¤chst oder 
+kleiner wird. Dadurch flieÃŸt mehr oder weniger Strom zum Regler Ausgang.
 
 Aufbau der Schaltung
 --------------------
@@ -48,35 +48,35 @@ Aufbau der Schaltung
 
 -Eingangsspannung: 5,5-11V
 -Ausgangsspannung: 5V
--Der Kondensator C102 verbessert die Übergangfunktion des Reglers. 
--Der Kondensator C101 hilft, die Störungen am Eingang zu reduzieren, wenn die Zuleitungen zu lang sind.
+-Der Kondensator C102 verbessert die Ãœbergangfunktion des Reglers. 
+-Der Kondensator C101 hilft, die StÃ¶rungen am Eingang zu reduzieren, wenn die Zuleitungen zu lang sind.
 -Der Kondensator C103 am Ausgang dient als Speicher und definiert meist auch die Bandbreite bzw. die Reaktionszeit des LDO.
--Die Diode zeigt, dass der Chip Funktionsfähig ist
+-Die Diode zeigt, dass der Chip FunktionsfÃ¤hig ist
 
 
 Aufgabe
 -------
 Ermitteln der Leitungsregelung: 
-die Ausgangsspannung als Funktion der Eingangsspannung für eine feste Ausgangslast. 
+die Ausgangsspannung als Funktion der Eingangsspannung fÃ¼r eine feste Ausgangslast. 
 
-Unter Leitungsregelung versteht man die Änderung der Ausgangsspannung bei einer 
-vorgegebenen Änderung der Eingangsspannung. Bei linearen Spannungsreglern sollte die Ausgangsspannung 
-möglichst unabhängig von der Eingangsspannung sein. In der Praxis existiert jedoch eine kleine Abhängigkeit
-zwischen der Ein- und der Ausgangsspannung. Diese Abhängigkeit hängt stark vom Verstärkungsfaktor des 
-Operationsverstärkers ab. Bei der Wahl des Verstärkungsfaktors muss darauf geachtet werden, 
-dass die Verstärkung nicht zu groß ist. Ein zu großer Verstärkungsfaktor kann die Stabilität des Reglers 
+Unter Leitungsregelung versteht man die Ã„nderung der Ausgangsspannung bei einer 
+vorgegebenen Ã„nderung der Eingangsspannung. Bei linearen Spannungsreglern sollte die Ausgangsspannung 
+mÃ¶glichst unabhÃ¤ngig von der Eingangsspannung sein. In der Praxis existiert jedoch eine kleine AbhÃ¤ngigkeit
+zwischen der Ein- und der Ausgangsspannung. Diese AbhÃ¤ngigkeit hÃ¤ngt stark vom VerstÃ¤rkungsfaktor des 
+OperationsverstÃ¤rkers ab. Bei der Wahl des VerstÃ¤rkungsfaktors muss darauf geachtet werden, 
+dass die VerstÃ¤rkung nicht zu groÃŸ ist. Ein zu groÃŸer VerstÃ¤rkungsfaktor kann die StabilitÃ¤t des Reglers 
 beeinflussen.
 
 Ermitteln der Lastregelung: 
-Lastregelung wird definiert als die Änderung der Ausgangsspannung bei einer vorgegebenen Laständerung. 
+Lastregelung wird definiert als die Ã„nderung der Ausgangsspannung bei einer vorgegebenen LastÃ¤nderung. 
 
 Wie bei der Leitungsregelung muss ein Regler auch bei einem Lastwechsel in der Lage sein, 
-eine konstante Ausgangsspannung zur Verfügung zu stellen. Dieser Strom wird aber nicht immer 
+eine konstante Ausgangsspannung zur VerfÃ¼gung zu stellen. Dieser Strom wird aber nicht immer 
 konstant bleiben und schwanken. 
 
 Leitungsregelung: Schaltungsaufbau - Simulation
 ------------------------------------------------
-Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
+Mithilfe der Software LTSpice XII ist es mÃ¶glich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 :numref:`11_fig_02` entworfen. 
 
@@ -89,8 +89,8 @@ zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 
 Leitungsregelung: Vergleich Messung & Simulation
 ------------------------------------------------
-Nachdem die Simulationen für die Schaltung durhcgeführt sind, werden
-die Messungen am Texas Instruments Board durchgeführt. Hierdurch kann
+Nachdem die Simulationen fÃ¼r die Schaltung durhcgefÃ¼hrt sind, werden
+die Messungen am Texas Instruments Board durchgefÃ¼hrt. Hierdurch kann
 ein klarer Vergleich zur Simulation hergestellt werden. 
 
 .. figure:: img/Experiment_11/Vergleich_Messung1_&_Simulation1.png
@@ -100,9 +100,9 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 
 	    Leitungsregelung: Vergleich Messung & Simulation
 
-Die :numref:`11_fig_04` zeigt das Verhältnis der Spannungen
-:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils fuer eine große Last, 
-eine kleine Last und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last. 
+Die :numref:`11_fig_04` zeigt das VerhÃ¤ltnis der Spannungen
+:math:`V_{in}` zu :math:`V_{out}`. Die Messung wurden jeweils fuer eine groÃŸe Last, 
+eine kleine Last und ohne Last druchgefÃ¼hrt. Die Simulation erfolgte auch ohne Last. 
 
 
 Lastregelung: Schaltungsaufbau - Simulation
@@ -124,4 +124,3 @@ Lastregelung: Vergleich Messung & Simulation
 	    
 
 	    Lastregelung: Vergleich Messung & Simulation
-
