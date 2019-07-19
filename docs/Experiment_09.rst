@@ -1,4 +1,4 @@
-Experiment 9: DC-DC Koverter
+﻿Experiment 9: DC-DC Koverter
 ============================
 
 
@@ -64,7 +64,7 @@ stabiles Ausgangssignal :math:`V_{av}` zu erhalten.
 Simulation DC-DC Wandler
 ------------------------
 
-MIthilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
+Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 :numref:`09_fig_01` entworfen. 
 
