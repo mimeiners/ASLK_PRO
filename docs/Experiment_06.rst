@@ -4,33 +4,12 @@ Experiment 6: Voltage controlled oscillator (VCO)
 
 Theorie und Motivation
 ----------------------
-Voltage controlled oscillator ändern die Frequenz der Ausgangsspannung in Abhängigkeit der Eingangsspannung.
+Voltage controlled oscillator sind Schaltungen, die die Frequenz der Ausgangsspannung in Abhängigkeit der Eingangsspannung ändern. Bekannt ist auch die Wirkung als Funktionsgenerator mit einem Rechtecksignal am Ausgang.
+In der Praxis kann die Schaltung in der elektronischen Musik als Synthesizer, bei Motorregelungen, als Funktionsgenerator und beim  Sendersuchlauf in Verbindung mit PLL genutzt werden.
+Ein VCO kann mit Hilfe eines Multiplizierers, eine Integrierers und eines nicht invertierenden Schmitt-Triggers realisiert werden.
+Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird analysiert in Abhängigkeit eines Sinus-Signals. Dafür liegt eine Spice-Simulation vor, die anschließend messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen. 
+Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1V bis 10V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.
 
-
-AGC´s sind automatische Verstärkungsreglungen die in elektronischen Geräten dazu verwendet werden, 
-dass ein Ausgangssignal bzw. ein Ausgangspegel unabhängig vom Eingangssignal unterhalb eines gesetzten 
-Schwellpegels limitiert oder geregelt wird. Somit werden also über diese Schaltungen eingangsseitige 
-Übersteuerungen oder aber starke Variationen der Eingangsamplitude mittels regelschleifen am Ausgang 
-in Form einer Konstanten Amplitude mit gleicher Frequenz ausgeben. Für die Umsetzung solcher Regelschleifen 
-sind unterschiedliche Herangehensweisen möglich. Beispielsweise lassen sich diese entweder über komplizierte 
-Operations-Verstärkerschaltungen oder aber wie in diesem Experiment behandelt, mittels eines Comperator 
-Soll- / Istwert-Vergleiches oder eines Integriergliedes in Verbindung mit Multiplikatoren realisieren.
-
-Im ersten Teil des Experiments ist zunächst die allgemeine Regelschleife eines Comparators in Verbindung mit 
-Multiplikatoren zu betrachten. Diese sollte zunächst analysiert und folgend hierauf ein Design mit Hilfe
-des Simulations Programms (LTspice oder Tina) entworfen werden, in dem eine Sinusspannung beliebiger 
-Amplitude auf eine Ausgangsamplitude von 2V geregelt wird. 
-
-Nachdem dies erfolgt ist, soll das Systemverhalten (In- zu Output) im Bezug auf die Eingangsspannung 
-dargestellt, die Eingangsspannung an der die Zielamplitude erreicht wird bestimmt und zuletzt die Ergebnisse 
-der Simulation mit gemessenen Werten eines Schaltungsaufbaus verglichen werden.
-
-Im zweiten Teil des Experiments soll nun eine Regelschleife mit Integrierglied betrachtet werden. Hierbei ist 
-ebenso wie zuvor die Schaltung zunächst zu analysieren und folgend hierauf ein Design zu entwerfen, 
-welches eine beliebige Eingangsamplitude in eine Ausgangsamplitude von 2V gleicher Frequenz regelt. 
-
-Ist dies ebenfalls erfolgt, so sind auch hierfür das Systemverhalten und die Schwellspannung der Zielamplitude 
-zu bestimmen, sowie die Ergebnisse der Simulation mit den gemessen Werten eines Schaltungsaufbaus zu vergleichen.
 
 
 Spezifikation
