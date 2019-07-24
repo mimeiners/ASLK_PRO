@@ -6,8 +6,10 @@ Theorie und Motivation
 ----------------------
 Voltage controlled oscillator sind Schaltungen, die die Frequenz der Ausgangsspannung in Abhängigkeit der Eingangsspannung ändern. Bekannt ist auch die Wirkung als Funktionsgenerator mit einem Rechtecksignal am Ausgang.
 In der Praxis kann die Schaltung in der elektronischen Musik als Synthesizer, bei Motorregelungen, als Funktionsgenerator und beim  Sendersuchlauf in Verbindung mit PLL genutzt werden.
+
 Ein VCO kann mit Hilfe eines Multiplizierers, eine Integrierers und eines nicht invertierenden Schmitt-Triggers realisiert werden.
-Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird analysiert in Abhängigkeit eines Sinus-Signals. Dafür liegt eine Spice-Simulation vor, die anschließend messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen. 
+Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird analysiert in Abhängigkeit eines Sinus-Signals. Dafür liegt eine Spice-Simulation vor, die anschließend messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen.
+
 Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1V bis 10V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.
 
 
@@ -15,13 +17,11 @@ Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleic
 Spezifikation
 -------------
 
-Schaltungsaufbau Comparator AGC 
+Schaltungsaufbau Schmitt-Trigger
 -------------------------------
-Der Comparator AGC besteht im Grunde aus vier Komponenten. 
-- Multipizierer
-- Quadrierer
-- Tiefpass Filter
-- Comparator
+Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen.
+- 2 Widerstände
+- Operationsverstärker
 
 Diese sind so mit einander verknüpft, dass das Eingangssignal zunächst in den Multiplizierer mit einer Rückführung 
 des Comparators eingegeben wird. Dieses Ergebnis wird daraufhin an den Quadrierer übergeben, welcher das Sinussignal
@@ -34,8 +34,8 @@ Sodass hierdurch das Eingangssignal am eingestellten Referenzwert
 regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am
 ersten Multiplizierer anzunehmen. 
 
-.. figure:: img/Experiment_08/Comparator.png
-	    :name:  08_fig_01
+.. figure:: img/Experiment_06/Voltage - Controlled Oscillator Schaltplan Schmitt Trigger.png
+	    :name:  06_fig_01
 	    :align: center
 	    :scale: 70%
 
