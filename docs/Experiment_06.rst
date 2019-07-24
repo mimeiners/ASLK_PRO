@@ -23,15 +23,15 @@ Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen.
 - 2 Widerstände
 - Operationsverstärker
 
-Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Es lassen sich also gut analoge Signale in digitale Signale umwandeln.
+Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Ausschaltpegel :math:`U_{e, aus}` beziehungsweise Einschaltpegel :math:`U_{e, ein}` lassen sich berechnen und als Schalthysterese :math:`\Delta U_{e}` zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln.
 
 
 .. role:: raw-math(raw)
     :format: latex html
 
-:raw-math:`$$ Ausschaltpegel  U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$`
-:raw-math:`$$ Einschaltpegel  U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$`
-:raw-math:`$$ Schalthysterese \Delta U_{e, aus}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
+:raw-math:`$$ U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$`
+:raw-math:`$$ U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$`
+:raw-math:`$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
 	  
 
 
@@ -39,7 +39,7 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
 	    :name:  06_fig_01
 	    :align: center
-	    :scale: 40%
+	    :scale: 30%
 
 	    Schmitt Trigger Schaltplan
 
@@ -47,7 +47,7 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 .. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png
 	    :name:  06_fig_01
 	    :align: center
-	    :scale: 40%
+	    :scale: 30%
 
 	    Schmitt Trigger Hysteresekurve, Tietze/Schenk
 
@@ -59,7 +59,7 @@ fwefwefew
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png
 	    :name:  06_fig_02
 	    :align: center
-	    :scale: 40%
+	    :scale: 50%
 
 	    VCO Schaltplan
 	    
