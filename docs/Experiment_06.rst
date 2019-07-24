@@ -23,7 +23,18 @@ Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen.
 - 2 Widerstände
 - Operationsverstärker
 
-gtrgrtgrtg
+Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Es lassen sich also gut analoge Signale in digitale Signale umwandeln.
+
+
+.. role:: raw-math(raw)
+    :format: latex html
+
+:raw-math:`$$ Ausschaltpegel U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$`
+	  `$$ Einschaltpegel U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$`
+	  `$$ Schalthysterese \Delta U_{e, aus}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
+	  
+
+
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
 	    :name:  06_fig_01
@@ -31,9 +42,34 @@ gtrgrtgrtg
 	    :scale: 40%
 
 	    Schmitt Trigger Schaltplan
-		
 
+	    
+.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png
+	    :name:  06_fig_01
+	    :align: center
+	    :scale: 40%
+
+	    Schmitt Trigger Hysteresekurve, Tietze/Schenk
+
+	    
 Schaltungsaufbau VCO
+-------------------------------
+fwefwefew
+
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png
+	    :name:  06_fig_02
+	    :align: center
+	    :scale: 40%
+
+	    VCO Schaltplan
+	    
+
+Schmitt-Trigger Messung und Auswertung
+-------------------------------
+fwefwefew
+
+
+VCO Messung und Auswertung
 -------------------------------
 fwefwefew
 
