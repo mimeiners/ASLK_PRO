@@ -29,9 +29,9 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 .. role:: raw-math(raw)
     :format: latex html
 
-:raw-math:`$$ Ausschaltpegel U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$`
-	  `$$ Einschaltpegel U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$`
-	  `$$ Schalthysterese \Delta U_{e, aus}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
+:raw-math:`$$ Ausschaltpegel  U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$`
+:raw-math:`$$ Einschaltpegel  U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$`
+:raw-math:`$$ Schalthysterese \Delta U_{e, aus}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
 	  
 
 
