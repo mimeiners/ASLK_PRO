@@ -34,12 +34,12 @@ Sodass hierdurch das Eingangssignal am eingestellten Referenzwert
 regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am
 ersten Multiplizierer anzunehmen. 
 
-.. figure:: img/Experiment_06/Voltage - Controlled Oscillator Schaltplan Schmitt Trigger.png
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
 	    :name:  06_fig_01
 	    :align: center
-	    :scale: 70%
+	    :scale: 50%
 
-	    Comparator Blockschaltbild
+	    Schmitt Trigger Schaltplan
 		
 
 Schaltungsaufbau Integrator AGC 
