@@ -19,11 +19,11 @@ Spezifikation
 
 Schaltungsaufbau Schmitt-Trigger
 -------------------------------
-Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen.
+Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
 - 2 Widerstände
 - Operationsverstärker
 
-Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Ausschaltpegel :math:`U_{e, aus}` beziehungsweise Einschaltpegel :math:`U_{e, ein}` lassen sich berechnen und als Schalthysterese :math:`\Delta U_{e}` zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln.
+Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Ausschaltpegel :math:`U_{e, aus}` beziehungsweise Einschaltpegel :math:`U_{e, ein}` lassen sich berechnen und als Schalthysterese :math:`\Delta U_{e}` zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist. 
 
 
 .. role:: raw-math(raw)
@@ -45,7 +45,7 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 
 	    
 .. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png
-	    :name:  06_fig_01
+	    :name:  06_fig_02
 	    :align: center
 	    :scale: 30%
 
@@ -54,10 +54,19 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 	    
 Schaltungsaufbau VCO
 -------------------------------
-fwefwefew
+Der VCO besteht aus 3 wichtige Komponenten:
+- Multiplizierer
+- Integrierer
+- Schmitt-Trigger
+Als Anpassungsschaltung dient hier eine kleine Dioden-Widerstand-Schaltung. Versorgt werden die Operationsverstärker sowie der Multiplizierer mit +/-10V. Eingangsseitig sorgt ein Gleichsignal mit verschiedenen Spannungsleveln von 1-10 V für eine beispielhafte Beschaltung.
+
+Für den  Multiplizierer (hier: MPY 634) lässt sich das Ausgangssignal berechnen. X1/ X2 stellen dabei Eingang 1, Y1/ Y2 Eingang 2 dar. Über SF lässt sich der Skalierungsfaktor steuern und  an VS gehört die Versorgungsspannung. Z1 wird meist gegen Ground oder sehr hochohmig angeschlossen, Z2 erlaubt einen Offset am Ausgang. 
+
+:raw-math:`$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
+  
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png
-	    :name:  06_fig_02
+	    :name:  06_fig_03
 	    :align: center
 	    :scale: 50%
 
