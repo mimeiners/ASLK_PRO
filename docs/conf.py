@@ -16,12 +16,16 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# Theme import
+# import guzzle_sphinx_theme
+# import sphinx_bootstrap_theme
+
 
 # -- Project information -----------------------------------------------------
 
 project = u'ASLK_PRO'
-copyright = u'2018, M. Meiners'
-author = u'M. Meiners'
+copyright = u'2018, M. Meiners, HSB'
+author = u'M. Meiners, HSB'
 
 # The short X.Y version
 version = u''
@@ -93,6 +97,23 @@ math_eqref_format = "Gl. {number}"
 #
 html_theme = 'bizstyle'
 
+# html_theme = 'hsb_sphinx_theme'
+
+# RTD Theme
+# html_theme = "sphinx_rtd_theme"
+# html_theme_path = ["_themes", ]
+
+# Guzzle Theme
+# html_theme_path = guzzle_sphinx_theme.html_theme_path()
+# html_theme = 'guzzle_sphinx_theme'
+
+# Register the theme as an extensiosn to generate a sitemap.xml
+# extensions.append("guzzle_sphinx_theme")
+
+# Bootstrap Theme
+# html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+# html_theme = 'bootstrap'
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -102,7 +123,7 @@ html_theme = 'bizstyle'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []                      #['_static']
+html_static_path = []  # ['_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

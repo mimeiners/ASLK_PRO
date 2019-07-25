@@ -1,0 +1,9 @@
+Voltage - Controlled Oscillator Nr.1;	Zeit / ms;	Spannung / V;		Ausgang Messung 9.78 V;		Ausgang Simulation 9.78 V;	Eingang Messung 9.78 V;	Ausgang Messung 8 V;	Ausgang Simulation 8 V;		Eingang Messung 8 V;
+Voltage - Controlled Oscillator Nr.2;	Zeit / ms;	Spannung / V;		Ausgang Messung 6 V;		Ausgang Simulation 6 V;		Eingang Messung 6 V;	Ausgang Messung 4 V;	Ausgang Simulation 4 V;		Eingang Messung 4 V;
+Voltage - Controlled Oscillator Nr.3;	Zeit / ms;	Spannung / V;		Ausgang Messung 2 V;		Ausgang Simulation 2 V;		Eingang Messung 2 V;	Ausgang Messung 1.8 V;	Ausgang Simulation 1.8 V;	;
+Voltage - Controlled Oscillator Nr.4;	Zeit / ms;	Spannung / V;		Ausgang Messung 1.6 V;		Eingang Messung 1.6 V;		Ausgang Messung 1.4 V;	Eingang Messung 1.4 V;	;				;
+Voltage - Controlled Oscillator Nr.5;	Zeit / ms;	Spannung / V;		Ausgang Messung 1.2 V;		Eingang Messung 1.2 V;		Ausgang Messung 1 V;	Eingang Messung 1 V;	;				;
+Schmitt-Trigger mit R2 = 9.5 k\Omega;	Zeit / ms;	Spannung / V;		Ausgang Messung;		Eingang Messung;		Ausgang Simulation;	;			;				;
+Schmitt-Trigger mit R2 = 2.46 k\Omega;	Zeit / ms;	Spannung / V;		Ausgang Messung;		Eingang Messung;		Ausgang Simulation;	;			;				;
+Widerstandsanpassung - Spannung;	Spannung / V;	Widerstand / k\Omega;	R1;				R1 interpoliert;		R2;			R2 interpoliert;	;				;
+Widerstandsanpassung - Frequenz;	Frequenz / Hz;	Widerstand / k\Omega;	R1;				R1 interpoliert;		R2;			R2 interpoliert;	;				;

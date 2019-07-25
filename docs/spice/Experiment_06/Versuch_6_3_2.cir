@@ -1,0 +1,47 @@
+VERSUCH_6_3_2
+
+* ANALYSIS
+.tran 0 40m 0 100n
+
+* SAVE OPTIONS
+.save all
+
+
+* Supply voltages
+VDD        vdd 0 DC 10
+VSS        vss 0 DC -10
+VE         ve  0 DC 10
+
+* Input signal
+VIN        vin  voff DC 0
+*+                PULSE (1 3 1u 1u 1u 10m 20m 2)
+*+                AC 1
++                 PWL
++                 (TIME_SCALE_FACTOR=20M VALUE_SCALE_FACTOR=1
++                 REPEAT FOREVER
++                 0 0 50N 1 499.99995M 1 500.00005M -1 999.99995M -1 1 0
++                 ENDREPEAT)
+*Vpp        vin vpn dc 0
+*+                  pulse (0 3 1u 1u 1u 9.999m 20m)
+*Vpn        vpn 0   dc 0
+*+                  pulse (0 1 10.001m 1u 1u 9.999m 20m)
+
+VOFF        voff 0 DC 2
+
+* Multiplier 1
+Xmult1      vin 0 ve vos 0 vdd vom vom 0 vss MPY634
+
+* Integrator
+XU2         0 inn vdd vss voi TL082
+Cint        voi inn 100N
+Rint        vom inn 1K
+
+* Schmitt-Trigger
+XU4         ins 0 vdd vss vos TL082
+Rs1         voi ins 1K
+Rs2         ins vos 4K
+
+.inc tl082.cir
+.inc mpy634.cir
+
+.END
