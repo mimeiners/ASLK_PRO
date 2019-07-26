@@ -106,7 +106,7 @@ Mit einer Wechselspannung am Eingang ergibt sich folgende Gleichung:
 
 :raw-math:`$$ |U_a|=\frac{U_e}{2\pi fCR} $$`
 
-Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.
+Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger. 
 	    
 
 Schmitt-Trigger Messung und Auswertung
