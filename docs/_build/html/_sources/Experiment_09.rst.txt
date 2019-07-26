@@ -150,7 +150,7 @@ Das Ziel des SMPS Schaltnetzteils ist gleichzustellen mit dem zuvor schon bearbe
 
 Die Schaltung aus der :numref:`09_fig_06` beinhaltet drei wesentliche Elemente, welche zur Umsetzung des Schaltnetzteils von Nöten sind. Das einhergehende Dreieckssignal :math:`V_{g1}` wird auf den Minuseingang des ersten Operationsverstärkers gegeben. Die Beschaltung dieses Opeartionsverstärkers ist eine besondere Form, welche sich Schmitt-Trigger nennt. Die genauen Spezifikationen eines Schmitt-Triggers finden sich in dem Experiment 02 wieder. Das auf den positiven Eingang des Schmitt-Triggers eingehende Signal resultiert aus dem Ausgangssignal :math:`V_{F2}`, welches durch den zweiten Opeartionsverstärker mit einer Referenzspannung verglichen wird. Somit dient der untere Operationsverstäker als Komparator. Das anschließende, aus dem unteren Operationsverstärker resultierende Signal läuft nun in den positiven Eingang des Schmitt-Triggers. Die drei wesentlichen Elemente sind also der Schmitt-Trigger, der Komparator, sowie die eingebaute Regelstrecke, welche das Ausgangssignal versuchen soll stabil zu halten. Ein genauerer Blick auf die einzelenen Komponenten erleichtert das Verständnis für den Aufbau und das genaue Zusammenwirken der einzelnen Komponenten.
 
-.. figure:: img/Experiment_09/ref_simu_1.png
+.. figure:: img/Experiment_09/9.2_Referenzspannung_3v.png
 	    :name:  09_fig_07
 	    :align: center
 
@@ -159,7 +159,7 @@ Die Schaltung aus der :numref:`09_fig_06` beinhaltet drei wesentliche Elemente, 
 
 Die Abbildung :numref:`09_fig_07` beschreibt die Eigenschaften des in der Schaltung integrierten Komparators. Das restwellige Ausgangssignal ??? schneidet die in den Operationsverstärker einfliessende Gleichspannung. Sobald die Ausgangsspannung einen Wert über den der Referenzspannung annimmt, schaltet der Operationsverstärker auf seinen eingestellten, negativen Spannungswert um. Sollte der Wert der Ausgangsspannung die Referenspannung unterschreiten, so schaltet der Operationsverstärker auf seine maximale Spannungsausgabe um. Durch das Verändern der Referenzspannung in ihrerer Größe, kann somit der Trigger des Operationsverstärkers verändert werden. Dies verhält sich ähnlich dem Komparator aus dem ersten Aufgabenteil.
 
-.. figure:: img/Experiment_09/ref_simu_2.png
+.. figure:: img/Experiment_09/9.2_Referenzspannung_1v.png
 	    :name:  09_fig_08
 	    :align: center
 
