@@ -1,0 +1,337 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Red Pitaya Messautomatisierung &#8212; ASLK_PRO  Dokumentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="Experiment 14: Digital programmierbarer Signalgenerator" href="Experiment_14.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="Experiment_14.html" title="Experiment 14: Digital programmierbarer Signalgenerator"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhalt</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Red Pitaya Messautomatisierung</a><ul>
+<li><a class="reference internal" href="#einleitung">Einleitung</a></li>
+<li><a class="reference internal" href="#dcsweep">DCsweep</a><ul>
+<li><a class="reference internal" href="#probleme">Probleme</a><ul>
+<li><a class="reference internal" href="#generierung-der-gleichspannung">Generierung der Gleichspannung</a></li>
+<li><a class="reference internal" href="#groszere-und-kleinere-spannungen-als-1v-1v">Größere und kleinere Spannungen als +1V, -1V</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#amplitundengang">Amplitundengang</a><ul>
+<li><a class="reference internal" href="#id1">Probleme</a><ul>
+<li><a class="reference internal" href="#messbereich">Messbereich</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#phasengang">Phasengang</a><ul>
+<li><a class="reference internal" href="#bestimmung-der-periode">Bestimmung der Periode</a></li>
+<li><a class="reference internal" href="#bestimmung-der-phasenverschiebung">Bestimmung der Phasenverschiebung</a></li>
+<li><a class="reference internal" href="#id2">Probleme</a><ul>
+<li><a class="reference internal" href="#rauschen-am-ausgang">Rauschen am Ausgang</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fazit">Fazit</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="Experiment_14.html"
+                        title="vorheriges Kapitel">Experiment 14: Digital programmierbarer Signalgenerator</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/RedPitaya_Messautomatisierung.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="red-pitaya-messautomatisierung">
+<h1>Red Pitaya Messautomatisierung<a class="headerlink" href="#red-pitaya-messautomatisierung" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Author: Selim Cimen, Alexander Huber</p>
+<div class="section" id="einleitung">
+<h2>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Viele moderen Messinstrumente wie Red Pitaya verfügen über eine SCPI (Standard Command for programmable
+Instrumentation) Schnittstelle. Diese kann über einen sogennaten remote Control (Fernbedienung) von Programmen
+wie Matlab, Python, LabView oder SCILAB gesteuert werden kann. Hierdurch
+können zum Beispiel komplexe Signale generiert und über den Signalausgang ausgegeben werden.
+Des Weitern können über die FastAnalogInputs, die sogennante FAI, Messdaten aufgezeichnet
+und in gewünschten Formen, wie zum Beispiel als Rohdaten, abgespeichert werden. Da die Messdatenerfassung
+mittels Matlab, Python, LabView oder SCILAB durchgeführt wird, lassen
+sich die aufgezeichneten Messdaten hervorragend aufbereiten.</p>
+<p>Eine ausführliche <a class="reference external" href="https://redpitaya.readthedocs.io/en/latest/appsFeatures/remoteControl/remoteControl.html">Dokumentation</a> mit Beispielen, der Befehlskatalog und
+eine Anleitung für den Verbindungsaufbau zwischen Red Pitaya und Mess-PC
+ist auf der RedPitaya-Webseite zu finden.</p>
+<p>Im Rahmen des „Projekts Analog System Lab Kit Pro Texas“ wurden drei
+Skripte mittels Python für die Messautomatisierung erstellt und
+benutzt. Auf den folgenden Seiten wird näher auf die
+Funktionsweise, Probleme bei der Entwicklung und auf evtl.
+Verbesserungen der Skripte eingehen.</p>
+</div>
+<div class="section" id="dcsweep">
+<h2>DCsweep<a class="headerlink" href="#dcsweep" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das DCsweep-Skript kann zur Ermitttlung der Übertragungseigenschaften
+von Systemen für Gleichspannungsverhalten eingesetzt werden.</p>
+<p>Hierfür werden durch den Benutzer eine Start- und Endspannung vorgegeben.
+Für RedPitaya dürfen die Spannungen die Grenenzen von <span class="math notranslate nohighlight">\(1\,V\)</span> und <span class="math notranslate nohighlight">\(-1\,V\)</span>
+nicht überschreiten. Hierbei ist eine Eingabe der Messpunkte notwendig. Dadurch wird
+die Schrittweite zwischen Start- und Endwert errechnet.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<blockquote>
+<div>Als Beispiel soll ein Startwert von -1V und ein Endwert von +1V mit 11 Messpunkten gewählt werden. In diesem Fall werden folgende
+Gleichspannungen generiert und durch den ‚fast analog Output‘
+ausgegeben.</div></blockquote>
+<p class="last"><span class="math notranslate nohighlight">\(V_{OUT}: -1.0\,V, -0.8\,V, -0.6\,V, -0.4\,V, -0.2\,V, 0\,V, 0.2\,V, 0.4\,V, 0.6\,V, 0.8\,V, 1.0\,V\)</span></p>
+</div>
+</div></blockquote>
+<div class="section" id="probleme">
+<h3>Probleme<a class="headerlink" href="#probleme" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="generierung-der-gleichspannung">
+<h4>Generierung der Gleichspannung<a class="headerlink" href="#generierung-der-gleichspannung" title="Link zu dieser Überschrift">¶</a></h4>
+<p>In der oben erwähnten <a class="reference external" href="https://redpitaya.readthedocs.io/en/latest/appsFeatures/remoteControl/remoteControl.html">Dokumentation</a> ist leider nicht beschrieben, wie eine
+Gleichspannung generiert werden kann. Hierfür muss die Wellenform auf
+‚square‘ und die Frequenz auf ‚0‘ gesetzt werden. Nach dem Setzen der
+genannten Parameter lassen sich dann über das Einstellen der Amplitude
+verschiedene Gleichspannungen generieren.</p>
+<p>Jedoch lässt sich nicht ohne Weiters eine negative Spannung erzeugen.
+Hierfür ist das Einstellen eines Offsets notwendig. Angenommen eine
+Gleichspannung von <span class="math notranslate nohighlight">\(-0.5\,V\)</span> soll erzeugt werden. In diesem Beispiel ist ein
+Offset von <span class="math notranslate nohighlight">\(-1\,V\)</span> und eine Amplitude von <span class="math notranslate nohighlight">\(0.5\,V\)</span> zu wählen.</p>
+</div>
+<div class="section" id="groszere-und-kleinere-spannungen-als-1v-1v">
+<h4>Größere und kleinere Spannungen als +1V, -1V<a class="headerlink" href="#groszere-und-kleinere-spannungen-als-1v-1v" title="Link zu dieser Überschrift">¶</a></h4>
+<p>Ein weiters Problem ist, dass mit dem Red Pitaya sich keine größeren
+Spannungen als <span class="math notranslate nohighlight">\(+1\,V\)</span> und keine kleineren als .math:<cite>-1,V</cite> erzeugen lassen. Doch
+da sich das Projekt größtenteils mit Operationsversträkern beschäftigt
+ist es naheliegend ein nicht-inventierenden Verstärker vorzuschalten um
+größere oder kleinere Spannungen zu generieren.</p>
+<p>Des Weiteren ist darauf zu achten, dass die Messspitzen auf das
+Verhältnis 1:10 einzustellen sind. Hierdurch wird der Messbereich von
+<span class="math notranslate nohighlight">\(-1\,V - +1\,V\)</span> auf <span class="math notranslate nohighlight">\(-10\,V - +10\,V\)</span> vergrößert.</p>
+</div>
+</div>
+</div>
+<div class="section" id="amplitundengang">
+<h2>Amplitundengang<a class="headerlink" href="#amplitundengang" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit dem Amplitudengang-Skript lässt sich das Übertragungsverhalten von
+Systemen bei verschiedenen Frequenzen messen. Hierbei wird das
+Verhältnis von Ausgangsspannung zu Eingangsspannung von der
+Startfrequenz bis zur Endfrequenz ermittelt. Somit lässt sich bestimmen
+bei welchen Frequenzen das System ein verstärkendes oder dämpfendes
+Verhalten aufweist. Die Start- und Endfrequenzen sind durch den Benutzer
+zu wählen. Dabei ist, wie beim DCsweep, eine Eingabe der Messpunkte
+notwendig.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Auch in dieser Messung sind die Messspitzen auf das Verhältnis 1:10
+einzustellen.</p>
+</div>
+<div class="section" id="id1">
+<h3>Probleme<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="messbereich">
+<h4>Messbereich<a class="headerlink" href="#messbereich" title="Link zu dieser Überschrift">¶</a></h4>
+<p>Da das Verhältnis an den Messspitzen nicht größer als 1:10 eingestellt
+werden kann, wird in manchen Fällen das Ende des Messbereichs erreicht.
+In der folgenden Abbildung ist der Amplitudengang eines Differenzierers
+zu sehen. Es wurde ein Frequenzsweep mit einem Sinus <span class="math notranslate nohighlight">\(2\,V_{pp}\)</span>
+durchgeführt. In der <a class="reference internal" href="#redpi-fig-01"><span class="std std-numref">Abb. 54</span></a> ist zu erkennen, dass die Messung nicht
+ganz mit der Simulation übereinstimmt. Ursache dafür ist, dass eine
+Verstärkung größer als 20dB nicht gemessen werden kann da das Ende des
+Messbereichs erreicht wird.</p>
+<p>Dieser Fehler könnte durch eine kleinere Amplitude im Eingangssignal
+verringert werden. Das ist jedoch keine optimale Lösung.</p>
+<div class="figure align-center" id="redpi-fig-01">
+<img alt="_images/amplitudengang_messung_simulation2.png" src="_images/amplitudengang_messung_simulation2.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="phasengang">
+<h2>Phasengang<a class="headerlink" href="#phasengang" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit dem Phasengang-Skript lässt sich die Phasenverschiebung zwischen
+Eingangs- und Ausgangssignal messen und aufzeichnen. Duch die Detektion
+der Nulldurchgänge vom Eingangs- und Ausgangssignal wird die
+Phasenverschiebung ermittelt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Für die Messung sind die Messspitzen auf das Verhältnis 1:1
+einzustellen.</p>
+</div>
+<div class="section" id="bestimmung-der-periode">
+<h3>Bestimmung der Periode<a class="headerlink" href="#bestimmung-der-periode" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Zur Bestimmung der Periode sind weitere Aufbereitungen an den Messdaten
+notwendig. Die erforderlichen Schritte sind in der <a class="reference internal" href="#redpi-fig-02"><span class="std std-numref">Abb. 55</span></a> graphisch dargestellt.
+Im obersten Graphen ist das unbearbeitete Eingangssignal
+dargestellt. Im ersten Schritt ist festzustellen, ob die ersten Samples
+größer oder kleiner null sind. Im unteren Dargestellten Fall sind die
+ersten Samples größer null und somit werden die Rohdaten folgendermaßen
+aufbereitet. Alle Werte die kleiner null sind, werden durch den Wert
+null ersetzt. Wie in der mittleren Abbildung zu sehen. Anschließend
+werden im zweiten Schritt die ersten Samples die größer null sind
+ausgeschitten. Siehe unterste Abbildung.</p>
+<p>Durch die Aufbereitung der Messdaten wurden die unteren Halbwellen des
+Sinus durch nullen ersetzt und dies entspricht genau einer halben
+Periode. Zur Berechnung der Periode werden nun die Samples gezählt bis
+der Eingang größer null ist und das Ergebnis wird mit zwei
+Multipliziert. Dies enspricht der Periodendauer in Samples.</p>
+<div class="figure align-center" id="redpi-fig-02">
+<img alt="_images/T.png" src="_images/T.png" />
+</div>
+</div>
+<div class="section" id="bestimmung-der-phasenverschiebung">
+<h3>Bestimmung der Phasenverschiebung<a class="headerlink" href="#bestimmung-der-phasenverschiebung" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Da die Periodendauer im Schritt zuvor bestimmt worden ist, wird nun der
+Zeitpunkt des ersten Nulldurchgangs sowohl vom Eingang als auch vom
+Ausgang detektiert und miteinander verglichen. In der <a class="reference internal" href="#redpi-fig-03"><span class="std std-numref">Abb. 56</span></a>
+tritt der erste Nulldurchgang vom Eingang bei Sample 191 und vom Ausgang
+bei Sample 382 auf. Die Periodendauer beträgt 764 Sampeles. Mit
+folgenden Formeln lassen sich die Phasenverschiebungen berechnen.
+Hierbei sind vier Fallunterscheidungen zu beachten.</p>
+<p>Input, Output ersten samples &gt; 0 : <span class="math notranslate nohighlight">\(\phi = ((Input-Output)/T)*360\)</span></p>
+<p>Input, Output ersten samples &lt; 0 : <span class="math notranslate nohighlight">\(\phi = ((Input-Output)/T)*360\)</span></p>
+<p>Input er. samp. &lt; 0, Output er. samp. &gt; 0: <span class="math notranslate nohighlight">\(\phi = ((Input-(Output+T/2))/T)*360\)</span></p>
+<p>Input er. samp. &gt; 0, Output er. samp. &lt; 0: <span class="math notranslate nohighlight">\(\phi = ((Input-(Output+T/2))/T)*360\)</span></p>
+<p>In unserem Beispiel erhalten wir für die Phasenverschiebung:</p>
+<p><span class="math notranslate nohighlight">\(\phi = ((191-382)/764)*360 = -90°\)</span></p>
+<div class="figure align-center" id="redpi-fig-03">
+<img alt="_images/Eingang_Ausgang.png" src="_images/Eingang_Ausgang.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Probleme<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="rauschen-am-ausgang">
+<h4>Rauschen am Ausgang<a class="headerlink" href="#rauschen-am-ausgang" title="Link zu dieser Überschrift">¶</a></h4>
+<p>Trotz eines reinen Sinus am Eingang wird das Ausgangssignal sehr
+verrauscht. Wie in <a class="reference internal" href="#redpi-fig-04"><span class="std std-numref">Abb. 57</span></a> zu sehen. Das Rauschen hat zur
+Folge, dass die Nulldurchgänge nicht zuverlässig detektiert werden
+können.</p>
+<div class="figure align-center" id="redpi-fig-04">
+<img alt="_images/1-10_Verhaeltnis.png" src="_images/1-10_Verhaeltnis.png" />
+</div>
+<p>Ein Auszug(<a class="reference internal" href="#redpi-fig-05"><span class="std std-numref">Abb. 58</span></a>) aus dem Python Variablenraum zeigt wie im Ausgangssignal
+innerhalb weniger sample mehrere Nulldurchgänge stattfinden. Dies macht
+eine Detektion und Vergleich der Nullstellen nach dem oben beschrieben
+Schema unmöglich bzw. unzuverlässig.</p>
+<div class="figure align-center" id="redpi-fig-05">
+<img alt="_images/Bildschirmfoto.png" src="_images/Bildschirmfoto.png" />
+</div>
+<p>Um den Effekt des Rauschens zu beseitigen können die Rohdaten mit Hilfe
+von Python aufbereitet werden. Eine Möglichkeit ist die lineare
+Reggression. Dies hat jedoch zur Folge, dass bei hohen Frequenzen das
+Ausgangssignal stark im Verlauf verfälscht wird und eine weitere
+Auswertung der Daten nicht möglich ist.</p>
+<p>Die zweite Möglichkeit ist ein Moving Average Filter, mit dem die Werte
+geglättet werden. Hierdurch werden aber die ersten Messwerte
+unbrauchbar. Dies stellt jedoch kein Problem dar, denn werden sowohl vom
+Eingang als auch vom Ausgang die erste Werte ausgeschnitten, hat dieser
+Fehler keinen weiteren Einfluss auf die Auswertung.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Des Weiteren sollten die Messspitzen auf das Tastverhältnis von 1:1
+eingestellt werden um den oben genannten Effekt weiter zu verringern.</p>
+</div>
+<p>In der folgenden Abbildung ist der Eingang und Ausgang nach Aufbereitung
+der Daten und einem Tastverhältnis von 1:1 zu sehen. Es ist eine
+deutliche Verbesserung zu erkennen.</p>
+<div class="figure align-center" id="redpi-fig-06">
+<img alt="_images/glatt.png" src="_images/glatt.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fazit">
+<h2>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit den oben beschriebenen Skripten wurde im Rahmen des Projekts
+„Projekts Analog System Lab Kit Pro Texas “ drei Experimente gemessen
+und ausgewertet. Das grundsätzliche Übertragungsverhalten wurde
+ersichtlich, jedoch kam es zum Teil zu starken Abweichungen. Zu nennen
+wäre da die Amplitundenmessung, die auf 20dB begrenzt war.</p>
+<p>Bei der Phasenmessung kam es innerhalb einer Messreihe zu einzelenen
+sporadischen Fehlmessungen.</p>
+<p>Aus den genannten Gründen ist eine exakte Messung mittels Red Pitaya
+nicht möglich. Jedoch für den erhalt des groben Übertragungsverhalten
+ist die Messautomatisierung gut geeignet.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="Experiment_14.html" title="Experiment 14: Digital programmierbarer Signalgenerator"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, M. Meiners, HSB.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9 erstellt.
+    </div>
+  </body>
+</html>
