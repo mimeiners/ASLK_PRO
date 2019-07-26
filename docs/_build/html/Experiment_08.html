@@ -1,0 +1,296 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Experiment 8: Automatic Gain/Volume Control (AGC/AVC) &#8212; ASLK_PRO  Dokumentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Experiment 9: DC-DC Koverter" href="Experiment_09.html" />
+    <link rel="prev" title="Experiment 7: Phase Locked Loop (PLL)" href="Experiment_07.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="Experiment_09.html" title="Experiment 9: DC-DC Koverter"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_07.html" title="Experiment 7: Phase Locked Loop (PLL)"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhalt</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Experiment 8: Automatic Gain/Volume Control (AGC/AVC)</a><ul>
+<li><a class="reference internal" href="#theorie-und-motivation">Theorie und Motivation</a></li>
+<li><a class="reference internal" href="#spezifikation">Spezifikation</a></li>
+<li><a class="reference internal" href="#schaltungsaufbau-comparator-agc">Schaltungsaufbau Comparator AGC</a></li>
+<li><a class="reference internal" href="#schaltungsaufbau-integrator-agc">Schaltungsaufbau Integrator AGC</a></li>
+<li><a class="reference internal" href="#simulation-des-agc">Simulation des AGC</a></li>
+<li><a class="reference internal" href="#tina-schaltbilder-comperator-und-integrator-agc">Tina Schaltbilder Comperator und Integrator AGC</a></li>
+<li><a class="reference internal" href="#messkurven-und-kennlinien-aus-simulation">Messkurven und Kennlinien aus Simulation</a></li>
+<li><a class="reference internal" href="#messung">Messung</a></li>
+<li><a class="reference internal" href="#fazit">Fazit</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="Experiment_07.html"
+                        title="vorheriges Kapitel">Experiment 7: Phase Locked Loop (PLL)</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="Experiment_09.html"
+                        title="nächstes Kapitel">Experiment 9: DC-DC Koverter</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Experiment_08.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experiment-8-automatic-gain-volume-control-agc-avc">
+<h1>Experiment 8: Automatic Gain/Volume Control (AGC/AVC)<a class="headerlink" href="#experiment-8-automatic-gain-volume-control-agc-avc" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="theorie-und-motivation">
+<h2>Theorie und Motivation<a class="headerlink" href="#theorie-und-motivation" title="Link zu dieser Überschrift">¶</a></h2>
+<p>AGC´s sind automatische Verstärkungsreglungen die in elektronischen Geräten dazu verwendet werden,
+dass ein Ausgangssignal bzw. ein Ausgangspegel unabhängig vom Eingangssignal unterhalb eines gesetzten
+Schwellpegels limitiert oder geregelt wird. Somit werden also über diese Schaltungen eingangsseitige
+Übersteuerungen oder aber starke Variationen der Eingangsamplitude mittels regelschleifen am Ausgang
+in Form einer Konstanten Amplitude mit gleicher Frequenz ausgeben. Für die Umsetzung solcher Regelschleifen
+sind unterschiedliche Herangehensweisen möglich. Beispielsweise lassen sich diese entweder über komplizierte
+Operations-Verstärkerschaltungen oder aber wie in diesem Experiment behandelt, mittels eines Comperator
+Soll- / Istwert-Vergleiches oder eines Integriergliedes in Verbindung mit Multiplikatoren realisieren.</p>
+<p>Im ersten Teil des Experiments ist zunächst die allgemeine Regelschleife eines Comparators in Verbindung mit
+Multiplikatoren zu betrachten. Diese sollte zunächst analysiert und folgend hierauf ein Design mit Hilfe
+des Simulations Programms (LTspice oder Tina) entworfen werden, in dem eine Sinusspannung beliebiger
+Amplitude auf eine Ausgangsamplitude von 2V geregelt wird.</p>
+<p>Nachdem dies erfolgt ist, soll das Systemverhalten (In- zu Output) im Bezug auf die Eingangsspannung
+dargestellt, die Eingangsspannung an der die Zielamplitude erreicht wird bestimmt und zuletzt die Ergebnisse
+der Simulation mit gemessenen Werten eines Schaltungsaufbaus verglichen werden.</p>
+<p>Im zweiten Teil des Experiments soll nun eine Regelschleife mit Integrierglied betrachtet werden. Hierbei ist
+ebenso wie zuvor die Schaltung zunächst zu analysieren und folgend hierauf ein Design zu entwerfen,
+welches eine beliebige Eingangsamplitude in eine Ausgangsamplitude von 2V gleicher Frequenz regelt.</p>
+<p>Ist dies ebenfalls erfolgt, so sind auch hierfür das Systemverhalten und die Schwellspannung der Zielamplitude
+zu bestimmen, sowie die Ergebnisse der Simulation mit den gemessen Werten eines Schaltungsaufbaus zu vergleichen.</p>
+</div>
+<div class="section" id="spezifikation">
+<h2>Spezifikation<a class="headerlink" href="#spezifikation" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+<div class="section" id="schaltungsaufbau-comparator-agc">
+<h2>Schaltungsaufbau Comparator AGC<a class="headerlink" href="#schaltungsaufbau-comparator-agc" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Comparator AGC besteht im Grunde aus vier Komponenten.
+- Multipizierer
+- Quadrierer
+- Tiefpass Filter
+- Comparator</p>
+<p>Diese sind so mit einander verknüpft, dass das Eingangssignal zunächst in den Multiplizierer mit einer Rückführung
+des Comparators eingegeben wird. Dieses Ergebnis wird daraufhin an den Quadrierer übergeben, welcher das Sinussignal
+in Betrag setzt und somit zwei positive Halbwellen erzeugt. Folgend auf den Quadrierer wird das Signal noch in den
+Tiefpass-Filter eingegeben, in welchem es nochmal geglättet und somit in ein DC Signal überführt wird.
+Dieses DC Signal wird nun in den invertierenden Eingang des Comparators eingegeben und mit einer Referenzgleichspannung,
+welche am nicht invertierenden Eingang des Comparators eingegeben ist, verglichen. Das Ergebnis dieses Vergleiches zwischen
+Soll- und Ist-Wert sorgt nun durch seine Rückführung an den Multiplizierer für eine Skalierung des Eingangssignals.
+Sodass hierdurch das Eingangssignal am eingestellten Referenzwert
+regelt bzw. limitiert wird. Es ist hierbei der Ausgang des AGC´s am
+ersten Multiplizierer anzunehmen.</p>
+<div class="figure align-center" id="fig-01">
+<a class="reference internal image-reference" href="_images/Comparator.png"><img alt="_images/Comparator.png" src="_images/Comparator.png" style="width: 547.4px; height: 215.6px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 28 </span><span class="caption-text">Comparator Blockschaltbild</span></p>
+</div>
+</div>
+<div class="section" id="schaltungsaufbau-integrator-agc">
+<h2>Schaltungsaufbau Integrator AGC<a class="headerlink" href="#schaltungsaufbau-integrator-agc" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Integrator AGC besteht aus fünf Komponenten.
+- Multiplizierer
+- Quadrierer
+- Schwellstromknoten
+- Integrierer
+- Rückführungs- Vorspannung</p>
+<p>Das Prinzip des Integrators ist ähnlich dem des Comperators. Jedoch wird hier der Vergleich des Referenz-Sollwertes
+mit der zu regelnden Größe nicht mehr über einen Operationsverstärker,
+sondern mittels eines Schwellstroms realisiert. Die Umsetzung erfolgt
+hier über eine negativ vorgespannten Spannungsquelle am Knotenpunkt
+des invertierenden Eingangs des Operationsverstärkers. Diese bewirkt
+nun, dass wenn der Schwellstrom überschritten wurde, dass der
+Kondensator des Integrierers geladen und somit ein herabsetzen
+(Reglung) über die Rückführung des Integrierers hervorgerufen wird.
+Außerdem fällt hier der Tiefpassfilter weg, da dieser im Integrierer implementiert ist.
+Zuletzt erweitert sich die Schaltung noch um eine positiv Vorgespannte Spannungsquelle an der Rückführtung des Integrators.
+Diese bewirkt in Summe mit der negativ aufintegrierten Übersteuerung
+in der Rückführung, dass der Skalierfaktor SF des Multiplizierers das
+Eingangssignal mit jeder Periode herabsetzt, bis zuletzt im
+ausgeregelten Zustand eine konstante Rückführung die Regelgröße in den
+eingestellten Zielbereich regelt.</p>
+<div class="figure align-center" id="fig-02">
+<a class="reference internal image-reference" href="_images/Integrator.png"><img alt="_images/Integrator.png" src="_images/Integrator.png" style="width: 604.8px; height: 322.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 29 </span><span class="caption-text">Integrator Blockschaltbild</span></p>
+</div>
+</div>
+<div class="section" id="simulation-des-agc">
+<h2>Simulation des AGC<a class="headerlink" href="#simulation-des-agc" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zur Implementierung der zu verwendenden Komponenten in die Simulation,
+mussten zunächst für eine realitätsnahe Abbildung im
+Simulationsprogramm Tina die passenden Makro Modelle für den
+Multiplizierer MPY634 und den Operationsverstärker TL082
+eingebunden werden. Für den TL082 ließen sich diese relativ schnell finden, für den Multiplizier jedoch nicht.
+Nach einigen Recherchen zeigte sich, das weder TI.com noch andre Hersteller dieses Bauteil in Form einer Libary oder eines
+Makros zur Verfügung stellen. Jedoch ließ sich nach längerem
+Durchforsten von Foren für den MPY634 ein Makro-Eignenbau auf Basis
+dessen Datenbattes finden und implementieren.</p>
+<p>Es folgt der implementierte Multiplizierer (MPY634) folgender Gleichung:</p>
+<p><span class="raw-math">$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$</span></p>
+</div>
+<div class="section" id="tina-schaltbilder-comperator-und-integrator-agc">
+<h2>Tina Schaltbilder Comperator und Integrator AGC<a class="headerlink" href="#tina-schaltbilder-comperator-und-integrator-agc" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Nachdem sämtliche Komponenten eingebunden und mit einander verschaltet
+wurden, ließ sich folgende Schaltbilder für den Comperator und
+Integrator AGC erstellen.</p>
+<div class="figure align-center" id="fig-03">
+<a class="reference internal image-reference" href="_images/Schaltbild1_Tina.png"><img alt="_images/Schaltbild1_Tina.png" src="_images/Schaltbild1_Tina.png" style="width: 920.4999999999999px; height: 376.59999999999997px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 30 </span><span class="caption-text">Comparator AGC Schaltbild Tina</span></p>
+</div>
+<div class="figure align-center" id="fig-04">
+<a class="reference internal image-reference" href="_images/Schaltbild2_Tina.png"><img alt="_images/Schaltbild2_Tina.png" src="_images/Schaltbild2_Tina.png" style="width: 968.4499999999999px; height: 417.9px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 31 </span><span class="caption-text">Integrator AGC Schaltbild Tina</span></p>
+</div>
+</div>
+<div class="section" id="messkurven-und-kennlinien-aus-simulation">
+<h2>Messkurven und Kennlinien aus Simulation<a class="headerlink" href="#messkurven-und-kennlinien-aus-simulation" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="figure align-center" id="fig-05">
+<a class="reference internal image-reference" href="_images/Comparator_Out.png"><img alt="_images/Comparator_Out.png" src="_images/Comparator_Out.png" style="width: 576.0px; height: 323.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 32 </span><span class="caption-text">Messkurven des Comparator AGC´s</span></p>
+</div>
+<div class="figure align-center" id="fig-06">
+<a class="reference internal image-reference" href="_images/Integrator_Out.png"><img alt="_images/Integrator_Out.png" src="_images/Integrator_Out.png" style="width: 576.0px; height: 323.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 33 </span><span class="caption-text">Messkurven des Integrator AGC´s</span></p>
+</div>
+<p>Es zeigt sich nun aus den Messungen der beiden AGC Schaltungen, dass im Falle des Comparators
+die Ausgangsspannung auf den eingestellten Bereich limitiert wird, wohingegen die Ausgangsspannung
+des Integrators nicht limitiert sondern Stück für Stück herabgesetzt wird. Es bleibt somit im Falle des
+Integrator AGC’s die Sinuswelle erhalten.</p>
+<div class="figure align-center" id="fig-07">
+<a class="reference internal image-reference" href="_images/Comparator_IN_zu_Out.png"><img alt="_images/Comparator_IN_zu_Out.png" src="_images/Comparator_IN_zu_Out.png" style="width: 691.1999999999999px; height: 518.4px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 34 </span><span class="caption-text">Kennlinie des Comparator AGC´s</span></p>
+</div>
+<div class="figure align-center" id="fig-08">
+<a class="reference internal image-reference" href="_images/Integrator_IN_zu_Out.png"><img alt="_images/Integrator_IN_zu_Out.png" src="_images/Integrator_IN_zu_Out.png" style="width: 691.1999999999999px; height: 518.4px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 35 </span><span class="caption-text">Kennlinie des Integrator AGC´s</span></p>
+</div>
+<p>Aus der Kennlinie des Comparator AGC`s ist nun das erwartete Ein- zu Ausgangsverhalten eines AGC´s
+zu erkennbar. Diese zeigt, dass mit steigender Eingangsspannung die entworfene Regelschleife ab 2,50 V
+die Ausgangsspannung konstant bei 2,00 V limitiert.
+Die Kennlinie des Integrator AGC´s zeigt nun zusätzlich typisches Verhalten einer Regelstrecke. Beispielsweise
+ist zu erkennen das der Ausgang ebenso wie zuvor zunächst dem Eingang bis zu einem Schwellwert (hier 2.00 V) folgt,
+jedoch dann übergeht in ein Reglertypischen Überschwinger mit folgender Ausreglung auf einen eingestellten
+Ausgangszielwert. (hier 1,45 V)</p>
+</div>
+<div class="section" id="messung">
+<h2>Messung<a class="headerlink" href="#messung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Folgend sollten die gewonnenen Erkenntnisse aus der Simulation mit Messwerten des Integrator AGC´s
+verglichen, und die Funktion dieser Schaltung verifiziert werden.
+Hierfür wurde die Schaltung entsprechend der Schematik des Simulationsprogramms Tina aufgebaut, ein
+Referenzzielwert der Ausgangsspannung von 3,00 V eingestellt, und folgend hierauf die Schaltung für
+unterschiedliche Eingangsamplituden betrachtet.</p>
+<div class="figure align-center" id="fig-09">
+<a class="reference internal image-reference" href="_images/animiertes_gif_1.gif"><img alt="_images/animiertes_gif_1.gif" src="_images/animiertes_gif_1.gif" style="width: 563.2px; height: 422.40000000000003px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 36 </span><span class="caption-text">Messung des Integrator AGC‘ mit unterschiedlichen Eingangsamplituden</span></p>
+</div>
+<p>Dabei zeigt sich aus den Darstellungen, dass trotz der sich ändernden Amplitude der Eingangsspannung (blau)
+sich die Ausgangsspannung (magenta) konstant im Bereich der eingestellten Zielamplitude von 3,00 V aufhält.
+Wodurch also gezeigt ist, dass eine einstellbare Reglung der Eingangsspannung über die Schaltung des
+Integrator AGC´s im vollen Umfang gegeben ist.</p>
+<div class="figure align-center" id="fig-10">
+<a class="reference internal image-reference" href="_images/animiertes_gif_2.gif"><img alt="_images/animiertes_gif_2.gif" src="_images/animiertes_gif_2.gif" style="width: 563.2px; height: 422.40000000000003px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 37 </span><span class="caption-text">Messung des Integrator AGC´mit unterschiedlichen Eingangsamplituden</span></p>
+</div>
+<p>Eine Änderung der Referenzspannung zeigt ebenfalls in allen Fällen gleiches Regelverhalten mit einer
+konstanten Sinus Ausgangs-Zielamplitude.</p>
+<p>Betrachtet mann nun auch die charakteristische Kennlinine des Integrator AGC’s, so zeichnet sich hieraus
+ebenfalls das typische Reglerverhalten des Integrierers aus der Rückführung der Regelschleife heraus.</p>
+<div class="figure align-center" id="fig-11">
+<a class="reference internal image-reference" href="_images/INOUT_Messung.png"><img alt="_images/INOUT_Messung.png" src="_images/INOUT_Messung.png" style="width: 709.6px; height: 609.6px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 38 </span><span class="caption-text">Input/Output Kennline des Integrator AGC´s</span></p>
+</div>
+<p>Diese bewirkt nun, dass die Ausgangsspannung mit einer höher werdenden Eingangsspannung ab einem Schwellwert
+von 1,40 V zunächst einbricht und daraufhin nach einer stückweise Annährung in eine Konstante
+Ausgangsspannung von 2,00 V übergeht und somit ausgeregelt wird.</p>
+</div>
+<div class="section" id="fazit">
+<h2>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Es lässt sich damit zeigen, das sich der Comparator oder Integrator AGC gleichermaßen gut für eine Reglung eines
+Eingangsignals in einen gewünschten Zielbereich eignet. Jedoch muss für die Anwendung bei der Auswahl des AGC`s
+abgewogen werden, ob der Wert in einer hohe Regelzeit-Performance oder aber in einem Erhalt der eingegebenen
+Sinusamplitude liegt.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="Experiment_09.html" title="Experiment 9: DC-DC Koverter"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_07.html" title="Experiment 7: Phase Locked Loop (PLL)"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, M. Meiners, HSB.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9 erstellt.
+    </div>
+  </body>
+</html>

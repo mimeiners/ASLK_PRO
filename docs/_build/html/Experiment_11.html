@@ -1,0 +1,225 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Experiment 11: Parameterstudie eines LDO’s &#8212; ASLK_PRO  Dokumentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Experiment 12: Parameterstudie eines DC-DC Konverters" href="Experiment_12.html" />
+    <link rel="prev" title="Experiment 10: Entwurf eines LDO Reglers" href="Experiment_10.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="Experiment_12.html" title="Experiment 12: Parameterstudie eines DC-DC Konverters"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_10.html" title="Experiment 10: Entwurf eines LDO Reglers"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhalt</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Experiment 11: Parameterstudie eines LDO’s</a><ul>
+<li><a class="reference internal" href="#kurze-theorie-und-motivation">Kurze Theorie und Motivation</a></li>
+<li><a class="reference internal" href="#funktionsweise">Funktionsweise</a></li>
+<li><a class="reference internal" href="#aufbau-der-schaltung">Aufbau der Schaltung</a></li>
+<li><a class="reference internal" href="#aufgabe">Aufgabe</a></li>
+<li><a class="reference internal" href="#leitungsregelung-schaltungsaufbau-simulation">Leitungsregelung: Schaltungsaufbau - Simulation</a></li>
+<li><a class="reference internal" href="#leitungsregelung-vergleich-messung-simulation">Leitungsregelung: Vergleich Messung &amp; Simulation</a></li>
+<li><a class="reference internal" href="#lastregelung-schaltungsaufbau-simulation">Lastregelung: Schaltungsaufbau - Simulation</a></li>
+<li><a class="reference internal" href="#lastregelung-vergleich-messung-simulation">Lastregelung: Vergleich Messung &amp; Simulation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="Experiment_10.html"
+                        title="vorheriges Kapitel">Experiment 10: Entwurf eines LDO Reglers</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="Experiment_12.html"
+                        title="nächstes Kapitel">Experiment 12: Parameterstudie eines DC-DC Konverters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Experiment_11.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experiment-11-parameterstudie-eines-ldo-s">
+<h1>Experiment 11: Parameterstudie eines LDO’s<a class="headerlink" href="#experiment-11-parameterstudie-eines-ldo-s" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="kurze-theorie-und-motivation">
+<h2>Kurze Theorie und Motivation<a class="headerlink" href="#kurze-theorie-und-motivation" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieses Experiments ist es, die Parameter des Low Dropout Regulator (LDO) IC TPS7250 zu verstehen.
+Der TPS7250 ist ein Linearregler von Texas Instruments und kann einen Ausgangsstrom von 100 mA bei einer festen
+Ausgangsspannung von 5 V liefern. Er zeichnet sich aus durch einen niedrigen Ruhestrom, geringes Rauschen,
+hohe PSRR, schneller LDO-Start mit ausgezeichnetem Einschwingverhalten. Der Versorgungsspannungsdurchgriff,
+(Power supply rejection ratio) gibt an, wie stark sich die Ausgangsspannung eines Verstärkers ändert,
+wenn sich die Versorgungsspannung verändert. Die Dropout-Spannung definiert als die Differenz zwischen
+den Eingangs- und den Ausgangsspannungen zu dem Punkt, zu dem ein weiterer Abfall der Eingangsspannung dazu führt,
+dass die Regelung der Ausgangsspannung fehlschlägt.
+Der Unterschied zu anderen Spannungsreglern ist die minimal erforderliche Differenz zwischen Ein- und
+Ausgangsspannung. Diese liegt bei dem LDO bei 0,1 V bis 1 V. Bei anderen Reglern liegt diese bei 1,5 V bis 3 V.</p>
+</div>
+<div class="section" id="funktionsweise">
+<h2>Funktionsweise<a class="headerlink" href="#funktionsweise" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="figure align-center" id="fig-01">
+<a class="reference internal image-reference" href="_images/low_dropout_regulator.png"><img alt="_images/low_dropout_regulator.png" src="_images/low_dropout_regulator.png" style="width: 404.4px; height: 278.4px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 48 </span><span class="caption-text">LDO Prizip</span></p>
+</div>
+<p>Der LDO besteht im Prinzip aus einer Referenzspannung, einem Operationsverstärker, einem Durchgangselement
+und einem Widerstand am Ausgang. Eine einfache Referenzspannungsquelle kann mit einem Widerstand,
+sowie einer Z-Diode erzeugt werden. Als Durchgangselements wurde ein MOSFET gewählt. Er ist dafür da,
+die Ausgangsspannung durch Änderung des Kanalstromes anzupassen. Er zeichnet sich dadurch aus, dass er
+eine kleinere Dropout-Spannung hat. Da es sich bei dem PMOS-Durchlasselement um ein spannungsgesteuertes
+Gerät handelt, ist der Ruhestrom sehr niedrig (maximal 300 µA) und über den gesamten Bereich des
+Ausgangslaststroms (0 mA bis 200 mA) stabil. Der Operationsverstärker vergleicht die Spannung,
+welche durch den Spannungsteiler am Ausgang gebildet wird, mit einer Referenzspannung.
+Je nach Eingangsspannungsdifferenz stellt sich eine höhere oder niedrigere Ausgangsspannung am
+Operationsverstärker ein, so dass die Spannung zwischen Gate und Source des Transistors anwächst oder
+kleiner wird. Dadurch fließt mehr oder weniger Strom zum Regler Ausgang.</p>
+</div>
+<div class="section" id="aufbau-der-schaltung">
+<h2>Aufbau der Schaltung<a class="headerlink" href="#aufbau-der-schaltung" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Schematic_diagram_of_on_board_evaluation_module.png" src="_images/Schematic_diagram_of_on_board_evaluation_module.png" />
+<p class="caption"><span class="caption-number">Abb. 49 </span><span class="caption-text">on-board Schaltung</span></p>
+</div>
+<p>-Eingangsspannung: 5,5-11V</p>
+<p>-Ausgangsspannung: 5V</p>
+<p>-Der Kondensator C102 verbessert die Übergangfunktion des Reglers.</p>
+<p>-Der Kondensator C101 hilft, die Störungen am Eingang zu reduzieren, wenn die Zuleitungen zu lang sind.</p>
+<p>-Der Kondensator C103 am Ausgang dient als Speicher und definiert meist auch die Bandbreite bzw. die Reaktionszeit des LDO.</p>
+<p>-Die Diode zeigt, dass der Chip Funktionsfähig ist.</p>
+</div>
+<div class="section" id="aufgabe">
+<h2>Aufgabe<a class="headerlink" href="#aufgabe" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ermitteln der Leitungsregelung:
+die Ausgangsspannung als Funktion der Eingangsspannung für eine feste Ausgangslast.</p>
+<p>Unter Leitungsregelung versteht man die Änderung der Ausgangsspannung bei einer
+vorgegebenen Änderung der Eingangsspannung. Bei linearen Spannungsreglern sollte die Ausgangsspannung
+möglichst unabhängig von der Eingangsspannung sein. In der Praxis existiert jedoch eine kleine Abhängigkeit
+zwischen der Ein- und der Ausgangsspannung. Diese Abhängigkeit hängt stark vom Verstärkungsfaktor des
+Operationsverstärkers ab. Bei der Wahl des Verstärkungsfaktors muss darauf geachtet werden,
+dass die Verstärkung nicht zu groß ist. Ein zu großer Verstärkungsfaktor kann die Stabilität des Reglers
+beeinflussen.</p>
+<p>Ermitteln der Lastregelung:
+Lastregelung wird definiert als die Änderung der Ausgangsspannung bei einer vorgegebenen Laständerung.</p>
+<p>Wie bei der Leitungsregelung muss ein Regler auch bei einem Lastwechsel in der Lage sein,
+eine konstante Ausgangsspannung zur Verfügung zu stellen. Dieser Strom wird aber nicht immer
+konstant bleiben und schwanken.</p>
+</div>
+<div class="section" id="leitungsregelung-schaltungsaufbau-simulation">
+<h2>Leitungsregelung: Schaltungsaufbau - Simulation<a class="headerlink" href="#leitungsregelung-schaltungsaufbau-simulation" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
+zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
+<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 49</span></a> entworfen.</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Simulation_der_SchaltungTeil1.png" src="_images/Simulation_der_SchaltungTeil1.png" />
+<p class="caption"><span class="caption-number">Abb. 50 </span><span class="caption-text">Simulation Leitungsregelung</span></p>
+</div>
+<p>Das Model für den TPS7250 Baustein wurde von der Texas Instrumens Homepage gedownloadet. Die Eingangsspannung wird von 5,5 Volt bis 11 Volt in 0,5 Volt Schritten gesweept.</p>
+</div>
+<div class="section" id="leitungsregelung-vergleich-messung-simulation">
+<h2>Leitungsregelung: Vergleich Messung &amp; Simulation<a class="headerlink" href="#leitungsregelung-vergleich-messung-simulation" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Nachdem die Simulationen für die Schaltung durhcgeführt sind, werden
+die Messungen am Texas Instruments Board durchgeführt. Hierdurch kann
+ein klarer Vergleich zur Simulation hergestellt werden.</p>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Vergleich_Messung1_&amp;_Simulation1.png" src="_images/Vergleich_Messung1_&amp;_Simulation1.png" />
+<p class="caption"><span class="caption-number">Abb. 51 </span><span class="caption-text">Leitungsregelung: Vergleich Messung &amp; Simulation</span></p>
+</div>
+<p>Die <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 51</span></a> zeigt das Verhältnis der Spannungen
+<span class="math notranslate nohighlight">\(V_{in}\)</span> zu <span class="math notranslate nohighlight">\(V_{out}\)</span>. Die Messung wurden jeweils für eine große Last(1kohm),
+eine kleine Last(20ohm) und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last.
+Anhand der Kurven erkennt man, dass die Spannungsregelung für die kleine Last nicht im gewünschten Bereich arbeitet, weil die Ausgangsspannung unter 5 Volt liegt, für die anderen Lasten erfüllt der Spannungsregler seine Funktion.</p>
+</div>
+<div class="section" id="lastregelung-schaltungsaufbau-simulation">
+<h2>Lastregelung: Schaltungsaufbau - Simulation<a class="headerlink" href="#lastregelung-schaltungsaufbau-simulation" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Simulation_Teil2.png" src="_images/Simulation_Teil2.png" />
+<p class="caption"><span class="caption-number">Abb. 52 </span><span class="caption-text">Schaltungsaufbau - Simulation</span></p>
+</div>
+<p>Für die Lastregelung wird die LT-Spice schaltung minimal verändert. Um eine Kontinuierliche Last am Ausgang zu erzeugen, wird die Zeitvariable „time“ eingefügt. Die Last am Ausgang wird also mit vortlaufender Zeit immer größer.</p>
+</div>
+<div class="section" id="lastregelung-vergleich-messung-simulation">
+<h2>Lastregelung: Vergleich Messung &amp; Simulation<a class="headerlink" href="#lastregelung-vergleich-messung-simulation" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Vergleich_Messung2_&amp;_Simulation2.png" src="_images/Vergleich_Messung2_&amp;_Simulation2.png" />
+<p class="caption"><span class="caption-number">Abb. 53 </span><span class="caption-text">Lastregelung: Vergleich Messung &amp; Simulation</span></p>
+</div>
+<p>Die Kurve der Simulation zeigt, das der Spannungsregler die 5 Volt am Ausgang bis zu einem Strom von 100mA halten kann. Bei einem höheren Strom wird die 5 Volt Ausgangsspannung unterschritten. In der Praxis ist der Regler sogar ein bisschen besser, da er die Ausgangsspannug bis zu einem Ausgangsstrom von 110mA halten kann.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="Experiment_12.html" title="Experiment 12: Parameterstudie eines DC-DC Konverters"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_10.html" title="Experiment 10: Entwurf eines LDO Reglers"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, M. Meiners, HSB.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9 erstellt.
+    </div>
+  </body>
+</html>
