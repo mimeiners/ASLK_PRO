@@ -207,7 +207,7 @@ Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die Messu
 
 	    Messung bei eingestellter Referenzspannung von 2.5V
 
-Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Smith-Triggers ist, Channel 2 (Pink) ist der Ausgang des Smith-Triggers, Channel 3 (Hell Blau) ist die Dreieckes Spannung und Channel 4 (ocker) ist das Ausgangs Signal. Es ist zu erkennen, das bei einer höheren Referenzspannung die Ausgangsspannung ebenfalls höher ausfällt. Wenn die Ausgangsspannung abfällt und somit kleiner wird als die nicht gemessene Referenzspannung wird der untere Operatiosverstärker auf seinen Positiven Ausgabewert geschaltet. Desweiteren ist eine Restwelligkeit im Ausgangssignal zusehen. Diese ensteht durch einen nicht optimale Ausgelegten Filter, zeigt aber gut wie die Regelstrecke bei einen Spannungsabfall wirkt.
+Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Sschmitt-Triggers ist, Channel 2 (Pink) ist der Ausgang des Schmitt-Triggers, Channel 3 (Hell Blau) ist die Dreieckes Spannung und Channel 4 (ocker) ist das Ausgangs Signal. Es ist zu erkennen, das bei einer höheren Referenzspannung die Ausgangsspannung ebenfalls höher ausfällt. Wenn die Ausgangsspannung abfällt und somit kleiner wird als die nicht gemessene Referenzspannung wird der untere Operatiosverstärker auf seinen Positiven Ausgabewert geschaltet. Desweiteren ist eine Restwelligkeit im Ausgangssignal zusehen. Diese ensteht durch einen nicht optimale Ausgelegten Filter, zeigt aber gut wie die Regelstrecke bei einen Spannungsabfall wirkt.
 
 
  .. figure:: img/Experiment_09/R4_0_8K.PNG
@@ -234,6 +234,6 @@ Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Smith-Triggers ist, Chann
 
 	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K
 
-Bei diesen Messungen wird der Smith-Trigger untersucht. Hierführ wird der Widerstand R4 bei Konstanten Eingangsspannung variiert. Die kanal Belegung des Oszilloskop ist die selbe wie bei der letzten Messung. Es ist deutlich zu erkennen, das mit höheren Widerstand die Breite der Ausgangs Pulse größer wird. Durch die änderung der Pulsbreite ändert sich die Ausgangsspannung, welche in diesen fall bei größeren Widerstand größer wird. Dieses Verhalten ist erwarten und entspricht denn verhalten des Smitch-Triggers.
+Bei diesen Messungen wird der Schmitt-Trigger untersucht. Hierführ wird der Widerstand R4 bei Konstanten Eingangsspannung variiert. Die kanal Belegung des Oszilloskop ist die selbe wie bei der letzten Messung. Es ist deutlich zu erkennen, das mit höheren Widerstand die Breite der Ausgangs Pulse größer wird. Durch die änderung der Pulsbreite ändert sich die Ausgangsspannung, welche in diesen fall bei größeren Widerstand größer wird. Dieses Verhalten ist erwarten und entspricht denn verhalten des Schmitt-Triggers.
 
 	
