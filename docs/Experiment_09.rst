@@ -123,12 +123,11 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 
 Die :numref:`09_fig_04` zeigt die Ergebnisse für die unterschiedichen
 Spannungen aus den Messungen. Vergleichen wir diese mit den Ergebnissen aus der :numref:`09_fig_03`, so erkennt man die genauen Parallelitäten der Abbildungen.
-Wie schon zuvor erwähnt, kann mithilfe der eingehenden Dreiecksspannung :math:`V_{g}` und der Referenzspannung :math:`V_{ref}`, das Ausgangssignal varriert werden. Somit findet der zuvor erwähnt Vergleich der Spannungen auch hier in der Messung statt. Werden unterschiedliche Größen der Referenzspanung eingestellt und die daraus resultierenden Plots nacheinander angezeigt, so erkennt man den Ansteig der Ausgangsspannung in abhängigkeit der Referenzspannung. Das eingehende Dreieckssignal :math:`V_{g}` wurde hierbei nicht verändert. Auch dies kann varriert werden, um ein entsprechendes Verhalten am Ausgangssignal zu erhalten. Dies st darauf zurückzuführen, dass durch die Größe, sowie die Pulsbreite des Signals, die Abstastung über der Referenzspannung, ein unterschiedliche Triggerverhalten des Operationsverstärkers auslösen würde.
+Wie schon zuvor erwähnt, kann mithilfe der eingehenden Dreiecksspannung :math:`V_{g}` und der Referenzspannung :math:`V_{ref}`, das Ausgangssignal varriert werden. Somit findet der zuvor erwähnt Vergleich der Spannungen auch hier in der Messung statt. Werden unterschiedliche Größen der Referenzspanung eingestellt und die daraus resultierenden Plots nacheinander angezeigt, so erkennt man den Ansteig der Ausgangsspannung in abhängigkeit der Referenzspannung. Das eingehende Dreieckssignal :math:`V_{g}` wurde hierbei nicht verändert. Auch dies kann varriert werden, um ein entsprechendes Verhalten am Ausgangssignal zu erhalten. Dies ist darauf zurückzuführen, dass durch die Größe, sowie die Pulsbreite des Signals, die Abstastung über der Referenzspannung, ein unterschiedliche Triggerverhalten des Operationsverstärkers auslösen würde.
 
 .. figure:: img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.gif
 	    :name:  09_fig_05
 	    :align: center
-	    :scale: 40%
 
 	    Auswirkung der Referenzspannung auf die Ausgangsspannung
 
@@ -149,18 +148,18 @@ Das Ziel des SMPS Schaltnetzteils ist gleichzustellen mit dem zuvor schon bearbe
 	    SMPS / Schaltnetzteil
 
 
-Die Schaltung aus der :numref:`09_fig_06` beinhaltet drei wesentliche Elemente, welche zur Umsetzung des Schaltnetzteils von Nöten sind. Das einhergehende Dreieckssignal :math:`V_{g1}` wird auf den Minuseingang des ersten Operationsverstärkers gegeben. Die Beschaltung dieses Opeartionsverstärkers ist eine besondere Form, welche sich Schmitt-Trigger nennt. Die genauen Spezifikationen eines Schmitt-Triggers finden sich in dem Experiment 02 wieder. Das auf den positiven Eingang des Schmitt-Triggers eingehende Signal resultiert aus dem Ausgangssignal :math:`V_{F2}`, welches durch den zweiten Opeartionsverstärker mit einer Referenzspannung verglichen wird. Somit dient der untere Operationsverstäker als Komparator. Das anschließende, aus dem unteren Operationsverstärker resultierende Signal läuft nun in den positiven Eingang des Schmitt-Triggers. Die drei wesentlichen Elemente sind also der Schmitt-Trigger, der Komparator, sowie die eingebaute Regelstrecke, welche das Ausgangssignal versuchen soll stabil zu halten. Ein genauerer Blick auf die einzelenen Komponenten erleichtert das Verständnis für den Aufbau und das genaue Zusammenwirken der einzelnen Komponenten.
+Die Schaltung aus der :numref:`09_fig_06` beinhaltet vier wesentliche Elemente, welche zur Umsetzung des Schaltnetzteils von Nöten sind. Das einhergehende Dreieckssignal :math:`V_{g1}` wird auf den Minuseingang des ersten Operationsverstärkers gegeben. Die Beschaltung dieses Opeartionsverstärkers ist eine besondere Form, welche sich Schmitt-Trigger nennt. Die genauen Spezifikationen eines Schmitt-Triggers finden sich in dem Experiment 02 wieder. Das auf den positiven Eingang des Schmitt-Triggers eingehende Signal resultiert aus dem Ausgangssignal :math:`V_{F2}`, welches durch den zweiten Opeartionsverstärker mit einer Referenzspannung verglichen wird. Somit dient der untere Operationsverstäker als Komparator. Das anschließende, aus dem unteren Operationsverstärker resultierende Signal läuft nun in den positiven Eingang des Schmitt-Triggers.Das Ausgangssignal des smith-Triggers ist ein Rechteckiges Signal, welches durch einen Tiefpass noch gefiltert wird befor es als Ausgangs Signal verwendet wird. Die vier wesentlichen Elemente sind also der Schmitt-Trigger, der Komparator, der Tiefpass, sowie die eingebaute Regelstrecke, welche das Ausgangssignal versuchen soll stabil zu halten. Ein genauerer Blick auf die einzelenen Komponenten erleichtert das Verständnis für den Aufbau und das genaue Zusammenwirken der einzelnen Komponenten.
 
-.. figure:: img/Experiment_09/ref_simu_1.png
+.. figure:: img/Experiment_09/9.2_Referenzspannung_3v.png
 	    :name:  09_fig_07
 	    :align: center
 
 	    Referenzspannung eingestellt auf 3V
 
 
-Die Abbildung :numref:`09_fig_07` beschreibt die Eigenschaften des in der Schaltung integrierten Komparators. Das restwellige Ausgangssignal ??? schneidet die in den Operationsverstärker einfliessende Gleichspannung. Sobald die Ausgangsspannung einen Wert über den der Referenzspannung annimmt, schaltet der Operationsverstärker auf seinen eingestellten, negativen Spannungswert um. Sollte der Wert der Ausgangsspannung die Referenspannung unterschreiten, so schaltet der Operationsverstärker auf seine maximale Spannungsausgabe um. Durch das Verändern der Referenzspannung in ihrerer Größe, kann somit der Trigger des Operationsverstärkers verändert werden. Dies verhält sich ähnlich dem Komparator aus dem ersten Aufgabenteil.
+Die Abbildung :numref:`09_fig_07` beschreibt die Eigenschaften des in der Schaltung integrierten Komparators. Das restwellige Ausgangssignal schneidet die in den Operationsverstärker einfliessende Gleichspannung (Referenzspannung). Sobald die Ausgangsspannung einen Wert über den der Referenzspannung annimmt, schaltet der Operationsverstärker auf seinen eingestellten, negativen Spannungswert um. Sollte der Wert der Ausgangsspannung die Referenspannung unterschreiten, so schaltet der Operationsverstärker auf seine maximale Spannungsausgabe um. Durch das Verändern der Referenzspannung in ihrerer Größe, kann somit der Trigger des Operationsverstärkers verändert werden. Dies verhält sich ähnlich dem Komparator aus dem ersten Aufgabenteil.
 
-.. figure:: img/Experiment_09/ref_simu_2.png
+.. figure:: img/Experiment_09/9.2_Referenzspannung_1v.png
 	    :name:  09_fig_08
 	    :align: center
 
@@ -174,10 +173,67 @@ Das hieraus resultierende gepulste Ausgangssignal wird dann über den Schmitt-Tr
 
    \beta = \frac{R_3}{R_3 + R_4}
 
-.. figure:: img/Experiment_09/1.png
+.. figure:: img/Experiment_09/9.2_R4_4.7k.png
 	    :name:  09_fig_09
 	    :align: center
 
-	    Schmitt-Trigger Einstellung der Schwellspannung R4=1K (l.) R4=4.7K (r.)
+	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K
 
-Sind :math:`R_{3}` und :math:`R_{4}` in ihrer Größe deklariert, so gibt der Schmitt-Trigger das gewünscht Signal aus. Hierbei wird das Ausgangssignal aus dem Operationsverstärker gepulst an das positive, sowie negative Maximum geschaltet. Dies ist davonabhängig, welche Versorgungsspannung an dem Operationsverstärker anliegt. Der nachfolgende Tiefpass sollte so ausgelegt werden, dass aus dem Rechtecksignal eine möglichst stabile Gleichspannung erzeugt werden kann. Die Restwelligkeit sollte hierbei so gering wie möglich sein. Durch die in den Schaltkreis integrierte Regelstrecke, kann der Einsatz einer variablen Last genutzt werden. Sollte der Spannungsabfall an der Last sich erhöhen, so regelt sich das System durch den implementierten Komparator und des daraus entstehenden Eingangssignals am Schmitt-Trigger erneut ein. 
+
+.. figure:: img/Experiment_09/9.2_R4_20k.png
+	    :name:  09_fig_10
+	    :align: center
+
+	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K
+
+Sind :math:`R_{3}` und :math:`R_{4}` in ihrer Größe deklariert, so gibt der Schmitt-Trigger das gewünscht Signal aus. Hierbei wird das Ausgangssignal aus dem Operationsverstärker gepulst an das positive, sowie negative Maximum geschaltet. Durch die verwendung des Smith-Trigger ist es somit möglich durch Veränderung der Widerstände, das Ausgangssignal einzustellen. Dies ist davonabhängig, welche Versorgungsspannung an dem Operationsverstärker anliegt. Der nachfolgende Tiefpass sollte so ausgelegt werden, dass aus dem Rechtecksignal eine möglichst stabile Gleichspannung erzeugt werden kann. Die Restwelligkeit sollte hierbei so gering wie möglich sein. Durch die Regelstrecke, ist die Ausgangsspannung bei Verschiedenem Lastwiderstand ,mit geringe Abweichung, stets dieselbe. Sollte der Spannungsabfall an der Last sich verändern, so regelt sich das System durch den Komparator und des daraus entstehenden Eingangssignals am Schmitt-Trigger erneut wieder ein.
+
+
+Messung des SMPS Schaltnetzteil
+-----------------------------------
+
+Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die Messungen am Texas Instruments Board durchgeführt. Hierdurch lassen sich die Simulation Überprufen. Zuerst wird dass Ausgangssignal in Abhängigkeit der Referenspannung untersucht.
+
+.. figure:: img/Experiment_09/Ref_1V.PNG
+	    :name:  09_fig_11
+	    :align: center
+
+	    Messung bei eingestellter Referenzspannung von 1V
+
+
+.. figure:: img/Experiment_09/Ref_2_5V.PNG
+	    :name:  09_fig_12
+	    :align: center
+
+	    Messung bei eingestellter Referenzspannung von 2.5V
+
+Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Sschmitt-Triggers ist, Channel 2 (Pink) ist der Ausgang des Schmitt-Triggers, Channel 3 (Hell Blau) ist die Dreieckes Spannung und Channel 4 (ocker) ist das Ausgangs Signal. Es ist zu erkennen, das bei einer höheren Referenzspannung die Ausgangsspannung ebenfalls höher ausfällt. Wenn die Ausgangsspannung abfällt und somit kleiner wird als die nicht gemessene Referenzspannung wird der untere Operatiosverstärker auf seinen Positiven Ausgabewert geschaltet. Desweiteren ist eine Restwelligkeit im Ausgangssignal zusehen. Diese ensteht durch einen nicht optimale Ausgelegten Filter, zeigt aber gut wie die Regelstrecke bei einen Spannungsabfall wirkt.
+
+
+ .. figure:: img/Experiment_09/R4_0_8K.PNG
+	    :name:  09_fig_13
+	    :align: center
+
+	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=0.8K
+
+ .. figure:: img/Experiment_09/R4_1K.PNG
+	    :name:  09_fig_14
+	    :align: center
+
+	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=1K
+
+ .. figure:: img/Experiment_09/R4_4_7K.PNG
+	    :name:  09_fig_15
+	    :align: center
+
+	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K
+
+ .. figure:: img/Experiment_09/R4_20K.PNG
+	    :name:  09_fig_16
+	    :align: center
+
+	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K
+
+Bei diesen Messungen wird der Schmitt-Trigger untersucht. Hierführ wird der Widerstand R4 bei Konstanten Eingangsspannung variiert. Die kanal Belegung des Oszilloskop ist die selbe wie bei der letzten Messung. Es ist deutlich zu erkennen, das mit höheren Widerstand die Breite der Ausgangs Pulse größer wird. Durch die änderung der Pulsbreite ändert sich die Ausgangsspannung, welche in diesen fall bei größeren Widerstand größer wird. Dieses Verhalten ist erwarten und entspricht denn verhalten des Schmitt-Triggers.
+
+	

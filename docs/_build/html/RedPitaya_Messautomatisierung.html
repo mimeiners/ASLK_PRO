@@ -191,7 +191,7 @@ einzustellen.</p>
 werden kann, wird in manchen Fällen das Ende des Messbereichs erreicht.
 In der folgenden Abbildung ist der Amplitudengang eines Differenzierers
 zu sehen. Es wurde ein Frequenzsweep mit einem Sinus <span class="math notranslate nohighlight">\(2\,V_{pp}\)</span>
-durchgeführt. In der <a class="reference internal" href="#redpi-fig-01"><span class="std std-numref">Abb. 54</span></a> ist zu erkennen, dass die Messung nicht
+durchgeführt. In der <a class="reference internal" href="#redpi-fig-01"><span class="std std-numref">Abb. 61</span></a> ist zu erkennen, dass die Messung nicht
 ganz mit der Simulation übereinstimmt. Ursache dafür ist, dass eine
 Verstärkung größer als 20dB nicht gemessen werden kann da das Ende des
 Messbereichs erreicht wird.</p>
@@ -217,7 +217,7 @@ einzustellen.</p>
 <div class="section" id="bestimmung-der-periode">
 <h3>Bestimmung der Periode<a class="headerlink" href="#bestimmung-der-periode" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Zur Bestimmung der Periode sind weitere Aufbereitungen an den Messdaten
-notwendig. Die erforderlichen Schritte sind in der <a class="reference internal" href="#redpi-fig-02"><span class="std std-numref">Abb. 55</span></a> graphisch dargestellt.
+notwendig. Die erforderlichen Schritte sind in der <a class="reference internal" href="#redpi-fig-02"><span class="std std-numref">Abb. 62</span></a> graphisch dargestellt.
 Im obersten Graphen ist das unbearbeitete Eingangssignal
 dargestellt. Im ersten Schritt ist festzustellen, ob die ersten Samples
 größer oder kleiner null sind. Im unteren Dargestellten Fall sind die
@@ -239,7 +239,7 @@ Multipliziert. Dies enspricht der Periodendauer in Samples.</p>
 <h3>Bestimmung der Phasenverschiebung<a class="headerlink" href="#bestimmung-der-phasenverschiebung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Da die Periodendauer im Schritt zuvor bestimmt worden ist, wird nun der
 Zeitpunkt des ersten Nulldurchgangs sowohl vom Eingang als auch vom
-Ausgang detektiert und miteinander verglichen. In der <a class="reference internal" href="#redpi-fig-03"><span class="std std-numref">Abb. 56</span></a>
+Ausgang detektiert und miteinander verglichen. In der <a class="reference internal" href="#redpi-fig-03"><span class="std std-numref">Abb. 63</span></a>
 tritt der erste Nulldurchgang vom Eingang bei Sample 191 und vom Ausgang
 bei Sample 382 auf. Die Periodendauer beträgt 764 Sampeles. Mit
 folgenden Formeln lassen sich die Phasenverschiebungen berechnen.
@@ -259,13 +259,13 @@ Hierbei sind vier Fallunterscheidungen zu beachten.</p>
 <div class="section" id="rauschen-am-ausgang">
 <h4>Rauschen am Ausgang<a class="headerlink" href="#rauschen-am-ausgang" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Trotz eines reinen Sinus am Eingang wird das Ausgangssignal sehr
-verrauscht. Wie in <a class="reference internal" href="#redpi-fig-04"><span class="std std-numref">Abb. 57</span></a> zu sehen. Das Rauschen hat zur
+verrauscht. Wie in <a class="reference internal" href="#redpi-fig-04"><span class="std std-numref">Abb. 64</span></a> zu sehen. Das Rauschen hat zur
 Folge, dass die Nulldurchgänge nicht zuverlässig detektiert werden
 können.</p>
 <div class="figure align-center" id="redpi-fig-04">
 <img alt="_images/1-10_Verhaeltnis.png" src="_images/1-10_Verhaeltnis.png" />
 </div>
-<p>Ein Auszug(<a class="reference internal" href="#redpi-fig-05"><span class="std std-numref">Abb. 58</span></a>) aus dem Python Variablenraum zeigt wie im Ausgangssignal
+<p>Ein Auszug(<a class="reference internal" href="#redpi-fig-05"><span class="std std-numref">Abb. 65</span></a>) aus dem Python Variablenraum zeigt wie im Ausgangssignal
 innerhalb weniger sample mehrere Nulldurchgänge stattfinden. Dies macht
 eine Detektion und Vergleich der Nullstellen nach dem oben beschrieben
 Schema unmöglich bzw. unzuverlässig.</p>
