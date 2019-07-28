@@ -20,7 +20,7 @@ Spezifikation
 	 Schaltbild KHN-Biquad-Filter
 
 Es soll der Filter mit einer Güte :math:`Q = 1` und einer Kreisfrequenz :math:`\omega = 1\,kHz` realisiert werden. Bevor die Bauteile dimensioniert wurden, wurden die 
-Übertragungsfunktionen mit Matlab dargestellt.
+Übertragungsfunktionen für die vier Filter mit Matlab dargestellt.
 
 .. figure:: img/Experiment_04/Berechnung_MATLAB.png
      :name: 04_fig_02
@@ -56,9 +56,9 @@ Dafür musste zuerst das Model für den tl082 eingebunden werden. Die Schaltung 
 	 
 	 Schaltungsaufbau des KHN-Biquad-Filter in LTspice
 
-In :numref:`04_fig_03` sind die Ergebnisse der Simulation zu sehen.
+In :numref:`04_fig_04` sind die Ergebnisse der Simulation zu sehen.
 
-.. figure:: img/Experiment_04/Simulation_KHN.png
+.. figure:: img/Experiment_04/Exp_04_SimulationKHN.png
 	 :name: 04_fig_04
 	 :align: center
 	 
@@ -73,8 +73,14 @@ Nach der Simulation des KHN-Biquad-Filter wurde auch der Universalfilter simulie
 	 :align: center
 		
 	 Schaltungsaufbau des Universalfilters in LTspice
+	 
+.. figure:: img/Experiment_04/Exp_04_SimulationUniversal.png
+     :name: 04_fig_06
+	 :align: center
+	 
+	 Simulation Amplituden- und Phasengang Universalfilter
 
-Die Diagramme des Hoch-, Band-, und Tiefpasses haben sich nicht verändert.
+Beim Vergleich von :numref:`04_fig_04` und :numref:`04_fig_06` ist erkennbar, dass die Amplituden- und Phasengänge des Hochpasses, des Tiefpasses und des Bandpasses unverändert sind.
 
 
 Messungen
