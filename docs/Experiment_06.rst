@@ -111,7 +111,21 @@ Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.
 
 Schmitt-Trigger Messung und Auswertung
 -------------------------------
-fwefwefew
+
+
+.. figure:: img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png
+	    :name:  06_fig_05
+	    :align: center
+	    :scale: 50%
+
+	    Schmitt Trigger Messung+Simulation mit :math:`R2=2,46k\ohm`
+
+.. figure:: img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png
+	    :name:  06_fig_06
+	    :align: center
+	    :scale: 50%
+
+	    Schmitt Trigger Messung+Simulation mit :math:`R2=9,5k\ohm`
 
 
 VCO Messung und Auswertung
