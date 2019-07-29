@@ -27,7 +27,6 @@ Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
 
 Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese (zweite Abbildung) des Komparators wird erzielt. Ausschaltpegel :math:`U_{e, aus}` beziehungsweise Einschaltpegel :math:`U_{e, ein}` lassen sich berechnen und als Schalthysterese :math:`\Delta U_{e}` zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist. Die dritte Abbildung zeigt das beispielhafte Verhalten des Schmitt-Triggers. 
 
-
 .. role:: raw-math(raw)
     :format: latex html
 
@@ -37,20 +36,14 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 	  
 :raw-math:`$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
 
-
-	  
-
-
-
-.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
+ .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
 	    :name:  06_fig_01
 	    :align: center
 	    :scale: 30%
 
 	    Schmitt Trigger Schaltplan
 
-	    
-.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG
+	    .. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG
 	    :name:  06_fig_02
 	    :align: center
 	    :scale: 30%
@@ -64,8 +57,7 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 
 	    Schmitt Trigger Beispiel, Tietze/Schenk
 
-	    
-Schaltungsaufbau VCO
+	    Schaltungsaufbau VCO
 -------------------------------
 Der VCO besteht aus 3 wichtige Komponenten:
 
@@ -81,7 +73,6 @@ Für den  Multiplizierer (hier: MPY 634, roter Kasten) lässt sich das Ausgangss
 
 :raw-math:`$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
   
-
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png
 	    :name:  06_fig_04
 	    :align: center
@@ -97,7 +88,6 @@ Für den Integrierer mit vorgeschalteter Anpassschaltung (gelber Kasten), besteh
 
 Dazu kann die Anpassschaltung mit einem einzelnen Widerstand R ersetzt werden. Je nach Größe des Eingangswiderstandes lädt sich der Kondensator schneller auf. Die Schaltung arbeitet invertierend, das heißt es gilt:
 
-	  
 :raw-math:`$$ Q(R)\sim U_C(R,C)=-U_a(R,C) $$`
 
 Die Anpassschaltung, im Versuchsaufbau mit einem Trimmer realisiert, bestimmt flexibel welcher Strom in den Integrator rein-/ zurückfließt. Damit lassen sich variabel die High-/ und Lowzeiten des Ausgangssignal der VCO beeinflussen. 
@@ -118,7 +108,7 @@ Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Ampli
 	    :align: center
 	    :scale: 30%
 
-	    Schmitt Trigger Messung+Simulation mit :math:`R2=9,5k \Ohm`
+	    Schmitt Trigger Messung+Simulation mit R2=9,5k :math:`\Ohm`
 
 Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0V ab. 
 
@@ -127,23 +117,22 @@ Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit 
 	    :align: center
 	    :scale: 30%
 
-	    Schmitt Trigger Messung+Simulation mit :math:`R2=2,46k \Ohm`
+	    Schmitt Trigger Messung+Simulation mit R2=2,46k :math:`\Ohm`
 
 
 VCO Messung und Auswertung
 -------------------------------
 
-\begin{table}[h]
-    \centering
-    \caption{test}
-    \begin{tabular}{lcr}
-        test1 & test2 \\
-        \hline
-        a & b  \\
-	c & d  \\
-    \end{tabular}
-    \label{tab:testblabla}
-\end{table}
+=====  =====  ====== 
+   Inputs     Output 
+------------  ------ 
+  A      B    A or B 
+=====  =====  ====== 
+False  False  False 
+True   False  True 
+False  True   True 
+True   True   True 
+=====  =====  ======
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png
 	    :name:  06_fig_06
