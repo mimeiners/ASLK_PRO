@@ -111,31 +111,91 @@ Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.
 
 Schmitt-Trigger Messung und Auswertung
 -------------------------------
-
-
-.. figure:: img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png
-	    :name:  06_fig_05
-	    :align: center
-	    :scale: 50%
-
-	    Schmitt Trigger Messung+Simulation mit :math:`R2=2,46k\ohm`
+Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal(Orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit :math:`R2=9,5k \Ohm`  zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png
 	    :name:  06_fig_06
 	    :align: center
-	    :scale: 50%
+	    :scale: 30%
 
-	    Schmitt Trigger Messung+Simulation mit :math:`R2=9,5k\ohm`
+	    Schmitt Trigger Messung+Simulation mit :math:`R2=9,5k \Ohm`
+
+Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0V ab. 
+
+.. figure:: img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png
+	    :name:  06_fig_05
+	    :align: center
+	    :scale: 30%
+
+	    Schmitt Trigger Messung+Simulation mit :math:`R2=2,46k \Ohm`
 
 
 VCO Messung und Auswertung
 -------------------------------
-fwefwefew
+
+\begin{table}[h]
+    \centering
+    \caption{test}
+    \begin{tabular}{lcr}
+        test1 & test2 \\
+        \hline
+        a & b  \\
+	c & d  \\
+    \end{tabular}
+    \label{tab:testblabla}
+\end{table}
+
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png
+	    :name:  06_fig_06
+	    :align: center
+	    :scale: 30%
+
+	    Spannungsgesteuerter Osczillator Diagramm 1
+
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_2.png
+	    :name:  06_fig_07
+	    :align: center
+	    :scale: 30%
+
+	    Spannungsgesteuerter Osczillator Diagramm 2
+
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_3.png
+	    :name:  06_fig_08
+	    :align: center
+	    :scale: 30%
+
+	    Spannungsgesteuerter Osczillator Diagramm 3
+
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_4.png
+	    :name:  06_fig_09
+	    :align: center
+	    :scale: 30%
+
+	    Spannungsgesteuerter Osczillator Diagramm 4
+
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_5.png
+	    :name:  06_fig_10
+	    :align: center
+	    :scale: 30%
+
+	    Spannungsgesteuerter Osczillator Diagramm 5
+
+.. figure:: img/Experiment_06/Widerstandsanpassung_Spannung.png
+	    :name:  06_fig_11
+	    :align: center
+	    :scale: 30%
+
+	    Widerstandsanpassung - Spannung
+
+.. figure:: img/Experiment_06/Widerstandsanpassung_Frequenz.png
+	    :name:  06_fig_12
+	    :align: center
+	    :scale: 30%
+
+	    Widerstandsanpassung - Frequenz
 
 
 Fazit
 -----
 
 cceferfrefre
-
-
