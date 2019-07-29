@@ -196,7 +196,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 4
 
-Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß, womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht linear arbeitet. Die gemessenen Werte der Anpassschaltung sind unrealistisch, da der Trimmer einen Gesamtwiderstand von 10k besitzt. Die kleine Eingangsspannung sorgt auch für ein großes Rauschen am Ausgang. 
+Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß, womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht linear arbeitet. Die gemessenen Werte der Anpassschaltung sind unrealistisch, da der Trimmer einen Gesamtwiderstand von 10k besitzt. Die kleine Eingangsspannung sorgt für ein großes Rauschen am Ausgang. 
 
 ==========  ========  ========
 Widerstandsanpassung 5
@@ -215,12 +215,18 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 5
 
+Im Folgenden sind zwei Grafen, die die Entwicklung der Widerstandswerte der Anpassschaltung in Abhängigkeit der Eingangsspannung und der Frequenz zeigen. Die Widerstandswerte sind dabei händisch am Trimmer eingestellt und sollen möglichst für eine gleichmäßige High zu Low Zeit am Ausgang sorgen. Die eingestellten Werte sind automatisch ungenau, da sie nicht berechnet sind sondern nach "Gefühl" eingestellt.
+
+Die Widerstandsanpassung in Verbindung mit der Spannung zeigt, dass der Vorwärtstwiderstand R1 mit größerer Eingangsspannung immer größer gewählt werden muss um ein gleichmäßiges Rechtecksignal am Ausgang zu erzielen. Dementsprechend wird der Rückwärtswiderstand R2 immer kleiner. 
+
 .. figure:: img/Experiment_06/Widerstandsanpassung_Spannung.png
 	    :name:  exp06_fig_11
 	    :align: center
 	    :scale: 30%
 
 	    Widerstandsanpassung - Spannung
+
+Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht verteilt, da in diesem Fall äquidistante Frequenzabstände ideal wären. Die Anpassschaltung arbeitet leider nicht linear, sodass gleiche Spannungsabstände nicht für gleiche Frequenzabstände sorgen. Die Widerstände bei niedriger Frequenz unterliegen sehr wahrscheinlich dem oben genannten Messfehler. Bei hohen Frequenzen liegen die gemessenen Widerstandswerte eng beieinander und enthalten vorraussichtlich ebenfalls Messfehler, da die Werte dem Kurvenverlauf zu urteilen nicht realistisch sind. 
 
 .. figure:: img/Experiment_06/Widerstandsanpassung_Frequenz.png
 	    :name:  exp06_fig_12
