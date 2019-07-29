@@ -50,14 +50,14 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 	    Schmitt Trigger Schaltplan
 
 	    
-.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png
+.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG
 	    :name:  06_fig_02
 	    :align: center
 	    :scale: 30%
 
 	    Schmitt Trigger Hysteresekurve, Tietze/Schenk
 
-.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Sinussignal.png
+.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Sinussignal.PNG
 	    :name:  06_fig_03
 	    :align: center
 	    :scale: 30%
