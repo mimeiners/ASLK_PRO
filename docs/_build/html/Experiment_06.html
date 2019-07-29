@@ -1,0 +1,177 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Experiment 6: Voltage controlled oscillator (VCO) &#8212; ASLK_PRO  Dokumentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Experiment 7: Phase Locked Loop (PLL)" href="Experiment_07.html" />
+    <link rel="prev" title="Experiment 5: Self-Tuned Filter" href="Experiment_05.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="Experiment_07.html" title="Experiment 7: Phase Locked Loop (PLL)"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_05.html" title="Experiment 5: Self-Tuned Filter"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhalt</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Experiment 6: Voltage controlled oscillator (VCO)</a><ul>
+<li><a class="reference internal" href="#theorie-und-motivation">Theorie und Motivation</a></li>
+<li><a class="reference internal" href="#spezifikation">Spezifikation</a></li>
+<li><a class="reference internal" href="#schaltungsaufbau-schmitt-trigger">Schaltungsaufbau Schmitt-Trigger</a></li>
+<li><a class="reference internal" href="#schaltungsaufbau-vco">Schaltungsaufbau VCO</a></li>
+<li><a class="reference internal" href="#schmitt-trigger-messung-und-auswertung">Schmitt-Trigger Messung und Auswertung</a></li>
+<li><a class="reference internal" href="#vco-messung-und-auswertung">VCO Messung und Auswertung</a></li>
+<li><a class="reference internal" href="#fazit">Fazit</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="Experiment_05.html"
+                        title="vorheriges Kapitel">Experiment 5: Self-Tuned Filter</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="Experiment_07.html"
+                        title="nächstes Kapitel">Experiment 7: Phase Locked Loop (PLL)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Experiment_06.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experiment-6-voltage-controlled-oscillator-vco">
+<h1>Experiment 6: Voltage controlled oscillator (VCO)<a class="headerlink" href="#experiment-6-voltage-controlled-oscillator-vco" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="theorie-und-motivation">
+<h2>Theorie und Motivation<a class="headerlink" href="#theorie-und-motivation" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Voltage controlled oscillator sind Schaltungen, die die Frequenz der Ausgangsspannung in Abhängigkeit der Eingangsspannung ändern. Bekannt ist auch die Wirkung als Funktionsgenerator mit einem Rechtecksignal am Ausgang.
+In der Praxis kann die Schaltung in der elektronischen Musik als Synthesizer, bei Motorregelungen, als Funktionsgenerator und beim  Sendersuchlauf in Verbindung mit PLL genutzt werden.</p>
+<p>Ein VCO kann mit Hilfe eines Multiplizierers, eine Integrierers und eines nicht invertierenden Schmitt-Triggers realisiert werden.
+Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird analysiert in Abhängigkeit eines Sinus-Signals. Dafür liegt eine Spice-Simulation vor, die anschließend messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen.</p>
+<p>Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1V bis 10V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.</p>
+</div>
+<div class="section" id="spezifikation">
+<h2>Spezifikation<a class="headerlink" href="#spezifikation" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+<div class="section" id="schaltungsaufbau-schmitt-trigger">
+<h2>Schaltungsaufbau Schmitt-Trigger<a class="headerlink" href="#schaltungsaufbau-schmitt-trigger" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
+- 2 Widerstände
+- Operationsverstärker</p>
+<p>Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Ausschaltpegel <span class="math notranslate nohighlight">\(U_{e, aus}\)</span> beziehungsweise Einschaltpegel <span class="math notranslate nohighlight">\(U_{e, ein}\)</span> lassen sich berechnen und als Schalthysterese <span class="math notranslate nohighlight">\(\Delta U_{e}\)</span> zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist.</p>
+<p><span class="raw-math">$$ U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$</span>
+<span class="raw-math">$$ U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$</span>
+<span class="raw-math">$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$</span></p>
+<div class="figure align-center" id="fig-01">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png"><img alt="_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png" src="_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png" style="width: 519.0px; height: 305.09999999999997px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 25 </span><span class="caption-text">Schmitt Trigger Schaltplan</span></p>
+</div>
+<div class="figure align-center" id="fig-02">
+<a class="reference internal image-reference" href="img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png"><img alt="img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png" src="img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png" /></a>
+<p class="caption"><span class="caption-number">Abb. 26 </span><span class="caption-text">Schmitt Trigger Hysteresekurve, Tietze/Schenk</span></p>
+</div>
+</div>
+<div class="section" id="schaltungsaufbau-vco">
+<h2>Schaltungsaufbau VCO<a class="headerlink" href="#schaltungsaufbau-vco" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der VCO besteht aus 3 wichtige Komponenten:
+- Multiplizierer
+- Integrierer
+- Schmitt-Trigger
+Als Anpassungsschaltung dient hier eine kleine Dioden-Widerstand-Schaltung. Versorgt werden die Operationsverstärker sowie der Multiplizierer mit +/-10V. Eingangsseitig sorgt ein Gleichsignal mit verschiedenen Spannungsleveln von 1-10 V für eine beispielhafte Beschaltung.</p>
+<p>Für den  Multiplizierer (hier: MPY 634) lässt sich das Ausgangssignal berechnen. X1/ X2 stellen dabei Eingang 1, Y1/ Y2 Eingang 2 dar. Über SF lässt sich der Skalierungsfaktor steuern und  an VS gehört die Versorgungsspannung. Z1 wird meist gegen Ground oder sehr hochohmig angeschlossen, Z2 erlaubt einen Offset am Ausgang.</p>
+<p><span class="raw-math">$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$</span></p>
+<div class="figure align-center" id="fig-03">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Schaltplan.png"><img alt="_images/Voltage_Controlled_Oscillator_Schaltplan.png" src="_images/Voltage_Controlled_Oscillator_Schaltplan.png" style="width: 1016.5px; height: 370.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 27 </span><span class="caption-text">VCO Schaltplan</span></p>
+</div>
+</div>
+<div class="section" id="schmitt-trigger-messung-und-auswertung">
+<h2>Schmitt-Trigger Messung und Auswertung<a class="headerlink" href="#schmitt-trigger-messung-und-auswertung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>fwefwefew</p>
+</div>
+<div class="section" id="vco-messung-und-auswertung">
+<h2>VCO Messung und Auswertung<a class="headerlink" href="#vco-messung-und-auswertung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>fwefwefew</p>
+</div>
+<div class="section" id="fazit">
+<h2>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h2>
+<p>cceferfrefre</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="Experiment_07.html" title="Experiment 7: Phase Locked Loop (PLL)"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="Experiment_05.html" title="Experiment 5: Self-Tuned Filter"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASLK_PRO  Dokumentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, M. Meiners, HSB.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9 erstellt.
+    </div>
+  </body>
+</html>
