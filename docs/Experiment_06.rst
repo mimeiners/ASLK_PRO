@@ -13,10 +13,6 @@ Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lu
 Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1V bis 10V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.
 
 
-
-Spezifikation
--------------
-
 Schaltungsaufbau Schmitt-Trigger
 -------------------------------
 Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
@@ -36,14 +32,14 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 	  
 :raw-math:`$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
 
- .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
+.. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
 	    :name:  06_fig_01
 	    :align: center
 	    :scale: 30%
 
 	    Schmitt Trigger Schaltplan
 
-	    .. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG
+.. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG
 	    :name:  06_fig_02
 	    :align: center
 	    :scale: 30%
@@ -56,6 +52,7 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 	    :scale: 30%
 
 	    Schmitt Trigger Beispiel, Tietze/Schenk
+	    
 
 	    Schaltungsaufbau VCO
 -------------------------------
@@ -122,9 +119,13 @@ Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit 
 
 VCO Messung und Auswertung
 -------------------------------
+Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen gemessen und die Widerstandswerte der Anpassschaltung aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen.
+
+
+ :numref:`06_fig_06`
 
 ==========  ========  ========
-Widerstandsanpassung
+Widerstandsanpassung 1
 ------------------------------
 Widerstand  0 - 2 ms  2 - 4 ms
 ==========  ========  ========
@@ -138,6 +139,17 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 1
+	    
+
+==========  ========  ========
+Widerstandsanpassung 2
+------------------------------
+Widerstand  0 - 2 ms  2 - 4 ms
+==========  ========  ========
+        R1  3,795 k   3,309 k
+        R2  6,207 k   7,97 k
+==========  ========  ========
+	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_2.png
 	    :name:  06_fig_07
@@ -145,6 +157,17 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 2
+	    
+
+==========  ========  ========
+Widerstandsanpassung 3
+------------------------------
+Widerstand  0 - 2 ms  2 - 4 ms
+==========  ========  ========
+        R1  2,698 k   2,465 k
+        R2  8,44 k    8,61 k
+==========  ========  ========
+	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_3.png
 	    :name:  06_fig_08
@@ -152,6 +175,17 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 3
+	    
+
+==========  ========  ========
+Widerstandsanpassung 4
+------------------------------
+Widerstand  0 - 2 ms  2 - 4 ms
+==========  ========  ========
+        R1  2,195 k   2,285 k
+        R2  8,86 k    8,86 k
+==========  ========  ========
+	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_4.png
 	    :name:  06_fig_09
@@ -159,6 +193,17 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 4
+	    
+
+==========  ========  ========
+Widerstandsanpassung 5
+------------------------------
+Widerstand  0 - 2 ms  2 - 4 ms
+==========  ========  ========
+        R1  1,383 k   0,507 k
+        R2  9,6 k     21,85 k
+==========  ========  ========
+	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_5.png
 	    :name:  06_fig_10
