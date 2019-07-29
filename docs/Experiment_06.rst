@@ -33,21 +33,21 @@ Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit e
 :raw-math:`$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png
-	    :name:  06_fig_01
+	    :name:  exp06_fig_01
 	    :align: center
 	    :scale: 30%
 
 	    Schmitt Trigger Schaltplan
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG
-	    :name:  06_fig_02
+	    :name:  exp06_fig_02
 	    :align: center
 	    :scale: 30%
 
 	    Schmitt Trigger Hysteresekurve, Tietze/Schenk
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_Titze_Sinussignal.PNG
-	    :name:  06_fig_03
+	    :name:  exp06_fig_03
 	    :align: center
 	    :scale: 30%
 
@@ -71,7 +71,7 @@ Für den  Multiplizierer (hier: MPY 634, roter Kasten) lässt sich das Ausgangss
 :raw-math:`$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`
   
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png
-	    :name:  06_fig_04
+	    :name:  exp06_fig_04
 	    :align: center
 	    :scale: 50%
 
@@ -101,7 +101,7 @@ Schmitt-Trigger Messung und Auswertung
 Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal(Orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit :math:`R2=9,5k \Ohm`  zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png
-	    :name:  06_fig_06
+	    :name:  exp06_fig_06
 	    :align: center
 	    :scale: 30%
 
@@ -110,7 +110,7 @@ Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Ampli
 Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0V ab. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png
-	    :name:  06_fig_05
+	    :name:  exp06_fig_05
 	    :align: center
 	    :scale: 30%
 
@@ -119,10 +119,9 @@ Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit 
 
 VCO Messung und Auswertung
 -------------------------------
-Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen gemessen und die Widerstandswerte der Anpassschaltung aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen.
+Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen gemessen und die Widerstandswerte der Anpassschaltung aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien ausgewählt und jeweils zwei Spannungen in einem Grafen. 
 
-
- :numref:`06_fig_06`
+Referenz (:numref:`exp06_fig_06`)
 
 ==========  ========  ========
 Widerstandsanpassung 1
@@ -134,7 +133,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 ==========  ========  ========
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png
-	    :name:  06_fig_06
+	    :name:  exp06_fig_06
 	    :align: center
 	    :scale: 30%
 
@@ -152,7 +151,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_2.png
-	    :name:  06_fig_07
+	    :name:  exp06_fig_07
 	    :align: center
 	    :scale: 30%
 
@@ -170,7 +169,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_3.png
-	    :name:  06_fig_08
+	    :name:  exp06_fig_08
 	    :align: center
 	    :scale: 30%
 
@@ -188,7 +187,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_4.png
-	    :name:  06_fig_09
+	    :name:  exp06_fig_09
 	    :align: center
 	    :scale: 30%
 
@@ -206,21 +205,21 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_5.png
-	    :name:  06_fig_10
+	    :name:  exp06_fig_10
 	    :align: center
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 5
 
 .. figure:: img/Experiment_06/Widerstandsanpassung_Spannung.png
-	    :name:  06_fig_11
+	    :name:  exp06_fig_11
 	    :align: center
 	    :scale: 30%
 
 	    Widerstandsanpassung - Spannung
 
 .. figure:: img/Experiment_06/Widerstandsanpassung_Frequenz.png
-	    :name:  06_fig_12
+	    :name:  exp06_fig_12
 	    :align: center
 	    :scale: 30%
 
