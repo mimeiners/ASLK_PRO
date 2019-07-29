@@ -98,7 +98,7 @@ Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.
 
 Schmitt-Trigger Messung und Auswertung
 -------------------------------
-Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal(Orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit :math:`R2=9,5k \Ohm`  zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt. 
+Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal(Orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit R2=9,5k zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png
 	    :name:  exp06_fig_06
@@ -110,7 +110,7 @@ Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Ampli
 Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0V ab. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png
-	    :name:  exp06_fig_05
+	    :name: exp06_fig_05
 	    :align: center
 	    :scale: 30%
 
@@ -119,9 +119,9 @@ Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit 
 
 VCO Messung und Auswertung
 -------------------------------
-Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen gemessen und die Widerstandswerte der Anpassschaltung aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien ausgewählt und jeweils zwei Spannungen in einem Grafen. 
+Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen gemessen und die Widerstandswerte der Anpassschaltung(Tabelle über Grafen) aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien ausgewählt und jeweils zwei Spannungen in einem Grafen. 
 
-Referenz (:numref:`exp06_fig_06`)
+Diagramm 1 zeigt bei der Messung ein relativ starkes Rauchen von mehreren Zehntel Volt. Die Amplitude ist minimal höher als bei der Simulation. Die Simulation hat eine niedrigere Frequenz als die Messung und das Verhältnis von negativer zu positiver Spannung ist unregelmäßig.
 
 ==========  ========  ========
 Widerstandsanpassung 1
@@ -133,12 +133,13 @@ Widerstand  0 - 2 ms  2 - 4 ms
 ==========  ========  ========
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png
-	    :name:  exp06_fig_06
+	    :name: exp06_fig_06
 	    :align: center
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 1
 	    
+Bei kleinerer Eingangsspannung (siehe Diagramm 2) bleib die Frequenz der gemessenen Ausgangsspannung nahezu gleich. 
 
 ==========  ========  ========
 Widerstandsanpassung 2
@@ -157,6 +158,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 2
 	    
+Die Periode der Simulation (Diagramm 3) mit Eingangsspannung von 1,8 V ist zu groß um sie mit der gemessenen Spannung übereinander zu legen. Erste Änderungen der gemessenen Frequenz sind sichtbar.
 
 ==========  ========  ========
 Widerstandsanpassung 3
@@ -175,7 +177,8 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 3
 	    
-
+In Diagramm 4 wird bei der Anpassschaltung Widerstand R1 größer obwohl R2 konstant bleibt. Da bei einem Trimmer der Gesamtwiderstand immer konstant sein sollte, liegt sehr wahrscheinlich eine fehlerhafter Messung der Widerstände vor. Trotz kleinerer Spannungsabstände resultieren immer größere Frequenzänderungen bei der Messung. 
+	    
 ==========  ========  ========
 Widerstandsanpassung 4
 ------------------------------
@@ -192,7 +195,8 @@ Widerstand  0 - 2 ms  2 - 4 ms
 	    :scale: 30%
 
 	    Spannungsgesteuerter Osczillator Diagramm 4
-	    
+
+Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß, womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht linear arbeitet. Die gemessenen Werte der Anpassschaltung sind unrealistisch, da der Trimmer einen Gesamtwiderstand von 10k besitzt. Die kleine Eingangsspannung sorgt auch für ein großes Rauschen am Ausgang. 
 
 ==========  ========  ========
 Widerstandsanpassung 5
