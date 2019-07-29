@@ -108,7 +108,7 @@ Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Ampli
 	    :align: center
 	    :scale: 30%
 
-	    Schmitt Trigger Messung+Simulation mit R2=9,5k :math:`\Ohm`
+	    Schmitt Trigger Messung+Simulation mit R2=9,5k
 
 Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0V ab. 
 
@@ -117,22 +117,18 @@ Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit 
 	    :align: center
 	    :scale: 30%
 
-	    Schmitt Trigger Messung+Simulation mit R2=2,46k :math:`\Ohm`
+	    Schmitt Trigger Messung+Simulation mit R2=2,46k`
 
 
 VCO Messung und Auswertung
 -------------------------------
 
-=====  =====  ====== 
-   Inputs     Output 
-------------  ------ 
-  A      B    A or B 
-=====  =====  ====== 
-False  False  False 
-True   False  True 
-False  True   True 
-True   True   True 
-=====  =====  ======
+==========  ========  ========
+Widerstand  0 - 2 ms  2 - 4 ms
+==========  ========  ========
+        R1  3,645 k   3,645 k
+        R2  7,56 k    7,56 k
+==========  ========  ========
 
 .. figure:: img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png
 	    :name:  06_fig_06
