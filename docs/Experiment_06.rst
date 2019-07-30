@@ -239,4 +239,4 @@ Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht verteilt, da 
 Fazit
 -----
 
-cceferfrefre
+Zusammenfassend eignet sich ein Schmitt-Trigger besonders  gut als Analog-Digital-Wandler und ermöglicht dabei eine Hysteresekurve. Der VCO lässt sich mit einem Multiplizierer, Integrierer und Schmitt-Trigger realisieren. Messungenauigkeiten und Rauschen stören das Ergebnis der umgesetzten Schaltung. Die Simulationsfrequenz und die Versuchsfrequenz bzw. Low/High Zeiten stimmen nicht überein, womit sich Probleme bei der Skalierung herauskristallisieren. Abschließend verhält sich die Eingangsspannung nicht linear zur Ausgangsfrequenz. 
