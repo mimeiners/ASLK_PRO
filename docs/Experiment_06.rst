@@ -10,7 +10,7 @@ In der Praxis kann die Schaltung in der elektronischen Musik als Synthesizer, be
 Ein VCO kann mit Hilfe eines Multiplizierers, eine Integrierers und eines nicht invertierenden Schmitt-Triggers realisiert werden.
 Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird in Abhängigkeit eines Sinus-Signals analysiert. Dafür liegt eine Spice-Simulation vor, die anschließend in die Realität umgesetzt und messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen.
 
-Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1V bis 10V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.
+Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1 V bis 10 V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.
 
 
 Schaltungsaufbau Schmitt-Trigger
@@ -21,7 +21,7 @@ Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
   
 - Operationsverstärker
 
-Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese (zweite Abbildung) des Komparators wird erzielt. Ausschaltpegel :math:`U_{e, aus}` beziehungsweise Einschaltpegel :math:`U_{e, ein}` lassen sich berechnen und als Schalthysterese :math:`\Delta U_{e}` zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist. Die dritte Abbildung zeigt das beispielhafte Verhalten des Schmitt-Triggers. 
+Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/- 10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese (zweite Abbildung) des Komparators wird erzielt. Ausschaltpegel :math:`U_{e, aus}` beziehungsweise Einschaltpegel :math:`U_{e, ein}` lassen sich berechnen und als Schalthysterese :math:`\Delta U_{e}` zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist. Die dritte Abbildung zeigt das beispielhafte Verhalten des Schmitt-Triggers. 
 
 .. role:: raw-math(raw)
     :format: latex html
@@ -83,11 +83,11 @@ Für den Integrierer mit vorgeschalteter Anpassschaltung (gelber Kasten), besteh
 
 :raw-math:`$$ U_{a, Anfang}= \frac{Q_{Anfang}}{C} $$`
 
-Dazu kann die Anpassschaltung mit einem einzelnen Widerstand R ersetzt werden. Je nach Größe des Eingangswiderstandes lädt sich der Kondensator schneller auf. Die Schaltung arbeitet invertierend, das heißt es gilt:
+Dazu kann die Anpassschaltung mit einem einzelnen Widerstand R ersetzt werden. Je nach Größe des Eingangswiderstandes lädt sich der Kondensator schneller auf. Die Schaltung arbeitet invertierend, es gilt:
 
 :raw-math:`$$ Q(R)\sim U_C(R,C)=-U_a(R,C) $$`
 
-Die Anpassschaltung, im Versuchsaufbau mit einem Trimmer realisiert, bestimmt flexibel welcher Strom in den Integrator rein-/ zurückfließt. Damit lassen sich variabel die High-/ und Lowzeiten des Ausgangssignal der VCO beeinflussen. 
+Die Anpassschaltung, im Versuchsaufbau mit einem Trimmer realisiert, bestimmt flexibel, welcher Strom in den Integrator ein-/ zurückfließt. Damit lassen sich variabel die High-/ und Lowzeiten des Ausgangssignal der VCO beeinflussen. 
 	  
 Mit einer Wechselspannung am Eingang ergibt sich folgende Gleichung:
 
@@ -98,7 +98,7 @@ Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.
 
 Schmitt-Trigger Messung und Auswertung
 -------------------------------
-Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal(Orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit R2=9,5k zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt. 
+Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal (orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit R2=9,5 k zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png
 	    :name:  exp06_fig_06
@@ -107,7 +107,7 @@ Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Ampli
 
 	    Schmitt Trigger Messung+Simulation mit R2=9,5k
 
-Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0V ab. 
+Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0 V ab. 
 
 .. figure:: img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png
 	    :name: exp06_fig_05
@@ -119,7 +119,7 @@ Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit 
 
 VCO Messung und Auswertung
 -------------------------------
-Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen gemessen und die Widerstandswerte der Anpassschaltung(Tabelle über Grafen) aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien ausgewählt und jeweils zwei Spannungen in einem Grafen. 
+Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen werden gemessen und die Widerstandswerte der Anpassschaltung (Tabelle über Grafen) werden aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs- bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien ausgewählt und jeweils zwei Spannungen befinden sich in einem Grafen. 
 
 Diagramm 1 zeigt bei der Messung ein relativ starkes Rauchen von mehreren Zehntel Volt. Die Amplitude ist minimal höher als bei der Simulation. Die Simulation hat eine niedrigere Frequenz als die Messung und das Verhältnis von negativer zu positiver Spannung ist unregelmäßig.
 
@@ -139,7 +139,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 1
 	    
-Bei kleinerer Eingangsspannung (siehe Diagramm 2) bleib die Frequenz der gemessenen Ausgangsspannung nahezu gleich. 
+Bei kleinerer Eingangsspannung (siehe Diagramm 2) bleibt die Frequenz der gemessenen Ausgangsspannung nahezu gleich. 
 
 ==========  ========  ========
 Widerstandsanpassung 2
@@ -158,7 +158,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 2
 	    
-Die Periode der Simulation (Diagramm 3) mit Eingangsspannung von 1,8 V ist zu groß um sie mit der gemessenen Spannung übereinander zu legen. Erste Änderungen der gemessenen Frequenz sind sichtbar.
+Die Periode der Simulation (Diagramm 3) mit Eingangsspannung von 1,8 V ist zu groß, um sie mit der gemessenen Spannung übereinander zu legen. Erste Änderungen der gemessenen Frequenz sind sichtbar.
 
 ==========  ========  ========
 Widerstandsanpassung 3
@@ -177,7 +177,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 3
 	    
-In Diagramm 4 wird bei der Anpassschaltung Widerstand R1 größer obwohl R2 konstant bleibt. Da bei einem Trimmer der Gesamtwiderstand immer konstant sein sollte, liegt sehr wahrscheinlich eine fehlerhafter Messung der Widerstände vor. Trotz kleinerer Spannungsabstände resultieren immer größere Frequenzänderungen bei der Messung. 
+In Diagramm 4 wird bei der Anpassschaltung Widerstand R1 größer obwohl R2 konstant bleibt. Da bei einem Trimmer der Gesamtwiderstand immer konstant sein sollte, liegt sehr wahrscheinlich eine fehlerhafte Messung der Widerstände vor. Trotz kleinerer Spannungsabstände resultieren immer größere Frequenzänderungen bei der Messung. 
 	    
 ==========  ========  ========
 Widerstandsanpassung 4
@@ -196,7 +196,7 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 4
 
-Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß, womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht linear arbeitet. Die gemessenen Werte der Anpassschaltung sind unrealistisch, da der Trimmer einen Gesamtwiderstand von 10k besitzt. Die kleine Eingangsspannung sorgt für ein großes Rauschen am Ausgang. 
+Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß, womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht linear arbeitet. Die gemessenen Werte der Anpassschaltung sind unrealistisch, da der Trimmer einen Gesamtwiderstand von 10 k besitzt. Die kleine Eingangsspannung sorgt für ein großes Rauschen am Ausgang. 
 
 ==========  ========  ========
 Widerstandsanpassung 5
@@ -215,9 +215,9 @@ Widerstand  0 - 2 ms  2 - 4 ms
 
 	    Spannungsgesteuerter Osczillator Diagramm 5
 
-Im Folgenden sind zwei Grafen, die die Entwicklung der Widerstandswerte der Anpassschaltung in Abhängigkeit der Eingangsspannung und der Frequenz zeigen. Die Widerstandswerte sind dabei händisch am Trimmer eingestellt und sollen möglichst für eine gleichmäßige High zu Low Zeit am Ausgang sorgen. Die eingestellten Werte sind automatisch ungenau, da sie nicht berechnet sind sondern nach "Gefühl" eingestellt.
+Im Folgenden sind zwei Grafen, die die Entwicklung der Widerstandswerte der Anpassschaltung in Abhängigkeit der Eingangsspannung und der Frequenz zeigen. Die Widerstandswerte sind dabei händisch am Trimmer eingestellt und sollen möglichst für eine gleichmäßige High- zu Low-Zeit am Ausgang sorgen. Die eingestellten Werte sind automatisch ungenau, da sie nicht berechnet sind, sondern nach optischer Sichtung eingestellt werden.
 
-Die Widerstandsanpassung in Verbindung mit der Spannung zeigt, dass der Vorwärtstwiderstand R1 mit größerer Eingangsspannung immer größer gewählt werden muss um ein gleichmäßiges Rechtecksignal am Ausgang zu erzielen. Dementsprechend wird der Rückwärtswiderstand R2 immer kleiner. 
+Die Widerstandsanpassung in Verbindung mit der Spannung zeigt, dass der Vorwärtswiderstand R1 mit größerer Eingangsspannung immer größer gewählt werden muss um ein gleichmäßiges Rechtecksignal am Ausgang zu erzielen. Dementsprechend wird der Rückwärtswiderstand R2 immer kleiner. 
 
 .. figure:: img/Experiment_06/Widerstandsanpassung_Spannung.png
 	    :name:  exp06_fig_11
@@ -226,7 +226,7 @@ Die Widerstandsanpassung in Verbindung mit der Spannung zeigt, dass der Vorwärt
 
 	    Widerstandsanpassung - Spannung
 
-Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht verteilt, da in diesem Fall äquidistante Frequenzabstände ideal wären. Die Anpassschaltung arbeitet leider nicht linear, sodass gleiche Spannungsabstände nicht für gleiche Frequenzabstände sorgen. Die Widerstände bei niedriger Frequenz unterliegen sehr wahrscheinlich dem oben genannten Messfehler. Bei hohen Frequenzen liegen die gemessenen Widerstandswerte eng beieinander und enthalten vorraussichtlich ebenfalls Messfehler, da die Werte dem Kurvenverlauf zu urteilen nicht realistisch sind. 
+Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht verteilt, da in diesem Fall äquidistante Frequenzabstände ideal wären. Die Anpassschaltung arbeitet nicht linear, sodass gleiche Spannungsabstände nicht für gleiche Frequenzabstände sorgen. Die Widerstände bei niedriger Frequenz unterliegen sehr wahrscheinlich dem oben genannten Messfehler. Bei hohen Frequenzen liegen die gemessenen Widerstandswerte eng beieinander und enthalten vorraussichtlich ebenfalls Messfehler, da die Werte dem Kurvenverlauf zu urteilen nicht realistisch sind. 
 
 .. figure:: img/Experiment_06/Widerstandsanpassung_Frequenz.png
 	    :name:  exp06_fig_12
