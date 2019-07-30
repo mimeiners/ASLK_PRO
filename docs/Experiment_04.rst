@@ -6,7 +6,7 @@ Kurze Theorie und Motivation
 In der Nachrichtentechnik ist der Einsatz von Filtern unerlässlich. Gerade beim Einsatz höhergradige Filter geht, kommt es zu Problemen. 
 Passive Filter, also RLC-Schaltungen werden gerade bei höheren Frequezen aufgrund der den Spulen eigenen Eigenschaften häufig sehr groß und ungenau.
 Um dem entgegenzuwirken verwendet man aktive Filter aus Operationsverstärkern, Kondensatoren und Widerständen. 
-Diese Bauteile lassen sich deutlich genauer bestimmen und herstellen als das bei Spulen möglich ist. 
+Bei diesen Bauteilen ist es ist sowohl das herstellen, als auchihre Werte zu bestimmen, als das bei Spulen möglich ist. 
 Die Spulen weren hierbei durch Integriererschaltungen ersetzt. 
 
 
@@ -54,7 +54,7 @@ Die Simulation wurde mit LTspice XVII durchgeführt.
 Dafür musste zuerst das Model für den tl082 eingebunden werden. Die Schaltung wurde nach :numref:`04_fig_01` implemtiert.
 
 .. figure:: img/Experiment_04/Exp_04_SpiceKHN.png
-     :name:04_fig_03
+     :name: 04_fig_03
 	 :align: center
 	 
 	 Schaltungsaufbau des KHN-Biquad-Filter in LTspice
@@ -96,3 +96,47 @@ Vergleichbarkeit bevorzugt.
 
 Messungen
 ---------
+Für die Messungen wurde der Red Pitaya verwendet. Mit Hilfe eines Skriptes wurden Amplituden- und Phasengang für den KHN-Biquad bestimmt.
+Um diese Messungen bewerten zu können, wurde mit Hilfe von Octave beide Kurven in einer Grafik dargestellt. 
+
+.. figure:: img/Experiment_04/Vergleich_BP.png
+	 :name: 04_fig_07
+	 :align: center	 
+	 
+	 Vergleich Messung und Simulation für den Bandpassfilter
+
+Gleich zu Anfang fällt auf, dass die dargestellten Kurven sich deutlich voneinander unterscheiden. Betrachtet man nur das allgemeine Verhalten, so ähneln sich die Graphen darin, dass sie ansteigen und fallen.
+betrachtet man den Amplitudengang, so zeigt sich dass das Maximum der Messung um fast 500 Hz verschoben ist. Ferner ist zu erkennen, dass die Bandbreite um ein vielfaches größer ist, als in der Simulation.
+Für den Phasengang sind ähnliche Beobachtungen möglich. Obwohl ein Trend erkennbar ist, so stimmen die gemessenen Werte doch nicht mit den aus der Simulation gewonnenen überein. 
+
+.. figure:: img/Experiment_04/Vergleich_HP.png
+	 :name: 04_fig_08
+	 :align: center	 
+	 
+	 Vergleich Messung und Simulation für den Hochpassfilter
+
+Betrachtet man den Amplitudengang des Hochpasses, so lässt sich hier das allgemeine Verhalten eines Hochpasses erkennen. Allerdings stimmt auch bei dieser Messung die Grenzfrequenz nicht mit der Simulation überein.
+Ferner lässt sich keine Dämpfung größer als -23 dB messen. Auch beim Phasengang ist nur ein Trend erkennbar. 
+
+.. figure:: img/Experiment_04/Vergleich_TP.png
+	 :name: 04_fig_09
+	 :align: center	 
+	 
+	 Vergleich Messung und Simulation für den Tiefpassfilter
+	 
+Betrachtet man den Amplitudengang des Tiefpassfilters, so lässt sich erkennen, dass auch hier keine Dämpfung größer als -23 dB messbar war. Im Gegensatz zur vorhergegangenen Messung stimmen hhier die Grenzfrequenzen fast überein. 
+Der Abfall der Amplitude bei zunehmender Frequenz ist in der Messung nicht so stark wie in der Simulation. So besteht bei einer Dämpfung von -23 dB eine Differenz von ungefähr 20 dB (bei rund 2 kHz).
+Betrachtet man den Phasengang, so ist ein Trend erkennbar, allerdings besteht eine große Drskrepanz zwischen der Simulation und der Messung.
+
+Fazit
+---------
+Betrachtet man das Experiment in seiner Gesamtheit, so wird klar, dass es sich bei den Analogen Filtern um ein weites Feld handelt, dass viele Ansatzmethoden bietet. Der Einstieg über ein zusammengesetztes Filter bietet die Möglichkeit alle grundlegenden Filterarten 
+zu untersuchen. Mit Hilfe der Simulationen konnte man viele Erkenntnisse bezüglich der Güte und der Grenfrequenzen, sowie im Falle des Bandpasses und der Bandsperre zum Aufbau und zusammenwirken von Filtern sammeln. 
+Das größte Problem, dass bei unseren Messungen aufgetreten ist, ist, dass der Red Pitaya nicht sonderlich gut für diese Messung geeignet ist. Ob dies am Gerät, dem Messaufbau oder dem Skript liegt, könnte weiter untersiucht werden. Eine Alternative zum Red Pitaya wäre, die 
+Messungen mit Funktionsgeneratoren und Oszilloskopen durchzuführen. Diese im Labor vorhandenen Geräte erreichen eine deutlich höhere Genauigkeit.
+
+
+
+
+
+
