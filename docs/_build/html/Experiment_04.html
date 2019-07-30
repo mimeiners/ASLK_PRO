@@ -102,22 +102,41 @@ Die Spulen weren hierbei durch Integriererschaltungen ersetzt.</p>
 <img alt="_images/Experiment_04_Schaltbild.png" src="_images/Experiment_04_Schaltbild.png" />
 <p class="caption"><span class="caption-number">Abb. 24 </span><span class="caption-text">Schaltbild KHN-Biquad-Filter</span></p>
 </div>
-<p>Es soll der Filter mit einer Güte <span class="math notranslate nohighlight">\(Q = 1\)</span> und einer Kreisfrequenz <span class="math notranslate nohighlight">\(\omega = 1\,kHz\)</span> realisiert werden.
-Zur Dimensionierung der Bauteile wurden folgende Formeln verwendet:</p>
+<p>Es soll der Filter mit einer Güte <span class="math notranslate nohighlight">\(Q = 1\)</span> und einer Kreisfrequenz <span class="math notranslate nohighlight">\(\omega = 1\,kHz\)</span> realisiert werden. Bevor die Bauteile dimensioniert wurden, wurden die
+Übertragungsfunktionen für die vier Filter mit Matlab dargestellt.</p>
+<div class="figure">
+<img alt="_images/Berechnung_MATLAB.png" src="_images/Berechnung_MATLAB.png" />
+</div>
+<p>Diese Übertragungsfunktionen dienten zur Orientierung für die Dimensionierung und die Simulationen.</p>
+<p>Zur Dimensionierung der Bauteile wurden folgende Formeln verwendet:</p>
 <div class="math notranslate nohighlight" id="equation-04-eq-01">
 <span class="eqno">(14)<a class="headerlink" href="#equation-04-eq-01" title="Permalink to this equation">¶</a></span>\[\omega = \frac{1}{RC}\]</div>
 <div class="math notranslate nohighlight" id="equation-04-eq-02">
 <span class="eqno">(15)<a class="headerlink" href="#equation-04-eq-02" title="Permalink to this equation">¶</a></span>\[Q = \frac{R_1R_2 + R_1R_3 + R_2R_3}{2R_1R_3}\]</div>
-<p>Mithilfe der <a class="reference internal" href="#equation-04-eq-01">Gl. 14</a> wurde <em>R</em> berechnet, dafür wurde eine Kapazität <span class="math notranslate nohighlight">\(C = 100\,nF\)</span> gewählt.
-<em>R</em> beträgt <span class="math notranslate nohighlight">\(10\,k\Omega\)</span>.
-<a class="reference internal" href="#equation-04-eq-02">Gl. 15</a> wurde zur Berechnung von <em>R2</em> genutzt. Für <em>R1</em> und <em>R3</em> wurde je ein Widerstandswert von <span class="math notranslate nohighlight">\(1\,k\Omega\)</span> gewählt. Die beiden Widerstände wurden gleichgroß gewählt, da sie am Eingang
-des Operationsverstärkers einen Spannungsteiler bilden. Für <em>R4</em> wurden <span class="math notranslate nohighlight">\(10\,k\Omega\)</span> ausgewählt. <em>R2</em> beträgt <span class="math notranslate nohighlight">\(500\,\Omega\)</span>.</p>
-<p>Die gewählten Werte wurden im Verlauf der Dimensionerung verändert, die berechneten Werte entsprechend angepasst. Die hier angegebenen Werte sind die, mit denen die beste Simulaiton erfolgt ist.</p>
+<p>Für die meisten Bauteile mussten Werte angenommen werden. Diese Werte wurden im Verlauf der Dimensionierung immer wieder verändert, bis die Simulation und die berechneten Übertragungsfunktionen möglichst übereinstimmen.</p>
 </div>
 <div class="section" id="simulation">
 <h2>Simulation<a class="headerlink" href="#simulation" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die Simulation wurde mit LTspice XVII durchgeführt.
 Dafür musste zuerst das Model für den tl082 eingebunden werden. Die Schaltung wurde nach <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 24</span></a> implemtiert.</p>
+<div class="figure">
+<img alt="img/Experiment_04/Exp_04_SpiceKHN.png:name:04_fig_03:align:center" src="img/Experiment_04/Exp_04_SpiceKHN.png:name:04_fig_03:align:center" />
+</div>
+<p>In <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 25</span></a> sind die Ergebnisse der Simulation zu sehen.</p>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Exp_04_SimulationKHN.png" src="_images/Exp_04_SimulationKHN.png" />
+<p class="caption"><span class="caption-number">Abb. 25 </span><span class="caption-text">Simulation Amplituden- und Phasengang KHN-Biquad-Filter</span></p>
+</div>
+<p>Vergleicht man die Simulation des KHN-Biquad-Filter mit den berechenten Übertragungsfunktionen, sind die Simulationsergebnisse um ungefähr <span class="math notranslate nohighlight">\(-7dB\)</span> verschoben, der Verlauf ist aber die gleiche..</p>
+<p>Nach der Simulation des KHN-Biquad-Filter wurde auch der Universalfilter simuliert. Die Werte der zusätzlichen Bauteile wurden durch Ausprobieren herausgefunden.</p>
+<div class="figure align-center" id="fig-05">
+<img alt="img/Experiment_04/Exp_04_SpiceUniversal.png" src="img/Experiment_04/Exp_04_SpiceUniversal.png" />
+<p class="caption"><span class="caption-number">Abb. 26 </span><span class="caption-text">Schaltungsaufbau des Universalfilters in LTspice</span></p>
+</div>
+<div class="figure">
+<img alt="_images/Exp_04_SimulationUniversal.png" src="_images/Exp_04_SimulationUniversal.png" />
+</div>
+<p>Beim Vergleich von <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 25</span></a> und <code class="xref std std-numref docutils literal notranslate"><span class="pre">04_fig_06</span></code> ist erkennbar, dass die Amplituden- und Phasengänge des Hochpasses, des Tiefpasses und des Bandpasses unverändert sind.</p>
 </div>
 <div class="section" id="messungen">
 <h2>Messungen<a class="headerlink" href="#messungen" title="Link zu dieser Überschrift">¶</a></h2>

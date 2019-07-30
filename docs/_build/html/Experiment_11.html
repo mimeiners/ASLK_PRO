@@ -109,7 +109,7 @@ Ausgangsspannung. Diese liegt bei dem LDO bei 0,1 V bis 1 V. Bei anderen Reglern
 <h2>Funktionsweise<a class="headerlink" href="#funktionsweise" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="figure align-center" id="fig-01">
 <a class="reference internal image-reference" href="_images/low_dropout_regulator.png"><img alt="_images/low_dropout_regulator.png" src="_images/low_dropout_regulator.png" style="width: 404.4px; height: 278.4px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 55 </span><span class="caption-text">LDO Prizip</span></p>
+<p class="caption"><span class="caption-number">Abb. 67 </span><span class="caption-text">LDO Prizip</span></p>
 </div>
 <p>Der LDO besteht im Prinzip aus einer Referenzspannung, einem Operationsverstärker, einem Durchgangselement
 und einem Widerstand am Ausgang. Eine einfache Referenzspannungsquelle kann mit einem Widerstand,
@@ -127,7 +127,7 @@ kleiner wird. Dadurch fließt mehr oder weniger Strom zum Regler Ausgang.</p>
 <h2>Aufbau der Schaltung<a class="headerlink" href="#aufbau-der-schaltung" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="figure align-center" id="fig-02">
 <img alt="_images/Schematic_diagram_of_on_board_evaluation_module.png" src="_images/Schematic_diagram_of_on_board_evaluation_module.png" />
-<p class="caption"><span class="caption-number">Abb. 56 </span><span class="caption-text">on-board Schaltung</span></p>
+<p class="caption"><span class="caption-number">Abb. 68 </span><span class="caption-text">on-board Schaltung</span></p>
 </div>
 <p>-Eingangsspannung: 5,5-11V</p>
 <p>-Ausgangsspannung: 5V</p>
@@ -157,10 +157,10 @@ konstant bleiben und schwanken.</p>
 <h2>Leitungsregelung: Schaltungsaufbau - Simulation<a class="headerlink" href="#leitungsregelung-schaltungsaufbau-simulation" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
-<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 56</span></a> entworfen.</p>
+<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 68</span></a> entworfen.</p>
 <div class="figure align-center" id="fig-03">
 <img alt="_images/Simulation_der_SchaltungTeil1.png" src="_images/Simulation_der_SchaltungTeil1.png" />
-<p class="caption"><span class="caption-number">Abb. 57 </span><span class="caption-text">Simulation Leitungsregelung</span></p>
+<p class="caption"><span class="caption-number">Abb. 69 </span><span class="caption-text">Simulation Leitungsregelung</span></p>
 </div>
 <p>Das Model für den TPS7250 Baustein wurde von der Texas Instrumens Homepage gedownloadet. Die Eingangsspannung wird von 5,5 Volt bis 11 Volt in 0,5 Volt Schritten gesweept.</p>
 </div>
@@ -171,9 +171,9 @@ die Messungen am Texas Instruments Board durchgeführt. Hierdurch kann
 ein klarer Vergleich zur Simulation hergestellt werden.</p>
 <div class="figure align-center" id="fig-04">
 <img alt="_images/Vergleich_Messung1_&amp;_Simulation1.png" src="_images/Vergleich_Messung1_&amp;_Simulation1.png" />
-<p class="caption"><span class="caption-number">Abb. 58 </span><span class="caption-text">Leitungsregelung: Vergleich Messung &amp; Simulation</span></p>
+<p class="caption"><span class="caption-number">Abb. 70 </span><span class="caption-text">Leitungsregelung: Vergleich Messung &amp; Simulation</span></p>
 </div>
-<p>Die <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 58</span></a> zeigt das Verhältnis der Spannungen
+<p>Die <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 70</span></a> zeigt das Verhältnis der Spannungen
 <span class="math notranslate nohighlight">\(V_{in}\)</span> zu <span class="math notranslate nohighlight">\(V_{out}\)</span>. Die Messung wurden jeweils für eine große Last(1kohm),
 eine kleine Last(20ohm) und ohne Last druchgeführt. Die Simulation erfolgte auch ohne Last.
 Anhand der Kurven erkennt man, dass die Spannungsregelung für die kleine Last nicht im gewünschten Bereich arbeitet, weil die Ausgangsspannung unter 5 Volt liegt, für die anderen Lasten erfüllt der Spannungsregler seine Funktion.</p>
@@ -182,7 +182,7 @@ Anhand der Kurven erkennt man, dass die Spannungsregelung für die kleine Last n
 <h2>Lastregelung: Schaltungsaufbau - Simulation<a class="headerlink" href="#lastregelung-schaltungsaufbau-simulation" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="figure align-center" id="fig-05">
 <img alt="_images/Simulation_Teil2.png" src="_images/Simulation_Teil2.png" />
-<p class="caption"><span class="caption-number">Abb. 59 </span><span class="caption-text">Schaltungsaufbau - Simulation</span></p>
+<p class="caption"><span class="caption-number">Abb. 71 </span><span class="caption-text">Schaltungsaufbau - Simulation</span></p>
 </div>
 <p>Für die Lastregelung wird die LT-Spice schaltung minimal verändert. Um eine Kontinuierliche Last am Ausgang zu erzeugen, wird die Zeitvariable „time“ eingefügt. Die Last am Ausgang wird also mit vortlaufender Zeit immer größer.</p>
 </div>
@@ -190,7 +190,7 @@ Anhand der Kurven erkennt man, dass die Spannungsregelung für die kleine Last n
 <h2>Lastregelung: Vergleich Messung &amp; Simulation<a class="headerlink" href="#lastregelung-vergleich-messung-simulation" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="figure align-center" id="fig-06">
 <img alt="_images/Vergleich_Messung2_&amp;_Simulation2.png" src="_images/Vergleich_Messung2_&amp;_Simulation2.png" />
-<p class="caption"><span class="caption-number">Abb. 60 </span><span class="caption-text">Lastregelung: Vergleich Messung &amp; Simulation</span></p>
+<p class="caption"><span class="caption-number">Abb. 72 </span><span class="caption-text">Lastregelung: Vergleich Messung &amp; Simulation</span></p>
 </div>
 <p>Die Kurve der Simulation zeigt, das der Spannungsregler die 5 Volt am Ausgang bis zu einem Strom von 100mA halten kann. Bei einem höheren Strom wird die 5 Volt Ausgangsspannung unterschritten. In der Praxis ist der Regler sogar ein bisschen besser, da er die Ausgangsspannug bis zu einem Ausgangsstrom von 110mA halten kann.</p>
 </div>

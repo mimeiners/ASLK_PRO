@@ -46,9 +46,7 @@
   <ul>
 <li><a class="reference internal" href="#">Experiment 6: Voltage controlled oscillator (VCO)</a><ul>
 <li><a class="reference internal" href="#theorie-und-motivation">Theorie und Motivation</a></li>
-<li><a class="reference internal" href="#spezifikation">Spezifikation</a></li>
 <li><a class="reference internal" href="#schaltungsaufbau-schmitt-trigger">Schaltungsaufbau Schmitt-Trigger</a></li>
-<li><a class="reference internal" href="#schaltungsaufbau-vco">Schaltungsaufbau VCO</a></li>
 <li><a class="reference internal" href="#schmitt-trigger-messung-und-auswertung">Schmitt-Trigger Messung und Auswertung</a></li>
 <li><a class="reference internal" href="#vco-messung-und-auswertung">VCO Messung und Auswertung</a></li>
 <li><a class="reference internal" href="#fazit">Fazit</a></li>
@@ -96,55 +94,237 @@
 <p>Voltage controlled oscillator sind Schaltungen, die die Frequenz der Ausgangsspannung in Abhängigkeit der Eingangsspannung ändern. Bekannt ist auch die Wirkung als Funktionsgenerator mit einem Rechtecksignal am Ausgang.
 In der Praxis kann die Schaltung in der elektronischen Musik als Synthesizer, bei Motorregelungen, als Funktionsgenerator und beim  Sendersuchlauf in Verbindung mit PLL genutzt werden.</p>
 <p>Ein VCO kann mit Hilfe eines Multiplizierers, eine Integrierers und eines nicht invertierenden Schmitt-Triggers realisiert werden.
-Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird analysiert in Abhängigkeit eines Sinus-Signals. Dafür liegt eine Spice-Simulation vor, die anschließend messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen.</p>
-<p>Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1V bis 10V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.</p>
-</div>
-<div class="section" id="spezifikation">
-<h2>Spezifikation<a class="headerlink" href="#spezifikation" title="Link zu dieser Überschrift">¶</a></h2>
+Als erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die Wirkungsweise wird in Abhängigkeit eines Sinus-Signals analysiert. Dafür liegt eine Spice-Simulation vor, die anschließend in die Realität umgesetzt und messtechnisch aufgenommen wird. Anschließend werden die simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab verglichen.</p>
+<p>Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die Eingangsgleichspannung wird von 1 V bis 10 V variiert und die Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die Veränderung dieser Anpassschaltung wird mit der Frequenz der Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen anderen Grafen aufgetragen.</p>
 </div>
 <div class="section" id="schaltungsaufbau-schmitt-trigger">
 <h2>Schaltungsaufbau Schmitt-Trigger<a class="headerlink" href="#schaltungsaufbau-schmitt-trigger" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
-- 2 Widerstände
-- Operationsverstärker</p>
-<p>Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/-10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese des Komparators wird erzielt. Ausschaltpegel <span class="math notranslate nohighlight">\(U_{e, aus}\)</span> beziehungsweise Einschaltpegel <span class="math notranslate nohighlight">\(U_{e, ein}\)</span> lassen sich berechnen und als Schalthysterese <span class="math notranslate nohighlight">\(\Delta U_{e}\)</span> zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist.</p>
-<p><span class="raw-math">$$ U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$</span>
-<span class="raw-math">$$ U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$</span>
-<span class="raw-math">$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$</span></p>
-<div class="figure align-center" id="fig-01">
+<p>Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:</p>
+<ul class="simple">
+<li>2 Widerstände</li>
+<li>Operationsverstärker</li>
+</ul>
+<p>Die Abbildung zeigt den Aufbau eines nicht invertierenden Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers von +/- 10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine Schalthysterese (zweite Abbildung) des Komparators wird erzielt. Ausschaltpegel <span class="math notranslate nohighlight">\(U_{e, aus}\)</span> beziehungsweise Einschaltpegel <span class="math notranslate nohighlight">\(U_{e, ein}\)</span> lassen sich berechnen und als Schalthysterese <span class="math notranslate nohighlight">\(\Delta U_{e}\)</span> zusammenfassen. Es lassen sich also gut analoge Signale in digitale Signale umwandeln. Für den Versuch wird der Schmitt-Trigger eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist. Die dritte Abbildung zeigt das beispielhafte Verhalten des Schmitt-Triggers.</p>
+<p><span class="raw-math">$$ U_{e, aus}=-\frac{R_1}{R_2}U_{a, max} $$</span></p>
+<p><span class="raw-math">$$ U_{e, ein}=-\frac{R_1}{R_2}U_{a, min} $$</span></p>
+<p><span class="raw-math">$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$</span></p>
+<div class="figure align-center" id="exp06-fig-01">
 <a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png"><img alt="_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png" src="_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png" style="width: 519.0px; height: 305.09999999999997px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 25 </span><span class="caption-text">Schmitt Trigger Schaltplan</span></p>
+<p class="caption"><span class="caption-number">Abb. 27 </span><span class="caption-text">Schmitt Trigger Schaltplan</span></p>
 </div>
-<div class="figure align-center" id="fig-02">
-<a class="reference internal image-reference" href="img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png"><img alt="img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png" src="img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.png" /></a>
-<p class="caption"><span class="caption-number">Abb. 26 </span><span class="caption-text">Schmitt Trigger Hysteresekurve, Tietze/Schenk</span></p>
+<div class="figure align-center" id="exp06-fig-02">
+<a class="reference internal image-reference" href="_images/Schmitt_Trigger_Titze_Kennlinie.PNG"><img alt="_images/Schmitt_Trigger_Titze_Kennlinie.PNG" src="_images/Schmitt_Trigger_Titze_Kennlinie.PNG" style="width: 418.8px; height: 284.4px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 28 </span><span class="caption-text">Schmitt Trigger Hysteresekurve, Tietze/Schenk</span></p>
 </div>
+<div class="figure align-center" id="exp06-fig-03">
+<a class="reference internal image-reference" href="_images/Schmitt_Trigger_Titze_Sinussignal.PNG"><img alt="_images/Schmitt_Trigger_Titze_Sinussignal.PNG" src="_images/Schmitt_Trigger_Titze_Sinussignal.PNG" style="width: 432.9px; height: 135.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 29 </span><span class="caption-text">Schmitt Trigger Beispiel, Tietze/Schenk</span></p>
+<div class="legend">
+Schaltungsaufbau VCO</div>
 </div>
-<div class="section" id="schaltungsaufbau-vco">
-<h2>Schaltungsaufbau VCO<a class="headerlink" href="#schaltungsaufbau-vco" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der VCO besteht aus 3 wichtige Komponenten:
-- Multiplizierer
-- Integrierer
-- Schmitt-Trigger
-Als Anpassungsschaltung dient hier eine kleine Dioden-Widerstand-Schaltung. Versorgt werden die Operationsverstärker sowie der Multiplizierer mit +/-10V. Eingangsseitig sorgt ein Gleichsignal mit verschiedenen Spannungsleveln von 1-10 V für eine beispielhafte Beschaltung.</p>
-<p>Für den  Multiplizierer (hier: MPY 634) lässt sich das Ausgangssignal berechnen. X1/ X2 stellen dabei Eingang 1, Y1/ Y2 Eingang 2 dar. Über SF lässt sich der Skalierungsfaktor steuern und  an VS gehört die Versorgungsspannung. Z1 wird meist gegen Ground oder sehr hochohmig angeschlossen, Z2 erlaubt einen Offset am Ausgang.</p>
+<ul class="simple">
+<li>Multiplizierer</li>
+<li>Integrierer</li>
+<li>Schmitt-Trigger</li>
+</ul>
+<p>Als Anpassungsschaltung dient hier eine kleine Dioden-Widerstand-Schaltung. Versorgt werden die Operationsverstärker sowie der Multiplizierer mit +/-10V. Eingangsseitig sorgt ein Gleichsignal mit verschiedenen Spannungsleveln von 1-10 V für eine beispielhafte Beschaltung.</p>
+<p>Für den  Multiplizierer (hier: MPY 634, roter Kasten) lässt sich das Ausgangssignal berechnen. X1/ X2 stellen dabei Eingang 1, Y1/ Y2 Eingang 2 dar. Über SF lässt sich der Skalierungsfaktor steuern und  an VS gehört die Versorgungsspannung. Z1 wird meist gegen Ground oder sehr hochohmig angeschlossen, Z2 erlaubt einen Offset am Ausgang.</p>
 <p><span class="raw-math">$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$</span></p>
-<div class="figure align-center" id="fig-03">
+<div class="figure align-center" id="exp06-fig-04">
 <a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Schaltplan.png"><img alt="_images/Voltage_Controlled_Oscillator_Schaltplan.png" src="_images/Voltage_Controlled_Oscillator_Schaltplan.png" style="width: 1016.5px; height: 370.0px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 27 </span><span class="caption-text">VCO Schaltplan</span></p>
+<p class="caption"><span class="caption-number">Abb. 30 </span><span class="caption-text">VCO Schaltplan</span></p>
 </div>
+<p>Für den Integrierer mit vorgeschalteter Anpassschaltung (gelber Kasten), bestehend aus 2 Dioden und 2 Widerständen, gilt für eine konstante Eingangsspannung:</p>
+<p><span class="raw-math">$$ U_a=-\frac{U_e}{RC}t+U_{a, Anfang} $$</span></p>
+<p><span class="raw-math">$$ U_{a, Anfang}= \frac{Q_{Anfang}}{C} $$</span></p>
+<p>Dazu kann die Anpassschaltung mit einem einzelnen Widerstand R ersetzt werden. Je nach Größe des Eingangswiderstandes lädt sich der Kondensator schneller auf. Die Schaltung arbeitet invertierend, es gilt:</p>
+<p><span class="raw-math">$$ Q(R)\sim U_C(R,C)=-U_a(R,C) $$</span></p>
+<p>Die Anpassschaltung, im Versuchsaufbau mit einem Trimmer realisiert, bestimmt flexibel, welcher Strom in den Integrator ein-/ zurückfließt. Damit lassen sich variabel die High-/ und Lowzeiten des Ausgangssignal der VCO beeinflussen.</p>
+<p>Mit einer Wechselspannung am Eingang ergibt sich folgende Gleichung:</p>
+<p><span class="raw-math">$$ |U_a|=\frac{U_e}{2\pi fCR} $$</span></p>
+<p>Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.</p>
 </div>
 <div class="section" id="schmitt-trigger-messung-und-auswertung">
 <h2>Schmitt-Trigger Messung und Auswertung<a class="headerlink" href="#schmitt-trigger-messung-und-auswertung" title="Link zu dieser Überschrift">¶</a></h2>
-<p>fwefwefew</p>
+<p>Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das gemessene Ausgangssignal dargestellt und mit dem simulierten Ausgangssignal (orange) an der ersten steigenden Flanke mit Matlab übereinander gelegt. Mit R2=9,5 k zeigen sich kleine Differenzen in der Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise ist bei der Simulation ein gröberer Fehler unterlaufen, der das Ausgangssignal verlustfrei statt verlustbehaftet ausgibt.</p>
+<div class="figure align-center" id="exp06-fig-06">
+<a class="reference internal image-reference" href="_images/Schmitt_Trigger_9_5k_Diagramm.png"><img alt="_images/Schmitt_Trigger_9_5k_Diagramm.png" src="_images/Schmitt_Trigger_9_5k_Diagramm.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 31 </span><span class="caption-text">Schmitt Trigger Messung+Simulation mit R2=9,5k</span></p>
+</div>
+<p>Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt außerdem eine deutliche Überspannung des Ausgangssignals, wobei die Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer Millisekunde auf 0 V ab.</p>
+<div class="figure align-center" id="exp06-fig-05">
+<a class="reference internal image-reference" href="_images/Schmitt_Trigger_2_46k_diagramm.png"><img alt="_images/Schmitt_Trigger_2_46k_diagramm.png" src="_images/Schmitt_Trigger_2_46k_diagramm.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 32 </span><span class="caption-text">Schmitt Trigger Messung+Simulation mit R2=2,46k`</span></p>
+</div>
 </div>
 <div class="section" id="vco-messung-und-auswertung">
 <h2>VCO Messung und Auswertung<a class="headerlink" href="#vco-messung-und-auswertung" title="Link zu dieser Überschrift">¶</a></h2>
-<p>fwefwefew</p>
+<p>Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen gespeist, die Ausgangsspannungen werden gemessen und die Widerstandswerte der Anpassschaltung (Tabelle über Grafen) werden aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen Eingangs- bzw. Ausgangsspannungen. Zusätzlich sind die simulierten Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die Simulationswerte soweit verschoben sind, bis äquivalente Flanken übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien ausgewählt und jeweils zwei Spannungen befinden sich in einem Grafen.</p>
+<p>Diagramm 1 zeigt bei der Messung ein relativ starkes Rauchen von mehreren Zehntel Volt. Die Amplitude ist minimal höher als bei der Simulation. Die Simulation hat eine niedrigere Frequenz als die Messung und das Verhältnis von negativer zu positiver Spannung ist unregelmäßig.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Widerstandsanpassung 1</th>
+</tr>
+<tr class="row-even"><th class="head">Widerstand</th>
+<th class="head">0 - 2 ms</th>
+<th class="head">2 - 4 ms</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>R1</td>
+<td>3,645 k</td>
+<td>3,645 k</td>
+</tr>
+<tr class="row-even"><td>R2</td>
+<td>7,56 k</td>
+<td>7,56 k</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Nr_1.png"><img alt="_images/Voltage_Controlled_Oscillator_Nr_1.png" src="_images/Voltage_Controlled_Oscillator_Nr_1.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 33 </span><span class="caption-text">Spannungsgesteuerter Osczillator Diagramm 1</span></p>
+</div>
+<p>Bei kleinerer Eingangsspannung (siehe Diagramm 2) bleibt die Frequenz der gemessenen Ausgangsspannung nahezu gleich.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Widerstandsanpassung 2</th>
+</tr>
+<tr class="row-even"><th class="head">Widerstand</th>
+<th class="head">0 - 2 ms</th>
+<th class="head">2 - 4 ms</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>R1</td>
+<td>3,795 k</td>
+<td>3,309 k</td>
+</tr>
+<tr class="row-even"><td>R2</td>
+<td>6,207 k</td>
+<td>7,97 k</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="exp06-fig-07">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Nr_2.png"><img alt="_images/Voltage_Controlled_Oscillator_Nr_2.png" src="_images/Voltage_Controlled_Oscillator_Nr_2.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 34 </span><span class="caption-text">Spannungsgesteuerter Osczillator Diagramm 2</span></p>
+</div>
+<p>Die Periode der Simulation (Diagramm 3) mit Eingangsspannung von 1,8 V ist zu groß, um sie mit der gemessenen Spannung übereinander zu legen. Erste Änderungen der gemessenen Frequenz sind sichtbar.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Widerstandsanpassung 3</th>
+</tr>
+<tr class="row-even"><th class="head">Widerstand</th>
+<th class="head">0 - 2 ms</th>
+<th class="head">2 - 4 ms</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>R1</td>
+<td>2,698 k</td>
+<td>2,465 k</td>
+</tr>
+<tr class="row-even"><td>R2</td>
+<td>8,44 k</td>
+<td>8,61 k</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="exp06-fig-08">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Nr_3.png"><img alt="_images/Voltage_Controlled_Oscillator_Nr_3.png" src="_images/Voltage_Controlled_Oscillator_Nr_3.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 35 </span><span class="caption-text">Spannungsgesteuerter Osczillator Diagramm 3</span></p>
+</div>
+<p>In Diagramm 4 wird bei der Anpassschaltung Widerstand R1 größer obwohl R2 konstant bleibt. Da bei einem Trimmer der Gesamtwiderstand immer konstant sein sollte, liegt sehr wahrscheinlich eine fehlerhafte Messung der Widerstände vor. Trotz kleinerer Spannungsabstände resultieren immer größere Frequenzänderungen bei der Messung.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Widerstandsanpassung 4</th>
+</tr>
+<tr class="row-even"><th class="head">Widerstand</th>
+<th class="head">0 - 2 ms</th>
+<th class="head">2 - 4 ms</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>R1</td>
+<td>2,195 k</td>
+<td>2,285 k</td>
+</tr>
+<tr class="row-even"><td>R2</td>
+<td>8,86 k</td>
+<td>8,86 k</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="exp06-fig-09">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Nr_4.png"><img alt="_images/Voltage_Controlled_Oscillator_Nr_4.png" src="_images/Voltage_Controlled_Oscillator_Nr_4.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 36 </span><span class="caption-text">Spannungsgesteuerter Osczillator Diagramm 4</span></p>
+</div>
+<p>Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß, womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht linear arbeitet. Die gemessenen Werte der Anpassschaltung sind unrealistisch, da der Trimmer einen Gesamtwiderstand von 10 k besitzt. Die kleine Eingangsspannung sorgt für ein großes Rauschen am Ausgang.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Widerstandsanpassung 5</th>
+</tr>
+<tr class="row-even"><th class="head">Widerstand</th>
+<th class="head">0 - 2 ms</th>
+<th class="head">2 - 4 ms</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>R1</td>
+<td>1,383 k</td>
+<td>0,507 k</td>
+</tr>
+<tr class="row-even"><td>R2</td>
+<td>9,6 k</td>
+<td>21,85 k</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="exp06-fig-10">
+<a class="reference internal image-reference" href="_images/Voltage_Controlled_Oscillator_Nr_5.png"><img alt="_images/Voltage_Controlled_Oscillator_Nr_5.png" src="_images/Voltage_Controlled_Oscillator_Nr_5.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 37 </span><span class="caption-text">Spannungsgesteuerter Osczillator Diagramm 5</span></p>
+</div>
+<p>Im Folgenden sind zwei Grafen, die die Entwicklung der Widerstandswerte der Anpassschaltung in Abhängigkeit der Eingangsspannung und der Frequenz zeigen. Die Widerstandswerte sind dabei händisch am Trimmer eingestellt und sollen möglichst für eine gleichmäßige High- zu Low-Zeit am Ausgang sorgen. Die eingestellten Werte sind automatisch ungenau, da sie nicht berechnet sind, sondern nach optischer Sichtung eingestellt werden.</p>
+<p>Die Widerstandsanpassung in Verbindung mit der Spannung zeigt, dass der Vorwärtswiderstand R1 mit größerer Eingangsspannung immer größer gewählt werden muss um ein gleichmäßiges Rechtecksignal am Ausgang zu erzielen. Dementsprechend wird der Rückwärtswiderstand R2 immer kleiner.</p>
+<div class="figure align-center" id="exp06-fig-11">
+<a class="reference internal image-reference" href="_images/Widerstandsanpassung_Spannung.png"><img alt="_images/Widerstandsanpassung_Spannung.png" src="_images/Widerstandsanpassung_Spannung.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 38 </span><span class="caption-text">Widerstandsanpassung - Spannung</span></p>
+</div>
+<p>Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht verteilt, da in diesem Fall äquidistante Frequenzabstände ideal wären. Die Anpassschaltung arbeitet nicht linear, sodass gleiche Spannungsabstände nicht für gleiche Frequenzabstände sorgen. Die Widerstände bei niedriger Frequenz unterliegen sehr wahrscheinlich dem oben genannten Messfehler. Bei hohen Frequenzen liegen die gemessenen Widerstandswerte eng beieinander und enthalten vorraussichtlich ebenfalls Messfehler, da die Werte dem Kurvenverlauf zu urteilen nicht realistisch sind.</p>
+<div class="figure align-center" id="exp06-fig-12">
+<a class="reference internal image-reference" href="_images/Widerstandsanpassung_Frequenz.png"><img alt="_images/Widerstandsanpassung_Frequenz.png" src="_images/Widerstandsanpassung_Frequenz.png" style="width: 648.0px; height: 373.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 39 </span><span class="caption-text">Widerstandsanpassung - Frequenz</span></p>
+</div>
 </div>
 <div class="section" id="fazit">
 <h2>Fazit<a class="headerlink" href="#fazit" title="Link zu dieser Überschrift">¶</a></h2>
-<p>cceferfrefre</p>
+<p>Zusammenfassend eignet sich ein Schmitt-Trigger besonders  gut als Analog-Digital-Wandler und ermöglicht dabei eine Hysteresekurve. Der VCO lässt sich mit einem Multiplizierer, Integrierer und Schmitt-Trigger realisieren. Messungenauigkeiten und Rauschen stören das Ergebnis der umgesetzten Schaltung. Die Simulationsfrequenz und die Versuchsfrequenz bzw. Low/High Zeiten stimmen nicht überein, womit sich Probleme bei der Skalierung herauskristallisieren. Abschließend verhält sich die Eingangsspannung nicht linear zur Ausgangsfrequenz.</p>
 </div>
 </div>
 

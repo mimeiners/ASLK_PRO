@@ -114,10 +114,10 @@ Glättung der Ausgangsspannung <span class="math notranslate nohighlight">\(V_{a
 Schaltungen eingegangen. Begonnen wird hierbei mit einem DC-DC
 Wandler, welcher mithilfe eines aus einem Funktionsgenerator
 generierten Signals, eine Ausgangsspannung erzeugen soll, dargestellt
-in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 39</span></a>.</p>
+in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 51</span></a>.</p>
 <div class="figure align-center" id="fig-01">
 <a class="reference internal image-reference" href="_images/Schaltung_DC_DC.png"><img alt="_images/Schaltung_DC_DC.png" src="_images/Schaltung_DC_DC.png" style="width: 402.0px; height: 149.6px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 39 </span><span class="caption-text">DC-DC-Wandler</span></p>
+<p class="caption"><span class="caption-number">Abb. 51 </span><span class="caption-text">DC-DC-Wandler</span></p>
 </div>
 <p>Die eingespeiste Dreiecksspannung aus dem Funktionsgegenrator
 <span class="math notranslate nohighlight">\(V_{g}\)</span>, zusammen mit der Referenzspannung <span class="math notranslate nohighlight">\(V_{ref}\)</span>
@@ -139,12 +139,12 @@ stabiles Ausgangssignal <span class="math notranslate nohighlight">\(V_{av}\)</s
 <h2>Simulation DC-DC Wandler<a class="headerlink" href="#simulation-dc-dc-wandler" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
-<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 39</span></a> entworfen.</p>
+<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 51</span></a> entworfen.</p>
 <div class="figure align-center" id="fig-02">
 <img alt="_images/Spannungs_Simu_1.png" src="_images/Spannungs_Simu_1.png" />
-<p class="caption"><span class="caption-number">Abb. 40 </span><span class="caption-text">Simulation der Ein- und Ausgangsspannungen</span></p>
+<p class="caption"><span class="caption-number">Abb. 52 </span><span class="caption-text">Simulation der Ein- und Ausgangsspannungen</span></p>
 </div>
-<p>Die <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 40</span></a> zeigt den Verlauf der Spannungen
+<p>Die <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 52</span></a> zeigt den Verlauf der Spannungen
 <span class="math notranslate nohighlight">\(V_{ref}\)</span>, <span class="math notranslate nohighlight">\(V_{g}\)</span>, <span class="math notranslate nohighlight">\(V_{o}\)</span> und <span class="math notranslate nohighlight">\(V_{av}\)</span>. Der
 steigende Verlauf der Ausgangsspannung <span class="math notranslate nohighlight">\(V_{av}\)</span> lässt sich
 auf die verbaute Spule und den Kondensator zurückführen, welche
@@ -152,10 +152,10 @@ durch die Lade- und Entladezyklen den Verlauf der Kurve
 herbeiführen.</p>
 <div class="figure align-center" id="fig-03">
 <img alt="_images/Spannungs_Simu_2.png" src="_images/Spannungs_Simu_2.png" />
-<p class="caption"><span class="caption-number">Abb. 41 </span><span class="caption-text">Detailansicht der Ein- und Ausgangsspannungen</span></p>
+<p class="caption"><span class="caption-number">Abb. 53 </span><span class="caption-text">Detailansicht der Ein- und Ausgangsspannungen</span></p>
 </div>
 <p>Nach t = 6ms hat sich die Spannung <span class="math notranslate nohighlight">\(V_{av}\)</span> auf einen Wert von
-ungefähr U = 2V eingestellt. Aus der <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 41</span></a> lässt sich
+ungefähr U = 2V eingestellt. Aus der <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 53</span></a> lässt sich
 erkennen, dass sobald die Referenzspannung <span class="math notranslate nohighlight">\(V_{ref}\)</span> größer ist
 als die eingeführte Dreiecksspannung <span class="math notranslate nohighlight">\(V_{g}\)</span>, so schaltet der
 Komparator auf die eingestellte Spannung <span class="math notranslate nohighlight">\(-V_{ss}\)</span>
@@ -177,15 +177,15 @@ Spannung ausgibt und die daraus resultierende Spannung
 die Messungen am Texas Instruments Board durchgeführt. Hierdurch kann
 ein klarer Vergleich zur Simulation hergestellt werden.</p>
 <div class="figure align-center" id="fig-04">
-<img alt="_images/Spannung_Messung.png" src="_images/Spannung_Messung.png" />
-<p class="caption"><span class="caption-number">Abb. 42 </span><span class="caption-text">Messungen der Ein- und Ausgangsspannungen</span></p>
+<a class="reference internal image-reference" href="_images/Spannung_Messung.png"><img alt="_images/Spannung_Messung.png" src="_images/Spannung_Messung.png" style="width: 616.0px; height: 462.00000000000006px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 54 </span><span class="caption-text">Messungen der Ein- und Ausgangsspannungen</span></p>
 </div>
-<p>Die <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 42</span></a> zeigt die Ergebnisse für die unterschiedichen
-Spannungen aus den Messungen. Vergleichen wir diese mit den Ergebnissen aus der <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 41</span></a>, so erkennt man die genauen Parallelitäten der Abbildungen.
+<p>Die <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 54</span></a> zeigt die Ergebnisse für die unterschiedichen
+Spannungen aus den Messungen. Vergleichen wir diese mit den Ergebnissen aus der <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 53</span></a>, so erkennt man die genauen Parallelitäten der Abbildungen.
 Wie schon zuvor erwähnt, kann mithilfe der eingehenden Dreiecksspannung <span class="math notranslate nohighlight">\(V_{g}\)</span> und der Referenzspannung <span class="math notranslate nohighlight">\(V_{ref}\)</span>, das Ausgangssignal varriert werden. Somit findet der zuvor erwähnt Vergleich der Spannungen auch hier in der Messung statt. Werden unterschiedliche Größen der Referenzspanung eingestellt und die daraus resultierenden Plots nacheinander angezeigt, so erkennt man den Ansteig der Ausgangsspannung in abhängigkeit der Referenzspannung. Das eingehende Dreieckssignal <span class="math notranslate nohighlight">\(V_{g}\)</span> wurde hierbei nicht verändert. Auch dies kann varriert werden, um ein entsprechendes Verhalten am Ausgangssignal zu erhalten. Dies ist darauf zurückzuführen, dass durch die Größe, sowie die Pulsbreite des Signals, die Abstastung über der Referenzspannung, ein unterschiedliche Triggerverhalten des Operationsverstärkers auslösen würde.</p>
 <div class="figure align-center" id="fig-05">
-<img alt="_images/Dc_Dc_gif_Ausgangsspannung.gif" src="_images/Dc_Dc_gif_Ausgangsspannung.gif" />
-<p class="caption"><span class="caption-number">Abb. 43 </span><span class="caption-text">Auswirkung der Referenzspannung auf die Ausgangsspannung</span></p>
+<a class="reference internal image-reference" href="_images/Dc_Dc_gif_Ausgangsspannung.gif"><img alt="_images/Dc_Dc_gif_Ausgangsspannung.gif" src="_images/Dc_Dc_gif_Ausgangsspannung.gif" style="width: 480.0px; height: 360.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 55 </span><span class="caption-text">Auswirkung der Referenzspannung auf die Ausgangsspannung</span></p>
 </div>
 <p>Sobald die grüne Kennlinie, welche die Referenzspannung anzeigt, die Dreiecksspannung trifft, schaltet der Operationsverstärker durch. Das Ausgangssignal, hier dargestellt als Dunkelblaue Kennlinie, ist in seiner Größe davon abhängig, in welchen Abständen die Referenzspannung auf das Dreieckssingal trifft. Desto größer die Abstände, umso größer die ausgehende Rechteckspannung die daraus resultierende Geichspannung.</p>
 </div>
@@ -194,62 +194,62 @@ Wie schon zuvor erwähnt, kann mithilfe der eingehenden Dreiecksspannung <span c
 <p>Das Ziel des SMPS Schaltnetzteils ist gleichzustellen mit dem zuvor schon bearbeiteten Dc-Dc-Wandlers. Ein einhergehendes gepulstes Eingangssignal, soll in eine stabile Gleichspannung als Ausgangssignal umgewandelt werden. Nachdem ein Blick auf die Schaltung geworfen wird, werden allerdings schon schnell die Schaltungstechnischen Unterschiede klar.</p>
 <div class="figure align-center" id="fig-06">
 <img alt="_images/SMPS_Circuit.PNG" src="_images/SMPS_Circuit.PNG" />
-<p class="caption"><span class="caption-number">Abb. 44 </span><span class="caption-text">SMPS / Schaltnetzteil</span></p>
+<p class="caption"><span class="caption-number">Abb. 56 </span><span class="caption-text">SMPS / Schaltnetzteil</span></p>
 </div>
-<p>Die Schaltung aus der <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 44</span></a> beinhaltet vier wesentliche Elemente, welche zur Umsetzung des Schaltnetzteils von Nöten sind. Das einhergehende Dreieckssignal <span class="math notranslate nohighlight">\(V_{g1}\)</span> wird auf den Minuseingang des ersten Operationsverstärkers gegeben. Die Beschaltung dieses Opeartionsverstärkers ist eine besondere Form, welche sich Schmitt-Trigger nennt. Die genauen Spezifikationen eines Schmitt-Triggers finden sich in dem Experiment 02 wieder. Das auf den positiven Eingang des Schmitt-Triggers eingehende Signal resultiert aus dem Ausgangssignal <span class="math notranslate nohighlight">\(V_{F2}\)</span>, welches durch den zweiten Opeartionsverstärker mit einer Referenzspannung verglichen wird. Somit dient der untere Operationsverstäker als Komparator. Das anschließende, aus dem unteren Operationsverstärker resultierende Signal läuft nun in den positiven Eingang des Schmitt-Triggers.Das Ausgangssignal des smith-Triggers ist ein Rechteckiges Signal, welches durch einen Tiefpass noch gefiltert wird befor es als Ausgangs Signal verwendet wird. Die vier wesentlichen Elemente sind also der Schmitt-Trigger, der Komparator, der Tiefpass, sowie die eingebaute Regelstrecke, welche das Ausgangssignal versuchen soll stabil zu halten. Ein genauerer Blick auf die einzelenen Komponenten erleichtert das Verständnis für den Aufbau und das genaue Zusammenwirken der einzelnen Komponenten.</p>
+<p>Die Schaltung aus der <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 56</span></a> beinhaltet vier wesentliche Elemente, welche zur Umsetzung des Schaltnetzteils von Nöten sind. Das einhergehende Dreieckssignal <span class="math notranslate nohighlight">\(V_{g1}\)</span> wird auf den Minuseingang des ersten Operationsverstärkers gegeben. Die Beschaltung dieses Opeartionsverstärkers ist eine besondere Form, welche sich Schmitt-Trigger nennt. Die genauen Spezifikationen eines Schmitt-Triggers finden sich in dem Experiment 02 wieder. Das auf den positiven Eingang des Schmitt-Triggers eingehende Signal resultiert aus dem Ausgangssignal <span class="math notranslate nohighlight">\(V_{F2}\)</span>, welches durch den zweiten Opeartionsverstärker mit einer Referenzspannung verglichen wird. Somit dient der untere Operationsverstäker als Komparator. Das anschließende, aus dem unteren Operationsverstärker resultierende Signal läuft nun in den positiven Eingang des Schmitt-Triggers.Das Ausgangssignal des smith-Triggers ist ein Rechteckiges Signal, welches durch einen Tiefpass noch gefiltert wird befor es als Ausgangs Signal verwendet wird. Die vier wesentlichen Elemente sind also der Schmitt-Trigger, der Komparator, der Tiefpass, sowie die eingebaute Regelstrecke, welche das Ausgangssignal versuchen soll stabil zu halten. Ein genauerer Blick auf die einzelenen Komponenten erleichtert das Verständnis für den Aufbau und das genaue Zusammenwirken der einzelnen Komponenten.</p>
 <div class="figure align-center" id="fig-07">
 <img alt="_images/9.2_Referenzspannung_3v.png" src="_images/9.2_Referenzspannung_3v.png" />
-<p class="caption"><span class="caption-number">Abb. 45 </span><span class="caption-text">Referenzspannung eingestellt auf 3V</span></p>
+<p class="caption"><span class="caption-number">Abb. 57 </span><span class="caption-text">Referenzspannung eingestellt auf 3V</span></p>
 </div>
-<p>Die Abbildung <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 45</span></a> beschreibt die Eigenschaften des in der Schaltung integrierten Komparators. Das restwellige Ausgangssignal schneidet die in den Operationsverstärker einfliessende Gleichspannung (Referenzspannung). Sobald die Ausgangsspannung einen Wert über den der Referenzspannung annimmt, schaltet der Operationsverstärker auf seinen eingestellten, negativen Spannungswert um. Sollte der Wert der Ausgangsspannung die Referenspannung unterschreiten, so schaltet der Operationsverstärker auf seine maximale Spannungsausgabe um. Durch das Verändern der Referenzspannung in ihrerer Größe, kann somit der Trigger des Operationsverstärkers verändert werden. Dies verhält sich ähnlich dem Komparator aus dem ersten Aufgabenteil.</p>
+<p>Die Abbildung <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 57</span></a> beschreibt die Eigenschaften des in der Schaltung integrierten Komparators. Das restwellige Ausgangssignal schneidet die in den Operationsverstärker einfliessende Gleichspannung (Referenzspannung). Sobald die Ausgangsspannung einen Wert über den der Referenzspannung annimmt, schaltet der Operationsverstärker auf seinen eingestellten, negativen Spannungswert um. Sollte der Wert der Ausgangsspannung die Referenspannung unterschreiten, so schaltet der Operationsverstärker auf seine maximale Spannungsausgabe um. Durch das Verändern der Referenzspannung in ihrerer Größe, kann somit der Trigger des Operationsverstärkers verändert werden. Dies verhält sich ähnlich dem Komparator aus dem ersten Aufgabenteil.</p>
 <div class="figure align-center" id="fig-08">
 <img alt="_images/9.2_Referenzspannung_1v.png" src="_images/9.2_Referenzspannung_1v.png" />
-<p class="caption"><span class="caption-number">Abb. 46 </span><span class="caption-text">Referenzspannung eingestellt auf 1V</span></p>
+<p class="caption"><span class="caption-number">Abb. 58 </span><span class="caption-text">Referenzspannung eingestellt auf 1V</span></p>
 </div>
 <p>Das hieraus resultierende gepulste Ausgangssignal wird dann über den Schmitt-Trigger mit dem eingespeisten Dreieckssignal verglichen. Durch die Beschaltung des Operationsverstärkers als Schmitt-Trigger, generiert sich eine Hystherese, durch welche dann die ausgehende Pulsbreite der Rechteckspannung bestimmt wird. Diese Schwellspannung, mit unterem Schwellwert und oberem Schwellwert ist abhängig von der eingestellten Größe des Spannungsteilers, bestehend aus <span class="math notranslate nohighlight">\(R_{3}\)</span> und <span class="math notranslate nohighlight">\(R_{4}\)</span>. Diese beiden Widerstandswerte haben Einfluss auf den Wert <span class="math notranslate nohighlight">\(\beta\)</span>, welcher wiederum dazu genutzt werden kann, die Schwellspannung einzustellen. Der genaue Versuch zum Schmitt-Trigger kann wie schon zuvor erwähnt, im Experiment 02 recherchiert werden.</p>
 <div class="math notranslate nohighlight">
 \[\beta = \frac{R_3}{R_3 + R_4}\]</div>
 <div class="figure align-center" id="fig-09">
 <img alt="_images/9.2_R4_4.7k.png" src="_images/9.2_R4_4.7k.png" />
-<p class="caption"><span class="caption-number">Abb. 47 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K</span></p>
+<p class="caption"><span class="caption-number">Abb. 59 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K</span></p>
 </div>
 <div class="figure align-center" id="fig-10">
 <img alt="_images/9.2_R4_20k.png" src="_images/9.2_R4_20k.png" />
-<p class="caption"><span class="caption-number">Abb. 48 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K</span></p>
+<p class="caption"><span class="caption-number">Abb. 60 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K</span></p>
 </div>
-<p>Sind <span class="math notranslate nohighlight">\(R_{3}\)</span> und <span class="math notranslate nohighlight">\(R_{4}\)</span> in ihrer Größe deklariert, so gibt der Schmitt-Trigger das gewünscht Signal aus. Hierbei wird das Ausgangssignal aus dem Operationsverstärker gepulst an das positive, sowie negative Maximum geschaltet. Durch die verwendung des Smith-Trigger ist es somit möglich durch Veränderung der Widerstände, das Ausgangssignal einzustellen. Dies ist davonabhängig, welche Versorgungsspannung an dem Operationsverstärker anliegt. Der nachfolgende Tiefpass sollte so ausgelegt werden, dass aus dem Rechtecksignal eine möglichst stabile Gleichspannung erzeugt werden kann. Die Restwelligkeit sollte hierbei so gering wie möglich sein. Durch die Regelstrecke, ist die Ausgangsspannung bei Verschiedenen Lastwiderstand gleich. Sollte der Spannungsabfall an der Last sich verändern, so regelt sich das System durch den Komparator und des daraus entstehenden Eingangssignals am Schmitt-Trigger erneut ein.</p>
+<p>Sind <span class="math notranslate nohighlight">\(R_{3}\)</span> und <span class="math notranslate nohighlight">\(R_{4}\)</span> in ihrer Größe deklariert, so gibt der Schmitt-Trigger das gewünscht Signal aus. Hierbei wird das Ausgangssignal aus dem Operationsverstärker gepulst an das positive, sowie negative Maximum geschaltet. Durch die verwendung des Smith-Trigger ist es somit möglich durch Veränderung der Widerstände, das Ausgangssignal einzustellen. Dies ist davonabhängig, welche Versorgungsspannung an dem Operationsverstärker anliegt. Der nachfolgende Tiefpass sollte so ausgelegt werden, dass aus dem Rechtecksignal eine möglichst stabile Gleichspannung erzeugt werden kann. Die Restwelligkeit sollte hierbei so gering wie möglich sein. Durch die Regelstrecke, ist die Ausgangsspannung bei Verschiedenem Lastwiderstand ,mit geringe Abweichung, stets dieselbe. Sollte der Spannungsabfall an der Last sich verändern, so regelt sich das System durch den Komparator und des daraus entstehenden Eingangssignals am Schmitt-Trigger erneut wieder ein.</p>
 </div>
 <div class="section" id="messung-des-smps-schaltnetzteil">
 <h2>Messung des SMPS Schaltnetzteil<a class="headerlink" href="#messung-des-smps-schaltnetzteil" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die Messungen am Texas Instruments Board durchgeführt. Hierdurch lassen sich die Simulation Überprufen. Zuerst wird dass Ausgangssignal in Abhängigkeit der Referenspannung untersucht.</p>
 <div class="figure align-center" id="fig-11">
-<img alt="_images/Ref_1V.PNG" src="_images/Ref_1V.PNG" />
-<p class="caption"><span class="caption-number">Abb. 49 </span><span class="caption-text">Messung bei eingestellter Referenzspannung von 1V</span></p>
+<a class="reference internal image-reference" href="_images/Ref_1V.PNG"><img alt="_images/Ref_1V.PNG" src="_images/Ref_1V.PNG" style="width: 614.4px; height: 460.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 61 </span><span class="caption-text">Messung bei eingestellter Referenzspannung von 1V</span></p>
 </div>
 <div class="figure align-center" id="fig-12">
-<img alt="_images/Ref_2_5V.PNG" src="_images/Ref_2_5V.PNG" />
-<p class="caption"><span class="caption-number">Abb. 50 </span><span class="caption-text">Messung bei eingestellter Referenzspannung von 2.5V</span></p>
+<a class="reference internal image-reference" href="_images/Ref_2_5V.PNG"><img alt="_images/Ref_2_5V.PNG" src="_images/Ref_2_5V.PNG" style="width: 614.4px; height: 460.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 62 </span><span class="caption-text">Messung bei eingestellter Referenzspannung von 2.5V</span></p>
 </div>
-<p>Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Smith-Triggers ist, Channel 2 (Pink) ist der Ausgang des Smith-Triggers, Channel 3 (Hell Blau) ist die Dreieckes Spannung und Channel 4 (ocker) ist das Ausgangs Signal. Es ist zu erkennen, das bei einer höheren Referenzspannung die Ausgangsspannung ebenfalls höher ausfällt. Wenn die Ausgangsspannung abfällt und somit kleiner wird als die nicht gemessene Referenzspannung wird der untere Operatiosverstärker auf seinen Positiven Ausgabewert geschaltet. Desweiteren ist eine Restwelligkeit im Ausgangssignal zusehen. Diese ensteht durch einen nicht optimale Ausgelegten Filter, zeigt aber gut wie die Regelstrecke bei einen Spannungsabfall wirkt.</p>
+<p>Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Sschmitt-Triggers ist, Channel 2 (Pink) ist der Ausgang des Schmitt-Triggers, Channel 3 (Hell Blau) ist die Dreieckes Spannung und Channel 4 (ocker) ist das Ausgangs Signal. Es ist zu erkennen, das bei einer höheren Referenzspannung die Ausgangsspannung ebenfalls höher ausfällt. Wenn die Ausgangsspannung abfällt und somit kleiner wird als die nicht gemessene Referenzspannung wird der untere Operatiosverstärker auf seinen Positiven Ausgabewert geschaltet. Desweiteren ist eine Restwelligkeit im Ausgangssignal zusehen. Diese ensteht durch einen nicht optimale Ausgelegten Filter, zeigt aber gut wie die Regelstrecke bei einen Spannungsabfall wirkt.</p>
 <blockquote>
 <div><div class="figure align-center" id="fig-13">
-<img alt="_images/R4_0_8K.PNG" src="_images/R4_0_8K.PNG" />
-<p class="caption"><span class="caption-number">Abb. 51 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=0.8K</span></p>
+<a class="reference internal image-reference" href="_images/R4_0_8K.PNG"><img alt="_images/R4_0_8K.PNG" src="_images/R4_0_8K.PNG" style="width: 614.4px; height: 460.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 63 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=0.8K</span></p>
 </div>
 <div class="figure align-center" id="fig-14">
-<img alt="_images/R4_1K.PNG" src="_images/R4_1K.PNG" />
-<p class="caption"><span class="caption-number">Abb. 52 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=1K</span></p>
+<a class="reference internal image-reference" href="_images/R4_1K.PNG"><img alt="_images/R4_1K.PNG" src="_images/R4_1K.PNG" style="width: 614.4px; height: 460.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 64 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=1K</span></p>
 </div>
 <div class="figure align-center" id="fig-15">
-<img alt="_images/R4_4_7K.PNG" src="_images/R4_4_7K.PNG" />
-<p class="caption"><span class="caption-number">Abb. 53 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K</span></p>
+<a class="reference internal image-reference" href="_images/R4_4_7K.PNG"><img alt="_images/R4_4_7K.PNG" src="_images/R4_4_7K.PNG" style="width: 614.4px; height: 460.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 65 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K</span></p>
 </div>
 <div class="figure align-center" id="fig-16">
-<img alt="_images/R4_20K.PNG" src="_images/R4_20K.PNG" />
-<p class="caption"><span class="caption-number">Abb. 54 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K</span></p>
+<a class="reference internal image-reference" href="_images/R4_20K.PNG"><img alt="_images/R4_20K.PNG" src="_images/R4_20K.PNG" style="width: 614.4px; height: 460.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 66 </span><span class="caption-text">Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K</span></p>
 </div>
 </div></blockquote>
-<p>Bei diesen Messungen wird der Smith-Trigger untersucht. Hierführ wird der Widerstand R4 bei Konstanten Eingangsspannung variiert. Die kanal Belegung des Oszilloskop ist die selbe wie bei der letzten Messung. Es ist deutlich zu erkennen, das mit höheren Widerstand die Breite der Ausgangs Pulse größer wird. Durch die änderung der Pulsbreite ändert sich die Ausgangsspannung, welche in diesen fall bei größeren Widerstand größer wird. Dieses Verhalten ist erwarten und entspricht denn verhalten des Smitch-Triggers.</p>
+<p>Bei diesen Messungen wird der Schmitt-Trigger untersucht. Hierführ wird der Widerstand R4 bei Konstanten Eingangsspannung variiert. Die kanal Belegung des Oszilloskop ist die selbe wie bei der letzten Messung. Es ist deutlich zu erkennen, das mit höheren Widerstand die Breite der Ausgangs Pulse größer wird. Durch die änderung der Pulsbreite ändert sich die Ausgangsspannung, welche in diesen fall bei größeren Widerstand größer wird. Dieses Verhalten ist erwarten und entspricht denn verhalten des Schmitt-Triggers.</p>
 </div>
 </div>
 

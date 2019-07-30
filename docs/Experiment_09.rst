@@ -117,6 +117,7 @@ ein klarer Vergleich zur Simulation hergestellt werden.
 .. figure:: img/Experiment_09/Spannung_Messung.png
 	    :name:  09_fig_04
 	    :align: center
+	    :scale: 110%
 
 	    Messungen der Ein- und Ausgangsspannungen
 
@@ -128,6 +129,7 @@ Wie schon zuvor erwähnt, kann mithilfe der eingehenden Dreiecksspannung :math:`
 .. figure:: img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.gif
 	    :name:  09_fig_05
 	    :align: center
+	    :scale: 60%
 
 	    Auswirkung der Referenzspannung auf die Ausgangsspannung
 
@@ -197,6 +199,7 @@ Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die Messu
 .. figure:: img/Experiment_09/Ref_1V.PNG
 	    :name:  09_fig_11
 	    :align: center
+	    :scale: 60%
 
 	    Messung bei eingestellter Referenzspannung von 1V
 
@@ -204,6 +207,7 @@ Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die Messu
 .. figure:: img/Experiment_09/Ref_2_5V.PNG
 	    :name:  09_fig_12
 	    :align: center
+	    :scale: 60%
 
 	    Messung bei eingestellter Referenzspannung von 2.5V
 
@@ -213,24 +217,28 @@ Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Sschmitt-Triggers ist, Ch
  .. figure:: img/Experiment_09/R4_0_8K.PNG
 	    :name:  09_fig_13
 	    :align: center
+	    :scale: 60%
 
 	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=0.8K
 
  .. figure:: img/Experiment_09/R4_1K.PNG
 	    :name:  09_fig_14
 	    :align: center
+	    :scale: 60%
 
 	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=1K
 
  .. figure:: img/Experiment_09/R4_4_7K.PNG
 	    :name:  09_fig_15
 	    :align: center
+	    :scale: 60%
 
 	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=4.7K
 
  .. figure:: img/Experiment_09/R4_20K.PNG
 	    :name:  09_fig_16
 	    :align: center
+	    :scale: 60%
 
 	    Schmitt-Trigger Einstellung der Schwellspannung R3=1K R4=20K
 
