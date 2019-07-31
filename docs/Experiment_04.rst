@@ -85,7 +85,7 @@ Dafür musste zuerst das Model für den tl082 eingebunden werden. Die Schaltung 
 .. figure:: img/Experiment_04/Exp_04_SpiceKHN.png
 		:name: 04_fig_03
 		:align: center
-		:scale: 40%
+		:scale: 60%
 	 
 		Schaltungsaufbau des KHN-Biquad-Filter in LTspice
 	 
@@ -96,7 +96,7 @@ In :numref:`04_fig_04` sind die Ergebnisse dieser Simulation zu sehen.
 .. figure:: img/Experiment_04/Exp_04_SimulationKHN.png
 		:name: 04_fig_04
 		:align: center
-		:scale: 60%
+		:scale: 40%
 	 
 		Simulation Amplituden- und Phasengang KHN-Biquad-Filter
 
