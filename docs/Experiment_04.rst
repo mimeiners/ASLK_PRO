@@ -106,7 +106,7 @@ Bei Simualationen mit anderen Bauteilwerten war diese Veschiebung nicht gegeben,
  
 Nach der Simulation des KHN-Biquad-Filter wurde auch der Universalfilter simuliert. Die Werte der zusätzlichen Bauteile wurden durch Ausprobieren herausgefunden.
 
-.. figure:: img/Experiment_04/Exp_04_SpiceUniversal.png
+.. figure:: img/Experiment_04/Exp_04_SpiceUniversal.PNG
 		:name: 04_fig_05
 		:align: center
 		:scale: 60%
