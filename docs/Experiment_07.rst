@@ -172,7 +172,7 @@ Im Empfänger muss diese Taktinformation somit aus dem eigentlichen Datenstrom e
 Auch für diesen Einsatzzweck (genannt Clock Recovery bzw. Carrier Recovery) werden PLLs verwendet.
 
 Modellisierung im linearisierten Phasenraum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------
 Zur Auslegung und Charakterisierung der PLL kann dessen Regelkreis aus systemtheorethischer Sicht
 betrachtet werden. Hierzu wird zunächst die LTI Übertragungsfunktion des Regelkreises aufgestellt.
 Als Eingangs- bzw. Ausgangsgröße dient hier die Momentanphase der Signale.
@@ -192,7 +192,8 @@ Ausgangsphase geschlossen werden.
    
 Mit dem aufgestellten Modell wurde zunächst die Stabilität des Regelkreises überprüft.
 Hierzu wurde der Regelkreis geöffnet um die open-loop Frequenzantwort zu erhalten. Für den
-Der Schleifenfilter wurde auf eine Frequenz von
+Der Schleifenfilter wurde auf eine Grenzfrequenz von 50Hz ausgelegt. In :numref:`exp07-phase-margin`
+ist der Frequenzgang dargestellt.
 
 .. _exp07-phase-margin:
 .. figure:: img/Experiment_07/phase_margin.png
@@ -200,17 +201,136 @@ Der Schleifenfilter wurde auf eine Frequenz von
 
    Frequenzgang des Open Loop Regelkreises
 
+Aus dem Frequenzgang lässt sich die Phasenreserve zu 21,1° bestimmten. Damit ist zwar die relative
+Stabilität des Systems nachgewiesen, jedoch ist es gängige Praxis eine höhere Phasenreserve
+anzustreben (bei einem eventuellen Nachbau sollte also die Grenzfrequenz höher gewählt werden).
 
-SPICE Simulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Wird der Regelkreis wieder geschlossen, kann der Closed-Loop Frequenzgang ermittelt werden (siehe
+:numref:`exp07-freq-resp`).
 
+.. _exp07-freq-resp:
+.. figure:: img/Experiment_07/freq_resp.png
+   :figwidth: 70%
 
-Praxis
--------------------------------------
+   Frequenzgang des Closed Loop Regelkreises
+
+Aus dem Frequenzgang lässt sich die Grenzfrequenz des gesamten Regelkreises zu ca. 138Hz bestimmen.
+Die Capture-Range der PLL wird ungefähr der doppelten Grenzfrequenz entsprechen (also ca. 276Hz). 
 
 Schaltung
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------
+
+In :numref:`exp07-schematic` ist der Schaltplan der PLL dargestellt. 
+Ein Großteil der Schaltung ist allein dem VCO zuzuordnen. Da dieser Teil bereits in
+:doc:`Experiment_06` genauer erläutert wurde, wird hier nur auf den "vorderen Teil" der Schaltung
+eingegangen. 
+
+.. _exp07-schematic:
+.. figure:: img/Experiment_07/sim_sch.png
+   :figwidth: 80%
+
+   Vollständiger Schaltplan der PLL
+
+Der Eingang der PLL wird direkt auf den Analogmultiplizierer geschaltet (hier als idealer
+Multiplizierer dargestellt. Für den Schaltungsaufbau wurde ein MPY634 eingesetzt). Der
+Schleifenfilter wird aus R1 und C1 gebildet. Die Offsetspannung :math:`u_{bias}` wird über den
+Widerstand R2 eingeprägt. Die Kombination aus R1 und R2 bewirkt zudem eine Skalierung des
+Multiplizierer-Ausgangs.
+
+SPICE Simulation
+----------------
+
+Aufgrund der vorher durchgeführten systemtheorethischen Berechnungen wurde die SPICE Simulation nur
+noch zur Validierung der grundlegenden Funktion verwendet. In :numref:`exp07-spice` ist ein
+Einschwingvorgang der PLL in der Simulation dargestellt. Es ist zu erkennen, dass die VCO Spannung
+(Pink) zu Beginn leicht schwingt und nach ca. 25ms konstant bleibt. Ab diesem Zeitpunkt stehen
+Eingangs- und Ausgangssignal mit einer festen Phasenbeziehung zueinander.
+
+.. _exp07-spice:
+.. figure:: img/Experiment_07/spice.png
+   :figwidth: 80%
+
+   Einregelvorgang der PLL in SPICE Simuliert.
 
 Messungen
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------
 
+**VCO Kennlinie**
+
+Zunächst wurde ausschließlich der VCO aufgebaut und dessen Kennlinie aufgenommen (Siehe :numref:`exp07-vco-curve-real`).
+Zwischen 2V und 6V verläuft die Kennlinie sehr linear. Dieser Bereich sollte beim Betrieb der PLL nicht verlassen werden.
+
+.. _exp07-vco-curve-real:
+.. figure:: img/Experiment_07/vco_curve.png
+   :figwidth: 60%
+
+   Aufgenommene VCO Kennlinie
+
+**PLL - einfacher test**
+
+Anschließend wurde die komplette Schaltung nach :numref:`exp07-schematic` aufgebaut. Mit einem
+rechteckigen Referenzsignal mit :math:`\pm 8\,\text{V}` und einer Frequenz von 1kHz ergibt sich das in
+:numref:`exp07-timedomain` dargestellte Ausgangssignal.
+
+.. _exp07-timedomain:
+.. figure:: img/Experiment_07/time_domain_meas.png
+   :figwidth: 60%
+
+
+**Lock Range**
+
+Um die Lock-Range der PLL zu testen, wurde in laufendem Betrieb die Referenzfrequenz so lange nach
+oben bzw. nach unten verändert, bis der Regelkreis der PLL keine konstante Phasenbeziehung mehr
+herstellen kann. Die Capture-Range wurde ermittelt, indem die Frequenz ermittelt wurde, bei der die
+PLL sich beim Einschalten des Referenzsignals aufsynchronisieren kann.
+In :numref:`exp07-lock-range` sind die Bereiche für zwei verschieden eingestellte Offset-Spannungen
+dargestellt (um 1kHz und um 2kHz):
+
+.. _exp07-lock-range:
+.. figure:: img/Experiment_07/lock_range.png
+   :figwidth: 60%
+
+   Lock-Range (Hellblau) und Capture-Range (Dunkelblau) der PLL
+
+
+**Jitter**
+
+Als Jitter wird die zeitliche Streuung von Flanken eines Signals bezüglich eines bestimmten
+Referenzpunktes bezeichnet.
+Cycle-Jitter bezeichnet die maximale Streuung der Periodendauern des Ausgangssignals.
+Absolute Jitter bezeichnet die maximale Abweichung der Phasenverschiebung zwischen Eingangs- und
+Ausgangssignal. In :numref:`exp07-jitter` sind diese Jitter-Arten noch einmal illustriert:
+
+.. _exp07-jitter:
+.. figure:: img/Experiment_07/jitter.png
+   :figwidth: 60%
+
+   Exemplarische Darstellung von Cycle- ud Absolutem-Jitter
+
+Der Cycle- und Absolute-Jitter der PLL wurde für drei verschiedene Arbeitspunkte
+(Eingangsfrequenzen) ermittelt:
+
+===============  ==================  ==================
+:math:`f_{ref}`  Cycle-Jitter        Absolute-Jitter
+===============  ==================  ==================
+500 Hz           19,8 us (9,90 ‰)    24,30 us (12,0 ‰)
+1 kHz            3,60 us (3,60 ‰)    7,44 us (7,4 ‰)
+2 kHz            0,68 us (1,36 ‰)    3,70 us (3,7 ‰)
+===============  ==================  ==================
+
+Es ist zu erkennen, dass der relative Jitter (ausgedrückt durch die Promille-Werte) mit steigender
+Frequenz zunimmt.
+
+**Phasenbeziehung**
+
+Aufgrund der linearen VCO Kennlinie ist auch hier eine lineare Abhängigkeit zu erwarten.
+In :numref:`exp07-phase-relation` sind die Messwerte dargestellt:
+
+.. _exp07-phase-relation:
+.. figure:: img/Experiment_07/phase_relation.png
+   :figwidth: 60%
+
+   Phasenbeziehung zwischen Eingangs- und Ausgangssignal über die gesamte Lock-Range
+
+Innerhalb der Lock-Range nimmt die Phasendifferenz Werte zwischen ungefähr 70° bis 122° an. Der
+Arbeitsbereich des Phasenkomparators (45° bis 180°) wird also nicht vollständig ausgenutzt.
