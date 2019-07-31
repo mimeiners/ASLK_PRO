@@ -17,6 +17,7 @@ Hochpass, Tiefpass und Bandpass.
 .. figure:: img/Experiment_04/Experiment_04_Schaltbild.png
 		:name: 04_fig_01
 		:align: center
+		:scale: 60%
 	 
 		Schaltbild KHN-Biquad-Filter
 
@@ -95,7 +96,7 @@ In :numref:`04_fig_04` sind die Ergebnisse dieser Simulation zu sehen.
 .. figure:: img/Experiment_04/Exp_04_SimulationKHN.png
 		:name: 04_fig_04
 		:align: center
-		:scale: 40%
+		:scale: 60%
 	 
 		Simulation Amplituden- und Phasengang KHN-Biquad-Filter
 
@@ -108,7 +109,7 @@ Nach der Simulation des KHN-Biquad-Filter wurde auch der Universalfilter simulie
 .. figure:: img/Experiment_04/Exp_04_SpiceUniversal.png
 		:name: 04_fig_05
 		:align: center
-		:scale: 40%
+		:scale: 60%
 		
 		Schaltungsaufbau des Universalfilters in LTspice
 	
