@@ -9,7 +9,7 @@ Um dem entgegenzuwirken verwendet man aktive Filter aus Operationsverstärkern, 
 Bei diesen Bauteilen ist sowohl das Herstellen, als auch das Bestimmen ihre Werte einfacher und genauer, als das bei Spulen möglich ist. 
 Die Spulen werden hierbei durch Integriererschaltungen ersetzt.
 
-Der Universalfilter besteht aus den vier Filtern Hochpass, Tiefpass, Bandpass und Bandsperre (:numref:`04_fig05`).
+Der Universalfilter besteht aus den vier Filtern Hochpass, Tiefpass, Bandpass und Bandsperre (:numref:`04_fig_05`).
 Zum leichteren Einstieg wurde zu erst der KHN-Biquad-Filter untersucht. Dieser besteht nur aus
 Hochpass, Tiefpass und Bandpass. 
 
@@ -24,7 +24,7 @@ Spezifikation
 -------------
 
 Der Filter soll mit einer Güte :math:`Q = 1` und einer Kreisfrequenz :math:`\omega = 1\,kHz` realisiert werden. Bevor die Bauteile dimensioniert wurden, wurden die 
-Übertragungsfunktionen, :numref:`04_eq_01` bis :numref:`04_eq_04`, für die vier Filter mit Octave dargestellt.
+Übertragungsfunktionen, :eq:`04_eq_01` bis :eq:`04_eq_04`, für die vier Filter mit Octave dargestellt.
 
 .. math::
 	 :label: 04_eq_01
@@ -47,7 +47,7 @@ Der Filter soll mit einer Güte :math:`Q = 1` und einer Kreisfrequenz :math:`\om
 	 
 	 H_{\mathrm{BS}} = \frac{1 + \frac{s^2}{\omega^2}}{1 + \frac{s}{\omega Q} + \frac{s^2}{\omega^2}}
 	 
-Die Zeitkonstante :math:`\tau`, die in :numref:`04_eq_01` und :numref:`04_eq_02` verwendet wird, ist der Kehrwert der gewünschten Kreisfrequenz :math:`\omega`.
+Die Zeitkonstante :math:`\tau`, die in :eq:`04_eq_01` und :eq:`04_eq_02` verwendet wird, ist der Kehrwert der gewünschten Kreisfrequenz :math:`\omega`.
 
 .. figure:: img/Experiment_04/Berechnung_MATLAB.png
      :name: 04_fig_02
