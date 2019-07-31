@@ -15,10 +15,10 @@ Hochpass, Tiefpass und Bandpass.
 
 
 .. figure:: img/Experiment_04/Experiment_04_Schaltbild.png
-			:name: 04_fig_01
-			:align: center
+		:name: 04_fig_01
+		:align: center
 	 
-			Schaltbild KHN-Biquad-Filter
+		Schaltbild KHN-Biquad-Filter
 
 Spezifikation
 -------------
@@ -50,11 +50,11 @@ Der Filter soll mit einer Güte :math:`Q = 1` und einer Kreisfrequenz :math:`\om
 Die Zeitkonstante :math:`\tau`, die in :eq:`04_eq_01` und :eq:`04_eq_02` verwendet wird, ist der Kehrwert der gewünschten Kreisfrequenz :math:`\omega`.
 
 .. figure:: img/Experiment_04/Berechnung_MATLAB.png
-			:name: 04_fig_02
-			:align: center
-			:scale: 20%
+		:name: 04_fig_02
+		:align: center
+		:scale: 40%
 	 
-	 Übertragungsfunktionen mit :math:`Q = 1` und :math:`\omega = 1\,kHz`, berechnet mit Octave
+		Übertragungsfunktionen mit :math:`Q = 1` und :math:`\omega = 1\,kHz`, berechnet mit Octave
 
 Diese Übertragungsfunktionen dienten zur Orientierung für die Dimensionierung und die Simulationen.
   
@@ -82,21 +82,22 @@ Die Simulation wurde mit LTspice XVII durchgeführt.
 Dafür musste zuerst das Model für den tl082 eingebunden werden. Die Schaltung wurde nach :numref:`04_fig_01` implemtiert.
 
 .. figure:: img/Experiment_04/Exp_04_SpiceKHN.png
-			:name: 04_fig_03
-			:align: center
-			:scale: 20%
+		:name: 04_fig_03
+		:align: center
+		:scale: 40%
 	 
-			Schaltungsaufbau des KHN-Biquad-Filter in LTspice
+		Schaltungsaufbau des KHN-Biquad-Filter in LTspice
 	 
 Die :numref:`04_fig_03` zeigt Bauteilwerte, mit denen die endgültige Simulation durchgeführt wurde.
 
 In :numref:`04_fig_04` sind die Ergebnisse dieser Simulation zu sehen.
 
 .. figure:: img/Experiment_04/Exp_04_SimulationKHN.png
-			:name: 04_fig_04
-			:align: center
+		:name: 04_fig_04
+		:align: center
+		:scale: 40%
 	 
-			Simulation Amplituden- und Phasengang KHN-Biquad-Filter
+		Simulation Amplituden- und Phasengang KHN-Biquad-Filter
 
 Vergleicht man die Simulation des KHN-Biquad-Filter mit den berechenten Übertragungsfunktionen, sind die Simulationsergebnisse um ungefähr :math:`-7dB` verschoben, der Verlauf ist aber der Gleiche.
 Bei Simualationen mit anderen Bauteilwerten war diese Veschiebung nicht gegeben, dafür wich der Verlauf des Amplituden- und Phasengangs von den berechneten Übertragungsfunktionen erheblich ab
@@ -105,19 +106,20 @@ Bei Simualationen mit anderen Bauteilwerten war diese Veschiebung nicht gegeben,
 Nach der Simulation des KHN-Biquad-Filter wurde auch der Universalfilter simuliert. Die Werte der zusätzlichen Bauteile wurden durch Ausprobieren herausgefunden.
 
 .. figure:: img/Experiment_04/Exp_04_SpiceUniversal.png
-			:name: 04_fig_05
-			:align: center
-			:scale: 20%
+		:name: 04_fig_05
+		:align: center
+		:scale: 40%
 		
-	 Schaltungsaufbau des Universalfilters in LTspice
+		Schaltungsaufbau des Universalfilters in LTspice
 	
 :numref:`04_fig_05` zeigt auch hier wieder die Bauteilwerte, die bei der endgültigen Simulation verwendet wurden.
 	 
 .. figure:: img/Experiment_04/Exp_04_SimulationUniversal.png
-			:name: 04_fig_06
-			:align: center
+		:name: 04_fig_06
+		:align: center
+		:scale: 40%
 	 
-			Simulation Amplituden- und Phasengang Universalfilter
+		Simulation Amplituden- und Phasengang Universalfilter
 
 Beim Vergleich von :numref:`04_fig_04` und :numref:`04_fig_06` ist erkennbar, dass die Amplituden- und Phasengänge des Hochpasses, des Tiefpasses und des Bandpasses unverändert sind.
 Bei der Simulation des Universalfilters wurden auch Ergebnisse erzielt, die nicht die Verschiebung um :math:`-7dB` aufwiesen. Die hier aufgeführte Simulation wurde aufgrund der besseren
@@ -130,10 +132,11 @@ Für die Messungen wurde der Red Pitaya verwendet. Mit Hilfe eines Skriptes wurd
 Um diese Messungen bewerten zu können, wurde mit Hilfe von Octave die Kurven für Amplituden- und Phasengang in einer Grafik dargestellt. 
 
 .. figure:: img/Experiment_04/Vergleich_BP.png
-			:name: 04_fig_07
-			:align: center	 
+		:name: 04_fig_07
+		:align: center	 
+		:scale: 40%
 	 
-			Vergleich Messung und Simulation für den Bandpassfilter
+		Vergleich Messung und Simulation für den Bandpassfilter
 
 Gleich zu Anfang fällt auf, dass die dargestellten Kurven sich deutlich voneinander unterscheiden. Betrachtet man nur das allgemeine Verhalten, so ähneln sich die Graphen darin, 
 dass sie ansteigen und wieder abfallen. Betrachtet man den Amplitudengang näher, so zeigt sich, dass das Maximum der Messung um fast 500 Hz verschoben ist. Ferner ist zu erkennen, 
@@ -141,19 +144,21 @@ dass die Bandbreite um ein Vielfaches größer ist, als in der Simulation. Für 
 gemessenen Werte doch nicht mit den aus der Simulation gewonnenen überein. 
 
 .. figure:: img/Experiment_04/Vergleich_HP.png
-			:name: 04_fig_08
-			:align: center	 
+		:name: 04_fig_08
+		:align: center	
+		:scale: 40%	
 	 
-			Vergleich Messung und Simulation für den Hochpassfilter
+		Vergleich Messung und Simulation für den Hochpassfilter
 
 Betrachtet man den Amplitudengang des Hochpasses, so lässt sich hier das allgemeine Verhalten eines Hochpasses erkennen. Allerdings stimmt auch bei dieser Messung die
 Grenzfrequenz nicht mit der Simulation überein. Ferner lässt sich keine Dämpfung größer als 23 dB messen. Auch beim Phasengang ist nur ein Trend erkennbar. 
 
 .. figure:: img/Experiment_04/Vergleich_TP.png
-			:name: 04_fig_09
-			:align: center	 
+		:name: 04_fig_09
+		:align: center
+		:scale: 40%	
 	 
-			Vergleich Messung und Simulation für den Tiefpassfilter
+		Vergleich Messung und Simulation für den Tiefpassfilter
 	 
 Betrachtet man den Amplitudengang des Tiefpassfilters, so lässt sich erkennen, dass auch hier keine Dämpfung größer als 23 dB messbar war. Im Gegensatz zur vorhergegangenen 
 Messung stimmen hier die Grenzfrequenzen fast überein. Der Abfall der Amplitude bei zunehmender Frequenz ist in der Messung nicht so stark wie in der Simulation.
