@@ -52,7 +52,7 @@ Die Zeitkonstante :math:`\tau`, die in :eq:`04_eq_01` und :eq:`04_eq_02` verwend
 .. figure:: img/Experiment_04/Berechnung_MATLAB.png
      :name: 04_fig_02
 	 :align: center
-	 :scale: 40%
+	 :scale: 20%
 	 
 	 Übertragungsfunktionen mit :math:`Q = 1` und :math:`\omega = 1\,kHz`, berechnet mit Octave
 
@@ -84,6 +84,7 @@ Dafür musste zuerst das Model für den tl082 eingebunden werden. Die Schaltung 
 .. figure:: img/Experiment_04/Exp_04_SpiceKHN.png
      :name: 04_fig_03
 	 :align: center
+	 :scale: 20%
 	 
 	 Schaltungsaufbau des KHN-Biquad-Filter in LTspice
 	 
@@ -106,6 +107,7 @@ Nach der Simulation des KHN-Biquad-Filter wurde auch der Universalfilter simulie
 .. figure:: img/Experiment_04/Exp_04_SpiceUniversal.png
 	 :name: 04_fig_05
 	 :align: center
+	 :scale: 20%
 		
 	 Schaltungsaufbau des Universalfilters in LTspice
 	
