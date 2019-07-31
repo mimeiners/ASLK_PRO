@@ -52,6 +52,7 @@ Die Zeitkonstante :math:`\tau`, die in :eq:`04_eq_01` und :eq:`04_eq_02` verwend
 .. figure:: img/Experiment_04/Berechnung_MATLAB.png
      :name: 04_fig_02
 	 :align: center
+	 :scale: 40%
 	 
 	 Übertragungsfunktionen mit :math:`Q = 1` und :math:`\omega = 1\,kHz`, berechnet mit Octave
 
