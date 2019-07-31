@@ -95,7 +95,7 @@ Die Kennlinie eines idealen Analogmultiplizierers ist in :numref:`exp07-phasecom
    
 Es ist zu erkennen, dass die Ausgangsspannung :math:`\overline{U}_e` bei einer Phasenverschiebung
 von 90° einen Wert von 0V annimmt. Da eine Spannung von 0V jedoch am VCO eine Frequenz von 0Hz
-ergeben würde (siehe Abschnitt :ref:`exp07-vco`), muss die Ausgangsspannung des Multiplizierers noch mit einem Offset versehen werden:
+ergeben würde, muss die Ausgangsspannung des Multiplizierers noch mit einem Offset versehen werden:
 
 .. _exp07-phasecomp-mult-offset:
 .. figure:: img/Experiment_07/analog_mult_offset.png
@@ -131,7 +131,6 @@ Jitter durch VCO:               Hoch     Gering
 Einregelzeit:                   Langsam  Schnell
 ==============================  =======  =======
 
-.. _exp07-vco:
 VCO
 ^^^^^^^^^^^^^^^^
 Der VCO (Voltage Controlled Oscillator) generiert das Ausgangssignal der PLL.
