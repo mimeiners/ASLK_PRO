@@ -1,9 +1,11 @@
+###########################################
 Experiment 3: Integrator und Differenzierer
-===========================================
+###########################################
 
-In diesem Experiement sollen ein Intergrator :numref:`03_fig_01` und ein Differenzierer :numref:`03_fig_02` untersucht werden.
-Beide Schaltungen können als Filterblock eingesetzt werden. Filter sind Grundlegende Schaltungen in der Analogen Signalverarbeitung
-und verbessern das Signal-Rausch-Abstand-Verhältnis(Signal to noise ratio). 
+
+In diesem Experiement sollen ein Intergrator :numref:`03_fig_01` und ein Differenzierer :numref:`03_fig_02` untersucht
+werden. Beide Schaltungen können als Filterblock eingesetzt werden. Filter sind Grundlegende Schaltungen in der Analogen
+Signalverarbeitung und verbessern das Signal-Rausch-Abstand-Verhältnis(Signal to noise ratio). 
 
 .. figure:: img/Experiment_03/integrator.png
    :name: 03_fig_01
@@ -21,10 +23,11 @@ so gut wie keine Verwendung findet.
 
    Differenzierer
 
-Zunächst wird der Frequenzgang der beiden Schaltungen untersucht. Zu diesem Zweck wird das Programm aus dem Experiment 1 eingesetzt.
-Die Simulationen und Messungen sind in :numref:`03_fig_03` dargestellt. Diese zeigen ein klares Filterverhalten der beiden Aufbaueten an.Der Intergrator zeigt ein tiefpassähnliches Verhalten, kann aber auch als eine Art Bandsperre interpretiert werden.
-Der Differenzierer hat ein hochpassähnliches Verhalten, kann aber auch als Bandpass interprätiert werden. Beide Schaltungen
-zeigen ein entgegengesetztes Verhalten.    
+Zunächst wird der Frequenzgang der beiden Schaltungen untersucht. Zu diesem Zweck wird das Programm aus dem Experiment 1
+eingesetzt. Die Simulationen und Messungen sind in :numref:`03_fig_03` dargestellt. Diese zeigen ein klares
+Filterverhalten der beiden Aufbaueten an.Der Intergrator zeigt ein tiefpassähnliches Verhalten, kann aber auch als eine
+Art Bandsperre interpretiert werden. Der Differenzierer hat ein hochpassähnliches Verhalten, kann aber auch als Bandpass
+interprätiert werden. Beide Schaltungen zeigen ein entgegengesetztes Verhalten.    
 
 .. figure:: img/Experiment_03/amplitudengang_messung_simulation.png
    :name: 03_fig_03
@@ -35,23 +38,29 @@ zeigen ein entgegengesetztes Verhalten.
 Aufgrund der Eingangsspannungsbegrenzung des RedPitayas entspricht die Apmlitudengangmessung nicht exankt der Simulation.
 
 
+***********
 Intergrator
------------
+***********
 
-Die Funktion des Intergrators kann bereits aus dem Namen abgeleitet werden. Matematisch gesehen, integriert die Schaltung
-das Eingangssignal auf. Am Ausgang liegt das Ergebnis diese Intergration an. Da die Eingangsspannung am negierenden Eingangs des
-OPAMS anliegt, ist das Aufintegrieren um :math:`\pi` verdreht. Das heißt, dass bei einer negativen Flanke aufintegriert und bei einer positiven Flanke "abintergriert" wird. Der Verlauf ist in :numref:`03_fig_04` graphisch dargestellt.
 
+Die Funktion des Intergrators kann bereits aus dem Namen abgeleitet werden. Matematisch gesehen, integriert die
+Schaltung das Eingangssignal auf. Am Ausgang liegt das Ergebnis diese Intergration an. Da die Eingangsspannung am
+negierenden Eingangs des OPAMS anliegt, ist das Aufintegrieren um :math:`\pi` verdreht. Das heißt, dass bei einer
+negativen Flanke aufintegriert und bei einer positiven Flanke "abintergriert" wird. Der Verlauf ist in
+:numref:`03_fig_04` graphisch dargestellt.
+
+	
 .. figure:: img/Experiment_03/squarewave_integrator.png
    :name: 03_fig_04
    :align: center
 
    Rechecksignal mit eine intergrierten Antwort
+
    
 Prinzipiell kann der Intergrationsverlauf mit Hilfe einer Einheitssprungfunktions verdeutlicht werden. Der Verlauf ist
-in :numref:`03_fig_05` graphisch dargestellt. Systemtheoretisch kann der Verlauf als negative Intergration
-der stetig steigenden Fläche beschrieben werden. Läuft der Einheitssprung ins Unendliche wird dementsprechend bis ins
-unendliche Integriert (idealisiert).  
+in :numref:`03_fig_05` graphisch dargestellt. Systemtheoretisch kann der Verlauf als negative Intergration der stetig
+steigenden Fläche beschrieben werden. Läuft der Einheitssprung ins Unendliche wird dementsprechend bis ins unendliche
+Integriert (idealisiert).
 
 .. figure:: img/Experiment_03/step_integrator.png
    :name: 03_fig_05
@@ -70,12 +79,15 @@ unendliche Integriert (idealisiert).
 
 
 	   
+**************
 Differenzierer
---------------
+**************
 
-Wie bei dem Intergrator kann bei dem Differenzierer die Funktionsweise aus dem Namen abgeleitet werden. Die Eingangsspannung wird
-differenziert und liegt als Ausgangsspannung an. Zum Vergleich wird entsprechend der Intergratormessung ein Rechtecksignal an
-den Differenzierer angelegt. Das Ergebnis ist in :numref:`03_fig_07` graphisch dargestellt.
+
+Wie bei dem Intergrator kann bei dem Differenzierer die Funktionsweise aus dem Namen abgeleitet werden. Die
+Eingangsspannung wird differenziert und liegt als Ausgangsspannung an. Zum Vergleich wird entsprechend der
+Intergratormessung ein Rechtecksignal an den Differenzierer angelegt. Das Ergebnis ist in :numref:`03_fig_07` graphisch
+dargestellt.
 
 .. figure:: img/Experiment_03/squarewave_differentiator.png
    :name: 03_fig_07
@@ -83,20 +95,20 @@ den Differenzierer angelegt. Das Ergebnis ist in :numref:`03_fig_07` graphisch d
 
    Ausfangsspannung eines Differenziators mit einer Rechteckeingangsspannung
 
+   
 Wie auch bei dem Intergrierer ist die Phase durch die negierten Eingang um :math:`\pi` gedreht. Aufgrund der besseren
 numerischen Auflösung weicht das Ergebnis der Simulation von der Messung ab. Aus der Messung wird ersichtlich, dass der
-Differenzierer prizipiell negiert der Eingangsspannung folgt, aber eine Einschwingzeit braucht. Die Dauer und die Höhe des
-Einschwungs ist frequenzabhängig. Die Folgen dieses Verhaltens machen einen Einsatz des Differenzierers in einer
+Differenzierer prizipiell negiert der Eingangsspannung folgt, aber eine Einschwingzeit braucht. Die Dauer und die Höhe
+des Einschwungs ist frequenzabhängig. Die Folgen dieses Verhaltens machen einen Einsatz des Differenzierers in einer
 Filterstruktur nahezu unmöglich.
-Als weiters Beispiel wird eine Dreieckspannung an den Eingang des Differenzierers angelegt. Wie auch bei Rechtecksignal muss der
-Differenzierer auch bei einem Dreiecksignal einschwingen. Die Simulation und Messung ist in :numref:`03_fig_08` graphisch
-dargestellt.
+
+Als weiteres Beispiel wird eine Dreieckspannung an den Eingang des Differenzierers angelegt. Wie auch bei Rechtecksignal
+muss der Differenzierer auch bei einem Dreiecksignal einschwingen. Die Simulation und Messung ist in :numref:`03_fig_08`
+graphisch dargestellt.
 
 .. figure:: img/Experiment_03/triangular_differentiator.png
    :name: 03_fig_08
    :align: center
 
    Differenzierer mit einem Dreieckeingangssignal
-
-
 

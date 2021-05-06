@@ -2,13 +2,13 @@
  "Experiment_05"
  (lambda ()
    (LaTeX-add-bibitems
-    "SelbstLTSpice"
-    "Matlab"
-    "Sasikala2019"
-    "electronicstutorials2013"
-    "RaoJune2012"
     "Incorporated2020"
+    "Matlab"
     "Rao2011"
-    "Rao2019"))
+    "Rao2019"
+    "RaoJune2012"
+    "Sasikala2019"
+    "SelbstLTSpice"
+    "electronicstutorials2013"))
  :bibtex)
 

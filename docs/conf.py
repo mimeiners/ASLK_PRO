@@ -23,14 +23,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'ASLK_PRO'
-copyright = u'2019, M. Meiners, HSB'
-author = u'M. Meiners, HSB'
+project = u'ASLK PRO'
+copyright = u'2021, M. Meiners, HSB'
+author = u'M. Meiners et. al., HSB'
 
 # The short X.Y version
 version = u'1.0'
 # The full version, including alpha/beta/rc tags
-release = u'Herbst 2019'
+release = u'Sommer 2021'
 
 
 # -- General configuration ---------------------------------------------------
@@ -52,6 +52,8 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinxcontrib.bibtex'
 ]
+
+bibtex_bibfiles = ['Experiment_00.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -169,7 +171,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ASLK_PRO.tex', u'ASLK\\_PRO Documentation',
+    (master_doc, 'ASLK_PRO.tex', u'ASLK PRO Dokumentation',
      u'M. Meiners', 'manual'),
 ]
 
@@ -179,7 +181,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'aslk_pro', u'ASLK_PRO Documentation',
+    (master_doc, 'aslk_pro', u'ASLK PRO Dokumentation',
      [author], 1)
 ]
 
@@ -190,7 +192,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ASLK_PRO', u'ASLK_PRO Documentation',
+    (master_doc, 'ASLK_PRO', u'ASLK PRO Dokumentation',
      author, 'ASLK_PRO', 'One line description of project.',
      'Miscellaneous'),
 ]
