@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+    \draw (0,0) rectangle ++(2,1) ++(-1, -0.25) node{Phasen-} ++(0, -0.5) node{komparator};
+    \draw (3,0) rectangle ++(2,1) ++(-1, -0.25) node{Schleifen-} ++(0, -0.5) node{filter};
+    \draw (6,0) rectangle ++(2,1) ++(-1, -0.5) node{VCO};
+
+    \draw[->] (2,0.5) -- ++(1,0);
+    \draw (2.5,0.75) node{$u_{e}$};
+    \draw[->] (5,0.5) -- ++(1,0);
+    \draw (5.5,0.75) node{$u_{vco}$};
+    \draw[->] (8,0.5) -- ++(1,0);
+    \draw (9,0.5) node[anchor=west] {$u_{out}$};
+
+    \draw[->] (8.5, 0.5) -- (8.5, -0.5) -- (-0.4, -0.5) -- (-0.4, 0.25) -- (0, 0.25);
+    \draw[->] (-0.6, 0.75) -- (0, 0.75);
+
+    \draw (-0.6,0.75) node[anchor=east]{$u_{ref}$};
+    \draw (-0.4,-0.125) node[anchor=east]{$u_{fb}$};
+
+    \fill (8.5, 0.5) circle(0.05);
+\end{tikzpicture}

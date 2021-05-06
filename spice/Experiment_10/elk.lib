@@ -1,0 +1,528 @@
+* SPICE Bibliothek ELK/ANS
+
+* HSB, M. Meiners, copyright 2018
+.MODEL 1N4001 D ( IS=29.5n RS=73.5E-3 N=1.96 BV=60 IBV=10U VJ=0.627 CJO=34.6P M=0.461 TT=5.7u )
+.MODEL 1N4002 D ( IS=76.9p RS=42.0m N=1.45 BV=100 IBV=5.00u CJO=39.8p M=0.333 TT=4.32u )
+
+* Reisch, 2007
+.MODEL DIOD1 D ( IS=1n RS=2.0 N=1.8 VJ=0.5 BV=40 )
+.MODEL DIOD2 D ( IS=1f RS=2.0 N=1.0 VJ=0.5 BV=40 )
+.MODEL DIOD3 D ( IS=1e-12 RS=1.0 N=1.1 CJO=10p VJ=1.0 M=0.0 TT=5n BV=50)
+* OnSemi
+.model 1N750 D (Is=.88f Rs=.25 Cjo=175p M=.55 nbv=1.7 bv=4.7 Vj=.75 Isr=1.86n Nr=2 Ibv=20.245m)
+.model DZ39 D (Is=.88f Rs=.25 Cjo=175p M=.55 nbv=1.7 bv=3.9 Vj=.75 Isr=1.86n Nr=2 Ibv=20.245m)
+.MODEL ZD39 D ( IS=1n RS=2.0  N=1.8 BV=3.9 )
+.MODEL ZD47 D ( IS=1n RS=2.0  N=1.8 BV=4.7 )
+.MODEL ZD68 D ( IS=1n RS=2.0  N=1.8 BV=6.8 )
+.MODEL BIPO NPN ( IS=10f BF=250 VAF=25 BR=6 RB=10 RE=0.5 RC=2 )
+.MODEL BJTE1 NPN ( IS=10f VAF=50 BF=250 BR=6 RB=10 CJC=10p MJC=0.4 VJC=0.8 CJE=20p MJE=0.4 VJE=0.9 TF=500p TR=50n )
+.MODEL BJTE2 NPN ( IS=10f VAF=30 BF=200 BR=6 RC=1 RB=10 CJC=10p MJC=0.35 VJC=0.75 CJE=20p MJE=0.4 VJE=0.75 TF=500p )
+.MODEL BJTE3 NPN ( IS=1f VAF=20 BF=200 CJE=2P MJE=0.4 CJC=1P VJC=0.9 MJC=0.45 TF=0.4N )
+.MODEL BJTHV NPN ( IS=5f VAF=130 BF=200 BR=2 RB=200 RC=200 RE=2 CJC=0.3p MJC=0.5 VJC=0.55 CJE=1p MJE=0.33 VJE=0.7 CJS=3p MJS=0.5 VJS=0.52 TF=0.35n TR=400n )
+
+* Gray, Meyer
+* npn 44V, A_E=900um2
+.MODEL BJTGMN NPN ( IS=5f VAF=130 BF=200 BR=2 RB=200 RC=200 RE=2 CJC=0.3p MJC=0.5 VJC=0.55 CJE=1p MJE=0.33 VJE=0.7 CJS=3p MJS=0.5 VJS=0.52 TF=0.35n TR=400n )
+* pnp 44V, A_E=5100um2
+.MODEL BJTGMP PNP ( IS=10f VAF=50 BF=50 BR=4 RB=150 RC=50 RE=2 CJC=2p MJC=0.5 VJC=0.52 CJE=0.5p MJE=0.5 VJE=0.55 CJS=3p MJS=0.5 VJS=0.58 TF=20n TR=2u )
+
+* Sample standard device library
+* Copyright Cadence Design Systems, Inc. 2002 All Rights Reserved.
+* $Revision:   1.4  $
+* $Author:   HIRASUNA  $
+* $Date:   11 May 2000 13:26:32  $
+*
+* Switching Diodes
+.model D1N4148 D (Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Xti=3 Eg=1.11 Cjo=4p M=.3333 Vj=.5 Fc=.5 Isr=1.565n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+
+* General Purpose Fast Rectifier
+.model D1N914 D (Is=168.1E-21 N=1 Rs=.1 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333 Vj=.75 Fc=.5 Isr=100p Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+
+* ZENER Diodes
+*
+* Motorola
+* Semiconductor Databook (mid 1970s)
+* 03 Jun 91	pwt	creation
+.model D1N4001	D (Is=14.11n N=1.984 Rs=33.89m Ikf=94.81 Xti=3 Eg=1.11 Cjo=25.89p M=.44 Vj=.3245 Fc=.5 Bv=75 Ibv=10u Tt=5.7u)
+
+* ZETEX  2N2222A Spice model   Last revision 9/12/92
+.MODEL Q2N2222A/ZTX NPN (IS =3.0611E-14 NF =1.00124 BF =220 IKF=0.52
++              VAF=104 ISE=7.5E-15 NE =1.41 NR =1.005 BR =4 IKR=0.24
++              VAR=28 ISC=1.06525E-11 NC =1.3728 RB =0.13 RE =0.22
++              RC =0.12 CJC=9.12E-12 MJC=0.3508 VJC=0.4089
++              CJE=27.01E-12 TF =0.325E-9 TR =100E-9
++              BVcbo=10 BVbe=10)
+
+* National	pid=63		case=TO18
+* 88-09-09 bam	creation
+.model Q2N2907A PNP (Is=650.6E-18 Xti=3 Eg=1.11 Vaf=115.7 Bf=231.7 Ne=1.829
++		Ise=54.81f Ikf=1.079 Xtb=1.5 Br=3.563 Nc=2 Isc=0 Ikr=0 Rc=.715
++		Cjc=14.76p Mjc=.5383 Vjc=.75 Fc=.5 Cje=19.82p Mje=.3357 Vje=.75
++		Tr=111.3n Tf=603.7p Itf=.65 Vtf=5 Xtf=1.7 Rb=10
++               BVcbo=10 BVbe=10)
+
+*
+* Library of PHILIPS Field Effect Transistors
+* $Revision:   1.3  $
+* $Author:   hirasuna  $
+* $Date:   06 Jul 2001 14:50:26  $
+*
+* MOSFET n-channel
+.SUBCKT BS170/PLP 1 2 3
+* 1=drain  2=gate  3=source
+Cgs  2 3 12.3E-12
+Cgd1 2 4 27.4E-12
+Cgd2 1 4 6E-12
+M1 1 2 3 3 MOST1
+M2 4 2 1 3 MOST2
+D1 3 1 Dbody
+.MODEL MOST1 NMOS (Level=3 Kp=20.78u W=9.7m L=2u Rs=20m Vto=2 Rd=1.186)
+.MODEL MOST2 NMOS (VTO=-4.73 Kp=20.78u W=9.7m L=2u Rs=20m)
+.MODEL Dbody D (Is=125f N=1.023 Rs=1.281 Ikf=18.01 Cjo=46.3p M=.3423 Vj=.4519 Bv=60 Ibv=10u Tt=161.6n)
+.ENDS
+*
+* MOSFET p-channel
+* Philips BS250P
+.SUBCKT BS250/PLP 1 2 3
+* 1=drain  2=gate  3=source
+Cgs  2 3 20.1E-12
+Cgd1 2 4 57.1E-12
+Cgd2 1 4 5E-12
+M1 1 2 3 3 MOST1
+M2 4 2 1 3 MOST2
+D1 1 3 Dbody
+.MODEL MOST1 PMOS (LEVEL=3 VTO=-2.3 W=7.6m L=2u KP=10.33u RD=4.014 RS=20m)
+.MODEL MOST2 PMOS (VTO=2.43 W=7.6m L=2u KP=10.33u RS=20m)
+.MODEL Dbody D (CJO=53.22E-12 VJ=0.5392 M=0.3583 IS=75.32E-15 N=1.016 RS=1.245 TT=86.56n BV=45 IBV=10u)
+.ENDS
+*
+* ZETEX BS250P Spice Model v1.0 Last Revised 19/3/03
+*
+.SUBCKT BS250P/ZETEX 3 4 5
+*                    D G S 
+M1 3 2 5 5 MBS250
+RG 4 2 160
+RL 3 5 1.2E8
+C1 2 5 47E-12
+C2 3 2 10E-12
+D1 3 5 DBS250
+*
+.MODEL MBS250 PMOS (VTO=-3.193 RS=2.041 RD=0.697 IS=1E-15 KP=0.277 CBD=105E-12 PB=1 LAMBDA=1.2E-2)
+.MODEL DBS250 D (IS=2E-13 RS=0.309)
+.ENDS BS250P
+*
+
+
+* OP484 SPICE Macro-model
+* Description: Amplifier
+* Generic Desc: 3/30V, BIP, OP, Low Noise, RRIO, 4X
+* Developed by: ARG / ADSC
+* Revision History: 08/10/2012 - Updated to new header style
+* 1.0 (11/1995)
+* Copyright 1993, 2012 by Analog Devices
+*
+* Refer to
+* http://www.analog.com/Analog_Root/static/techSupport/designTools/spiceModels/license/spice_general.html
+* for License Statement.
+* Use of this model indicates your acceptance of the terms and provisions in the License Statement.
+*
+* BEGIN Notes:
+*
+* Not Modeled:
+*
+* Parameters modeled include:
+*
+* END Notes
+*
+* Node assignments
+*                non-inverting input
+*                |  inverting input
+*                |  |  positive supply
+*                |  |  |  negative supply
+*                |  |  |  |  output
+*                |  |  |  |  |
+.SUBCKT OP484    1  2  99 50 45
+*
+* INPUT STAGE
+*
+Q1   5    2    3    QIN 1
+Q2   6    11   3    QIN 1
+Q3   7    2    4    QIP 1
+Q4   8    11   4    QIP 1
+DC1  2    11   DC
+DC2  11   2    DC
+Q5   4    9    99   QIP 1
+Q6   9    9    99   QIP 1
+Q7   3    10   50   QIN 1
+Q8   10   10   50   QIN 1
+R1   99   5    4E3
+R2   99   6    4E3
+R3   7    50   4E3
+R4   8    50   4E3
+IREF 9    10   50.5E-6
+EOS  1    11   POLY(2) (22,98) (14,98) -25E-6 1E-2 1
+IOS  2    1    1E-9
+CIN  1    2    2E-12
+GN1  98   1    (17,98) 1E-3
+GN2  98   2    (23,98) 1E-3
+*
+* VOLTAGE NOISE SOURCE WITH FLICKER NOISE
+*
+VN1  13   98   DC 2
+VN2  98   15   DC 2
+DN1  13   14   DEN
+DN2  14   15   DEN
+*
+* CURRENT NOISE SOURCE WITH FLICKER NOISE
+*
+VN3  16   98   DC 2
+VN4  98   18   DC 2
+DN3  16   17   DIN
+DN4  17   18   DIN
+*
+* 2ND CURRENT NOISE SOURCE WITH FLICKER NOISE
+*
+VN5  19   98   DC 2
+VN6  98   24   DC 2
+DN5  19   23   DIN
+DN6  23   24   DIN
+*
+* GAIN STAGE
+*
+EREF 98   0    POLY(2) (99,0) (50,0) 0 0.5 0.5
+G1   98   20   POLY(2) (6,5) (8,7) 0 0.5E-3 0.5E-3
+R9   20   98   1E3
+*
+* COMMON MODE STAGE WITH ZERO AT 100HZ
+*
+ECM  98   21   POLY(2) (1,98) (2,98) 0 0.5 0.5
+R10  21   22   1
+R11  22   98   100E-6
+C4   21   22   1.592E-3
+*
+* NEGATIVE ZERO AT 20MHZ
+*
+E1   27   98   (20,98) 1E6
+R17  27   28   1
+R18  28   98   1E-6
+C8   25   26   7.958E-9
+ENZ  25   98   (27,28) 1
+VNZ  26   98   DC 0
+FNZ  27   28   VNZ -1
+*
+* POLE AT 40MHZ
+*
+G4   98   29   (28,98) 1
+R19  29   98   1
+C9   29   98   3.979E-9
+*
+* POLE AT 40MHZ
+*
+G5   98   30   (29,98) 1
+R20  30   98   1
+C10  30   98   3.979E-9
+*
+* OUTUT STAGE
+*
+ISY  99   50   0.276E-3
+GIN  50   31   POLY(1) (30,98) .862574E-6 505.879E-6
+RIN  31   50   2.75E6
+VB   99   32   0.7
+Q11  32   31   33   QON 1
+R21  33   34   4.5E3
+I1   34   50   50E-6
+R22  99   35   6E3
+Q12  36   36   35   QOP 1
+I2   36   50   50E-6
+R23  99   37   2.6E3
+R24  34   38   5E3
+Q13  39   36   37   QOP 1
+Q14  39   38   40   QON 1.5
+R25  40   50   40
+Q15  39   39   41   QON 1
+R26  41   42   1E3
+R27  99   43   220
+Q16  44   44   43   QOP 1.5
+Q17  44   39   42   QON 1
+R28  42   50   2E3
+VSCP 99   97   DC 0.088
+FSCP 46   99   VSCP 1
+RSCP 46   99   40
+Q20  44   46   99   QOP 1
+Q18  45   44   97   QOP 4.5
+Q19  45   34   51   QON 4.5
+VSCN 51   50   DC 0.081
+FSCN 50   47   VSCN 1
+RSCN 47   50   40
+Q21  34   47   50   QON 1
+CC2  31   45   20E-12
+CF1  31   34   15E-12
+CF2  31   42   15E-12
+CO1  34   45   15E-12
+CO2  42   45   5E-12
+D3   45   99   DX
+D4   50   45   DX
+.MODEL DC D (IS=130E-21)
+.MODEL DX D ()
+.MODEL DEN D (RS=100 KF=12E-15 AF=1)
+.MODEL DIN D (RS=5.358 KF=56E-15 AF=1)
+.MODEL QIN NPN (BF=120 VA=200 IS=0.5E-16)
+.MODEL QIP PNP (BF=90 VA=60 IS=0.5E-16)
+.MODEL QON NPN (BF=200 VA=200 IS=0.5E-16 RC=50)
+.MODEL QOP PNP (BF=200 VA=200 IS=0.5E-16 RC=160)
+.ENDS
+
+
+**************************************
+*      Model Generated by MODPEX     *
+*Copyright(c) Symmetry Design Systems*
+*         All Rights Reserved        *
+*    UNPUBLISHED LICENSED SOFTWARE   *
+*   Contains Proprietary Information *
+*      Which is The Property of      *
+*     SYMMETRY OR ITS LICENSORS      *
+*Commercial Use or Resale Restricted *
+*   by Symmetry License Agreement    *
+**************************************
+* Model generated on Aug 07, 01
+* MODEL FORMAT: SPICE3
+.MODEL 2n3904 npn (
++ IS=1.26532e-10 BF=206.302 NF=1.5 VAF=1000
++ IKF=0.0272221 ISE=2.30771e-09 NE=3.31052 BR=20.6302
++ NR=2.89609 VAR=9.39809 IKR=0.272221 ISC=2.30771e-09
++ NC=1.9876 RB=5.8376 IRB=50.3624 RBM=0.634251
++ RE=0.0001 RC=2.65711 XTB=0.1 XTI=1
++ EG=1.05 CJE=4.64214e-12 VJE=0.4 MJE=0.256227
++ TF=4.19578e-10 XTF=0.906167 VTF=8.75418 ITF=0.0105823
++ CJC=3.76961e-12 VJC=0.4 MJC=0.238109 XCJC=0.8
++ FC=0.512134 CJS=0 VJS=0.75 MJS=0.5
++ TR=6.82023e-08 PTF=0 KF=0 AF=1
++ BVcbo=10 BVbe=10)
+
+
+**************************************
+*      Model Generated by MODPEX     *
+*Copyright(c) Symmetry Design Systems*
+*         All Rights Reserved        *
+*    UNPUBLISHED LICENSED SOFTWARE   *
+*   Contains Proprietary Information *
+*      Which is The Property of      *
+*     SYMMETRY OR ITS LICENSORS      *
+*Commercial Use or Resale Restricted *
+*   by Symmetry License Agreement    *
+**************************************
+* Model generated on Aug 07, 01
+* MODEL FORMAT: SPICE3
+.MODEL 2n3906 pnp (
++ IS=7.75521e-12 BF=194.093 NF=1.35509 VAF=156.436
++ IKF=0.0660057 ISE=1.88546e-12 NE=1.81673 BR=3.41317
++ NR=1.5 VAR=5.86061 IKR=1.70599 ISC=7.64281e-10
++ NC=1.92376 RB=6.48961 IRB=0.1 RBM=0.1
++ RE=0.0001 RC=2.45044 XTB=0.1 XTI=1
++ EG=1.05 CJE=6.11928e-12 VJE=0.4 MJE=0.248812
++ TF=5.21843e-10 XTF=0.932702 VTF=9.1046 ITF=0.0106472
++ CJC=6.85007e-12 VJC=0.4 MJC=0.279018 XCJC=0.9
++ FC=0.478887 CJS=0 VJS=0.75 MJS=0.5
++ TR=4.30605e-07 PTF=0 KF=0 AF=1
++ BVcbo=10 BVbe=10)
+
+
+* eCircuit Center
+* Have a look at http://www.ecircuitcenter.com for further description.
+*
+* OPAMP MACRO MODEL, SINGLE-POLE WITH 15V OUTPUT CLAMP
+* connections:      non-inverting input
+*                   |   inverting input
+*                   |   |   output
+*                   |   |   |
+.SUBCKT OPAMP1	    1   2   6
+* INPUT IMPEDANCE
+RIN	1	2	10MEG
+* DC GAIN=100K AND POLE1=100HZ
+* UNITY GAIN = DCGAIN X POLE1 = 10MHZ
+EGAIN	3 0	1 2	100K
+RP1		3	4	100K
+CP1		4	0	0.0159UF
+* ZENER LIMITER
+D1	4	7	DZLIM
+D2	0	7	DZLIM
+* OUTPUT BUFFER AND RESISTANCE
+EBUFFER	5 0	4 0	1
+ROUT	5	6	10
+*
+* ZENER TO LIMIT OPAMP OUTPUT SWING (+/- 15v)
+.model	DZLIM	D(Is=0.05u Rs=0.1 Bv=14.3 Ibv=0.05u)
+.ENDS
+*
+* ZENER TO LIMIT COMPARATOR OUTPUT SWING
+.model	DZ1	D(Is=0.05u Rs=0.1 Bv=0.3 Ibv=0.05u)
+*
+
+* STM LM324 macro model
+*
+* WARNING : please consider following remarks before usage
+*
+* 1) All models are a tradeoff between accuracy and complexity (ie. simulation 
+*    time).
+* 2) Macromodels are not a substitute to breadboarding, they rather confirm the
+*    validity of a design approach and help to select surrounding component values.
+*
+* 3) A macromodel emulates the NOMINAL performance of a TYPICAL device within 
+*    SPECIFIED OPERATING CONDITIONS (ie. temperature, supply voltage, etc.).
+*    Thus the macromodel is often not as exhaustive as the datasheet, its goal
+*    is to illustrate the main parameters of the product.
+*
+* 4) Data issued from macromodels used outside of its specified conditions
+*    (Vcc, Temperature, etc) or even worse: outside of the device operating 
+*    conditions (Vcc, Vicm, etc) are not reliable in any way.
+*
+*
+** Standard Linear Ics Macromodels, 1993. 
+** CONNECTIONS :
+* 1 INVERTING INPUT
+* 2 NON-INVERTING INPUT
+* 3 OUTPUT
+* 4 POSITIVE POWER SUPPLY
+* 5 NEGATIVE POWER SUPPLY
+.SUBCKT LM324 2 1 4 5 3
+***************************
+.MODEL MDTH D IS=1E-8 KF=3.104131E-15 CJO=10F
+* INPUT STAGE
+CIP 2 5 1.000000E-12
+CIN 1 5 1.000000E-12
+EIP 10 5 2 5 1
+EIN 16 5 1 5 1
+RIP 10 11 2.600000E+01
+RIN 15 16 2.600000E+01
+RIS 11 15 2.003862E+02
+DIP 11 12 MDTH 400E-12
+DIN 15 14 MDTH 400E-12
+VOFP 12 13 DC 0 
+VOFN 13 14 DC 0
+IPOL 13 5 1.000000E-05
+CPS 11 15 3.783376E-09
+DINN 17 13 MDTH 400E-12
+VIN 17 5 0.000000e+00
+DINR 15 18 MDTH 400E-12
+VIP 4 18 2.000000E+00
+FCP 4 5 VOFP 3.400000E+01
+FCN 5 4 VOFN 3.400000E+01
+FIBP 2 5 VOFN 2.000000E-03
+FIBN 5 1 VOFP 2.000000E-03
+* AMPLIFYING STAGE
+FIP 5 19 VOFP 3.600000E+02
+FIN 5 19 VOFN 3.600000E+02
+RG1 19 5 3.652997E+06
+RG2 19 4 3.652997E+06
+CC 19 5 6.000000E-09
+DOPM 19 22 MDTH 400E-12
+DONM 21 19 MDTH 400E-12
+HOPM 22 28 VOUT 7.500000E+03
+VIPM 28 4 1.500000E+02
+HONM 21 27 VOUT 7.500000E+03
+VINM 5 27 1.500000E+02
+EOUT 26 23 19 5 1
+VOUT 23 5 0
+ROUT 26 3 20
+COUT 3 5 1.000000E-12
+DOP 19 25 MDTH 400E-12
+VOP 4 25 2.242230E+00
+DON 24 19 MDTH 400E-12
+VON 24 5 7.922301E-01
+.ENDS LM324
+
+
+* TL082 OPERATIONAL AMPLIFIER "MACROMODEL" SUBCIRCUIT
+* CREATED USING PARTS RELEASE 4.01 ON 06/16/89 AT 13:08
+* (REV N/A)      SUPPLY VOLTAGE: +/-15V
+* ------------------------------------------------------------------------
+*|(C) Copyright Texas Instruments Incorporated 2007. All rights reserved. |
+*|                                                                        |
+*|This Model is designed as an aid for customers of Texas Instruments.    |
+*|No warranties, either expressed or implied, with respect to this Model  |
+*|or its fitness for a particular purpose is claimed by Texas Instruments |
+*|or the author.  The Model is licensed solely on an "as is" basis.  The  |
+*|entire risk as to its quality and performance is with the customer.     |
+* ------------------------------------------------------------------------
+* CONNECTIONS:   NON-INVERTING INPUT
+*                | INVERTING INPUT
+*                | | POSITIVE POWER SUPPLY
+*                | | | NEGATIVE POWER SUPPLY
+*                | | | | OUTPUT
+*                | | | | |
+.SUBCKT TL082    1 2 3 4 5
+*
+C1   11 12 3.498E-12
+C2    6  7 15.00E-12
+DC    5 53 DX
+DE   54  5 DX
+DLP  90 91 DX
+DLN  92 90 DX
+DP    4  3 DX
+EGND 99  0 POLY(2) (3,0) (4,0) 0 .5 .5
+FB    7 99 POLY(5) VB VC VE VLP VLN 0 4.715E6 -5E6 5E6 5E6 -5E6
+GA    6  0 11 12 282.8E-6
+GCM   0  6 10 99 8.942E-9
+ISS   3 10 DC 195.0E-6
+HLIM 90  0 VLIM 1K
+J1   11  2 10 JX
+J2   12  1 10 JX
+R2    6  9 100.0E3
+RD1   4 11 3.536E3
+RD2   4 12 3.536E3
+RO1   8  5 150
+RO2   7 99 150
+RP    3  4 2.143E3
+RSS  10 99 1.026E6
+VB    9  0 DC 0
+VC    3 53 DC 2.200
+VE   54  4 DC 2.200
+VLIM  7  8 DC 0
+VLP  91  0 DC 25
+VLN   0 92 DC 25
+*
+.MODEL DX D(IS=800.0E-18)
+.MODEL JX PJF(IS=15.00E-12 BETA=270.1E-6 VTO=-1)
+.ENDS
+
+.SUBCKT mmsz2v7t1g 2 1
+**************************************
+*      Model Generated by MODPEX     *
+*Copyright(c) Symmetry Design Systems*
+*         All Rights Reserved        *
+*    UNPUBLISHED LICENSED SOFTWARE   *
+*   Contains Proprietary Information *
+*      Which is The Property of      *
+*     SYMMETRY OR ITS LICENSORS      *
+*Commercial Use or Resale Restricted *
+*   by Symmetry License Agreement    *
+**************************************
+* Model generated on Mar 13, 08
+* MODEL FORMAT: PSpice
+*     anode cathode
+*node: 2      1
+*    Forward Section
+D1 2 1 MD1
+.MODEL MD1 D IS=1.4925e-09 N=1.93356 XTI=1 RS=1
++ CJO=3e-10 TT=2e-09
+*    Leakage Current
+R 1 2 MDR 1e+07	
+.MODEL MDR RES TC1=0 TC2=0
+*    Breakdown
+RZ 2 3 12.1809
+IZG 4 3 0.24
+R4 4 3 3500
+D3 3 4 MD3
+.MODEL MD3 D IS=2.5e-12 N=2.89099 XTI=0 EG=0.1
+D2 5 4 MD2
+.MODEL MD2 D IS=2.5e-12 N=11.1307 XTI=0 EG=0.1
+EV1 1 5 6 0 1
+IBV 0 6 0.001
+RBV 6 0 MDRBV -1631.51
+.MODEL MDRBV RES TC1=0.00115844
+*-- PSpice DIODE MODEL DEFAULT PARAMETER
+*  VALUES ARE ASSUMED
+*IS=1E-14 RS=0 N=1 TT=0 CJO=0
+*VJ=1 M=0.5 EG=1.11 XTI=3 FC=0.5
+*KF=0 AF=1 BV=inf IBV=1e-3 TNOM=27
+.ENDS mmsz2v7t1g

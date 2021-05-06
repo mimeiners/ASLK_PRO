@@ -1,0 +1,27 @@
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            /pgf/number format/use comma,
+            xlabel={$f$},
+            ylabel={Mag. / dB},
+            width=0.8\textwidth,
+            height=4.5cm,
+            grid=both,
+            xmode=log,
+            xmin=1,
+            xmax=1000,
+            xtick={1,10,100,1000},
+            xticklabels={1 Hz,10 Hz,100 Hz, 1 kHz},
+            grid style={line width=.1pt, draw=gray!10},
+            major grid style={line width=.2pt,draw=gray!50},
+            tickpos=left,
+            ytick align=outside,
+            xtick align=outside
+        ]
+        \draw (axis cs: 0.1,-3) -- (axis cs: 1000,-3);
+        \draw (axis cs: 138,80) -- (axis cs:138,-50);
+        \addplot[fibeamer@darkBlue, thick] table[x=f, y=mag, col sep=comma]{data/model_bode_closed.csv};
+        \draw (axis cs:500,-4) node[anchor=south]{-3 dB};
+    \end{axis}
+
+    \end{tikzpicture}

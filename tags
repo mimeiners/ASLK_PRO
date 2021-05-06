@@ -1,0 +1,609 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A0	math/Experiment_01/Experiment_01.py	/^A0 = 1e5$/;"	v
+ACROREAD	spice/Experiment_02/Aufgabe 2.2.1/Makefile	/^ACROREAD = acroread$/;"	m
+ACROREAD	spice/Experiment_02/Aufgabe 2.2.2/Makefile	/^ACROREAD = acroread$/;"	m
+ACROREAD	spice/Experiment_02/Aufgabe 2.2.3/Makefile	/^ACROREAD = acroread$/;"	m
+ACROREAD	spice/Experiment_03/Aufgabe 3.3.1/Makefile	/^ACROREAD = acroread$/;"	m
+ADC_BITS	skripte/redpitaya/rp.h	/^#define ADC_BITS /;"	d
+ADC_BITS_MASK	skripte/redpitaya/rp.h	/^#define ADC_BITS_MASK /;"	d
+ADC_BUFFER_SIZE	skripte/redpitaya/rp.h	/^#define ADC_BUFFER_SIZE /;"	d
+ADC_SAMPLE_RATE	skripte/redpitaya/rp.h	/^#define ADC_SAMPLE_RATE /;"	d
+Ampl	skripte/01_Amplitudengangmessung.py	/^Ampl = 1                                              #Amplitude des Eingangssignals$/;"	v
+Ampl	skripte/02_Phasenmessung.py	/^Ampl = 1                                              #Amplitude des Eingangssignals$/;"	v
+Ampl	skripte/03_DCsweep.py	/^    Ampl = np.linspace(0, Start_V-Stop_V, Messpunkte) # Amplitude des Eingangssignals$/;"	v
+Ampl	skripte/03_DCsweep.py	/^    Ampl = np.linspace(0, Stop_V-Start_V, Messpunkte)  # Amplitude des Eingangssignals$/;"	v
+Amplituden	skripte/03_DCsweep.py	/^Amplituden = np.linspace(Start_V, Stop_V, Messpunkte) # Messpunkte der Amplituden$/;"	v
+BUILDDIR	docs/Makefile	/^BUILDDIR      = _build$/;"	m
+BUILDDIR	docs/make.bat	/^set BUILDDIR=_build$/;"	v
+Buff1	skripte/01_Amplitudengangmessung.py	/^    Buff1 = np.array(list(map(float, Buffstring1)))                               #von String in float Vektor umwandeln $/;"	v
+Buff1	skripte/02_Phasenmessung.py	/^        Buff1 = Buff1[151:]$/;"	v
+Buff1	skripte/02_Phasenmessung.py	/^        Buff1 = Buff1[2551:]$/;"	v
+Buff1	skripte/02_Phasenmessung.py	/^        Buff1 = sp.signal.medfilt(Buff1,251)$/;"	v
+Buff1	skripte/02_Phasenmessung.py	/^    Buff1 = np.array(list(map(float, Buffstring1)))                               #von String in float Vektor umwandeln $/;"	v
+Buff1	skripte/03_DCsweep.py	/^    Buff1 = np.array(list(map(float, Buffstring1)))                         # von String in float Vektor umwandeln$/;"	v
+Buff2	skripte/01_Amplitudengangmessung.py	/^    Buff2 = np.array(list(map(float, Buffstring2)))                               #von String in float Vektor umwandeln$/;"	v
+Buff2	skripte/02_Phasenmessung.py	/^        Buff2 = Buff2[151:]$/;"	v
+Buff2	skripte/02_Phasenmessung.py	/^        Buff2 = Buff2[2551:]$/;"	v
+Buff2	skripte/02_Phasenmessung.py	/^        Buff2 = sp.signal.medfilt(Buff2,251)$/;"	v
+Buff2	skripte/02_Phasenmessung.py	/^    Buff2 = np.array(list(map(float, Buffstring2)))                               #von String in float Vektor umwandeln$/;"	v
+Buff2	skripte/03_DCsweep.py	/^    Buff2 = np.array(list(map(float, Buffstring2)))                         # von String in float Vektor umwandeln$/;"	v
+Buffstring1	skripte/01_Amplitudengangmessung.py	/^    Buffstring1 = Buffstring1.strip('{}\\n\\r\\E\\R\\!').replace("  ", "").split(',')  #Zeichen austauschen $/;"	v
+Buffstring1	skripte/01_Amplitudengangmessung.py	/^    Buffstring1 = rp_s.rx_txt()                                                   #Speichern der Messergebnisse$/;"	v
+Buffstring1	skripte/02_Phasenmessung.py	/^    Buffstring1 = Buffstring1.strip('{}\\n\\r\\E\\R\\!').replace("  ", "").split(',')  #Zeichen austauschen $/;"	v
+Buffstring1	skripte/02_Phasenmessung.py	/^    Buffstring1 = rp_s.rx_txt()                                                   #Speichern der Messergebnisse$/;"	v
+Buffstring1	skripte/03_DCsweep.py	/^    Buffstring1 = Buffstring1.strip('{}\\n\\r').replace("  ", "").split(',')  # Zeichen austauschen $/;"	v
+Buffstring1	skripte/03_DCsweep.py	/^    Buffstring1 = rp_s.rx_txt()                                             # Speichern der Messergebnisse$/;"	v
+Buffstring2	skripte/01_Amplitudengangmessung.py	/^    Buffstring2 = Buffstring2.strip('{}\\n\\r\\E\\R\\!').replace("  ", "").split(',')  #Zeichen austauschen $/;"	v
+Buffstring2	skripte/01_Amplitudengangmessung.py	/^    Buffstring2 = rp_s.rx_txt()                                                   #Speichern der Messergebnisse$/;"	v
+Buffstring2	skripte/02_Phasenmessung.py	/^    Buffstring2 = Buffstring2.strip('{}\\n\\r\\E\\R\\!').replace("  ", "").split(',')  #Zeichen austauschen $/;"	v
+Buffstring2	skripte/02_Phasenmessung.py	/^    Buffstring2 = rp_s.rx_txt()                                                   #Speichern der Messergebnisse$/;"	v
+Buffstring2	skripte/03_DCsweep.py	/^    Buffstring2 = Buffstring2.strip('{}\\n\\r').replace("  ", "").split(',')  # Zeichen austauschen $/;"	v
+Buffstring2	skripte/03_DCsweep.py	/^    Buffstring2 = rp_s.rx_txt()                                             # Speichern der Messergebnisse$/;"	v
+DAC_FREQUENCY	skripte/redpitaya/rp.h	/^#define DAC_FREQUENCY /;"	d
+DACout	math/Experiment_13/simulation.py	/^DACout = (R2\/R1)*((2**12)\/b)$/;"	v
+DVIPS	spice/Experiment_02/Aufgabe 2.2.1/Makefile	/^DVIPS = dvips -Ppdf -G0 -t letter$/;"	m
+DVIPS	spice/Experiment_02/Aufgabe 2.2.2/Makefile	/^DVIPS = dvips -Ppdf -G0 -t letter$/;"	m
+DVIPS	spice/Experiment_02/Aufgabe 2.2.3/Makefile	/^DVIPS = dvips -Ppdf -G0 -t letter$/;"	m
+DVIPS	spice/Experiment_03/Aufgabe 3.3.1/Makefile	/^DVIPS = dvips -Ppdf -G0 -t letter$/;"	m
+Data1	skripte/01_Amplitudengangmessung.py	/^Data1 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse$/;"	v
+Data1	skripte/02_Phasenmessung.py	/^Data1 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse$/;"	v
+Data2	skripte/01_Amplitudengangmessung.py	/^Data2 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse$/;"	v
+Data2	skripte/01_Amplitudengangmessung.py	/^Data2 = sp.signal.medfilt(Data2, 3)$/;"	v
+Dateiname	skripte/02_Phasenmessung.py	/^Dateiname = "\/Users\/selimcimen\/Documents\/Python\/Analoge_Schaltungen\/" +Name  #Speicherpfad$/;"	v
+Dateiname	skripte/03_DCsweep.py	/^Dateiname = ".\/data\/" + Name                          # Speicherpfad$/;"	v
+Downsampling	skripte/01_Amplitudengangmessung.py	/^        Downsampling = "1"$/;"	v
+Downsampling	skripte/01_Amplitudengangmessung.py	/^        Downsampling = "1024"$/;"	v
+Downsampling	skripte/01_Amplitudengangmessung.py	/^        Downsampling = "64"$/;"	v
+Downsampling	skripte/01_Amplitudengangmessung.py	/^        Downsampling = "8"                              #Eingangssiganls$/;"	v
+Downsampling	skripte/01_Amplitudengangmessung.py	/^        Downsampling = "8192"$/;"	v
+Downsampling	skripte/01_Amplitudengangmessung.py	/^Downsampling = "1"                                    #Downsamplingrate (decimation factor)$/;"	v
+Downsampling	skripte/02_Phasenmessung.py	/^        Downsampling = "1"$/;"	v
+Downsampling	skripte/02_Phasenmessung.py	/^        Downsampling = "1024"$/;"	v
+Downsampling	skripte/02_Phasenmessung.py	/^        Downsampling = "64"$/;"	v
+Downsampling	skripte/02_Phasenmessung.py	/^        Downsampling = "8"$/;"	v
+Downsampling	skripte/02_Phasenmessung.py	/^        Downsampling = "8192"$/;"	v
+Downsampling	skripte/02_Phasenmessung.py	/^Downsampling = "1"                                    #Downsamplingrate (decimation factor)$/;"	v
+Downsampling	skripte/03_DCsweep.py	/^Downsampling = "1"                                    # Downsamplingrate (decimation factor)$/;"	v
+Frequenzen	skripte/01_Amplitudengangmessung.py	/^Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte) #Erzeugung Messpunkte im Frequenzbereich$/;"	v
+Frequenzen	skripte/02_Phasenmessung.py	/^Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte) #Erzeugung Messpunkte im Frequenzbereich$/;"	v
+GB	math/Experiment_01/Experiment_01.py	/^GB = A0*wd1$/;"	v
+IP	skripte/01_Amplitudengangmessung.py	/^IP = "192.168.111.184"   # IP-Adresse vom Red-Pitaya$/;"	v
+IP	skripte/02_Phasenmessung.py	/^IP = "192.168.111.184"                                #IP-Adresse vom Red-Pitaya$/;"	v
+IP	skripte/03_DCsweep.py	/^IP = sys.argv[1]                                      # IP-Adresse vom Red-Pitaya$/;"	v
+IP	skripte/test_scpi_ana.py	/^IP = "192.168.111.182"$/;"	v
+I_out_5	skripte/Experiment_12/Exp12_Simulation.py	/^I_out_5 = np.linspace(min(Versuch5_Iout),max(Versuch5_Iout),len(Vout5_3)) # x-Achse für Simulationsdaten erzeugen$/;"	v
+Index	skripte/01_Amplitudengangmessung.py	/^Index = 0                                             #Processvariable$/;"	v
+Index	skripte/02_Phasenmessung.py	/^Index = 0                                             #Processvariable$/;"	v
+Index	skripte/03_DCsweep.py	/^Index = 0                                             # Processvariable$/;"	v
+Input	skripte/03_DCsweep.py	/^Input = np.zeros(len(Ampl))                           # Anlegen eines Input Vektors $/;"	v
+Iout5	skripte/Experiment_12/Exp12_Simulation.py	/^Iout5 = Iout5[begin5:end5]$/;"	v
+Iout5	skripte/Experiment_12/Exp12_Simulation.py	/^Iout5 = sig5['AM1'].values$/;"	v
+Iout5_1	skripte/Experiment_12/Exp12_Simulation.py	/^Iout5_1 = Iout5[0:j-1]$/;"	v
+Iout5_2	skripte/Experiment_12/Exp12_Simulation.py	/^Iout5_2 = Iout5[j:]$/;"	v
+Iout5_2	skripte/Experiment_12/Exp12_Simulation.py	/^Iout5_2 = Iout5_2[::3000]$/;"	v
+Iout5_3	skripte/Experiment_12/Exp12_Simulation.py	/^Iout5_3 = np.append(Iout5_1,Iout5_2)$/;"	v
+Messpunkte	skripte/01_Amplitudengangmessung.py	/^Messpunkte = 35          # Anzahl der gewünschten Messpunkte$/;"	v
+Messpunkte	skripte/02_Phasenmessung.py	/^Messpunkte = 26                                       #Anzahl der gewünschten Messpunkte$/;"	v
+Messpunkte	skripte/03_DCsweep.py	/^Messpunkte = 41                                       # Anzahl der gewünschten Messpunkte$/;"	v
+Name	skripte/01_Amplitudengangmessung.py	/^Name = input("Name der Input Textfile: ") + ".txt"                           #Eingabe des Dateiennamens$/;"	v
+Name	skripte/02_Phasenmessung.py	/^Name = input("Name der Input Textfile: ") + ".txt"                           #Eingabe des Dateiennamens$/;"	v
+Name	skripte/03_DCsweep.py	/^Name = input("Name der Input Textdatei: ") + ".txt"   # Eingabe des Dateinamens$/;"	v
+Output	skripte/03_DCsweep.py	/^Output = np.zeros(len(Ampl))                          # Anlegen eines Output Vektors$/;"	v
+Perioden	math/Experiment_05/Sin Test.py	/^Perioden = 10000\/ f$/;"	v
+Punkte	math/Experiment_05/Sin Test.py	/^Punkte = 300000$/;"	v
+Q	math/Experiment_01/Experiment_01.py	/^Q = 1\/((np.sqrt(wd2\/GB)) + ((1\/A0)*(np.sqrt(GB\/wd2))))$/;"	v
+R1	math/Experiment_13/simulation.py	/^R1 = 10e3$/;"	v
+R1	math/Experiment_13/simulation.py	/^R1 = np.array([10e3, 10e3, 10e3, 10e3])$/;"	v
+R2	math/Experiment_13/simulation.py	/^R2 = 22e3$/;"	v
+R2	math/Experiment_13/simulation.py	/^R2 = np.array([20e3, 40e3, 70e3, 100e3])$/;"	v
+REVISION_STR	skripte/redpitaya/version.h	/^#define REVISION_STR /;"	d
+RP_AIN0	skripte/redpitaya/rp.h	/^    RP_AIN0,       \/\/!< Analog input 0$/;"	e	enum:__anon4
+RP_AIN1	skripte/redpitaya/rp.h	/^    RP_AIN1,       \/\/!< Analog input 1$/;"	e	enum:__anon4
+RP_AIN2	skripte/redpitaya/rp.h	/^    RP_AIN2,       \/\/!< Analog input 2$/;"	e	enum:__anon4
+RP_AIN3	skripte/redpitaya/rp.h	/^    RP_AIN3        \/\/!< Analog input 3$/;"	e	enum:__anon4
+RP_AOUT0	skripte/redpitaya/rp.h	/^    RP_AOUT0,      \/\/!< Analog output 0$/;"	e	enum:__anon4
+RP_AOUT1	skripte/redpitaya/rp.h	/^    RP_AOUT1,      \/\/!< Analog output 1$/;"	e	enum:__anon4
+RP_AOUT2	skripte/redpitaya/rp.h	/^    RP_AOUT2,      \/\/!< Analog output 2$/;"	e	enum:__anon4
+RP_AOUT3	skripte/redpitaya/rp.h	/^    RP_AOUT3,      \/\/!< Analog output 3$/;"	e	enum:__anon4
+RP_BTS	skripte/redpitaya/rp.h	/^#define RP_BTS /;"	d
+RP_CH_1	skripte/redpitaya/rp.h	/^    RP_CH_1, \/\/!< Channel A$/;"	e	enum:__anon8
+RP_CH_2	skripte/redpitaya/rp.h	/^    RP_CH_2  \/\/!< Channel B$/;"	e	enum:__anon8
+RP_DEC_1	skripte/redpitaya/rp.h	/^    RP_DEC_1,     \/\/!< Sample rate 125Msps; Buffer time length 131us; Decimation 1$/;"	e	enum:__anon10
+RP_DEC_1024	skripte/redpitaya/rp.h	/^    RP_DEC_1024,  \/\/!< Sample rate 122.070ksps; Buffer time length 134.2ms; Decimation 1024$/;"	e	enum:__anon10
+RP_DEC_64	skripte/redpitaya/rp.h	/^    RP_DEC_64,    \/\/!< Sample rate 1.953Msps; Buffer time length 8.388ms; Decimation 64$/;"	e	enum:__anon10
+RP_DEC_65536	skripte/redpitaya/rp.h	/^    RP_DEC_65536  \/\/!< Sample rate 1.907ksps; Buffer time length 8.589s; Decimation 65536$/;"	e	enum:__anon10
+RP_DEC_8	skripte/redpitaya/rp.h	/^    RP_DEC_8,     \/\/!< Sample rate 15.625Msps; Buffer time length 1.048ms; Decimation 8$/;"	e	enum:__anon10
+RP_DEC_8192	skripte/redpitaya/rp.h	/^    RP_DEC_8192,  \/\/!< Sample rate 15.258ksps; Buffer time length 1.073s; Decimation 8192$/;"	e	enum:__anon10
+RP_DIO0_N	skripte/redpitaya/rp.h	/^    RP_DIO0_N,     \/\/!< DIO_N 0$/;"	e	enum:__anon1
+RP_DIO0_P	skripte/redpitaya/rp.h	/^    RP_DIO0_P,     \/\/!< DIO_P 0$/;"	e	enum:__anon1
+RP_DIO1_N	skripte/redpitaya/rp.h	/^    RP_DIO1_N,     \/\/!< DIO_N 1$/;"	e	enum:__anon1
+RP_DIO1_P	skripte/redpitaya/rp.h	/^    RP_DIO1_P,     \/\/!< DIO_P 1$/;"	e	enum:__anon1
+RP_DIO2_N	skripte/redpitaya/rp.h	/^    RP_DIO2_N,     \/\/!< DIO_N 2$/;"	e	enum:__anon1
+RP_DIO2_P	skripte/redpitaya/rp.h	/^    RP_DIO2_P,     \/\/!< DIO_P 2$/;"	e	enum:__anon1
+RP_DIO3_N	skripte/redpitaya/rp.h	/^    RP_DIO3_N,     \/\/!< DIO_N 3$/;"	e	enum:__anon1
+RP_DIO3_P	skripte/redpitaya/rp.h	/^    RP_DIO3_P,     \/\/!< DIO_P 3$/;"	e	enum:__anon1
+RP_DIO4_N	skripte/redpitaya/rp.h	/^    RP_DIO4_N,     \/\/!< DIO_N 4$/;"	e	enum:__anon1
+RP_DIO4_P	skripte/redpitaya/rp.h	/^    RP_DIO4_P,     \/\/!< DIO_P 4$/;"	e	enum:__anon1
+RP_DIO5_N	skripte/redpitaya/rp.h	/^    RP_DIO5_N,     \/\/!< DIO_N 5$/;"	e	enum:__anon1
+RP_DIO5_P	skripte/redpitaya/rp.h	/^    RP_DIO5_P,     \/\/!< DIO_P 5$/;"	e	enum:__anon1
+RP_DIO6_N	skripte/redpitaya/rp.h	/^    RP_DIO6_N,     \/\/!< DIO_N 6$/;"	e	enum:__anon1
+RP_DIO6_P	skripte/redpitaya/rp.h	/^    RP_DIO6_P,     \/\/!< DIO_P 6$/;"	e	enum:__anon1
+RP_DIO7_N	skripte/redpitaya/rp.h	/^    RP_DIO7_N      \/\/!< DIO_N 7$/;"	e	enum:__anon1
+RP_DIO7_P	skripte/redpitaya/rp.h	/^    RP_DIO7_P,	   \/\/!< DIO_P 7$/;"	e	enum:__anon1
+RP_EABA	skripte/redpitaya/rp.h	/^#define RP_EABA /;"	d
+RP_ECMD	skripte/redpitaya/rp.h	/^#define RP_ECMD /;"	d
+RP_EFCB	skripte/redpitaya/rp.h	/^#define RP_EFCB /;"	d
+RP_EFOB	skripte/redpitaya/rp.h	/^#define RP_EFOB /;"	d
+RP_EFRB	skripte/redpitaya/rp.h	/^#define RP_EFRB /;"	d
+RP_EFWB	skripte/redpitaya/rp.h	/^#define RP_EFWB /;"	d
+RP_EIPV	skripte/redpitaya/rp.h	/^#define RP_EIPV /;"	d
+RP_ELID	skripte/redpitaya/rp.h	/^#define RP_ELID /;"	d
+RP_EMMD	skripte/redpitaya/rp.h	/^#define RP_EMMD /;"	d
+RP_EMNC	skripte/redpitaya/rp.h	/^#define RP_EMNC /;"	d
+RP_EMRO	skripte/redpitaya/rp.h	/^#define RP_EMRO /;"	d
+RP_ENN	skripte/redpitaya/rp.h	/^#define RP_ENN /;"	d
+RP_EOED	skripte/redpitaya/rp.h	/^#define RP_EOED /;"	d
+RP_EOMD	skripte/redpitaya/rp.h	/^#define RP_EOMD /;"	d
+RP_EOOR	skripte/redpitaya/rp.h	/^#define RP_EOOR /;"	d
+RP_EPN	skripte/redpitaya/rp.h	/^#define RP_EPN /;"	d
+RP_EUF	skripte/redpitaya/rp.h	/^#define RP_EUF /;"	d
+RP_EUMD	skripte/redpitaya/rp.h	/^#define RP_EUMD /;"	d
+RP_EWIP	skripte/redpitaya/rp.h	/^#define RP_EWIP /;"	d
+RP_FCA	skripte/redpitaya/rp.h	/^#define RP_FCA /;"	d
+RP_GEN_MODE_BURST	skripte/redpitaya/rp.h	/^    RP_GEN_MODE_BURST,      \/\/!< Signal is generated N times, wher N is defined with rp_GenBurstCount method$/;"	e	enum:__anon6
+RP_GEN_MODE_CONTINUOUS	skripte/redpitaya/rp.h	/^    RP_GEN_MODE_CONTINUOUS, \/\/!< Continuous signal generation$/;"	e	enum:__anon6
+RP_GEN_MODE_STREAM	skripte/redpitaya/rp.h	/^    RP_GEN_MODE_STREAM      \/\/!< User can continuously write data to buffer$/;"	e	enum:__anon6
+RP_GEN_TRIG_GATED_BURST	skripte/redpitaya/rp.h	/^    RP_GEN_TRIG_GATED_BURST     \/\/!< External trigger gated burst$/;"	e	enum:__anon7
+RP_GEN_TRIG_SRC_EXT_NE	skripte/redpitaya/rp.h	/^    RP_GEN_TRIG_SRC_EXT_NE = 3,     \/\/!< External trigger source negative edge$/;"	e	enum:__anon7
+RP_GEN_TRIG_SRC_EXT_PE	skripte/redpitaya/rp.h	/^    RP_GEN_TRIG_SRC_EXT_PE = 2,     \/\/!< External trigger source positive edge$/;"	e	enum:__anon7
+RP_GEN_TRIG_SRC_INTERNAL	skripte/redpitaya/rp.h	/^    RP_GEN_TRIG_SRC_INTERNAL = 1,   \/\/!< Internal trigger source$/;"	e	enum:__anon7
+RP_HIGH	skripte/redpitaya/rp.h	/^    RP_HIGH \/\/!< High state$/;"	e	enum:__anon2
+RP_IN	skripte/redpitaya/rp.h	/^    RP_IN, \/\/!< Input direction$/;"	e	enum:__anon3
+RP_LED0	skripte/redpitaya/rp.h	/^    RP_LED0,       \/\/!< LED 0$/;"	e	enum:__anon1
+RP_LED1	skripte/redpitaya/rp.h	/^    RP_LED1,       \/\/!< LED 1$/;"	e	enum:__anon1
+RP_LED2	skripte/redpitaya/rp.h	/^    RP_LED2,       \/\/!< LED 2$/;"	e	enum:__anon1
+RP_LED3	skripte/redpitaya/rp.h	/^    RP_LED3,       \/\/!< LED 3$/;"	e	enum:__anon1
+RP_LED4	skripte/redpitaya/rp.h	/^    RP_LED4,       \/\/!< LED 4$/;"	e	enum:__anon1
+RP_LED5	skripte/redpitaya/rp.h	/^    RP_LED5,       \/\/!< LED 5$/;"	e	enum:__anon1
+RP_LED6	skripte/redpitaya/rp.h	/^    RP_LED6,       \/\/!< LED 6$/;"	e	enum:__anon1
+RP_LED7	skripte/redpitaya/rp.h	/^    RP_LED7,       \/\/!< LED 7$/;"	e	enum:__anon1
+RP_LOW	skripte/redpitaya/rp.h	/^    RP_LOW, \/\/!< Low state$/;"	e	enum:__anon2
+RP_MODEL	skripte/redpitaya/rp.h	/^#define RP_MODEL /;"	d
+RP_NOTS	skripte/redpitaya/rp.h	/^#define RP_NOTS /;"	d
+RP_OK	skripte/redpitaya/rp.h	/^#define RP_OK /;"	d
+RP_OUT	skripte/redpitaya/rp.h	/^    RP_OUT \/\/!< Output direction$/;"	e	enum:__anon3
+RP_RCA	skripte/redpitaya/rp.h	/^#define RP_RCA /;"	d
+RP_SMP_122_070K	skripte/redpitaya/rp.h	/^    RP_SMP_122_070K, \/\/!< Sample rate 122.070ksps; Buffer time length 134.2ms; Decimation 1024$/;"	e	enum:__anon9
+RP_SMP_125M	skripte/redpitaya/rp.h	/^    RP_SMP_125M,     \/\/!< Sample rate 125Msps; Buffer time length 131us; Decimation 1$/;"	e	enum:__anon9
+RP_SMP_15_258K	skripte/redpitaya/rp.h	/^    RP_SMP_15_258K,  \/\/!< Sample rate 15.258ksps; Buffer time length 1.073s; Decimation 8192$/;"	e	enum:__anon9
+RP_SMP_15_625M	skripte/redpitaya/rp.h	/^    RP_SMP_15_625M,  \/\/!< Sample rate 15.625Msps; Buffer time length 1.048ms; Decimation 8$/;"	e	enum:__anon9
+RP_SMP_1_907K	skripte/redpitaya/rp.h	/^    RP_SMP_1_907K    \/\/!< Sample rate 1.907ksps; Buffer time length 8.589s; Decimation 65536$/;"	e	enum:__anon9
+RP_SMP_1_953M	skripte/redpitaya/rp.h	/^    RP_SMP_1_953M,   \/\/!< Sample rate 1.953Msps; Buffer time length 8.388ms; Decimation 64$/;"	e	enum:__anon9
+RP_TRIG_SRC_AWG_NE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_AWG_NE    \/\/!< Trigger set to arbitrary wave generator application negative edge$/;"	e	enum:__anon11
+RP_TRIG_SRC_AWG_PE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_AWG_PE,   \/\/!< Trigger set to arbitrary wave generator application positive edge$/;"	e	enum:__anon11
+RP_TRIG_SRC_CHA_NE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_CHA_NE,   \/\/!< Trigger set to Channel A threshold negative edge$/;"	e	enum:__anon11
+RP_TRIG_SRC_CHA_PE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_CHA_PE,   \/\/!< Trigger set to Channel A threshold positive edge$/;"	e	enum:__anon11
+RP_TRIG_SRC_CHB_NE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_CHB_NE,   \/\/!< Trigger set to Channel B threshold negative edge$/;"	e	enum:__anon11
+RP_TRIG_SRC_CHB_PE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_CHB_PE,   \/\/!< Trigger set to Channel B threshold positive edge$/;"	e	enum:__anon11
+RP_TRIG_SRC_DISABLED	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_DISABLED, \/\/!< Trigger is disabled$/;"	e	enum:__anon11
+RP_TRIG_SRC_EXT_NE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_EXT_NE,   \/\/!< Trigger set to external trigger negative edge (DIO0_P pin)$/;"	e	enum:__anon11
+RP_TRIG_SRC_EXT_PE	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_EXT_PE,   \/\/!< Trigger set to external trigger positive edge (DIO0_P pin)$/;"	e	enum:__anon11
+RP_TRIG_SRC_NOW	skripte/redpitaya/rp.h	/^    RP_TRIG_SRC_NOW,      \/\/!< Trigger triggered now (immediately)$/;"	e	enum:__anon11
+RP_TRIG_STATE_TRIGGERED	skripte/redpitaya/rp.h	/^    RP_TRIG_STATE_TRIGGERED, \/\/!< Trigger is triggered\/disabled$/;"	e	enum:__anon12
+RP_TRIG_STATE_WAITING	skripte/redpitaya/rp.h	/^    RP_TRIG_STATE_WAITING,   \/\/!< Trigger is set up and waiting (to be triggered)$/;"	e	enum:__anon12
+RP_UIA	skripte/redpitaya/rp.h	/^#define RP_UIA /;"	d
+RP_WAVEFORM_ARBITRARY	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_ARBITRARY   \/\/!< Use defined wave form$/;"	e	enum:__anon5
+RP_WAVEFORM_DC	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_DC,         \/\/!< Wave form dc$/;"	e	enum:__anon5
+RP_WAVEFORM_PWM	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_PWM,        \/\/!< Wave form pwm$/;"	e	enum:__anon5
+RP_WAVEFORM_RAMP_DOWN	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_RAMP_DOWN,  \/\/!< Wave form reversed sawtooth (|\\)$/;"	e	enum:__anon5
+RP_WAVEFORM_RAMP_UP	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_RAMP_UP,    \/\/!< Wave form sawtooth (\/|)$/;"	e	enum:__anon5
+RP_WAVEFORM_SINE	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_SINE,       \/\/!< Wave form sine$/;"	e	enum:__anon5
+RP_WAVEFORM_SQUARE	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_SQUARE,     \/\/!< Wave form square$/;"	e	enum:__anon5
+RP_WAVEFORM_TRIANGLE	skripte/redpitaya/rp.h	/^    RP_WAVEFORM_TRIANGLE,   \/\/!< Wave form triangle$/;"	e	enum:__anon5
+SOURCEDIR	docs/Makefile	/^SOURCEDIR     = .$/;"	m
+SOURCEDIR	docs/make.bat	/^set SOURCEDIR=.$/;"	v
+SPECTR_OUT_SIG_LEN	skripte/redpitaya/rp.h	/^#define SPECTR_OUT_SIG_LEN /;"	d
+SPHINXBUILD	docs/Makefile	/^SPHINXBUILD   = sphinx-build$/;"	m
+SPHINXBUILD	docs/make.bat	/^	set SPHINXBUILD=sphinx-build$/;"	v
+SPHINXOPTS	docs/Makefile	/^SPHINXOPTS    =$/;"	m
+SQLITE	spice/Experiment_06/data/Makefile	/^SQLITE = sqlite3$/;"	m
+STR	skripte/redpitaya/version.h	/^#define STR(/;"	d
+Start_V	skripte/03_DCsweep.py	/^Start_V = -0.5                                        # Start Spannung der Messung $/;"	v
+Start_f	skripte/01_Amplitudengangmessung.py	/^Start_f = 10             # Start Frequenz der Messung $/;"	v
+Start_f	skripte/02_Phasenmessung.py	/^Start_f = 10                                          #Start Frequenz der Messung $/;"	v
+Stop_V	skripte/03_DCsweep.py	/^Stop_V = 0.5                                          # Stop Spannung der Messung$/;"	v
+Stop_f	skripte/01_Amplitudengangmessung.py	/^Stop_f = 7000000         # Stop Frequenz der Messung$/;"	v
+Stop_f	skripte/02_Phasenmessung.py	/^Stop_f = 100000                                       #Stop Frequenz der Messung$/;"	v
+T	skripte/02_Phasenmessung.py	/^            T = channel_1_2[0,0]*2                                  #Periode ermitteln vom Eingang$/;"	v
+TP3_3	skripte/Experiment_12/Exp12_Simulation.py	/^TP3_3 = sig3['TP3'].values$/;"	v
+TP3_4	skripte/Experiment_12/Exp12_Simulation.py	/^TP3_4 = sig3['TP4'].values$/;"	v
+TP3_b	skripte/Experiment_12/Exp12_Simulation.py	/^TP3_b = TP3_3[begin3:end3]$/;"	v
+TP4_b	skripte/Experiment_12/Exp12_Simulation.py	/^TP4_b = TP3_4[begin3:end3]$/;"	v
+TR	spice/Experiment_01/Aufgabe 1.3.1/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_01/Aufgabe 1.3.2/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_01/Aufgabe 1.3.3/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_01/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_01/Theoretischer Teil/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_02/Aufgabe 2.2.1/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_02/Aufgabe 2.2.2/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_02/Aufgabe 2.2.3/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_03/Aufgabe 3.3.1/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_04/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_05/LTSpice/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_06/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_08/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_09/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_10/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_11/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_12/old_components/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_14/Alte_Modelle/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+TR	spice/Experiment_14/Spice_Modelle/Makefile	/^TR = | tr '=' '\\134'$/;"	m
+Tastkopf	skripte/03_DCsweep.py	/^Tastkopf = 10                                         # Tastkopf Verhältnis der Messspitzen$/;"	v
+Triggerverzoegerung	skripte/01_Amplitudengangmessung.py	/^Triggerverzoegerung = "0"                             #Verzögerung des Triggers $/;"	v
+Triggerverzoegerung	skripte/02_Phasenmessung.py	/^Triggerverzoegerung = "0"                             #Verzögerung des Triggers $/;"	v
+Triggerverzoegerung	skripte/03_DCsweep.py	/^Triggerverzoegerung = "0"                             # Verzögerung des Triggers $/;"	v
+VERSION_H	skripte/redpitaya/version.h	/^#define VERSION_H$/;"	d
+VERSION_STR	skripte/redpitaya/version.h	/^#define VERSION_STR /;"	d
+V_in	skripte/01_Amplitudengangmessung.py	/^    V_in = np.amax(Buff1)-np.amin(Buff1)$/;"	v
+V_out	skripte/01_Amplitudengangmessung.py	/^    V_out = np.amax(Buff2)-np.amin(Buff2)$/;"	v
+Versuch3_TP3	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_TP3 = sig[0+shift_TP3:10000+shift_TP3]$/;"	v
+Versuch3_TP4	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_TP4 = sig[0+shift_TP4:10000+shift_TP4]$/;"	v
+Versuch3_Vin	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_Vin = sig[0+shift_TP4:10000+shift_TP4]$/;"	v
+Versuch3_Vout	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_Vout = sig[0+shift_TP4:10000+shift_TP4]$/;"	v
+Versuch3_time_TP3	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_time_TP3 = np.linspace(100,200,len(Versuch3_TP3))$/;"	v
+Versuch3_time_TP4	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_time_TP4 = np.linspace(100,200,len(Versuch3_TP4))$/;"	v
+Versuch3_time_Vin	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_time_Vin = np.linspace(100,200,len(Versuch3_Vin))$/;"	v
+Versuch3_time_Vout	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch3_time_Vout = np.linspace(100,200,len(Versuch3_Vout))$/;"	v
+Versuch5_Iout	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch5_Iout = sig1 \/ 1 # I = U \/ R$/;"	v
+Versuch5_Vout	skripte/Experiment_12/Exp12_Simulation.py	/^Versuch5_Vout = sig$/;"	v
+Vin	math/Experiment_13/simulation.py	/^Vin = 2$/;"	v
+Vin	skripte/Experiment_12/Exp12_Simulation.py	/^Vin = np.arange(10,15,0.01 ) # in V$/;"	v
+Vin3	skripte/Experiment_12/Exp12_Simulation.py	/^Vin3 = Vin3[begin3:end3]$/;"	v
+Vin3	skripte/Experiment_12/Exp12_Simulation.py	/^Vin3 = sig3['Vin'].values$/;"	v
+Vin4	skripte/Experiment_12/Exp12_Simulation.py	/^Vin4  = sig4['Vin'].values $/;"	v
+Vin4	skripte/Experiment_12/Exp12_Simulation.py	/^Vin4 = Vin4[begin4:end4]$/;"	v
+Vout	skripte/Experiment_12/Exp12_Simulation.py	/^Vout = 4.95377 # in V$/;"	v
+Vout0V1	math/Experiment_13/simulation.py	/^Vout0V1 = np.array([2, 1.84, 1.04, 0.96, 0.72, 0.64, 0.6, 0.52, 0.4, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36])$/;"	v
+Vout1	math/Experiment_13/simulation.py	/^Vout1 = Vin*((2**12)\/b)$/;"	v
+Vout2	math/Experiment_13/simulation.py	/^Vout2 = Vin*(R2[0]\/R1[0])*((2**12)\/b)$/;"	v
+Vout2V	math/Experiment_13/simulation.py	/^Vout2V = np.array([17.8, 17.2, 9.4, 9.2, 6.6, 5.2, 4.8, 4, 3.4, 2.8, 2.6, 2.4, 2.2, 1.8, 1.6])$/;"	v
+Vout3	math/Experiment_13/simulation.py	/^Vout3 = Vin*(R2[1]\/R1[1])*((2**12)\/b)$/;"	v
+Vout3	skripte/Experiment_12/Exp12_Simulation.py	/^Vout3 = Vout3[begin3:end3]$/;"	v
+Vout3	skripte/Experiment_12/Exp12_Simulation.py	/^Vout3 = sig3['VOUT'].values$/;"	v
+Vout4	math/Experiment_13/simulation.py	/^Vout4 = Vin*(R2[2]\/R1[2])*((2**12)\/b)$/;"	v
+Vout4	skripte/Experiment_12/Exp12_Simulation.py	/^Vout4 = Vout4[begin4:end4]$/;"	v
+Vout4	skripte/Experiment_12/Exp12_Simulation.py	/^Vout4 = sig4['VOUT'].values$/;"	v
+Vout5	math/Experiment_13/simulation.py	/^Vout5 = Vin*(R2[3]\/R1[3])*((2**12)\/b)$/;"	v
+Vout5	skripte/Experiment_12/Exp12_Simulation.py	/^Vout5 = Vout5[begin5:end5]$/;"	v
+Vout5	skripte/Experiment_12/Exp12_Simulation.py	/^Vout5 = sig5['VOUT'].values$/;"	v
+Vout5_1	skripte/Experiment_12/Exp12_Simulation.py	/^Vout5_1 = Vout5[0:j-1]$/;"	v
+Vout5_2	skripte/Experiment_12/Exp12_Simulation.py	/^Vout5_2 = Vout5[j:]$/;"	v
+Vout5_2	skripte/Experiment_12/Exp12_Simulation.py	/^Vout5_2 = Vout5_2[::3000]$/;"	v
+Vout5_3	skripte/Experiment_12/Exp12_Simulation.py	/^Vout5_3 = np.append(Vout5_1,Vout5_2)$/;"	v
+Wave_form	skripte/01_Amplitudengangmessung.py	/^Wave_form = 'sine'                                    #Wellenform des Eingangssignals$/;"	v
+Wave_form	skripte/02_Phasenmessung.py	/^Wave_form = 'sine'                                    #Wellenform des Eingangssignals$/;"	v
+Wave_form	skripte/03_DCsweep.py	/^Wave_form = 'square'                                  # Wellenform des Eingangssignals$/;"	v
+Werte	skripte/01_Amplitudengangmessung.py	/^Werte = np.matrix([Frequenzen,Data1,Data2]).transpose()     # Messfrequenzen und Messergebnisse speichern$/;"	v
+Werte	skripte/02_Phasenmessung.py	/^Werte = np.matrix([Frequenzen,Data1]).transpose()           #Messfrequenzen und Messergebnisse speichern$/;"	v
+Werte	skripte/03_DCsweep.py	/^Werte = np.matrix([Amplituden, Input, Output]).transpose() # Messfrequenzen und Messergebnisse speichern$/;"	v
+XDVI	spice/Experiment_02/Aufgabe 2.2.1/Makefile	/^XDVI	= xdvi$/;"	m
+XDVI	spice/Experiment_02/Aufgabe 2.2.2/Makefile	/^XDVI	= xdvi$/;"	m
+XDVI	spice/Experiment_02/Aufgabe 2.2.3/Makefile	/^XDVI	= xdvi$/;"	m
+XDVI	spice/Experiment_03/Aufgabe 3.3.1/Makefile	/^XDVI	= xdvi$/;"	m
+XPDF	spice/Experiment_02/Aufgabe 2.2.1/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
+XPDF	spice/Experiment_02/Aufgabe 2.2.2/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
+XPDF	spice/Experiment_02/Aufgabe 2.2.3/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
+XPDF	spice/Experiment_03/Aufgabe 3.3.1/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
+XSTR	skripte/redpitaya/version.h	/^#define XSTR(/;"	d
+Y_t	math/Experiment_05/Sin Test.py	/^Y_t =8.2 - 1 * integrate(y_down,x_down[1])$/;"	v
+Y_tp	math/Experiment_05/Sin Test.py	/^Y_tp = 1\/np.sqrt(1+2j*np.pi*fx\/100)$/;"	v
+Y_tpa	math/Experiment_05/Sin Test.py	/^Y_tpa = (np.real(Y_tp)**2 + np.imag(Y_tp)**2)**(0.5)$/;"	v
+__RP_H	skripte/redpitaya/rp.h	/^#define __RP_H$/;"	d
+__author__	skripte/redpitaya/redpitaya_scpi.py	/^__author__ = "Luka Golinar, Iztok Jeras"$/;"	v
+__copyright__	skripte/redpitaya/redpitaya_scpi.py	/^__copyright__ = "Copyright 2015, Red Pitaya"$/;"	v
+__del__	skripte/redpitaya/redpitaya_scpi.py	/^    def __del__(self):$/;"	m	class:scpi	file:
+__init__	skripte/redpitaya/redpitaya_scpi.py	/^    def __init__(self, host, timeout=None, port=5000):$/;"	m	class:scpi
+a	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^a = np.array(pd.read_csv("WFM01.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+a	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^a = np.array(pd.read_csv("WFM04.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+a	math/Experiment_05/Sin Test.py	/^a=downsample(fx,100)$/;"	v
+angle	math/Experiment_01/Experiment_01.py	/^angle = angle - angle[1]$/;"	v
+angle	math/Experiment_01/Experiment_01.py	/^angle = np.rad2deg(np.unwrap(np.deg2rad(phase)))$/;"	v
+anpassung	math/Experiment_06/Datenauswertung.m	/^function simtabellerueckgabe = anpassung(simtabelle, tabelle)$/;"	f
+answer	skripte/Experiment_12/pickle_data_compression_patrice.py	/^answer = input("Which file type should be comprossed? [txt\/csv]: ")$/;"	v
+ausgangsspg4	skripte/Experiment_12/Exp12_Simulation.py	/^ausgangsspg4 = np.zeros(len(ausgangsspg4_files))$/;"	v
+ausgangsspg4_files	skripte/Experiment_12/Exp12_Simulation.py	/^ausgangsspg4_files = ["M2","M5","M8","M11","M14","M17","M20","M23","M26","M29","M32"]$/;"	v
+author	docs/conf.py	/^author = u'M. Meiners, HSB'$/;"	v
+axes	skripte/Experiment_12/Exp12_Simulation.py	/^axes = plt.gca()$/;"	v
+b	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^b = np.array(pd.read_csv("WFM02.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+b	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^b = np.array(pd.read_csv("WFM05.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+b	math/Experiment_05/Sin Test.py	/^b=downsample(fy_abs\/np.max(fy_abs),100)$/;"	v
+b	math/Experiment_13/simulation.py	/^b = np.linspace(0, 2**12-1, 2**12)$/;"	v
+b	math/Experiment_13/simulation.py	/^b = np.linspace(250, 2**12-1, 2**12)$/;"	v
+be_ch1_dc_offs	skripte/redpitaya/rp.h	/^    int32_t  be_ch1_dc_offs; \/\/!< Back end DC offset, channel A$/;"	m	struct:__anon13
+be_ch1_fs	skripte/redpitaya/rp.h	/^    uint32_t be_ch1_fs;      \/\/!< Back end full scale voltage, channel A$/;"	m	struct:__anon13
+be_ch2_dc_offs	skripte/redpitaya/rp.h	/^    int32_t  be_ch2_dc_offs; \/\/!< Back end DC offset, on channel B$/;"	m	struct:__anon13
+be_ch2_fs	skripte/redpitaya/rp.h	/^    uint32_t be_ch2_fs;      \/\/!< Back end full scale voltage, channel B$/;"	m	struct:__anon13
+begin3	skripte/Experiment_12/Exp12_Simulation.py	/^begin3 = 1322$/;"	v
+begin4	skripte/Experiment_12/Exp12_Simulation.py	/^begin4 = 174665$/;"	v
+begin5	skripte/Experiment_12/Exp12_Simulation.py	/^begin5 = 0$/;"	v
+c	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^c = np.array(pd.read_csv("WFM03.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+c	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^c = np.array(pd.read_csv("WFM06.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+c	math/Experiment_05/Sin Test.py	/^c=downsample(fx,100)$/;"	v
+channel_1	skripte/02_Phasenmessung.py	/^            channel_1 = np.array(Buff1)                             #Nulldurchgänge vom Eingang ermittelen$/;"	v
+channel_1	skripte/02_Phasenmessung.py	/^            channel_1 = np.array(Buff1)                             $/;"	v
+channel_1_1	skripte/02_Phasenmessung.py	/^            channel_1_1 = np.array(np.where(channel_1 == 0))$/;"	v
+channel_1_1	skripte/02_Phasenmessung.py	/^            channel_1_1 = np.transpose(channel_1_1)$/;"	v
+channel_1_1_1	skripte/02_Phasenmessung.py	/^            channel_1_1_1 = channel_1[channel_1_1[0,0]:]$/;"	v
+channel_1_2	skripte/02_Phasenmessung.py	/^            channel_1_2 = np.array(np.where(channel_1_1_1 < 0))         $/;"	v
+channel_1_2	skripte/02_Phasenmessung.py	/^            channel_1_2 = np.array(np.where(channel_1_1_1 > 0))         $/;"	v
+channel_1_2	skripte/02_Phasenmessung.py	/^            channel_1_2 = np.transpose(channel_1_2)$/;"	v
+channel_2	skripte/02_Phasenmessung.py	/^                channel_2 = np.array(Buff2)                         #Nulldurchgänge vom Ausgang ermittelen$/;"	v
+channel_2	skripte/02_Phasenmessung.py	/^               channel_2 = np.array(Buff2)                          #Nulldurchgänge vom Ausgang ermittelen$/;"	v
+channel_2	skripte/02_Phasenmessung.py	/^               channel_2 = np.array(Buff2)                         $/;"	v
+channel_2_1	skripte/02_Phasenmessung.py	/^                channel_2_1 = np.array(np.where(channel_2 == 0)) $/;"	v
+channel_2_1	skripte/02_Phasenmessung.py	/^               channel_2_1 = np.array(np.where(channel_2 == 0)) $/;"	v
+channel_2_1	skripte/02_Phasenmessung.py	/^               channel_2_1 = np.array(np.where(channel_2 == 0))$/;"	v
+close	skripte/redpitaya/redpitaya_scpi.py	/^    def close(self):$/;"	m	class:scpi
+cls	skripte/redpitaya/redpitaya_scpi.py	/^    def cls(self):$/;"	m	class:scpi
+compression	skripte/Experiment_12/pickle_data_compression_patrice.py	/^def compression(file_type, seperator, path):   $/;"	f
+copyright	docs/conf.py	/^copyright = u'2019, M. Meiners, HSB'$/;"	v
+d	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^d = np.array(pd.read_csv("WFM07.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+d	math/Experiment_05/Sin Test.py	/^d=downsample(Y_tpa,100)$/;"	v
+dacReg	math/Experiment_13/simulation.py	/^dacReg = np.array([257, 271, 511, 527, 767, 1023, 1039, 1279, 1535, 2047, 2063, 2303, 2559, 3071, 4095])$/;"	v
+datafile	skripte/Experiment_12/pickle_data.py	/^datafile = sys.argv[1]$/;"	v
+delimiter	skripte/redpitaya/redpitaya_scpi.py	/^    delimiter = '\\r\\n'$/;"	v	class:scpi
+delta_phi	skripte/02_Phasenmessung.py	/^                delta_phi = ((channel_1_1[0,0]-(channel_2_1[0,0]+(T\/2)))\/T)*360$/;"	v
+delta_phi	skripte/02_Phasenmessung.py	/^                delta_phi = ((channel_1_1[0,0]-channel_2_1[0,0])\/T)*360$/;"	v
+delta_phi	skripte/02_Phasenmessung.py	/^               delta_phi = ((channel_1_1[0,0]-(channel_2_1[0,0]+(T\/2)))\/T)*360$/;"	v
+delta_phi	skripte/02_Phasenmessung.py	/^               delta_phi = ((channel_1_1[0,0]-channel_2_1[0,0])\/T)*360$/;"	v
+delta_phi	skripte/02_Phasenmessung.py	/^        delta_phi = 0$/;"	v
+den	math/Experiment_01/Experiment_01.py	/^den = [1\/wd1**2, 1\/(w0*Q), 1]$/;"	v
+df	skripte/Experiment_12/pickle_data.py	/^df = pd.read_table(datafile, decimal=',')$/;"	v
+downsample	math/Experiment_05/Sin Test.py	/^def downsample(x,a):$/;"	f
+duty_cycle_cal	skripte/Experiment_12/Exp12_Simulation.py	/^duty_cycle_cal = (ausgangsspg4 \/ eingsspg4) * 100 # in %$/;"	v
+duty_cycle_mess	skripte/Experiment_12/Exp12_Simulation.py	/^duty_cycle_mess = pd.read_excel(path4 + 'Messdaten_ANS.xlsx', sheet_name='Tabelle1') # in %$/;"	v
+duty_cycle_theor	skripte/Experiment_12/Exp12_Simulation.py	/^duty_cycle_theor = (Vout \/ Vin) * 100 # in %$/;"	v
+duty_messw	skripte/Experiment_12/Exp12_Simulation.py	/^duty_messw = duty_cycle_mess["%"].values$/;"	v
+dx	math/Experiment_05/Sin Test.py	/^dx = Perioden \/ Punkte$/;"	v
+eingsspg4	skripte/Experiment_12/Exp12_Simulation.py	/^eingsspg4 = np.zeros(len(eingsspg4_files))$/;"	v
+eingsspg4_files	skripte/Experiment_12/Exp12_Simulation.py	/^eingsspg4_files = ["MVIN10","M3","M6","M9","M12","M15","M18","M21","M24","M27","M30"]$/;"	v
+end	docs/make.bat	/^:end$/;"	l
+end3	skripte/Experiment_12/Exp12_Simulation.py	/^end3 = 1322 + 1360$/;"	v
+end4	skripte/Experiment_12/Exp12_Simulation.py	/^end4 = 526913$/;"	v
+end5	skripte/Experiment_12/Exp12_Simulation.py	/^end5 = len(Iout5)$/;"	v
+ending4	skripte/Experiment_12/Exp12_Simulation.py	/^ending4 = '.CSV.pkl.xz'$/;"	v
+ending5	skripte/Experiment_12/Exp12_Simulation.py	/^ending5 = '.csv.pkl.xz'$/;"	v
+epub_exclude_files	docs/conf.py	/^epub_exclude_files = ['search.html']$/;"	v
+epub_identifier	docs/conf.py	/^epub_identifier = '000-000-000-000'$/;"	v
+epub_title	docs/conf.py	/^epub_title = project$/;"	v
+epub_uid	docs/conf.py	/^epub_uid = '000-000-000-000'$/;"	v
+err_c	skripte/redpitaya/redpitaya_scpi.py	/^    def err_c(self):$/;"	m	class:scpi
+ese	skripte/redpitaya/redpitaya_scpi.py	/^    def ese(self, value: int):$/;"	m	class:scpi
+ese_q	skripte/redpitaya/redpitaya_scpi.py	/^    def ese_q(self):$/;"	m	class:scpi
+esr_q	skripte/redpitaya/redpitaya_scpi.py	/^    def esr_q(self):$/;"	m	class:scpi
+exclude_patterns	docs/conf.py	/^exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']$/;"	v
+extensions	docs/conf.py	/^extensions = [$/;"	v
+f	math/Experiment_01/Experiment_01.py	/^f = np.logspace(-1, 9)$/;"	v
+f	math/Experiment_05/Sin Test.py	/^f = 1000$/;"	v
+f	skripte/rs_forum_visa.py	/^    f = 20*2**x$/;"	v
+f	skripte/rs_forum_visa.py	/^f = 20$/;"	v
+f_3_db	math/Experiment_01/Experiment_01.py	/^f_3_db = 1.2e6$/;"	v
+f_TP3_m_begin	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP3_m_begin = 1 \/ (Versuch3_time_TP3[698] - Versuch3_time_TP3[216]) * 1000 # Ermittlung der Periode $/;"	v
+f_TP3_m_end	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP3_m_end = 1 \/ (Versuch3_time_TP3[9580] - Versuch3_time_TP3[9089]) * 1000 # Ermittlung der Periode $/;"	v
+f_TP3_s_begin	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP3_s_begin = 1 \/ (time3[110] - time3[39]) * 1000 # kHz$/;"	v
+f_TP3_s_end	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP3_s_end = 1 \/ (time3[1328] - time3[1257]) * 1000 # kHz$/;"	v
+f_TP4_m_begin	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP4_m_begin = 1 \/ (Versuch3_time_TP4[545] - Versuch3_time_TP4[51]) * 1000 # kHz$/;"	v
+f_TP4_m_end	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP4_m_end = 1 \/ (Versuch3_time_TP4[9393] - Versuch3_time_TP4[8898]) * 1000 # kHz$/;"	v
+f_TP4_s_begin	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP4_s_begin = 1 \/ (time3[116] - time3[45]) * 1000 # kHz$/;"	v
+f_TP4_s_end	skripte/Experiment_12/Exp12_Simulation.py	/^f_TP4_s_end = 1 \/ (time3[1334] - time3[1263]) * 1000 # kHz$/;"	v
+f_un	math/Experiment_01/Experiment_01.py	/^f_un = 3e6$/;"	v
+fe_ch1_fs_g_hi	skripte/redpitaya/rp.h	/^    uint32_t fe_ch1_fs_g_hi; \/\/!< High gain front end full scale voltage, channel A$/;"	m	struct:__anon13
+fe_ch1_fs_g_lo	skripte/redpitaya/rp.h	/^    uint32_t fe_ch1_fs_g_lo; \/\/!< Low gain front end full scale voltage, channel A$/;"	m	struct:__anon13
+fe_ch1_hi_offs	skripte/redpitaya/rp.h	/^    int32_t  fe_ch1_hi_offs; \/\/!< Front end DC offset, channel A$/;"	m	struct:__anon13
+fe_ch1_lo_offs	skripte/redpitaya/rp.h	/^    int32_t  fe_ch1_lo_offs; \/\/!< Front end DC offset, channel A$/;"	m	struct:__anon13
+fe_ch2_fs_g_hi	skripte/redpitaya/rp.h	/^    uint32_t fe_ch2_fs_g_hi; \/\/!< High gain front end full scale voltage, channel B$/;"	m	struct:__anon13
+fe_ch2_fs_g_lo	skripte/redpitaya/rp.h	/^    uint32_t fe_ch2_fs_g_lo; \/\/!< Low gain front end full scale voltage, channel B$/;"	m	struct:__anon13
+fe_ch2_hi_offs	skripte/redpitaya/rp.h	/^    int32_t  fe_ch2_hi_offs; \/\/!< Front end DC offset, channel B$/;"	m	struct:__anon13
+fe_ch2_lo_offs	skripte/redpitaya/rp.h	/^    int32_t  fe_ch2_lo_offs; \/\/!< Front end DC offset, channel B$/;"	m	struct:__anon13
+fft	math/Experiment_05/Sin Test.py	/^from scipy.fftpack import fft, ifft$/;"	i
+file	skripte/Experiment_12/Exp12_Simulation.py	/^file = None$/;"	v
+file	skripte/rs_forum_visa.py	/^file = open('measdata.txt', 'w')$/;"	v
+frequenzbestimmung	math/Experiment_06/Datenauswertung.m	/^function [periodendauer, frequenz] = frequenzbestimmung(tabelle)$/;"	f
+fx	math/Experiment_05/Sin Test.py	/^fx = np.fft.fftshift(np.fft.fftfreq(len(x),dx))$/;"	v
+fy	math/Experiment_05/Sin Test.py	/^fy = fy * Y_tp$/;"	v
+fy	math/Experiment_05/Sin Test.py	/^fy = np.fft.fftshift(np.fft.fft(y))$/;"	v
+fy_abs	math/Experiment_05/Sin Test.py	/^fy_abs = (np.real(fy)**2 + np.imag(fy)**2)**(0.5)$/;"	v
+gen	skripte/rs_forum_visa.py	/^gen = rm.open_resource('TCPIP::192.168.111.50::INSTR')$/;"	v
+gettext_compact	docs/conf.py	/^gettext_compact = False$/;"	v
+help	docs/make.bat	/^:help$/;"	l
+html_static_path	docs/conf.py	/^html_static_path = []  # ['_static']$/;"	v
+html_theme	docs/conf.py	/^html_theme = 'sphinxdoc'$/;"	v
+htmlhelp_basename	docs/conf.py	/^htmlhelp_basename = 'ASLK_PROdoc'$/;"	v
+i	skripte/Experiment_12/Exp12_Simulation.py	/^    i = Iout5[j]$/;"	v
+i	skripte/Experiment_12/Exp12_Simulation.py	/^    i = i + 1$/;"	v
+i	skripte/Experiment_12/Exp12_Simulation.py	/^i = 0$/;"	v
+i	skripte/Experiment_12/Exp12_Simulation.py	/^i = 2$/;"	v
+idn_q	skripte/redpitaya/redpitaya_scpi.py	/^    def idn_q(self):$/;"	m	class:scpi
+ifft	math/Experiment_05/Sin Test.py	/^from scipy.fftpack import fft, ifft$/;"	i
+integrate	math/Experiment_05/Sin Test.py	/^def integrate(f,dx):$/;"	f
+intersphinx_mapping	docs/conf.py	/^intersphinx_mapping = {'https:\/\/docs.python.org\/': None}$/;"	v
+j	skripte/Experiment_12/Exp12_Simulation.py	/^j = 0$/;"	v
+komma2dot	skripte/Experiment_12/Exp12_Simulation.py	/^def komma2dot(Speicherpfad, Trennung="\\t"):$/;"	f
+language	docs/conf.py	/^language = u'de'$/;"	v
+latex_documents	docs/conf.py	/^latex_documents = [$/;"	v
+latex_elements	docs/conf.py	/^latex_elements = {$/;"	v
+led	skripte/04_blink.py	/^	led = 0$/;"	v
+led	skripte/04_blink.py	/^	led = int(sys.argv[2])$/;"	v
+locale_dirs	docs/conf.py	/^locale_dirs = ['locale\/']$/;"	v
+magic	skripte/redpitaya/rp.h	/^	uint32_t magic;			 \/\/!$/;"	m	struct:__anon13
+main	skripte/test_scpi_ana.c	/^int main (int argc, char **argv) {$/;"	f
+man_pages	docs/conf.py	/^man_pages = [$/;"	v
+master_doc	docs/conf.py	/^master_doc = 'index'$/;"	v
+math_eqref_format	docs/conf.py	/^math_eqref_format = "Gl. {number}"$/;"	v
+math_numfig	docs/conf.py	/^math_numfig = True$/;"	v
+matplotlib	math/Experiment_01/Experiment_01.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	math/Experiment_05/Sin Test.py	/^import matplotlib.pyplot as plt $/;"	i
+matplotlib	math/Experiment_09/9.2_Simulation/Plots_9.2.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	math/Experiment_13/simulation.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	skripte/01_Amplitudengangmessung.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	skripte/02_Phasenmessung.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	skripte/Experiment_12/Exp12_Simulation.py	/^import matplotlib.pyplot as plt $/;"	i
+maxdB	math/Experiment_01/Experiment_01.py	/^maxdB = 20$/;"	v
+mindB	math/Experiment_01/Experiment_01.py	/^mindB = -100$/;"	v
+mpl	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import matplotlib as mpl$/;"	i
+mpl	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import matplotlib as mpl$/;"	i
+np	math/Experiment_01/Experiment_01.py	/^import numpy as np$/;"	i
+np	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import numpy as np$/;"	i
+np	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import numpy as np$/;"	i
+np	math/Experiment_05/Sin Test.py	/^import numpy as np$/;"	i
+np	math/Experiment_13/simulation.py	/^import numpy as np$/;"	i
+np	skripte/01_Amplitudengangmessung.py	/^import numpy as np$/;"	i
+np	skripte/02_Phasenmessung.py	/^import numpy as np$/;"	i
+np	skripte/03_DCsweep.py	/^import numpy as np$/;"	i
+np	skripte/Experiment_12/Exp12_Simulation.py	/^import numpy as np$/;"	i
+num	math/Experiment_01/Experiment_01.py	/^num = 1$/;"	v
+numfig	docs/conf.py	/^numfig = True$/;"	v
+numfig_secnum_depth	docs/conf.py	/^numfig_secnum_depth = 1$/;"	v
+opc	skripte/redpitaya/redpitaya_scpi.py	/^    def opc(self):$/;"	m	class:scpi
+opc_q	skripte/redpitaya/redpitaya_scpi.py	/^    def opc_q(self):$/;"	m	class:scpi
+os	skripte/Experiment_12/Exp12_Simulation.py	/^import os$/;"	i
+os	skripte/Experiment_12/pickle_data_compression_patrice.py	/^import os$/;"	i
+osc	skripte/rs_forum_visa.py	/^osc = rm.open_resource('TCPIP::192.168.111.20::INSTR')$/;"	v
+path	skripte/Experiment_12/pickle_data_compression_patrice.py	/^path = input("In which folder are they? default -> [.\/]: ")$/;"	v
+path0	skripte/Experiment_12/Exp12_Simulation.py	/^path0 = ".\/Simulationsdaten\/"   # Simulationsdaten mit dem richtigen Widerstand$/;"	v
+path3	skripte/Experiment_12/Exp12_Simulation.py	/^path3   = ".\/Messdaten\/Mess_12_4_3\/"$/;"	v
+path4	skripte/Experiment_12/Exp12_Simulation.py	/^path4   = ".\/Messdaten\/Mess_12-4-4_und_12-4-5\/"$/;"	v
+path5	skripte/Experiment_12/Exp12_Simulation.py	/^path5   = ".\/Messdaten\/Mess_12_4_6\/"$/;"	v
+pd	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import pandas as pd$/;"	i
+pd	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import pandas as pd$/;"	i
+pd	skripte/Experiment_12/Exp12_Simulation.py	/^import pandas as pd$/;"	i
+pd	skripte/Experiment_12/pickle_data.py	/^import pandas as pd$/;"	i
+pd	skripte/Experiment_12/pickle_data_compression_patrice.py	/^import pandas as pd$/;"	i
+period	skripte/04_blink.py	/^period = 1 # seconds$/;"	v
+phase	skripte/rs_forum_visa.py	/^    phase = osc.query('MEASurement3:RESult?').replace('\\n', '')$/;"	v
+phi	math/Experiment_05/Sin Test.py	/^phi = np.linspace(0,1\/2,Punkte) * np.pi     # Annahme Phase ändert sich linear$/;"	v
+plt	math/Experiment_01/Experiment_01.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	math/Experiment_05/Sin Test.py	/^import matplotlib.pyplot as plt $/;"	i
+plt	math/Experiment_09/9.2_Simulation/Plots_9.2.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	math/Experiment_13/simulation.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	skripte/01_Amplitudengangmessung.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	skripte/02_Phasenmessung.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	skripte/Experiment_12/Exp12_Simulation.py	/^import matplotlib.pyplot as plt $/;"	i
+project	docs/conf.py	/^project = u'ASLK_PRO'$/;"	v
+pygments_style	docs/conf.py	/^pygments_style = 'emacs'$/;"	v
+release	docs/conf.py	/^release = u'Herbst 2019'$/;"	v
+rm	skripte/rs_forum_visa.py	/^rm = visa.ResourceManager()$/;"	v
+rms1	skripte/rs_forum_visa.py	/^    rms1 = osc.query('MEASurement1:RESult?').replace('\\n', '')$/;"	v
+rms2	skripte/rs_forum_visa.py	/^    rms2 = osc.query('MEASurement2:RESult?').replace('\\n', '')$/;"	v
+rp_acq_decimation_t	skripte/redpitaya/rp.h	/^} rp_acq_decimation_t;$/;"	t	typeref:enum:__anon10
+rp_acq_sampling_rate_t	skripte/redpitaya/rp.h	/^} rp_acq_sampling_rate_t;$/;"	t	typeref:enum:__anon9
+rp_acq_trig_src_t	skripte/redpitaya/rp.h	/^} rp_acq_trig_src_t;$/;"	t	typeref:enum:__anon11
+rp_acq_trig_state_t	skripte/redpitaya/rp.h	/^} rp_acq_trig_state_t;$/;"	t	typeref:enum:__anon12
+rp_apin_t	skripte/redpitaya/rp.h	/^} rp_apin_t;$/;"	t	typeref:enum:__anon4
+rp_calib_params_t	skripte/redpitaya/rp.h	/^} rp_calib_params_t;$/;"	t	typeref:struct:__anon13
+rp_channel_t	skripte/redpitaya/rp.h	/^} rp_channel_t;$/;"	t	typeref:enum:__anon8
+rp_dpin_t	skripte/redpitaya/rp.h	/^} rp_dpin_t;$/;"	t	typeref:enum:__anon1
+rp_gen_mode_t	skripte/redpitaya/rp.h	/^} rp_gen_mode_t;$/;"	t	typeref:enum:__anon6
+rp_pinDirection_t	skripte/redpitaya/rp.h	/^} rp_pinDirection_t;$/;"	t	typeref:enum:__anon3
+rp_pinState_t	skripte/redpitaya/rp.h	/^} rp_pinState_t;$/;"	t	typeref:enum:__anon2
+rp_s	skripte/01_Amplitudengangmessung.py	/^rp_s = scpi.scpi(IP)                                  #Verbindung herstellen zum Red Pitaya$/;"	v
+rp_s	skripte/02_Phasenmessung.py	/^rp_s = scpi.scpi(IP)                                  #Verbindung herstellen zum Red Pitaya$/;"	v
+rp_s	skripte/03_DCsweep.py	/^rp_s = scpi.scpi(IP)                                  # Verbindung herstellen zum Red Pitaya$/;"	v
+rp_s	skripte/04_blink.py	/^rp_s = scpi.scpi(sys.argv[1])$/;"	v
+rp_s	skripte/test_scpi_ana.py	/^rp_s = scpi.scpi(IP)$/;"	v
+rp_trig_src_t	skripte/redpitaya/rp.h	/^} rp_trig_src_t;$/;"	t	typeref:enum:__anon7
+rp_waveform_t	skripte/redpitaya/rp.h	/^} rp_waveform_t;$/;"	t	typeref:enum:__anon5
+rst	skripte/redpitaya/redpitaya_scpi.py	/^    def rst(self):$/;"	m	class:scpi
+rx_arb	skripte/redpitaya/redpitaya_scpi.py	/^    def rx_arb(self):$/;"	m	class:scpi
+rx_txt	skripte/redpitaya/redpitaya_scpi.py	/^    def rx_txt(self, chunksize = 4096):$/;"	m	class:scpi
+scipy	math/Experiment_01/Experiment_01.py	/^import scipy.signal as sig$/;"	i
+scpi	skripte/01_Amplitudengangmessung.py	/^from redpitaya import redpitaya_scpi as scpi$/;"	i
+scpi	skripte/02_Phasenmessung.py	/^from redpitaya import redpitaya_scpi as scpi$/;"	i
+scpi	skripte/03_DCsweep.py	/^from redpitaya import redpitaya_scpi as scpi$/;"	i
+scpi	skripte/04_blink.py	/^from redpitaya import redpitaya_scpi as scpi$/;"	i
+scpi	skripte/redpitaya/redpitaya_scpi.py	/^class scpi (object):$/;"	c
+scpi	skripte/test_scpi_ana.py	/^from redpitaya import redpitaya_scpi as scpi$/;"	i
+seperator	skripte/Experiment_12/pickle_data_compression_patrice.py	/^seperator = input("Which seperator? [,\/;]: ")$/;"	v
+shift_TP3	skripte/Experiment_12/Exp12_Simulation.py	/^shift_TP3 = 355$/;"	v
+shift_TP4	skripte/Experiment_12/Exp12_Simulation.py	/^shift_TP4 = 300$/;"	v
+sig	math/Experiment_01/Experiment_01.py	/^import scipy.signal as sig$/;"	i
+sig	skripte/Experiment_12/Exp12_Simulation.py	/^    sig = sigdata["CH4[V]"].values$/;"	v
+sig	skripte/Experiment_12/Exp12_Simulation.py	/^sig = None$/;"	v
+sig	skripte/Experiment_12/Exp12_Simulation.py	/^sig = sigdata["CH2[V]"].values$/;"	v
+sig	skripte/Experiment_12/Exp12_Simulation.py	/^sig = sigdata["CH4[V]"].values$/;"	v
+sig	skripte/Experiment_12/Exp12_Simulation.py	/^sig = sigdata["[Vout]"].values$/;"	v
+sig1	skripte/Experiment_12/Exp12_Simulation.py	/^sig1 = sigdata["Vshunt[V]"].values$/;"	v
+sig3	skripte/Experiment_12/Exp12_Simulation.py	/^sig3 = pd.read_pickle(path0 + sig3data + '.pkl.xz')$/;"	v
+sig3data	skripte/Experiment_12/Exp12_Simulation.py	/^sig3data = "Schritt3_Werte.txt"$/;"	v
+sig4	skripte/Experiment_12/Exp12_Simulation.py	/^sig4 = pd.read_pickle(path0 + sig4data + '.pkl.xz')$/;"	v
+sig4data	skripte/Experiment_12/Exp12_Simulation.py	/^sig4data = "Schritt4_Werte.txt"$/;"	v
+sig5	skripte/Experiment_12/Exp12_Simulation.py	/^sig5 = pd.read_pickle(path0 + sig5data + '.pkl.xz')$/;"	v
+sig5data	skripte/Experiment_12/Exp12_Simulation.py	/^sig5data = "Schritt5_Werte.txt"$/;"	v
+sig_mean	skripte/Experiment_12/Exp12_Simulation.py	/^    sig_mean = np.mean(sig)$/;"	v
+sig_mean	skripte/Experiment_12/Exp12_Simulation.py	/^sig_mean = None$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^    sigdata = pd.read_pickle(path4 + file4 + ending4)$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^sigdata = None$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^sigdata = pd.read_pickle(path3 + "WFM02" + ending4)$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^sigdata = pd.read_pickle(path3 + "WFM03" + ending4)$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^sigdata = pd.read_pickle(path3 + "WFM04" + ending4)$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^sigdata = pd.read_pickle(path3 + "WFM05" + ending4)$/;"	v
+sigdata	skripte/Experiment_12/Exp12_Simulation.py	/^sigdata = pd.read_pickle(path5 + "Strommessung" + ending5)$/;"	v
+signal	skripte/01_Amplitudengangmessung.py	/^from scipy import signal$/;"	i
+signal	skripte/02_Phasenmessung.py	/^from scipy import signal$/;"	i
+signal	skripte/Experiment_12/Exp12_Simulation.py	/^from scipy import signal$/;"	i
+socket	skripte/redpitaya/redpitaya_scpi.py	/^import socket$/;"	i
+source_encoding	docs/conf.py	/^source_encoding = 'utf-8-sig'$/;"	v
+source_suffix	docs/conf.py	/^source_suffix = '.rst'$/;"	v
+sp	skripte/01_Amplitudengangmessung.py	/^import scipy as sp$/;"	i
+sp	skripte/02_Phasenmessung.py	/^import scipy as sp$/;"	i
+sre	skripte/redpitaya/redpitaya_scpi.py	/^    def sre(self):$/;"	m	class:scpi
+sre_q	skripte/redpitaya/redpitaya_scpi.py	/^    def sre_q(self):$/;"	m	class:scpi
+stb_q	skripte/redpitaya/redpitaya_scpi.py	/^    def stb_q(self):$/;"	m	class:scpi
+stepgrid	skripte/Experiment_12/Exp12_Simulation.py	/^def stepgrid():$/;"	f
+sys	math/Experiment_01/Experiment_01.py	/^sys = sig.lti(num, den)$/;"	v
+sys	skripte/03_DCsweep.py	/^import sys$/;"	i
+sys	skripte/04_blink.py	/^import sys$/;"	i
+sys	skripte/Experiment_12/pickle_data.py	/^import sys$/;"	i
+sys	skripte/test_scpi_ana.py	/^import sys$/;"	i
+templates_path	docs/conf.py	/^templates_path = ['_templates']$/;"	v
+texinfo_documents	docs/conf.py	/^texinfo_documents = [$/;"	v
+time	skripte/01_Amplitudengangmessung.py	/^import time $/;"	i
+time	skripte/02_Phasenmessung.py	/^import time $/;"	i
+time	skripte/03_DCsweep.py	/^import time $/;"	i
+time	skripte/04_blink.py	/^import time$/;"	i
+time	skripte/Experiment_12/Exp12_Simulation.py	/^time = None$/;"	v
+time	skripte/rs_forum_visa.py	/^import time$/;"	i
+time3	skripte/Experiment_12/Exp12_Simulation.py	/^time3 = time33[begin3:end3] * 1000000 - 15000 # Zeitskala skalieren und 15 ms abziehen$/;"	v
+time33	skripte/Experiment_12/Exp12_Simulation.py	/^time33 = sig3['*Time '].values$/;"	v
+todo_include_todos	docs/conf.py	/^todo_include_todos = True$/;"	v
+tx_txt	skripte/redpitaya/redpitaya_scpi.py	/^    def tx_txt(self, msg):$/;"	m	class:scpi
+txrx_txt	skripte/redpitaya/redpitaya_scpi.py	/^    def txrx_txt(self, msg):$/;"	m	class:scpi
+v	skripte/01_Amplitudengangmessung.py	/^    v = int(Index\/Messpunkte*100)                           # Ermittlung des Fortschritts der Messung$/;"	v
+v	skripte/02_Phasenmessung.py	/^    v = int(Index\/Messpunkte*100)                           #Ermittlung des Fortschritts der Messung$/;"	v
+v	skripte/03_DCsweep.py	/^    v = int(Index\/Messpunkte*100)                        # Ermittlung des Fortschritts der Messung$/;"	v
+value	skripte/test_scpi_ana.py	/^    value = float(rp_s.rx_txt())$/;"	v
+version	docs/conf.py	/^version = u'1.0'$/;"	v
+visa	skripte/rs_forum_visa.py	/^import visa$/;"	i
+w0	math/Experiment_01/Experiment_01.py	/^w0 = np.sqrt(GB*wd2)$/;"	v
+wd1	math/Experiment_01/Experiment_01.py	/^wd1 = 2*np.pi*f_3_db$/;"	v
+wd2	math/Experiment_01/Experiment_01.py	/^wd2 = 2*np.pi*4e6$/;"	v
+x	math/Experiment_05/Sin Test.py	/^x =  x000$/;"	v
+x	skripte/rs_forum_visa.py	/^    x = x + 0.1$/;"	v
+x	skripte/rs_forum_visa.py	/^x = 1$/;"	v
+x000	math/Experiment_05/Sin Test.py	/^x000 = np.arange(0,Perioden,dx)$/;"	v
+x_down	math/Experiment_05/Sin Test.py	/^x_down = downsample(x,1000)$/;"	v
+y	math/Experiment_05/Sin Test.py	/^y = y1*y2$/;"	v
+y1	math/Experiment_05/Sin Test.py	/^y1 = np.sin(2 * np.pi *f*x+phi)$/;"	v
+y2	math/Experiment_05/Sin Test.py	/^y2 = np.fft.ifft(np.fft.fftshift(fy))$/;"	v
+y2	math/Experiment_05/Sin Test.py	/^y2 = np.sin(2 * np.pi *f*x)$/;"	v
+y3	math/Experiment_05/Sin Test.py	/^y3 = np.fft.ifft(np.fft.fftshift(fy))$/;"	v
+y_down	math/Experiment_05/Sin Test.py	/^y_down = downsample(y3,1000)$/;"	v

@@ -1,0 +1,29 @@
+Version 4
+SymbolType BLOCK
+RECTANGLE Normal -48 -72 64 72
+WINDOW 0 8 -72 Bottom 2
+SYMATTR Prefix X
+SYMATTR Value FFLOP40200
+SYMATTR ModelFile C:\users\mimeiners\Meine Dokumente\courses\ans\lab\ASLK_PRO\docs\spice\Experiment_12\tps40200p.lib
+WINDOW 3 8 72 Top 2
+PIN -48 -32 LEFT 8
+PINATTR PinName 1
+PINATTR SpiceOrder 1
+PIN -48 0 LEFT 8
+PINATTR PinName 2
+PINATTR SpiceOrder 2
+PIN -48 32 LEFT 8
+PINATTR PinName 11
+PINATTR SpiceOrder 3
+PIN 64 -48 RIGHT 8
+PINATTR PinName 12
+PINATTR SpiceOrder 4
+PIN 64 -16 RIGHT 8
+PINATTR PinName 5
+PINATTR SpiceOrder 5
+PIN 64 16 RIGHT 8
+PINATTR PinName 6
+PINATTR SpiceOrder 6
+PIN 64 48 RIGHT 8
+PINATTR PinName Gnd
+PINATTR SpiceOrder 7

@@ -1,0 +1,32 @@
+
+    \begin{tikzpicture}
+        \begin{groupplot}[
+            group style={
+                group size=1 by 3,
+                xlabels at=edge bottom,
+                xticklabels at=edge bottom,
+                vertical sep=3mm
+            },
+            /pgf/number format/use comma,
+            xlabel={$t$ / ms},
+            width=0.9\textwidth,
+            height=3.3cm,
+            grid=both,
+            grid style={line width=.1pt, draw=gray!10},
+            major grid style={line width=.2pt,draw=gray!50},
+            tickpos=left,
+            x coord trafo/.code={\pgfmathparse{\pgfmathresult*1000}},
+            ytick align=outside,
+            xtick align=outside
+        ]
+        \nextgroupplot[ylabel=$u_{ref}$ / V]
+        \addplot[fibeamer@darkBlue, thick] table[x=t, y=u, col sep=comma]{data/pll_u_ref.csv};
+        
+        \nextgroupplot[ylabel=$u_{vco}$ / V, ymin=-0.5]
+        \addplot[fibeamer@darkBlue, thick] table[x=t, y=u, col sep=comma]{data/pll_u_vco.csv};
+
+        \nextgroupplot[ylabel=$u_{out}$ / V]
+        \addplot[fibeamer@darkBlue, thick] table[x=t, y=u, col sep=comma]{data/pll_u_out.csv};
+        \end{groupplot}
+
+    \end{tikzpicture}

@@ -1,0 +1,17 @@
+* C:\Users\Ingwersen\Desktop\ASLK_PRO\docs\spice\Experiment_09\9_1_2.asc
+VG1 VG1 0 PULSE(0 8 0 50u 50u 0 0 1000)
+XU1 N002 VG1 vdd vss VF1 tl082
+L1 N001 VF1 20m
+C1 N001 0 1µ
+R2 VF2 0 1k
+XU3 vref VF2 vdd vss Vn002 tl082
+VDD1 vdd 0 10
+Vref3 vref 0 3v
+VSS1 0 vss 10
+R1 VF2 N001 1k
+R4 VF1 N002 20k
+R3 N002 Vn002 1k
+.inc tl082.cir
+.tran 0.01
+.backanno
+.end

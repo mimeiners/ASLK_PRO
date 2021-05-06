@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+    \draw [fibeamer@lightBlue, line width=2mm] (0,0) arc[start angle=180,radius=1,delta angle=-220];
+    \draw [fibeamer@darkBlue!80!white, line width=2mm] (0,0) arc[start angle=180,radius=1,delta angle=140];
+    \draw (1,-1.5) node{Komplexität};
+    \draw (1,0) node{\large \color{fibeamer@lightBlue}60 \%};
+
+    \draw [fibeamer@lightBlue, line width=2mm] (4.5,0) arc[start angle=180,radius=1,delta angle=-320];
+    \draw [fibeamer@darkBlue!80!white, line width=2mm] (4.5,0) arc[start angle=180,radius=1,delta angle=40];
+    \draw (5.5,-1.5) node{Vielfältigkeit};
+    \draw (5.5,0) node{\large \color{fibeamer@lightBlue}85 \%};
+
+    \draw [fibeamer@lightBlue, line width=2mm] (0,-3.5) arc[start angle=180,radius=1,delta angle=-90];
+    \draw [fibeamer@darkBlue!80!white, line width=2mm] (0,-3.5) arc[start angle=180,radius=1,delta angle=270];
+    \draw (1,-5) node{Versuchsbeschreibung};
+    \draw (1,-3.5) node{\large \color{fibeamer@lightBlue}25 \%};
+
+    \draw [fibeamer@lightBlue, line width=2mm] (4.5,-3.5) arc[start angle=180,radius=1,delta angle=-360];
+    \draw (5.5,-5) node{Informationsquellen};
+    \draw (5.5,-3.5) node{\large \color{fibeamer@lightBlue}100 \%};
+\end{tikzpicture}

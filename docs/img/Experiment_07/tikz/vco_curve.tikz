@@ -1,0 +1,20 @@
+
+
+\begin{tikzpicture}
+    \begin{axis}[
+            height=4cm,
+            width=6cm,
+            axis lines = left,
+            ymin=0,
+            x label style={at={(axis description cs:0.5,0.2)},anchor=north},
+            y label style={at={(axis description cs:0.14,0.5)},anchor=north},
+            yticklabels={,,},
+            xticklabels={,,},
+            ytick={},
+            xlabel = $u_{vco}$,
+            ylabel = $\omega_{out}$]
+        \addplot [fibeamer@darkBlue, domain=0:6, samples=10] {4+x};
+        \draw (axis cs:3,7) -| (axis cs:4.5, 8.5);
+        \draw (axis cs:4.5,6.8) node[anchor=west]{$K_{vco}$};
+    \end{axis}
+\end{tikzpicture}

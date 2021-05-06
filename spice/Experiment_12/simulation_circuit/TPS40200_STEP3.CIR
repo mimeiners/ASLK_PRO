@@ -1,0 +1,114 @@
+TPS40200_STEP3 (PSpice format)
+**************************************
+**  This file was created by TINA   **
+**         www.tina.com             ** 
+**      (c) DesignSoft, Inc.        **          
+**     www.designsoftware.com       **
+**************************************
+.LIB "C:\Program Files (x86)\DesignSoft\Tina 9 - TI\EXAMPLES\SPICE\TSPICE.LIB"
+.LIB "C:\Program Files (x86)\DesignSoft\Tina 9 - TI\SPICELIB\Operational Amplifiers.LIB"
+.LIB
+.TEMP 27
+.AC DEC 20 10 1MEG
+.TRAN 200U 100M 0 150N
+
+.OPTIONS ABSTOL=1U GMIN=100P ITL1=150 ITL2=20 ITL4=10 
+.OPTIONS RELTOL=10M VNTOL=10U TRTOL=14 
+.PROBE V([Vin]) V([TP3]) V([OUT]) V([VOUT])
+
+VS1         Vin 0 10
+R1          0 VOUT 20 
+R11         0 3 41.2K 
+C201        Vin 0 220U IC=0 
+C210        VOUT 0 330U IC=0 
+C209        VOUT 0 330U IC=0 
+XQ101       5 4 OUT 5 FDC5614P_0
+C207        8 3 33P IC=0 
+R209        0 3 27.4K 
+R207        3 9 100K 
+R208        9 VOUT 49.9 
+C204        0 Vin 220N IC=0 
+C203        0 Vin 220N IC=0 
+DLD3        10 0  D_CQX35A_1 
+C212        VOUT 0 10U IC=0 
+C202        OUT 11 68P IC=0 
+R206        0 11 25.5 
+L201        OUT VOUT 33U IC=0 
+XU1         TP3 12 8 3 0 13 14 Vin TPS40200
+R3          10 VOUT 4.7K 
+R210        12 0 1MEG 
+R205        8 15 100K 
+C208        0 Vin 100N IC=0 
+C211        VOUT 0 10U IC=0 
+D201        0 OUT  D_MBRS340T3_1 
+R204        13 4 0 
+C206        15 3 4.7N IC=0 
+R202        5 Vin 30M 
+R203        14 5 1K 
+C205        14 Vin 470P IC=0 
+C214        0 12 470N IC=0 
+C213        TP3 0 470P IC=0 
+R201        Vin TP3 100K 
+
+.MODEL D_CQX35A_1 D( IS=5.62P N=2.8 BV=5 IBV=100U RS=420M 
++      CJO=35P VJ=750M M=330M FC=500M TT=100N 
++      EG=1.11 XTI=3 KF=0 AF=1 )
+.MODEL D_MBRS340T3_1 D( IS=1U N=818.2M BV=40 IBV=2M RS=455.2M 
++      CJO=522.6P VJ=528.4M M=522.5M FC=500M TT=1.67N 
++      EG=1.11 XTI=3 KF=0 AF=1 )
+
+*FDC5614P AT TEMP. ELECTRICAL MODEL
+*------------------------------------------------------
+.SUBCKT FDC5614P_0  30 10 20 50
+*20=DRAIN 10=GATE 30=SOURCE 50=VTEMP
+RG 10 11X 1
+RDU 12X 1 1U
+M1 2 1 4X 4X DMOS L=1U W=1U
+.MODEL DMOS PMOS(VTO=-2 KP=13
++THETA=0.1 VMAX=3E5 LEVEL=3)
+CGS 1 5X 750P
+RD 20 4 3.2E-2 
+DDS 4 5X DDS
+.MODEL DDS D(M=4.22E-1 VJ=7.65E-1 CJO=253P)
+DBODY 20 5X DBODY
+.MODEL DBODY D(IS=4.7E-12 N=1.116224 RS=0.000695 TT=30.4N)
+RA 4 2 3.2E-2 
+RS 5X 5 0.5M
+LS 5 30 0.5N
+M2 1 8 6 6 INTER
+E2 8 6 4 1 2
+.MODEL INTER PMOS(VTO=0 KP=10 LEVEL=1)
+CGDMAX 7 4 652P
+RCGD 7 4 10MEG
+DGD 4 6 DGD
+RDGD 4 6 10MEG
+.MODEL DGD D(M=3.2E-1 VJ=7.7E-3 CJO=652P)
+M3 7 9 1 1 INTER
+E3 9 1 4 1 -2
+*ZX SECTION
+EOUT 4X 6X POLY(2) (1X,0) (3X,0) 0 0 0 0 1
+FCOPY 0 3X VSENSE 1
+RIN 1X 0 1G
+VSENSE 6X 5X 0
+RREF 3X 0 10M
+*TEMP SECTION
+ED 101 0 VALUE {V(50,100)}
+VAMB 100 0 25
+EKP 1X 0 101 0 .042
+*VTO SECTION
+EVTO 102 0 101 0 .004
+EVT 11X 12X 102 0 1
+*DIODE THERMO BREAKDOWN SECTION
+EBL VB1 VB2 101 0  0.8
+VBLK VB2 0 60
+D DB1 20 DBLK
+.MODEL DBLK D(IS=1E-14 CJO=.1P RS=.1)
+EDB 0 DB1 VB1 0 1
+.ENDS FDC5614P_0 
+*FDC5614P (REV.A) 1/30/01 **ST
+
+
+* SUBCKT: TPS40200 encrypted macro, content not displayed
+
+
+.END
