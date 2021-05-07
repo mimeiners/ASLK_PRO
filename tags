@@ -317,7 +317,7 @@ anpassung	math/Experiment_06/Datenauswertung.m	/^function simtabellerueckgabe = 
 answer	skripte/Experiment_12/pickle_data_compression_patrice.py	/^answer = input("Which file type should be comprossed? [txt\/csv]: ")$/;"	v
 ausgangsspg4	skripte/Experiment_12/Exp12_Simulation.py	/^ausgangsspg4 = np.zeros(len(ausgangsspg4_files))$/;"	v
 ausgangsspg4_files	skripte/Experiment_12/Exp12_Simulation.py	/^ausgangsspg4_files = ["M2","M5","M8","M11","M14","M17","M20","M23","M26","M29","M32"]$/;"	v
-author	docs/conf.py	/^author = u'M. Meiners, HSB'$/;"	v
+author	docs/conf.py	/^author = u'M. Meiners et. al., HSB'$/;"	v
 axes	skripte/Experiment_12/Exp12_Simulation.py	/^axes = plt.gca()$/;"	v
 b	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^b = np.array(pd.read_csv("WFM02.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 b	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^b = np.array(pd.read_csv("WFM05.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
@@ -331,6 +331,7 @@ be_ch2_fs	skripte/redpitaya/rp.h	/^    uint32_t be_ch2_fs;      \/\/!< Back end 
 begin3	skripte/Experiment_12/Exp12_Simulation.py	/^begin3 = 1322$/;"	v
 begin4	skripte/Experiment_12/Exp12_Simulation.py	/^begin4 = 174665$/;"	v
 begin5	skripte/Experiment_12/Exp12_Simulation.py	/^begin5 = 0$/;"	v
+bibtex_bibfiles	docs/conf.py	/^bibtex_bibfiles = ['Experiment_00.bib']$/;"	v
 c	math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^c = np.array(pd.read_csv("WFM03.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 c	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^c = np.array(pd.read_csv("WFM06.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 c	math/Experiment_05/Sin Test.py	/^c=downsample(fx,100)$/;"	v
@@ -351,7 +352,7 @@ channel_2_1	skripte/02_Phasenmessung.py	/^               channel_2_1 = np.array(
 close	skripte/redpitaya/redpitaya_scpi.py	/^    def close(self):$/;"	m	class:scpi
 cls	skripte/redpitaya/redpitaya_scpi.py	/^    def cls(self):$/;"	m	class:scpi
 compression	skripte/Experiment_12/pickle_data_compression_patrice.py	/^def compression(file_type, seperator, path):   $/;"	f
-copyright	docs/conf.py	/^copyright = u'2019, M. Meiners, HSB'$/;"	v
+copyright	docs/conf.py	/^copyright = u'2021, M. Meiners, HSB'$/;"	v
 d	math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^d = np.array(pd.read_csv("WFM07.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 d	math/Experiment_05/Sin Test.py	/^d=downsample(Y_tpa,100)$/;"	v
 dacReg	math/Experiment_13/simulation.py	/^dacReg = np.array([257, 271, 511, 527, 767, 1023, 1039, 1279, 1535, 2047, 2063, 2303, 2559, 3071, 4095])$/;"	v
@@ -442,7 +443,7 @@ led	skripte/04_blink.py	/^	led = int(sys.argv[2])$/;"	v
 locale_dirs	docs/conf.py	/^locale_dirs = ['locale\/']$/;"	v
 magic	skripte/redpitaya/rp.h	/^	uint32_t magic;			 \/\/!$/;"	m	struct:__anon13
 main	skripte/test_scpi_ana.c	/^int main (int argc, char **argv) {$/;"	f
-man_pages	docs/conf.py	/^man_pages = [$/;"	v
+man_pages	docs/conf.py	/^man_pages = [(master_doc, 'aslk_pro', u'ASLK PRO Dokumentation', [author], 1)]$/;"	v
 master_doc	docs/conf.py	/^master_doc = 'index'$/;"	v
 math_eqref_format	docs/conf.py	/^math_eqref_format = "Gl. {number}"$/;"	v
 math_numfig	docs/conf.py	/^math_numfig = True$/;"	v
@@ -498,9 +499,9 @@ plt	math/Experiment_13/simulation.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	skripte/01_Amplitudengangmessung.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	skripte/02_Phasenmessung.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	skripte/Experiment_12/Exp12_Simulation.py	/^import matplotlib.pyplot as plt $/;"	i
-project	docs/conf.py	/^project = u'ASLK_PRO'$/;"	v
+project	docs/conf.py	/^project = u'ASLK PRO'$/;"	v
 pygments_style	docs/conf.py	/^pygments_style = 'emacs'$/;"	v
-release	docs/conf.py	/^release = u'Herbst 2019'$/;"	v
+release	docs/conf.py	/^release = u'Sommer 2021'$/;"	v
 rm	skripte/rs_forum_visa.py	/^rm = visa.ResourceManager()$/;"	v
 rms1	skripte/rs_forum_visa.py	/^    rms1 = osc.query('MEASurement1:RESult?').replace('\\n', '')$/;"	v
 rms2	skripte/rs_forum_visa.py	/^    rms2 = osc.query('MEASurement2:RESult?').replace('\\n', '')$/;"	v
