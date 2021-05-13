@@ -15,20 +15,20 @@ In diesem Experiment sollen drei Grundschaltungen eines Operationsverstärkers u
 - nicht-invertierender Verstärker.
   
 
-Grundsätzlich wird bei dem Entwurf von Schaltkreisen der Operationsverstärker (Opamp) für erste Näherungen idealisiert
-angenommen. Das heißt, dass die Opamps einen unendlich hohen Verstärkungfaktor sowie Eingangswiderstand aufweisen. Dazu
-kommt ein unendlich große Bandbreite. Der Ausgangswiderstand wird mit :math:`0\,\Omega` angenommen. Geht man in die
-Praxis über, stellt man sehr schnell fest, dass alle genannten Werte endlich sind und bei einem Schaltungsentwurf
+Grundsätzlich werden beim Schaltungsentwurf mit Operationsverstärkern (Opamps) die Eingengschaften für Handrechnungen
+indealisiert. Das heißt, dass Opamps einen unendlich hohen Verstärkungfaktor und Eingangswiderstand aufweisen, sowie
+eine unendlich große Bandbreite. Der Ausgangswiderstand wird mit :math:`0\,\Omega` angenommen. Geht man in die
+Praxis über, stellt man sehr schnell fest, dass alle genannten Werte endlich sind und beim Schaltungsentwurf
 unterschiedliche Probleme verursachen können. Das Ziel dieses Experiments ist eine messtechnische Untersuchung der
-Grundschaltungen eines Opams und ein Gewinn an Wissen und Erfahrung beim Umgang mit diesen elektronischen Bauelementen.
+Grundschaltungen eines Opamps und ein Gewinn an Wissen und Erfahrung beim Umgang mit diesen elektronischen Bauelementen.
 
 
-*********************
-UnityGain - Schaltung
-*********************
+**********************
+Unity Gain - Schaltung
+**********************
 
-Eine UnityGain-Schaltung, auch Impedanzwandler oder Spannungsfolger genannt, ist ein Operationsverstärker
-dessen Ausgang mit dem invertierendem Eingang kurzgeschlossen ist :numref:`01_fig_02`. 
+Eine Unity Gain-Schaltung, auch Impedanzwandler oder Spannungsfolger genannt, ist ein Operationsverstärker, 
+dessen Ausgang mit dem invertierenden Eingang kurzgeschlossen ist :numref:`01_fig_02`. 
 
 .. figure:: img/Experiment_01/Experiment_01_fig_02.png
 	 :name: 01_fig_02
@@ -36,7 +36,6 @@ dessen Ausgang mit dem invertierendem Eingang kurzgeschlossen ist :numref:`01_fi
 
 	 Schematische Darstellung einer UnityGain-Schaltung
 
-Aufgrund dieser Beschaltung kann man eine Übertragungsfunktion des UnityGain ermitteln. 
 Aus der Theorie wissen wir, dass der Ausgang eines unberschaltetenen Opams gleich dem Verstärkungsfaktor :math:`A_0`
 multipliziert mit der Differenz der beiden Eingänge :math:`U_+` und :math:`U_-` ist. Dabei ist :math:`U_+` der
 nicht-invertierende und :math:`U_-` der invertierende Eingang des Operationsverstärkers. Damit ergibt sich allgemein für
@@ -48,7 +47,7 @@ den unbeschalteten Operationsverstärker:
    U_{OUT} = A_0 \cdot (U_+ - U_-)
 
 
-Aufgrund der erwähnten *Rückkopplung* kann UnityGain als eine Regelstrecke betrachtet werden. Systemtheoretisch
+Aufgrund der erwähnten *Rückkopplung* kann Unity Gain als eine Regelstrecke betrachtet werden. Systemtheoretisch
 ist nun das Verhältnis von Ausgang zu Eingang eine Übertragungsfunktion :math:`H(s)` (:eq:`01_eq_02`).
 
 .. math::
@@ -56,23 +55,23 @@ ist nun das Verhältnis von Ausgang zu Eingang eine Übertragungsfunktion :math:
 
    \frac{U_{OUT}}{U_{IN}} = \frac{A_0}{1+A_0}
 
-Aufrund der direkten Rückkopplung (ohne andere Bauteile zwischen) kann, idealisiert, angenommen werden, dass :math:`A_0`
+Aufrund der direkten Rückkopplung (ohne andere Bauteile, Kurzschluss) kann idealisiert angenommen werden, dass :math:`A_0`
 gegen Unendlich strebt. Durch diese Annahme folgt nach dem Kürzen der :eq:`01_eq_02` das Übersetzungverhältnis für eine
-UnityGain-Schaltung:
+Unity Gain-Schaltung:
 
 .. math::
    :label: 01_eq_03
 
    \frac{U_{OUT}}{U_{IN}} = 1
 
-Mit diese Erkenntnis kann man nun den Nutzen des UnityGain in Frage stellen. Tatsächlich ist es eine sehr
-nützliche Beschaltung eines Operationsverstärkers. Wie bereits erwähnt, wird diese Beschaltung auch 
-Spannungsfolger oder Impedanzwandler genannt. Die Namen werden aus der grundlegenden Funktion dieser Schaltung
-abgeleitet. **Ein UnityGain liefert am Ausgang die vom Eingang vorgegebene Spannung. Diese ist Lastunabhängig.** 
-Durch diese Eigenschaft kann der UnityGain als Spannungsstabilisator oder als Entkoppler zweier Teilsystemen eingesetzt werden.
-Nach :eq:`01_eq_03` ist die Übertragungsfunktion des UnityGain gleich 1. Das heißt, dass die Ausgangsspannung gleich der
-Differenz der Eingangsspannungen :math:`U_+` und :math:`U_-` ist. Die Simulations- und Messergebnisse sind in der
-:numref:`01_fig_03` (oben) dargestellt. Daraus ist ersichtlich, dass sich die beiden Signale überlagern, was einer
+Mit dieser Erkenntnis kann man nun den Nutzen des Unity Gain in Frage stellen. Tatsächlich ist es eine sehr nützliche
+Schaltung eines Operationsverstärkers. Wie bereits erwähnt, wird diese Schaltung auch Spannungsfolger oder
+Impedanzwandler genannt. Die Namen werden aus der grundlegenden Funktion dieser Schaltung abgeleitet.
+**Ein Unity Gain liefert am Ausgang die vom Eingang vorgegebene Spannung. Diese ist lastunabhängig.** 
+Durch diese Eigenschaft kann der Unity Gain als Spannungsstabilisator oder als Entkoppler zweier Teilsystemen eingesetzt
+werden. Nach :eq:`01_eq_03` ist die Übertragungsfunktion des Unity Gain gleich 1. Das heißt, dass die Ausgangsspannung
+gleich der Differenz der Eingangsspannungen :math:`U_+` und :math:`U_-` ist. Die Simulations- und Messergebnisse sind in
+der :numref:`01_fig_03` (oben) dargestellt. Daraus ist ersichtlich, dass sich die beiden Signale überlagern, was einer
 Übertragung von 1 entspricht. 
 
 .. figure:: img/Experiment_01/Amplifier_output.png
@@ -80,7 +79,7 @@ Differenz der Eingangsspannungen :math:`U_+` und :math:`U_-` ist. Die Simulation
 	    :align: center
 
 	    Simulationen und Messungen der Ein- und Ausgangsspannungen der 3 grundlegenden Beschaltungsarten
-	    eines Oparationsverstärkers [UnityGain(oben), nicht-invertierender Verstärker(mitte),
+	    eines Oparationsverstärkers [Unity Gain (oben), nicht-invertierender Verstärker (mitte),
 	    invertierender Verstärker (unten)]
 
 
@@ -88,24 +87,24 @@ Differenz der Eingangsspannungen :math:`U_+` und :math:`U_-` ist. Die Simulation
 Nicht-invertierende und invertierende Operationsverstärkerschaltungen
 *********************************************************************
    
-Zwei weitere grundlegende Schaltungen des Operationsverstärkers sind die sogennante nicht-invertierende und
-invertierende Beschaltung. 
+Zwei weitere grundlegende Schaltungen des Operationsverstärkers sind die sogenannten nicht-invertierenden und
+invertierenden Schaltung. 
 
 .. figure:: img/Experiment_01/Experiment_01_fig_03.png
 	    :name: 01_fig_04
 	    :align: center
 
-	    Nichtinvertierende (links) und invertierende (rechts) Verstärker
+	    Nicht-invertierende (links) und invertierende (rechts) Verstärker
 
-Sowohl bei dem nicht-invertierenden als auch dem invertierenden Verstärker hängt der Verstärkungsfaktor :math:`A_0`
-von dem Verhältnis der beiden Widerstände. Für den nichtinvertieren Verstärker ergibt sich 
+Sowohl beim nicht-invertierenden als auch beim invertierenden Verstärker hängt der Verstärkungsfaktor :math:`A_0`
+vom Verhältnis der beiden Widerstände ab. Für den nicht-invertieren Verstärker ergibt sich:
 
 .. math::
    :label: 01_eq_04
 
    \frac{U_{OUT}}{U_{IN}} = 1 + \frac{R_2}{R_1}
 
-Nach Ausmultiplikation egibt sich für die Ausgangsspannung :math:`U_{OUT}`
+Nach Ausmultiplizieren egibt sich für die Ausgangsspannung :math:`U_{OUT}`
 
 .. math::
    :label: 01_eq_05
@@ -113,9 +112,9 @@ Nach Ausmultiplikation egibt sich für die Ausgangsspannung :math:`U_{OUT}`
    U_{OUT} = U_{IN} + \frac{R_2}{R_1} \cdot U_{IN}
    
 
-Dabei ist :math:`R_1` der Widerstand der an dem invertierenden Eingang :math:`U_-` anliegt und :math:`R_2` der zwischen
+Dabei ist :math:`R_1` der Widerstand, der am invertierenden Eingang :math:`U_-` anliegt und :math:`R_2` der zwischen
 dem Ausgang :math:`U_{OUT}` und dem invertierenden Eingang liegt (:numref:`01_fig_04`). :math:`U_{IN}` ist die
-Eingangsspannung, die an einem der Eingänge des OPAMS anliegt.
+Eingangsspannung, die an einem der Eingänge des Opamps anliegt.
 
 Aus der :numref:`01_fig_03` ist ersichtlicht, dass bei einem nicht-invertierenden Verstärker die Eingangsspannung nach
 :eq:`01_eq_05` verstärkt wird. Die Ausgangsspannung liegt mit der Eingangsspannung in Phase.
@@ -127,7 +126,7 @@ Für den invertierenden Verstärker ist das Verhältnis von Ausgangsspannung zu 
 
    \frac{U_{OUT}}{U_{IN}} = -\frac{R_2}{R_1}
 
-Nach Ausmultiplikation ergibt sich für die Ausgangsspannung :math:`U_{OUT}`
+Nach Ausmultiplizieren ergibt sich für die Ausgangsspannung :math:`U_{OUT}`:
 
 .. math::
    :label: 01_eq_07
@@ -135,7 +134,7 @@ Nach Ausmultiplikation ergibt sich für die Ausgangsspannung :math:`U_{OUT}`
    U_{OUT} = -\frac{R_2}{R_1} \cdot U_{IN}
 
 Nach :eq:`01_eq_07` bekommt man eine um :math:`\pi` gedrehete und um das Widerstandsverhältnis
-verstärkte Ausgangsspannung :math:`U_{OUT}`. Diese ist in :numref:`01_fig_03` (unten) graphisch dargestellt.  
+verstärkte Ausgangsspannung :math:`U_{OUT}`. Diese ist in :numref:`01_fig_03` (unten) graphisch dargestellt.
 
 
 Messtechnische Untersuchung der Grenzbereiche
@@ -147,9 +146,9 @@ Bandbreite
 ==========
 
 Zunächst soll die Bandbreite und ihre Abhängigkeit von der Verstärkung untersucht werden. Die kann z.B. mit Hilfe von
-RedPitaya und der sich darauf befindenden App "Bode-Analyser" durchgeführt werden. Aufgrund von unzureicheder
-Datenexportmöglichkeiten, wurde an dieser Stelle ein Programm zur Bodeplottdarstellung entwickelt. Gundsätzlich wird das
-Programm zur Messautomatisierung des Redpitayas eingesetzt und ist ohne weiteres nur mit Diesem kompatibel.
+Red Pitaya und der sich darauf befindenden App "Bode-Analyser" durchgeführt werden. Aufgrund von unzureicheder
+Datenexportmöglichkeiten, wurde an dieser Stelle ein Programm zur Bode-Plot-Darstellung entwickelt. Gundsätzlich wird
+das Programm zur Messautomatisierung des Red Pitayas eingesetzt und ist ohne Weiteres nur mit diesem kompatibel.
 
 .. literalinclude:: ../skripte/01_Amplitudengangmessung.py
    :language: python
@@ -166,14 +165,13 @@ sind zusammen mit den Messungen in :numref:`01_fig_06` dargestellt.
 
    Vergleich der Messungen mit den Simulationen
    
-Die Simulationsergebnisse zeigen prinzipiell das gleiche Tiefpassverhalten, wie die Messergebnisse.
-Der Amplutudengang der Messungen weicht kaum von den Simulationsergebnissen ab. Die Abweichungen liegen nur im hohen
-Frequenzbereich. Daher liegen die Fehlerquellen in den kapazätiven Eigenschaften der Messspitzen und den langen
-Leitung. Andererseits scheinen die Simulationsdaten des Operationsverstärkers sehr exakt zu sein, das sie beiden
+Die Simulationsergebnisse zeigen prinzipiell das gleiche Tiefpassverhalten wie die Messergebnisse.
+Der Amplitudengang der Messungen weicht kaum von den Simulationsergebnissen ab. Die Abweichungen liegen nur im hohen
+Frequenzbereich. Daher liegen die Fehlerquellen in den kapazitiven Eigenschaften der Messspitzen und den langen
+Leitung. Andererseits scheinen die Simulationsdaten des Operationsverstärkers sehr exakt zu sein, das die beiden
 Ergebnisse kaum von einander abweichen.
-Mit Hilfe von Matlab_ können die :math:`-3\,dB` - Grenzen der
-jeweiligen gemessenen Schaltungen ermittelt werden.
 
+Mit Hilfe von Matlab_ können die :math:`-3\,dB` - Grenzen der jeweiligen gemessenen Schaltungen ermittelt werden.
 Es ergeben sich für:
 
 - UnityGain = :math:`3,16 \cdot 10^6\,Hz`
@@ -182,8 +180,8 @@ Es ergeben sich für:
 
 - Invertierender verstärker = :math:`1,05 \cdot 10^6\,Hz`
 
-Diese Information liefert eine wichtige Erkenntniss. Die Bandbreite der Operationsverstärker hängt scheinbar mit dem
-Verstärkungsfaktor :math:`A_0` zusammen. Je größer der Verstärkungsfaktor, desto schmaller ist die Bandbreite des Opams.
+Diese Information liefert eine wichtige Erkenntnis: Die Bandbreite der Operationsverstärker hängt scheinbar mit dem
+Verstärkungsfaktor :math:`A_0` zusammen. Je größer der Verstärkungsfaktor, desto schmaler ist die Bandbreite des Opamps.
 Diese Erkenntniss ist wichtig für die Auslegung hochfrequenter Schaltung mit einer Verstärkung. Auf eine mathematische
 Herleitung der Bandbreite wird an dieser Stelle verzichtet.
 
@@ -191,8 +189,8 @@ Herleitung der Bandbreite wird an dieser Stelle verzichtet.
 Maximale Verstärkung
 ====================
 
-Nun soll der verstärkungsfakor :math:`A_0` auf seinen maximalen und minimalen Wert untersucht werden. Abgeleitet aus
-:eq:`01_eq_05` und :eq:`01_eq_06`, besteht die Ahnhängigkeit zwischen dem Verstärkungsfaktor :math:`A_0`, der
+Nun soll der Verstärkungsfakor :math:`A_0` auf seinen maximalen und minimalen Wert untersucht werden. Abgeleitet aus
+:eq:`01_eq_05` und :eq:`01_eq_06`, besteht die Abhängigkeit zwischen dem Verstärkungsfaktor :math:`A_0`, der
 Eigangsspannungdifferenz :math:`U_{IN}` und der Ausgangsspannung :math:`U_{OUT}`.
 
 .. math::
@@ -200,8 +198,8 @@ Eigangsspannungdifferenz :math:`U_{IN}` und der Ausgangsspannung :math:`U_{OUT}`
 
    U_{OUT} = A_0 \cdot U_{IN}
 
-Da theoretisch die Eigangsspannung und der Verstärkungsfaktor variable sind, wird hier die Ausgangsspannung des Opams
-auf ihre Grenzen überprüft. Dazu wird ein DC - Sweep durchgeführt. Zu diesem Zweck wurde ein weiteres Programm
+Da theoretisch die Eigangsspannung und der Verstärkungsfaktor variable sind, wird hier die Ausgangsspannung des Opamps
+auf ihre Grenzen überprüft. Dazu wird ein DC-Sweep durchgeführt. Zu diesem Zweck wurde ein weiteres Programm
 erstellt.
 
 .. literalinclude:: ../skripte/03_DCsweep.py
@@ -209,7 +207,7 @@ erstellt.
    :linenos:
    :name: DCsweep
 
-Es sollen mit Hilfe des nicht-invertierenden Verstärkers ein Gleichspannungsdurchlauf durchgeführt werden. Für die
+Es soll mit Hilfe des nicht-invertierenden Verstärkers ein Gleichspannungsdurchlauf durchgeführt werden. Für die
 Ausgangsspannung ergibt sich ein Spannungsverlauf nach :numref:`01_fig_07`.
 
 .. figure:: img/Experiment_01/DCsweep.png
@@ -218,24 +216,24 @@ Ausgangsspannung ergibt sich ein Spannungsverlauf nach :numref:`01_fig_07`.
 
    Grenzmessung der Ausgangsspannung
    
-Das Ergebniss zeigt, dass die Ausgangsspannung bei ca. :math:`9 \, Volt` ihren Maximum und bei ca. :math:`-9 \, Volt`
-ihren Minimum aufweist. Hier wird der Zusammenhang zwischen der Ausgangsspannung und der Versorgungsspannung des
-Operationsverstärkers deutlich. Die maximalwerte der Ausgangsspannung sind gleich der OPAMS - Versorgungsspannung [#]_.
-Die Flankensteilheit ist abhängig von dem Verstärkungsfaktor. 
+Das Ergebniss zeigt, dass die Ausgangsspannung bei ca. :math:`9 \, Volt` ihr Maximum und bei ca. :math:`-9 \, Volt`
+ihr Minimum aufweist. Hier wird der Zusammenhang zwischen der Ausgangsspannung und der Versorgungsspannung des
+Operationsverstärkers deutlich. Die Maximalwerte der Ausgangsspannung sind gleich der Versorgungsspannung [#]_.
+Die Flankensteilheit ist abhängig vom Verstärkungsfaktor. 
 
 Fazit und Beispiele
 ===================
 
-Mit Hilfe der durchgeführten Messungen konnten die grundlegende Funktionen und die reelen Grenzen eines Operationsverstärkers
-aufgezeigt werden. Der Einsatz des RedPitaya_ Messlabors erwies sich für hohen Frequenzbereich eher unzuverlässig. Des Weiteren
-verdrehte der RedPitaya je nach Päriodenauflösung die Phase, sodass der Datenexport oft fehlerhaft war. Trotzdessen ist
-die möglichkeit der Messautomatisierung von großem Vorteil. Daher bietet sich der Eisatz von SCPI-fähigen Geräten bei
+Mit Hilfe der durchgeführten Messungen konnten die grundlegende Funktionen und die realen Grenzen eines Operationsverstärkers
+aufgezeigt werden. Der Einsatz des Red Pitaya Messlabors erwies sich für hohen Frequenzbereich eher unzuverlässig. Des Weiteren
+verdrehte der Red Pitaya je nach Päriodenauflösung die Phase, sodass der Datenexport oft fehlerhaft war. Trotzdessen ist
+die Möglichkeit der Messautomatisierung von großem Vorteil. Daher bietet sich der Eisatz von SCPI-fähigen Geräten bei
 diesen Messungen an.  
 
 Beispiele
 =========
 
-Als erstes wird ein sogenannter "Negativ-Rückgekoppelter-Verstärker" betrachtet. Prinzipiell ist das eine
+Als erstes wird ein negativ rückgekoppelter Verstärker betrachtet. Prinzipiell ist das eine
 Kaskadierung (Hintereinanderschaltung) der drei Grundschaltungen :numref:`01_fig_08`. 
 
 .. figure:: img/Experiment_01/negative_feedback.png
@@ -244,8 +242,8 @@ Kaskadierung (Hintereinanderschaltung) der drei Grundschaltungen :numref:`01_fig
 
    Negativ-Rückgekoppelter-Verstärker
    
-Hier wird statt einem Sinussignal ein Rechtecksignal eingespeist. Die Ausgänge der Schaltung sind in :numref:`01_fig_09`
-graphisch dargestellt.
+Hier wird statt eines Sinussignals ein Rechtecksignal eingespeist. Die Ausgänge der Schaltung sind in
+:numref:`01_fig_09` graphisch dargestellt.
 
 .. figure:: img/Experiment_01/Verstaerker_Rueckkopplung_neu.png
    :name: 01_fig_09
@@ -266,7 +264,7 @@ Als zweites Beispiel wird ein Instrumentenverstärker betrachtet. Dieser kann au
 
    Instrumentenverstärker mit drei Opams (links) und zwei Opams (rechts)
 
-Aus der Abbildung wird deutlich, dass die Verstärkung lediglich von dem Widerstand :math:`nR` abhängt. Dies erleichtert
+Aus der Abbildung wird deutlich, dass die Verstärkung lediglich vom Widerstand :math:`nR` abhängt. Dies erleichtert
 die Einstellung des Instumentenverstärkers. Als Beispiel wurde ein Instrumentenverstärker aus zwei Operationsverstärkern
 aufgebaut und der Ausgang gemessen. Die Messergebnisse sind in der :numref:`01_fig_11` graphisch dargestellt.
 
