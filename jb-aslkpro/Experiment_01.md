@@ -1,4 +1,7 @@
-# Experiment 1: Gegenkopplungsverstärker und Instrumentenverstärker
+---
+title: "Experiment 1: Gegenkopplungsverstärker und
+  Instrumentenverstärker"
+---
 
 In diesem Experiment sollen drei Grundschaltungen eines
 Operationsverstärkers untersucht werden. Zu diesen gehören ein
@@ -18,7 +21,7 @@ verursachen können. Das Ziel dieses Experiments ist eine messtechnische
 Untersuchung der Grundschaltungen eines Opamps und ein Gewinn an Wissen
 und Erfahrung beim Umgang mit diesen elektronischen Bauelementen.
 
-## Unity Gain - Schaltung
+# Unity Gain - Schaltung
 
 Eine Unity Gain-Schaltung, auch Impedanzwandler oder Spannungsfolger
 genannt, ist ein Operationsverstärker, dessen Ausgang mit dem
@@ -75,7 +78,7 @@ grundlegenden Beschaltungsarten eines Oparationsverstärkers \[Unity Gain
 Verstärker (unten)\]](img/Experiment_01/Amplifier_output.png){#01_fig_03
 .align-center}
 
-## Nicht-invertierende und invertierende Operationsverstärkerschaltungen
+# Nicht-invertierende und invertierende Operationsverstärkerschaltungen
 
 Zwei weitere grundlegende Schaltungen des Operationsverstärkers sind die
 sogenannten nicht-invertierenden und invertierenden Schaltung.
@@ -119,12 +122,12 @@ gedrehete und um das Widerstandsverhältnis verstärkte Ausgangsspannung
 $U_{OUT}$. Diese ist in `01_fig_03`{.interpreted-text role="numref"}
 (unten) graphisch dargestellt.
 
-### Messtechnische Untersuchung der Grenzbereiche
+## Messtechnische Untersuchung der Grenzbereiche
 
 Wie oben beschrieben unterliegt ein Operationsverstärker physikalischen
 Grenzen. Diese Grenzen sollen hier untersucht werden.
 
-### Bandbreite
+## Bandbreite
 
 Zunächst soll die Bandbreite und ihre Abhängigkeit von der Verstärkung
 untersucht werden. Die kann z.B. mit Hilfe von Red Pitaya und der sich
@@ -172,7 +175,7 @@ Bandbreite des Opamps. Diese Erkenntniss ist wichtig für die Auslegung
 hochfrequenter Schaltung mit einer Verstärkung. Auf eine mathematische
 Herleitung der Bandbreite wird an dieser Stelle verzichtet.
 
-### Maximale Verstärkung
+## Maximale Verstärkung
 
 Nun soll der Verstärkungsfakor $A_0$ auf seinen maximalen und minimalen
 Wert untersucht werden. Abgeleitet aus `01_eq_05`{.interpreted-text
@@ -207,7 +210,7 @@ des Operationsverstärkers deutlich. Die Maximalwerte der
 Ausgangsspannung sind gleich der Versorgungsspannung[^1]. Die
 Flankensteilheit ist abhängig vom Verstärkungsfaktor.
 
-### Fazit und Beispiele
+## Fazit und Beispiele
 
 Mit Hilfe der durchgeführten Messungen konnten die grundlegende
 Funktionen und die realen Grenzen eines Operationsverstärkers aufgezeigt
@@ -218,7 +221,7 @@ fehlerhaft war. Trotzdessen ist die Möglichkeit der Messautomatisierung
 von großem Vorteil. Daher bietet sich der Eisatz von SCPI-fähigen
 Geräten bei diesen Messungen an.
 
-### Beispiele
+## Beispiele
 
 Als erstes wird ein negativ rückgekoppelter Verstärker betrachtet.
 Prinzipiell ist das eine Kaskadierung (Hintereinanderschaltung) der drei
