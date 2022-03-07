@@ -1,9 +1,7 @@
----
-title: "Experiment 2: Regenerative Rückgekoppelte Systeme und Design
-  Astabiler und monostabiler Kippstuffen"
----
+# Experiment 2: Regenerative Rückgekoppelte Systeme und Design astabiler und monostabiler Kippstufen
 
-# Kurze Theorie und Motivation
+
+## Kurze Theorie und Motivation
 
 Als Grundlage regenerativer rückgekoppelter Systeme gilt ein sogenanntes
 Schmitt-Trigger System. Bei diesen Systemen fallen die Ein- und
@@ -13,7 +11,7 @@ Zustände annehmen. Durch diese Eigenschaften kann der Schmitt-Trigger zu
 einer Mixed-Mode Schaltung zugeordnet werden. Der Einsatzgebiet dieser
 Schaltung ist vielfältig (MOSFET-Treiber als Switch-Controller etc.).
 
-# Messungen Schmitt-Trigger
+## Messungen Schmitt-Trigger
 
 Zunächst soll ein nicht-invertierender `02_fig_01`{.interpreted-text
 role="numref"} und ein invertierender Schmitt-Trigger
@@ -53,7 +51,7 @@ $\beta$](img/Experiment_02/non_inverting_schmitt_simulation_messung.png){#02_fig
 Aus den Darstellung ist ersichlich, dass die Annahme der Abhängigkeit
 der Schwellspannung von dem $\beta$ richtig ist.
 
-# Messungen astabile und monostabile Kippstufen
+## Messungen astabile und monostabile Kippstufen
 
 Astabile Kippstuffe `02_fig_04`{.interpreted-text role="numref"}
 arbeitet nach dem Prinzipp des Schmitt-Triggers. Sie wechselt periodisch

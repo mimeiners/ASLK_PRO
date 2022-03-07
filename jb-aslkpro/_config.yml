@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: ASLK Pro Experimente
-author: T. Ziemann, M. Meiners
+author: M. Meiners
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -15,9 +15,20 @@ latex:
   latex_documents:
     targetname: book.tex
 
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+
+# MathJax Version 3
+#sphinx:
+#  config:
+#    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Information about where the book exists on the web
 repository:

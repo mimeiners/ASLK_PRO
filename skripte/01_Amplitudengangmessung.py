@@ -22,17 +22,17 @@ Stop_f = 7000000         # Stop Frequenz der Messung
 Messpunkte = 35          # Anzahl der gewünschten Messpunkte
 IP = "192.168.111.184"   # IP-Adresse vom Red-Pitaya
 
-Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte) #Erzeugung Messpunkte im Frequenzbereich
-Wave_form = 'sine'                                    #Wellenform des Eingangssignals
-Ampl = 1                                              #Amplitude des Eingangssignals
-Downsampling = "1"                                    #Downsamplingrate (decimation factor)
-Triggerverzoegerung = "0"                             #Verzögerung des Triggers 
-Index = 0                                             #Processvariable
-Data1 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse
-Data2 = np.zeros(len(Frequenzen))                     #Anlegen eines Vektors für die Messergebnisse
+Frequenzen = np.logspace(np.log10(Start_f), np.log10(Stop_f), Messpunkte)  # Erzeugung Messpunkte im Frequenzbereich
+Wave_form = 'sine'                                    # Wellenform des Eingangssignals
+Ampl = 1                                              # Amplitude des Eingangssignals
+Downsampling = "1"                                    # Downsamplingrate (decimation factor)
+Triggerverzoegerung = "0"                             # Verzögerung des Triggers 
+Index = 0                                             # Processvariable
+Data1 = np.zeros(len(Frequenzen))                     # Anlegen eines Vektors für die Messergebnisse
+Data2 = np.zeros(len(Frequenzen))                     # Anlegen eines Vektors für die Messergebnisse
 
-Name = input("Name der Input Textfile: ") + ".txt"                           #Eingabe des Dateiennamens
-# Dateiname = "/Users/selimcimen/Documents/Python/Analoge_Schaltungen/" +Name  #Speicherpfad
+Name = input("Name der Input Textfile: ") + ".txt"    # Eingabe des Dateiennamens
+# Dateiname = "/Users/selimcimen/Documents/Python/Analoge_Schaltungen/" +Name  # Speicherpfad
 
 rp_s = scpi.scpi(IP)                                  #Verbindung herstellen zum Red Pitaya
 time.sleep(0.3)

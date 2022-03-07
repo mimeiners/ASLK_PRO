@@ -1,6 +1,5 @@
----
-title: "Experiment 3: Integrator und Differenzierer"
----
+# Experiment 3: Integrator und Differenzierer
+
 
 In diesem Experiement sollen ein Intergrator
 `03_fig_01`{.interpreted-text role="numref"} und ein Differenzierer
@@ -37,7 +36,7 @@ Differenzierer](img/Experiment_03/amplitudengang_messung_simulation.png){#03_fig
 Aufgrund der Eingangsspannungsbegrenzung des RedPitayas entspricht die
 Apmlitudengangmessung nicht exankt der Simulation.
 
-# Intergrator
+## Intergrator
 
 Die Funktion des Intergrators kann bereits aus dem Namen abgeleitet
 werden. Matematisch gesehen, integriert die Schaltung das Eingangssignal
@@ -64,7 +63,7 @@ Unendliche wird dementsprechend bis ins unendliche Integriert
 Intergrators](img/Experiment_03/step_integrator.png){#03_fig_05
 .align-center}
 
-# Differenzierer
+## Differenzierer
 
 Wie bei dem Intergrator kann bei dem Differenzierer die Funktionsweise
 aus dem Namen abgeleitet werden. Die Eingangsspannung wird differenziert
