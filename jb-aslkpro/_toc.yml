@@ -5,6 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: Experiment_01
+  sections:
+    - file: 01_DCsweep
+    - file: 03_Amplitudengangmessung
 - file: Experiment_02
 - file: Experiment_03
 - file: Experiment_04

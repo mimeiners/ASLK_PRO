@@ -29,7 +29,7 @@ Differenz der beiden Eingänge $U_+$ und $U_-$ ist. Dabei ist $U_+$ der nicht-in
 Operationsverstärkers. Damit ergibt sich allgemein für den unbeschalteten Operationsverstärker:
 
 $$
-	U_{OUT} = A_0 \cdot (U_+ - U_-)
+    U_{OUT} = A_0 \cdot (U_+ - U_-)
 $$
 
 Aufgrund der erwähnten *Rückkopplung* kann Unity Gain als eine Regelstrecke betrachtet werden. Systemtheoretisch ist nun das Verhältnis
@@ -39,7 +39,7 @@ $$
 	\frac{U_{OUT}}{U_{IN}} = \frac{A_0}{1+A_0}
 $$
 
-Aufrund der direkten Rückkopplung (ohne andere Bauteile, Kurzschluss) kann idealisiert angenommen werden, dass $A_0$ gegen Unendlich strebt.
+Aufrund der direkten Rückkopplung (ohne andere Bauteile, Kurzschluss) kann idealisiert angenommen werden, dass $A_0$ gegen Unendlich strebt. 
 Durch diese Annahme folgt nach dem Kürzen der `01_eq_02`{.interpreted-text role="eq"} das Übersetzungverhältnis für eine Unity Gain-Schaltung:
 
 $$
@@ -55,8 +55,12 @@ Ausgangsspannung gleich der Differenz der Eingangsspannungen $U_+$ und $U_-$ ist
 `01_fig_03`{.interpreted-text role="numref"} (oben) dargestellt. Daraus ist ersichtlich, dass sich die beiden Signale überlagern, was einer
 Übertragung von 1 entspricht.
 
-![Simulationen und Messungen der Ein- und Ausgangsspannungen der 3 grundlegenden Beschaltungsarten eines Oparationsverstärkers \[Unity Gain
-(oben), nicht-invertierender Verstärker (mitte), invertierender Verstärker (unten)\]](img/Experiment_01/Amplifier_output.png){#01_fig_03.align-center}
+
+```{figure} img/Experiment_01/Amplifier_output.png
+:name: 01_fig_03
+
+Simulationen und Messungen der Ein- und Ausgangsspannungen der 3 grundlegenden Beschaltungsarten eines Oparationsverstärkers \[Unity Gain (oben), nicht-invertierender Verstärker (mitte), invertierender Verstärker (unten)\]
+```
 
 ## Nicht-invertierende und invertierende Operationsverstärkerschaltungen
 
@@ -117,11 +121,7 @@ Grenzen. Diese Grenzen sollen hier untersucht werden.
 Zunächst soll die Bandbreite und ihre Abhängigkeit von der Verstärkung untersucht werden. Die kann z.B. mit Hilfe von Red Pitaya und der sich
 darauf befindenden App \"Bode-Analyser\" durchgeführt werden. Aufgrund von unzureicheder Datenexportmöglichkeiten, wurde an dieser Stelle ein
 Programm zur Bode-Plot-Darstellung entwickelt. Gundsätzlich wird das Programm zur Messautomatisierung des Red Pitayas eingesetzt und ist ohne
-Weiteres nur mit diesem kompatibel.
-
-```{code-cell} python
-:load: ../skripte/01_Amplitudengangmessung.py
-```
+Weiteres nur mit diesem kompatibel (ref 01_Amplitudengangmessung.ipynb).
 
 Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung
 ermittelt werden. Um eine fundierte Aussage über die Messgenauigkeit
@@ -170,11 +170,7 @@ $$
 Da theoretisch die Eigangsspannung und der Verstärkungsfaktor variable
 sind, wird hier die Ausgangsspannung des Opamps auf ihre Grenzen
 überprüft. Dazu wird ein DC-Sweep durchgeführt. Zu diesem Zweck wurde
-ein weiteres Programm erstellt.
-
-```{code-cell} python
-:load: ../skripte/03_DCsweep.py
-```
+ein weiteres Programm erstellt (ref 03_DCsweep.ipynb).
 
 Es soll mit Hilfe des nicht-invertierenden Verstärkers ein Gleichspannungsdurchlauf durchgeführt werden. Für die Ausgangsspannung
 ergibt sich ein Spannungsverlauf nach `01_fig_07`{.interpreted-textrole="numref"}.
