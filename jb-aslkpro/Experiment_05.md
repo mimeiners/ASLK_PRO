@@ -1,8 +1,7 @@
----
-title: "Experiment 5: Self-Tuned Filter"
----
+# Experiment 5: Self-Tuned Filter
 
-# Abstract
+
+## Abstract
 
 Wenn es um die Signalverarbeitung geht sind Filter unumgänglich, egal ob
 es die analoge oder die digitale Signalverarbeitung ist. Die Vorgänger
@@ -21,7 +20,7 @@ Filter ermöglichen eine automatische Abstimmung der Bandbreite, des
 Qualitätsfaktors und/oder der Mittenfrequenz
 (`Sasikala2019`{.interpreted-text role="cite"}).
 
-# Einleitung
+## Einleitung
 
 Das vorliegende Experiment bietet einen Überblick über den analogen
 \"self-tuning\" Filter aus theoretischer und praktischer Sicht. Das
@@ -41,9 +40,9 @@ Hauptblöcken, einmal aus dem spannungsgesteuerten Filter und dem
 analogen Phasendetektor. Die Funktionsweise dieser Blöcke wird in den
 kommenden Abschnitten beschrieben.
 
-# Theoretische Vorbetrachtung
+## Theoretische Vorbetrachtung
 
-## Universeller Aktivfilter (Experiment 4)
+### Universeller Aktivfilter (Experiment 4)
 
 Der \"Selftuned Filter\" baut auf dem Ergebnis aus Experiment 4 auf.
 Daher werden die Grundlagen noch einmal wiederholt. Der universelle
@@ -71,10 +70,10 @@ zeitabhängig.
 
 ![Übertragungsfunktionen des universellen Aktivfilters
 (`RaoJune2012`{.interpreted-text
-role="cite"})](img/Experiment_05/Übertragungsfunktionen_Exp4.PNG){#Übertragungsfunktionen_Exp4
+role="cite"})](img/Experiment_05/Uebertragungsfunktionen_Exp4.png){#Übertragungsfunktionen_Exp4
 .align-center}
 
-## Integrator
+### Integrator
 
 Wie in `Integrator`{.interpreted-text role="numref"} zu erkennen,
 besteht ein Integrator aus einem Eingang $V_{in}$, einem Widerstand,
@@ -99,7 +98,7 @@ wichtig.
 
 $$\omega_0 = \frac{1}{RC}$$
 
-## Multiplizierer
+### Multiplizierer
 
 In `Aufbau_Multiplizierer`{.interpreted-text role="numref"} ist der
 Aufbau eines Multiplizierers, sowie seine Transferfunktion, zu sehen. SF
@@ -137,7 +136,7 @@ $$\begin{aligned}
 V_Z = \frac{V_X V_Y}{U_{SF}} \\
 \end{aligned}$$
 
-### Spannungsgesteuerter Tiefpass (Integrator)
+#### Spannungsgesteuerter Tiefpass (Integrator)
 
 Baut man einen Multiplizierer, wie in `Spannung_TP`{.interpreted-text
 role="numref"} gezeigt, in einen Integrator vor den Kondensator ein,
@@ -167,7 +166,7 @@ Daraus\ folgt: \\
 \omega_0 &= \frac{ U_{SF}}{RC V_C} \\
 \end{aligned}$$
 
-### Phasendetektor mit einem Multiplizierer
+#### Phasendetektor mit einem Multiplizierer
 
 Um diesen Phasendetektor zu verstehen, betrachtet man zunächst erstmal
 einen vereinfachten Aufbau des Phasendetektors. Wie in
@@ -226,7 +225,7 @@ Phase unter 90° ist und steigt wenn sie über 90° ist. Bei genau 90°
 Phasendifferenz wird sich die Spannung am Ausgang des Integrators nicht
 mehr ändern.
 
-### Phase des Universellen Aktivfilters
+#### Phase des Universellen Aktivfilters
 
 In `Bandpass`{.interpreted-text role="numref"} ist das Bode-Diagramm des
 Bandpass-Ausgangs eines Universellen Aktivfilters zu sehen. Zu erkennen
@@ -246,7 +245,7 @@ einstellen.
 ![Hochpass des universellen Aktivfilters `Matlab`{.interpreted-text
 role="cite"}](img/Experiment_05/Hochpass.png){#Hochpass .align-center}
 
-## Aufbau des Selftuned Filters
+### Aufbau des Selftuned Filters
 
 In `Aufbau_Selftuned_Filter`{.interpreted-text role="numref"} ist der
 Aufbau des Selftuned Filters zu sehen. Im Vergleich zum Aufbau des
@@ -267,7 +266,7 @@ universellen Aktivfilter voreinstellen.
 role="cite"}](img/Experiment_05/Aufbau_Selftuned_Filter.PNG){#Aufbau_Selftuned_Filter
 .align-center}
 
-## Regelkreislauf des Selftuned Filters
+#### Regelkreislauf des Selftuned Filters
 
 Um den Regelkreislauf des \"Selftuned Filters\" zu erklären, wurde in
 `Regelkreislauf_Selftuned_Filter`{.interpreted-text role="numref"} die
@@ -298,7 +297,7 @@ Abbildung.
 
 $$V_{C0} = 0,82 \cdot U_{Amp} \frac{R_{10}}{R_{10}+R_{11}} +V_3 \frac{R_{11}}{R_{10}+R_{11}}$$
 
-# Simulation
+## Simulation
 
 Für die Simulation der Schaltung standen zwei Simulationssoftware,
 Tina-TI von Texas Instruments und LTspice von Analog Devices, zur
@@ -342,9 +341,7 @@ Phasendetektorschaltung, die mit Hilfe eines Integrators realisiert
 wird. In `SchaltungausExperiment05`{.interpreted-text role="numref"}
 wird der Schaltplan abgebildet.
 
-![Schaltung aus Experiment 05 `SelbstLTSpice`{.interpreted-text
-role="cite"}](img/Experiment_05/Schaltung_aus_Experiment_05.png){#SchaltungausExperiment05
-.align-center}
+![Schaltung aus Experiment 05 `SelbstLTSpice`{.interpreted-textrole="cite"}](img/Experiment_05/Schaltung_aus_Experiment_05.png){#SchaltungausExperiment05.align-center}
 
 Gespeist wird ein 1 kHz Rechtecksignal mit der Amplitude 100 mV. Für die
 bessere Übersicht wurden einige Komponente wie Widerstände oder auch
@@ -354,15 +351,13 @@ kann. Über die Spannungsquelle V3 wird die Referenzspannung eingestellt.
 Die maximale Spannung liegt bei 10 V, was auf die Referenzspannung der
 Multiplizierer zurück zu führen ist (beträgt auch 10 V).
 
-# Messung
+## Messung
 
 Für den Aufbau der Schaltung wurde das ASLK PRO Board verwendet. In der
 `MessaufbauaufdemASLKPRO`{.interpreted-text role="numref"} ist der
 Aufbau abgebildet.
 
-![Messaufbau auf dem ASLK
-PRO](img/Experiment_05/Messaufbau_auf_dem_ASLK_PRO.png){#MessaufbauaufdemASLKPRO
-.align-center}
+![Messaufbau auf dem ASLK PRO](img/Experiment_05/Messaufbau_auf_dem_ASLK_PRO.png){#MessaufbauaufdemASLKPRO.align-center}
 
 Wie in der `MessaufbauaufdemASLKPRO`{.interpreted-text role="numref"} zu
 sehen ist, wurden fast alle Bauteile, die auf dem ASLK PRO Board verbaut
@@ -374,9 +369,7 @@ konnten Messungen durchgeführt werden. In den nachfolgenden Abbildungen
 sind die gemessenen und die theoretisch ermittelten Signalverläufe
 dargestellt.
 
-![Messung im
-Labor](img/Experiment_05/Messung_im_Labor.png){#MessungimLabor
-.align-center}
+![Messung im Labor](img/Experiment_05/Messung_im_Labor.png){#MessungimLabor.align-center}
 
 Grüne Linie -\> Eingangssignal
 
@@ -384,9 +377,7 @@ Blaue Linie -\> Bandpasssignal
 
 Orangene Linie -\> Bandsperre
 
-![Messergebnis aus der
-Simulation](img/Experiment_05/%20Messergebnis_aus_der_Simulation.png){#MessergebnisausderSimulation
-.align-center}
+![Messergebnis aus der Simulation](img/Experiment_05/Messergebnis_aus_der_Simulation.png){#MessergebnisausderSimulation.align-center}
 
 Auf den Bildern ist deutlich zu erkennen, dass die Simulation mit den
 gemessenen Werten übereinstimmt. Bei weiteren Messungen zur Verifikation
@@ -396,7 +387,7 @@ durchgeführt werden. Für die weitere Verifizierung der Schaltung wurde
 vorgeschlagen die Platine neu zu ätzen, um die Problematik mit der
 Verdrahtung auszuschließen.
 
-# Fazit
+## Fazit
 
 Das Experiment baut auf dem Experiment 4 auf. Es wurden verschiedene
 Bestandteile untersucht, dazu gehört der Integrator, der Multiplizierer,
@@ -409,7 +400,7 @@ Trotzdem kam es zu Abweichungen der Messergebnisse von den simulierten
 Daten. Es ist darauf zu schließen, dass der Schaltungsaufbau mit einem
 riesigen Kabelmanagement auf dem ASLK PRO Board daher geht.
 
-# Ausblick
+## Ausblick
 
 Die Schaltung aus Experiment 05 könnte auf eine Platine gelötet werden,
 um mögliche Schaltungsfehler zu minimieren. Weiterhin könnte zu dem
@@ -419,7 +410,7 @@ an Z zurückgeführt werden?" Sowie zur Beschreibung der Rückkopplung am
 Ende der Schaltung könnte eine Formel erstellt werden, die das Verhalten
 beschreibt.
 
-# Literaturverzeichnis
+## Literaturverzeichnis
 
 ::: {.bibliography style="plain"}
 Experiment_00.bib

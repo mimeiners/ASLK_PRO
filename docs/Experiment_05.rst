@@ -68,7 +68,7 @@ Es lässt sich zeigen, dass die Übertragungsfunktionen der einzelnen Teilfilter
 :numref:`Übertragungsfunktionen_Exp4` zu sehen beschrieben werden können. Diese werden sich beim Umbau in den
 "Self-tuned Filter" nicht ändern. :math:`\omega_0` wird beim Umbau zeitabhängig. 
 
-.. figure:: img/Experiment_05/Übertragungsfunktionen_Exp4.PNG
+.. figure:: img/Experiment_05/Uebertragungsfunktionen_Exp4.png
    :name: Übertragungsfunktionen_Exp4
    :align: center
    :scale: 40%
