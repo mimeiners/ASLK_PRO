@@ -1,4 +1,4 @@
-# Experiment 3: Integrator und Differenzierer
+# Integrator und Differenzierer
 
 
 In diesem Experiement sollen ein Intergrator

@@ -1,4 +1,4 @@
-# Experiment 2: Regenerative Rückgekoppelte Systeme und Design astabiler und monostabiler Kippstufen
+# Regenerative rückgekoppelte Systeme: Design astabiler und monostabiler Kippstufen
 
 
 ## Kurze Theorie und Motivation

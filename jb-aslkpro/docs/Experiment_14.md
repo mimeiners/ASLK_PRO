@@ -1,8 +1,6 @@
----
-title: "Experiment 14: Digital programmierbarer Signalgenerator"
----
+# Digital programmierbarer Signalgenerator
 
-# Kurze Theorie und Motivation
+## Kurze Theorie und Motivation
 
 Im Experiment 14 soll mit Hilfe des
 [DAC7821](https://www.ti.com/lit/ds/sbas365b/sbas365b.pdf?ts=1591627751334)
@@ -10,7 +8,7 @@ ein digital kontrollierbarer Oszillator aufgebaut werden. Die folgende
 Abbildung zeigt den Schaltplan aus der Anleitung:
 
 ![Schaltkreis aus der
-Anleitung](img/Experiment_14/Schaltung_Manual.PNG){#14_fig_Manual_1
+Anleitung](img/Experiment_14/Schaltung_Manual.PNG){##14_fig_Manual_1
 .align-center}
 
 Hinter dem OP-AMP, der als Integrator dient, kann eine Dreiecksspannung
@@ -26,7 +24,7 @@ Bei dem DAC7821 handelt es sich um einen single Channel, Strom-Output,
 Netzwerk betrachtet werden, wie die folgende Abbildung zeigt.
 
 ![Equivalentes R-2R Netzwerk
-[\[1\]](https://www.ti.com/lit/ds/sbas365b/sbas365b.pdf?ts=1591627751334)](img/Experiment_14/R2R_Netzwerk.PNG){#14_fig_R2R
+[\[1\]](https://www.ti.com/lit/ds/sbas365b/sbas365b.pdf?ts=1591627751334)](img/Experiment_14/R2R_Netzwerk.PNG){##14_fig_R2R
 .align-center}
 
 Das Netzwerk besteht aus einer Parallelschaltung von Spannungsteilern.
@@ -50,7 +48,7 @@ der maximalen Bitfolge entspricht. Da Vref eine resultierende
 Rechteckspannung ist, folgt für die Stromausgänge auch eine
 Rechtecksform.
 
-# Spezifikation
+## Spezifikation
 
 Der digital kontrollierbare Oszillator soll so designt werden, dass die
 Rechteckspannung und die Dreiecksspannung eine maximale Frequenz von 400
@@ -99,7 +97,7 @@ Zusätzlich wurde das fehlende Modell des OP-AMP TL082 integriert. Der
 Simulationsaufbau in LTSpice sieht wie folgt aus:
 
 ![Schaltungsaufbau in Spice (maximale
-Bitfolge)](img/Experiment_14/Schaltung_SPICE.png){#14_fig_Spice_1
+Bitfolge)](img/Experiment_14/Schaltung_SPICE.png){##14_fig_Spice_1
 .align-center}
 
 B11 steht hierbei für das MSB, B0 steht für das LSB. Für die vier
@@ -111,19 +109,19 @@ Für die Simulation wurden die Verläufe der Rechtecks- und der
 Dreiecksspannung dargestellt:
 
 ![Simulationsergebnis der Bitfolge
-100000000000](img/Experiment_14/Spice_100000000000.png){#14_fig_Spice_Sim_1
+100000000000](img/Experiment_14/Spice_100000000000.png){##14_fig_Spice_Sim_1
 .align-center}
 
 ![Simulationsergebnis der Bitfolge
-010000000000](img/Experiment_14/Spice_010000000000.png){#14_fig_Spice_Sim_2
+010000000000](img/Experiment_14/Spice_010000000000.png){##14_fig_Spice_Sim_2
 .align-center}
 
 ![Simulationsergebnis der Bitfolge
-001000000000](img/Experiment_14/Spice_001000000000.png){#14_fig_Spice_Sim_3
+001000000000](img/Experiment_14/Spice_001000000000.png){##14_fig_Spice_Sim_3
 .align-center}
 
 ![Simulationsergebnis der Bitfolge
-000100000000](img/Experiment_14/Spice_000100000000.png){#14_fig_Spice_Sim_4
+000100000000](img/Experiment_14/Spice_000100000000.png){##14_fig_Spice_Sim_4
 .align-center}
 
 *Simulation mit TINA*
@@ -133,7 +131,7 @@ Anleitung erwähnte Modell für den DAC MV95308 existiert. Das
 nachfolgende Bild zeigt die Schaltung:
 
 ![Schaltungsaufbau in
-TINA](img/Experiment_14/Schaltung_TINA.PNG){#14_fig_TINA_Schlt
+TINA](img/Experiment_14/Schaltung_TINA.PNG){##14_fig_TINA_Schlt
 .align-center}
 
 Vergleicht man den Schaltungsaufbau mit dem im Spice, dann erkennt man,
@@ -152,22 +150,22 @@ den nächsten vier Abbildungen dargestellt. Zu beachten ist es, dass die
 Zeit-Skalen nicht in allen Abbildungen identisch sind.
 
 ![Simulationsergebnis der Bitfolge
-100000000000](img/Experiment_14/TINA_100000000000.PNG){#14_fig_TINA_Sim_1
+100000000000](img/Experiment_14/TINA_100000000000.PNG){##14_fig_TINA_Sim_1
 .align-center}
 
 ![Simulationsergebnis der Bitfolge
-010000000000](img/Experiment_14/TINA_010000000000.PNG){#14_fig_TINA_Sim_2
+010000000000](img/Experiment_14/TINA_010000000000.PNG){##14_fig_TINA_Sim_2
 .align-center}
 
 ![Simulationsergebnis der Bitfolge
-001000000000](img/Experiment_14/TINA_001000000000.PNG){#14_fig_TINA_Sim_3
+001000000000](img/Experiment_14/TINA_001000000000.PNG){##14_fig_TINA_Sim_3
 .align-center}
 
 ![Simulationsergebnis der Bitfolge
-000100000000](img/Experiment_14/TINA_000100000000.PNG){#14_fig_TINA_Sim_4
+000100000000](img/Experiment_14/TINA_000100000000.PNG){##14_fig_TINA_Sim_4
 .align-center}
 
-# Messungen
+## Messungen
 
 Für die vier Messungen sollten die Frequenzen und Periodendauern
 ermittelt werden. Die nachstehende Tabelle stellt diese Werte mit den
@@ -245,19 +243,19 @@ LTSpice-Ergebnissen verglichen. Die aufgenommenen Verläufe werden
 nachfolgend zum visuellen Vergleich dargestellt:
 
 ![Vergleich Simulation und Messung Bitfolge
-100000000000](img/Experiment_14/Auswertung_1000.png){#14_fig_Spice_Auswrt_1
+100000000000](img/Experiment_14/Auswertung_1000.png){##14_fig_Spice_Auswrt_1
 .align-center}
 
 ![Vergleich Simulation und Messung Bitfolge
-010000000000](img/Experiment_14/Auswertung_0100.png){#14_fig_Spice_Auswrt_2
+010000000000](img/Experiment_14/Auswertung_0100.png){##14_fig_Spice_Auswrt_2
 .align-center}
 
 ![Vergleich Simulation und Messung Bitfolge
-001000000000](img/Experiment_14/Auswertung_0010.png){#14_fig_Spice_Auswrt_3
+001000000000](img/Experiment_14/Auswertung_0010.png){##14_fig_Spice_Auswrt_3
 .align-center}
 
 ![Vergleich Simulation und Messung Bitfolge
-000100000000](img/Experiment_14/Auswertung_0001.png){#14_fig_Spice_Auswrt_4
+000100000000](img/Experiment_14/Auswertung_0001.png){##14_fig_Spice_Auswrt_4
 .align-center}
 
 Man kann erkennen, dass die Frequenzen der Simulation und der Messung
@@ -273,5 +271,5 @@ die resultierende Frequenz aufgetragen werden. Der folgende Graph zeigt
 diesem Zusammenhang für beide Simulationen und die tatsächliche Messung.
 
 ![Bitfolge gegen
-Frequenz](img/Experiment_14/Matlab_Graph.png){#14_fig_Matlab_Graph
+Frequenz](img/Experiment_14/Matlab_Graph.png){##14_fig_Matlab_Graph
 .align-center}

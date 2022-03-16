@@ -1,8 +1,6 @@
----
-title: "Experiment 6: Voltage Controlled Oscillator (VCO)"
----
+# Voltage Controlled Oscillator (VCO)
 
-# Theorie und Motivation
+## Theorie und Motivation
 
 Voltage controlled oscillator sind Schaltungen, die die Frequenz der
 Ausgangsspannung in Abhängigkeit der Eingangsspannung ändern. Bekannt
@@ -33,7 +31,7 @@ Veränderung dieser Anpassschaltung wird mit der Frequenz der
 Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen
 anderen Grafen aufgetragen.
 
-# Schaltungsaufbau Schmitt-Trigger
+## Schaltungsaufbau Schmitt-Trigger
 
 Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:
 
@@ -60,17 +58,17 @@ Schmitt-Triggers.
 `$$ \Delta U_{e}=\frac{R_1}{R_2}(U_{a, max}-U_{a, min}) $$`{=latex html}
 
 ![Schmitt Trigger
-Schaltplan](img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png){#exp06_fig_01
+Schaltplan](img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png){##exp06_fig_01
 .align-center}
 
 ![Schmitt Trigger Hysteresekurve,
-Tietze/Schenk](img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG){#exp06_fig_02
+Tietze/Schenk](img/Experiment_06/Schmitt_Trigger_Titze_Kennlinie.PNG){##exp06_fig_02
 .align-center}
 
-![](img/Experiment_06/Schmitt_Trigger_Titze_Sinussignal.PNG){#exp06_fig_03
+![](img/Experiment_06/Schmitt_Trigger_Titze_Sinussignal.PNG){##exp06_fig_03
 .align-center}
 
-# Schaltungsaufbau VCO
+## Schaltungsaufbau VCO
 
 Der VCO besteht aus 3 wichtige Komponenten:
 
@@ -92,7 +90,7 @@ angeschlossen, Z2 erlaubt einen Offset am Ausgang.
 
 `$$ V_{out} = A \cdot \frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2) $$`{=latex html}
 
-![](img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png){#exp06_fig_04
+![](img/Experiment_06/Voltage_Controlled_Oscillator_Schaltplan.png){##exp06_fig_04
 .align-center}
 
 Für den Integrierer mit vorgeschalteter Anpassschaltung (gelber Kasten),
@@ -120,7 +118,7 @@ Mit einer Wechselspannung am Eingang ergibt sich folgende Gleichung:
 
 Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.
 
-# Schmitt-Trigger Messung und Auswertung
+## Schmitt-Trigger Messung und Auswertung
 
 Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit
 einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das
@@ -132,7 +130,7 @@ ist bei der Simulation ein gröberer Fehler unterlaufen, der das
 Ausgangssignal verlustfrei statt verlustbehaftet ausgibt.
 
 ![Schmitt Trigger Messung+Simulation mit
-R2=9,5k](img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png){#exp06_fig_05
+R2=9,5k](img/Experiment_06/Schmitt_Trigger_9_5k_Diagramm.png){##exp06_fig_05
 .align-center}
 
 Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später
@@ -142,10 +140,10 @@ Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens
 sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer
 Millisekunde auf 0 V ab.
 
-![](img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png){#exp06_fig_06
+![](img/Experiment_06/Schmitt_Trigger_2_46k_diagramm.png){##exp06_fig_06
 .align-center}
 
-# VCO Messung und Auswertung
+## VCO Messung und Auswertung
 
 Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen
 gespeist, die Ausgangsspannungen werden gemessen und die
@@ -175,7 +173,7 @@ und das Verhältnis von negativer zu positiver Spannung ist unregelmäßig.
 +------------------------------+
 
 ![Spannungsgesteuerter Osczillator Diagramm
-1](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png){#exp06_fig_07
+1](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_1.png){##exp06_fig_07
 .align-center}
 
 Bei kleinerer Eingangsspannung (siehe Diagramm 2) bleibt die Frequenz
@@ -194,7 +192,7 @@ der gemessenen Ausgangsspannung nahezu gleich.
 +------------------------------+
 
 ![Spannungsgesteuerter Osczillator Diagramm
-2](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_2.png){#exp06_fig_08
+2](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_2.png){##exp06_fig_08
 .align-center}
 
 Die Periode der Simulation (Diagramm 3) mit Eingangsspannung von 1,8 V
@@ -214,7 +212,7 @@ Erste Änderungen der gemessenen Frequenz sind sichtbar.
 +------------------------------+
 
 ![Spannungsgesteuerter Osczillator Diagramm
-3](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_3.png){#exp06_fig_09
+3](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_3.png){##exp06_fig_09
 .align-center}
 
 In Diagramm 4 wird bei der Anpassschaltung Widerstand R1 größer obwohl
@@ -236,7 +234,7 @@ größere Frequenzänderungen bei der Messung.
 +------------------------------+
 
 ![Spannungsgesteuerter Osczillator Diagramm
-4](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_4.png){#exp06_fig_10
+4](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_4.png){##exp06_fig_10
 .align-center}
 
 Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß,
@@ -258,7 +256,7 @@ Die kleine Eingangsspannung sorgt für ein großes Rauschen am Ausgang.
 +------------------------------+
 
 ![Spannungsgesteuerter Osczillator Diagramm
-5](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_5.png){#exp06_fig_11
+5](img/Experiment_06/Voltage_Controlled_Oscillator_Nr_5.png){##exp06_fig_11
 .align-center}
 
 Im Folgenden sind zwei Grafen, die die Entwicklung der Widerstandswerte
@@ -275,7 +273,7 @@ werden muss um ein gleichmäßiges Rechtecksignal am Ausgang zu erzielen.
 Dementsprechend wird der Rückwärtswiderstand R2 immer kleiner.
 
 ![Widerstandsanpassung -
-Spannung](img/Experiment_06/Widerstandsanpassung_Spannung.png){#exp06_fig_12
+Spannung](img/Experiment_06/Widerstandsanpassung_Spannung.png){##exp06_fig_12
 .align-center}
 
 Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht
@@ -289,10 +287,10 @@ ebenfalls Messfehler, da die Werte dem Kurvenverlauf zu urteilen nicht
 realistisch sind.
 
 ![Widerstandsanpassung -
-Frequenz](img/Experiment_06/Widerstandsanpassung_Frequenz.png){#exp06_fig_13
+Frequenz](img/Experiment_06/Widerstandsanpassung_Frequenz.png){##exp06_fig_13
 .align-center}
 
-# Fazit
+## Fazit
 
 Zusammenfassend eignet sich ein Schmitt-Trigger besonders gut als
 Analog-Digital-Wandler und ermöglicht dabei eine Hysteresekurve. Der VCO

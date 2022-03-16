@@ -1,8 +1,6 @@
----
-title: "Experiment 7: Phase Locked Loop (PLL)"
----
+# Phase Locked Loop (PLL)
 
-# Grundlagen
+## Grundlagen
 
 > PLL als Black-Box mit Ein- und Ausgang dargestellt
 
@@ -31,7 +29,7 @@ wird, dass sich am Ausgang eine **konstante Phasenbeziehung** zum
 Eingangssignal einstellt.
 :::
 
-# Aufbau
+## Aufbau
 
 In folgendem Abschnitt soll geklärt werden, aus welchen Blöcken bzw.
 Schaltungselementen eine PLL besteht. In
@@ -46,7 +44,7 @@ diesem Dokument wird der Aufbau in analoger Schaltungstechnik
 beschrieben. Die Grundlegenden Konzepte sind jedoch auch auf andere
 Implementierungen übertragbar.
 
-## Phasenkomparator
+### Phasenkomparator
 
 Der Phasenkomparator vergleicht das Eingangssignal $u_{ref}$ der PLL mit
 dem generierten Ausgangssignal $u_{fb}$ und gibt eine zur
@@ -104,7 +102,7 @@ dargestellt. Über die Offsetspannung $U_{bias}$ kann die Free-running
 Frequenz der PLL eingestellt werden. Zusätzlich wurde der Ausgang des
 Multiplizierers mit einem Skalierungsfaktor beaufschlagt.
 
-## Schleifenfilter
+### Schleifenfilter
 
 Dem Phasenkomparator nachgeschaltet ist der Schleifenfilter. Dieser
 dient hauptsächlich zur Glättung des vom Phasenkomparator generierten
@@ -125,7 +123,7 @@ Eigenschaften einer PLL aufgelistet:
   Jitter durch VCO:                Hoch      Gering
   Einregelzeit:                    Langsam   Schnell
 
-## VCO
+### VCO
 
 Der VCO (Voltage Controlled Oscillator) generiert das Ausgangssignal der
 PLL. Die Frequenz des Ausgangssignals ist abhängig von der
@@ -139,7 +137,7 @@ Da in `Experiment_06`{.interpreted-text role="doc"} bereits näher auf
 die Funktionsweise und die Hintergründe zu dem hier verwendeten VCO
 erläutert wurden, soll hier nicht näher darauf eingegangen werden.
 
-# Anwendung
+## Anwendung
 
 PLLs werden in nahezu allen Bereichen der Elektrotechnik verwendet.
 Nachfolgend sind drei gängige Anwendungsbeispiele beschrieben:
@@ -165,7 +163,7 @@ Verfahren der Funktechnik (z.B. PSK, ASK) kein separates Taktsignal
 eigentlichen Datenstrom extrahiert werden. Auch für diesen Einsatzzweck
 (genannt Clock Recovery bzw. Carrier Recovery) werden PLLs verwendet.
 
-# Modellisierung im linearisierten Phasenraum
+## Modellisierung im linearisierten Phasenraum
 
 Zur Auslegung und Charakterisierung der PLL kann dessen Regelkreis aus
 systemtheorethischer Sicht betrachtet werden. Hierzu wird zunächst die
@@ -206,7 +204,7 @@ Aus dem Frequenzgang lässt sich die Grenzfrequenz des gesamten
 Regelkreises zu ca. 138Hz bestimmen. Die Capture-Range der PLL wird
 ungefähr der doppelten Grenzfrequenz entsprechen (also ca. 276Hz).
 
-# Schaltung
+## Schaltung
 
 In `exp07-schematic`{.interpreted-text role="numref"} ist der Schaltplan
 der PLL dargestellt. Ein Großteil der Schaltung ist allein dem VCO
@@ -223,7 +221,7 @@ gebildet. Die Offsetspannung $u_{bias}$ wird über den Widerstand R2
 eingeprägt. Die Kombination aus R1 und R2 bewirkt zudem eine Skalierung
 des Multiplizierer-Ausgangs.
 
-# SPICE Simulation
+## SPICE Simulation
 
 Aufgrund der vorher durchgeführten systemtheorethischen Berechnungen
 wurde die SPICE Simulation nur noch zur Validierung der grundlegenden
@@ -235,7 +233,7 @@ Ausgangssignal mit einer festen Phasenbeziehung zueinander.
 
 > Einregelvorgang der PLL in SPICE Simuliert.
 
-# Messungen
+## Messungen
 
 **VCO Kennlinie**
 

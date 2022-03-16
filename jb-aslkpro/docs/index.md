@@ -18,7 +18,7 @@ Für die praktischen Messungen sollen alle im Labor verfügbaren Gerätschaften 
 [StemLab](https://www.redpitaya.com/) von RedPitaya mit ein.
 
 
-## Mitwirkende
+__Mitwirkende__
 -   Alexander Huber, Experiment 1, 2 und 3
 -   Selim Cimen, Experiment 1, 2 und 3, Messautomatisierung RedPitaya
 -   Michel Heinze, Experiment 4
@@ -41,6 +41,3 @@ Für die praktischen Messungen sollen alle im Labor verfügbaren Gerätschaften 
 -   Patrice Bönig, Experiment 12
 -   Erich Wentland, Experiment 13
 
-
-```{tableofcontents}
-```

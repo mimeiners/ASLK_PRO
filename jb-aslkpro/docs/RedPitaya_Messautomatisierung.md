@@ -1,10 +1,6 @@
----
-title: Red Pitaya Messautomatisierung
----
+# Red Pitaya Messautomatisierung
 
-Author: Selim Cimen, Alexander Huber
-
-# Einleitung
+## Einleitung
 
 Viele moderen Messinstrumente wie Red Pitaya verfügen über eine SCPI
 (Standard Command for programmable Instrumentation) Schnittstelle. Diese
@@ -29,7 +25,7 @@ Skripte mittels Python für die Messautomatisierung erstellt und benutzt.
 Auf den folgenden Seiten wird näher auf die Funktionsweise, Probleme bei
 der Entwicklung und auf evtl. Verbesserungen der Skripte eingehen.
 
-# DCsweep
+## DCsweep
 
 Das DCsweep-Skript kann zur Ermitttlung der Übertragungseigenschaften
 von Systemen für Gleichspannungsverhalten eingesetzt werden.
@@ -53,9 +49,9 @@ errechnet.
 > $V_{OUT}: -1.0\,V, -0.8\,V, -0.6\,V, -0.4\,V, -0.2\,V, 0\,V, 0.2\,V, 0.4\,V, 0.6\,V, 0.8\,V, 1.0\,V$
 > :::
 
-## Probleme
+### Probleme
 
-### Generierung der Gleichspannung
+#### Generierung der Gleichspannung
 
 In der oben erwähnten
 [Dokumentation](https://redpitaya.readthedocs.io/en/latest/appsFeatures/remoteControl/remoteControl.html)
@@ -70,7 +66,7 @@ Hierfür ist das Einstellen eines Offsets notwendig. Angenommen eine
 Gleichspannung von $-0.5\,V$ soll erzeugt werden. In diesem Beispiel ist
 ein Offset von $-1\,V$ und eine Amplitude von $0.5\,V$ zu wählen.
 
-### Größere und kleinere Spannungen als +1V, -1V
+#### Größere und kleinere Spannungen als +1V, -1V
 
 Ein weiters Problem ist, dass mit dem Red Pitaya sich keine größeren
 Spannungen als $+1\,V$ und keine kleineren als .math:[-1,V]{.title-ref}
@@ -83,7 +79,7 @@ Des Weiteren ist darauf zu achten, dass die Messspitzen auf das
 Verhältnis 1:10 einzustellen sind. Hierdurch wird der Messbereich von
 $-1\,V - +1\,V$ auf $-10\,V - +10\,V$ vergrößert.
 
-# Amplitundengang
+## Amplitundengang
 
 Mit dem Amplitudengang-Skript lässt sich das Übertragungsverhalten von
 Systemen bei verschiedenen Frequenzen messen. Hierbei wird das
@@ -103,9 +99,9 @@ Auch in dieser Messung sind die Messspitzen auf das Verhältnis 1:10
 einzustellen.
 :::
 
-## Probleme
+### Probleme
 
-### Messbereich
+#### Messbereich
 
 Da das Verhältnis an den Messspitzen nicht größer als 1:10 eingestellt
 werden kann, wird in manchen Fällen das Ende des Messbereichs erreicht.
@@ -119,10 +115,10 @@ nicht gemessen werden kann da das Ende des Messbereichs erreicht wird.
 Dieser Fehler könnte durch eine kleinere Amplitude im Eingangssignal
 verringert werden. Das ist jedoch keine optimale Lösung.
 
-![](/img/redpi/amplitudengang_messung_simulation.png){#redpi_fig_01
+![](/img/redpi/amplitudengang_messung_simulation.png){##redpi_fig_01
 .align-center}
 
-# Phasengang
+## Phasengang
 
 Mit dem Phasengang-Skript lässt sich die Phasenverschiebung zwischen
 Eingangs- und Ausgangssignal messen und aufzeichnen. Duch die Detektion
@@ -138,7 +134,7 @@ Für die Messung sind die Messspitzen auf das Verhältnis 1:1
 einzustellen.
 :::
 
-## Bestimmung der Periode
+### Bestimmung der Periode
 
 Zur Bestimmung der Periode sind weitere Aufbereitungen an den Messdaten
 notwendig. Die erforderlichen Schritte sind in der
@@ -158,9 +154,9 @@ Periode. Zur Berechnung der Periode werden nun die Samples gezählt bis
 der Eingang größer null ist und das Ergebnis wird mit zwei
 Multipliziert. Dies enspricht der Periodendauer in Samples.
 
-![](/img/redpi/T.png){#redpi_fig_02 .align-center}
+![](/img/redpi/T.png){##redpi_fig_02 .align-center}
 
-## Bestimmung der Phasenverschiebung
+### Bestimmung der Phasenverschiebung
 
 Da die Periodendauer im Schritt zuvor bestimmt worden ist, wird nun der
 Zeitpunkt des ersten Nulldurchgangs sowohl vom Eingang als auch vom
@@ -185,18 +181,18 @@ In unserem Beispiel erhalten wir für die Phasenverschiebung:
 
 $\phi = ((191-382)/764)*360 = -90°$
 
-![](/img/redpi/Eingang_Ausgang.png){#redpi_fig_03 .align-center}
+![](/img/redpi/Eingang_Ausgang.png){##redpi_fig_03 .align-center}
 
-## Probleme
+### Probleme
 
-### Rauschen am Ausgang
+#### Rauschen am Ausgang
 
 Trotz eines reinen Sinus am Eingang wird das Ausgangssignal sehr
 verrauscht. Wie in `redpi_fig_04`{.interpreted-text role="numref"} zu
 sehen. Das Rauschen hat zur Folge, dass die Nulldurchgänge nicht
 zuverlässig detektiert werden können.
 
-![](/img/redpi/1-10_Verhaeltnis.png){#redpi_fig_04 .align-center}
+![](/img/redpi/1-10_Verhaeltnis.png){##redpi_fig_04 .align-center}
 
 Ein Auszug(`redpi_fig_05`{.interpreted-text role="numref"}) aus dem
 Python Variablenraum zeigt wie im Ausgangssignal innerhalb weniger
@@ -204,7 +200,7 @@ sample mehrere Nulldurchgänge stattfinden. Dies macht eine Detektion und
 Vergleich der Nullstellen nach dem oben beschrieben Schema unmöglich
 bzw. unzuverlässig.
 
-![](/img/redpi/Bildschirmfoto.png){#redpi_fig_05 .align-center}
+![](/img/redpi/Bildschirmfoto.png){##redpi_fig_05 .align-center}
 
 Um den Effekt des Rauschens zu beseitigen können die Rohdaten mit Hilfe
 von Python aufbereitet werden. Eine Möglichkeit ist die lineare
@@ -231,9 +227,9 @@ In der folgenden Abbildung ist der Eingang und Ausgang nach Aufbereitung
 der Daten und einem Tastverhältnis von 1:1 zu sehen. Es ist eine
 deutliche Verbesserung zu erkennen.
 
-![](/img/redpi/glatt.png){#redpi_fig_06 .align-center}
+![](/img/redpi/glatt.png){##redpi_fig_06 .align-center}
 
-# Fazit
+## Fazit
 
 Mit den oben beschriebenen Skripten wurde im Rahmen des Projekts
 \"Projekts Analog System Lab Kit Pro Texas \" drei Experimente gemessen

@@ -1,8 +1,6 @@
----
-title: "Experiment 9: DC-DC Koverter"
----
+# DC-DC Wandler
 
-# Kurze Theorie und Motivation
+## Kurze Theorie und Motivation
 
 Ein DC-DC Wandler wird dazu genutzt, um eine DC-Spannung in eine andere
 DC-Spannung umzuwwandeln. Hierbei kann die Spannung am Ausgang gegenüber
@@ -21,7 +19,7 @@ LC-Tiefpassfilter hinter dem Operationsverstärker wird zur
 Stabilisierung und damit zur Glättung der Ausgangsspannung $V_{av}$
 genutzt.
 
-# Funktionsaufbau DC-DC Wandler
+## Funktionsaufbau DC-DC Wandler
 
 Für die nachfolgende Bearbeitung wird auf zwei unterschiedliche
 Schaltungen eingegangen. Begonnen wird hierbei mit einem DC-DC Wandler,
@@ -29,7 +27,7 @@ welcher mithilfe eines aus einem Funktionsgenerator generierten Signals,
 eine Ausgangsspannung erzeugen soll, dargestellt in
 `09_fig_01`{.interpreted-text role="numref"}.
 
-![DC-DC-Wandler](img/Experiment_09/Schaltung_DC_DC.png){#09_fig_01
+![DC-DC-Wandler](img/Experiment_09/Schaltung_DC_DC.png){##09_fig_01
 .align-center}
 
 Die eingespeiste Dreiecksspannung aus dem Funktionsgegenrator $V_{g}$,
@@ -47,13 +45,13 @@ abhängig von der Betriebsspannung $V_{ss}$ des Operationsverstärkers und
 der Referenzspannung $V_{ref}$. Mithilfe eines LC-Tiefpasses ist es
 möglich, es stabiles Ausgangssignal $V_{av}$ zu erhalten.
 
-# Simulation DC-DC Wandler
+## Simulation DC-DC Wandler
 
 Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 `09_fig_01`{.interpreted-text role="numref"} entworfen.
 
-![](img/Experiment_09/Spannungs_Simu_1.png){#09_fig_02 .align-center
+![](img/Experiment_09/Spannungs_Simu_1.png){##09_fig_02 .align-center
 .Simulation .der .Ein- .und .Ausgangsspannungen}
 
 Die `09_fig_02`{.interpreted-text role="numref"} zeigt den Verlauf der
@@ -63,7 +61,7 @@ und den Kondensator zurückführen, welche durch die Lade- und
 Entladezyklen den Verlauf der Kurve herbeiführen.
 
 ![Detailansicht der Ein- und
-Ausgangsspannungen](img/Experiment_09/Spannungs_Simu_2.png){#09_fig_03
+Ausgangsspannungen](img/Experiment_09/Spannungs_Simu_2.png){##09_fig_03
 .align-center}
 
 Nach t = 6ms hat sich die Spannung $V_{av}$ auf einen Wert von ungefähr
@@ -80,14 +78,14 @@ kommt es bei der Ausgabe von $V_{av}$ zu einer erhöhten Spannung, da der
 Komparator durchgehend eine postive Spannung ausgibt und die daraus
 resultierende Spannung $V{av}$ hiervon abhängig ist.
 
-# Messungen des DC-DC Wandlers
+## Messungen des DC-DC Wandlers
 
 Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die
 Messungen am Texas Instruments Board durchgeführt. Hierdurch kann ein
 klarer Vergleich zur Simulation hergestellt werden.
 
 ![Messungen der Ein- und
-Ausgangsspannungen](img/Experiment_09/Spannung_Messung.png){#09_fig_04
+Ausgangsspannungen](img/Experiment_09/Spannung_Messung.png){##09_fig_04
 .align-center}
 
 Die `09_fig_04`{.interpreted-text role="numref"} zeigt die Ergebnisse
@@ -113,7 +111,7 @@ Triggerverhalten des Operationsverstärkers auslösen würde.
 html
 
 ![Auswirkung der Referenzspannung auf die
-Ausgangsspannung](img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.gif){#09_fig_05
+Ausgangsspannung](img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.gif){##09_fig_05
 .align-center}
 :::
 
@@ -121,7 +119,7 @@ Ausgangsspannung](img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.gif){#09_fig_05
 latex
 
 ![Auswirkung der Referenzspannung auf die
-Ausgangsspannung](img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.png){#09_fig_05
+Ausgangsspannung](img/Experiment_09/Dc_Dc_gif_Ausgangsspannung.png){##09_fig_05
 .align-center}
 :::
 
@@ -132,7 +130,7 @@ seiner Größe davon abhängig, in welchen Abständen die Referenzspannung
 auf das Dreieckssingal trifft. Desto größer die Abstände, umso größer
 die ausgehende Rechteckspannung die daraus resultierende Geichspannung.
 
-# Funktionsaufbau SMPS Schaltnetzteil
+## Funktionsaufbau SMPS Schaltnetzteil
 
 Das Ziel des SMPS Schaltnetzteils ist gleichzustellen mit dem zuvor
 schon bearbeiteten Dc-Dc-Wandlers. Ein einhergehendes gepulstes
@@ -141,7 +139,7 @@ umgewandelt werden. Nachdem ein Blick auf die Schaltung geworfen wird,
 werden allerdings schon schnell die Schaltungstechnischen Unterschiede
 klar.
 
-![SMPS / Schaltnetzteil](img/Experiment_09/SMPS_Circuit.PNG){#09_fig_06
+![SMPS / Schaltnetzteil](img/Experiment_09/SMPS_Circuit.PNG){##09_fig_06
 .align-center}
 
 Die Schaltung aus der `09_fig_06`{.interpreted-text role="numref"}
@@ -166,7 +164,7 @@ die einzelenen Komponenten erleichtert das Verständnis für den Aufbau
 und das genaue Zusammenwirken der einzelnen Komponenten.
 
 ![Referenzspannung eingestellt auf
-3V](img/Experiment_09/9.2_Referenzspannung_3v.png){#09_fig_07
+3V](img/Experiment_09/9.2_Referenzspannung_3v.png){##09_fig_07
 .align-center}
 
 Die Abbildung `09_fig_07`{.interpreted-text role="numref"} beschreibt
@@ -183,7 +181,7 @@ Operationsverstärkers verändert werden. Dies verhält sich ähnlich dem
 Komparator aus dem ersten Aufgabenteil.
 
 ![Referenzspannung eingestellt auf
-1V](img/Experiment_09/9.2_Referenzspannung_1v.png){#09_fig_08
+1V](img/Experiment_09/9.2_Referenzspannung_1v.png){##09_fig_08
 .align-center}
 
 Das hieraus resultierende gepulste Ausgangssignal wird dann über den
@@ -201,10 +199,10 @@ Experiment 02 recherchiert werden.
 $$\beta = \frac{R_3}{R_3 + R_4}$$
 
 ![Schmitt-Trigger Einstellung der Schwellspannung R3=1K
-R4=4.7K](img/Experiment_09/9.2_R4_4.7k.png){#09_fig_09 .align-center}
+R4=4.7K](img/Experiment_09/9.2_R4_4.7k.png){##09_fig_09 .align-center}
 
 ![Schmitt-Trigger Einstellung der Schwellspannung R3=1K
-R4=20K](img/Experiment_09/9.2_R4_20k.png){#09_fig_10 .align-center}
+R4=20K](img/Experiment_09/9.2_R4_20k.png){##09_fig_10 .align-center}
 
 Sind $R_{3}$ und $R_{4}$ in ihrer Größe deklariert, so gibt der
 Schmitt-Trigger das gewünscht Signal aus. Hierbei wird das
@@ -222,7 +220,7 @@ Spannungsabfall an der Last sich verändern, so regelt sich das System
 durch den Komparator und des daraus entstehenden Eingangssignals am
 Schmitt-Trigger erneut wieder ein.
 
-# Messung des SMPS Schaltnetzteil
+## Messung des SMPS Schaltnetzteil
 
 Nachdem die Simulationen für die Schaltung durchgeführt sind, werden die
 Messungen am Texas Instruments Board durchgeführt. Hierdurch lassen sich
@@ -230,10 +228,10 @@ die Simulation Überprufen. Zuerst wird dass Ausgangssignal in
 Abhängigkeit der Referenspannung untersucht.
 
 ![Messung bei eingestellter Referenzspannung von
-1V](img/Experiment_09/Ref_1V.PNG){#09_fig_11 .align-center}
+1V](img/Experiment_09/Ref_1V.PNG){##09_fig_11 .align-center}
 
 ![Messung bei eingestellter Referenzspannung von
-2.5V](img/Experiment_09/Ref_2_5V.PNG){#09_fig_12 .align-center}
+2.5V](img/Experiment_09/Ref_2_5V.PNG){##09_fig_12 .align-center}
 
 Wobei Channel 1 (Dunkel Blau) der Positive Eingang des Sschmitt-Triggers
 ist, Channel 2 (Pink) ist der Ausgang des Schmitt-Triggers, Channel 3
@@ -248,16 +246,16 @@ Ausgelegten Filter, zeigt aber gut wie die Regelstrecke bei einen
 Spannungsabfall wirkt.
 
 > ![Schmitt-Trigger Einstellung der Schwellspannung R3=1K
-> R4=0.8K](img/Experiment_09/R4_0_8K.PNG){#09_fig_13 .align-center}
+> R4=0.8K](img/Experiment_09/R4_0_8K.PNG){##09_fig_13 .align-center}
 >
 > ![Schmitt-Trigger Einstellung der Schwellspannung R3=1K
-> R4=1K](img/Experiment_09/R4_1K.PNG){#09_fig_14 .align-center}
+> R4=1K](img/Experiment_09/R4_1K.PNG){##09_fig_14 .align-center}
 >
 > ![Schmitt-Trigger Einstellung der Schwellspannung R3=1K
-> R4=4.7K](img/Experiment_09/R4_4_7K.PNG){#09_fig_15 .align-center}
+> R4=4.7K](img/Experiment_09/R4_4_7K.PNG){##09_fig_15 .align-center}
 >
 > ![Schmitt-Trigger Einstellung der Schwellspannung R3=1K
-> R4=20K](img/Experiment_09/R4_20K.PNG){#09_fig_16 .align-center}
+> R4=20K](img/Experiment_09/R4_20K.PNG){##09_fig_16 .align-center}
 
 Bei diesen Messungen wird der Schmitt-Trigger untersucht. Hierführ wird
 der Widerstand R4 bei Konstanten Eingangsspannung variiert. Die kanal

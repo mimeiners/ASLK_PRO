@@ -1,14 +1,12 @@
----
-title: "Experiment 13: Entwurf eines digital kontrollierten GSA\\'s"
----
+# Entwurf eines digital kontrollierten GSA's
 
-# Kurze Theorie und Motivation
+## Kurze Theorie und Motivation
 
 Die Verstärkung eines Operationsverstärkers wird von der Beschaltung
 bestimmt, genauer Betrachtet im einfachsten Fall von zwei Widerständen.
 
 ![Invertierender
-Verstärker](img/Experiment_13/NichtInvertierenderVerstaerker.png){#13_fig_01
+Verstärker](img/Experiment_13/NichtInvertierenderVerstaerker.png){##13_fig_01
 .align-center width="30.0%"}
 
 Die Verstärkung ergibt sich für diese Schaltung durch das Verhältnis der
@@ -19,14 +17,14 @@ einer der Widerstände R1 oder R2 verändert werden. Dies kann
 beispielsweise durch das Vorschalten eines digital veränderbaren
 Widerstandes vor R2 bewerkstelligt werden.
 
-![Versuchsschaltung](img/Experiment_13/Versuchsschaltung.png){#13_fig_02
+![Versuchsschaltung](img/Experiment_13/Versuchsschaltung.png){##13_fig_02
 .align-center width="50.0%"}
 
 Der DAC(Digital Analog Converter) kann auch als digitales Poti
 bezweichnet werden, er arbeitet nämlich als Spannungs- oder Stromteiler.
 Dafür sorgt das sogenannte R2R-Netzwerk.
 
-![R2R-Netzwerk](img/Experiment_13/R2R.png){#13_fig_03 .align-center
+![R2R-Netzwerk](img/Experiment_13/R2R.png){##13_fig_03 .align-center
 width="40.0%"}
 
 Das R2R-Netzwerk besteht aus einer Hintereinanderreihung indentischer
@@ -45,7 +43,7 @@ Spannungsverstärker arbeitet, muss er am Eingang auch eine Spannung
 sehen. Der Strom des DAC muss also in eine Spannung gewandelt werden.
 Dazu inst der Transimpedanzwandler vorgesehen.
 
-![](img/Experiment_13/Transimpedanzwandler.png){#13_fig_04 .align-center
+![](img/Experiment_13/Transimpedanzwandler.png){##13_fig_04 .align-center
 width="30.0%"}
 
 n Transimpedanzwandler
@@ -59,7 +57,7 @@ des DAC gleicht, vereinfacht sich die Gleichung zu
 Das bewirkt die Verwendung des Feedbackwiderstande Rfb des DACs.
 
 ![Digitales
-Poti](img/Experiment_13/DAC_Spannungsanwendung.png){#13_fig_05
+Poti](img/Experiment_13/DAC_Spannungsanwendung.png){##13_fig_05
 .align-center width="40.0%"}
 
 Nun verändert sich die Gleichung für die Verstärkung wie folgt: Durch
@@ -75,15 +73,15 @@ nicht linear, was dazu führt, dass unter Umständen nicht das ganze
 Spektrum des DAC sinnvoll genutzt werden kann.
 
 ![Verstärkungskennlinie über
-CODE-Eintrag](img/Experiment_13/gainCharacterDCGSA.png){#13_fig_06
+CODE-Eintrag](img/Experiment_13/gainCharacterDCGSA.png){##13_fig_06
 .align-center width="60.0%"}
 
-# Spezifikation
+## Spezifikation
 
 Um die Eigenschaften des digital kontrollierten GSA\'s zu überprüfen,
 muss dieser erstmal aufgabaut werden.
 
-![Versuchsschaltung](img/Experiment_13/Versuchsschaltung.png){#13_fig_07
+![Versuchsschaltung](img/Experiment_13/Versuchsschaltung.png){##13_fig_07
 .align-center width="50.0%"}
 
 Für diesen Versuch soll das Verhältnis R2/R1, also die minimale
@@ -110,7 +108,7 @@ das Simulationsergbnis mit den Übersetzungsfaktoren 2e-6, 5e-6, 10e-6,
 
 ![Simuliert: Ausgangsspannung bei sinusförmiger Eingangsspannung von
 100mV und diversen Übersetzungsfaktoren der spannungsabhängigen
-Stromquelle als ADC](img/Experiment_13/timeSimulation.png){#13_fig_08
+Stromquelle als ADC](img/Experiment_13/timeSimulation.png){##13_fig_08
 .align-center width="65.0%"}
 
 Trägt man die Eingangsspannung über die Eingangsspannung ab, erhält man
@@ -118,7 +116,7 @@ die Verstärkungsgerade. Je steiler sie ist desto größer die Verstärkung.
 
 ![Simuliert: Ausgangskennlinie bei diversen Übersetzungsfaktoren der
 spannungsabhängigen Stromquelle als
-ADC](img/Experiment_13/gainSimulation.png){#13_fig_09 .align-center
+ADC](img/Experiment_13/gainSimulation.png){##13_fig_09 .align-center
 width="65.0%"}
 
 Während der Messung am Versuchsaufbau sollen die Ausgangsamplituden zu
@@ -126,7 +124,7 @@ eingestellten CODEs aufgezeichnet werden. Diese Spannung, normiert durch
 die Eingangsspannung und abgetragen auf den CODE des DAC soll dann der
 theoretischen Verstärkungskennlinie aus Bild6 entsprechen.
 
-# Messungen
+## Messungen
 
 Für die Messung wurden die Widerstände $R_1=10\,k\Omega$ und
 $R_2=21\,k\Omega$ gewählt, der Kondesator $C_1=1\,nF$. Nach und nach
@@ -139,7 +137,7 @@ folgender Grafik über den Inhalt des DAC-Register als Messergebnis
 abgetragen.
 
 ![Gemessen: Verstärkungskennlinie der Versuchsschaltung über
-CODE-Eintrag](img/Experiment_13/mesurementDCGSA.png){#13_fig_10
+CODE-Eintrag](img/Experiment_13/mesurementDCGSA.png){##13_fig_10
 .align-center width="60.0%"}
 
 Der Verlauf der gemessenen Verstärkungskennlinien gleicht der

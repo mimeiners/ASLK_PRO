@@ -1,6 +1,5 @@
----
-title: "Experiment 4: Analoge Filter"
----
+# Analoge Filter
+
 
 # Kurze Theorie und Motivation
 

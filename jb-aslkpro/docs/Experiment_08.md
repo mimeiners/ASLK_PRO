@@ -1,8 +1,6 @@
----
-title: "Experiment 8: Automatic Gain/Volume Control (AGC/AVC)"
----
+# Automatic Gain/Volume Control (AGC/AVC)
 
-# Theorie und Motivation
+## Theorie und Motivation
 
 AGC´s sind automatische Verstärkungsreglungen die in elektronischen
 Geräten dazu verwendet werden, dass ein Ausgangssignal bzw. ein

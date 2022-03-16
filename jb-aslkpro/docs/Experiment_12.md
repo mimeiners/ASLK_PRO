@@ -1,8 +1,6 @@
----
-title: "Experiment 12: Parameterstudie eines DC-DC Konverters"
----
+# Parameterstudie eines DC-DC Wandlers
 
-# Abstract
+## Abstract
 
 Das vorliegende Experiment zeigt die Untersuchung eines DC-DC-Konverters
 mit dem TPS40200. Es wird das Verhalten der Ausgangsspannung bei
@@ -13,7 +11,7 @@ untersucht. Es wird gezeigt, dass es Abweichungen zwischen Simulation
 und Messung geben kann. Außerdem werden die theoretischen Grundlagen des
 Experimients kurz dargestellt.
 
-# Einleitung
+## Einleitung
 
 Um die Spannung über einem Verbraucher anzupassen, kann ein
 Spannungsteiler verwendet werden. Diese Methode erzielt jedoch einen
@@ -66,7 +64,7 @@ in Experiment 12 diese mit dem Formelzeichen V angegeben. Hierfür wurde
 sich entschieden, um Verwechslungen zwischen den im Text angegebenen
 Quellen und diesem Dokument zu vermeiden.
 
-# Theoretische Vorbetrachtung {#KapitelIII}
+## Theoretische Vorbetrachtung {#KapitelIII}
 
 Das Evaluierungsmodul (EVM) mit dem nicht synchronen Abwärtswandler
 [TPS40200](http://www.ti.com/lit/ds/symlink/tps40200.pdf) ist auf dem
@@ -99,10 +97,10 @@ Das hier verwendete EVM wird mit einer Eingangsspannung von 6   V bis 15
 JP8 zwischen 3,3   V oder 5   V eingestellt werden. In beiden Fällen
 beträgt der Ausgangsstrom minimal 125   mA und maximal 2,5   A.
 
-## Grundaufbau des Abwärtswandlers
+### Grundaufbau des Abwärtswandlers
 
 ![Schaltungsaufbau eines DC-DC-Konverters (`Voelker`{.interpreted-text
-role="cite"}, S.115)](img/Experiment_12/TPS_Basic.PNG){#BasicDCDC
+role="cite"}, S.115)](img/Experiment_12/TPS_Basic.PNG){##BasicDCDC
 .align-center}
 
 In `BasicDCDC`{.interpreted-text role="numref"} ist der grundlegende
@@ -204,11 +202,11 @@ variabel. Umgestellt zum Tastgrad ergibt sich eine Gleichung der Form
 $f(x)=a/x$. Dies lässt auf einen hyperbelförmigen Verlauf des Tastgrades
 schließen.
 
-## Eigenschaften des TPS40200 {#TPS-Eigenschaften}
+### Eigenschaften des TPS40200 {#TPS-Eigenschaften}
 
 ![Interner Aufbau des Abwärtswandlers (`TEX1`{.interpreted-text
 role="cite"},
-S.11)](img/Experiment_12/TPS_Blockdiagramm.png){#Block_TPS40200
+S.11)](img/Experiment_12/TPS_Blockdiagramm.png){##Block_TPS40200
 .align-center}
 
 In `Block_TPS40200`{.interpreted-text role="numref"} ist der
@@ -241,7 +239,7 @@ t_{ss} &= 9,5\ ms
 
 ![Softstarteigenschaft des TPS40200 (`TEX1`{.interpreted-text
 role="cite"},
-S.17)](img/Experiment_12/TPS_Softstart_cut.png){#Softstart_TPS40200
+S.17)](img/Experiment_12/TPS_Softstart_cut.png){##Softstart_TPS40200
 .align-center}
 
 Eine weitere Eigenschaft ist die maximale Strombegrenzung durch die das
@@ -271,7 +269,7 @@ die hier verwendeten Parameter kann somit maximal ein Strom von 2,54   A
 fließen.
 
 ![Strombegrenzung des TPS40200 (`TEX1`{.interpreted-text role="cite"},
-S.16)](img/Experiment_12/TPS_Strombegrenzung_cut.png){#Strombegrenzung_TPS40200
+S.16)](img/Experiment_12/TPS_Strombegrenzung_cut.png){##Strombegrenzung_TPS40200
 .align-center}
 
 Die Ausgangsspannung verringert sich bei steigendem Laststrom. Dies ist
@@ -378,7 +376,7 @@ R_{max} &= \frac{V_{out}}{I_{out}} &=\frac{5\ V}{125\ mA} = 40 \ \Omega \\
 Somit wurden alle nötigen Parameter für den Schaltungsentwurf des
 Abwärtswandlers TPS40200 ermittelt.
 
-# Simulations- und Messaufbau {#KapitelIV}
+## Simulations- und Messaufbau {#KapitelIV}
 
 Der Versuchsaufbau gliedert sich in zwei Abschnitte. Der erste Abschnitt
 behandelt die Simulation der Schaltung mit Hilfe des Programms
@@ -392,10 +390,10 @@ vier Messungen durchgeführt.
 
 ![Schaltnetzteil basierend auf dem TPS40200 (`ASLKPro`{.interpreted-text
 role="cite"},
-S.64)](img/Experiment_12/Schaltplan.PNG){#Schaltnetzteil basierend auf dem TPS40200
+S.64)](img/Experiment_12/Schaltplan.PNG){##Schaltnetzteil basierend auf dem TPS40200
 .align-center}
 
-## A. Simulation
+### A. Simulation
 
 Größtenteils wurde für die Simulation
 [TINA-TI](http://www.ti.com/tool/TINA-TI) in Version 9.3.200.277 SF-TI
@@ -421,7 +419,7 @@ $R_{211}$ von 40,1   $k \Omega$. Die verfügbaren Widerstände auf dem
 ASLK Pro lassen jedoch ausschließlich eine Beschaltung von 41,2  
 $k \Omega$ zu.
 
-### Wellenformen
+#### Wellenformen
 
 Es werden vier Spannungen der Schaltung simuliert:
 
@@ -437,7 +435,7 @@ befindet, wird nur der Zustand der Simulationszeit von 15   ms bis 15,1
   ms dargestellt. Die Ergebnisse werden jeweils als Funktion $u(t)$
 dargestellt.
 
-### Ausgangsspannung bei fester Last {#my-reference-label-1}
+#### Ausgangsspannung bei fester Last {#my-reference-label-1}
 
 Um das Verhalten der Ausgangsspannung während einer variierenden
 Eingangsspannung zu untersuchen, wird die Schaltung mit einer Last von
@@ -448,7 +446,7 @@ bis 15   V betrachtet werden. Betrachtet wird der zeitliche Ausschnitt
 zwischen 75   ms und 125   ms, wodurch ein Sweep von 10   V bis 15   V
 erreicht wird. Dargestellt wird das Ergebnis durch $V_{out}(V_{in})$.
 
-### Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
+#### Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
 
 Die Eingangsspannung beträgt in der Simulation konstant 10   V. Die Last
 ist variabel und wird mit Hilfe eines spannungsgesteuerten Widerstandes
@@ -461,7 +459,7 @@ Simulationsergebnis von 150   ms bis 250   ms, um so genau einmal zu
 beobachten, wie sich der Widerstand von 2   $\Omega$ auf 40   $\Omega$
 erhöht. Dargestellt wird das Ergebnis durch $V_{out}(I_{out})$.
 
-### Tastgrad {#my-reference-label-2}
+#### Tastgrad {#my-reference-label-2}
 
 Der Tastgrad (eng. duty cycle) kann durch `12_eq_duty`{.interpreted-text
 role="eq"} berechnet werden. Da die Ausgangsspannung über die
@@ -479,7 +477,7 @@ Eingangs- und Ausgangsspannung nach `12_eq_duty`{.interpreted-text
 role="eq"} bestimmt. Dieses Ergebnis wird durch $V_{in}$ in Abhängigkeit
 von dem Tastgrad dargestellt.
 
-## Messaufbau
+### Messaufbau
 
 Wie zuvor beschrieben, wird für die Versuche das ASLK (Analog System Lab
 Kit) Pro der Firma MikroElektronika für den Messaufbau verwendet. Auf
@@ -493,10 +491,10 @@ Darstellungsarten entsprechen in jedem Schritt der Darstellungsart in
 der Simulation.
 
 ![Messaufbau der praktischen
-Messung](img/Experiment_12/Messaufbau.PNG){#Messaufbau der praktischen Messung
+Messung](img/Experiment_12/Messaufbau.PNG){##Messaufbau der praktischen Messung
 .align-center}
 
-### Wellenformen
+#### Wellenformen
 
 Der Jumper JP9 wird so gesteckt, dass die Schaltung mit konstant 10   V
 Eingangsspannung betrieben wird. Anschließend wurde mit dem
@@ -504,7 +502,7 @@ Eingangsspannung betrieben wird. Anschließend wurde mit dem
 gemessen. Die Messung erfolgt über einen Zeitraum von 100   $\mu s$.
 Belastet wird die Schaltung wie in der Simulation mit 20   $\Omega$.
 
-### Ausgangsspannung bei fester Last
+#### Ausgangsspannung bei fester Last
 
 Die Last bleibt unverändert. Der Jumper JP9 wird so gesteckt, dass die
 Schaltung extern über CN5 betrieben werden kann. Hier wurde ein
@@ -513,7 +511,7 @@ Schritten von 10   V bis 15   V. Gemessen wird die Eingangs- und
 Ausgangsspannung. Für jeden 0,5   V Schritt werden jeweils 31250 Werte
 aufgezeichnet, woraus im Nachgang der Mittelwert gebildet wird.
 
-### Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
+#### Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
 
 Um die Ausgangsspannung und den Ausgangsstrom zu messen, werden wieder
 konstante 10   V eingespeist. An die Last wird in Reihe ein 1   $\Omega$
@@ -523,7 +521,7 @@ angeschlossen. Gemessen wird die Spannung über die gesamte Last sowie
 dass in diesem Fall die gemessene Spannung über dem Shunt-Widerstand dem
 Ausgangsstrom gleicht.
 
-### Tastgrad
+#### Tastgrad
 
 Die Bestimmung des Tastgrades erfolgt wie zuvor in Abschnitt
 `my-reference-label-2`{.interpreted-text role="ref"} aus der gemessenen
@@ -532,12 +530,12 @@ dass die im Oszilloskop integrierte Duty-Cycle-Funktion ungenau wird,
 sobald die Flanken des Rechtecksignals keine lineare Steigung mehr
 aufweisen, sondern Spannungsspitzen enthalten.
 
-# Ergebnisse {#KapitelV}
+## Ergebnisse {#KapitelV}
 
 Im Folgenden werden die simulierten Werte mit den messtechnisch
 ermittelten Werten verglichen und dargestellt.
 
-## Simulierte und messtechnische Wellenformen
+### Simulierte und messtechnische Wellenformen
 
 Die Wellenformen sind in `TP3TP4VoutVin`{.interpreted-text
 role="numref"} zu erkennen. Aus Darstellungsgründen wird die
@@ -546,7 +544,7 @@ Ausgangsspannung in zwei Plots aufgeteilt.
 ![Simulierte und messtechnisch ermittelte Wellenformen bei einer Last
 von 20   $\Omega$ -Oszillatorspannung TP3, PWM-Signal TP4 ,
 Ausgangsspannung $V_{out}$ und Eingangsspannung
-$V_{in}$](img/Experiment_12/TP3_TP4_Vout_Vin.png){#TP3TP4VoutVin
+$V_{in}$](img/Experiment_12/TP3_TP4_Vout_Vin.png){##TP3TP4VoutVin
 .align-center}
 
 Grundlage für die folgenden Ausführungen zum TP3 und TP4 Plot sind
@@ -590,7 +588,7 @@ befinden sich an der Stelle, an der sich in TP4 die Signalflanken
 befinden. Ansonsten ist der Mittelwert der Ausgangsspannung mit 4,88   V
 geringer als die simulierte, was eine Differenz von 51,5   mV ergibt.
 
-## Simulierte und messtechnische Ausgangsspannung bei fester Last
+### Simulierte und messtechnische Ausgangsspannung bei fester Last
 
 Bei einer festen Last von 20   $\Omega$ wird die Eingangsspannung in
 einem Bereich von 10   V bis 15   V dargestellt sowie die zugehörige
@@ -600,7 +598,7 @@ Mittelwert ermittelt und dargestellt ist. Dies ist
 
 ![Simulierte und messtechnisch ermittelte Ausgangsspannung $V_{out}$
 über die Eingangsspannung $V_{in}$ bei einer Last von 20  
-$\Omega$](img/Experiment_12/Ausgangsspg_bei_variabler_Eingangsspg.png){#fig:12vout
+$\Omega$](img/Experiment_12/Ausgangsspg_bei_variabler_Eingangsspg.png){##fig:12vout
 .align-center}
 
 Die simulierten und gemessenen Ausgangsspannungen sind beide bis auf ein
@@ -608,13 +606,13 @@ Rauschen konstant. Die simulierte Ausgangsspannung liegt
 durchschnittlich bei ca. 4,926   V und die messtechnisch ermittelte bei
 ca. 4,89   V.
 
-## Simulierte/r und messtechnische/r Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
+### Simulierte/r und messtechnische/r Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
 
 `fig:12IV`{.interpreted-text role="numref"} stellt die Messung
 $V_{out}(I_{out})$ dar.
 
 ![Simulierte/r und messtechnisch ermittelte/r Ausgangsspannung und
--strom](img/Experiment_12/Strom_Spannung.png){#fig:12IV .align-center}
+-strom](img/Experiment_12/Strom_Spannung.png){##fig:12IV .align-center}
 
 Die simulierte Ausgangsspannung oszilliert um ca. 4,928   V. Es ist kein
 Spannungsabfall bei erhöhtem Strom zu erkennen. Die Schaltung kann laut
@@ -626,7 +624,7 @@ weiter erhöht, so bricht die Ausgangsspannung komplett ein. Die Spannung
 fällt nicht linear. Es ist zu beobachten, dass die Spannung schneller
 fällt, umso höher der Ausgangsstrom ist.
 
-## Simulierter und messtechnischer Tastgrad
+### Simulierter und messtechnischer Tastgrad
 
 Der aus Simulations- und Messwerten rechnerisch ermittelte Tastgrad ist
 in `fig:12dc`{.interpreted-text role="numref"} zu erkennen. Der Tastgrad
@@ -634,7 +632,7 @@ wurde durch `12_eq_duty`{.interpreted-text role="eq"} berechnet.
 
 ![Simulierter und messtechnisch ermittelter Tastgrad über die
 Eingangsspannung bei einer Last von 20  
-$\Omega$](img/Experiment_12/Duty_Cycle.png){#fig:12dc .align-center}
+$\Omega$](img/Experiment_12/Duty_Cycle.png){##fig:12dc .align-center}
 
 Der Verlauf zwischen Messung und Simulation ist bis auf einen Versatz
 von ca. 150   mV gleich. Es ist zu erkennen, dass der Tastgrad bei
@@ -647,19 +645,19 @@ verformt ist. Aufgrund dieser Verformung konnte die Funktion im
 Oszilloskop den duty cycles nicht zuverlässig bestimmen.
 
 ![Darstellung des Tastgrad bei einer Eingangsspannung von ca. 9,8  
-V](img/Experiment_12/M10.PNG){#fig:12dcM10 .align-center}
+V](img/Experiment_12/M10.PNG){##fig:12dcM10 .align-center}
 
 ![Darstellung des Tastgrad bei einer Eingangsspannung von ca. 14,85  
-V](img/Experiment_12/M20.PNG){#fig:12dcM20 .align-center}
+V](img/Experiment_12/M20.PNG){##fig:12dcM20 .align-center}
 
 Wie zuvor erwähnt, weicht der Tastgrad des Messgeräts von den
 errechneten Werten ab.
 
-# Diskussion {#KapitelVI}
+## Diskussion {#KapitelVI}
 
 Folgend werden die Simulations- und Messergebnisse diskutiert.
 
-## Wellenformen {#Wellenformen}
+### Wellenformen {#Wellenformen}
 
 Die unterschiedlichen Frequenzen der Mess- bzw. Simulationswerte können
 zum Teil auf die unterschiedliche Eingangsspannung zurückgeführt werden.
@@ -715,7 +713,7 @@ einzubeziehen. Dennoch kann die Aussage getroffen werden, dass die
 Simulation durch die Messung bestätigt werden konnte, da keine größeren
 Abweichungen aufgetreten sind.
 
-## Ausgangsspannung bei fester Last
+### Ausgangsspannung bei fester Last
 
 Die Abweichung zwischen der theoretisch errechneten Ausgangsspannung
 durch `12_eq_Vout`{.interpreted-text role="eq"} und Simulation beträgt
@@ -733,7 +731,7 @@ im genannten Bereich als konstant angesehen werden. Bei dem Versatz von
 ca. 4   mV wird vermutet, dass dieser durch Bauteil- und
 Messungenauigkeit zustande kommt.
 
-## Ausgangspannung und -strom bei fester Eingangsspannung und dynamischer Last
+### Ausgangspannung und -strom bei fester Eingangsspannung und dynamischer Last
 
 Die Ausgangsspannung oszilliert in der Simulation bei unterschiedlichem
 Strom um einen Wert von ca. 4,93   V. In der Messung hingegen fällt die
@@ -760,7 +758,7 @@ Wie angenommen, verringert sich die Ausgangsspannung bei einer
 niedrigeren Last und dem damit verbundenen höheren Ausgangsstrom. In der
 Simualtion wird dies nicht berücksichtigt.
 
-## Tastgrad
+### Tastgrad
 
 Der Verlauf des Tastgrades an TP4 ist für unterschiedliche
 Eingangsspannungen zwischen Simulation und Praxis bis auf einen Versatz
@@ -779,7 +777,7 @@ Differenz in den Ausgangsspannungen erklärt werden. Wird
 werden, dass bei gleicher Eingangsspannung aber geringerer
 Ausgangsspannung der Tastgrad abnimmt.
 
-# Zusammenfassung {#KapitelVII}
+## Zusammenfassung {#KapitelVII}
 
 Die vorliegende Arbeit stellt eine Parameterstudie eines DC-DC
 Konverters dar. Grundlage dafür ist der nicht synchrone Abwärtswandler
@@ -830,7 +828,7 @@ Wiederholungsmessungen müsste herausgearbeitet werden, woraus die
 niedrigere Eingangsspannung bei den Messungen resultiert, um so ein
 eindeutigeres Messergebnis zu erlangen.
 
-# Literaturverzeichnis {#Kapitel VIII}
+## Literaturverzeichnis {#Kapitel VIII}
 
 ::: {.bibliography style="plain"}
 Experiment_00.bib

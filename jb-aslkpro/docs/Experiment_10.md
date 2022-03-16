@@ -1,8 +1,6 @@
----
-title: "Experiment 10: Entwurf eines LDO Reglers"
----
+# Entwurf eines LDO Reglers
 
-# Kurze Theorie und Motivation
+## Kurze Theorie und Motivation
 
 Um eine feste, vorgegebene Spannung in eine beliebige Wunschspannung
 umzuwandeln, werden Spannungsregler verwendet. Für niedrige Spannungen
@@ -17,7 +15,7 @@ Welligkeit in der Ausgangsspannung. Außerdem werden nur wenige
 zusätzliche Bauteile benötigt, was zusätzlich das Designen von Platinen
 erleichtert.
 
-## Dropout
+### Dropout
 
 Der Dropout entspricht der Differenzspannung zwischen dem Ein- und
 Ausgang und fällt so über dem LDO ab. Eine Dropoutspannung fällt immer
@@ -25,7 +23,7 @@ an, sodass erst ab einer ausreichenden Eingangsspannung die gewünschte
 Ausgangsspannung ausgegeben werden kann. Mit steigender Eingangsspannung
 steigt die Dropoutspannung ebenfalls.
 
-## Aufschluesselung der Funktionsgruppen
+### Aufschluesselung der Funktionsgruppen
 
 Anhand des ersten Versuchs soll ein Spannungsregler mit Hilfe eines
 Operationsverstärkers, einem PMOS-FET und weiteren Bauteilen realisiert
@@ -35,7 +33,7 @@ variiert. Zur Verfügung steht eine Schaltung mit unbekannten Variablen.
 Diese gelten nun zu bestimmen. Die Schaltung sieht wie folgt aus
 `10_fig_01`{.interpreted-text role="numref"}:
 
-![](img/Experiment_10/LDO_Regulator.png){#10_fig_01 .align-center
+![](img/Experiment_10/LDO_Regulator.png){##10_fig_01 .align-center
 .LDO-Regulator .[1]}
 
 Da auf dem ASLKpro-Board bestimmte Bauteile vorgegeben sind, setzen wir
@@ -43,7 +41,7 @@ bei dem Operationsverstärker auf den TL082 und bei dem P-MOS auf den
 BS250P. Um die restlichen benötigte Bauteile zu bestimmen ist es hierzu
 von Nöten die Aufgabe der einzelnen Bauteile zu kennen!
 
-## Referenzspannung
+### Referenzspannung
 
 Die Referenzspannung $V_{ref}$ wird durch die Zenerdiode und dem
 Vorwiderstand $R$ bestimmt. Eine Zener-Diode wird verwendet um den
@@ -54,7 +52,7 @@ gleichbleibende Spannung vorhanden ist, obwohl die Eingangsspannung
 variieren kann. Die Spannungsdifferenz zwischen Eingangsspannung und
 Durchbruchspannung fällt über den Vorwiderstand $R$ ab.
 
-![](img/Experiment_10/Referenzspannung.png){#10_fig_02 .align-center
+![](img/Experiment_10/Referenzspannung.png){##10_fig_02 .align-center
 .Referenzspannung .[1]}
 
 Um die Zenerdiode zu bestimmen, muss die Referenzspannung ausgerechnet
@@ -89,12 +87,12 @@ abgeführt wird. Da hier jedoch der Idealfall betrachtet wird, ist der
 Eingangswiderstand unendlich groß und somit wäre $I_{-op} = 0A$. Daher
 ergibt sich folgender Vorwiderstand:
 
-## Spannungsteiler/Rückführgröße
+### Spannungsteiler/Rückführgröße
 
 Da bereits Vref gewählt wurde, kann nun das Verhältnis der Widerstände
 $R_{2}$ zu $R_{1}$ bestimmt werden.
 
-![](img/Experiment_10/Spannungsteiler.png){#10_fig_03 .align-center
+![](img/Experiment_10/Spannungsteiler.png){##10_fig_03 .align-center
 .Spannungsteiler ./ .Rückführgröße .[1]}
 
 Durch einsetzen von $V_{ref} = 2,4V$ und $Vo = 3V$ ergibt sich folgendes
@@ -106,7 +104,7 @@ Toleranzen immer weniger eine Rolle spielen und so die Ausgangsspannung
 $V_{0}$ stabiler wird. Daher haben wir uns für $R_{1} = 100k\Omega$ und
 $R_{2} = 25k\Omega$ entschieden.
 
-## PMOS
+### PMOS
 
 Wie schon erwähnt, können mit einem LDO Spannungen auf eine stabile
 Spannung hochtransformiert werden. Beispielsweise von $3,3V$ auf $4V$.
@@ -120,7 +118,7 @@ Drain-Anschluss. Somit steuert allgemein gesagt die Spannung $U_{SG}$
 die Spannung $U_{SD}$. Da bei Beeinflussung des Stromes sich auch die
 Spannung entsprechend ändert.
 
-## Regelstrecke
+### Regelstrecke
 
 Die Referenzspannung entspricht der Spannung von von $R_{1}$ die durch
 den Spannungsteiler entsteht. Diese beiden Spannungen werden im OP
@@ -137,10 +135,10 @@ von Source zu Drain fließt, welche somit auch die VDO Spannung dann
 beeinflusst. Die Spannung die aus dem OP austritt steuert folglich dann
 den Gate-Anschluss vom PMOS an.
 
-![](img/Experiment_10/Regelstrecke.jpeg){#10_fig_04 .align-center
+![](img/Experiment_10/Regelstrecke.jpeg){##10_fig_04 .align-center
 .Darstellung .Regelstrecke .[1]}
 
-## Stabilisierung der Spannung bei Änderung des Lastwiderstandes
+### Stabilisierung der Spannung bei Änderung des Lastwiderstandes
 
 Zusätzlich regelt die Regelstrecke für einen bestimmten
 Widerstandsbereich für $R_{L}$ die Spannung $V_{0}$ auf konstant $3V$.
@@ -164,17 +162,17 @@ für einen bestimmten Widerstandsbereich der Last gehalten.
 Zusammengefasst kann man sagen, dass der Regelkreis für einen bestimmten
 Lastbereich für $R_{L}$ unabhängig arbeitet und trotzdem $3V$ hält.
 
-# [TinaSpice](https://www.ti.com/tool/TINA-TI) Simulationen
+## [TinaSpice](https://www.ti.com/tool/TINA-TI) Simulationen
 
 **10.4.1 Schaltung Nr.1**
 
 Simuliert mit [TinaSpice](https://www.ti.com/tool/TINA-TI) schaut der
 Aufbau wie folgt aus `10_fig_05`{.interpreted-text role="numref"}:
 
-![](img/Experiment_10/SCHALTPLAN_1.png){#10_fig_05 .align-center
+![](img/Experiment_10/SCHALTPLAN_1.png){##10_fig_05 .align-center
 .Schaltung .1 .mit .TinaSpice .simuliert .[2]}
 
-![](img/Experiment_10/WelligkeitS1.png){#10_fig_06 .align-center
+![](img/Experiment_10/WelligkeitS1.png){##10_fig_06 .align-center
 .Schaltung .1 .Messung .mit .TinaSpice .simuliert .[2]}
 
 Anhand der Messung `10_fig_06`{.interpreted-text role="numref"} ist zu
@@ -202,7 +200,7 @@ ein gängiger Spannungsregler verwendet. Die Komponenten wurden soweit
 aus den Unterlagen des Manuels entnommen und mit den beiden Dioden
 verwendet.
 
-![](img/Experiment_10/SCHALTPLAN_2.png){#10_fig_07 .align-center
+![](img/Experiment_10/SCHALTPLAN_2.png){##10_fig_07 .align-center
 .Schaltung .2 .mit .TinaSpice .simuliert .[2]}
 
 Es ist das gleiche Ziel dieser Schaltung, eine Ausgangsspannung von $3V$
@@ -213,7 +211,7 @@ wird, variiert ebenfalls. Hier schwankt die Spannung zwischen $2,5V$ und
 $3,5V$, sodass zu erkennen ist, dass der Eingangswechselspannungsanteil
 1:1 auf den Ausgang übergeben wird. Die Restwelligkeit beträgt somit:
 
-![](img/Experiment_10/WelligkeitS2.png){#10_fig_08 .align-center
+![](img/Experiment_10/WelligkeitS2.png){##10_fig_08 .align-center
 .Schaltung .2 .Messung .mit .TinaSpice .simuliert .[2]}
 
 **10.4.3 Load Regulation im Vergleich**
@@ -231,7 +229,7 @@ ist die Ausgangsspannung ab $500 \Omega$ stabil und die Load Regulation
 beträgt 0%. Für die 2. Schaltung beträgt die Ausgangsspannung $3V$
 bereits ab einen Widerstand von $120\Omega$.
 
-![](img/Experiment_10/loadvergleich.png){#10_fig_09 .align-center .Load
+![](img/Experiment_10/loadvergleich.png){##10_fig_09 .align-center .Load
 .Regulation .im .Vergleich .mit .TinaSpice .simuliert .[2]}
 
 **10.4.4 Line Regulation im Vergleich**
@@ -244,7 +242,7 @@ vorhanden. Da die Eingangsspannung in unserem Fall zwischen $4V$ und
 $5V$ variiert, haben wir diese Werte gewählt. Der Lastwiderstand wurde
 auf $10k\Omega$ festgelegt.
 
-![](img/Experiment_10/linevergleich.png){#10_fig_10 .align-center .Line
+![](img/Experiment_10/linevergleich.png){##10_fig_10 .align-center .Line
 .Regulation .im .Vergleich .mit .TinaSpice .simuliert .[2]}
 
 So ergibt sich für die erste Schaltung eine Line Regulation von:
@@ -261,7 +259,7 @@ Für die 2. Schaltung ist die Line Regulation, wie zu erwarten, schlecht.
 Als nächstes wird das Verhalten der Ausgangsspannung im Bezug auf eine
 steigende Eingangsspannung betrachtet.
 
-![](img/Experiment_10/Vin_steigt_Vergleich.png){#10_fig_11 .align-center
+![](img/Experiment_10/Vin_steigt_Vergleich.png){##10_fig_11 .align-center
 .Auswirkung .einer .steigenden .Eingangsspannung .im .Vergleich .mit
 .TinaSpice .simuliert .[2]}
 
@@ -292,7 +290,7 @@ Ebenfalls nährt sich die Spannung beim Überschreiten den $7V$.
 Als letzten Punkt wird die Impedanz der Schaltungen betrachtet. Dieser
 berechnet sich aus dem Kurzschlussstrom und der Klemmenspannung $(3V)$
 
-![](img/Experiment_10/Kurzschlussstromvergleich.png){#10_fig_12
+![](img/Experiment_10/Kurzschlussstromvergleich.png){##10_fig_12
 .align-center .Bestimmung .der .Ausgangswiderstände .mit .TinaSpice
 .simuliert .[2]}
 
@@ -307,7 +305,7 @@ gemessen werden! In der Simulation liegt der Kurzschlussstrom bei etwa
 $42,76kA$. Es befindet sich in dieser Schaltung keine Schutzeinrichtung.
 So bestimmt sich aus der Berechnung eine Impedanz von:
 
-### Lösungsansätze
+#### Lösungsansätze
 
 Kurze Beschreibung des Problems: Nach Aufbau der gegebenen Schaltung
 (Versuchsbeschreibung) erfolgte nicht die gewünschte Stabilisierung der
@@ -357,7 +355,7 @@ wären die Verbindungsleitungen so kurz wie möglich. Unseres Erachtens
 waren die Leitungen, mit denen die Bauteile verbunden wurden, die größte
 Fehlerquelle.
 
-# Quellen
+## Quellen
 
 \[1\] aslk-pro-manual-v103-Experiment 10
 

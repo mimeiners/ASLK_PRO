@@ -1,8 +1,6 @@
----
-title: "Experiment 11: Parameterstudie eines LDO\\'s"
----
+# Parameterstudie eines LDO's
 
-# Kurze Theorie und Motivation
+## Kurze Theorie und Motivation
 
 Ziel dieses Experiments ist es, die Parameter des Low Dropout Regulator
 (LDO) IC TPS7250 zu verstehen. Der TPS7250 ist ein Linearregler von
@@ -20,9 +18,9 @@ anderen Spannungsreglern ist die minimal erforderliche Differenz
 zwischen Ein- und Ausgangsspannung. Diese liegt bei dem LDO bei 0,1 V
 bis 1 V. Bei anderen Reglern liegt diese bei 1,5 V bis 3 V.
 
-# Funktionsweise
+## Funktionsweise
 
-![LDO Prizip](img/Experiment_11/low_dropout_regulator.png){#11_fig_01
+![LDO Prizip](img/Experiment_11/low_dropout_regulator.png){##11_fig_01
 .align-center}
 
 Der LDO besteht im Prinzip aus einer Referenzspannung, einem
@@ -42,10 +40,10 @@ Ausgangsspannung am Operationsverstärker ein, so dass die Spannung
 zwischen Gate und Source des Transistors anwächst oder kleiner wird.
 Dadurch fließt mehr oder weniger Strom zum Regler Ausgang.
 
-# Aufbau der Schaltung
+## Aufbau der Schaltung
 
 ![on-board
-Schaltung](img/Experiment_11/Schematic_diagram_of_on_board_evaluation_module.png){#11_fig_02
+Schaltung](img/Experiment_11/Schematic_diagram_of_on_board_evaluation_module.png){##11_fig_02
 .align-center}
 
 -Eingangsspannung: 5,5-11V
@@ -62,7 +60,7 @@ auch die Bandbreite bzw. die Reaktionszeit des LDO.
 
 -Die Diode zeigt, dass der Chip Funktionsfähig ist.
 
-# Aufgabe
+## Aufgabe
 
 Ermitteln der Leitungsregelung: Die Ausgangsspannung als Funktion der
 Eingangsspannung für eine feste Ausgangslast.
@@ -85,28 +83,28 @@ in der Lage sein, eine konstante Ausgangsspannung zur Verfügung zu
 stellen. Dieser Strom wird aber nicht immer konstant bleiben und
 schwanken.
 
-## Leitungsregelung: Schaltungsaufbau - Simulation
+### Leitungsregelung: Schaltungsaufbau - Simulation
 
 Mithilfe der Software LTSpice XII ist es möglich, den Schaltungsaufbau
 zu simulieren. Die Schaltung wird hierbei nach dem Schema aus
 `11_fig_02`{.interpreted-text role="numref"} entworfen.
 
 ![Simulation
-Leitungsregelung](img/Experiment_11/Simulation_der_SchaltungTeil1.png){#11_fig_03
+Leitungsregelung](img/Experiment_11/Simulation_der_SchaltungTeil1.png){##11_fig_03
 .align-center}
 
 Das Model für den TPS7250 Baustein wurde von der Texas Instrumens
 Homepage gedownloadet. Die Eingangsspannung wird von 5,5 Volt bis 11
 Volt in 0,5 Volt Schritten gesweept.
 
-## Leitungsregelung: Vergleich Messung mit Simulation
+### Leitungsregelung: Vergleich Messung mit Simulation
 
 Nachdem die Simulationen für die Schaltung durhcgeführt sind, werden die
 Messungen am Texas Instruments Board durchgeführt. Hierdurch kann ein
 klarer Vergleich zur Simulation hergestellt werden.
 
 ![Leitungsregelung: Vergleich Messung &
-Simulation](img/Experiment_11/Vergleich_Messung1_&_Simulation1.png){#11_fig_04
+Simulation](img/Experiment_11/Vergleich_Messung1_&_Simulation1.png){##11_fig_04
 .align-center}
 
 Die `11_fig_04`{.interpreted-text role="numref"} zeigt das Verhältnis
@@ -118,10 +116,10 @@ gewünschten Bereich arbeitet, weil die Ausgangsspannung unter 5 Volt
 liegt, für die anderen Lasten erfüllt der Spannungsregler seine
 Funktion.
 
-## Lastregelung: Schaltungsaufbau - Simulation
+### Lastregelung: Schaltungsaufbau - Simulation
 
 ![Schaltungsaufbau -
-Simulation](img/Experiment_11/Simulation_Teil2.png){#11_fig_05
+Simulation](img/Experiment_11/Simulation_Teil2.png){##11_fig_05
 .align-center}
 
 Für die Lastregelung wird die LT-Spice schaltung minimal verändert. Um
@@ -129,10 +127,10 @@ eine Kontinuierliche Last am Ausgang zu erzeugen, wird die Zeitvariable
 \"time\" eingefügt. Die Last am Ausgang wird also mit vortlaufender Zeit
 immer größer.
 
-## Lastregelung: Vergleich Messung & Simulation
+### Lastregelung: Vergleich Messung & Simulation
 
 ![Lastregelung: Vergleich Messung mit
-Simulation](img/Experiment_11/Vergleich_Messung2_&_Simulation2.png){#11_fig_06
+Simulation](img/Experiment_11/Vergleich_Messung2_&_Simulation2.png){##11_fig_06
 .align-center}
 
 Die Kurve der Simulation zeigt, das der Spannungsregler die 5 Volt am

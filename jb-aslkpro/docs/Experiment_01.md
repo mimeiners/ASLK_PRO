@@ -1,4 +1,4 @@
-# Experiment 1: Gegenkopplungsverstärker und Instrumentenverstärker
+# Gegenkopplungsverstärker und Instrumentenverstärker
 
 In diesem Experiment sollen drei Grundschaltungen eines Operationsverstärkers untersucht werden.
 Zu diesen gehören ein:

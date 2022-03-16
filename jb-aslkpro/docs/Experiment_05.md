@@ -1,4 +1,4 @@
-# Experiment 5: Self-Tuned Filter
+# Self-Tuned Filter
 
 
 ## Abstract
