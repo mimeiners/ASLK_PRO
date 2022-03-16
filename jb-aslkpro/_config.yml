@@ -3,41 +3,39 @@
 
 title: ASLK Pro Experimente
 author: M. Meiners
-logo: HSB_Horizontal_RGB.png
+logo: hsb-logo.png
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Short description about the book
+description: >-
+  Elektronik-Experimente mit dem ASLK Pro.
+
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-#parse:
-#  myst_enable_extensions:
-#    # don't forget to list any other extensions you want enabled,
-#    # including those that are enabled by default!
-#    - amsmath
-    
-# Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
-
-# MathJax Version 3
-# sphinx:
-#  config:
-#    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
-
-# Add GitHub buttons to your book
+# HTML-specific settings
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  home_page_in_navbar: false
   use_issues_button: true
   use_repository_button: true
+
+# Interact link settings
+notebook_interface: "notebook"
+
+# Launch button settings
+repository:
+  url: https://github.com/executablebooks/jb-aslkpro
+  path_to_book: "jb-aslkpro"
+
+binder:
+  binderhub_url: "https://mybinder.org"
+  text: "Launch binder"
+
+# LaTeX settings
+bibtex_bibfiles:
+   - _bibliography/references.bib
+latex:
+  latex_engine: "xelatex"
+  latex_documents:
+    targetname: aslkpro.tex
+

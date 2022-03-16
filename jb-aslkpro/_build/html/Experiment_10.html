@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurze Theorie und Motivation &#8212; ASLK Pro Experimente</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Kurze Theorie und Motivation" href="Experiment_11.html" />
+    <link rel="prev" title="Kurze Theorie und Motivation" href="Experiment_09.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/HSB_Horizontal_RGB.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ASLK Pro Experimente</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Einleitung und Übersicht
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_01.html">
+   Experiment 1: Gegenkopplungsverstärker und Instrumentenverstärker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_02.html">
+   Experiment 2: Regenerative Rückgekoppelte Systeme und Design astabiler und monostabiler Kippstufen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_03.html">
+   Experiment 3: Integrator und Differenzierer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_04.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_05.html">
+   Experiment 5: Self-Tuned Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_06.html">
+   Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_07.html">
+   Grundlagen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_08.html">
+   Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_09.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_11.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_12.html">
+   Abstract
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_13.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_14.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RedPitaya_Messautomatisierung.html">
+   Einleitung
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Experiment_10.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FExperiment_10.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Kurze Theorie und Motivation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropout">
+     Dropout
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aufschluesselung-der-funktionsgruppen">
+     Aufschluesselung der Funktionsgruppen
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#referenzspannung">
+     Referenzspannung
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spannungsteiler-ruckfuhrgrosze">
+     Spannungsteiler/Rückführgröße
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pmos">
+     PMOS
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regelstrecke">
+     Regelstrecke
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stabilisierung-der-spannung-bei-anderung-des-lastwiderstandes">
+     Stabilisierung der Spannung bei Änderung des Lastwiderstandes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tinaspice-simulationen">
+   TinaSpice Simulationen
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#losungsansatze">
+     Lösungsansätze
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uberprufen-ob-die-schaltung-richtig-aufgebaut-ist-nein">
+     Überprüfen ob die Schaltung richtig aufgebaut ist      nein
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quellen">
+   Quellen
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="kurze-theorie-und-motivation">
+<h1>Kurze Theorie und Motivation<a class="headerlink" href="#kurze-theorie-und-motivation" title="Permalink to this headline">¶</a></h1>
+<p>Um eine feste, vorgegebene Spannung in eine beliebige Wunschspannung
+umzuwandeln, werden Spannungsregler verwendet. Für niedrige Spannungen
+kann ein “Low Dropout Regler” (LDO) verwendet werden. Dieser zeichnet
+sich für seine hohe Effizienz und seine rauscharme Umwandlung aus.
+Außerdem kann durch Anpassung der Ausgangsspannung des LDOs die
+Effizienz der angeschlossenen Komponente gesteigert und damit einher die
+Abwärme reduziert werden.</p>
+<p>Gegenüber den DC/DC PWM gesteuerten Spannungswandlern hat der LDO keine
+Welligkeit in der Ausgangsspannung. Außerdem werden nur wenige
+zusätzliche Bauteile benötigt, was zusätzlich das Designen von Platinen
+erleichtert.</p>
+<div class="section" id="dropout">
+<h2>Dropout<a class="headerlink" href="#dropout" title="Permalink to this headline">¶</a></h2>
+<p>Der Dropout entspricht der Differenzspannung zwischen dem Ein- und
+Ausgang und fällt so über dem LDO ab. Eine Dropoutspannung fällt immer
+an, sodass erst ab einer ausreichenden Eingangsspannung die gewünschte
+Ausgangsspannung ausgegeben werden kann. Mit steigender Eingangsspannung
+steigt die Dropoutspannung ebenfalls.</p>
+</div>
+<div class="section" id="aufschluesselung-der-funktionsgruppen">
+<h2>Aufschluesselung der Funktionsgruppen<a class="headerlink" href="#aufschluesselung-der-funktionsgruppen" title="Permalink to this headline">¶</a></h2>
+<p>Anhand des ersten Versuchs soll ein Spannungsregler mit Hilfe eines
+Operationsverstärkers, einem PMOS-FET und weiteren Bauteilen realisiert
+werden. Das Ziel ist es eine Ausgangsspannung <span class="math notranslate nohighlight">\(V_{0}\)</span> von <span class="math notranslate nohighlight">\(3V\)</span> zu
+erhalten, während die Eingangsspannung <span class="math notranslate nohighlight">\(V_{UN}\)</span> zwischen <span class="math notranslate nohighlight">\(4V\)</span> und <span class="math notranslate nohighlight">\(5V\)</span>
+variiert. Zur Verfügung steht eine Schaltung mit unbekannten Variablen.
+Diese gelten nun zu bestimmen. Die Schaltung sieht wie folgt aus
+<code class="docutils literal notranslate"><span class="pre">10_fig_01</span></code>{.interpreted-text role=”numref”}:</p>
+<p><img alt="" src="_images/LDO_Regulator.png" />{#10_fig_01 .align-center
+.LDO-Regulator .[1]}</p>
+<p>Da auf dem ASLKpro-Board bestimmte Bauteile vorgegeben sind, setzen wir
+bei dem Operationsverstärker auf den TL082 und bei dem P-MOS auf den
+BS250P. Um die restlichen benötigte Bauteile zu bestimmen ist es hierzu
+von Nöten die Aufgabe der einzelnen Bauteile zu kennen!</p>
+</div>
+<div class="section" id="referenzspannung">
+<h2>Referenzspannung<a class="headerlink" href="#referenzspannung" title="Permalink to this headline">¶</a></h2>
+<p>Die Referenzspannung <span class="math notranslate nohighlight">\(V_{ref}\)</span> wird durch die Zenerdiode und dem
+Vorwiderstand <span class="math notranslate nohighlight">\(R\)</span> bestimmt. Eine Zener-Diode wird verwendet um den
+Zener-Effekt zu nutzen. Solange die Eingangsspannung größer als die
+Durchbruchspannung der Zener-Diode ist, liegt die Durchbruchspannung an
+der Zener-Diode an. Dies bedeutet, dass dort dauerhaft eine
+gleichbleibende Spannung vorhanden ist, obwohl die Eingangsspannung
+variieren kann. Die Spannungsdifferenz zwischen Eingangsspannung und
+Durchbruchspannung fällt über den Vorwiderstand <span class="math notranslate nohighlight">\(R\)</span> ab.</p>
+<p><img alt="" src="_images/Referenzspannung.png" />{#10_fig_02 .align-center
+.Referenzspannung .[1]}</p>
+<p>Um die Zenerdiode zu bestimmen, muss die Referenzspannung ausgerechnet
+werden. Diese erhalten wir über die folgende Formel:</p>
+<p>Herauszulesen ist, dass <span class="math notranslate nohighlight">\(V_{0}\)</span> über die Referenzspannung und dem
+Verhältnis der Widerstände <span class="math notranslate nohighlight">\(R_{2}\)</span> zu <span class="math notranslate nohighlight">\(R_{1}\)</span> eingestellt werden kann.
+Durch das auflösen der Klammer wird nochmal verdeutlicht, dass <span class="math notranslate nohighlight">\(V_{ref}\)</span>
+kleiner sein muss als <span class="math notranslate nohighlight">\(V_{0}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_{ 0 }= V_{ ref } + V_{ ref }\frac{ R_{ 2 } }{ R_{ 1 } } \\
+\end{aligned}\end{split}\]</div>
+<p>Da in unserem Fall eine Ausgangsspannung von <span class="math notranslate nohighlight">\(V_{0} = 3V\)</span> gefordert ist
+ergibt sich hierfür folgendes Ergebnis:</p>
+<p>Wie zuvor erwähnt, entspricht die Referenzspannung der
+Durchbruchspannung der Zenerdiode. Daher ist nun eine Zenerdiode zu
+wählen, deren Durchbruchspannung <span class="math notranslate nohighlight">\(U_{Z} &lt; 3V\)</span> entspricht. Hierfür kann
+z.B. eine Zenerdiode mit <span class="math notranslate nohighlight">\(U_{Z} = 2,4V\)</span> oder <span class="math notranslate nohighlight">\(U_{Z} = 2,7V\)</span> verwendet
+werden. In unserem Fall haben wir uns für eine Z-Diode mit
+<span class="math notranslate nohighlight">\(U_{Z} = 2,4V\)</span> entschieden. Daher entspricht <span class="math notranslate nohighlight">\(V_{ref} = 2,4V\)</span></p>
+<p>Nun wird der Vorwiderstand R bestimmt. Dieser dient dazu den
+Durchbruchstrom einzuhalten, der im Datenblatt der Z-Diode zu finden
+ist. In unserem Fall beträgt dieser <span class="math notranslate nohighlight">\(5mA\)</span>. Mit dem Ohmschen Gesetz kann
+nun der Widerstand <span class="math notranslate nohighlight">\(R\)</span> bestimmt werden:</p>
+<p><span class="math notranslate nohighlight">\(I_{-op}\)</span> entspricht dem Strom, der in den Operationsverstärker
+abgeführt wird. Da hier jedoch der Idealfall betrachtet wird, ist der
+Eingangswiderstand unendlich groß und somit wäre <span class="math notranslate nohighlight">\(I_{-op} = 0A\)</span>. Daher
+ergibt sich folgender Vorwiderstand:</p>
+</div>
+<div class="section" id="spannungsteiler-ruckfuhrgrosze">
+<h2>Spannungsteiler/Rückführgröße<a class="headerlink" href="#spannungsteiler-ruckfuhrgrosze" title="Permalink to this headline">¶</a></h2>
+<p>Da bereits Vref gewählt wurde, kann nun das Verhältnis der Widerstände
+<span class="math notranslate nohighlight">\(R_{2}\)</span> zu <span class="math notranslate nohighlight">\(R_{1}\)</span> bestimmt werden.</p>
+<p><img alt="" src="_images/Spannungsteiler.png" />{#10_fig_03 .align-center
+.Spannungsteiler ./ .Rückführgröße .[1]}</p>
+<p>Durch einsetzen von <span class="math notranslate nohighlight">\(V_{ref} = 2,4V\)</span> und <span class="math notranslate nohighlight">\(Vo = 3V\)</span> ergibt sich folgendes
+Verhältnis:</p>
+<p>Somit muss <span class="math notranslate nohighlight">\(R_{1}\)</span> viermal so groß wie <span class="math notranslate nohighlight">\(R_{2}\)</span> gewählt werden. Außerdem
+ist zu beachten, dass um so größer die Widerstände gewählt werden,
+Toleranzen immer weniger eine Rolle spielen und so die Ausgangsspannung
+<span class="math notranslate nohighlight">\(V_{0}\)</span> stabiler wird. Daher haben wir uns für <span class="math notranslate nohighlight">\(R_{1} = 100k\Omega\)</span> und
+<span class="math notranslate nohighlight">\(R_{2} = 25k\Omega\)</span> entschieden.</p>
+</div>
+<div class="section" id="pmos">
+<h2>PMOS<a class="headerlink" href="#pmos" title="Permalink to this headline">¶</a></h2>
+<p>Wie schon erwähnt, können mit einem LDO Spannungen auf eine stabile
+Spannung hochtransformiert werden. Beispielsweise von <span class="math notranslate nohighlight">\(3,3V\)</span> auf <span class="math notranslate nohighlight">\(4V\)</span>.
+Der PMOS ist so verbaut, dass die entstehende Spannung vom
+Source-Anschluss zum Gate-Anschluss die <span class="math notranslate nohighlight">\(U_{DS}\)</span> Spannung bildet. Diese
+wiederum beeinflusst unsere Zielspannung <span class="math notranslate nohighlight">\(V_{0}\)</span>. <span class="math notranslate nohighlight">\(V_{0}\)</span> ist die
+Differenz aus der Eingangsspannung <span class="math notranslate nohighlight">\(V_{UN}\)</span> und der Spannung <span class="math notranslate nohighlight">\(U_{SG}\)</span>,
+die am PMOS anliegt und auch Dropout-Spannung genannt wird. Die Spannung
+<span class="math notranslate nohighlight">\(U_{SG}\)</span> reguliert den Stromfluss zwischen dem Source-Anschluss und dem
+Drain-Anschluss. Somit steuert allgemein gesagt die Spannung <span class="math notranslate nohighlight">\(U_{SG}\)</span>
+die Spannung <span class="math notranslate nohighlight">\(U_{SD}\)</span>. Da bei Beeinflussung des Stromes sich auch die
+Spannung entsprechend ändert.</p>
+</div>
+<div class="section" id="regelstrecke">
+<h2>Regelstrecke<a class="headerlink" href="#regelstrecke" title="Permalink to this headline">¶</a></h2>
+<p>Die Referenzspannung entspricht der Spannung von von <span class="math notranslate nohighlight">\(R_{1}\)</span> die durch
+den Spannungsteiler entsteht. Diese beiden Spannungen werden im OP
+miteinander verglichen. <span class="math notranslate nohighlight">\(V_{ref}\)</span> zu <span class="math notranslate nohighlight">\(V_{out}\)</span> ist das gleich wie
+<span class="math notranslate nohighlight">\(R_{1}\)</span> zu (<span class="math notranslate nohighlight">\(R_{1}+R_{2}\)</span>). Vref muss kleiner als <span class="math notranslate nohighlight">\(V_{0}\)</span> sein, daher
+wurde als Diodenspannung <span class="math notranslate nohighlight">\(2,4V\)</span> gewählt. An <span class="math notranslate nohighlight">\(R_{1}\)</span> liegt die
+Diodenspannung an und an <span class="math notranslate nohighlight">\(R_{2}\)</span> die Differenz von Diode und <span class="math notranslate nohighlight">\(V_{0}\)</span>,
+also ungefähr <span class="math notranslate nohighlight">\(0,6V\)</span>. Die Spannung an dem Widerstand <span class="math notranslate nohighlight">\(R_{1}\)</span> ist die
+Rückführgröße und diese wird permanent mit der Referenzspannung
+verglichen. Da es sich ständig ändert (auch wenn minimal) entsteht eine
+Frequenz, die in unserem Fall ca. <span class="math notranslate nohighlight">\(250kHz\)</span> entspricht. Also um es
+nochmal zu sagen, über den OP steuert man den Stromfluss am PMOS, der
+von Source zu Drain fließt, welche somit auch die VDO Spannung dann
+beeinflusst. Die Spannung die aus dem OP austritt steuert folglich dann
+den Gate-Anschluss vom PMOS an.</p>
+<p><img alt="" src="_images/Regelstrecke.jpeg" />{#10_fig_04 .align-center
+.Darstellung .Regelstrecke .[1]}</p>
+</div>
+<div class="section" id="stabilisierung-der-spannung-bei-anderung-des-lastwiderstandes">
+<h2>Stabilisierung der Spannung bei Änderung des Lastwiderstandes<a class="headerlink" href="#stabilisierung-der-spannung-bei-anderung-des-lastwiderstandes" title="Permalink to this headline">¶</a></h2>
+<p>Zusätzlich regelt die Regelstrecke für einen bestimmten
+Widerstandsbereich für <span class="math notranslate nohighlight">\(R_{L}\)</span> die Spannung <span class="math notranslate nohighlight">\(V_{0}\)</span> auf konstant <span class="math notranslate nohighlight">\(3V\)</span>.
+Wenn man <span class="math notranslate nohighlight">\(R_{L}\)</span> jetzt kleiner dimensioniert dann wird der Strom <span class="math notranslate nohighlight">\(I_{L}\)</span>
+größer. Dieser Strom fließt auch durch den PMOS also steigt folglich der
+Source-Drain Strom auch. Nach den Regeln des Ohmschen Gesetzes muss auch
+die Spannung <span class="math notranslate nohighlight">\(V_{SD}\)</span> steigen. Dadurch sinkt dann die Spannung <span class="math notranslate nohighlight">\(V_{0}\)</span>.
+Weil es gilt: <span class="math notranslate nohighlight">\(V_{IN} = V_{SD} + V_{0}\)</span>. Also wenn <span class="math notranslate nohighlight">\(V_{SD}\)</span> größer wird
+muss <span class="math notranslate nohighlight">\(V_{0}\)</span> kleiner werden. Folge davon für den Rückführwert ist, dass
+an <span class="math notranslate nohighlight">\(R_{1}\)</span> nun eine kleinere Spannung anliegt. Somit ist am + Anschluss
+des OP eine kleinere Spannung, sodass der Verstärker invertiert. Jetzt
+liegt eine größere negative Spannung am Gate des PMOS an. Damit steigt
+logischer Weise die Spannung <span class="math notranslate nohighlight">\(U_{GS}\)</span> und dies führt dazu, dass ein
+höherer Source-Drain Strom fließt. Denn je höher die Gate Source
+Spannung ist, desto größer wird der Source-Drain Strom, da der
+Widerstand <span class="math notranslate nohighlight">\(R_{SD}\)</span> wird kleiner. Folge davon ist, dass die Spannung
+<span class="math notranslate nohighlight">\(V_{SD}\)</span> sinkt. Dann entsteht wieder durch das Verhältnis
+<span class="math notranslate nohighlight">\(V_{IN} = V_{SD} + V_{0}`ein Ausgleich, weil die Spannung an :math:`V_{0}\)</span>
+wieder ansteigt, da <span class="math notranslate nohighlight">\(V_{SD}\)</span> gesunken ist. Somit werden konstant <span class="math notranslate nohighlight">\(3V\)</span>
+für einen bestimmten Widerstandsbereich der Last gehalten.
+Zusammengefasst kann man sagen, dass der Regelkreis für einen bestimmten
+Lastbereich für <span class="math notranslate nohighlight">\(R_{L}\)</span> unabhängig arbeitet und trotzdem <span class="math notranslate nohighlight">\(3V\)</span> hält.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="tinaspice-simulationen">
+<h1><a class="reference external" href="https://www.ti.com/tool/TINA-TI">TinaSpice</a> Simulationen<a class="headerlink" href="#tinaspice-simulationen" title="Permalink to this headline">¶</a></h1>
+<p><strong>10.4.1 Schaltung Nr.1</strong></p>
+<p>Simuliert mit <a class="reference external" href="https://www.ti.com/tool/TINA-TI">TinaSpice</a> schaut der
+Aufbau wie folgt aus <code class="docutils literal notranslate"><span class="pre">10_fig_05</span></code>{.interpreted-text role=”numref”}:</p>
+<p><img alt="" src="_images/SCHALTPLAN_1.png" />{#10_fig_05 .align-center
+.Schaltung .1 .mit .TinaSpice .simuliert .[2]}</p>
+<p><img alt="" src="_images/WelligkeitS1.png" />{#10_fig_06 .align-center
+.Schaltung .1 .Messung .mit .TinaSpice .simuliert .[2]}</p>
+<p>Anhand der Messung <code class="docutils literal notranslate"><span class="pre">10_fig_06</span></code>{.interpreted-text role=”numref”} ist zu
+erkennen, dass die Ausgangsspannung Vo (in lila dargestellt) leicht
+variiert. Dies ist auf die Referenzspannung Vref (in grün dargestellt)
+zurückzuführen. Da die Eingangsspannung um <span class="math notranslate nohighlight">\(+-0,5V\)</span> variiert ändert sich
+somit auch der Strom, der durch den Vorwiderstand <span class="math notranslate nohighlight">\(R\)</span> eingestellt wurde.
+Somit variiert die Durchbruchspannung um ungefähr <span class="math notranslate nohighlight">\(0,05V\)</span>. Effektiv
+bleibt die Durchbruchspannung jedoch bei den gewählten <span class="math notranslate nohighlight">\(2,4V\)</span>. Durch
+diesen Einfluss variiert auch am Ausgang die Spannung Vo um <span class="math notranslate nohighlight">\(+-0,05V\)</span>.
+Mit Hilfe eines Kondensators kann bei Bedarf die Ausgangsspannung
+geglättet werden. Hierzu muss dieser parallel zur Last angeschlossen
+werden. Vgs entspricht der Differenzspannung zwischen dem Ausgang des
+Operationsverstärkers und der Sourcespannung. Die zurückgeführte Größe,
+die über <span class="math notranslate nohighlight">\(R_{1}\)</span> gemessen wurde (VR1 in dunkelgrün) entspricht der
+Referenzspannung, die aus dem Ausgang durch das Widerstandsverhältnis
+zurück gewandelt wurde. Somit findet eine dauerhafte Nachregelung statt,
+damit der Ausgang nahezu stabil bleibt. Somit kann die Restwelligkeit
+bestimmt werden, welche wie folgt bestimmt wird:</p>
+<p><strong>10.4.2 Schaltung Nr.2</strong></p>
+<p>Für die 2. Schaltung <code class="docutils literal notranslate"><span class="pre">10_fig_07</span></code>{.interpreted-text role=”numref”} wird
+ein gängiger Spannungsregler verwendet. Die Komponenten wurden soweit
+aus den Unterlagen des Manuels entnommen und mit den beiden Dioden
+verwendet.</p>
+<p><img alt="" src="_images/SCHALTPLAN_2.png" />{#10_fig_07 .align-center
+.Schaltung .2 .mit .TinaSpice .simuliert .[2]}</p>
+<p>Es ist das gleiche Ziel dieser Schaltung, eine Ausgangsspannung von <span class="math notranslate nohighlight">\(3V\)</span>
+zu erzeugen, während die Eingangsspannung von <span class="math notranslate nohighlight">\(4V\)</span> bis <span class="math notranslate nohighlight">\(5V\)</span> variiert
+(grün). Die Referenzspannung (blau) über der Diode variiert zwischen
+<span class="math notranslate nohighlight">\(1,62V\)</span> und <span class="math notranslate nohighlight">\(1,74V\)</span>. Die Ausgangsspannung, welche über <span class="math notranslate nohighlight">\(R_{6}\)</span> gemessen
+wird, variiert ebenfalls. Hier schwankt die Spannung zwischen <span class="math notranslate nohighlight">\(2,5V\)</span> und
+<span class="math notranslate nohighlight">\(3,5V\)</span>, sodass zu erkennen ist, dass der Eingangswechselspannungsanteil
+1:1 auf den Ausgang übergeben wird. Die Restwelligkeit beträgt somit:</p>
+<p><img alt="" src="_images/WelligkeitS2.png" />{#10_fig_08 .align-center
+.Schaltung .2 .Messung .mit .TinaSpice .simuliert .[2]}</p>
+<p><strong>10.4.3 Load Regulation im Vergleich</strong></p>
+<p>Die Load Regulation beschreibt das Verhalten der Ausgangsspannung bei
+Änderung der Last. Die Last ist hier als Laststrom gemeint, der mit
+sinkendem Ausgangswiderstand steigt. Betrachtet wird der Bereich, sobald
+die Ausgangsspannung von <span class="math notranslate nohighlight">\(3V\)</span> erreicht wird und berechnet sich über
+folgende Formel:</p>
+<p>Beträgt die Load Regulation 0%, so ist die Schaltung Last unabhängig,
+was der Idealfall wäre. Da wir jedoch nur die Simulationen betrachten
+können, wird hier der Idealfall eintreten. Für die erste Schaltung (rot)
+ist die Ausgangsspannung ab <span class="math notranslate nohighlight">\(500 \Omega\)</span> stabil und die Load Regulation
+beträgt 0%. Für die 2. Schaltung beträgt die Ausgangsspannung <span class="math notranslate nohighlight">\(3V\)</span>
+bereits ab einen Widerstand von <span class="math notranslate nohighlight">\(120\Omega\)</span>.</p>
+<p><img alt="" src="_images/loadvergleich.png" />{#10_fig_09 .align-center .Load
+.Regulation .im .Vergleich .mit .TinaSpice .simuliert .[2]}</p>
+<p><strong>10.4.4 Line Regulation im Vergleich</strong></p>
+<p>Die Line Regulation beschreibt das Verhalten der Ausgangsspannung
+während sich die Eingangsspannung verändert. Beträgt die Line Regulation
+0%, so wird bei einer variierenden Eingangsspannung eine saubere
+Gleichspannung ausgegeben. Es ist also kein Wechselspannungsanteil mehr
+vorhanden. Da die Eingangsspannung in unserem Fall zwischen <span class="math notranslate nohighlight">\(4V\)</span> und
+<span class="math notranslate nohighlight">\(5V\)</span> variiert, haben wir diese Werte gewählt. Der Lastwiderstand wurde
+auf <span class="math notranslate nohighlight">\(10k\Omega\)</span> festgelegt.</p>
+<p><img alt="" src="_images/linevergleich.png" />{#10_fig_10 .align-center .Line
+.Regulation .im .Vergleich .mit .TinaSpice .simuliert .[2]}</p>
+<p>So ergibt sich für die erste Schaltung eine Line Regulation von:</p>
+<p>Ebenfalls ist zu erkennen, dass die erste Schaltung in dem Bereich
+zwischen <span class="math notranslate nohighlight">\(4V\)</span> und <span class="math notranslate nohighlight">\(4,075V\)</span> sich die Schaltung in einem instabilen
+Bereich befindet. Dies liegt daran, dass die Eingangsspannung die nicht
+die Mindestdropoutspannung und die <span class="math notranslate nohighlight">\(3V\)</span> Ausgangsspannung liefern kann.</p>
+<p>Für die 2. Schaltung ist die Line Regulation, wie zu erwarten, schlecht.</p>
+<p><strong>10.4.5 Vergleich der maximalen Eingangsspannung</strong></p>
+<p>Als nächstes wird das Verhalten der Ausgangsspannung im Bezug auf eine
+steigende Eingangsspannung betrachtet.</p>
+<p><img alt="" src="_images/Vin_steigt_Vergleich.png" />{#10_fig_11 .align-center
+.Auswirkung .einer .steigenden .Eingangsspannung .im .Vergleich .mit
+.TinaSpice .simuliert .[2]}</p>
+<p>Wie zuvor erwähnt, befindet sich die erste Schaltung erst ab einer
+Eingangsspannung von etwa <span class="math notranslate nohighlight">\(4,075V\)</span> in dem Sättigungsbereich. Hieraus
+kann man schließen, dass die Dropoutspannung bei mindestens <span class="math notranslate nohighlight">\(1,075V\)</span>
+liegt um eine Ausgangsspannung von <span class="math notranslate nohighlight">\(3V\)</span> liefern zu können. Bis zu einer
+Eingangsspannung von etwa <span class="math notranslate nohighlight">\(49V\)</span> steigt die Ausgangsspannung leicht, bis
+etwa <span class="math notranslate nohighlight">\(3,5V\)</span>. Sobald die <span class="math notranslate nohighlight">\(49V\)</span> überschritten werden, steigt die
+Ausgangsspannung linear an. Dies liegt an der Durchbruchspannung des
+P-MOS, die bei dem Modell bei <span class="math notranslate nohighlight">\(45V\)</span> liegt. Dies bedeutet, dass die
+Dropoutspannung zwischen <span class="math notranslate nohighlight">\(1,075V\)</span> und <span class="math notranslate nohighlight">\(45V\)</span> liegen kann.</p>
+<p>Die 2. Schaltung befindet sich bei einer Eingangsspannung von <span class="math notranslate nohighlight">\(4V\)</span> bis
+<span class="math notranslate nohighlight">\(5V\)</span> im linearen Bereich. Zu erkennen ist, dass bei einer
+Eingangsspannung von <span class="math notranslate nohighlight">\(7V\)</span> bis <span class="math notranslate nohighlight">\(19V\)</span> eine Ausgangsspannung von <span class="math notranslate nohighlight">\(5,5V\)</span>
+konstant gehalten werden kann. Ab <span class="math notranslate nohighlight">\(19V\)</span> steigt die Ausgangsspannung und
+nährt sich den <span class="math notranslate nohighlight">\(7V\)</span>.</p>
+<p>Als Test haben wir die 2. Schaltung optimiert um eine konstante Spannung
+von <span class="math notranslate nohighlight">\(3V\)</span> liefern zu können. Der Widerstand <span class="math notranslate nohighlight">\(R_{3}\)</span> musste hierfür auf
+<span class="math notranslate nohighlight">\(335k\Omega\)</span> gestellt werden. Jedoch muss hierfür eine Eingangsspannung
+von mindestens <span class="math notranslate nohighlight">\(4,6V\)</span> anliegen und darf die <span class="math notranslate nohighlight">\(10V\)</span> nicht überschreiten.
+Ebenfalls nährt sich die Spannung beim Überschreiten den <span class="math notranslate nohighlight">\(7V\)</span>.</p>
+<p><strong>10.4.6 Bestimmung des Ausgangswiderstands</strong></p>
+<p>Als letzten Punkt wird die Impedanz der Schaltungen betrachtet. Dieser
+berechnet sich aus dem Kurzschlussstrom und der Klemmenspannung <span class="math notranslate nohighlight">\((3V)\)</span></p>
+<p><img alt="" src="_images/Kurzschlussstromvergleich.png" />{#10_fig_12
+.align-center .Bestimmung .der .Ausgangswiderstände .mit .TinaSpice
+.simuliert .[2]}</p>
+<p>Für die erste Schaltung ist zu erkennen, dass der Strom begrenzt ist und
+maximal <span class="math notranslate nohighlight">\(10mA\)</span> beträgt. Dieser wird durch den P-MOS begrenzt. Mit
+steigendem Lastwiderstand sinkt der Strom ab. <span class="math notranslate nohighlight">\(R_{i}\)</span> wird wie folgt
+bestimmt:</p>
+<p>Bei der zweiten Schaltung ist ersichtlich, dass der Kurzschlussstrom bei
+bis zu mehreren kA liegen kann. Daher sollte dieser nicht in der Praxis
+gemessen werden! In der Simulation liegt der Kurzschlussstrom bei etwa
+<span class="math notranslate nohighlight">\(42,76kA\)</span>. Es befindet sich in dieser Schaltung keine Schutzeinrichtung.
+So bestimmt sich aus der Berechnung eine Impedanz von:</p>
+<div class="section" id="losungsansatze">
+<h2>Lösungsansätze<a class="headerlink" href="#losungsansatze" title="Permalink to this headline">¶</a></h2>
+<p>Kurze Beschreibung des Problems: Nach Aufbau der gegebenen Schaltung
+(Versuchsbeschreibung) erfolgte nicht die gewünschte Stabilisierung der
+Spannung. Die Messungen der einzelnen Teilspannungen der Bauteile waren
+plausibel und wie erwartet. Bei der Messung der Gesamtschaltung ergaben
+die Messungen keinen nachvollziehbaren Sinn und waren unseres Erachtens
+völlig wahllos.</p>
+<p><em>Zur Behebung dieses Problems wurden folgende Schritte unternommen:</em></p>
+<hr class="docutils" />
+<p>Ansatz | Erfolgreich</p>
+<hr class="docutils" />
+<p>Mehrfacher Neuaufbau der Schaltung | nei              n</p>
+<p>Überprüfen ob die Schaltung richtig aufgebaut ist      nein</p>
+<p>Mehrfacher Neuaufbau der Schaltung | nei              n</p>
+<p>Überprüfen ob die Schaltung richtig aufgebaut ist      nein</p>
+<p>Mehrfacher Neuaufbau der Schaltung | nei              n</p>
+<p>Überprüfen ob die Schaltung richtig aufgebaut ist      nein</p>
+<p>Mehrfacher Neuaufbau der Schaltung | nei              n</p>
+</div>
+<div class="section" id="uberprufen-ob-die-schaltung-richtig-aufgebaut-ist-nein">
+<h2>Überprüfen ob die Schaltung richtig aufgebaut ist      nein<a class="headerlink" href="#uberprufen-ob-die-schaltung-richtig-aufgebaut-ist-nein" title="Permalink to this headline">¶</a></h2>
+<p><strong>Schlussfolgerung:</strong></p>
+<p>Nachdem alle Ansätze mehrfach ohne Erfolg ausprobiert wurden, wurde eine
+Drittmeinung eingeholt. Mit Hilfe des Laboringenieures und dem
+betreuenden Professor konnte allerdings dennoch kein Erfolg erzielt
+werden.</p>
+<p><strong>Mögliche Optimierungen die man durchführen kann:</strong></p>
+<p>Einen Glättungskondensator vor und nach dem LDO einbauen um eine bessere
+Stabilisierung zu erreichen. Denn die Wechselspannungsanteile werden
+herausgefiltert.</p>
+<p>Eine weitere Möglichkeit Fehlerquellen zu minimieren wäre, wenn man eine
+Platine anfertigt, die dafür ausgelegt ist den LDO zu realisieren. Somit
+wären die Verbindungsleitungen so kurz wie möglich. Unseres Erachtens
+waren die Leitungen, mit denen die Bauteile verbunden wurden, die größte
+Fehlerquelle.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="quellen">
+<h1>Quellen<a class="headerlink" href="#quellen" title="Permalink to this headline">¶</a></h1>
+<p>[1] aslk-pro-manual-v103-Experiment 10</p>
+<p>[2] Messungen mit dem Programm TinaSpice [Selbst Erstellt, Gruppe
+10]</p>
+<p>[3] <a class="reference external" href="https://www.mouser.de/new/stmicroelectronics/stm-ldo-regulators/">https://www.mouser.de/new/stmicroelectronics/stm-ldo-regulators/</a>
+[Stand: 30.03.2020 20:22 Uhr]</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Experiment_09.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Kurze Theorie und Motivation</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Experiment_11.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Kurze Theorie und Motivation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

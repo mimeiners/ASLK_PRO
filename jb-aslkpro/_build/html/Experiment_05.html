@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 5: Self-Tuned Filter &#8212; ASLK Pro Experimente</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Theorie und Motivation" href="Experiment_06.html" />
+    <link rel="prev" title="Kurze Theorie und Motivation" href="Experiment_04.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/HSB_Horizontal_RGB.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ASLK Pro Experimente</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Einleitung und Übersicht
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_01.html">
+   Experiment 1: Gegenkopplungsverstärker und Instrumentenverstärker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_02.html">
+   Experiment 2: Regenerative Rückgekoppelte Systeme und Design astabiler und monostabiler Kippstufen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_03.html">
+   Experiment 3: Integrator und Differenzierer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_04.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Experiment 5: Self-Tuned Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_06.html">
+   Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_07.html">
+   Grundlagen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_08.html">
+   Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_09.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_10.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_11.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_12.html">
+   Abstract
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_13.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_14.html">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RedPitaya_Messautomatisierung.html">
+   Einleitung
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Experiment_05.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FExperiment_05.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einleitung">
+   Einleitung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theoretische-vorbetrachtung">
+   Theoretische Vorbetrachtung
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#universeller-aktivfilter-experiment-4">
+     Universeller Aktivfilter (Experiment 4)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrator">
+     Integrator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplizierer">
+     Multiplizierer
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#spannungsgesteuerter-tiefpass-integrator">
+       Spannungsgesteuerter Tiefpass (Integrator)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phasendetektor-mit-einem-multiplizierer">
+       Phasendetektor mit einem Multiplizierer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-des-universellen-aktivfilters">
+       Phase des Universellen Aktivfilters
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aufbau-des-selftuned-filters">
+     Aufbau des Selftuned Filters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regelkreislauf-des-selftuned-filters">
+       Regelkreislauf des Selftuned Filters
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation">
+   Simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#messung">
+   Messung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fazit">
+   Fazit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ausblick">
+   Ausblick
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#literaturverzeichnis">
+   Literaturverzeichnis
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="experiment-5-self-tuned-filter">
+<h1>Experiment 5: Self-Tuned Filter<a class="headerlink" href="#experiment-5-self-tuned-filter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>Wenn es um die Signalverarbeitung geht sind Filter unumgänglich, egal ob
+es die analoge oder die digitale Signalverarbeitung ist. Die Vorgänger
+der digitalen Signalverarbeitung waren schon immer die analoge
+Signalverarbeitung. Mit der Zeit haben sich die digitalen Systeme immer
+mehr etabliert. Die Pioniere der digitalen Filter verließen sich auf die
+Techniken der analogen Vorgänger. Auch heute noch profitieren einige
+digitale Filter von der Simulation der analogen Filtern, denn die
+analogen Filter enthalten wichtige Eigenschaften.</p>
+<p>Die Filter, die auf eine Eingangssteuerspannung mit der Änderung der
+Resonanzfrequenz reagieren werden “self-tuning” Filter genannt.
+Oftmals verfügen diese Filter über eine Gegenkopplungsschaltung mit
+einen analogen Multiplizierer oder Phasendetektor. Die “self-tuning”
+Filter ermöglichen eine automatische Abstimmung der Bandbreite, des
+Qualitätsfaktors und/oder der Mittenfrequenz
+(<code class="docutils literal notranslate"><span class="pre">Sasikala2019</span></code>{.interpreted-text role=”cite”}).</p>
+</div>
+<div class="section" id="einleitung">
+<h2>Einleitung<a class="headerlink" href="#einleitung" title="Permalink to this headline">¶</a></h2>
+<p>Das vorliegende Experiment bietet einen Überblick über den analogen
+“self-tuning” Filter aus theoretischer und praktischer Sicht. Das
+umfasst von Implementierung der Schaltung in ein Simulationsmodel,
+aufbau der Schaltung auf dem “Analog System Lab Kit PRO” board und
+Analyse der Messdaten. Es enthält Erkenntnisse über die Funktionsweise
+der “self-tuning” Filter, deren Bausteine, aus denen sie implementiert
+werden.</p>
+<p>Das “self-tuning” Filter ist ein Sonderfall von analogen Filtern in
+elektronischen Schaltungen. Deren Aufgabe ist es Signale mit
+unerwünschten Frequenzen oder Rauschen die das gewünschte Signal
+überlagern, zu blockieren oder zu dämpfen. Die scharfe Unterscheidung
+wird erreicht, indem die Resonanzfrequenz des Filters der Grundfrequenz
+des Eingangssignals folgt. Der Gesamtaufbau besteht aus zwei
+Hauptblöcken, einmal aus dem spannungsgesteuerten Filter und dem
+analogen Phasendetektor. Die Funktionsweise dieser Blöcke wird in den
+kommenden Abschnitten beschrieben.</p>
+</div>
+<div class="section" id="theoretische-vorbetrachtung">
+<h2>Theoretische Vorbetrachtung<a class="headerlink" href="#theoretische-vorbetrachtung" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="universeller-aktivfilter-experiment-4">
+<h3>Universeller Aktivfilter (Experiment 4)<a class="headerlink" href="#universeller-aktivfilter-experiment-4" title="Permalink to this headline">¶</a></h3>
+<p>Der “Selftuned Filter” baut auf dem Ergebnis aus Experiment 4 auf.
+Daher werden die Grundlagen noch einmal wiederholt. Der universelle
+Aktivfilter (vgl. <code class="docutils literal notranslate"><span class="pre">Universeller_Aktivfilter</span></code>{.interpreted-text
+role=”numref”}) ist ein Aktivfilter, welcher die vier Grundfilterarten
+(Tiefpass [LPF], Hochpass [HPF], Bandpass [BPF] und Bandsperre
+[BSF]) in sich vereint. Wie in der selben Abbildung zu sehen, lassen
+sich die Verstärkung und der Q-Faktor mit den Widerständen unten in der
+Mitte dimensionieren. Die Mittenfrequenz des Filters lässt sich mit den
+Widerständen “R” und den Kondensatoren “C” einstellen (vgl.
+<code class="docutils literal notranslate"><span class="pre">05_eq_Exp4_UAF</span></code>{.interpreted-text role=”eq”}).</p>
+<p><img alt="Universeller Aktivfilter ({.interpreted-textrole=&quot;cite&quot;})" src="_images/Aufbau_Exp4.PNG" />{#Universeller_Aktivfilter
+.align-center}</p>
+<div class="math notranslate nohighlight">
+\[\omega_0 = \frac{1}{RC}\]</div>
+<p>Es lässt sich zeigen, dass die Übertragungsfunktionen der einzelnen
+Teilfilter, wie in Abbildung
+<code class="docutils literal notranslate"><span class="pre">Übertragungsfunktionen_Exp4</span></code>{.interpreted-text role=”numref”} zu sehen
+beschrieben werden können. Diese werden sich beim Umbau in den
+“Self-tuned Filter” nicht ändern. <span class="math notranslate nohighlight">\(\omega_0\)</span> wird beim Umbau
+zeitabhängig.</p>
+<p><img alt="Übertragungsfunktionen des universellen Aktivfilters({.interpreted-textrole=&quot;cite&quot;})" src="_images/Uebertragungsfunktionen_Exp4.png" />{#Übertragungsfunktionen_Exp4
+.align-center}</p>
+</div>
+<div class="section" id="integrator">
+<h3>Integrator<a class="headerlink" href="#integrator" title="Permalink to this headline">¶</a></h3>
+<p>Wie in <code class="docutils literal notranslate"><span class="pre">Integrator</span></code>{.interpreted-text role=”numref”} zu erkennen,
+besteht ein Integrator aus einem Eingang <span class="math notranslate nohighlight">\(V_{in}\)</span>, einem Widerstand,
+einem Kondensator, einem Operationsverstärker und einem Ausgang
+<span class="math notranslate nohighlight">\(V_{out}\)</span>. Ein Integrator hat die Eigenschaft ein Eingangssignal
+integrieren zu können.</p>
+<p><img alt="Integrator" src="_images/Integrator.png" />{#Integrator
+.align-center}</p>
+<p>In der folgenden Gleichung <code class="docutils literal notranslate"><span class="pre">Integrator_Herleitung</span></code>{.interpreted-text
+role=”eq”} wird die Übertragungsfunktion eines Integrators hergeleitet.
+Hierbei wird davon ausgegangen, dass sich an „+” ein virtuelles
+GRD-Potenzial befindet.</p>
+<p>Ebenfalls hat ein Integrator Tiefpasseigenschaften, welche im Idealfall
+mit der Grenzfrequenz <code class="docutils literal notranslate"><span class="pre">TP_Integrator</span></code>{.interpreted-text role=”eq”}
+beschrieben werden können. Diese beiden Eigenschaften (Integrieren und
+Tiefpass) sind für die Rückführung am Ende der Schaltung (vgl.
+<code class="docutils literal notranslate"><span class="pre">Aufbau_Selftuned_Filter</span></code>{.interpreted-text role=”numref”}) sehr
+wichtig.</p>
+<div class="math notranslate nohighlight">
+\[\omega_0 = \frac{1}{RC}\]</div>
+</div>
+<div class="section" id="multiplizierer">
+<h3>Multiplizierer<a class="headerlink" href="#multiplizierer" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">Aufbau_Multiplizierer</span></code>{.interpreted-text role=”numref”} ist der
+Aufbau eines Multiplizierers, sowie seine Transferfunktion, zu sehen. SF
+(später <span class="math notranslate nohighlight">\(U_{SF}\)</span>) ist der Eingang für die Referenzspannung, welche
+gleichzeitig die Versorgungsspannung darstellt. Die Eingänge X, Y und Z
+sind jeweils in zwei Eingänge eines Operationsverstärkers aufgeteilt.
+Hierbei gibt der Index 1 immer den positiven und der Index 2 den
+negativen Eingang an. Der Ausgang <span class="math notranslate nohighlight">\(V_{OUT}\)</span> ist der Ausgang des
+Multiplizierers. Die anderen beiden Ausgänge (<span class="math notranslate nohighlight">\(+V_S\)</span> und <span class="math notranslate nohighlight">\(–V_S\)</span>) stellen
+die Versorgungsspannung dar und sind bereits intern verbunden. Diese
+sind daher für uns nicht von Bedeuteung.</p>
+<p><img alt="Aufbau des benutzten Multiplizierer &quot;MPY634&quot;{.interpreted-textrole=&quot;cite&quot;}" src="_images/Aufbau_Multiplizierer.png" />{#Aufbau_Multiplizierer
+.align-center}</p>
+<p>Ein vereinfachte Version des Multiplizierers ist in
+<code class="docutils literal notranslate"><span class="pre">Einfacher_Multiplizierer</span></code>{.interpreted-text role=”numref”} zu sehen. Im
+Vergleich zu <code class="docutils literal notranslate"><span class="pre">Aufbau_Multiplizierer</span></code>{.interpreted-text role=”numref”}
+sind die negativen Eingänge von X, Y und Z geerdet und <span class="math notranslate nohighlight">\(V_{OUT}\)</span> ist mit
+<span class="math notranslate nohighlight">\(Z_1\)</span> verbunden. Letzteres wurde experimentell entdeckt und kann daher
+nicht weiter begründet werden. Die Referenzspannung <span class="math notranslate nohighlight">\(U_{SF}\)</span> wird nur
+noch mathematisch betrachtet. Hieraus ergibt sich die vereinfachte
+Transferfunktion, welche in <code class="docutils literal notranslate"><span class="pre">Einfacher_Multiplizierer</span></code>{.interpreted-text
+role=”eq”} zu sehen ist. Es ist nur zu beachten, dass der Betrag von X
+und Y nicht über <span class="math notranslate nohighlight">\(U_{SF}\)</span> fallen sollte, da der Multiplizierer nur in
+diesem Bereich arbeitet.</p>
+<p><img alt="EinfacherMultiplizierer" src="_images/Einfacher_Multiplizierer.png" />{#Einfacher_Multiplizierer
+.align-center}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_Z = \frac{V_X V_Y}{U_{SF}} \\
+\end{aligned}\end{split}\]</div>
+<div class="section" id="spannungsgesteuerter-tiefpass-integrator">
+<h4>Spannungsgesteuerter Tiefpass (Integrator)<a class="headerlink" href="#spannungsgesteuerter-tiefpass-integrator" title="Permalink to this headline">¶</a></h4>
+<p>Baut man einen Multiplizierer, wie in <code class="docutils literal notranslate"><span class="pre">Spannung_TP</span></code>{.interpreted-text
+role=”numref”} gezeigt, in einen Integrator vor den Kondensator ein,
+dann kann man den Integrator mithilfe der Kontrollspannung <span class="math notranslate nohighlight">\(V_C\)</span>
+steuern. Dies hat direkten Einfluss auf die Transferfunktion des
+Integrators und damit auf die Grenzfrequenz der Tiefpasseigenschaft des
+Integrators.</p>
+<p><img alt="SpannungsgesteuerterTiefpass" src="_images/Spannung_TP.png" />{#Spannung_TP .align-center}</p>
+<p>Die Herleitung der Grenzfrequenz des spannungsgesteuerten Integrators
+ist in <code class="docutils literal notranslate"><span class="pre">Spannung_TP_Herleitung</span></code>{.interpreted-text role=”eq”} zu sehen.
+Hierbei ist für uns insbesondere die Grenzfrequenz von Bedeutung, dann
+die Grenzfrequenz des Universellen Aktivfilters aus Experiment 4
+entspricht der Grenzfrequenz der beiden verbauten Integratoren, weshalb
+man diese auch immer gleich dimensionieren sollte.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+0 &amp;= I_{in} + I_{f} \\
+0 &amp;= \frac{V_{in}}{R_{in}} + \frac{C \frac{d V_{out}}{dt}  V_C}{U_{SF}} \\
+\frac{C \frac{d V_{out}}{dt}  V_C}{U_{SF}} &amp;= - \frac{V_{in}}{R_{in} } \\
+\frac{d V_{out}}{dt}  &amp;= - \frac{V_{in} U_{SF}}{R_{in} C V_C} \\
+V_{out} &amp;= - \frac{ U_{SF}}{R_{in} C V_C}\int V_{in} dt \\
+\end{aligned}$$$$\begin{aligned}
+Daraus\ folgt: \\
+\omega_0 &amp;= \frac{ U_{SF}}{RC V_C} \\
+\end{aligned}\end{split}\]</div>
+</div>
+<div class="section" id="phasendetektor-mit-einem-multiplizierer">
+<h4>Phasendetektor mit einem Multiplizierer<a class="headerlink" href="#phasendetektor-mit-einem-multiplizierer" title="Permalink to this headline">¶</a></h4>
+<p>Um diesen Phasendetektor zu verstehen, betrachtet man zunächst erstmal
+einen vereinfachten Aufbau des Phasendetektors. Wie in
+<code class="docutils literal notranslate"><span class="pre">Phasendetektor</span></code>{.interpreted-text role=”numref”} zu sehen, wird hierzu
+ein Tiefpass hinter den Multiplizierer geschaltet. Die Eingangssignale
+sind zwei phasenverschobene Sinussignale.</p>
+<p><img alt="Phasendetektor" src="_images/Phasendetektor.png" />{#Phasendetektor
+.align-center}</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Herleitung_Phasendetektor</span></code>{.interpreted-text role=”numref”} ist die
+Herleitung des Ausgangssignals des Multiplizierers zu sehen. Dieses Bild
+ist einer eigenen Power Point Präsentation entnommen, welche unter dem
+<a class="reference external" href="https://github.com/mimeiners/ASLK_PRO/blob/master/math/Experiment_05/Selftuned%20Filter.pptx">Link</a>
+zu finden ist.</p>
+<p><img alt="HerleitungPhasendetektor" src="_images/Herleitung_Phasendetektor.PNG" />{#Herleitung_Phasendetektor
+.align-center}</p>
+<p>Setzt man nun wie in <code class="docutils literal notranslate"><span class="pre">Phasendetektor</span></code>{.interpreted-text role=”numref”}
+einen Tiefpass hinter den Multiplizierer werden alle Frequenz abhängigen
+Anteile herausgefiltert, wenn die Grenzfrequenz des Tiefpasses klein
+genug ist. Daraus ergibt sich die <code class="docutils literal notranslate"><span class="pre">Mult_TP</span></code>{.interpreted-text
+role=”eq”}.</p>
+<div class="math notranslate nohighlight">
+\[V_{Out,TP} = \frac{V_X V_Y}{2U_{SF}} cos(\phi)\]</div>
+<p>Wird der Tiefpass nun mit einem Integrator ersetzt (vgl.
+<code class="docutils literal notranslate"><span class="pre">Mult_Integrator</span></code>{.interpreted-text role=”numref”}), dann lässt sich die
+Spannung aus <code class="docutils literal notranslate"><span class="pre">Mult_TP</span></code>{.interpreted-text role=”eq”} in die
+Transferfunktion des Integrators (vgl.
+<code class="docutils literal notranslate"><span class="pre">Integrator_Herleitung</span></code>{.interpreted-text role=”eq”}) einsetzten.
+Zusätzlich ist nun auch die Betriebsspannung des benutzten
+Operationsverstärkers zu betrachten, da die Transferfunktion des
+Integrators da drauf addiert wird. Der auf dem ALSK PRO Board eingebaute
+„tl082” hat eine Betriebsspannung bei 82% der Versorgungsspannung
+(<span class="math notranslate nohighlight">\(U_{AMP}\)</span>). In <code class="docutils literal notranslate"><span class="pre">Phase_Int_Herleitung</span></code>{.interpreted-text role=”eq”} ist
+die resultierende Spannungsgleichung zu sehen.</p>
+<p><img alt="Phasendetektor mitIntegrator" src="_images/Mult_Integrator.png" />{#Mult_Integrator
+.align-center}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V‘_{out} &amp;= - \frac{1}{R_{in} C }\int V_{Out,TP} dt \\
+V‘_{Out,Integrator} &amp;= - \frac{1}{RC } \int \frac{V_X V_Y}{2U_{SF}} cos(\phi) dt \\
+\end{aligned}$$$$\begin{aligned}
+Bei\ Betrachtung\ der\ Betriebsspannung:\\
+V‘_{Out,Integrator} &amp;= 0,82\ U_{AMP} - \frac{1}{RC } \int \frac{V_X V_Y}{2U_{SF}} cos(\phi) dt \\
+\end{aligned}\end{split}\]</div>
+<p>Dieser Phasendetektor ist in einem Regelkreislauf sehr gut um eine Phase
+von 90° einzustellen, da die Spannung des Integrators sinkt, wenn die
+Phase unter 90° ist und steigt wenn sie über 90° ist. Bei genau 90°
+Phasendifferenz wird sich die Spannung am Ausgang des Integrators nicht
+mehr ändern.</p>
+</div>
+<div class="section" id="phase-des-universellen-aktivfilters">
+<h4>Phase des Universellen Aktivfilters<a class="headerlink" href="#phase-des-universellen-aktivfilters" title="Permalink to this headline">¶</a></h4>
+<p>In <code class="docutils literal notranslate"><span class="pre">Bandpass</span></code>{.interpreted-text role=”numref”} ist das Bode-Diagramm des
+Bandpass-Ausgangs eines Universellen Aktivfilters zu sehen. Zu erkennen
+ist, dass bei einer Phasenverschiebung von -180° zum Eingangssignal das
+Betragsspektrum am größten ist. Das ist die Grenzfrequenz des
+universellen Aktivfilters.</p>
+<p><img alt="Bandpass des universellen Aktivfilters {.interpreted-textrole=&quot;cite&quot;}" src="_images/Bandpass.png" />{#Bandpass .align-center}</p>
+<p>Betrachtet man nun den Hochpass (vgl. <code class="docutils literal notranslate"><span class="pre">Hochpass</span></code>{.interpreted-text
+role=”numref”}) des Universellen Aktivfilters an der gleichen Frequenz,
+ist eine Phsenverschiebung von 90° zum Eingangssignal zu erkennen. Diese
+Phasenverschiebung lässt sich mit dem zuvor beschriebenen Phasendetektor
+einstellen.</p>
+<p><img alt="Hochpass des universellen Aktivfilters {.interpreted-textrole=&quot;cite&quot;}" src="_images/Hochpass.png" />{#Hochpass .align-center}</p>
+</div>
+</div>
+<div class="section" id="aufbau-des-selftuned-filters">
+<h3>Aufbau des Selftuned Filters<a class="headerlink" href="#aufbau-des-selftuned-filters" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">Aufbau_Selftuned_Filter</span></code>{.interpreted-text role=”numref”} ist der
+Aufbau des Selftuned Filters zu sehen. Im Vergleich zum Aufbau des
+Universellen Aktivfilters (vgl.
+<code class="docutils literal notranslate"><span class="pre">Universeller_Aktivfilter</span></code>{.interpreted-text role=”numref”}) ist zu
+erkennen, dass spannungsgesteuerte Integratoren statt normale
+Integratoren verbaut wurden. Da die Mittenfrequenz des Universellen
+Aktivfilters von der Grenzfrequenz der Integratoren abhängt, lässt sich
+auf diese Weise die Mittenfrequenz des Universellen Aktivfilters
+steuern. Ebenfalls fällt auf, dass mithilfe des Phasendetektors ein
+Regelkreislauf aufgebaut ist. Als Eingänge des Phasendetektors wurden
+der Hochpass und das Eingangssignal gewählt. Zusätzlich wurde noch ein
+Bias mit einem Spannungsteiler ans Ende des Phasendetektors gesetzt.
+Damit lässt sich die Kontrollspannung für den spannungsgesteuerten
+universellen Aktivfilter voreinstellen.</p>
+<p><img alt="Aufbau des Selftuned Filters {.interpreted-textrole=&quot;cite&quot;}" src="_images/Aufbau_Selftuned_Filter.PNG" />{#Aufbau_Selftuned_Filter
+.align-center}</p>
+<div class="section" id="regelkreislauf-des-selftuned-filters">
+<h4>Regelkreislauf des Selftuned Filters<a class="headerlink" href="#regelkreislauf-des-selftuned-filters" title="Permalink to this headline">¶</a></h4>
+<p>Um den Regelkreislauf des “Selftuned Filters” zu erklären, wurde in
+<code class="docutils literal notranslate"><span class="pre">Regelkreislauf_Selftuned_Filter</span></code>{.interpreted-text role=”numref”} die
+Schaltung des “Self-tuned Filters” (vgl.
+<code class="docutils literal notranslate"><span class="pre">Aufbau_Selftuned_Filter</span></code>{.interpreted-text role=”numref”}) als
+Blockschaltbild zusammengefasst.</p>
+<p>Zu Beginn des Kreislaufs wird das Eingangssignal durch den VCF (Voltage
+Controlled Filter, hier: Spannungsgesteuerter universeller Aktivfilter)
+mit dem Hochpass gefiltert. Das Hochpasssignal wird im Phasendetektor
+mit dem Eingangssignal verglichen. Ist die Phasendifferenz unter 90°,
+sinkt die Kontrollspannung (<span class="math notranslate nohighlight">\(V_C\)</span>) des VCFs und ist sie über 90°, steigt
+die Kontrollspannung. So schwingt die Kontrollspannung sich auf die
+Spannung ein, bei der die Phasendifferenz zwischen Hochpass und
+Eingangssignal genau 90° beträgt und somit die Mittenfrequenz des VCFs
+auf die Trägerfrequenz des Eingangssignals eingestellt ist.</p>
+<p><img alt="Regelkreislauf eines SelftunedFilters" src="_images/Regelkreislauf_Selftuned_Filter.PNG" />{#Regelkreislauf_Selftuned_Filter
+.align-center}</p>
+<p>Die initiale Kontrollspannung (<span class="math notranslate nohighlight">\(V_{C0}\)</span>) lässt sich mit folgender Formel
+(vgl. <code class="docutils literal notranslate"><span class="pre">Mult_Int</span></code>{.interpreted-text role=”eq”}) berechnen. Hierbei Sind
+<span class="math notranslate nohighlight">\(R_{10}, R_{11}\)</span> und <span class="math notranslate nohighlight">\(V_3\)</span> in
+<code class="docutils literal notranslate"><span class="pre">Aufbau_Selftuned_Filter</span></code>{.interpreted-text role=”numref”} eingezeichnet
+und <span class="math notranslate nohighlight">\(U_{Amp}\)</span> ist die Versorgungsspannung von <span class="math notranslate nohighlight">\(U_4\)</span> der selben
+Abbildung.</p>
+<div class="math notranslate nohighlight">
+\[V_{C0} = 0,82 \cdot U_{Amp} \frac{R_{10}}{R_{10}+R_{11}} +V_3 \frac{R_{11}}{R_{10}+R_{11}}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
+<p>Für die Simulation der Schaltung standen zwei Simulationssoftware,
+Tina-TI von Texas Instruments und LTspice von Analog Devices, zur
+Verfügung, welche auch im Laufe des Projektes verwendet wurden. Mit der
+Letzterer wurden die Hauptsimulationen durchgeführt. Zunächst wurde die
+Schaltung aus dem Experiment 04 in der Simulation aufgebaut und
+Simuliert, um die Funktionsweise des Filters besser zu verstehen. In der
+<code class="docutils literal notranslate"><span class="pre">SchaltungausExperiment4</span></code>{.interpreted-text role=”numref”} ist der
+Schaltplan dargestellt.</p>
+<p><img alt="Schaltung aus Experiment 04 {.interpreted-textrole=&quot;cite&quot;}" src="_images/Schaltung_aus_Experiment_04.png" />{#SchaltungausExperiment4
+.align-center}</p>
+<p>Gespeist wird über <span class="math notranslate nohighlight">\(V_{in}\)</span> ein Sinussignal mit der Frequenz 1 kHz und
+der Amplitude 1 V. An den jeweiligen Ausgängen werden die Filterausgänge
+abgegriffen, welche in der <code class="docutils literal notranslate"><span class="pre">SimulationderSchaltung</span></code>{.interpreted-text
+role=”numref”} dargestellt werden.</p>
+<p><img alt="Simulation der Schaltung {.interpreted-textrole=&quot;cite&quot;}" src="_images/Simulation_der_Schaltung.png" />{#SimulationderSchaltung
+.align-center}</p>
+<p>Die Grenzfrequenzen werden mit der Formel
+<code class="docutils literal notranslate"><span class="pre">5_eq_grenzfrequenzen</span></code>{.interpreted-text role=”eq”} bestimmt.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f_0 &amp;= \frac{1}{2 \cdot \pi \cdot R \cdot C}  \\
+\end{aligned}\end{split}\]</div>
+<p>Da in der Schaltung nur die beiden Kondensatoren frequenzabhängig sind,
+wird die Grenzfrequenz über die Zeitkonstante <span class="math notranslate nohighlight">\(\tau,(\tau = R \cdot C)\)</span>
+eingestellt. Über den Widerstand R7 wird die Güte Q eingestellt und R8
+dient dazu, den Verstärkungsfaktor einzustellen. All die anderen
+Widerstände haben denselben Wert wie der Widerstand R1.</p>
+<p>Wesentliche Änderung im Experiment 5 zum Experiment 4 besteht darin,
+dass nun sich die Schaltung automatisch auf die Grenzfrequenz einstellen
+soll. Dazu werden mehrere analoge Multiplizierer benötigt, sowie eine
+Phasendetektorschaltung, die mit Hilfe eines Integrators realisiert
+wird. In <code class="docutils literal notranslate"><span class="pre">SchaltungausExperiment05</span></code>{.interpreted-text role=”numref”}
+wird der Schaltplan abgebildet.</p>
+<p><img alt="Schaltung aus Experiment 05 {.interpreted-textrole=&quot;cite&quot;}" src="_images/Schaltung_aus_Experiment_05.png" />{#SchaltungausExperiment05.align-center}</p>
+<p>Gespeist wird ein 1 kHz Rechtecksignal mit der Amplitude 100 mV. Für die
+bessere Übersicht wurden einige Komponente wie Widerstände oder auch
+Spannungsquellen parametrisiert. Über die Widerstände R10 und R11 wird
+die Range (Bandbreite) eingestellt, in der sich das Filter Einstellen
+kann. Über die Spannungsquelle V3 wird die Referenzspannung eingestellt.
+Die maximale Spannung liegt bei 10 V, was auf die Referenzspannung der
+Multiplizierer zurück zu führen ist (beträgt auch 10 V).</p>
+</div>
+<div class="section" id="messung">
+<h2>Messung<a class="headerlink" href="#messung" title="Permalink to this headline">¶</a></h2>
+<p>Für den Aufbau der Schaltung wurde das ASLK PRO Board verwendet. In der
+<code class="docutils literal notranslate"><span class="pre">MessaufbauaufdemASLKPRO</span></code>{.interpreted-text role=”numref”} ist der
+Aufbau abgebildet.</p>
+<p><img alt="Messaufbau auf dem ASLK PRO" src="_images/Messaufbau_auf_dem_ASLK_PRO.png" />{#MessaufbauaufdemASLKPRO.align-center}</p>
+<p>Wie in der <code class="docutils literal notranslate"><span class="pre">MessaufbauaufdemASLKPRO</span></code>{.interpreted-text role=”numref”} zu
+sehen ist, wurden fast alle Bauteile, die auf dem ASLK PRO Board verbaut
+sind, für den Schaltungsaufbau verwendet. Da die Bauteile einzeln auf
+dem Board vorhanden sind, wurde die Bauteile mit Hilfe von Jumper-Wire
+verbunden. Durch die Verwendung der Drähte konnte am Anfang keine
+stabile Messung durchgeführt werden. Nach kleineren Fehlerbehebungen
+konnten Messungen durchgeführt werden. In den nachfolgenden Abbildungen
+sind die gemessenen und die theoretisch ermittelten Signalverläufe
+dargestellt.</p>
+<p><img alt="Messung im Labor" src="_images/Messung_im_Labor.png" />{#MessungimLabor.align-center}</p>
+<p>Grüne Linie -&gt; Eingangssignal</p>
+<p>Blaue Linie -&gt; Bandpasssignal</p>
+<p>Orangene Linie -&gt; Bandsperre</p>
+<p><img alt="Messergebnis aus der Simulation" src="_images/Messergebnis_aus_der_Simulation.png" />{#MessergebnisausderSimulation.align-center}</p>
+<p>Auf den Bildern ist deutlich zu erkennen, dass die Simulation mit den
+gemessenen Werten übereinstimmt. Bei weiteren Messungen zur Verifikation
+der Schaltung kamen immer wieder Probleme mit der Verdrahtung der
+Schaltung. So konnten nicht alle Messungen aus dem Aufgabenblatt
+durchgeführt werden. Für die weitere Verifizierung der Schaltung wurde
+vorgeschlagen die Platine neu zu ätzen, um die Problematik mit der
+Verdrahtung auszuschließen.</p>
+</div>
+<div class="section" id="fazit">
+<h2>Fazit<a class="headerlink" href="#fazit" title="Permalink to this headline">¶</a></h2>
+<p>Das Experiment baut auf dem Experiment 4 auf. Es wurden verschiedene
+Bestandteile untersucht, dazu gehört der Integrator, der Multiplizierer,
+der spannungsgesteuerte Integrator und der Phasendetektor. Das
+grundsätzliche Verhalten vom “self-tuning” Filter wurde ersichtlich.
+Es wurde festgestellt, dass der Filter von Phase und Mittenfrequenz
+abhängig ist.</p>
+<p>Trotzdem kam es zu Abweichungen der Messergebnisse von den simulierten
+Daten. Es ist darauf zu schließen, dass der Schaltungsaufbau mit einem
+riesigen Kabelmanagement auf dem ASLK PRO Board daher geht.</p>
+</div>
+<div class="section" id="ausblick">
+<h2>Ausblick<a class="headerlink" href="#ausblick" title="Permalink to this headline">¶</a></h2>
+<p>Die Schaltung aus Experiment 05 könnte auf eine Platine gelötet werden,
+um mögliche Schaltungsfehler zu minimieren. Weiterhin könnte zu dem
+Multiplizierer noch ein Offset hinzugefügt werden, um negative Offsets
+auszugleichen. Außerdem kam die Frage auf „Warum muss das Ausgangssignal
+an Z zurückgeführt werden?” Sowie zur Beschreibung der Rückkopplung am
+Ende der Schaltung könnte eine Formel erstellt werden, die das Verhalten
+beschreibt.</p>
+</div>
+<div class="section" id="literaturverzeichnis">
+<h2>Literaturverzeichnis<a class="headerlink" href="#literaturverzeichnis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-{.bibliography notranslate"><div class="highlight"><pre><span></span>Experiment_00.bib
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Experiment_04.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Kurze Theorie und Motivation</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Experiment_06.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Theorie und Motivation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
