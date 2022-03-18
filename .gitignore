@@ -1,2 +1,5 @@
 /spice/Experiment_05/LTSpice/LTSpice/exclude.gitignore
 /skripte/Experiment_12/__pycache__
+*.log
+*.plt
+*.raw

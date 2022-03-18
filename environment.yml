@@ -1,0 +1,11 @@
+name: jb-aslkpro
+channels:
+  - default
+dependencies:
+  - python=3.9
+  - sphinx
+  - pip
+  - pandas
+  - matplotlib
+  - pip:
+    - jupyter-book
