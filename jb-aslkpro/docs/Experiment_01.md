@@ -1,11 +1,13 @@
-# Gegenkopplungsverstärker und Instrumentenverstärker
+# Grundschaltungen des OPV
 
 ## Einleitung
 In diesem Experiment sollen drei Grundschaltungen eines Operationsverstärkers untersucht werden. Zu diesen gehören: 
 
--   Impedanzwandler / Spannungsfolger
--   nicht-invertierender Verstärker
--   invertierender Verstärker
+- Impedanzwandler / Spannungsfolger
+
+- Nicht-invertierender Verstärker
+
+- Invertierender Verstärker
 
 Grundsätzlich werden beim Schaltungsentwurf mit Operationsverstärkern (häufig auch bezeichnet als OP, OV, OPV oder auch
 OpAmp, wobei Letzteres die Abkürzung für die englische Bezeichnung Operational Amplifier ist [^1]) die Eingengschaften
@@ -46,8 +48,8 @@ Eine Unity Gain-Schaltung, auch Impedanzwandler oder Spannungsfolger genannt, is
 Ausgang mit dem invertierenden Eingang kurzgeschlossen ist {numref}`01_fig_02`. 
 
 
-```{figure} img/Experiment_01/Experiment_01_fig_02.png 
-:name: 01_fig_02
+```{figure} img/Experiment_01/Abbildung01.png 
+:name: 01_fig_01
 
 Schematische Darstellung einer UnityGain-Schaltung.
 ```
@@ -80,28 +82,26 @@ $$
 	\frac{U_{OUT}}{U_{IN}} = 1
 $$ (01_eq_03)
 
-Die Mess- und Simulationsergebnisse sind in `Abbildung 02` dargestellt. Daraus ist ersichtlich, dass die beiden Signale
-nahezu identisch sind, was einer Übertragung von 1 entspricht.
 
+```{figure} img/Experiment_01/Abbildung02.svg
+:name: 01_fig_02
 
-## Nicht-invertierender Verstärker
-
-```{figure} img/Experiment_01/Amplifier_output.png
-:name: 01_fig_03
-
-Simulationen und Messungen der Ein- und Ausgangsspannungen der 3 grundlegenden Beschaltungsarten eines
-Oparationsverstärkers \[Unity Gain (oben), nicht-invertierender Verstärker (mitte), invertierender Verstärker (unten)\]
+Messung und Simulation der Ein- und Ausgangsspannungen der Unity Gain - Schaltung* [^2]
 ```
 
-## Nicht-invertierende und invertierende Operationsverstärkerschaltungen
+Die Mess- und Simulationsergebnisse sind in {numref}`01_fig_02` dargestellt. Daraus ist ersichtlich, dass die beiden
+Signale nahezu identisch sind, was einer Übertragung von 1 entspricht.
+
+
+## Nicht-invertierender und invertierender Verstärker
 
 Zwei weitere grundlegende Schaltungen des Operationsverstärkers sind die sogenannten nicht-invertierenden und
 invertierenden Schaltung.
 
-```{figure} img/Experiment_01/Experiment_01_fig_03.png
-:name: 01_fig_04
+```{figure} img/Experiment_01/Abbildung03.png
+:name: 01_fig_03
 
-Nicht-invertierender (li.) und invertierender (re.) Verstärker
+Nicht-invertierender Verstärker[^2]
 ```
 
 Sowohl beim nicht-invertierenden als auch beim invertierenden Verstärker hängt der Verstärkungsfaktor $A_0$ vom
@@ -122,8 +122,21 @@ Dabei ist $R_1$ der Widerstand, der am invertierenden Eingang $U_-$ anliegt und 
 und dem invertierenden Eingang liegt {numref}`01_fig_04`. $U_{IN}$ ist die Eingangsspannung, die an einem der Eingänge des
 Opamps anliegt.
 
-Aus der {numref}`01_fig_03` ist ersichtlicht, dass bei einem nicht-invertierenden Verstärker die Eingangsspannung nach
-{eq}`01_eq_05` verstärkt wird. Die Ausgangsspannung liegt mit der Eingangsspannung in Phase.
+```{figure} img/Experiment_01/Abbildung04.svg
+:name: 01_fig_04
+
+Messung und Simulation der Ein- und Ausgangsspannungen des Nicht-invertierenden Verstärkers[^2]
+```
+
+Aus {numref}`01_fig_04` ist ersichtlicht, dass bei einem nicht-invertierenden Verstärker die Eingangsspannung verstärkt
+wird. Die Ausgangsspannung liegt mit der Eingangsspannung in Phase.
+
+
+```{figure} img/Experiment_01/Abbildung05.png
+:name: 01_fig_05
+
+Invertierender Verstärker[^2]
+```
 
 Für den invertierenden Verstärker ist das Verhältnis von Ausgangsspannung zu Eingangsspannung gegeben als
 
@@ -138,7 +151,13 @@ $$
 $$ (01_eq_07)
 
 Nach {eq}`01_eq_07` bekommt man eine um $\pi$ gedrehte und um das Widerstandsverhältnis verstärkte Ausgangsspannung
-$U_{OUT}$. Diese ist in {numref}`01_fig_03` (unten) graphisch dargestellt.
+$U_{OUT}$. Diese ist in {numref}`01_fig_06` graphisch dargestellt.
+
+```{figure} img/Experiment_01/Abbildung06.svg
+:name: 01_fig_06
+
+Invertierender Verstärker[^2]
+```
 
 
 ### Messtechnische Untersuchung der Grenzbereiche
@@ -162,8 +181,8 @@ Mit Hilfe des Programms konnten die Bandbreiten der jeweiligen Schaltung ermitte
 über die Messgenauigkeit treffen zu können, wurden die Amplitudengänge der entsprechenden Schaltungen simuliert. Diese
 sind zusammen mit den Messungen in `01_fig_06`{.interpreted-text role="numref"} dargestellt.
 
-```{figure} img/Experiment_01/amplitudengang_messung_simulation.png
-:name: 01_fig_06
+```{figure} img/Experiment_01/Abbildung07.png
+:name: 01_fig_07
 
 Vergleich der Messungen mit den Simulationen
 ```
@@ -211,8 +230,8 @@ auf ihre Grenzen überprüft. Dazu wird ein DC-Sweep durchgeführt. Zu diesem Zw
 Es soll mit Hilfe des nicht-invertierenden Verstärkers ein Gleichspannungsdurchlauf durchgeführt werden. Für die
 Ausgangsspannung ergibt sich ein Spannungsverlauf nach {numref}`01_fig_07`.
 
-```{figure} img/Experiment_01/DCsweep.png
-:name: 01_fig_07
+```{figure} img/Experiment_01/Abbildung08.png
+:name: 01_fig_08
 
 Grenzmessung der Ausgangsspannung
 ```
@@ -235,8 +254,8 @@ Eisatz von SCPI-fähigen Geräten bei diesen Messungen an.
 Als erstes Beispiel wird ein negativ rückgekoppelter Verstärker betrachtet. Prinzipiell ist das eine Kaskadierung
 (Hintereinanderschaltung) der drei Grundschaltungen {numref}`01_fig_08`. 
 
-```{figure} img/Experiment_01/negative_feedback.png
-:name: 01_fig_08
+```{figure} img/Experiment_01/Abbildung09.png
+:name: 01_fig_09
 
 Negativ-rückgekoppelter Verstärker
 ```
@@ -244,8 +263,8 @@ Negativ-rückgekoppelter Verstärker
 Hier wird statt eines Sinussignals ein Rechtecksignal eingespeist. Die Ausgänge der Schaltung sind in {numref}`01_fig_09`
 graphisch dargestellt.
 
-```{figure} img/Experiment_01/Verstaerker_Rueckkopplung_neu.png
-:name: 01_fig_09
+```{figure} img/Experiment_01/Abbildung10.png
+:name: 01_fig_10
 
 Messergebnisse der Ausgangsspannungen des negativ-rückgekoppelten Verstärkers
 ```
@@ -258,8 +277,8 @@ Als zweites Beispiel wird ein Instrumentenverstärker betrachtet. Dieser kann au
 vgl. {numref}`01_fig_10`, aufgebaut werden und wird oft, aufgrund seiner Eigenschaften, in der Medizintechnik eingesetzt. 
 
 
-```{figure} img/Experiment_01/Instrumentenverstaerker.png
-:name: 01_fig_10
+```{figure} img/Experiment_01/Abbildung11.png
+:name: 01_fig_11
 
 Instrumentenverstärker mit drei Opamps (li.) und zwei Opamps (re.)
 ```
@@ -268,12 +287,12 @@ Aus der Abbildung wird deutlich, dass die Verstärkung lediglich vom Widerstand 
 Einstellung des Instumentenverstärkers. Als Beispiel wurde ein Instrumentenverstärker aus zwei Operationsverstärkern
 aufgebaut und der Ausgang gemessen. Die Messergebnisse sind in der {numref}`01_fig_11` graphisch dargestellt. 
 
-```{figure} img/Experiment_01/Instrumenten.png
-:name: 01_fig_11
+```{figure} img/Experiment_01/Abbildung12.png
+:name: 01_fig_12
 
 Eingangs- und Ausgangssignale eines Instrumentenverstärkers aus 2 Opamps
 ```
 
 [^1]: https://www.elektronik-kompendium.de/sites/bau/0209092.htm - besucht am 21.03.2022
-[^2]: "ANS-Abschlussbericht SS21" von Michelangelo Lüters, Louis Lagona, Christopfer Stelling
-[^3]: Die Angaben sind aus den jeweiligen Datenblättern zu entnehmen
+[^2]: ANS-Abschlussbericht SoSe21 von M. Lüters, L. Lagona und Ch. Stelling.
+[^3]: Die Angaben sind aus den jeweiligen Datenblättern zu entnehmen.
