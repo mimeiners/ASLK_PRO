@@ -1,5 +1,9 @@
-sphinx
 jupyter-book
-pandas
-numpy
+sphinx
 matplotlib
+numpy
+pandas
+linkify
+linkify-it-py
+
+
