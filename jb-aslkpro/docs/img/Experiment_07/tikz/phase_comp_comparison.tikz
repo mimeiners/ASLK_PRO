@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+
+    \fill[fibeamer@darkBlue] (0,0) -- (7,0) -- (7.4,0.4) -- (7, 0.8) -- (0,0.8) -- (-0.4,0.4);
+    \draw[white] (3.5, 0.4) node{Bandbreite};
+    \draw[fibeamer@lightBlue] (0, 0.4) node[anchor=west]{niedrig};
+    \draw[fibeamer@lightBlue] (7, 0.4) node[anchor=east]{hoch};
+    
+\end{tikzpicture}

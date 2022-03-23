@@ -5,9 +5,9 @@
 # Required
 version: 2  
 
-# Build documentation in the docs/ directory with Sphinx
+# Build documentation in the sp-aslkpro/ directory with Sphinx
 sphinx:
-  configuration: docs/conf.py
+  configuration: sp-aslkpro/conf.py
 
 # Build documentation with MkDocs
 # mkdocs:
@@ -21,4 +21,4 @@ sphinx:
 python:
   version: 3.9
   install:
-    - requirements: docs/requirements.txt
+    - requirements: sp-aslkpro/requirements.txt

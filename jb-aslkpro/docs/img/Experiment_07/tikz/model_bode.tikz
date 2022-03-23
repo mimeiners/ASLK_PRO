@@ -1,0 +1,36 @@
+
+    \begin{tikzpicture}
+        \begin{groupplot}[
+            group style={
+                group size=1 by 2,
+                xlabels at=edge bottom,
+                xticklabels at=edge bottom,
+                vertical sep=5mm
+            },
+            /pgf/number format/use comma,
+            xlabel={$f$},
+            width=0.8\textwidth,
+            height=3.5cm,
+            grid=both,
+            xmode=log,
+            xmin=1,
+            xmax=1000,
+            xtick={1,10,100,1000},
+            xticklabels={1 Hz,10 Hz,100 Hz, 1 kHz},
+            grid style={line width=.1pt, draw=gray!10},
+            major grid style={line width=.2pt,draw=gray!50},
+            tickpos=left,
+            ytick align=outside,
+            xtick align=outside
+        ]
+        \nextgroupplot[ylabel=Mag. / dB]
+        \draw (axis cs: 0.1,0) -- (axis cs: 1000,0);
+        \draw (axis cs: 87.6,80) -- (axis cs:87.6,-50);
+        \addplot[fibeamer@darkBlue, thick] table[x=f, y=mag, col sep=comma]{data/model_bode.csv};
+
+        \nextgroupplot[ylabel=Phase, ytick={-90, -135, -180}]
+        \draw (axis cs: 87.6,-80) -- (axis cs:87.6,-190);
+        \addplot[fibeamer@darkBlue, thick] table[x=f, y=phase, col sep=comma]{data/model_bode.csv};
+        \end{groupplot}
+
+    \end{tikzpicture}
