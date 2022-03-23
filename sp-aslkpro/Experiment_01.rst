@@ -150,7 +150,7 @@ Red Pitaya und der sich darauf befindenden App "Bode-Analyser" durchgeführt wer
 Datenexportmöglichkeiten, wurde an dieser Stelle ein Programm zur Bode-Plot-Darstellung entwickelt. Gundsätzlich wird
 das Programm zur Messautomatisierung des Red Pitayas eingesetzt und ist ohne Weiteres nur mit diesem kompatibel.
 
-.. literalinclude:: ../skripte/01_Amplitudengangmessung.py
+.. literalinclude:: ../files/meas/01_Amplitudengangmessung.py
    :language: python
    :linenos:
    :name: Freqmessung
@@ -202,7 +202,7 @@ Da theoretisch die Eigangsspannung und der Verstärkungsfaktor variable sind, wi
 auf ihre Grenzen überprüft. Dazu wird ein DC-Sweep durchgeführt. Zu diesem Zweck wurde ein weiteres Programm
 erstellt.
 
-.. literalinclude:: ../skripte/03_DCsweep.py
+.. literalinclude:: ../files/meas/03_DCsweep.py
    :language: python
    :linenos:
    :name: DCsweep
