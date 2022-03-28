@@ -4,8 +4,10 @@ format: jb-book
 root: docs/index
 chapters:
 - file: docs/Experiment_01
-- file: docs/Experiment_02
-- file: docs/Experiment_03
+# - file: docs/Experiment_02
+- file: docs/Experiment_02_TZ
+# - file: docs/Experiment_03
+- file: docs/Experiment_03_TZ
 - file: docs/Experiment_04
 - file: docs/Experiment_05
 - file: docs/Experiment_06
