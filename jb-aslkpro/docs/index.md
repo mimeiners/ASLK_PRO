@@ -1,7 +1,7 @@
 # Einleitung und Übersicht
 
-Im Rahmen der Lehrveranstaltung **ANS Analoge Schaltungen - Grundlagen analoger CMOS Schaltungstechnik**, Modul ANS im Bachelorstudiengang
-(B.Eng.) Elektrotechnik (ET) der Fakultät 4, sollen aus der Theorie gewonnene Kenntnisse im Labor praktisch umgesetzt werden. Zu diesem
+Im Rahmen der Lehrveranstaltung **M6.9 Analoge Schaltungen (ANS)**, im Bachelorstudiengang
+(B.Eng.) Elektrotechnik (ET) der Fakultät 4 der Hochschule Bremen (HSB), sollen aus der Theorie gewonnene Kenntnisse im Labor praktisch umgesetzt werden. Zu diesem
 Zweck wird das ASLK (Analog System Lab Kit) Pro der Firma [MikroElektronika](https://www.mikroe.com/) eingesetzt. Das
 [ASLKPro](https://www.mikroe.com/aslk-pro-kit) wird von [MikroElektronika](https://www.mikroe.com/) für Texas Instruments
 ([TI](http://www.ti.com/)) vertrieben und soll in ingenieurwissenschaftlichen Studiengängen für Versuche analoger
