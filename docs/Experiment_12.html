@@ -1,0 +1,1300 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parameterstudie eines DC-DC Wandlers &#8212; ASLK Pro Experimente</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="https://dokie.li/media/css/dokieli.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="dokieli" src="https://dokie.li/scripts/dokieli.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "mimeiners/ASLK_PRO");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="canonical" href="https://mimeiners.github.io/ASLK_PRO/docs/Experiment_12.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Entwurf eines digital kontrollierten GSA’s" href="Experiment_13.html" />
+    <link rel="prev" title="Parameterstudie eines LDO’s" href="Experiment_11.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ASLK Pro Experimente</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Einleitung und Übersicht
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_01.html">
+   Grundschaltungen des OPV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_02_TZ.html">
+   Schmitt-Trigger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_03_TZ.html">
+   Charakteristik von Integrator und Differenzierer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_04.html">
+   Analoge Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_05.html">
+   Self-Tuned Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_06.html">
+   Voltage Controlled Oscillator (VCO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_07.html">
+   Phase Locked Loop (PLL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_08.html">
+   Automatic Gain/Volume Control (AGC/AVC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_09.html">
+   DC-DC Wandler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_10.html">
+   Entwurf eines LDO Reglers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_11.html">
+   Parameterstudie eines LDO’s
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parameterstudie eines DC-DC Wandlers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_13.html">
+   Entwurf eines digital kontrollierten GSA’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_14.html">
+   Digital programmierbarer Signalgenerator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RedPitaya_Messautomatisierung.html">
+   Red Pitaya Messautomatisierung
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/Experiment_12.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mimeiners/ASLK_PRO"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/mimeiners/ASLK_PRO/issues/new?title=Issue%20on%20page%20%2Fdocs/Experiment_12.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/mimeiners/ASLK_PRO/edit/master/jb-aslkpro/docs/Experiment_12.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einleitung">
+   Einleitung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theoretische-vorbetrachtung-kapiteliii">
+   Theoretische Vorbetrachtung {#KapitelIII}
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grundaufbau-des-abwartswandlers">
+     Grundaufbau des Abwärtswandlers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenschaften-des-tps40200-tps-eigenschaften">
+     Eigenschaften des TPS40200 {#TPS-Eigenschaften}
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulations-und-messaufbau-kapiteliv">
+   Simulations- und Messaufbau {#KapitelIV}
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simulation">
+     A. Simulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wellenformen">
+       Wellenformen
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ausgangsspannung-bei-fester-last-my-reference-label-1">
+       Ausgangsspannung bei fester Last {#my-reference-label-1}
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ausgangsspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last">
+       Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tastgrad-my-reference-label-2">
+       Tastgrad {#my-reference-label-2}
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#messaufbau">
+     Messaufbau
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Wellenformen
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ausgangsspannung-bei-fester-last">
+       Ausgangsspannung bei fester Last
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tastgrad">
+       Tastgrad
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ergebnisse-kapitelv">
+   Ergebnisse {#KapitelV}
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulierte-und-messtechnische-wellenformen">
+     Simulierte und messtechnische Wellenformen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#messdaten-200-08-khz-196-42-khz">
+   Messdaten         200,08   kHz      196,42   kHz
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulierte-und-messtechnische-ausgangsspannung-bei-fester-last">
+     Simulierte und messtechnische Ausgangsspannung bei fester Last
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulierte-r-und-messtechnische-r-ausgangsspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last">
+     Simulierte/r und messtechnische/r Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulierter-und-messtechnischer-tastgrad">
+     Simulierter und messtechnischer Tastgrad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diskussion-kapitelvi">
+   Diskussion {#KapitelVI}
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wellenformen-wellenformen">
+     Wellenformen {#Wellenformen}
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Ausgangsspannung bei fester Last
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ausgangspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last">
+     Ausgangspannung und -strom bei fester Eingangsspannung und dynamischer Last
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Tastgrad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung-kapitelvii">
+   Zusammenfassung {#KapitelVII}
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#literaturverzeichnis-kapitel-viii">
+   Literaturverzeichnis {#Kapitel VIII}
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="parameterstudie-eines-dc-dc-wandlers">
+<h1>Parameterstudie eines DC-DC Wandlers<a class="headerlink" href="#parameterstudie-eines-dc-dc-wandlers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>Das vorliegende Experiment zeigt die Untersuchung eines DC-DC-Konverters
+mit dem TPS40200. Es wird das Verhalten der Ausgangsspannung bei
+verschiedener Belastung sowie verschiedener Eingangsspannung gezeigt.
+Weiterhin wird auf den Tastgrad des PWM-Signals eingegangen. Der
+Gleichstromsteller wird sowohl über Simulationen als auch im Labor
+untersucht. Es wird gezeigt, dass es Abweichungen zwischen Simulation
+und Messung geben kann. Außerdem werden die theoretischen Grundlagen des
+Experimients kurz dargestellt.</p>
+</div>
+<div class="section" id="einleitung">
+<h2>Einleitung<a class="headerlink" href="#einleitung" title="Permalink to this headline">¶</a></h2>
+<p>Um die Spannung über einem Verbraucher anzupassen, kann ein
+Spannungsteiler verwendet werden. Diese Methode erzielt jedoch einen
+schlechten Wirkungsgrad. Um einen möglichst energieeffizienten
+Wirkungsgrad zu erzielen, erfolgt die Spannungswandlung durch periodisch
+schaltende Wandler.</p>
+<p>Der Begriff Gleichstromsteller ist auch als DC/DC - Wandler bekannt, da
+durch eine geschaltete Gleichspannung - je nach Bedarf - eine höhere,
+niedrigere oder sogar negative Gleichspannung entsteht. Im vorliegenden
+Experiment soll nun eine Parameterstudie eines DC-DC Wandlers
+vorgenommen werden.</p>
+<p>Dafür wird das On-Board-Evaluationsmodul TPS40200 auf dem ASLK PRO Kit
+untersucht. Es handelt sich hierbei um einen Abwärtswandler
+(Step-Down-Converter). In der folgenden Schaltung wird dies durch eine
+Pulsweitenmodulation (PWM) mit einer Frequenz von ca. 200   kHz
+durchgeführt. Durch unterschiedliche Puls-Pausen-Verhältnisse lassen
+sich verschiedene Ausgangsspannungen erzeugen. Die jeweilige Pulsweite
+<span class="math notranslate nohighlight">\(t_{on}\)</span> und <span class="math notranslate nohighlight">\(t_{off}\)</span> beschreiben die Ein- bzw. Ausschaltzeit des
+Abwärtswandlers (<code class="docutils literal notranslate"><span class="pre">Voelker</span></code>{.interpreted-text role=”cite”}, S.109).</p>
+<p>Zu Beginn wird die Theorie eines klassischen Abwärtswandlers in Kapitel
+<code class="docutils literal notranslate"><span class="pre">KapitelIII</span></code>{.interpreted-text role=”ref”} erläutert, um so die
+Eigenschaften der einzelnen Bauteile und deren Abhängigkeit zueinander
+zu verstehen. Des Weiteren werden die verwendeten Eigenschaften des
+TPS40200 in <code class="docutils literal notranslate"><span class="pre">TPS-Eigenschaften</span></code>{.interpreted-text role=”ref”}
+beschrieben. Daraufhin folgt die theoretische Simulation des
+Schaltungsaufbaus unter den selben Konfigurationen, wie unter
+Laborbedingungen, wie im Kapitel <code class="docutils literal notranslate"><span class="pre">KapitelIV</span></code>{.interpreted-text
+role=”ref”} beschrieben. Im Labor wird der DC-DC Wandler bei folgenden
+Konfigurationen untersucht:</p>
+<ul class="simple">
+<li><p>bei konstanter ohmscher Last: Messen verschiedener Spannungen</p></li>
+<li><p>bei konstanter ohmscher Last und variierender Eingangsspannung:
+Untersuchung der Spannungsstabilität am Ausgang</p></li>
+<li><p>bei variierender ohmscher Last und fester Eingangsspannung: Messen
+des Ausgangsstroms</p></li>
+<li><p>bei variierender Eingangsspannung: Beobachtung des Tastgrads der
+PWM-Wellenform</p></li>
+</ul>
+<p>Die resultierenden Ergebnisse der Messungen im Labor werden im Kapitel
+<code class="docutils literal notranslate"><span class="pre">KapitelV</span></code>{.interpreted-text role=”ref”} dargelegt. Darauf aufbauend
+werden in <code class="docutils literal notranslate"><span class="pre">KapitelVI</span></code>{.interpreted-text role=”ref”} die messtechnisch
+ermittelten Ergebnisse mit den Simulationsdaten diskutiert.</p>
+<p>Abweichend der üblicherweise im deutschen verwendeten Angabe des
+Formelzeichens U der physikalischen Größe der elektrischen Spannung wird
+in Experiment 12 diese mit dem Formelzeichen V angegeben. Hierfür wurde
+sich entschieden, um Verwechslungen zwischen den im Text angegebenen
+Quellen und diesem Dokument zu vermeiden.</p>
+</div>
+<div class="section" id="theoretische-vorbetrachtung-kapiteliii">
+<h2>Theoretische Vorbetrachtung {#KapitelIII}<a class="headerlink" href="#theoretische-vorbetrachtung-kapiteliii" title="Permalink to this headline">¶</a></h2>
+<p>Das Evaluierungsmodul (EVM) mit dem nicht synchronen Abwärtswandler
+<a class="reference external" href="http://www.ti.com/lit/ds/symlink/tps40200.pdf">TPS40200</a> ist auf dem
+ASLK PRO zu finden,
+<code class="docutils literal notranslate"><span class="pre">Schaltnetzteil</span> <span class="pre">basierend</span> <span class="pre">auf</span> <span class="pre">dem</span> <span class="pre">TPS40200</span></code>{.interpreted-text
+role=”numref”} zeigt den Schaltplan des EVM.</p>
+<p>Ein nicht synchroner Abwärts- oder auch Aufwärtswandler wird dadurch
+charakterisiert, dass eine Freilaufdiode den weiteren Stromfluss bei
+nicht aktivem Schaltsignal (<span class="math notranslate nohighlight">\(t_{off}\)</span> des Duty Cycles) gewährleistet.
+Ein synchroner Wandler hätte hingegen einen zusätzlichen MOSFET anstatt
+der genannten Diode, welcher durch ein PWM-Signal gesteuert wird. Der
+Vorteil eines solchen Wandlers ist der bessere Wirkungsgrad.</p>
+<p>Die Kenndaten des
+<a class="reference external" href="http://www.ti.com/lit/ds/symlink/tps40200.pdf">TPS40200</a> erlauben eine
+maximale Eingangsspannung von bis zu 52   V und eine maximale
+Ausgangsspannung von <span class="math notranslate nohighlight">\(V_{in} - 10V\)</span> bis <span class="math notranslate nohighlight">\(V_{in}\)</span>. Diese variieren
+ebenfalls mit dem für die Ausgangsspannung gewählten Schaltungsentwurf.
+Da der hier beschriebene Versuch sich auf den bereits fertigen
+Schaltungsentwurf des ASLK PRO-Boards bezieht, werden im Folgenden nur
+die verwendeten Spezifikationen erläutert. Der verwendete Abwärtswandler
+(Buck-Konverter) hat ebenfalls Funktionen, die im Datenblatt
+(<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”}, S.11ff) beschrieben sind,
+allerdings wurden diese nicht im fertigen Layout mit aufgeführt und sind
+somit nicht relevant für die zu betrachtende Schaltung.</p>
+<p>Das hier verwendete EVM wird mit einer Eingangsspannung von 6   V bis 15
+  V betrieben. Die konstante Ausgangsspannung kann mit Hilfe des Jumpers
+JP8 zwischen 3,3   V oder 5   V eingestellt werden. In beiden Fällen
+beträgt der Ausgangsstrom minimal 125   mA und maximal 2,5   A.</p>
+<div class="section" id="grundaufbau-des-abwartswandlers">
+<h3>Grundaufbau des Abwärtswandlers<a class="headerlink" href="#grundaufbau-des-abwartswandlers" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Schaltungsaufbau eines DC-DC-Konverters ({.interpreted-textrole=&quot;cite&quot;}, S.115)" src="../_images/TPS_Basic.PNG" />{##BasicDCDC
+.align-center}</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">BasicDCDC</span></code>{.interpreted-text role=”numref”} ist der grundlegende
+Aufbau eines Abwärtswandlers gezeigt. Aus der Schaltung wird schnell
+klar, dass die Ausgangsspannung eines Abwärtswandlers immer im Bereich
+von 0   V bis <span class="math notranslate nohighlight">\(V_{in}\)</span> liegt. Die Spule ist eines der wichtigsten
+Elemente in diesem Schaltungsaufbau, denn durch sie wird zugeführte
+Energie gespeichert, wenn der MOSFET leitet und die gespeicherte Energie
+wird abgegeben, wenn der MOSFET sperrt. Hinzu kommt, dass sie einem
+schnellen Stromanstieg durch ihre Eigeninduktion entgegenwirkt, denn der
+Spulenstrom folgt dem Induktionsgesetz und schützt so die Last vor hohen
+Stromspitzen. Die Induktivität der Speicherdrossel wird in den meisten
+Fällen so gewählt, dass der geplante minimale Ausgangsstrom nicht
+unterschritten wird. Ebenfalls ist bei der Induktivitätswahl darauf zu
+achten, dass der magnetische Sättigungsstrom der Spule nicht
+überschritten wird, da je nach Spulentyp mit Erreichen der magnetischen
+Sättigung der Induktivitätswert abnimmt. Dies würde sich negativ auf
+unsere abgebende Energie der Spule auswirken, wie die
+<code class="docutils literal notranslate"><span class="pre">12_eq_energiespule</span></code>{.interpreted-text role=”eq”} bestätigt
+<code class="docutils literal notranslate"><span class="pre">JoachimHerzStiftung.11.06.2020</span></code>{.interpreted-text role=”cite”}. Ein
+weiterer sehr wichtiger Faktor der zu wählenden Spule ist der parasitäre
+Serienwiderstand (ESR), da die Verlustleistung der Spule minimal zu
+halten ist, um mit einem optimierten Wirkungsgrad zu arbeiten
+(<code class="docutils literal notranslate"><span class="pre">Tietze.2002</span></code>{.interpreted-text role=”cite”}, S.947).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E &amp;= \frac{1}{2} L I^2 \\
+\end{aligned}\end{split}\]</div>
+<p>Die benötigte Induktivität lässt sich deshalb wie folgt ermitteln:
+<span class="math notranslate nohighlight">\(I_{out,min}\)</span> beschreibt hier den minimalen <span class="math notranslate nohighlight">\(I_{SpitzeSpitze}\)</span>
+Rippelstrom, welcher das Zweifache des angegebenen minimalen Stormes
+beträgt (<code class="docutils literal notranslate"><span class="pre">Tietze.2002</span></code>{.interpreted-text role=”cite”}, S.947):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+L &amp;= T \left(1 - \frac{V_{out}}{V_{in}} \right) \frac{V_{out}}{2 I_{out,min}} \\
+L &amp;= \frac{1}{f} \left(1 - \frac{V_{out}}{V_{in}} \right) \frac{V_{out}}{2 I_{out,min}} \\
+L &amp;= \frac{1}{200\ kHz} \left(1 - \frac{5\ V}{15\ V} \right) \frac{5\ V}{2(2 \cdot 0,125\ A)} \\
+L &amp;= 33,33\ \mu H
+\end{aligned}\end{split}\]</div>
+<p>Des Weiteren ist der Glättungskondensator ebenfalls essentiell, um die
+Welligkeit der Ausgangsspannung einzustellen. Um die parasitären
+Serienwiderstände des Kondensators gering zu halten, schaltet man meist
+einen oder mehrere Elektrolytkondensatoren und keramische Kondensatoren
+parallel. Dies hat zur Folge, dass die Verlustleistung der
+Parallelschaltung der Kondensatoren verringert wird. Die benötigte
+Kapazität errechnet sich nach <code class="docutils literal notranslate"><span class="pre">12_eq_cap</span></code>{.interpreted-text role=”eq”},
+wobei <span class="math notranslate nohighlight">\(\Delta U_{out}\)</span> die maximal auftretende Ausgangsrippelspannung
+beschreibt (<code class="docutils literal notranslate"><span class="pre">Tietze.2002</span></code>{.interpreted-text role=”cite”}, S.947).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+C &amp;= T \frac{I_{out,min}}{4 \Delta V_{out}} \\
+\end{aligned}\end{split}\]</div>
+<p>Texas Instruments hat für dieses Layout die Ausgangskapazität anders
+ermittelt und gibt diese laut dem Datenblatt (<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text
+role=”cite”}, S.23) mit einer Kapazität von 165   <span class="math notranslate nohighlight">\(\mu F\)</span> an. Dies wird
+nicht ganz schlüssig bei einem Blick auf den Schaltplan
+<code class="docutils literal notranslate"><span class="pre">Schaltnetzteil</span> <span class="pre">basierend</span> <span class="pre">auf</span> <span class="pre">dem</span> <span class="pre">TPS40200</span></code>{.interpreted-text
+role=”numref”}. An dem Schaltplan wird sichtbar, dass hier durch mehrere
+parallel geschaltete Kapazitäten die parasitären Widerstände gering
+gehalten werden.</p>
+<p>Die Diode des Abwärtswandlers sorgt dafür, dass die gespeicherte Energie
+aus der Spule abgegeben werden kann, wenn der MOSFET nicht mehr leitet.
+Die Diode sollte mindestens eine Durchbruchspannung von <span class="math notranslate nohighlight">\(2 V_{in}\)</span>
+besitzen. Zu beachten ist, dass der maximale Ausgangsstrom und die
+Schwellspannung der Diode nicht zu groß sein sollten, denn wenn der
+MOSFET sperrt, setzt sich die Ausgangsspannung wie folgt zusammen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_{out} &amp;= V_L - V_{Diode} \\
+\end{aligned}\end{split}\]</div>
+<p>Ein weiterer wichtiger Punkt ist die Schaltfrequenz des MOSFETs. Sollte
+diese zu klein gewählt sein, so entsteht der so genannte “lückende
+Strombetrieb”. Dieser ist stets zu vermeiden. Deshalb befindet sich die
+übliche Schaltfrequenz zwischen 20   kHz bis 200   kHz, um den gewollten
+“nicht lückenden Strombetrieb” zu erhalten.</p>
+<p>Durch die genannten Bauteile und ihre Eigenschaften wird das
+Grundprinzip des Abwärtswandlers klar: Denn durch Schalten des MOSFETs,
+welcher durch ein PWM-Signal angesteuert wird, ist die Ausgangsspannung
+ein Produkt aus dem Tastverhältnis des PWM-Signals und der angelegten
+Eingangsspannung. Das Tastverhältnis beschreibt das Verhältnis der
+Einschaltzeit zu der Periodendauer des PWM-Signals:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_{out} &amp;= {V_{in}} \frac{t_{on}}{t_{on}+t_{off}} &amp;= {V_{in}} \cdot {\ Tastgrad} \\
+\end{aligned}\end{split}\]</div>
+<p>Somit lässt sich erkennen, dass sich die Ausgangsspannung aus dem
+arithmetischen Mittelwert der Eingangsspannung ergibt
+(<code class="docutils literal notranslate"><span class="pre">Tietze.2002</span></code>{.interpreted-text role=”cite”}, S.944). Anmerken lässt
+sich hier, dass die Ausgangsspannung bei einer festen Last als konstant
+angenommen werden kann. So betrachten wir die Eingangsspannung als
+variabel. Umgestellt zum Tastgrad ergibt sich eine Gleichung der Form
+<span class="math notranslate nohighlight">\(f(x)=a/x\)</span>. Dies lässt auf einen hyperbelförmigen Verlauf des Tastgrades
+schließen.</p>
+</div>
+<div class="section" id="eigenschaften-des-tps40200-tps-eigenschaften">
+<h3>Eigenschaften des TPS40200 {#TPS-Eigenschaften}<a class="headerlink" href="#eigenschaften-des-tps40200-tps-eigenschaften" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Interner Aufbau des Abwärtswandlers ({.interpreted-textrole=&quot;cite&quot;},S.11)" src="../_images/TPS_Blockdiagramm.png" />{##Block_TPS40200
+.align-center}</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Block_TPS40200</span></code>{.interpreted-text role=”numref”} ist der
+grundlegende Aufbau der Halbleiterschaltung schematisch dargestellt.
+Dieser wird im Folgenden erläutert.</p>
+<p>Es ist zu sehen, dass der Baustein auch über eine Soft-Start-Funktion
+verfügt, bei der der Ausgang einer langsam ansteigenden
+Soft-Start-Spannung folgt, sodass ein Überschwingen der Ausgangsspannung
+verhindert wird.</p>
+<p>Die Anrampung der Ausgangsspannung kann, wie
+<code class="docutils literal notranslate"><span class="pre">Softstart_TPS40200</span></code>{.interpreted-text role=”numref”} zeigt, durch
+entsprechende Wahl des Kondensators <span class="math notranslate nohighlight">\(C_{SS}\)</span> eingestellt werden. Da die
+Zeitkonstante der jeweiligen Kapazität varriert, können verschiedene
+Anrampungen ermöglicht werden. Die Anlaufzeit ergibt sich aus folgender
+Formel <code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”} :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+t_{ss} &amp;= R_{c} C_{SS} ln\left(\frac{V_{SST}}{V_{SST} - 1,4\ V}\right) \\
+t_{ss} &amp;= 9,5\ ms
+\end{aligned}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(t_{SS}\)</span> ist die erforderliche Softstartzeit in Sekunden</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{SS}\)</span> ist der Wert des Softstart-Kondensators in F</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{c}\)</span> ist der interne Sanftanlauf-Ladewiderstand (105 <span class="math notranslate nohighlight">\(k \Omega\)</span>
+nominal)</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{SST}\)</span> ist die eine interne Spannungsversorgung bis zu einem
+Maximum von 8   V</p></li>
+</ul>
+<p><img alt="Softstarteigenschaft des TPS40200 ({.interpreted-textrole=&quot;cite&quot;},S.17)" src="../_images/TPS_Softstart_cut.png" />{##Softstart_TPS40200
+.align-center}</p>
+<p>Eine weitere Eigenschaft ist die maximale Strombegrenzung durch die das
+PWM-Signal ausgeschaltet wird, um sich und die Platine vor Zerstörung zu
+schützen (<code class="docutils literal notranslate"><span class="pre">Strombegrenzung_TPS40200</span></code>{.interpreted-text role=”numref”}).
+Wenn der FET eingeschaltet ist und über <span class="math notranslate nohighlight">\(R_{ILIM}\)</span> ein Abfall von
+<span class="math notranslate nohighlight">\(V_{ILIM} = 100 mV\)</span> oder mehr vom VDD-Pin zum ISNS-Pin festgestellt
+wird, wird ein Überstromzustand erklärt. In diesem Fall wird der FET
+abgeschaltet und ein intern integrierter Softstart-Kondensator wird
+entladen. Wenn der Softstart-Kondensator einen Pegel unter 150 mV
+erreicht, löscht ein Komparator das Überstrom-Zustandsflag und versucht
+neu zu starten. Sollte der Überstrom immer noch aktiv sein, so beginnt
+der Vorgang erneut. Der maximale Spitzenstrom lässt sich über</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+I_{OC} &amp;= \frac{V_{ILIM}}{R_{ILIM}} \frac{R_{F1}+R_{F2}}{R_{F2}} \\
+\end{aligned}\end{split}\]</div>
+<p>berechnen (<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”}, S.15). Der Widerstand
+<span class="math notranslate nohighlight">\(R_{F2}\)</span> ist für den hier vorgestellten DC-DC-Wandler als unendlich
+anzunehmen, wodurch die Strombegrenzung alleine von <span class="math notranslate nohighlight">\(V_{ILIM}\)</span> und
+<span class="math notranslate nohighlight">\(R_{ILIM}\)</span> abhängt. So kann bei den hier verwendeten Parametern ein
+Spitzenstrom von 3,33   A in der Spule fließen. Von diesem sollte beim
+Design eine Toleranz von 25   % sowie der Rippelstrom von 0,125   A
+berücksichtigt werden(<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”}, S.24). Für
+die hier verwendeten Parameter kann somit maximal ein Strom von 2,54   A
+fließen.</p>
+<p><img alt="Strombegrenzung des TPS40200 ({.interpreted-text role=&quot;cite&quot;},S.16)" src="../_images/TPS_Strombegrenzung_cut.png" />{##Strombegrenzung_TPS40200
+.align-center}</p>
+<p>Die Ausgangsspannung verringert sich bei steigendem Laststrom. Dies ist
+auf die damit verbundenen ansteigenden Verlustleistungen von den
+parasitären Widerständen und die PN-Übergänge der Bauelemente
+zurückzuführen (<code class="docutils literal notranslate"><span class="pre">Instruments.1999</span></code>{.interpreted-text role=”cite”} S. 10)
+(<code class="docutils literal notranslate"><span class="pre">TEX2</span></code>{.interpreted-text role=”cite”} S. 12).</p>
+<p>Es gibt noch weitere relevante Einstellungen, die auf dem EVM-Board
+bereits realisiert worden sind, wie z.B. die Realisierung <span class="math notranslate nohighlight">\(V_{CC}\)</span>
+Spannungsunterschreitung. Hierfür wird auf das Datenblatt des TPS40200
+verwiesen (<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”} S.12).</p>
+<p>Die Betriebsfrequenz des Abwärtswandlers wird durch einen externen
+Widerstand <span class="math notranslate nohighlight">\(R_{201}\)</span> bestimmt, der vom RC-Pin an VDD angeschlossen ist
+sowie durch einen Kondensator <span class="math notranslate nohighlight">\(C_{213}\)</span>, der vom RC-Pin an Masse
+angeschlossen ist (siehe
+<code class="docutils literal notranslate"><span class="pre">Schaltnetzteil</span> <span class="pre">basierend</span> <span class="pre">auf</span> <span class="pre">dem</span> <span class="pre">TPS40200</span></code>{.interpreted-text
+role=”numref”}). Diese Verbindung und die beiden Oszillatorkomparatoren
+im Inneren des Geräts bestimmen die Oszillatorfrequenz nach folgender
+Gleichung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f &amp;= \frac{1}{R_{201} C_{213} \cdot 0,105} \\
+f &amp;= \frac{1}{100\ k\Omega \cdot 470\ pF \cdot 0,105} \\
+f &amp;= 202,63\ kHz
+\end{aligned}\end{split}\]</div>
+<p>Da der Abwärtswandler varrierende Lasten ermöglicht, erfordert die
+Ausgangsspannung eine Regelung. In <code class="docutils literal notranslate"><span class="pre">Block_TPS40200</span></code>{.interpreted-text
+role=”numref”} sieht man, dass der TPS40200 eine Referenzspannung von
+700   mV für die Regelung der Rückkopplungsschleife benötigt. Diese
+Angabe besitzt bereits eine Ungenauigkeit. So ist
+(<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”}, S.18) zu entnehmen, dass diese
+bei 696   mV liegt.</p>
+<p>Wie genau die Regelung funktioniert, wurde im Versuch 9: <span class="xref myst">DC-DC
+Konverter</span> anschaulich beschrieben. Dazu wird ein
+Spannungsteiler an die Ausgangsspannung angeschlossen und der mittlere
+Abgriff wird auf den PIN “FB” gelegt. Eine Ausgangsspannung kann wie
+folgt über den Rückkopplungsfaktor <span class="math notranslate nohighlight">\(\beta\)</span> eingestellt werden
+(<code class="docutils literal notranslate"><span class="pre">ASLKPro</span></code>{.interpreted-text role=”cite”}, S.64):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_{out} &amp;= \frac{V_{ref}}{\beta} \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_{ref} &amp;= 0,696\ V                \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\beta &amp;= \frac{R_{209||211}}{R_{209||211}+R_{207}+R_{208}} \\
+\end{aligned}\end{split}\]</div>
+<p>Die Änderung der Ausgangsspannung kann über JP8 in
+<code class="docutils literal notranslate"><span class="pre">Schaltnetzteil</span> <span class="pre">basierend</span> <span class="pre">auf</span> <span class="pre">dem</span> <span class="pre">TPS40200</span></code>{.interpreted-text
+role=”numref”} erreicht werden. Bei Betrachtung wird auch erkenntlich,
+dass die Ausgangsspannung zum Regeln der Ausgangsspannung verwendet
+wird. Hierbei wird das Prinzip eines nichtinvertierenden Verstärkers
+genutzt. Nach umstellen von <code class="docutils literal notranslate"><span class="pre">12_eq_01</span></code>{.interpreted-text role=”eq”} zu
+<span class="math notranslate nohighlight">\(V_{out}\)</span> kann dies folgendermaßen berechnet werden:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+V_{out} &amp;= V_{ref} \left[1+(R_{207}+R_{208})\left(\frac{1}{R_{211}}+\frac{1}{R_{209}}\right)\right]\ \\
+\end{aligned}\end{split}\]</div>
+<p>Der benötigte Parallelwiderstand zwischen <span class="math notranslate nohighlight">\(R_{209}\)</span> und <span class="math notranslate nohighlight">\(R_{211}\)</span> kann
+über</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+R_{209||211} &amp;= \frac{V_{ref} (R_{207}+R_{208})}{V_{out}-V_{ref}} \\
+\end{aligned}\end{split}\]</div>
+<p>ermittelt werden.</p>
+<p>Diesbezüglich kann durch einfaches Umformen der Parallelschaltung
+<span class="math notranslate nohighlight">\(R_{211}\)</span> errechnet werden:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+R_{211} &amp;= \frac{R_{209||211} R_{209}}{R_{209}-R_{209||211}} \\
+\end{aligned}\end{split}\]</div>
+<p>Der Rückkopplungsfaktor <span class="math notranslate nohighlight">\(\beta\)</span> kann durch Änderung des
+Rückkopplungswiderstands <span class="math notranslate nohighlight">\(R_{209}\)</span> geändert werden, um so die
+Ausgangsspannung festzulegen. Es ist jedoch nicht möglich, auf dem ASLK
+PRO den Widerstand <span class="math notranslate nohighlight">\(R_{209}\)</span> zu ändern. Dies könnte jedoch durch den
+Anschluss eines externen Widerstandes zwischen der Klemme TP8 und Ground
+erreicht werden.</p>
+<p>Der Ausgangsstrom darf zwischen 0,125   A und 2,5   A betragen
+(<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”}, S. 20, Tabelle 1). Über das
+ohmsche Gesetz können wie folgt die Grenzwerte der ohmschen Last
+ermittelt werden:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+R_{min} &amp;= \frac{V_{out}}{I_{out}} &amp;=\frac{5\ V}{2,5\ A} = 2 \ \Omega \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+R_{max} &amp;= \frac{V_{out}}{I_{out}} &amp;=\frac{5\ V}{125\ mA} = 40 \ \Omega \\
+\end{aligned}\end{split}\]</div>
+<p>Somit wurden alle nötigen Parameter für den Schaltungsentwurf des
+Abwärtswandlers TPS40200 ermittelt.</p>
+</div>
+</div>
+<div class="section" id="simulations-und-messaufbau-kapiteliv">
+<h2>Simulations- und Messaufbau {#KapitelIV}<a class="headerlink" href="#simulations-und-messaufbau-kapiteliv" title="Permalink to this headline">¶</a></h2>
+<p>Der Versuchsaufbau gliedert sich in zwei Abschnitte. Der erste Abschnitt
+behandelt die Simulation der Schaltung mit Hilfe des Programms
+<a class="reference external" href="http://www.ti.com/tool/TINA-TI">TINA-TI</a> und dazu nötigen Berechnungen.
+Der zweite Abschnitt beschäftigt sich mit dem Messaufbau vor Ort.</p>
+<p>Die untersuchte Schaltung kann der
+<code class="docutils literal notranslate"><span class="pre">Schaltnetzteil</span> <span class="pre">basierend</span> <span class="pre">auf</span> <span class="pre">dem</span> <span class="pre">TPS40200</span></code>{.interpreted-text
+role=”numref”} entnommen werden. Insgesamt wurden vier Simulationen und
+vier Messungen durchgeführt.</p>
+<p><img alt="Schaltnetzteil basierend auf dem TPS40200 ({.interpreted-textrole=&quot;cite&quot;},S.64)" src="../_images/Schaltplan.PNG" />{##Schaltnetzteil basierend auf dem TPS40200
+.align-center}</p>
+<div class="section" id="a-simulation">
+<h3>A. Simulation<a class="headerlink" href="#a-simulation" title="Permalink to this headline">¶</a></h3>
+<p>Größtenteils wurde für die Simulation
+<a class="reference external" href="http://www.ti.com/tool/TINA-TI">TINA-TI</a> in Version 9.3.200.277 SF-TI
+verwendet. Dabei sei angemerkt, dass mit diesem Spice Simulator zwar das
+grundlegende Verhalten der Schaltung simuliert wird. Jedoch werden dabei
+nicht die physikalischen Effekte des Layouts berücksichtigt. Neben den
+Standardbauteilen von TINA-TI wurde der TPS40200 und der FDC5614P neu
+eingebunden. Für den TPS40200 verwenden wir die
+<a class="reference external" href="https://www.ti.com/lit/tsc/slvj005">Rev.</a> D, die auf der
+Herstellerseite von Texas Instrument zum freien Download zur Verfügung
+steht. Für den FDC5614 wurde ein Spice-Modell vom Hersteller
+<a class="reference external" href="https://www.onsemi.com/support/design-resources/models?rpn=FDC654P">OnSemi</a>
+umformatiert, sodass er in TINA-TI eingebunden werden kann. Die
+restlichen Bauteile wurden der Standardbibliothek von TINA-TI entnommen.
+Die Simulationsdateien können dem
+<a class="reference external" href="https://github.com/mimeiners/ASLK_PRO/tree/master/spice/Experiment_12">Repositorium</a>
+entnommen werden.</p>
+<p>Für die Berechnung des benötigten Widerstandes zum Festlegen der 5   V
+Ausgangsspannung ergibt sich über <code class="docutils literal notranslate"><span class="pre">12_eq_R211209</span></code>{.interpreted-text
+role=”eq”} und <code class="docutils literal notranslate"><span class="pre">12_eq_R211</span></code>{.interpreted-text role=”eq”} ein Widerstand
+<span class="math notranslate nohighlight">\(R_{211}\)</span> von 40,1   <span class="math notranslate nohighlight">\(k \Omega\)</span>. Die verfügbaren Widerstände auf dem
+ASLK Pro lassen jedoch ausschließlich eine Beschaltung von 41,2  
+<span class="math notranslate nohighlight">\(k \Omega\)</span> zu.</p>
+<div class="section" id="wellenformen">
+<h4>Wellenformen<a class="headerlink" href="#wellenformen" title="Permalink to this headline">¶</a></h4>
+<p>Es werden vier Spannungen der Schaltung simuliert:</p>
+<ul class="simple">
+<li><p>Eingangsspannung, <span class="math notranslate nohighlight">\(V_{in}\)</span></p></li>
+<li><p>Ausgangsspannung, <span class="math notranslate nohighlight">\(V_{out}\)</span></p></li>
+<li><p>Oszillatorspannung, <strong>TP3</strong></p></li>
+<li><p>PWM-Signal, <strong>TP4</strong></p></li>
+</ul>
+<p>Dafür wird die Schaltung mit einem 20   <span class="math notranslate nohighlight">\(\Omega\)</span> – Widerstand belastet.
+Die Eingangsspannung wird auf konstante 10   V eingestellt. Um
+sicherzustellen, dass die Schaltung sich im eingeschwungenen Zustand
+befindet, wird nur der Zustand der Simulationszeit von 15   ms bis 15,1
+  ms dargestellt. Die Ergebnisse werden jeweils als Funktion <span class="math notranslate nohighlight">\(u(t)\)</span>
+dargestellt.</p>
+</div>
+<div class="section" id="ausgangsspannung-bei-fester-last-my-reference-label-1">
+<h4>Ausgangsspannung bei fester Last {#my-reference-label-1}<a class="headerlink" href="#ausgangsspannung-bei-fester-last-my-reference-label-1" title="Permalink to this headline">¶</a></h4>
+<p>Um das Verhalten der Ausgangsspannung während einer variierenden
+Eingangsspannung zu untersuchen, wird die Schaltung mit einer Last von
+20   <span class="math notranslate nohighlight">\(\Omega\)</span> simuliert. Die Eingangsspannung wird als Dreiecksspannung
+mit einem Offset von 12,5   V, einer Amplitude von 2,5   V sowie einer
+Frequenz von 10   Hz erzeugt. So kann ein Spannungsbereich von 10   V
+bis 15   V betrachtet werden. Betrachtet wird der zeitliche Ausschnitt
+zwischen 75   ms und 125   ms, wodurch ein Sweep von 10   V bis 15   V
+erreicht wird. Dargestellt wird das Ergebnis durch <span class="math notranslate nohighlight">\(V_{out}(V_{in})\)</span>.</p>
+</div>
+<div class="section" id="ausgangsspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last">
+<h4>Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last<a class="headerlink" href="#ausgangsspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last" title="Permalink to this headline">¶</a></h4>
+<p>Die Eingangsspannung beträgt in der Simulation konstant 10   V. Die Last
+ist variabel und wird mit Hilfe eines spannungsgesteuerten Widerstandes
+umgesetzt. Dieser wurde anhand vom diesem
+<a class="reference external" href="https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/234/7607.VCR_5F00_test.TSC">Beispiel</a>
+erstellt. Die Last verändert ihren Widerstand linear zwischen 2  
+<span class="math notranslate nohighlight">\(\Omega\)</span> und 40   <span class="math notranslate nohighlight">\(\Omega\)</span>. Dies wird mit Hilfe eines Dreieckssignals
+mit einer Frequenz von 5 Hz realisiert. Betrachtet wird das
+Simulationsergebnis von 150   ms bis 250   ms, um so genau einmal zu
+beobachten, wie sich der Widerstand von 2   <span class="math notranslate nohighlight">\(\Omega\)</span> auf 40   <span class="math notranslate nohighlight">\(\Omega\)</span>
+erhöht. Dargestellt wird das Ergebnis durch <span class="math notranslate nohighlight">\(V_{out}(I_{out})\)</span>.</p>
+</div>
+<div class="section" id="tastgrad-my-reference-label-2">
+<h4>Tastgrad {#my-reference-label-2}<a class="headerlink" href="#tastgrad-my-reference-label-2" title="Permalink to this headline">¶</a></h4>
+<p>Der Tastgrad (eng. duty cycle) kann durch <code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text
+role=”eq”} berechnet werden. Da die Ausgangsspannung über die
+Widerstände <span class="math notranslate nohighlight">\(R_{209}\)</span> und <span class="math notranslate nohighlight">\(R_{211}\)</span> fest gewählt ist, kann angenommen
+werden, dass die Ausgangsspannung konstant ist. Somit hat der Tastgrad
+nur eine Abhängigkeit von der Eingangsspannung.</p>
+<p>In der Simulation ist der Tastgrad durch die Spannung TP4 dargestellt.
+Wie auch in Abschnitt <code class="docutils literal notranslate"><span class="pre">my-reference-label-1</span></code>{.interpreted-text
+role=”ref”} wird ein Sweep der Eingangsspannung vorgenommen. Da die
+Simulation von TP4 nicht genügend Stützstellen besitzt, kann anhand der
+Simulationsdaten der Tastgrad ohne größere Abweichungen nicht
+zuverlässig bestimmt werden. Aus diesem Grund wird der Tastgrad über die
+Eingangs- und Ausgangsspannung nach <code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text
+role=”eq”} bestimmt. Dieses Ergebnis wird durch <span class="math notranslate nohighlight">\(V_{in}\)</span> in Abhängigkeit
+von dem Tastgrad dargestellt.</p>
+</div>
+</div>
+<div class="section" id="messaufbau">
+<h3>Messaufbau<a class="headerlink" href="#messaufbau" title="Permalink to this headline">¶</a></h3>
+<p>Wie zuvor beschrieben, wird für die Versuche das ASLK (Analog System Lab
+Kit) Pro der Firma MikroElektronika für den Messaufbau verwendet. Auf
+diesem befindet sich die in
+<code class="docutils literal notranslate"><span class="pre">Schaltnetzteil</span> <span class="pre">basierend</span> <span class="pre">auf</span> <span class="pre">dem</span> <span class="pre">TPS40200</span></code>{.interpreted-text
+role=”numref”} genannte Schaltung. Betrieben wird das Board mit einer
+symmetrischen Spannungsversorgung von 10   V. Als Messinstrument wird
+ein 4-Kanal Oszilloskop verwendet. Auf dem ASLK wird der JP8 so
+gesteckt, dass eine Ausgangsspannung von 5   V zu erwarten ist. Die
+Darstellungsarten entsprechen in jedem Schritt der Darstellungsart in
+der Simulation.</p>
+<p><img alt="Messaufbau der praktischenMessung" src="../_images/Messaufbau.PNG" />{##Messaufbau der praktischen Messung
+.align-center}</p>
+<div class="section" id="id1">
+<h4>Wellenformen<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Der Jumper JP9 wird so gesteckt, dass die Schaltung mit konstant 10   V
+Eingangsspannung betrieben wird. Anschließend wurde mit dem
+4-Kanal-Oszilloskop die Eingangs- und Ausgangsspannung sowie TP3 und TP4
+gemessen. Die Messung erfolgt über einen Zeitraum von 100   <span class="math notranslate nohighlight">\(\mu s\)</span>.
+Belastet wird die Schaltung wie in der Simulation mit 20   <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
+</div>
+<div class="section" id="ausgangsspannung-bei-fester-last">
+<h4>Ausgangsspannung bei fester Last<a class="headerlink" href="#ausgangsspannung-bei-fester-last" title="Permalink to this headline">¶</a></h4>
+<p>Die Last bleibt unverändert. Der Jumper JP9 wird so gesteckt, dass die
+Schaltung extern über CN5 betrieben werden kann. Hier wurde ein
+Funktionsgenerator angeschlossen. Dieser erhöht die Spannung in 0,5   V
+Schritten von 10   V bis 15   V. Gemessen wird die Eingangs- und
+Ausgangsspannung. Für jeden 0,5   V Schritt werden jeweils 31250 Werte
+aufgezeichnet, woraus im Nachgang der Mittelwert gebildet wird.</p>
+</div>
+<div class="section" id="id2">
+<h4>Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Um die Ausgangsspannung und den Ausgangsstrom zu messen, werden wieder
+konstante 10   V eingespeist. An die Last wird in Reihe ein 1   <span class="math notranslate nohighlight">\(\Omega\)</span>
+Shunt-Widerstand sowie eine verstellbares Schiebepotentiometer
+angeschlossen. Gemessen wird die Spannung über die gesamte Last sowie
+über dem Shunt-Widerstand. Das Ohm’sche Gesetz <span class="math notranslate nohighlight">\(U=R I\)</span> macht deutlich,
+dass in diesem Fall die gemessene Spannung über dem Shunt-Widerstand dem
+Ausgangsstrom gleicht.</p>
+</div>
+<div class="section" id="tastgrad">
+<h4>Tastgrad<a class="headerlink" href="#tastgrad" title="Permalink to this headline">¶</a></h4>
+<p>Die Bestimmung des Tastgrades erfolgt wie zuvor in Abschnitt
+<code class="docutils literal notranslate"><span class="pre">my-reference-label-2</span></code>{.interpreted-text role=”ref”} aus der gemessenen
+Eingangs-und Ausgangsspannung. Grund für diese indirekte Bestimmung ist,
+dass die im Oszilloskop integrierte Duty-Cycle-Funktion ungenau wird,
+sobald die Flanken des Rechtecksignals keine lineare Steigung mehr
+aufweisen, sondern Spannungsspitzen enthalten.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ergebnisse-kapitelv">
+<h2>Ergebnisse {#KapitelV}<a class="headerlink" href="#ergebnisse-kapitelv" title="Permalink to this headline">¶</a></h2>
+<p>Im Folgenden werden die simulierten Werte mit den messtechnisch
+ermittelten Werten verglichen und dargestellt.</p>
+<div class="section" id="simulierte-und-messtechnische-wellenformen">
+<h3>Simulierte und messtechnische Wellenformen<a class="headerlink" href="#simulierte-und-messtechnische-wellenformen" title="Permalink to this headline">¶</a></h3>
+<p>Die Wellenformen sind in <code class="docutils literal notranslate"><span class="pre">TP3TP4VoutVin</span></code>{.interpreted-text
+role=”numref”} zu erkennen. Aus Darstellungsgründen wird die
+Ausgangsspannung in zwei Plots aufgeteilt.</p>
+<p><img alt="Simulierte und messtechnisch ermittelte Wellenformen bei einer Lastvon 20    -Oszillatorspannung TP3, PWM-Signal TP4 ,Ausgangsspannung  und Eingangsspannung" src="../_images/TP3_TP4_Vout_Vin.png" />{##TP3TP4VoutVin
+.align-center}</p>
+<p>Grundlage für die folgenden Ausführungen zum TP3 und TP4 Plot sind
+folgende Frequenzen, die aus den jeweiligen Daten ermittelt wurden:</p>
+<hr class="docutils" />
+<p>Daten             bei 100 <span class="math notranslate nohighlight">\(\mu s\)</span>   bei 200 <span class="math notranslate nohighlight">\(\mu s\)</span></p>
+<hr class="docutils" />
+<p>Simulation        197,03   kHz      194,79   kHz</p>
+</div>
+</div>
+<div class="section" id="messdaten-200-08-khz-196-42-khz">
+<h2>Messdaten         200,08   kHz      196,42   kHz<a class="headerlink" href="#messdaten-200-08-khz-196-42-khz" title="Permalink to this headline">¶</a></h2>
+<p>: Frequenz von TP3 und TP4 über die Zeit</p>
+<p>Im ersten und im zweiten Plot von TP3 und TP4 ist zu erkennen, dass sich
+die Frequenz der Simulationsdaten am Anfang des Plots, bei 100 <span class="math notranslate nohighlight">\(\mu s\)</span>,
+von den der Messdaten nicht unterscheidet. Diese weisen jedoch am Ende
+des Plots, bei 200 <span class="math notranslate nohighlight">\(\mu s\)</span>, eine Differenz zueinander von 1,63   kHz
+auf. Man kann augenscheinlich nicht erkennen, dass sich die Frequenz der
+Mess- wie auch der Simulationsdaten über die Zeit ändert. Bei den
+Simulationsdaten ergibt sich dabei über einen Zeitraum von 100 <span class="math notranslate nohighlight">\(\mu s\)</span>
+eine Differenz von 2,24 kHz. Bei den Messdaten hingegen ergeben sich
+über den gleichen Zeitraum 3,66 kHz.</p>
+<p>Im dritten Plot von der Eingangsspannung <span class="math notranslate nohighlight">\(V_{in}\)</span> ist ersichtlich, dass
+die Simulation mit einer idealen glatten Gleichspannung von 10   V
+durchgeführt wurde. Hingegen ist bei den Messdaten zu erkennen, dass die
+Eingangsspannung <span class="math notranslate nohighlight">\(V_{in}\)</span> keine glatte Gleichspannung ist. Der
+Mittelwert dieser Spannung liegt bei 9,755   V. Daraus ergibt sich eine
+Differenz von 0,245   V zwischen dem Mittelwert und der
+Simulationsgleichspannung.</p>
+<p>Im vierten Plot von <span class="math notranslate nohighlight">\(V_{out}\)</span> ist zu erkennen, dass die sich ergebende
+simulierte wellige Ausgangsspannung typisch der eines DC-DC Wandlers ist
+(vgl. <span class="xref myst">DC-DC Konverter</span>). Der Mittelwert dieser
+Spannung ergibt ca. 4,9315   V. Im letzten Plot von <span class="math notranslate nohighlight">\(V_{out}\)</span> sind die
+Messdaten zu sehen. Auffällig sind hier die Spannungsspitzen im
+typischen welligen Verlauf der Ausgangsspannung. Diese Spannungsspitzen
+befinden sich an der Stelle, an der sich in TP4 die Signalflanken
+befinden. Ansonsten ist der Mittelwert der Ausgangsspannung mit 4,88   V
+geringer als die simulierte, was eine Differenz von 51,5   mV ergibt.</p>
+<div class="section" id="simulierte-und-messtechnische-ausgangsspannung-bei-fester-last">
+<h3>Simulierte und messtechnische Ausgangsspannung bei fester Last<a class="headerlink" href="#simulierte-und-messtechnische-ausgangsspannung-bei-fester-last" title="Permalink to this headline">¶</a></h3>
+<p>Bei einer festen Last von 20   <span class="math notranslate nohighlight">\(\Omega\)</span> wird die Eingangsspannung in
+einem Bereich von 10   V bis 15   V dargestellt sowie die zugehörige
+Ausgangsspannung. Die Ausgangsspannung variiert, weshalb zusätzlich der
+Mittelwert ermittelt und dargestellt ist. Dies ist
+<code class="docutils literal notranslate"><span class="pre">fig:12vout</span></code>{.interpreted-text role=”numref”} zu entnehmen.</p>
+<p><img alt="Simulierte und messtechnisch ermittelte Ausgangsspannung über die Eingangsspannung  bei einer Last von 20  " src="../_images/Ausgangsspg_bei_variabler_Eingangsspg.png" />{##fig:12vout
+.align-center}</p>
+<p>Die simulierten und gemessenen Ausgangsspannungen sind beide bis auf ein
+Rauschen konstant. Die simulierte Ausgangsspannung liegt
+durchschnittlich bei ca. 4,926   V und die messtechnisch ermittelte bei
+ca. 4,89   V.</p>
+</div>
+<div class="section" id="simulierte-r-und-messtechnische-r-ausgangsspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last">
+<h3>Simulierte/r und messtechnische/r Ausgangsspannung und -strom bei fester Eingangsspannung und dynamischer Last<a class="headerlink" href="#simulierte-r-und-messtechnische-r-ausgangsspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fig:12IV</span></code>{.interpreted-text role=”numref”} stellt die Messung
+<span class="math notranslate nohighlight">\(V_{out}(I_{out})\)</span> dar.</p>
+<p><img alt="Simulierte/r und messtechnisch ermittelte/r Ausgangsspannung und-strom" src="../_images/Strom_Spannung.png" />{##fig:12IV .align-center}</p>
+<p>Die simulierte Ausgangsspannung oszilliert um ca. 4,928   V. Es ist kein
+Spannungsabfall bei erhöhtem Strom zu erkennen. Die Schaltung kann laut
+Simulation über den gesamten Strombereich von 125   mA bis 2,5   A
+betrieben werden. Bei der Messung an der Schaltung hingegen fällt die
+Ausgangsspannung bei steigendem Strom ab, so dass sie anfangs bei 125  
+mA bei 4,89   V liegt und bei 2,4   A bei 4,71   V. Wird der Strom
+weiter erhöht, so bricht die Ausgangsspannung komplett ein. Die Spannung
+fällt nicht linear. Es ist zu beobachten, dass die Spannung schneller
+fällt, umso höher der Ausgangsstrom ist.</p>
+</div>
+<div class="section" id="simulierter-und-messtechnischer-tastgrad">
+<h3>Simulierter und messtechnischer Tastgrad<a class="headerlink" href="#simulierter-und-messtechnischer-tastgrad" title="Permalink to this headline">¶</a></h3>
+<p>Der aus Simulations- und Messwerten rechnerisch ermittelte Tastgrad ist
+in <code class="docutils literal notranslate"><span class="pre">fig:12dc</span></code>{.interpreted-text role=”numref”} zu erkennen. Der Tastgrad
+wurde durch <code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text role=”eq”} berechnet.</p>
+<p><img alt="Simulierter und messtechnisch ermittelter Tastgrad über dieEingangsspannung bei einer Last von 20  " src="../_images/Duty_Cycle.png" />{##fig:12dc .align-center}</p>
+<p>Der Verlauf zwischen Messung und Simulation ist bis auf einen Versatz
+von ca. 150   mV gleich. Es ist zu erkennen, dass der Tastgrad bei
+fallender Eingangsspannung steigt. Die Graphen besitzen eine leichte
+Krümmung.</p>
+<p>Die folgenden beiden Abbildungen zeigen die Messung mit dem Oszilloskop.
+In diesen ist zu erkennen, dass das Rechtecksignal vom duty cycle (blau)
+verformt ist. Aufgrund dieser Verformung konnte die Funktion im
+Oszilloskop den duty cycles nicht zuverlässig bestimmen.</p>
+<p><img alt="Darstellung des Tastgrad bei einer Eingangsspannung von ca. 9,8  V" src="../_images/M10.PNG" />{##fig:12dcM10 .align-center}</p>
+<p><img alt="Darstellung des Tastgrad bei einer Eingangsspannung von ca. 14,85  V" src="../_images/M20.PNG" />{##fig:12dcM20 .align-center}</p>
+<p>Wie zuvor erwähnt, weicht der Tastgrad des Messgeräts von den
+errechneten Werten ab.</p>
+</div>
+</div>
+<div class="section" id="diskussion-kapitelvi">
+<h2>Diskussion {#KapitelVI}<a class="headerlink" href="#diskussion-kapitelvi" title="Permalink to this headline">¶</a></h2>
+<p>Folgend werden die Simulations- und Messergebnisse diskutiert.</p>
+<div class="section" id="wellenformen-wellenformen">
+<h3>Wellenformen {#Wellenformen}<a class="headerlink" href="#wellenformen-wellenformen" title="Permalink to this headline">¶</a></h3>
+<p>Die unterschiedlichen Frequenzen der Mess- bzw. Simulationswerte können
+zum Teil auf die unterschiedliche Eingangsspannung zurückgeführt werden.
+Ausgehend vom Datenblatt des TPS40200 (<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text
+role=”cite”}, S.23, Figure 7) ist zu erkennen, dass die Frequenz des
+Oszillators und somit auch die PWM-Frequenz steigt, sobald die
+Eingangsspannung sinkt. Im Fall der Messung wurde eine geringere
+Eingangsspannung als bei der Simulation gemessen. Somit müsste die
+Messung eine höhere Oszillatorfrequenz aufweisen als die Simulation, was
+auch der Fall ist. Weiterhin könnte der Effekt der schwankenden Frequenz
+bei den Messdaten auf die nicht linear verlaufende Eingangsspannung
+<span class="math notranslate nohighlight">\(V_{in}\)</span> zurückzuführen sein, da die Oszillatorfrequenz von der
+Eingangsspannung abhängt. Zu beachten ist, dass nur ein Ausschnitt von
+0,1   ms betrachtet wird. Das die Frequenzen in diesem Bereich sinken,
+wird zufällig sein, da sie irgendwann auch wieder steigen muss, um nicht
+gegen null zu gehen.</p>
+<p>Nach <code class="docutils literal notranslate"><span class="pre">12_eq_frequenz</span></code>{.interpreted-text role=”eq”} ergibt sich eine
+theoretische Oszillatorfrequenz von 202,63   kHz. Somit ergibt sich für
+die TP3 und TP4 der simulierten Daten eine maximale Abweichung von 3,87
+  %. Für die Messdaten ergibt sich auf dem gleichen Weg eine maximale
+Abweichung von 3,07   %.</p>
+<p>Die in die Schaltung eingespeisten 10   V Eingangsspannung konnten
+messtechnisch nicht nachgewiesen werden. Es wurden stattdessen nur ca.
+9,75   V erreicht. Dies macht eine Differenz von 0,25   V. Der
+Tastgrad - zwischen der Simulation mit 10   V Eingangsspannung und 4,93
+  V Ausgangsspannung und der Messung mit 9,8   V Eingangsspannung und
+4,88   V Ausgangsspannung - beträgt nach <code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text
+role=”eq”} 0,492 beziehungsweise 0,498. Dies ist rein optisch nicht zu
+erkennen. Gerundet betragen jedoch beide Tastgrade 50   % mit einer
+Differenz von 0,4   % bzw. 1,6   %.</p>
+<p>Die Ausgangsspannung weicht zwischen dem errechneten Wert von 4,928   V
+nach <code class="docutils literal notranslate"><span class="pre">12_eq_Vout</span></code>{.interpreted-text role=”eq”} und dem simulierten Wert
+von durchschnittlich 4,9315   V um -0,08   % ab. Zwischen Theorie und
+der gemessenen Ausgangsspannung von 4,88   V ergibt dies einen
+Unterschied von -0,97   %.</p>
+<p>Die Spannungsspitzen, die bei der gemessenen Ausgangsspannung zu sehen
+sind, entstehen durch Selbstinduktion der Spule L201. Sie treten auf,
+weil in dem Moment, in dem bei dem PWM-Signal bspw. ein Wechsel von 10  
+V zu 0   V stattfindet (Flanke) eine abrupt Änderung des Stromes in der
+Spule erfolgt. Da die Spannung an der Spule vom Grad der Stromänderung
+abhängt (<code class="docutils literal notranslate"><span class="pre">basis.2008</span></code>{.interpreted-text role=”cite”}, S.150, 9.6),
+erzeugt dies kurzzeitig eine höhere Ausgangsspannung.</p>
+<p>Da sowohl die gemessene Eingangs- und Ausgangsspannung niedriger ist als
+die theoretischen Werte, könnte ein Grund für die Differenz ein
+Messfehler des Oszilloskops sein. Des weiteren sind Abweichungen durch
+Bauteiltoleranzen von Widerständen, Spulen und Kondensatoren mit
+einzubeziehen. Dennoch kann die Aussage getroffen werden, dass die
+Simulation durch die Messung bestätigt werden konnte, da keine größeren
+Abweichungen aufgetreten sind.</p>
+</div>
+<div class="section" id="id3">
+<h3>Ausgangsspannung bei fester Last<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Die Abweichung zwischen der theoretisch errechneten Ausgangsspannung
+durch <code class="docutils literal notranslate"><span class="pre">12_eq_Vout</span></code>{.interpreted-text role=”eq”} und Simulation beträgt
+-0,01   %. Im Vergleich zu <code class="docutils literal notranslate"><span class="pre">wellenformen</span></code>{.interpreted-text role=”ref”}
+wurde hier über eine längere Zeit simuliert. Das Ergebnis ist näher an
+der Simulation. Dies stellt sehr gut den Vergleich zwischen Theorie und
+Simulation dar. Wird die Simulation als Erwartungswert gesetzt, so
+weicht die gemessene Ausgangsspannung bei einer Last von 20   <span class="math notranslate nohighlight">\(\Omega\)</span>
+um -0,73   % ab. Weiterhin ist zu erkennen, dass die Eingangsspannung im
+Bereich von 10   V bis 15   V die Ausgangsspannung nicht beeinflusst. Es
+ist ein Schwanken um den Mittelwert zu erkennen. Dieses folgt aber
+keinem erkennbaren Muster, daher wird dies auf Rauschen zurückgeführt.
+Die Ausgangsspannung kann somit für unterschiedliche Eingangsspannungen
+im genannten Bereich als konstant angesehen werden. Bei dem Versatz von
+ca. 4   mV wird vermutet, dass dieser durch Bauteil- und
+Messungenauigkeit zustande kommt.</p>
+</div>
+<div class="section" id="ausgangspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last">
+<h3>Ausgangspannung und -strom bei fester Eingangsspannung und dynamischer Last<a class="headerlink" href="#ausgangspannung-und-strom-bei-fester-eingangsspannung-und-dynamischer-last" title="Permalink to this headline">¶</a></h3>
+<p>Die Ausgangsspannung oszilliert in der Simulation bei unterschiedlichem
+Strom um einen Wert von ca. 4,93   V. In der Messung hingegen fällt die
+Ausgangsspannung mit steigendem Strom ab. Um so höher der Strom wird,
+desto schneller fällt die Ausgangsspannung. Hier passen Simulation und
+Messung nicht zusammen. Weiterhin wird die im Datenblatt angegebene
+maximale Grenze des Stromes nicht erreicht. Die Spannung bricht vorher
+bei 2,4   A zusammen. Auch im unteren Lastbereich wird die erwartete
+Ausgangsspannung nicht erreicht.</p>
+<p>Dadurch, dass die Schaltung ihre Strombegrenzung bereits bei 2,4   A
+erreicht hat, zeigt sich, dass die im Datenblatt empfohlenen 25   %
+nicht ausreichen. Trotzdem ist es gut, diese nicht zu verändern, um zu
+gewährleisten, dass die 2,5   A nicht überschritten werden können und es
+so nicht zu einer Zerstörung von Bauteilen kommt. Die 2,5   A werden
+vermutlich nicht erreicht, weil die Rippel der Ausgangsspannung bei
+einem Strom von 2,5   A bis auf 60   mV ansteigen
+(<code class="docutils literal notranslate"><span class="pre">TEX1</span></code>{.interpreted-text role=”cite”}) und dieser Effekt unterschätzt
+wird. Bei einem Lastwiderstand von 20 <span class="math notranslate nohighlight">\(\Omega\)</span> lagen die Rippel nur bei
+ca. 20   mV. Durch die größeren Rippel steigt kurzfristig der Strom an,
+wodurch früher abgeschaltet wird.</p>
+<p>Wie angenommen, verringert sich die Ausgangsspannung bei einer
+niedrigeren Last und dem damit verbundenen höheren Ausgangsstrom. In der
+Simualtion wird dies nicht berücksichtigt.</p>
+</div>
+<div class="section" id="id4">
+<h3>Tastgrad<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Der Verlauf des Tastgrades an TP4 ist für unterschiedliche
+Eingangsspannungen zwischen Simulation und Praxis bis auf einen Versatz
+sehr ähnlich. Der Verlauf zeigt keine Gerade. Anhand
+<code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text role=”eq”} ließ sich dies schon
+theoretisch erklären. Nach <code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text role=”eq”} und
+einer angenommenen Ausgangspannung von 5   V sollte der Tastgrad
+zwischen 33,33   % und 50   % liegen. Dies stimmt mit der Simulation und
+der Messung überein. Kleinere Abweichungen sind dadurch zu erklären,
+dass die tatsächliche Ausgangsspannung von den 5   V abweichen. Der
+Tastgrad wurde rechnerisch bestimmt. <code class="docutils literal notranslate"><span class="pre">fig:12dcM10</span></code>{.interpreted-text
+role=”numref”} und <code class="docutils literal notranslate"><span class="pre">fig:12dcM20</span></code>{.interpreted-text role=”numref”}
+spiegeln dieses Verhalten aber wieder. Der Versatz kann durch die
+Differenz in den Ausgangsspannungen erklärt werden. Wird
+<code class="docutils literal notranslate"><span class="pre">12_eq_duty</span></code>{.interpreted-text role=”eq”} betrachtet, kann erkannt
+werden, dass bei gleicher Eingangsspannung aber geringerer
+Ausgangsspannung der Tastgrad abnimmt.</p>
+</div>
+</div>
+<div class="section" id="zusammenfassung-kapitelvii">
+<h2>Zusammenfassung {#KapitelVII}<a class="headerlink" href="#zusammenfassung-kapitelvii" title="Permalink to this headline">¶</a></h2>
+<p>Die vorliegende Arbeit stellt eine Parameterstudie eines DC-DC
+Konverters dar. Grundlage dafür ist der nicht synchrone Abwärtswandler
+<a class="reference external" href="http://www.ti.com/lit/ds/symlink/tps40200.pdf">TPS40200</a> auf dem
+Evaluationsmodul ASLK PRO. Dafür wurden folgende Punkte untersucht:</p>
+<ol class="simple">
+<li><p>die Wellenformen der Eingangs- <span class="math notranslate nohighlight">\(V_{in}\)</span> und Ausgangsspannung
+<span class="math notranslate nohighlight">\(V_{out}\)</span> sowie die Oszillatorspannung (TP3) und das PWM-Signal
+(TP4)</p></li>
+<li><p>die Ausgangsspannung bei fester Last</p></li>
+<li><p>Ausgangsspannung <span class="math notranslate nohighlight">\(V_{out}\)</span> und -strom <span class="math notranslate nohighlight">\(I_{out}\)</span> bei fester
+Eingangsspannung und dynamischer Last</p></li>
+<li><p>Tastgrad (duty cycle)</p></li>
+</ol>
+<p>Diese Punkte wurden durch Simulationen mit dem Programm
+<a class="reference external" href="http://www.ti.com/tool/TINA-TI">TINA-TI</a> und Lobormessungen untersucht.
+Im Anschluss wurden die Ergebnisse dargestellt und miteinander
+verglichen. Dabei ergaben sich einige Differenzen zwischen der
+gemessenen und simulierten Oszillatorfrequenz. Weiterhin veränderten
+sich beide Frequenzen über die Zeit. Zur Abklärung dieser Differenzen
+sind weitere Messungen zur Oszillatorfrequenz notwendig. Es kann jedoch
+die Aussage bei den Wellenformen getroffen werden, dass die Simulation
+durch die Messung bestätigt werden konnte, da keine größeren
+Abweichungen aufgetreten sind.</p>
+<p>Die Ausgangspannungen <span class="math notranslate nohighlight">\(V_{out}\)</span> bei fester Last weichen im Mittelwert
+nur um 0,04   V voneinander ab. Es wurde hier gezeigt, dass die
+Simulation durch die Messung bestätigt wurde.</p>
+<p>Bei der Betrachtung von <span class="math notranslate nohighlight">\(V_{out}\)</span> und <span class="math notranslate nohighlight">\(I_{out}\)</span> bei dynamischer Last
+wurde bei der Simulation festgestellt, dass <span class="math notranslate nohighlight">\(I_{out}\)</span> von bis zu 2,5   A
+der Schaltung entnommen werden kann, ohne, dass es Auswirkungen auf
+<span class="math notranslate nohighlight">\(V_{out}\)</span> hat. Die Messung hingegen hat gezeigt, dass die Schaltung nur
+bis 2,4   A liefern kann und <span class="math notranslate nohighlight">\(V_{out}\)</span> ab 0,5   A nicht mehr konstant
+ist. Mit steigendem <span class="math notranslate nohighlight">\(I_{out}\)</span> sinkt <span class="math notranslate nohighlight">\(V_{out}\)</span>.</p>
+<p>Die Behandlung der Tastgrade ergab, dass die Simulations- und Messdaten
+ähnliche Tastgrade ergaben. Sie unterscheiden sich augenscheinlich gar
+nicht. Ohne dabei die unterschiedlichen Eingangsspannungen zu
+berücksichtigen. So kann auch hier abschließend festgestellt werden,
+dass die Simulation durch die Messung bestätigt wurde.</p>
+<p>Es kann gesagt werden, dass eine Simulation einer solchen Schaltung zum
+großen Teil gute bis sehr gute Näherungen bereitstellt. Jedoch ist immer
+auch Vorsicht geboten, wie bei der Untersuchung der Ausgangsspannung in
+Abhängigkeit des Ausgangsstroms gezeigt werden konnte. Bei
+Wiederholungsmessungen müsste herausgearbeitet werden, woraus die
+niedrigere Eingangsspannung bei den Messungen resultiert, um so ein
+eindeutigeres Messergebnis zu erlangen.</p>
+</div>
+<div class="section" id="literaturverzeichnis-kapitel-viii">
+<h2>Literaturverzeichnis {#Kapitel VIII}<a class="headerlink" href="#literaturverzeichnis-kapitel-viii" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-{.bibliography notranslate"><div class="highlight"><pre><span></span>Experiment_00.bib
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "mimeiners/ASLK_PRO",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Experiment_11.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Parameterstudie eines LDO’s</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Experiment_13.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Entwurf eines digital kontrollierten GSA’s</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

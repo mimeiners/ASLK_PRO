@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schmitt-Trigger &#8212; ASLK Pro Experimente</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="https://dokie.li/media/css/dokieli.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="dokieli" src="https://dokie.li/scripts/dokieli.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "mimeiners/ASLK_PRO");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="canonical" href="https://mimeiners.github.io/ASLK_PRO/docs/Experiment_02_TZ.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Charakteristik von Integrator und Differenzierer" href="Experiment_03_TZ.html" />
+    <link rel="prev" title="Grundschaltungen des OPV" href="Experiment_01.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ASLK Pro Experimente</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Einleitung und Übersicht
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_01.html">
+   Grundschaltungen des OPV
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Schmitt-Trigger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_03_TZ.html">
+   Charakteristik von Integrator und Differenzierer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_04.html">
+   Analoge Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_05.html">
+   Self-Tuned Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_06.html">
+   Voltage Controlled Oscillator (VCO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_07.html">
+   Phase Locked Loop (PLL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_08.html">
+   Automatic Gain/Volume Control (AGC/AVC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_09.html">
+   DC-DC Wandler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_10.html">
+   Entwurf eines LDO Reglers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_11.html">
+   Parameterstudie eines LDO’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_12.html">
+   Parameterstudie eines DC-DC Wandlers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_13.html">
+   Entwurf eines digital kontrollierten GSA’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_14.html">
+   Digital programmierbarer Signalgenerator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RedPitaya_Messautomatisierung.html">
+   Red Pitaya Messautomatisierung
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/Experiment_02_TZ.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mimeiners/ASLK_PRO"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/mimeiners/ASLK_PRO/issues/new?title=Issue%20on%20page%20%2Fdocs/Experiment_02_TZ.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/mimeiners/ASLK_PRO/edit/master/jb-aslkpro/docs/Experiment_02_TZ.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kurze-theorie-und-motivation">
+   Kurze Theorie und Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#messung-am-nicht-invertierenden-schmitt-trigger">
+   Messung am nicht-invertierenden Schmitt-Trigger
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#astabile-kippstufe">
+   Astabile Kippstufe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monostabile-kippstufe">
+   Monostabile Kippstufe
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="schmitt-trigger">
+<h1>Schmitt-Trigger<a class="headerlink" href="#schmitt-trigger" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kurze-theorie-und-motivation">
+<h2>Kurze Theorie und Motivation<a class="headerlink" href="#kurze-theorie-und-motivation" title="Permalink to this headline">¶</a></h2>
+<p>In diesem Experiment werden verschiedene Schaltungen aufgebaut und durchgemessen und anschließend mit der Simulation
+verglichen. Die einzelnen Versuche werden auf einem “Analog System Lab Kit PRO” von Texas Instruments aufgebaut und mit
+einem “Stemlab Board 125-14” von Red Pitaya vermessen. Diese Messung erfolgt über die SCPI (Standard Commands for
+Programmable Instruments) Schnittstelle des Red Pitaya, womit es möglich ist die Messungen über das Netzwerk
+durchzuführen. Zum Anschprechen dieser Schnittstelle wird Python verwendet. Die Simulation wird mittels LTSpice von
+Analog Devices durchgeführt.<a class="footnote-reference brackets" href="#id10" id="id1">1</a></p>
+<p>Aufgabenpunkte aus dem <code class="docutils literal notranslate"><span class="pre">ASLK-Pro</span> <span class="pre">-</span> <span class="pre">Manual</span></code><a class="footnote-reference brackets" href="#id11" id="id2">2</a>:</p>
+<ol class="simple">
+<li><p>Design und Aufbau einer rückgekoppelten Schaltung mit einer Hysterese von ±1V inklusive Aufnahme der
+Wechselspannungskennlinien</p></li>
+<li><p>Variation der Rückkopplung um die Hysterese zu verändern.</p></li>
+<li><p>Veränderung von <span class="math notranslate nohighlight">\(\beta\)</span> durch Variieren von R1 und R2 an.</p></li>
+<li><p>Design und Aufbau eines astabilen Multivibrators mit einer vorgegebenen Frequenz</p></li>
+<li><p>Design und Aufbau einer monostabilen Kippstufe</p></li>
+</ol>
+</div>
+<div class="section" id="messung-am-nicht-invertierenden-schmitt-trigger">
+<h2>Messung am nicht-invertierenden Schmitt-Trigger<a class="headerlink" href="#messung-am-nicht-invertierenden-schmitt-trigger" title="Permalink to this headline">¶</a></h2>
+<p>Als erster Versuch wird ein nicht-invertierender Schmitt-Trigger vermessen. Dieser besitzt sowohl einen Widerstand R1 am
+positiven Eingang als auch einen Widerstand R2 als Rückkopplung. Der negative Eingang des Operationsverstärkers ist auf
+Masse gezogen.</p>
+<div class="figure align-default" id="fig-01">
+<img alt="../_images/Abbildung011.png" src="../_images/Abbildung011.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Nicht-invertierender Schmitt-Trigger und seine Hysterese<a class="footnote-reference brackets" href="#id11" id="id3">2</a>.</span><a class="headerlink" href="#fig-01" title="Permalink to this image">¶</a></p>
+</div>
+<p>Die Widerstände R1 und R2 bilden einen Spannungsteiler zwischen der Ausgangsspannung des Operationsverstärkers U0 und
+der Eingangsspannung UI. Der Mittelabgriff von diesem ist mit dem positiven Eingang des Operationsverstärkers
+verbunden. Die Spannung an diesem Punkt ist somit abhängig von der Eingangsspannung und Ausgangsspannung der
+Schaltung. Die Ausgangsspannung kann zwei unterschiedliche Werte annehmen und daher ergeben sich zwei unterschiedliche
+Umschaltpunkte des Operationsverstärkers. Dieses Verhalten wird Hysterese genannt. Bei einem positiven Ausgang muss ein
+negatives Eingangssignal anliegen, damit der Schmitt-Trigger ebenfalls auf eine negative Ausgangsspannung
+umschaltet. Bei einem negativen Ausgang muss der Eingang positiv sein. Wie groß diese Differenz der beiden
+Umschaltpunkte bzw. der Hysterese ist, wird durch die Widerstände und die Ausgangsspannungen bestimmt. Durch dieses
+Verhalten hat ein nicht-invertierender Schmitt-Trigger auch sein eigenes Symbol mit der charakteristischen Hysterese:</p>
+<div class="figure align-default" id="fig-02">
+<img alt="../_images/Abbildung02.png" src="../_images/Abbildung02.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Symbol eines nicht-invertierenden Schmitt-Trigger<a class="footnote-reference brackets" href="#id10" id="id4">1</a>.</span><a class="headerlink" href="#fig-02" title="Permalink to this image">¶</a></p>
+</div>
+<p>Die Breite der Hysteres lässt sich dabei berechnen mit der Versorgungsspannung <span class="math notranslate nohighlight">\(U_{DD}\)</span> :</p>
+<div class="math notranslate nohighlight" id="equation-uh">
+<span class="eqno">(9)<a class="headerlink" href="#equation-uh" title="Permalink to this equation">¶</a></span>\[
+	U_{H} = 2 \cdot \beta \cdot U_{DD}
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\beta\)</span> berechnet wird mit:</p>
+<div class="math notranslate nohighlight" id="equation-beta">
+<span class="eqno">(10)<a class="headerlink" href="#equation-beta" title="Permalink to this equation">¶</a></span>\[
+	\beta = \frac{R_1}{R_1 + R_2}
+\]</div>
+<p>Dies ist der Rückkopplungsfaktor der Schaltung. Die Hysterese ist dabei symmetrisch um den Nullpunkt. Die tatsächlichen
+Umschaltpunkte für die Eingangsspannung entsprechen daher:</p>
+<div class="math notranslate nohighlight" id="equation-ui12">
+<span class="eqno">(11)<a class="headerlink" href="#equation-ui12" title="Permalink to this equation">¶</a></span>\[
+	U_{i1,i2} = \pm \frac{U_{H}}{2}
+\]</div>
+<p>Für unseren Versuch wird der Widerstand <span class="math notranslate nohighlight">\(R_2\)</span> fest auf 100 k<span class="math notranslate nohighlight">\(\Omega\)</span> gehalten und der Eingangswiderstand <span class="math notranslate nohighlight">\(R_1\)</span> wird mit
+den Werten 470 <span class="math notranslate nohighlight">\(\Omega\)</span>, 1 k<span class="math notranslate nohighlight">\(\Omega\)</span> und 2,2 k<span class="math notranslate nohighlight">\(\Omega\)</span> dimensioniert. Für die Eingangsspannung wird ein Sinussignal mit
+der Amplitude 1 V verwendet. Die Frequenz wird dabei zwischen 10 Hz und 10 kHz gewechselt, sodass sich insgesamt sechs
+verschiedene Messungen ergeben. Es werden dabei die Eingangsspannung <span class="math notranslate nohighlight">\(U_I\)</span> und die Ausgangsspannung <span class="math notranslate nohighlight">\(U_O\)</span> gemessen.
+Bei einem Schmitt-Trigger ist die Hysterese von besonderer Bedeutung und soll hier genauer untersucht werden. Hierfür
+ist es notwendig die Ausgangsspannung über die Eingangsspannung darzustellen. Und es ergeben sich folgende Diagramme für
+die Frequenz von 10 Hz:</p>
+<div class="figure align-default" id="fig-03">
+<img alt="../_images/Abbildung031.png" src="../_images/Abbildung031.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Hysterese des Schmitt-Trigger bei 10Hz<a class="footnote-reference brackets" href="#id10" id="id5">1</a>.</span><a class="headerlink" href="#fig-03" title="Permalink to this image">¶</a></p>
+</div>
+<p>Bei der Simulation ist ein typischer Hystereseverlauf erkennbar. Es gibt keine Überschwinger an den Sprungstellen und es
+ist eine sehr hohe Flankensteilheit vorhanden. Die Hysterese ist symmetrisch um den Ursprung und steigt mit zunehmendem
+Widerstand <span class="math notranslate nohighlight">\(R_1\)</span>.</p>
+<p>Bei der Messung ist die Hysterese mit Einschränkungen zu erkennen. Hier gibt es an den Übergangsstellen deutlich
+sichtbare Überschwinger vom Operationsverstärker. Die Hysterese ist nicht um den Ursprung zentriert, sondern es ist ein
+Verschiebung vorhanden. Auch eine Asymmetrie ist vorhanden, sodass die Hystere im negativen Bereich mit steigendem
+Widerstand schneller steigt als im positiven Bereich. Eine besondere Auffälligkeit liegt bei der Messung mit 470
+<span class="math notranslate nohighlight">\(\Omega\)</span> vor, denn diese ist auffällig zur Seite geneigt und daher viel weniger Steil als die Simulation und die anderen
+Messungen.</p>
+<p>Es ist jedoch hierbei anzumerken, dass die Messungen mit 10-fach Tastköpfen durchgeführt wurden und diese zum Zeitpunkt
+der Messung nicht abgeglichen wurden.</p>
+<p>Bei einer Frequenz von 10 kHz ergibt sich ein ähnliches Bild:</p>
+<div class="figure align-default" id="fig-04">
+<img alt="../_images/Abbildung04.png" src="../_images/Abbildung04.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Hysterese des Schmitt-Trigger bei 10kHz<a class="footnote-reference brackets" href="#id10" id="id6">1</a>.</span><a class="headerlink" href="#fig-04" title="Permalink to this image">¶</a></p>
+</div>
+<p>Auch hier ist in der Simulation eine nahezu ideale Hysterese zu erkennen. Durch die erhöhte Frequenz kann man erste
+Abrundungen an den Übergängen erkennen. Die Messung ist hierbei stärker verrauscht, aber dafür sind keine Überschwinger
+an den Übergangspunkten zu erkennen. Auch hier ist die Messung mit 470 <span class="math notranslate nohighlight">\(\Omega\)</span> besonders, da hier erneut die Kennlinie
+stärker nach rechts geneigt ist und teilweise die der 1000 <span class="math notranslate nohighlight">\(\Omega\)</span> Kennlinie überschneidet.</p>
+<p>Als nächstes lassen diese Werte sich mit den berechneten Werten für die Hysterese vergleichen. Hierzu werden die
+unterschiedlichen Widerstandswerte in die Formel für die Berechnung von <span class="math notranslate nohighlight">\(\beta\)</span> eingesetzt und anschließend kann mit
+diesen die Hysteresebreite berechnet werden. Diese werden nun mit den Simulations- und Messergebnissen verglichen:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Widerstand <span class="math notranslate nohighlight">\(R_{1}\)</span></strong></p></th>
+<th class="text-align:center head"><p><strong>Berechnung</strong></p></th>
+<th class="text-align:center head"><p><strong>Simulation</strong></p></th>
+<th class="text-align:center head"><p><strong>Messung</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>470 <span class="math notranslate nohighlight">\(\Omega\)</span></p></td>
+<td class="text-align:center"><p>93 mV</p></td>
+<td class="text-align:center"><p>83 mV</p></td>
+<td class="text-align:center"><p>99 mV</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>1000 <span class="math notranslate nohighlight">\(\Omega\)</span></p></td>
+<td class="text-align:center"><p>198 mV</p></td>
+<td class="text-align:center"><p>168 mV</p></td>
+<td class="text-align:center"><p>205 mV</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>2200 <span class="math notranslate nohighlight">\(\Omega\)</span></p></td>
+<td class="text-align:center"><p>430 mV</p></td>
+<td class="text-align:center"><p>366 mV</p></td>
+<td class="text-align:center"><p>355 mV</p></td>
+</tr>
+</tbody>
+</table>
+<p>Vergleich der Ergebnisse von <span class="math notranslate nohighlight">\(U_H\)</span></p>
+<p>Bei den Ergebnissen ist zu erkennen, dass alle Spannungen <span class="math notranslate nohighlight">\(U_H\)</span> dem gleichen Trend folgen und mit steigendem Widerstand
+<span class="math notranslate nohighlight">\(R_1\)</span> steigen. Dennoch sind Unterschiede erkennbar, besonders hoch ist die Abweichung bei 2,2 k<span class="math notranslate nohighlight">\(\Omega\)</span> zwischen der
+Berechnung und der Messung. Eine Ursache hierfür könnte der Versatz der Messung sein, welche eine Asymmetrie erzeugt und
+daher einen der Umschaltpunkte der Hysterese verschiebt. Jedoch zeigt auch hier die Simulation eine Abweichung von
+ca. 64 mV zur Berechnung. Die Berechnung berücksichtigt keine Verhaltensweisen nicht idealer (also realer) Bauteile. Die
+Simulation zeigt, dass trotz einer Versorgungsspannung von 10 V der Operationsverstärker nur bis 8,5 V am Ausgang
+aussteuern kann und danach in der Sättigung ist. Dies zeigt, dass mit zunehmenden Widerstand diese Effekte eine größere
+Rolle spielen. Es zeigt auch, dass die Simulation schon näher an der realen Messung ist als die Berechnung, aber dennoch
+bestimmte Effekte nicht berücksichtigt werden, die das Messergebnis verändern.</p>
+</div>
+<div class="section" id="astabile-kippstufe">
+<h2>Astabile Kippstufe<a class="headerlink" href="#astabile-kippstufe" title="Permalink to this headline">¶</a></h2>
+<p>In diesem Versuch wird eine astabile Kippstufe betrachtet. Hierbei wird im Vergleich zum Schmitt-Trigger ein weiterer
+Widerstand als Gegenkopplung an den negativen Eingang des Operationsverstärkers eingefügt. Zusätzlich noch ein
+Kondensator ebenfalls am negativen Eingang gegen Masse. Die Spannungsquelle der vorherigen Schaltung wird durch eine
+Verbindung zur Masse ersetzt.</p>
+<div class="figure align-default" id="fig-05">
+<img alt="../_images/Abbildung051.png" src="../_images/Abbildung051.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Schaltung einer astabilen Kippstufe<a class="footnote-reference brackets" href="#id10" id="id7">1</a>.</span><a class="headerlink" href="#fig-05" title="Permalink to this image">¶</a></p>
+</div>
+<p>Hieraus ergibt sich vom Ausgang des Operationsverstärkers ein Spannungsteiler zum positiven Eingang des
+Operationsverstärkers mit den Widerständen <span class="math notranslate nohighlight">\(R_2\)</span> und <span class="math notranslate nohighlight">\(R_3\)</span>. Es liegt somit am positiven Eingang immer ein Bruchteil der
+Ausgangsspannung vom Operationsverstärker an. Der Kondensator wird bei einem positiven Ausgang über den Widerstand <span class="math notranslate nohighlight">\(R_1\)</span>
+geladen bis die Spannung des negativen Eingangs <span class="math notranslate nohighlight">\(U_C\)</span>, die Spannung des Spannungsteilers (positiver Eingang)
+übersteigt. Die Schaltung kippt und der Ausgang wird negativ. Der Kondensator entlädt sich bis die negative Spannung vom
+Spannungsteiler unterschritten wird. Nun kippt die Schaltung erneut und beginnt von vorne. Die Schaltung kippt
+automatisch zwischen den beiden Zuständen und erzeugt ein Rechtecksignal am Ausgang des Operationsverstärkers. Die
+verwendeten Bauteile legen hierbei die Periodendauer fest. Die Periodendauer <span class="math notranslate nohighlight">\(T\)</span> lässt sich berechnen mit:</p>
+<div class="math notranslate nohighlight" id="equation-t">
+<span class="eqno">(12)<a class="headerlink" href="#equation-t" title="Permalink to this equation">¶</a></span>\[
+	T = 2 \cdot R_1 \cdot C \cdot \ln \left(  \frac{1 + \beta}{1 - \beta} \right)
+\]</div>
+<p>Wobei hier erneut <span class="math notranslate nohighlight">\(\beta\)</span> durch <span class="math notranslate nohighlight">\(R_2\)</span> und <span class="math notranslate nohighlight">\(R_3\)</span> beschrieben wird.</p>
+<p>Für diesen Versuch wurden alle Widerstände mit 1 k<span class="math notranslate nohighlight">\(\Omega\)</span> dimensioniert und der Kondensator wurde auf 1µF
+festgelegt. Anschließend folgte die Simulation der Schaltung mit LTSpice und die Messung wurde mit dem Red Pitaya
+durchgeführt. Es entstanden dabei folgende Darstellungen:</p>
+<div class="figure align-default" id="fig-06">
+<img alt="../_images/Abbildung06.png" src="../_images/Abbildung06.png" />
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Simulation und Messung der astabilen Kippstufe<a class="footnote-reference brackets" href="#id10" id="id8">1</a>.</span><a class="headerlink" href="#fig-06" title="Permalink to this image">¶</a></p>
+</div>
+<p>Sowohl in der Simulation und als auch in der Messung sind die Ergebnisse sehr ähnlich. Am Ausgang entsteht wie erwartet
+ein Rechtecksignal <span class="math notranslate nohighlight">\(U_O\)</span>. Bei der Messungen sind die Dellen in den Rechtecken auf nicht abgeglichene Tastköpfe
+zurückzuführen und daher zu vernachlässigen. Ebenfalls ist bei beiden Darstellungen deutlich die Auf- bzw. Entladekurve
+des Kondensators <span class="math notranslate nohighlight">\(U_C\)</span> zu erkennen. Bei der Simulation wurde eine Periodendauer <span class="math notranslate nohighlight">\(T\)</span> von 2,2 ms gemessen und in der
+Messung am Red Pitaya eine Dauer von 2,4 ms. Dies entspricht einer Frequenz <span class="math notranslate nohighlight">\(f\)</span> von 454,54 Hz bzw. 416,67 Hz. Verglichen
+mit den berechneten Werten  ergibt sich:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p><strong>Berechnung</strong></p></th>
+<th class="text-align:center head"><p><strong>Simulation</strong></p></th>
+<th class="text-align:center head"><p><strong>Messung</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Periodendauer <span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="text-align:center"><p>2,197 ms</p></td>
+<td class="text-align:center"><p>2,2 ms</p></td>
+<td class="text-align:center"><p>2,4 ms</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Frequenz <span class="math notranslate nohighlight">\(f\)</span></p></td>
+<td class="text-align:center"><p>455,12 Hz</p></td>
+<td class="text-align:center"><p>454,54 Hz</p></td>
+<td class="text-align:center"><p>416,67 Hz</p></td>
+</tr>
+</tbody>
+</table>
+<p>Vergleich der Ergebnisse von der astabilen Kippstufe</p>
+<p>Die Periodendauer ist bei der Berechnung und der Simulation nahezu identisch. Nur eine sehr geringe Abweichung ist
+erkennbar. Die Messergebnisse haben daher eine ähnliche Abweichung zu der Berechnung wie zur Simulation. Die Messung
+zeigt somit, dass die Simulation und Berechnung in einem realen Aufbau umgesetzt werden können.</p>
+</div>
+<div class="section" id="monostabile-kippstufe">
+<h2>Monostabile Kippstufe<a class="headerlink" href="#monostabile-kippstufe" title="Permalink to this headline">¶</a></h2>
+<p>Bei der Monostabilen Kippstufe wird zusätztlich zum Kondensator eine Diode parallel geschaltet. Außerdem wird ein
+weiterer Kondensator an den positiven Eingang angeschlossen und dient als Trigger-Input für die Schaltung. Durch diese
+zusätzliche Beschaltung hat die Schaltung nur einen stabilen Zustand indem sie ohne äußere Einflüsse bleibt. Wird ein
+kurzer Impuls (oder Rechteck) auf den Trigger-Eingang gegeben, so kippt die Schaltung in den anderen Zustand (umgekehrte
+Polarität am Ausgang). Dieser Zustand ist nicht stabil, daher kippt die Schaltung selbstständig nach einer Zeit <span class="math notranslate nohighlight">\(\tau\)</span>
+wieder in ihren ursprünglichen Zustand vor dem Triggern zurück.</p>
+<p>Die neu eingefügte Diode begrenzt dabei die Spannung bei einem positiven Ausgang des Operationsverstärkers, sodass der
+Kondensator nie auf die Spannung aufgeladen werden kann, dass die Schaltung wie im vorherigen Versuch zurückkippen
+kann. Erst wenn durch den Trigger die Schaltung am Eingang dazu gebracht wird, kippt die Schaltung zu einem negativen
+Ausgang am Operationsverstärker. Der Trigger wird über einen Kondensator <span class="math notranslate nohighlight">\(C_2\)</span>, welcher mit <span class="math notranslate nohighlight">\(R_3\)</span> einen Hochpass
+(bzw. RC-Differenzierer) bildet, eingekoppelt. Dies hat zur Folge, dass von dem Trigger nur die steilen Flanken
+übertragen werden. Der Kondensator am Ausgang wird jetzt entladen (bzw. negativ geladen) bis die Spannung des
+Kondensators <span class="math notranslate nohighlight">\(U_C\)</span> die Spannung über dem Spannungsteiler <span class="math notranslate nohighlight">\(R_2\)</span> und <span class="math notranslate nohighlight">\(R_3\)</span> entspricht. Nun kippt die Schaltung zurück und
+der Kondensator wird erneut aufgeladen. Die Diode begrenzt wieder die Ladespannung und die Schaltung ist in einem
+stabilen Zustand. Es kann die Schaltung erneut getriggert werden.</p>
+<p>Aufgrund der äußeren Beschaltung reagiert die monostabile Kippstufe auf eine negative Flanke am nicht-invertierenden
+Eingang und ändert dann den Zustand. Die Zeit, in der die monostabile Kippstufe in dem instabilen Zustand ist, berechnet
+sich nach der folgenden Formel:</p>
+<div class="math notranslate nohighlight" id="equation-monotau">
+<span class="eqno">(13)<a class="headerlink" href="#equation-monotau" title="Permalink to this equation">¶</a></span>\[
+	\tau =R C \cdot \ln \left(\frac{1}{1-\beta}\right)
+\]</div>
+<p><span class="math notranslate nohighlight">\(\beta\)</span> ist hierbei nach der Formel</p>
+<div class="math notranslate nohighlight" id="equation-beta2">
+<span class="eqno">(14)<a class="headerlink" href="#equation-beta2" title="Permalink to this equation">¶</a></span>\[
+	\beta = \frac{R_3}{R_1 + R_3}
+\]</div>
+<p>zu berechnen. Die Widerstandswerte sind dabei R<span class="math notranslate nohighlight">\(_1\)</span> = 20k<span class="math notranslate nohighlight">\(\Omega\)</span>, R<span class="math notranslate nohighlight">\(_2\)</span>= 10k<span class="math notranslate nohighlight">\(\Omega\)</span> und R<span class="math notranslate nohighlight">\(_3\)</span> = 2,2k<span class="math notranslate nohighlight">\(\Omega\)</span>. Sobald
+die monostabile Kippstufe den instabilen Zustand erreicht, beginnt der Ausgangskondensator sich zu entladen. Wird der
+stabile Zustand wieder erreicht, so vergeht eine kurze Zeit, bis der Kondensator wieder aufgeladen ist. Erst dann ist es
+wieder möglich, ein nächstes Triggersignal zu setzen. Diese Zeit wird mithilfe der folgenden Formel berechnet:</p>
+<div class="math notranslate nohighlight" id="equation-monotaus">
+<span class="eqno">(15)<a class="headerlink" href="#equation-monotaus" title="Permalink to this equation">¶</a></span>\[
+	\tau^{\prime} = R C \cdot \ln \left(\frac{1+\beta}{\beta}\right)
+\]</div>
+<p>Die Kondensatorwerte betragen C<span class="math notranslate nohighlight">\(_1\)</span> = C<span class="math notranslate nohighlight">\(_2\)</span> = 1<span class="math notranslate nohighlight">\(\mu\)</span>F. Die Messungen und die Simulationen wurden durchgeführt, wobei
+folgende Ergebnisse entstanden:</p>
+<div class="figure align-default" id="fig-07">
+<img alt="../_images/Abbildung071.png" src="../_images/Abbildung071.png" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Simulation und Messung der monostabilen Kippstufe<a class="footnote-reference brackets" href="#id10" id="id9">1</a>.</span><a class="headerlink" href="#fig-07" title="Permalink to this image">¶</a></p>
+</div>
+<p>Das Triggersignal hat hierbei eine Frequenz von 25 Hz und eine Tastverhältnis von 10%. Es ist zu erkennen, dass die
+monostabile Kippstufe in den instabilen Zustand wechselt, sobald bei dem Triggersignal eine negative Flanke
+anliegt. Zeitgleich entlädt sich der Kondensator am Ausgang. Ist nach der Zeit <span class="math notranslate nohighlight">\(\tau\)</span> der stabile Zustand wieder
+erreicht, so beginnt der Ausgangskondensator, sich erneut aufzuladen. Anhand der obigen Formeln lassen sich die Werte
+für <span class="math notranslate nohighlight">\(\tau\)</span> und <span class="math notranslate nohighlight">\(\tau'\)</span> berechnen. In dieser Tabelle werden die berechneten, simulierten und gemessenen Werte gezeigt:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p><strong>Berechnung</strong></p></th>
+<th class="text-align:center head"><p><strong>Simulation</strong></p></th>
+<th class="text-align:center head"><p><strong>Messung</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>instabile Zeit <span class="math notranslate nohighlight">\(\tau\)</span></p></td>
+<td class="text-align:center"><p>3,98 ms</p></td>
+<td class="text-align:center"><p>5,25 ms</p></td>
+<td class="text-align:center"><p>5,91 ms</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\tau'\)</span></p></td>
+<td class="text-align:center"><p>37,58 ms</p></td>
+<td class="text-align:center"><p>10,25 ms</p></td>
+<td class="text-align:center"><p>10,51 ms</p></td>
+</tr>
+</tbody>
+</table>
+<p>Vergleich der Ergebnisse von der monostabilen Kippstufe</p>
+<p>Es ist auffällig, dass die gemessenen und die berechneten Werte sehr nahe beieinander liegen, die berechneten Werte
+jedoch stark davon abweichen.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id10"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>,<a href="#id6">4</a>,<a href="#id7">5</a>,<a href="#id8">6</a>,<a href="#id9">7</a>)</span></dt>
+<dd><p>ANS-Abschlussbericht SoSe21 von J. Rose und J. Armbrüster</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Analog System Lab Kit PRO MANUAL von 2012 - Authors: K.R.K. Rao and C.P. Ravikumar</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "mimeiners/ASLK_PRO",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Experiment_01.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Grundschaltungen des OPV</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Experiment_03_TZ.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Charakteristik von Integrator und Differenzierer</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

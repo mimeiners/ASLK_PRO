@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charakteristik von Integrator und Differenzierer &#8212; ASLK Pro Experimente</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="https://dokie.li/media/css/dokieli.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="dokieli" src="https://dokie.li/scripts/dokieli.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "mimeiners/ASLK_PRO");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="canonical" href="https://mimeiners.github.io/ASLK_PRO/docs/Experiment_03_TZ.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analoge Filter" href="Experiment_04.html" />
+    <link rel="prev" title="Schmitt-Trigger" href="Experiment_02_TZ.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ASLK Pro Experimente</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Einleitung und Übersicht
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_01.html">
+   Grundschaltungen des OPV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_02_TZ.html">
+   Schmitt-Trigger
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Charakteristik von Integrator und Differenzierer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_04.html">
+   Analoge Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_05.html">
+   Self-Tuned Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_06.html">
+   Voltage Controlled Oscillator (VCO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_07.html">
+   Phase Locked Loop (PLL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_08.html">
+   Automatic Gain/Volume Control (AGC/AVC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_09.html">
+   DC-DC Wandler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_10.html">
+   Entwurf eines LDO Reglers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_11.html">
+   Parameterstudie eines LDO’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_12.html">
+   Parameterstudie eines DC-DC Wandlers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_13.html">
+   Entwurf eines digital kontrollierten GSA’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_14.html">
+   Digital programmierbarer Signalgenerator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RedPitaya_Messautomatisierung.html">
+   Red Pitaya Messautomatisierung
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/Experiment_03_TZ.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mimeiners/ASLK_PRO"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/mimeiners/ASLK_PRO/issues/new?title=Issue%20on%20page%20%2Fdocs/Experiment_03_TZ.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/mimeiners/ASLK_PRO/edit/master/jb-aslkpro/docs/Experiment_03_TZ.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Charakteristik von Integrator und Differenzierer
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kurze-theorie-und-motivation">
+     Kurze Theorie und Motivation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#invertierender-integrator">
+     Invertierender Integrator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mathematische-herleitung">
+       Mathematische Herleitung
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sprungantwort">
+       Sprungantwort
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rechtecksignal">
+       Rechtecksignal
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#amplitudengang">
+       Amplitudengang
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differenzierer">
+   Differenzierer
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Mathematische Herleitung
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dreieckssignal">
+     Dreieckssignal
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Rechtecksignal
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Amplitudengang
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="charakteristik-von-integrator-und-differenzierer">
+<h1>Charakteristik von Integrator und Differenzierer<a class="headerlink" href="#charakteristik-von-integrator-und-differenzierer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kurze-theorie-und-motivation">
+<h2>Kurze Theorie und Motivation<a class="headerlink" href="#kurze-theorie-und-motivation" title="Permalink to this headline">¶</a></h2>
+<p>In diesem Experiment wird ein Operationsverstärker in der invertierenden Integrator- und der invertierenden
+Differenzierer - Schaltung eingesetzt und dessen Verhalten untersucht.</p>
+<p>Der erste Abschnitt beginnt mit der Aufnahme der Charakteristiken des Integrators. Dazu wird neben der mathematischen
+Herleitung die Sprungantwort gemessen, also die Reaktion einer plötzlich anliegenden konstanten Eingangsspannung. Daran
+lässt sich das allgemeine Verhalten des Integrators gut erkennen. Als nächstes wird ein Rechtecksignal eingespeist und
+abschließend der Amplitudengang des Integrators aufgenommen, um die Frequenzabhängigkeit zu untersuchen.</p>
+<p>Im zweiten Abschnitt wird der Differenzierer untersucht. Bei diesem wird zuerst das Verhalten am Ausgang betrachtet,
+während am Eingangstor ein Dreieckssignal anliegt. Hiernach wird für den Differenzierer ebenfalls das Ausgangsverhalten
+bei einer Rechteckwelle am Eingang und der Amplitudengang aufgenommen, um die Frequenzabhängigkeit mit der des
+Integrators gegenüber zustellen.<a class="footnote-reference brackets" href="#id8" id="id1">1</a></p>
+<p>Aufgabenpunkte aus dem <code class="docutils literal notranslate"><span class="pre">ASLK-Pro</span> <span class="pre">-</span> <span class="pre">Manual</span></code><a class="footnote-reference brackets" href="#id9" id="id2">2</a>:</p>
+<ol class="simple">
+<li><p>Simulation des Integrators und Differenzierers auf Übertragungskennlinie und Phasengang</p></li>
+<li><p>Messung und Vergleich mit der Simulation der Übertragungskennlinie und des Phasengangs</p></li>
+<li><p>Messung der Frequenzantwort</p></li>
+<li><p>Messung Sprungantwort der Schaltungen</p></li>
+</ol>
+</div>
+<div class="section" id="invertierender-integrator">
+<h2>Invertierender Integrator<a class="headerlink" href="#invertierender-integrator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mathematische-herleitung">
+<h3>Mathematische Herleitung<a class="headerlink" href="#mathematische-herleitung" title="Permalink to this headline">¶</a></h3>
+<p>In diesem Kapitel betrachten wir nun die mathematische Herleitung der Ausgangsspannung <span class="math notranslate nohighlight">\(V_2\)</span> des invertierenden
+Integrators, dessen Schaltungsschema in <a class="reference internal" href="#fig-01"><span class="std std-numref">Fig. 20</span></a> dargestellt ist.</p>
+<div class="figure align-default" id="fig-01">
+<img alt="../_images/Abbildung012.png" src="../_images/Abbildung012.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Aufbau invertierender Integrator<a class="footnote-reference brackets" href="#id10" id="id3">3</a>.</span><a class="headerlink" href="#fig-01" title="Permalink to this image">¶</a></p>
+</div>
+<p>Wie in der Abbildung zu erkennen ist, liegt das Eingangssignal <span class="math notranslate nohighlight">\(V_1\)</span> am invertierenden Eingang des Operationsverstärkers
+an. Somit kann man darauf schließen, dass es sich um eine invertierende Schaltung handelt. Für die Herleitung treffen
+wir nun folgende Annahmen: Wir gehen davon aus, dass es sich um einen idealen Operationsverstärker handelt. Das heißt,
+der Eingangswiderstand geht gegen ∞ Ω, der Ausgangswiderstand beträgt 0Ω und die (Leerlauf-) Differenzverstärkung geht
+ebenfalls gegen Unendlich. Da die Differenzverstärkung ∞ beträgt können wir darauf schließen, dass die Spannung, welche
+zwischen dem nicht-invertierendem und dem invertierenden Eingang anliegt, 0V beträgt (<span class="math notranslate nohighlight">\(V_d = V_+ − V_− = 0V\)</span>). Im
+Folgenden werden wir die Herleitung über Maschengleichungen lösen (siehe <a class="reference internal" href="#fig-02"><span class="std std-numref">Fig. 21</span></a>). Hierbei ist der
+Operationsverstärker als eine Art Blackbox zu betrachten, welche intern eigene Maschen besitzt. Deshalb muss darauf
+geachtet werden, dass man keine Maschen durch den Operationsverstärker legt.</p>
+<div class="figure align-default" id="fig-02">
+<img alt="../_images/Abbildung021.png" src="../_images/Abbildung021.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Invertierender Integrator mit Maschen</span><a class="headerlink" href="#fig-02" title="Permalink to this image">¶</a></p>
+</div>
+<p>Die erste Masche M1 lautet somit:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-01">
+<span class="eqno">(16)<a class="headerlink" href="#equation-03-eq-01" title="Permalink to this equation">¶</a></span>\[
+	M1: −V_1 + i_1 · R − V_d = 0
+\]</div>
+<p>Da <span class="math notranslate nohighlight">\(V_d = 0V\)</span> ergibt sich nach Umstellung der obigen Masche 1 folgendes:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-02">
+<span class="eqno">(17)<a class="headerlink" href="#equation-03-eq-02" title="Permalink to this equation">¶</a></span>\[
+	M1: V_1 = i_1 \cdot R
+\]</div>
+<p>Aufgrund der Annahme, dass der Eingangswiderstand gegen <span class="math notranslate nohighlight">\(\infty\)</span> geht, können wir entsprechend der Kirchhoffschen
+Knotenregel sagen, dass <span class="math notranslate nohighlight">\(i_2 = i_1\)</span> ist. Da <span class="math notranslate nohighlight">\(i_1\)</span> durch den Kondensator C fließt, können wir diesen auch schreiben als:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-03">
+<span class="eqno">(18)<a class="headerlink" href="#equation-03-eq-03" title="Permalink to this equation">¶</a></span>\[
+	i_1 = \frac{dV_C}{dt} C
+\]</div>
+<p>Nun betrachten wir die zweite Masche M2. Es ergibt sich folgende Gleichung:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-04">
+<span class="eqno">(19)<a class="headerlink" href="#equation-03-eq-04" title="Permalink to this equation">¶</a></span>\[
+	M2: −V_2 − V_C − V_d = 0
+\]</div>
+<p>Nach Umstellen der Gleichung erhalten wir:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-05">
+<span class="eqno">(20)<a class="headerlink" href="#equation-03-eq-05" title="Permalink to this equation">¶</a></span>\[
+	M2: V_2 = −V_C
+\]</div>
+<p>Substituieren wir nun Gleichung <a class="reference internal" href="#equation-03-eq-05">(20)</a> in Gleichung <a class="reference internal" href="#equation-03-eq-03">(18)</a>, so erhalten wir den Strom <span class="math notranslate nohighlight">\(i_1\)</span> in
+Abhängigkeit von der Ausgangsspannung <span class="math notranslate nohighlight">\(V_2\)</span>. Mathematisch ausgedrückt ergibt sich somit der Ausdruck:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-06">
+<span class="eqno">(21)<a class="headerlink" href="#equation-03-eq-06" title="Permalink to this equation">¶</a></span>\[
+	i_1 = -\frac{dV_2}{dt} C
+\]</div>
+<p>Wenn man nun Gleichung <a class="reference internal" href="#equation-03-eq-02">(17)</a> nach <span class="math notranslate nohighlight">\(i_1\)</span> umstellt und diese dann mit Gleichung <a class="reference internal" href="#equation-03-eq-06">(21)</a> gleichsetzt,
+erhalten wir folgenden Ausdruck:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-07">
+<span class="eqno">(22)<a class="headerlink" href="#equation-03-eq-07" title="Permalink to this equation">¶</a></span>\[
+	\frac{V_1}{R} = -\frac{dV_2}{dt} C
+\]</div>
+<p>Da wir <span class="math notranslate nohighlight">\(V_2\)</span> in Abhängigkeit von <span class="math notranslate nohighlight">\(V_1\)</span> wissen möchten, stellen wir nun Gleichung <a class="reference internal" href="#equation-03-eq-07">(22)</a> nach <span class="math notranslate nohighlight">\(dV_2\)</span> um. Es
+ergibt sich somit:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-08">
+<span class="eqno">(23)<a class="headerlink" href="#equation-03-eq-08" title="Permalink to this equation">¶</a></span>\[
+	dV_2 = -\frac{V_1 dt}{R \cdot C}
+\]</div>
+<p>Wenn wir nun beide Seiten der obigen Gleichung integrieren, sprich die linke Seite nach <span class="math notranslate nohighlight">\(dV_2\)</span> und die rechte Seite nach
+<span class="math notranslate nohighlight">\(dt\)</span>, dann ergibt sich folgender Ausdruck:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-09">
+<span class="eqno">(24)<a class="headerlink" href="#equation-03-eq-09" title="Permalink to this equation">¶</a></span>\[
+	\int dV_2 \, = -\int \frac{V_1 dt}{R·C}
+\]</div>
+<p>Letztendlich ergibt sich die Ausgangsspannung <span class="math notranslate nohighlight">\(V_2(t)\)</span> in Abhängigkeit der Eingangsspannung <span class="math notranslate nohighlight">\(V_1(t)\)</span> zu:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-10">
+<span class="eqno">(25)<a class="headerlink" href="#equation-03-eq-10" title="Permalink to this equation">¶</a></span>\[
+	V_2(t) = -\int \frac{V_1(t)dt}{R·C}+V_2(0)
+\]</div>
+<p>Der letzte Summand der rechten Seite aus Gleichung <a class="reference internal" href="#equation-03-eq-10">(25)</a> berücksichtigt den Zustand des Kondensators zum
+Zeitpunkt <span class="math notranslate nohighlight">\(t = 0\)</span>.</p>
+</div>
+<div class="section" id="sprungantwort">
+<h3>Sprungantwort<a class="headerlink" href="#sprungantwort" title="Permalink to this headline">¶</a></h3>
+<p>Da die mathematische Ansicht nicht immer zu einem intuitiven Verständnis beiträgt, schauen wir uns den Integrator nun in
+einem praktischen Beispiel an. Zuerst wird der Einheitssprung gemessen. Hierzu wird die Eingangsspannung von 0V spontan
+auf 1V erhöht. Zu diesem Zeitpunkt integriert der Integrator die Eingangsspannung. Dies würde normalerweise dazu führen,
+dass die Ausgangsspannung linear ansteigt. Da es sich jedoch um einen invertierenden Integrator handelt, nimmt die
+Ausgangsspannung linear ab, bis diese letztendlich irgendwann gleich bleibt. Dies stellt eine wichtige Eigenschaft von
+Operationsverstärkern dar, sodass diese keine Spannung ausgeben können, die größer als dessen positive
+Versorgungsspannung oder kleiner als die negative Versorgungsspannung ist. Dies ist auch logisch, da die Spannung von
+irgendwo kommen muss. Tatsächlich können Operationsverstärker in der Regel nicht mal die positive und negative
+Versorgungsspannung erreichen, da innerhalb des OPs ein gewisser Spannungsabfall entsteht, der die maximale und minimale
+Ausgangsspannung weiter einschränkt. Dies führt dazu, dass ein Operationsverstärker in einer Integrator - Schaltung nur
+bis zu einem gewissen Punkt integrieren kann.</p>
+<p>Wenn eine konstante positive Eingangsspannung angelegt wird, sinkt (beim invertierenden Integrator) die Ausgangsspannung
+stetig, bis die negative Sättigungsspannung erreicht wird. Anschließend bleibt die Spannung an diesem Punkt, bis eine
+negative Eingangsspannung angelegt wird und die Ausgangsspannung wieder beginnt zu steigen.</p>
+<p>Bei diesem Versuch ist der Ladezustand des Kondensators am Anfang der Messung wichtig. Der Ladezustand speichert den
+Zustand des Integrators und dieser beeinflusst den Ablauf der Messung. Wenn die Eingangsspannung 0 V beträgt verändert
+sich die Ausgangsspannung des Integrators nicht. Mathematisch gesehen ist die Steigung gleich Null. Das heißt, der
+Integrator behält seinen letzten Wert bei. Wenn der Integrator also vor der Messung bei seiner positiven
+Sättigungsspannung war, wird er (bei einer gleichen Eingangsspannung) länger brauchen um die negative Sättigungsspannung
+zu erreichen, als wenn er bei 0V anfängt. Wenn der Integrator zu Beginn der Messung bereits bei der negativen
+Sättigungsspannung liegt, passiert gar nichts. Somit ist es wichtig, dass der Kondensator zu Beginn der Messung entladen
+ist, oder dass der Zustand zu Beginn der Messung zumindest berücksichtigt wird.</p>
+<p>Um den Einheitssprung noch einmal kurz aus mathematischer Sicht zu betrachten, integrieren wir nun den
+Einheitssprung. Der Einheitssprung ist mathematisch eine lineare Funktion mit einer Steigung von 0. Setzen wir nun in
+Gleichung <a class="reference internal" href="#equation-03-eq-10">(25)</a> für den Widerstand R unseren Wert von <span class="math notranslate nohighlight">\(1k\Omega\)</span>, für die Kapazität C unseren Wert von <span class="math notranslate nohighlight">\(0,01
+\mu F\)</span> und für die Eingangsspannung V_1 den Spannungswert von 1V ein, so ergibt sich folgende Gleichung:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-11">
+<span class="eqno">(26)<a class="headerlink" href="#equation-03-eq-11" title="Permalink to this equation">¶</a></span>\[
+	V_2(t) = -\int \frac{1V dt}{1k\Omega·0,01\mu F}+V_2(0)=-10^{5}\frac{V}{s}·t+V_2(0)
+\]</div>
+<p>Gleichung <a class="reference internal" href="#equation-03-eq-11">(26)</a> bezieht sich natürlich auf einen idealen Operationsverstärker. Wie bereits oben erwähnt, gerät
+der OP in der Realität in Sättigung. Für die Messung des Einheitssprungs ist der Ladezustand des Kondensators
+wichtig. Da die Messung über das VP-Netzwerk stattgefunden hat, war das Entladen des Kondensators nicht so einfach
+möglich. Es wurde versucht dieses Problem zu beheben, indem ein hochohmiger Widerstand parallel zum Kondensator
+geschaltet wurde. Dies sollte den Ladezustand des Kondensators im Betrieb möglichst wenig beeinflussen, ihn jedoch
+langsam entladen, wenn kein Eingangssignal anliegt. Dies hat leider nicht so gut funktioniert wie erhofft. Um die
+Messung dennoch durchführen zu können, wurde anschließend eine rechteckförmige Wechselspannung mit einer Frequenz von
+1kHz und einer Amplitude von 0,5V angelegt und das Verhalten bei der Schaltflanke beobachtet. Die Initial Condition war
+hier somit kein entladener Kondensator (0 V am Ausgang), sondern ein vollständig geladener Kondensator (positive
+Sättigungsspannung am Ausgang). Ein Einheitssprung von 0V auf 1V wäre zwar geeigneter, aber um die Funktionsweise des
+Integrators zu illustrieren, ist diese Messung ausreichend.</p>
+<div class="figure align-default" id="fig-03">
+<img alt="../_images/Abbildung032.png" src="../_images/Abbildung032.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Sprungantwort des Integrators</span><a class="headerlink" href="#fig-03" title="Permalink to this image">¶</a></p>
+</div>
+<p>Die Messung (unterer Graph) und die Simulation (oberer Graph) sind in Abbildung <a class="reference internal" href="#fig-03"><span class="std std-numref">Fig. 22</span></a> zu sehen. Hier fängt
+der Integrator bei der positiven Sättigungsspannung an und aufgrund dessen, dass die Eingangsspannung negativ ist,
+ändert sich dieses Verhalten auch nicht. Anschließend wird die Polarität des Eingangssignals schlagartig geändert und
+die Ausgangsspannung des Integrators sinkt gleichmäßig, bis zur negativen Sättigungsspannung hin ab. Ab diesem Punkt
+kann der Ausgang nicht weiter sinken und flacht wieder ab. Die Simulation stimmt in diesem Fall sehr gut mit der Messung
+überein. Es wird jedoch eine Abweichung in der gemessenen Eingangsspannung festgestellt. Diese Abweichung ist bei allen
+Messungen zu finden und liegt an einem Eingangsoffset des Red Pitayas. Dies könnte kalibriert werden, oder bei der
+Messung herausgerechnet werden. Das wurde in diesem Fall nicht getan, denn das Ziel ist ja nicht dafür zu sorgen, dass
+die Messungen genau dem entsprechen, was man erwartet, sondern zu schauen, inwiefern die Messung von dem zu erwartenden
+Ergebnis abweicht und den Ursachen für diese Abweichung auf den Grund zu gehen.</p>
+</div>
+<div class="section" id="rechtecksignal">
+<h3>Rechtecksignal<a class="headerlink" href="#rechtecksignal" title="Permalink to this headline">¶</a></h3>
+<p>Als Nächstes wird erneut eine rechteckförmige Wechselspannung mit einer Frequenz von 1kHz und einer Amplitude von 0,5V
+als Eingangssignal angelegt und das resultierte Signal über mehrere Perioden untersucht. Die gemessenen Signale, sowie
+die simulierten Signale sind in Abbildung <a class="reference internal" href="#fig-04"><span class="std std-numref">Fig. 23</span></a> zu sehen.</p>
+<div class="figure align-default" id="fig-04">
+<img alt="../_images/Abbildung041.png" src="../_images/Abbildung041.png" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Sprungantwort des Integrators</span><a class="headerlink" href="#fig-04" title="Permalink to this image">¶</a></p>
+</div>
+<p>Hier stimmt die Messung (im unteren Graphen) sehr gut mit dem simulierten Signal (im oberen Graphen) überein. Genauso
+wie bei der mathematischen Integration wird auch hier ein integriertes Rechtecksignal zu einem Dreiecksignal. Das
+Dreiecksignal ist jedoch invertiert, denn wir arbeiten, wie bereits erwähnt, mit einem invertierenden Integrator. Es
+fällt jedoch auf, dass die Dreieckswelle an den Spitzen abflacht. Dies liegt natürlich daran, dass der Integrator wie im
+Unterkapitel “Sprungantwort” erklärt wurde, mit diesem Eingangssignal die Sättigung erreicht. Bei höheren Frequenzen ist
+die Periodendauer kleiner und der Integrator würde somit nicht ganz so lange in die gleiche Richtung integrieren. Wenn
+die Frequenz ausreichend hoch ist, wird die Dreieckwelle nicht mehr abgeflacht. Alternativ kann die Amplitude des
+Eingangssignals verringert werden. Dann ist die Steigung des Ausgangssignals kleiner und der Integrator erreicht nicht
+ganz so schnell seine Sättigungsspannung. Wenn die Schaltung verändert werden kann, kann natürlich auch die Wahl einer
+anderen Kapazität oder eines anderen Widerstandes in Betracht gezogen werden, sodass der Integrator schneller oder
+langsamer integriert. Aber auch durch Ändern der positiven und negativen Versorgungsspannung könnte die
+Sättigungsspannung direkt beeinflusst werden.</p>
+</div>
+<div class="section" id="amplitudengang">
+<h3>Amplitudengang<a class="headerlink" href="#amplitudengang" title="Permalink to this headline">¶</a></h3>
+<p>Anschließend wurde der Amplitudengang des Integrators gemessen. Hierzu wurde eine sinusförmige Wechselspannung mit einer
+Amplitude von 1 V am Eingang des Integrators angelegt und die Frequenz von 1 Hz bis 1 GHz variiert. Dabei wurde am
+Ausgang die Sinuswelle aufgenommen und dessen Amplitude bestimmt. Dies wurde für 1000 Frequenzen in logarithmisch
+gleichmäßigen Abständen gemacht. Da niedrigere Frequenzen eine längere Periode haben, bleibt die Polarität des Signals
+länger gleich und gibt dem Integrator mehr Zeit mit dem Ausgangssignal zu steigen bzw. zu sinken, als bei höheren
+Frequenzen. Somit wird von dem Integrator ein Tiefpass-Verhalten erwartet. Durch das Integrieren wird das Signal
+zusätzlich phasenverschoben und da es sich hier um die invertierende Variante handelt, ist das Ausgangssignal natürlich
+ohnehin schon invertiert. Die Phasenverschiebung bzw. der Phasengang wird hier jedoch nicht näher betrachtet.</p>
+<div class="figure align-default" id="fig-05">
+<img alt="../_images/Abbildung052.png" src="../_images/Abbildung052.png" />
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Amplitudengang des Integrators</span><a class="headerlink" href="#fig-05" title="Permalink to this image">¶</a></p>
+</div>
+<p>In Abbildung <a class="reference internal" href="#fig-05"><span class="std std-numref">Fig. 24</span></a> wird das Verhältnis der Amplitude an Aus- und Eingang in dB in Abhängigkeit zur
+Frequenz grafisch dargestellt. In der Mitte des Messbereichs stimmt die Messung relativ gut mit den simulierten Daten
+überein. Vorwiegend im unteren Frequenzbereich sind große Abweichungen zu sehen. Abgesehen von ein paar Ausreißern
+verläuft das Signal flach im Vergleich zur Simulation. Wie wir in Abschnitt “Rechtecksignal” gesehen haben, erreicht der
+Integrator bei einer 1 kHz Rechteckwelle mit einer halb so großen Amplitude die Sättigung. Bei einer Sinuswelle gerät
+der Integrator erst später in Sättigung, da die durchschnittliche Amplitude einer Sinuswelle ca. 63 % so groß wie bei
+einer Rechteckwelle (mit gleicher Amplitude) ist. Da die Amplitude bei dieser Messung doppelt so groß ist bezüglich der
+Messung der Rechteckwelle, dürfte die Sättigung sogar ein wenig früher eintreten. Wie man an dem gemessenen
+Amplitudengang sieht, verläuft das Signal relativ flach bis etwa 1 kHz und folgt anschließend gut dem Verlauf der
+Simulation. Der flache Verlauf im unteren Frequenzbereich liegt also ganz klar daran, dass der Integrator in die
+Sättigung getrieben wird. Die Sättigungsspannung wird zwar allgemein bei den Simulationen berücksichtigt, aber nur bei
+der Simulation des Ein-/Ausgangssignals und nicht bei der Simulation des Amplitudengangs. Im höheren Frequenzbereich
+weicht die Messung gar nicht so stark von der Simulation ab, ist jedoch recht stark mit Rauschen behaftet. Dies liegt
+daran, dass der Red Pitaya bei höheren Frequenzen mit einer sampling rate von 125 MS/s nicht mehr schnell genug abtasten
+kann, um zuverlässig den höchsten und niedrigsten Punkt der Sinuswelle aufzunehmen. Zusätzlich können bei bestimmten
+Frequenzen auch durch Aliasing-Effekte ganz andere Amplituden als die echte Amplitude gemessen werden. Da es mehr oder
+weniger Zufall ist, ob die Spitzen der Sinuswelle erwischt werden oder nicht, springt die gemessene Amplitude.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="differenzierer">
+<h1>Differenzierer<a class="headerlink" href="#differenzierer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id4">
+<h2>Mathematische Herleitung<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Wie beim Integrator beginnen wir auch hier zuerst mit der mathematischen Herleitung der Ausgangsspannung des
+invertierenden Differenzierers. Die Schaltung des invertierenden Differenzierers ist in Abbildung <a class="reference internal" href="#fig-06"><span class="std std-numref">Fig. 25</span></a> zu
+sehen. Vergleicht man nun diese Schaltung mit der des Integrators, so erkennt man, dass Widerstand und Kondensator
+vertauscht sind.</p>
+<div class="figure align-default" id="fig-06">
+<img alt="../_images/Abbildung061.png" src="../_images/Abbildung061.png" />
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Aufbau invertierender Differenzierer<a class="footnote-reference brackets" href="#id10" id="id5">3</a></span><a class="headerlink" href="#fig-06" title="Permalink to this image">¶</a></p>
+</div>
+<p>Bei dieser Herleitung gehen wir wieder davon aus, dass es sich um einen idealen Operationsverstärker handelt. Somit
+gelten die gleichen Annahmen wie aus der mathematischen Herleitung des Integrators. Die eingetragenen Maschen sind in
+Abbildung <a class="reference internal" href="#fig-07"><span class="std std-numref">Fig. 26</span></a> zu sehen.</p>
+<div class="figure align-default" id="fig-07">
+<img alt="../_images/Abbildung072.png" src="../_images/Abbildung072.png" />
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Invertierender Differenzierer mit Maschen</span><a class="headerlink" href="#fig-07" title="Permalink to this image">¶</a></p>
+</div>
+<p>Die erste Masche M1 lautet somit:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-12">
+<span class="eqno">(27)<a class="headerlink" href="#equation-03-eq-12" title="Permalink to this equation">¶</a></span>\[
+	M1: −V_1 + V_C − V_d = 0
+\]</div>
+<p>Gleichung <a class="reference internal" href="#equation-03-eq-12">(27)</a> nach <span class="math notranslate nohighlight">\(V_1\)</span> umgestellt lautet somit:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-13">
+<span class="eqno">(28)<a class="headerlink" href="#equation-03-eq-13" title="Permalink to this equation">¶</a></span>\[
+	M1: V_1 = V_C
+\]</div>
+<p>Den Strom <span class="math notranslate nohighlight">\(i_1\)</span> aus Gleichung <a class="reference internal" href="#equation-03-eq-03">(18)</a> verändern wir mittels Gleichung <a class="reference internal" href="#equation-03-eq-13">(28)</a> in:</p>
+<div class="math notranslate nohighlight" id="equation-03-eq-14">
+<span class="eqno">(29)<a class="headerlink" href="#equation-03-eq-14" title="Permalink to this equation">¶</a></span>\[
+	i_1 = \frac{dV_1}{dt}· C
+\]</div>
+</div>
+<div class="section" id="dreieckssignal">
+<h2>Dreieckssignal<a class="headerlink" href="#dreieckssignal" title="Permalink to this headline">¶</a></h2>
+<p>Der Differenzierer macht mathematisch gesehen das Gegenteil vom Integrator. Während der Integrator die Stammfunktion des
+Eingangssignals bildet, bildet der Differenzierer die Ableitung des Eingangssignals. Bei dem Integrator stellt also das
+Eingangssignal die Steigung von dem Ausgangssignal dar, während bei dem Differenzierer das Ausgangssignal die Steigung
+von dem Eingangssignal darstellt. Da es sich in diesem Laborversuch um einen invertierenden Integrator und ebenfalls
+einen invertierendem Differenzierer handelt, ist zu beachten, dass das Ausgangssignal in beiden Fällen invertiert
+ist. Bei dem Integrator wurde gezeigt, dass aus einer Rechteckwelle, wie zu erwarten, nach der Integration eine
+Dreieckwelle wird. Bei dem Differenzierer würde man demzufolge erwarten, dass aus einer Dreieckwelle eine Rechteckwelle
+wird. Um dies zu überprüfen, wurde eine dreieckförmige Wechselspannung mit einer Frequenz von 300 Hz und einer Amplitude
+von 0,5 V in den Differenzierer gespeist und das dadurch resultierende Ausgangssignal aufgenommen. Das Ergebnis der
+Messung, sowie die simulierten Werte sind in Abbildung <a class="reference internal" href="#fig-08"><span class="std std-numref">Fig. 27</span></a> zu sehen.</p>
+<div class="figure align-default" id="fig-08">
+<img alt="../_images/Abbildung081.png" src="../_images/Abbildung081.png" />
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Reaktion des invertierenden Differenzierer auf ein Dreiecksignal</span><a class="headerlink" href="#fig-08" title="Permalink to this image">¶</a></p>
+</div>
+<p>Grundsätzlich lässt sich hier zwar ein Rechtecksignal erkennen. Allerdings zeigt sich sowohl in der Messung wie auch in
+der Simulation eine relativ starke Oszillation des Ausgangssignals nach jeder Spitze des Dreiecksignals. Dies stellt
+eines der Probleme von Differenzierern dar. Bei schnellen Änderungen, hat der OP eine Tendenz mit dem Ausgangssignal
+über den eigentlich erwünschten Wert hinaus zuwachsen und sich anschließend auf den korrekten Wert einzupendeln. Dies
+ist bei vielen Regelschaltungen ein Problem, wo nur die Differenz zwischen Ist- und Sollwert berücksichtigt wird,
+sogenannte P-Regler. Der Operationsverstärker stellt in diesem Fall lediglich eine Regelschaltung dar, die ihre
+Ausgangsspannung in Abhängigkeit zu der Eingangsspannung regelt. In vielen Regelschaltung ist das Schwingen kein großes
+Problem. In sehr dynamischen Systemen mit vielen schnellen Änderungen kann es jedoch zu einem Problem werden. Dieses
+Problem wird häufig durch das Einsetzen eines PID-Reglers gelöst, bei dem noch weitere Faktoren wie z. B. die
+Annäherungsgeschwindigkeit von Ist- zu Sollwertes berücksichtigt werden. Um dies bei dem Differenzierer zu
+bewerkstelligen, müsste mehr als nur ein OP, ein Kondensator und ein Widerstand zum Einsatz kommen, wodurch sich die
+Schaltung wesentlich verändern würde. Um das Schwingen des Differenzierers auf einfache Art zu mildern wird häufig ein
+Widerstand in Reihe mit dem Kondensator geschaltet. Dadurch verlangsamt sich die Reaktion des OPs, was verhindert, dass
+der OP so weit über den erwünschten Wert hinausschießt. Dies löst das Problem jedoch nicht wirklich, denn dabei werden
+lediglich die hochfrequenten Anteile des Eingangs- und Ausgangssignals herausgefiltert. So wird das Schwingen reduziert,
+aber dafür wird die Dreieckwelle (zumindest aus Sicht des Differenzierers) an den Ecken abgerundet, was wiederum dazu
+führt, dass ebenfalls die Rechteckwelle abgerundete Ecken bekommt. Ansonsten fällt ebenfalls auf, dass das Schwingen bei
+den gemessenen Daten wesentlich langsamer ist und langsamer ausklingt als bei der Simulation. Das Verhalten des
+gemessenen Differenzierers entspricht einem Differenzierer mit einem etwa 1000 mal größerem Kondensator, einem etwa 1000
+mal größerem Widerstand oder einer Kombination der beiden, die einen Unterschied um einen Faktor von etwa 1000
+bewirkt. Zum Vergleich ist in Abbildung <a class="reference internal" href="#fig-09"><span class="std std-numref">Fig. 28</span></a> wieder die Simulation und Messung zu sehen, mit dem
+Unterschied, dass bei der Simulation von einem Widerstand von <span class="math notranslate nohighlight">\(1M\Omega\)</span> statt <span class="math notranslate nohighlight">\(1k\Omega\)</span> ausgegangen wurde. Der
+gemessene Verlauf ist dabei unverändert.</p>
+<div class="figure align-default" id="fig-09">
+<img alt="../_images/Abbildung091.png" src="../_images/Abbildung091.png" />
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Reaktion des invertierenden Differenzierer auf ein Dreiecksignal (veränderte Widerstände)</span><a class="headerlink" href="#fig-09" title="Permalink to this image">¶</a></p>
+</div>
+<p>Wie zu sehen ist, stimmt die Simulation hier wesentlich genauer mit den gemessenen Werten überein. Kondensatoren und
+Widerstände haben natürlich eine gewisse Toleranz und das Ganze ist mit relativ dünnen Leitungen verkabelt, die
+natürlich auch einen gewissen Widerstand haben. Je nachdem wie die Leitungen liegen können sie auch gewisse Kapazitäten
+und Induktivitäten bilden. All diese Faktoren würden jedoch in aller Regel bei weitem keinen zusätzlichen Widerstand von
+999 kΩ oder eine Kapazität von 990 nF verursachen. Eine Kombination der beiden, die eine derartige Abweichung
+verursachen würde ist zwar nicht auszuschließen, ist aber durchaus unwahrscheinlich. Realistischer wäre ein schlechter
+Kontakt bei dem Widerstand der zu einem hohen Übergangswiderstand geführt hat, oder dass versehentlich die Einheit der
+Kapazität oder des Widerstands verwechselt wurde, wie etwa ein Widerstand mit <span class="math notranslate nohighlight">\(1M\Omega\)</span> statt <span class="math notranslate nohighlight">\(1k\Omega\)</span>oder ein
+Kondensator mit <span class="math notranslate nohighlight">\(100\mu F\)</span> statt <span class="math notranslate nohighlight">\(100nF\)</span>, denn die Abweichung um einen Faktor von ausgerechnet 1000 ist schon recht
+auffällig. Da die Messungen jedoch über das Internet aufgenommen wurden, ist es schwer einzuschätzen, was die Abweichung
+am ehesten verursacht haben könnte.</p>
+</div>
+<div class="section" id="id6">
+<h2>Rechtecksignal<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Als Nächstes wurde eine rechteckförmige Wechselspannung mit einer Frequenz von 75Hz und einer Amplitude von 0,5V in den
+Differenzierer gespeist. Ein Rechtecksignal bleibt die meiste Zeit über gleich und hat immer nur kurze Sprünge beim
+Polaritätswechsel. Bei einer perfekten Rechteckwelle haben diese Sprünge für eine unendlich kurze Dauer eine unendlich
+hohe Steigung. Alle anderen Bereiche haben eine Steigung von 0. Der Differenzierer kann natürlich weder eine unendlich
+hohe Steigung noch eine unendlich kurze Dauer darstellen. Was die Messung und die Simulation ergeben haben, ist in
+Abbildung <a class="reference internal" href="#fig-10"><span class="std std-numref">Fig. 29</span></a> zu sehen.</p>
+<div class="figure align-default" id="fig-10">
+<img alt="../_images/Abbildung101.png" src="../_images/Abbildung101.png" />
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Reaktion des invertierenden Differenzierer auf ein Rechtecksignal</span><a class="headerlink" href="#fig-10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Auch hier verhält sich der gemessene Differenzierer ähnlich wie einer mit einem Faktor 1000 größerem Kondensator oder
+Widerstand. Zum Vergleich sind in Abbildung  <a class="reference internal" href="#fig-11"><span class="std std-numref">Fig. 30</span></a> wieder eine Simulation (mit <span class="math notranslate nohighlight">\(1M\Omega\)</span> statt
+<span class="math notranslate nohighlight">\(1k\Omega\)</span>) und die Messung zu sehen.</p>
+<div class="figure align-default" id="fig-11">
+<img alt="../_images/Abbildung111.png" src="../_images/Abbildung111.png" />
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Reaktion des invertierenden Differenzierer auf ein Rechtecksignal (veränderte Widerstände)</span><a class="headerlink" href="#fig-11" title="Permalink to this image">¶</a></p>
+</div>
+<p>Hier klingt die Messung zwar schneller ab als bei der Simulation mit 1000 fachem Widerstand, aber die Schwingfrequenz
+ist sehr ähnlich. Während man mathematisch gesehen eine flache Linie (0V) mit kurzen (unendlich hohen) vertikalen
+Spitzen beim Polaritätswechsel erwarten würde, sehen wir auch hier das im vorigen Abschnitt bereits erklärte Problem mit
+der Schwingung. Das Ganze ist hier jedoch wesentlich extremer. Der erste Impuls mit (idealer) unendlicher Steigung lädt
+den Kondensator am Eingang so weit auf, dass der OP sofort in die Sättigung geht, für ca. 1 Millisekunde in der
+Sättigung bleibt und sich erst danach langsam zurück auf die 0V auspendelt.</p>
+</div>
+<div class="section" id="id7">
+<h2>Amplitudengang<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Anschließend wurde, genauso wie bei dem Integrator, auch für den Differenzierer der Amplitudengang gemessen. Hierzu
+wurde wieder eine sinusförmige Wechselspannung mit einer Amplitude von 1 V am Eingang des Differenzierers angelegt und
+die Frequenz von 1 Hz bis 1 GHz variiert, während die resultierende Sinuswelle am Ausgang aufgenommen und dessen
+Amplitude bestimmt wurde. Dies wurde ebenfalls für 1000 Frequenzen in logarithmisch gleichmäßigen Abständen
+gemacht. Während der Integrator sich wie ein Tiefpass Filter verhielt, sollte der Differenzierer sich wie ein
+Hochpassfilter verhalten. Denn je höher die Frequenz einer Sinuswelle, desto schneller steigt und fällt die Sinuswelle
+und desto höher ist dessen Steigung. Allerdings kommt man früher oder später an einen Punkt, an dem der OP nicht schnell
+genug auf die Änderungen am Eingangssignal reagiert und die Amplitude am Ausgang bei steigender Frequenz wieder
+abfällt. Wenn man sich also einen ausreichend großen Frequenzbereich anschaut, verhält sich der Differenzierer eher wie
+ein Bandpassfilter. Der gemessene und simulierte Amplitudengang ist in Abbildung <a class="reference internal" href="#fig-12"><span class="std std-numref">Fig. 31</span></a> zu sehen.</p>
+<div class="figure align-default" id="fig-12">
+<img alt="../_images/Abbildung121.png" src="../_images/Abbildung121.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Amplitudengang des invertierenden Differenzierers</span><a class="headerlink" href="#fig-12" title="Permalink to this image">¶</a></p>
+</div>
+<p>Wie man sieht, stimmen die gemessenen Daten nicht sonderlich gut mit der Messung überein. Dies hat mehrere Gründe. Um
+die Amplitude in dB zu bestimmen wurde für jede Frequenz das Ein- und Ausgangssignal gemessenen und jeweils der höchste
+und tiefste Punkt bestimmt und dessen Differenz als Spitze-Spitze-Spannung genommen. Anschließend wurde das Verhältnis
+der Aus- und Eingangsamplitude in dB errechnet. Dies ist eine recht einfache Art den Amplitudengang zu bestimmen. Sie
+hat in manchen Fällen jedoch Nachteile. In dem unteren Frequenzbereich ist das Signal z.B. stark verrauscht, dies führt
+dazu, dass die gemessene Spitze-Spitze-Spannung wesentlich höher sein kann, als die tatsächliche Spitze-Spitze-Spannung
+des Signals. Da vorwiegend das Ausgangssignal verrauscht ist, wird vorwiegend ein zu hoher Wert für die Amplitude
+berechnet. Im oberen Frequenzbereich besteht das Problem, dass die Samplingrate des Red Pitayas mit 125 MS/s zu langsam
+ist, um zuverlässig die Hoch- und Tiefpunkte des Signals zu erwischen und die gemessene Amplitude somit ein wenig
+willkürlich hoch und runter springt. Durch diesen Effekt würde die gemessene Amplitude eher zu niedrig ausfallen. Aber
+die Ursache des Rauschens im unteren Frequenzbereich ist nicht ganz klar und im oberen Frequenzbereich ist die
+Abtastrate des Red Pitayas so langsam im Vergleich zu dem gemessenen Signal, dass nicht wirklich geprüft werden kann, ob
+das Signal ebenfalls verrauscht ist. Zudem fallen bei höheren Frequenzen viele weitere Einflüsse mit an, wie
+z. B. Reflexionen des Signals innerhalb der Leitungen. Bei dem Aufbau der Schaltung wurden keine besonderen Maßnahmen
+ergriffen, um diese Störeinflüsse zu minimieren. Ein Zusammenspiel der genannten Einflüsse würde die starke Abweichung
+und das Schwanken des gemessenen Amplitudengangs im unteren und oberen Frequenzbereich erklären. Allerdings fällt auch
+auf, dass der gemessene Amplitudengang in der Mitte abflacht. Dies liegt daran, dass der Differenzierer an dieser Stelle
+die Sättigung erreicht. Wie bereits erklärt wurde, wird bei der Simulation des Amplitudengangs nicht die Sättigung des
+OPs berücksichtigt, der reelle OP kann jedoch logischerweise maximal seine Sättigungsspannung erreichen. Die maximal zu
+erreichende Amplitude könnte in diesem Fall z.B. vergrößert werden, indem die Amplitude des Eingangssignals verringert
+wird. Denn die Sättigungsspannung bleibt gleich und somit auch die Spitze-Spitze-Spannung am Ausgang. Die
+Spitze-Spitze-Spannung am Eingang sinkt jedoch. Und dadurch steigt logischerweise der Amplitudengang in dB. Dies würde
+jedoch gleichzeitig zu noch mehr Rauschen und somit noch ungenauere Messungen führen. Das Problem mit dem Rauschen wurde
+auf mehrere Arten und Weisen versucht zu minimieren. Eine Methode bestand darin, die gemessenen Signale zu einer
+Sinuswelle zu fitten und dessen Amplituden zu nutzen. Dabei besteht jedoch das Problem, dass das Ausgangssignal nicht
+immer sinusförmig ist. Wenn der OP z. B. in die Sättigung geht, wird das Signal oben und unten abgeschnitten. Wenn der
+OP sehr stark in die Sättigung getrieben wird, kann das Ausgangssignal eher zu einer Rechteckwelle werden. Zusätzlich
+besteht bei höheren Frequenzen das Problem, dass die Sinuswelle viel zu langsam abgetastet wird, um eine brauchbare
+Sinuswelle fitten zu können. Es wurde ebenfalls versucht mit einem moving average Filter das Rauschen zu mildern. Diese
+Lösungsansätze haben leider keinen wesentlichen Erfolg erzielt. Ein weiteres Problem war, dass die gemessenen Signale
+teilweise am Anfang oder am Ende Sprünge hatten. Dies könnte daran liegen, dass bei der Messung der einzelnen Frequenzen
+nicht viele „delays“ eingesetzt wurden, um die Messdauer zu minimieren. Möglicherweise konnte der Red Pitaya die
+Einstellung gelegentlich nicht schnell genug übernehmen bevor die Messung gestartet wurde. Um dieses Problem zu beheben
+wurde nachträglich ein Teil der Messdaten am Anfang und am Ende verworfen. Zur Erstellung des Graphen in Abbildung
+<a class="reference internal" href="#fig-12"><span class="std std-numref">Fig. 31</span></a> wurde lediglich, wie bereits beschrieben, am Anfang und am Ende der Messdaten jeweils ein Teil
+abgeschnitten, um die Sprünge zu vermeiden. Somit sind die Daten relativ unbearbeitet. Der so bestimmte Amplitudengang
+wurde einmal direkt und einmal in geglätteter Form geplottet, dies hilft in dem rauschigen Bereichen den Mittelwert zu
+erkennen. Zum Glätten des Amplitudengangs wurde ein moving average Filter mit einer Weite von 20 Samples (von insgesamt
+1000 Samples) verwendet, es wurden also die umliegenden 2 % der Samples mitberücksichtigt. Auch wenn der gemessene
+Amplitudengang weit von perfekt entfernt ist, zeigt sich dennoch eine gewisse Bandpasstendenz des Amplitudengangs. Diese
+ist jedoch wesentlich weniger ausgeprägt als in dem simulierten Amplitudengang. Insgesamt muss natürlich auch
+berücksichtigt werden, dass die Simulation sehr idealisiert ist und es mit einem echten OP ohnehin nicht möglich ist
+dieses genaue Verhalten zu reproduzieren. Unter Berücksichtigung der Problematik mit den vielen Fehlerquellen ist das
+Ergebnis des Versuchs somit gar nicht so weit von dem entfernt, was man bei einer reellen Differenzierer-Schaltung
+erwarten würde.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>ANS-Abschlussbericht SoSe21 von V.Grebnev, T.Hilker und D.Klinker</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Analog System Lab Kit PRO MANUAL von 2012 - Authors: K.R.K. Rao and C.P. Ravikumar</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">3</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
+<dd><p>Elektronische Bauelemente, Michael Reisch, 2. Auflage</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "mimeiners/ASLK_PRO",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Experiment_02_TZ.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Schmitt-Trigger</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Experiment_04.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Analoge Filter</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

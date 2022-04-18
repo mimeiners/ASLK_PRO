@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voltage Controlled Oscillator (VCO) &#8212; ASLK Pro Experimente</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="https://dokie.li/media/css/dokieli.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="dokieli" src="https://dokie.li/scripts/dokieli.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "mimeiners/ASLK_PRO");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="canonical" href="https://mimeiners.github.io/ASLK_PRO/docs/Experiment_06.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Phase Locked Loop (PLL)" href="Experiment_07.html" />
+    <link rel="prev" title="Self-Tuned Filter" href="Experiment_05.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ASLK Pro Experimente</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Einleitung und Übersicht
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_01.html">
+   Grundschaltungen des OPV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_02_TZ.html">
+   Schmitt-Trigger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_03_TZ.html">
+   Charakteristik von Integrator und Differenzierer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_04.html">
+   Analoge Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_05.html">
+   Self-Tuned Filter
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Voltage Controlled Oscillator (VCO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_07.html">
+   Phase Locked Loop (PLL)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_08.html">
+   Automatic Gain/Volume Control (AGC/AVC)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_09.html">
+   DC-DC Wandler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_10.html">
+   Entwurf eines LDO Reglers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_11.html">
+   Parameterstudie eines LDO’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_12.html">
+   Parameterstudie eines DC-DC Wandlers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_13.html">
+   Entwurf eines digital kontrollierten GSA’s
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Experiment_14.html">
+   Digital programmierbarer Signalgenerator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RedPitaya_Messautomatisierung.html">
+   Red Pitaya Messautomatisierung
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/Experiment_06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mimeiners/ASLK_PRO"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/mimeiners/ASLK_PRO/issues/new?title=Issue%20on%20page%20%2Fdocs/Experiment_06.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/mimeiners/ASLK_PRO/edit/master/jb-aslkpro/docs/Experiment_06.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theorie-und-motivation">
+   Theorie und Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schaltungsaufbau-schmitt-trigger">
+   Schaltungsaufbau Schmitt-Trigger
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schaltungsaufbau-vco">
+   Schaltungsaufbau VCO
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schmitt-trigger-messung-und-auswertung">
+   Schmitt-Trigger Messung und Auswertung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vco-messung-und-auswertung">
+   VCO Messung und Auswertung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fazit">
+   Fazit
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="voltage-controlled-oscillator-vco">
+<h1>Voltage Controlled Oscillator (VCO)<a class="headerlink" href="#voltage-controlled-oscillator-vco" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theorie-und-motivation">
+<h2>Theorie und Motivation<a class="headerlink" href="#theorie-und-motivation" title="Permalink to this headline">¶</a></h2>
+<p>Voltage controlled oscillator sind Schaltungen, die die Frequenz der
+Ausgangsspannung in Abhängigkeit der Eingangsspannung ändern. Bekannt
+ist auch die Wirkung als Funktionsgenerator mit einem Rechtecksignal am
+Ausgang.</p>
+<p>In der Praxis kann die Schaltung in der elektronischen Musik als
+Synthesizer, bei Motorregelungen, als Funktionsgenerator und beim
+Sendersuchlauf in Verbindung mit PLL genutzt werden.</p>
+<p>Ein VCO kann mit Hilfe eines Multiplizierers, eine Integrierers und
+eines nicht invertierenden Schmitt-Triggers realisiert werden. Als
+erstes wird das Schmitt-Trigger-Glied versuchstechnisch genauer unter
+die Lupe genommen. Dazu ändert sich der Rückführungswiderstand und die
+Wirkungsweise wird in Abhängigkeit eines Sinus-Signals analysiert. Dafür
+liegt eine Spice-Simulation vor, die anschließend in die Realität
+umgesetzt und messtechnisch aufgenommen wird. Anschließend werden die
+simulierten Werte mit den Gemessenen unter Zuhilfenahme von Matlab
+verglichen.</p>
+<p>Als zweiten Versuch wird die gesamte VCO-Schaltung untersucht. Die
+Eingangsgleichspannung wird von 1 V bis 10 V variiert und die
+Ausgangsspannung gemessen. Ein Matlabprogramm legt nun beide
+Ausgangskurven eingerückt übereinander und setzt sie in Verbindung mit
+der Eingangsspannung. Für einen gleichmäßigen High- und Low-Pegel muss
+eine kleine Anpassschaltung das Ausgangssignal leicht manipulieren. Die
+Veränderung dieser Anpassschaltung wird mit der Frequenz der
+Ausgangsspannung in einen Grafen und mit der Eingangsspannung in einen
+anderen Grafen aufgetragen.</p>
+</div>
+<div class="section" id="schaltungsaufbau-schmitt-trigger">
+<h2>Schaltungsaufbau Schmitt-Trigger<a class="headerlink" href="#schaltungsaufbau-schmitt-trigger" title="Permalink to this headline">¶</a></h2>
+<p>Der Schmitt Trigger besteht in diesem Fall aus 3 Bauelementen:</p>
+<ul class="simple">
+<li><p>2 Widerstände</p></li>
+<li><p>Operationsverstärker</p></li>
+</ul>
+<p>Die Abbildung zeigt den Aufbau eines nicht invertierenden
+Schmitt-Triggers mit einer Versorgungsspannung des Operationsverstärkers
+von +/- 10 V. Die Schaltung arbeitet wie ein Komparator, bei dem der
+Ein- und Ausschaltpegel nicht den selben Wert haben. Das heißt eine
+Schalthysterese (zweite Abbildung) des Komparators wird erzielt.
+Ausschaltpegel <span class="math notranslate nohighlight">\(U_{e, aus}\)</span> beziehungsweise Einschaltpegel <span class="math notranslate nohighlight">\(U_{e, ein}\)</span>
+lassen sich berechnen und als Schalthysterese <span class="math notranslate nohighlight">\(\Delta U_{e}\)</span>
+zusammenfassen. Es lassen sich also gut analoge Signale in digitale
+Signale umwandeln. Für den Versuch wird der Schmitt-Trigger
+eingangsseitig mit einer Sinus-Wechelspannung (4 V Amplitude) gespeist.
+Die dritte Abbildung zeigt das beispielhafte Verhalten des
+Schmitt-Triggers.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">U_{e,</span> <span class="pre">aus}=-\frac{R_1}{R_2}U_{a,</span> <span class="pre">max}</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">U_{e,</span> <span class="pre">ein}=-\frac{R_1}{R_2}U_{a,</span> <span class="pre">min}</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\Delta</span> <span class="pre">U_{e}=\frac{R_1}{R_2}(U_{a,</span> <span class="pre">max}-U_{a,</span> <span class="pre">min})</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p><img alt="Schmitt TriggerSchaltplan" src="../_images/Voltage_Controlled_Oscillator_Schaltplan_Schmitt_Trigger.png" />{##exp06_fig_01
+.align-center}</p>
+<p><img alt="Schmitt Trigger Hysteresekurve,Tietze/Schenk" src="../_images/Schmitt_Trigger_Titze_Kennlinie.PNG" />{##exp06_fig_02
+.align-center}</p>
+<p><img alt="" src="../_images/Schmitt_Trigger_Titze_Sinussignal.PNG" />{##exp06_fig_03
+.align-center}</p>
+</div>
+<div class="section" id="schaltungsaufbau-vco">
+<h2>Schaltungsaufbau VCO<a class="headerlink" href="#schaltungsaufbau-vco" title="Permalink to this headline">¶</a></h2>
+<p>Der VCO besteht aus 3 wichtige Komponenten:</p>
+<ul class="simple">
+<li><p>Multiplizierer</p></li>
+<li><p>Integrierer</p></li>
+<li><p>Schmitt-Trigger</p></li>
+</ul>
+<p>Als Anpassungsschaltung dient hier eine kleine
+Dioden-Widerstand-Schaltung. Versorgt werden die Operationsverstärker
+sowie der Multiplizierer mit +/-10V. Eingangsseitig sorgt ein
+Gleichsignal mit verschiedenen Spannungsleveln von 1-10 V für eine
+beispielhafte Beschaltung.</p>
+<p>Für den Multiplizierer (hier: MPY 634, roter Kasten) lässt sich das
+Ausgangssignal berechnen. X1/ X2 stellen dabei Eingang 1, Y1/ Y2 Eingang
+2 dar. Über SF lässt sich der Skalierungsfaktor steuern und an VS gehört
+die Versorgungsspannung. Z1 wird meist gegen Ground oder sehr hochohmig
+angeschlossen, Z2 erlaubt einen Offset am Ausgang.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">V_{out}</span> <span class="pre">=</span> <span class="pre">A</span> <span class="pre">\cdot</span> <span class="pre">\frac{(X1-X2)(Y1-Y2)}{SF}(Z1-Z2)</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p><img alt="" src="../_images/Voltage_Controlled_Oscillator_Schaltplan.png" />{##exp06_fig_04
+.align-center}</p>
+<p>Für den Integrierer mit vorgeschalteter Anpassschaltung (gelber Kasten),
+bestehend aus 2 Dioden und 2 Widerständen, gilt für eine konstante
+Eingangsspannung:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">U_a=-\frac{U_e}{RC}t+U_{a,</span> <span class="pre">Anfang}</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">U_{a,</span> <span class="pre">Anfang}=</span> <span class="pre">\frac{Q_{Anfang}}{C}</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p>Dazu kann die Anpassschaltung mit einem einzelnen Widerstand R ersetzt
+werden. Je nach Größe des Eingangswiderstandes lädt sich der Kondensator
+schneller auf. Die Schaltung arbeitet invertierend, es gilt:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">Q(R)\sim</span> <span class="pre">U_C(R,C)=-U_a(R,C)</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p>Die Anpassschaltung, im Versuchsaufbau mit einem Trimmer realisiert,
+bestimmt flexibel, welcher Strom in den Integrator ein-/ zurückfließt.
+Damit lassen sich variabel die High-/ und Lowzeiten des Ausgangssignal
+der VCO beeinflussen.</p>
+<p>Mit einer Wechselspannung am Eingang ergibt sich folgende Gleichung:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">|U_a|=\frac{U_e}{2\pi</span> <span class="pre">fCR}</span> <span class="pre">$$</span></code>{=latex html}</p>
+<p>Der grüne Kasten entspricht dem schon gezeigten Schmitt-Trigger.</p>
+</div>
+<div class="section" id="schmitt-trigger-messung-und-auswertung">
+<h2>Schmitt-Trigger Messung und Auswertung<a class="headerlink" href="#schmitt-trigger-messung-und-auswertung" title="Permalink to this headline">¶</a></h2>
+<p>Die Abbildungen zeigen in rot das gemessene Sinus-Eingangssignal mit
+einer Amplitude von 4 V und einer Frequenz von 50 Hz. In blau ist das
+gemessene Ausgangssignal dargestellt und mit dem simulierten
+Ausgangssignal (orange) an der ersten steigenden Flanke mit Matlab
+übereinander gelegt. Mit R2=9,5 k zeigen sich kleine Differenzen in der
+Periodendauer, sowie ein komplett anderer Ausgangspegel. Möglicherweise
+ist bei der Simulation ein gröberer Fehler unterlaufen, der das
+Ausgangssignal verlustfrei statt verlustbehaftet ausgibt.</p>
+<p><img alt="Schmitt Trigger Messung+Simulation mitR2=9,5k" src="../_images/Schmitt_Trigger_9_5k_Diagramm.png" />{##exp06_fig_05
+.align-center}</p>
+<p>Mit einem kleineren R2 Widerstand erfolgt der Umschaltzeitpunkt später
+als mit dem größeren Widerstand. Im Moment des Umschaltens erfolgt
+außerdem eine deutliche Überspannung des Ausgangssignals, wobei die
+Versorgungsspannung kurzzeitig leicht einbricht. Während des Umschaltens
+sinkt die Ausgangsspannung zusätzlich für den Bruchteil einer
+Millisekunde auf 0 V ab.</p>
+<p><img alt="" src="../_images/Schmitt_Trigger_2_46k_diagramm.png" />{##exp06_fig_06
+.align-center}</p>
+</div>
+<div class="section" id="vco-messung-und-auswertung">
+<h2>VCO Messung und Auswertung<a class="headerlink" href="#vco-messung-und-auswertung" title="Permalink to this headline">¶</a></h2>
+<p>Der VCO wird bei diesem Versuch mit verschiedenen Gleichspannungen
+gespeist, die Ausgangsspannungen werden gemessen und die
+Widerstandswerte der Anpassschaltung (Tabelle über Grafen) werden
+aufgezeichnet. Die folgenden 5 Grafen zeigen die gemessenen
+Eingangs-bzw. Ausgangsspannungen. Zusätzlich sind die simulierten
+Spannungswerte ebenfalls abgebildet, wobei dazu mit Hilfe von Matlab die
+Simulationswerte soweit verschoben sind, bis äquivalente Flanken
+übereinander liegen. Für eine gute Sichtbarkeit sind dicke Linien
+ausgewählt und jeweils zwei Spannungen befinden sich in einem Grafen.</p>
+<p>Diagramm 1 zeigt bei der Messung ein relativ starkes Rauchen von
+mehreren Zehntel Volt. Die Amplitude ist minimal höher als bei der
+Simulation. Die Simulation hat eine niedrigere Frequenz als die Messung
+und das Verhältnis von negativer zu positiver Spannung ist unregelmäßig.</p>
+<p>±—————————–+
+| Widerstandsanpassung 1       |
++==============================+
+| Widerstand 0 - 2 ms 2 - 4 ms |
+±—————————–+
+| ========== ======== ======== |
+±—————————–+
+| &gt; R1 3,645 k 3,645 k         |
+±—————————–+
+| &gt; R2 7,56 k 7,56 k           |
+±—————————–+</p>
+<p><img alt="Spannungsgesteuerter Osczillator Diagramm1" src="../_images/Voltage_Controlled_Oscillator_Nr_1.png" />{##exp06_fig_07
+.align-center}</p>
+<p>Bei kleinerer Eingangsspannung (siehe Diagramm 2) bleibt die Frequenz
+der gemessenen Ausgangsspannung nahezu gleich.</p>
+<p>±—————————–+
+| Widerstandsanpassung 2       |
++==============================+
+| Widerstand 0 - 2 ms 2 - 4 ms |
+±—————————–+
+| ========== ======== ======== |
+±—————————–+
+| &gt; R1 3,795 k 3,309 k         |
+±—————————–+
+| &gt; R2 6,207 k 7,97 k          |
+±—————————–+</p>
+<p><img alt="Spannungsgesteuerter Osczillator Diagramm2" src="../_images/Voltage_Controlled_Oscillator_Nr_2.png" />{##exp06_fig_08
+.align-center}</p>
+<p>Die Periode der Simulation (Diagramm 3) mit Eingangsspannung von 1,8 V
+ist zu groß, um sie mit der gemessenen Spannung übereinander zu legen.
+Erste Änderungen der gemessenen Frequenz sind sichtbar.</p>
+<p>±—————————–+
+| Widerstandsanpassung 3       |
++==============================+
+| Widerstand 0 - 2 ms 2 - 4 ms |
+±—————————–+
+| ========== ======== ======== |
+±—————————–+
+| &gt; R1 2,698 k 2,465 k         |
+±—————————–+
+| &gt; R2 8,44 k 8,61 k           |
+±—————————–+</p>
+<p><img alt="Spannungsgesteuerter Osczillator Diagramm3" src="../_images/Voltage_Controlled_Oscillator_Nr_3.png" />{##exp06_fig_09
+.align-center}</p>
+<p>In Diagramm 4 wird bei der Anpassschaltung Widerstand R1 größer obwohl
+R2 konstant bleibt. Da bei einem Trimmer der Gesamtwiderstand immer
+konstant sein sollte, liegt sehr wahrscheinlich eine fehlerhafte Messung
+der Widerstände vor. Trotz kleinerer Spannungsabstände resultieren immer
+größere Frequenzänderungen bei der Messung.</p>
+<p>±—————————–+
+| Widerstandsanpassung 4       |
++==============================+
+| Widerstand 0 - 2 ms 2 - 4 ms |
+±—————————–+
+| ========== ======== ======== |
+±—————————–+
+| &gt; R1 2,195 k 2,285 k         |
+±—————————–+
+| &gt; R2 8,86 k 8,86 k           |
+±—————————–+</p>
+<p><img alt="Spannungsgesteuerter Osczillator Diagramm4" src="../_images/Voltage_Controlled_Oscillator_Nr_4.png" />{##exp06_fig_10
+.align-center}</p>
+<p>Der Frequenzsprung von 1,2 V zu 1 V Eingangsspannung ist sehr groß,
+womit die Schaltung auch im Vergleich mit den Diagrammen 1-4 nicht
+linear arbeitet. Die gemessenen Werte der Anpassschaltung sind
+unrealistisch, da der Trimmer einen Gesamtwiderstand von 10 k besitzt.
+Die kleine Eingangsspannung sorgt für ein großes Rauschen am Ausgang.</p>
+<p>±—————————–+
+| Widerstandsanpassung 5       |
++==============================+
+| Widerstand 0 - 2 ms 2 - 4 ms |
+±—————————–+
+| ========== ======== ======== |
+±—————————–+
+| &gt; R1 1,383 k 0,507 k         |
+±—————————–+
+| &gt; R2 9,6 k 21,85 k           |
+±—————————–+</p>
+<p><img alt="Spannungsgesteuerter Osczillator Diagramm5" src="../_images/Voltage_Controlled_Oscillator_Nr_5.png" />{##exp06_fig_11
+.align-center}</p>
+<p>Im Folgenden sind zwei Grafen, die die Entwicklung der Widerstandswerte
+der Anpassschaltung in Abhängigkeit der Eingangsspannung und der
+Frequenz zeigen. Die Widerstandswerte sind dabei händisch am Trimmer
+eingestellt und sollen möglichst für eine gleichmäßige High- zu Low-Zeit
+am Ausgang sorgen. Die eingestellten Werte sind automatisch ungenau, da
+sie nicht berechnet sind, sondern nach optischer Sichtung eingestellt
+werden.</p>
+<p>Die Widerstandsanpassung in Verbindung mit der Spannung zeigt, dass der
+Vorwärtswiderstand R1 mit größerer Eingangsspannung immer größer gewählt
+werden muss um ein gleichmäßiges Rechtecksignal am Ausgang zu erzielen.
+Dementsprechend wird der Rückwärtswiderstand R2 immer kleiner.</p>
+<p><img alt="Widerstandsanpassung -Spannung" src="../_images/Widerstandsanpassung_Spannung.png" />{##exp06_fig_12
+.align-center}</p>
+<p>Die Messpunkte in Abhängigkeit der Ausgangsfrequenz sind schlecht
+verteilt, da in diesem Fall äquidistante Frequenzabstände ideal wären.
+Die Anpassschaltung arbeitet nicht linear, sodass gleiche
+Spannungsabstände nicht für gleiche Frequenzabstände sorgen. Die
+Widerstände bei niedriger Frequenz unterliegen sehr wahrscheinlich dem
+oben genannten Messfehler. Bei hohen Frequenzen liegen die gemessenen
+Widerstandswerte eng beieinander und enthalten vorraussichtlich
+ebenfalls Messfehler, da die Werte dem Kurvenverlauf zu urteilen nicht
+realistisch sind.</p>
+<p><img alt="Widerstandsanpassung -Frequenz" src="../_images/Widerstandsanpassung_Frequenz.png" />{##exp06_fig_13
+.align-center}</p>
+</div>
+<div class="section" id="fazit">
+<h2>Fazit<a class="headerlink" href="#fazit" title="Permalink to this headline">¶</a></h2>
+<p>Zusammenfassend eignet sich ein Schmitt-Trigger besonders gut als
+Analog-Digital-Wandler und ermöglicht dabei eine Hysteresekurve. Der VCO
+lässt sich mit einem Multiplizierer, Integrierer und Schmitt-Trigger
+realisieren. Messungenauigkeiten und Rauschen stören das Ergebnis der
+umgesetzten Schaltung. Die Simulationsfrequenz und die Versuchsfrequenz
+bzw. Low/High Zeiten stimmen nicht überein, womit sich Probleme bei der
+Skalierung herauskristallisieren. Abschließend verhält sich die
+Eingangsspannung nicht linear zur Ausgangsfrequenz.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "mimeiners/ASLK_PRO",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Experiment_05.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Self-Tuned Filter</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Experiment_07.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Phase Locked Loop (PLL)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
