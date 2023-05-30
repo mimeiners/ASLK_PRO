@@ -153,8 +153,8 @@ Name	files/meas/Experiment_01/02_Phasenmessung.py	/^Name = input("Name der Input
 Name	files/meas/Experiment_01/03_DCsweep.py	/^Name = input("Name der Input Textdatei: ") + ".txt"   # Eingabe des Dateinamens$/;"	v
 Output	files/meas/Experiment_01/03_DCsweep.py	/^Output = np.zeros(len(Ampl))                          # Anlegen eines Output Vektors$/;"	v
 PROTOCOL	files/meas/Experiment_03/csv_to_influx.py	/^PROTOCOL = 'line'$/;"	v
-Perioden	files/math/Experiment_05/Sin Test.py	/^Perioden = 10000\/ f$/;"	v
-Punkte	files/math/Experiment_05/Sin Test.py	/^Punkte = 300000$/;"	v
+Perioden	files/math/Experiment_05/Sin_Test.py	/^Perioden = 10000\/ f$/;"	v
+Punkte	files/math/Experiment_05/Sin_Test.py	/^Punkte = 300000$/;"	v
 Q	files/math/Experiment_01/Experiment_01.py	/^Q = 1\/((np.sqrt(wd2\/GB)) + ((1\/A0)*(np.sqrt(GB\/wd2))))$/;"	v
 R1	files/math/Experiment_13/simulation.py	/^R1 = 10e3$/;"	v
 R1	files/math/Experiment_13/simulation.py	/^R1 = np.array([10e3, 10e3, 10e3, 10e3])$/;"	v
@@ -275,9 +275,9 @@ XPDF	files/spice/Experiment_02/Aufgabe 2.2.1/Makefile	/^XPDF  = xpdf -remote -ra
 XPDF	files/spice/Experiment_02/Aufgabe 2.2.2/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
 XPDF	files/spice/Experiment_02/Aufgabe 2.2.3/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
 XPDF	files/spice/Experiment_03/Aufgabe 3.3.1/Makefile	/^XPDF  = xpdf -remote -raise$/;"	m
-Y_t	files/math/Experiment_05/Sin Test.py	/^Y_t =8.2 - 1 * integrate(y_down,x_down[1])$/;"	v
-Y_tp	files/math/Experiment_05/Sin Test.py	/^Y_tp = 1\/np.sqrt(1+2j*np.pi*fx\/100)$/;"	v
-Y_tpa	files/math/Experiment_05/Sin Test.py	/^Y_tpa = (np.real(Y_tp)**2 + np.imag(Y_tp)**2)**(0.5)$/;"	v
+Y_t	files/math/Experiment_05/Sin_Test.py	/^Y_t =8.2 - 1 * integrate(y_down,x_down[1])$/;"	v
+Y_tp	files/math/Experiment_05/Sin_Test.py	/^Y_tp = 1\/np.sqrt(1+2j*np.pi*fx\/100)$/;"	v
+Y_tpa	files/math/Experiment_05/Sin_Test.py	/^Y_tpa = (np.real(Y_tp)**2 + np.imag(Y_tp)**2)**(0.5)$/;"	v
 __author__	files/meas/Experiment_03/diff/redpitaya_scpi.py	/^__author__ = "Luka Golinar, Iztok Jeras"$/;"	v
 __author__	files/meas/Experiment_03/int/redpitaya_scpi.py	/^__author__ = "Luka Golinar, Iztok Jeras"$/;"	v
 __author__	files/meas/Experiment_03/redpitaya_scpi.py	/^__author__ = "Luka Golinar, Iztok Jeras"$/;"	v
@@ -294,9 +294,9 @@ __init__	files/meas/Experiment_03/diff/redpitaya_scpi.py	/^    def __init__(self
 __init__	files/meas/Experiment_03/int/redpitaya_scpi.py	/^    def __init__(self, host, timeout=None, port=5000):$/;"	m	class:scpi
 __init__	files/meas/Experiment_03/redpitaya_scpi.py	/^    def __init__(self, host, timeout=None, port=5000):$/;"	m	class:scpi
 __init__	files/meas/redpitaya_scpi/redpitaya_scpi.py	/^    def __init__(self, host, timeout=None, port=5000):$/;"	m	class:scpi
-a	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^a = np.array(pd.read_csv("WFM01.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-a	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^a = np.array(pd.read_csv("WFM04.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-a	files/math/Experiment_05/Sin Test.py	/^a=downsample(fx,100)$/;"	v
+a	files/math/Experiment_05/Sin_Test.py	/^a=downsample(fx,100)$/;"	v
+a	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^a = np.array(pd.read_csv("WFM01.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+a	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^a = np.array(pd.read_csv("WFM04.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 amp_dB	files/meas/Experiment_03/diff/gain.py	/^  amp_dB = np.zeros(len(f))$/;"	v
 amp_dB	files/meas/Experiment_03/diff/gain_process.py	/^amp_dB = list()$/;"	v
 amp_dB	files/meas/Experiment_03/int/gain.py	/^  amp_dB = np.zeros(len(f))$/;"	v
@@ -332,11 +332,11 @@ ax4	files/meas/Experiment_03/diff/triangle.py	/^ax4 = ax3.twinx()$/;"	v
 ax4	files/meas/Experiment_03/int/rect.py	/^ax4 = ax3.twinx()$/;"	v
 ax4	files/meas/Experiment_03/int/unitstep.py	/^ax4 = ax3.twinx()$/;"	v
 axes	files/meas/Experiment_12/Exp12_Simulation.py	/^axes = plt.gca()$/;"	v
-b	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^b = np.array(pd.read_csv("WFM02.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-b	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^b = np.array(pd.read_csv("WFM05.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-b	files/math/Experiment_05/Sin Test.py	/^b=downsample(fy_abs\/np.max(fy_abs),100)$/;"	v
+b	files/math/Experiment_05/Sin_Test.py	/^b=downsample(fy_abs\/np.max(fy_abs),100)$/;"	v
 b	files/math/Experiment_13/simulation.py	/^b = np.linspace(0, 2**12-1, 2**12)$/;"	v
 b	files/math/Experiment_13/simulation.py	/^b = np.linspace(250, 2**12-1, 2**12)$/;"	v
+b	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^b = np.array(pd.read_csv("WFM02.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+b	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^b = np.array(pd.read_csv("WFM05.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 begin3	files/meas/Experiment_12/Exp12_Simulation.py	/^begin3 = 1322$/;"	v
 begin4	files/meas/Experiment_12/Exp12_Simulation.py	/^begin4 = 174665$/;"	v
 begin5	files/meas/Experiment_12/Exp12_Simulation.py	/^begin5 = 0$/;"	v
@@ -375,9 +375,9 @@ buffstring2	files/meas/Experiment_03/int/gain.py	/^      .replace("  ", "").spli
 buffstring2	files/meas/Experiment_03/int/gain.py	/^    buffstring2 = RP.rx_txt()              # save the data from buffer$/;"	v
 buffstring2	files/meas/Experiment_03/int/rect.py	/^    .replace("  ", "").split(',')              # replace and split characters$/;"	v
 buffstring2	files/meas/Experiment_03/int/rect.py	/^  buffstring2 = RP.rx_txt()                    # save the data from buffer$/;"	v
-c	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^c = np.array(pd.read_csv("WFM03.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-c	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^c = np.array(pd.read_csv("WFM06.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-c	files/math/Experiment_05/Sin Test.py	/^c=downsample(fx,100)$/;"	v
+c	files/math/Experiment_05/Sin_Test.py	/^c=downsample(fx,100)$/;"	v
+c	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^c = np.array(pd.read_csv("WFM03.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
+c	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^c = np.array(pd.read_csv("WFM06.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 channel_1	files/meas/Experiment_01/02_Phasenmessung.py	/^            channel_1 = np.array(Buff1)                             #Nulldurchgänge vom Eingang ermittelen$/;"	v
 channel_1	files/meas/Experiment_01/02_Phasenmessung.py	/^            channel_1 = np.array(Buff1)                             $/;"	v
 channel_1_1	files/meas/Experiment_01/02_Phasenmessung.py	/^            channel_1_1 = np.array(np.where(channel_1 == 0))$/;"	v
@@ -409,8 +409,8 @@ comments	files/meas/Experiment_03/int/rect.py	/^                   comments='#',
 comments	files/meas/Experiment_03/int/unitstep.py	/^                   comments='#', delimiter='\\t', converters=None, skiprows=0,$/;"	v
 compression	files/meas/Experiment_12/pickle_data_compression_patrice.py	/^def compression(file_type, seperator, path):   $/;"	f
 copyright	sp-aslkpro/conf.py	/^copyright = u'2021, M. Meiners, HSB'$/;"	v
-d	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^d = np.array(pd.read_csv("WFM07.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
-d	files/math/Experiment_05/Sin Test.py	/^d=downsample(Y_tpa,100)$/;"	v
+d	files/math/Experiment_05/Sin_Test.py	/^d=downsample(Y_tpa,100)$/;"	v
+d	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^d = np.array(pd.read_csv("WFM07.csv", header = 0 ,delim_whitespace=0, decimal = ".").values.tolist())$/;"	v
 dacReg	files/math/Experiment_13/simulation.py	/^dacReg = np.array([257, 271, 511, 527, 767, 1023, 1039, 1279, 1535, 2047, 2063, 2303, 2559, 3071, 4095])$/;"	v
 dat	files/meas/Experiment_03/int/unitstep.py	/^dat = list()$/;"	v
 data	files/meas/Experiment_03/diff/gain.py	/^  data = np.loadtxt('..\/..\/data\/diff\/'+filename+".csv", dtype='float',$/;"	v
@@ -460,7 +460,7 @@ df_int_rect	files/meas/Experiment_03/csv_to_influx.py	/^df_int_rect = pd.read_cs
 df_int_rect_datatags	files/meas/Experiment_03/csv_to_influx.py	/^df_int_rect_datatags = ['time', 'Vin', 'Vout']$/;"	v
 df_int_unitstep	files/meas/Experiment_03/csv_to_influx.py	/^df_int_unitstep = pd.read_csv("..\/data\/int\/unitstep.csv",$/;"	v
 df_int_unitstep_datatags	files/meas/Experiment_03/csv_to_influx.py	/^df_int_unitstep_datatags = ['time', 'Vin', 'Vout']$/;"	v
-downsample	files/math/Experiment_05/Sin Test.py	/^def downsample(x,a):$/;"	f
+downsample	files/math/Experiment_05/Sin_Test.py	/^def downsample(x,a):$/;"	f
 downsampling	files/meas/Experiment_03/diff/gain.py	/^        downsampling = str(downsampling_values[i])$/;"	v
 downsampling	files/meas/Experiment_03/diff/gain.py	/^  downsampling = '1'  # downsamplingrate (decimation factor)$/;"	v
 downsampling	files/meas/Experiment_03/diff/rect.py	/^  downsampling = 512    # downsamplingrate (decimation factor)$/;"	v
@@ -475,7 +475,7 @@ duty_cycle_cal	files/meas/Experiment_12/Exp12_Simulation.py	/^duty_cycle_cal = (
 duty_cycle_mess	files/meas/Experiment_12/Exp12_Simulation.py	/^duty_cycle_mess = pd.read_excel(path4 + 'Messdaten_ANS.xlsx', sheet_name='Tabelle1') # in %$/;"	v
 duty_cycle_theor	files/meas/Experiment_12/Exp12_Simulation.py	/^duty_cycle_theor = (Vout \/ Vin) * 100 # in %$/;"	v
 duty_messw	files/meas/Experiment_12/Exp12_Simulation.py	/^duty_messw = duty_cycle_mess["%"].values$/;"	v
-dx	files/math/Experiment_05/Sin Test.py	/^dx = Perioden \/ Punkte$/;"	v
+dx	files/math/Experiment_05/Sin_Test.py	/^dx = Perioden \/ Punkte$/;"	v
 effective_sampling_rate	files/meas/Experiment_03/diff/rect.py	/^  effective_sampling_rate = sampling_rate\/downsampling$/;"	v
 effective_sampling_rate	files/meas/Experiment_03/diff/triangle.py	/^  effective_sampling_rate = sampling_rate\/downsampling$/;"	v
 effective_sampling_rate	files/meas/Experiment_03/int/rect.py	/^  effective_sampling_rate = sampling_rate\/downsampling$/;"	v
@@ -513,7 +513,7 @@ esr_q	files/meas/redpitaya_scpi/redpitaya_scpi.py	/^    def esr_q(self):$/;"	m	c
 exclude_patterns	sp-aslkpro/conf.py	/^exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']$/;"	v
 extensions	sp-aslkpro/conf.py	/^extensions = [$/;"	v
 f	files/math/Experiment_01/Experiment_01.py	/^f = np.logspace(-1, 9)$/;"	v
-f	files/math/Experiment_05/Sin Test.py	/^f = 1000$/;"	v
+f	files/math/Experiment_05/Sin_Test.py	/^f = 1000$/;"	v
 f	files/meas/Experiment_03/diff/gain.py	/^  f = np.geomspace(f_start, f_stop, N)      # frequency axis \/ points$/;"	v
 f	files/meas/Experiment_03/diff/gain_process.py	/^f = np.geomspace(f_start, f_stop, N)  # frequency axis \/ points$/;"	v
 f	files/meas/Experiment_03/fit_sinewave.py	/^f = 1.15247  # frequency$/;"	v
@@ -540,7 +540,7 @@ f_stop	files/meas/Experiment_03/diff/gain.py	/^  f_stop = int(1E9)   # end frequ
 f_stop	files/meas/Experiment_03/diff/gain_process.py	/^f_stop = int(1E9)  # end frequency$/;"	v
 f_stop	files/meas/Experiment_03/int/gain.py	/^  f_stop = int(1E9)$/;"	v
 f_un	files/math/Experiment_01/Experiment_01.py	/^f_un = 3e6$/;"	v
-fft	files/math/Experiment_05/Sin Test.py	/^from scipy.fftpack import fft, ifft$/;"	i
+fft	files/math/Experiment_05/Sin_Test.py	/^from scipy.fftpack import fft, ifft$/;"	i
 fig	files/meas/Experiment_03/diff/gain.py	/^fig = plt.figure(filename.upper().replace('_', ' '))$/;"	v
 fig	files/meas/Experiment_03/diff/gain_process.py	/^fig = plt.figure(filename.upper().replace('_', ' '))$/;"	v
 fig	files/meas/Experiment_03/diff/rect.py	/^fig = plt.figure(filename.upper().replace('_', ' '))$/;"	v
@@ -570,10 +570,10 @@ func	files/meas/redpitaya_scpi/bjt_data_analysis.py	/^func = 'TRIANGLE'  # Wavef
 func	files/meas/redpitaya_scpi/bjt_data_meas.py	/^func = 'TRIANGLE'  # Waveform (SINE, SQUARE, TRIANGLE)$/;"	v
 func	files/meas/redpitaya_scpi/diodes_data_analysis.py	/^func = 'TRIANGLE'  # Waveform (SINE, SQUARE, TRIANGLE, SAWU, SAWD, PWM, ARBITRARY, DC, DC_NEG)$/;"	v
 func	files/meas/redpitaya_scpi/diodes_data_meas.py	/^func = 'TRIANGLE'  # Waveform (SINE, SQUARE, TRIANGLE)$/;"	v
-fx	files/math/Experiment_05/Sin Test.py	/^fx = np.fft.fftshift(np.fft.fftfreq(len(x),dx))$/;"	v
-fy	files/math/Experiment_05/Sin Test.py	/^fy = fy * Y_tp$/;"	v
-fy	files/math/Experiment_05/Sin Test.py	/^fy = np.fft.fftshift(np.fft.fft(y))$/;"	v
-fy_abs	files/math/Experiment_05/Sin Test.py	/^fy_abs = (np.real(fy)**2 + np.imag(fy)**2)**(0.5)$/;"	v
+fx	files/math/Experiment_05/Sin_Test.py	/^fx = np.fft.fftshift(np.fft.fftfreq(len(x),dx))$/;"	v
+fy	files/math/Experiment_05/Sin_Test.py	/^fy = fy * Y_tp$/;"	v
+fy	files/math/Experiment_05/Sin_Test.py	/^fy = np.fft.fftshift(np.fft.fft(y))$/;"	v
+fy_abs	files/math/Experiment_05/Sin_Test.py	/^fy_abs = (np.real(fy)**2 + np.imag(fy)**2)**(0.5)$/;"	v
 gen	files/meas/rs_forum_visa.py	/^gen = rm.open_resource('TCPIP::192.168.111.50::INSTR')$/;"	v
 gettext_compact	sp-aslkpro/conf.py	/^gettext_compact = False$/;"	v
 header	files/meas/Experiment_03/csv_to_influx.py	/^                              header=None,$/;"	v
@@ -592,7 +592,7 @@ idn_q	files/meas/Experiment_03/diff/redpitaya_scpi.py	/^    def idn_q(self):$/;"
 idn_q	files/meas/Experiment_03/int/redpitaya_scpi.py	/^    def idn_q(self):$/;"	m	class:scpi
 idn_q	files/meas/Experiment_03/redpitaya_scpi.py	/^    def idn_q(self):$/;"	m	class:scpi
 idn_q	files/meas/redpitaya_scpi/redpitaya_scpi.py	/^    def idn_q(self):$/;"	m	class:scpi
-ifft	files/math/Experiment_05/Sin Test.py	/^from scipy.fftpack import fft, ifft$/;"	i
+ifft	files/math/Experiment_05/Sin_Test.py	/^from scipy.fftpack import fft, ifft$/;"	i
 inData	files/meas/Experiment_03/fit_sinewave.py	/^inData = 3.0 * np.sin(f * time + 0.001) + 0.5 + np.random.randn(N)$/;"	v
 index	files/meas/Experiment_03/diff/gain.py	/^  index = 0           # processvariable$/;"	v
 index	files/meas/Experiment_03/int/gain.py	/^  index = 0           # processvariable$/;"	v
@@ -600,7 +600,7 @@ index_col	files/meas/Experiment_03/csv_to_influx.py	/^                          
 index_col	files/meas/Experiment_03/csv_to_influx.py	/^                           index_col=False,$/;"	v
 index_col	files/meas/Experiment_03/csv_to_influx.py	/^                          index_col=False,$/;"	v
 index_col	files/meas/Experiment_03/csv_to_influx.py	/^    index_col=False,$/;"	v
-integrate	files/math/Experiment_05/Sin Test.py	/^def integrate(f,dx):$/;"	f
+integrate	files/math/Experiment_05/Sin_Test.py	/^def integrate(f,dx):$/;"	f
 intersphinx_mapping	sp-aslkpro/conf.py	/^intersphinx_mapping = {'https:\/\/docs.python.org\/': None}$/;"	v
 j	files/meas/Experiment_12/Exp12_Simulation.py	/^j = 0$/;"	v
 json	files/meas/Experiment_03/diff/gain.py	/^import json$/;"	i
@@ -641,9 +641,7 @@ master_doc	sp-aslkpro/conf.py	/^master_doc = 'index'$/;"	v
 math_eqref_format	sp-aslkpro/conf.py	/^math_eqref_format = "Gl. {number}"$/;"	v
 math_numfig	sp-aslkpro/conf.py	/^math_numfig = True$/;"	v
 matplotlib	files/math/Experiment_01/Experiment_01.py	/^import matplotlib.pyplot as plt$/;"	i
-matplotlib	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
-matplotlib	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
-matplotlib	files/math/Experiment_05/Sin Test.py	/^import matplotlib.pyplot as plt $/;"	i
+matplotlib	files/math/Experiment_05/Sin_Test.py	/^import matplotlib.pyplot as plt $/;"	i
 matplotlib	files/math/Experiment_09/9.2_Simulation/Plots_9.2.py	/^import matplotlib.pyplot as plt$/;"	i
 matplotlib	files/math/Experiment_13/simulation.py	/^import matplotlib.pyplot as plt$/;"	i
 matplotlib	files/meas/Experiment_01/01_Amplitudengangmessung.py	/^import matplotlib.pyplot as plt$/;"	i
@@ -663,14 +661,16 @@ matplotlib	files/meas/Experiment_03/int/rect.py	/^import matplotlib.ticker as mp
 matplotlib	files/meas/Experiment_03/int/unitstep.py	/^import matplotlib$/;"	i
 matplotlib	files/meas/Experiment_03/int/unitstep.py	/^import matplotlib.pyplot as plt$/;"	i
 matplotlib	files/meas/Experiment_03/int/unitstep.py	/^import matplotlib.ticker as mplt$/;"	i
+matplotlib	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
+matplotlib	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
 matplotlib	files/meas/Experiment_12/Exp12_Simulation.py	/^import matplotlib.pyplot as plt $/;"	i
 matplotlib	files/meas/redpitaya_scpi/bjt_data_analysis.py	/^import matplotlib.pyplot as plt$/;"	i
 matplotlib	files/meas/redpitaya_scpi/diodes_data_analysis.py	/^import matplotlib.pyplot as plt$/;"	i
 maxdB	files/math/Experiment_01/Experiment_01.py	/^maxdB = 20$/;"	v
 mindB	files/math/Experiment_01/Experiment_01.py	/^mindB = -100$/;"	v
 mov_av_size	files/meas/Experiment_03/diff/gain_process.py	/^mov_av_size = 20   # moving average filter size$/;"	v
-mpl	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import matplotlib as mpl$/;"	i
-mpl	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import matplotlib as mpl$/;"	i
+mpl	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^import matplotlib as mpl$/;"	i
+mpl	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^import matplotlib as mpl$/;"	i
 mplt	files/meas/Experiment_03/diff/gain.py	/^import matplotlib.ticker as mplt$/;"	i
 mplt	files/meas/Experiment_03/diff/gain_process.py	/^import matplotlib.ticker as mplt$/;"	i
 mplt	files/meas/Experiment_03/diff/rect.py	/^import matplotlib.ticker as mplt$/;"	i
@@ -685,9 +685,7 @@ names	files/meas/Experiment_03/csv_to_influx.py	/^                          name
 names	files/meas/Experiment_03/csv_to_influx.py	/^                          names=df_int_rect_datatags).set_index('time')$/;"	v
 names	files/meas/Experiment_03/csv_to_influx.py	/^    names=df_diff_triangle_datatags).set_index('time')$/;"	v
 np	files/math/Experiment_01/Experiment_01.py	/^import numpy as np$/;"	i
-np	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import numpy as np$/;"	i
-np	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import numpy as np$/;"	i
-np	files/math/Experiment_05/Sin Test.py	/^import numpy as np$/;"	i
+np	files/math/Experiment_05/Sin_Test.py	/^import numpy as np$/;"	i
 np	files/math/Experiment_13/simulation.py	/^import numpy as np$/;"	i
 np	files/meas/Experiment_01/01_Amplitudengangmessung.py	/^import numpy as np$/;"	i
 np	files/meas/Experiment_01/02_Phasenmessung.py	/^import numpy as np$/;"	i
@@ -700,6 +698,8 @@ np	files/meas/Experiment_03/fit_sinewave.py	/^import numpy as np$/;"	i
 np	files/meas/Experiment_03/int/gain.py	/^import numpy as np$/;"	i
 np	files/meas/Experiment_03/int/rect.py	/^import numpy as np$/;"	i
 np	files/meas/Experiment_03/int/unitstep.py	/^import numpy as np$/;"	i
+np	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^import numpy as np$/;"	i
+np	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^import numpy as np$/;"	i
 np	files/meas/Experiment_12/Exp12_Simulation.py	/^import numpy as np$/;"	i
 np	files/meas/redpitaya_scpi/bjt_data_analysis.py	/^import numpy as np$/;"	i
 np	files/meas/redpitaya_scpi/bjt_data_meas.py	/^import numpy as np$/;"	i
@@ -729,9 +729,9 @@ path0	files/meas/Experiment_12/Exp12_Simulation.py	/^path0 = ".\/Simulationsdate
 path3	files/meas/Experiment_12/Exp12_Simulation.py	/^path3   = ".\/Messdaten\/Mess_12_4_3\/"$/;"	v
 path4	files/meas/Experiment_12/Exp12_Simulation.py	/^path4   = ".\/Messdaten\/Mess_12-4-4_und_12-4-5\/"$/;"	v
 path5	files/meas/Experiment_12/Exp12_Simulation.py	/^path5   = ".\/Messdaten\/Mess_12_4_6\/"$/;"	v
-pd	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import pandas as pd$/;"	i
-pd	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import pandas as pd$/;"	i
 pd	files/meas/Experiment_03/csv_to_influx.py	/^import pandas as pd$/;"	i
+pd	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^import pandas as pd$/;"	i
+pd	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^import pandas as pd$/;"	i
 pd	files/meas/Experiment_12/Exp12_Simulation.py	/^import pandas as pd$/;"	i
 pd	files/meas/Experiment_12/pickle_data.py	/^import pandas as pd$/;"	i
 pd	files/meas/Experiment_12/pickle_data_compression_patrice.py	/^import pandas as pd$/;"	i
@@ -745,11 +745,9 @@ phase	files/meas/redpitaya_scpi/bjt_data_meas.py	/^phase = 0  # Phaseshift (-360
 phase	files/meas/redpitaya_scpi/diodes_data_analysis.py	/^phase = 0  # Phase shift (-360deg ... 360deg)$/;"	v
 phase	files/meas/redpitaya_scpi/diodes_data_meas.py	/^phase = 0  # Phaseshift (-360deg ... 360deg)$/;"	v
 phase	files/meas/rs_forum_visa.py	/^    phase = osc.query('MEASurement3:RESult?').replace('\\n', '')$/;"	v
-phi	files/math/Experiment_05/Sin Test.py	/^phi = np.linspace(0,1\/2,Punkte) * np.pi     # Annahme Phase ändert sich linear$/;"	v
+phi	files/math/Experiment_05/Sin_Test.py	/^phi = np.linspace(0,1\/2,Punkte) * np.pi     # Annahme Phase ändert sich linear$/;"	v
 plt	files/math/Experiment_01/Experiment_01.py	/^import matplotlib.pyplot as plt$/;"	i
-plt	files/math/Experiment_05/Messung 02062020/CSV_Daten/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
-plt	files/math/Experiment_05/Messung 09062020/CSV Dateien/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
-plt	files/math/Experiment_05/Sin Test.py	/^import matplotlib.pyplot as plt $/;"	i
+plt	files/math/Experiment_05/Sin_Test.py	/^import matplotlib.pyplot as plt $/;"	i
 plt	files/math/Experiment_09/9.2_Simulation/Plots_9.2.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	files/math/Experiment_13/simulation.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	files/meas/Experiment_01/01_Amplitudengangmessung.py	/^import matplotlib.pyplot as plt$/;"	i
@@ -762,6 +760,8 @@ plt	files/meas/Experiment_03/fit_sinewave.py	/^import pylab as plt$/;"	i
 plt	files/meas/Experiment_03/int/gain.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	files/meas/Experiment_03/int/rect.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	files/meas/Experiment_03/int/unitstep.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	files/meas/Experiment_05/Messung_02062020/CSV_Daten/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
+plt	files/meas/Experiment_05/Messung_09062020/CSV Dateien/Auswertung.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	files/meas/Experiment_12/Exp12_Simulation.py	/^import matplotlib.pyplot as plt $/;"	i
 plt	files/meas/redpitaya_scpi/bjt_data_analysis.py	/^import matplotlib.pyplot as plt$/;"	i
 plt	files/meas/redpitaya_scpi/diodes_data_analysis.py	/^import matplotlib.pyplot as plt$/;"	i
@@ -972,14 +972,14 @@ waveform	files/meas/Experiment_03/int/rect.py	/^  waveform = 'SQUARE'    # wavef
 waveform	files/meas/Experiment_03/int/unitstep.py	/^waveform = 'SQUARE'    # waveform of the Inputsignal$/;"	v
 wd1	files/math/Experiment_01/Experiment_01.py	/^wd1 = 2*np.pi*f_3_db$/;"	v
 wd2	files/math/Experiment_01/Experiment_01.py	/^wd2 = 2*np.pi*4e6$/;"	v
-x	files/math/Experiment_05/Sin Test.py	/^x =  x000$/;"	v
+x	files/math/Experiment_05/Sin_Test.py	/^x =  x000$/;"	v
 x	files/meas/rs_forum_visa.py	/^    x = x + 0.1$/;"	v
 x	files/meas/rs_forum_visa.py	/^x = 1$/;"	v
-x000	files/math/Experiment_05/Sin Test.py	/^x000 = np.arange(0,Perioden,dx)$/;"	v
-x_down	files/math/Experiment_05/Sin Test.py	/^x_down = downsample(x,1000)$/;"	v
-y	files/math/Experiment_05/Sin Test.py	/^y = y1*y2$/;"	v
-y1	files/math/Experiment_05/Sin Test.py	/^y1 = np.sin(2 * np.pi *f*x+phi)$/;"	v
-y2	files/math/Experiment_05/Sin Test.py	/^y2 = np.fft.ifft(np.fft.fftshift(fy))$/;"	v
-y2	files/math/Experiment_05/Sin Test.py	/^y2 = np.sin(2 * np.pi *f*x)$/;"	v
-y3	files/math/Experiment_05/Sin Test.py	/^y3 = np.fft.ifft(np.fft.fftshift(fy))$/;"	v
-y_down	files/math/Experiment_05/Sin Test.py	/^y_down = downsample(y3,1000)$/;"	v
+x000	files/math/Experiment_05/Sin_Test.py	/^x000 = np.arange(0,Perioden,dx)$/;"	v
+x_down	files/math/Experiment_05/Sin_Test.py	/^x_down = downsample(x,1000)$/;"	v
+y	files/math/Experiment_05/Sin_Test.py	/^y = y1*y2$/;"	v
+y1	files/math/Experiment_05/Sin_Test.py	/^y1 = np.sin(2 * np.pi *f*x+phi)$/;"	v
+y2	files/math/Experiment_05/Sin_Test.py	/^y2 = np.fft.ifft(np.fft.fftshift(fy))$/;"	v
+y2	files/math/Experiment_05/Sin_Test.py	/^y2 = np.sin(2 * np.pi *f*x)$/;"	v
+y3	files/math/Experiment_05/Sin_Test.py	/^y3 = np.fft.ifft(np.fft.fftshift(fy))$/;"	v
+y_down	files/math/Experiment_05/Sin_Test.py	/^y_down = downsample(y3,1000)$/;"	v
